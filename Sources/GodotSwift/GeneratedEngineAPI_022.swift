@@ -1103,34 +1103,6 @@ extension Generic6DOFJoint3D {
         }
         return result != 0
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_angular_target_rotation = lookupMethod("Generic6DOFJoint3D", "set_angular_target_rotation", 1727505552)
-    @inlinable @inline(__always) public func `set_angular_target_rotation`(_ `target_rotation`: Quaternion) {
-        defer { withExtendedLifetime((self)) {} }
-        `target_rotation`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_angular_target_rotation, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_angular_target_rotation = lookupMethod("Generic6DOFJoint3D", "get_angular_target_rotation", 1222331677)
-    @inlinable @inline(__always) public func `get_angular_target_rotation`() -> Quaternion {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Quaternion.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_angular_target_rotation, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_has_target_rotation = lookupMethod("Generic6DOFJoint3D", "has_target_rotation", 36873697)
-    @inlinable @inline(__always) public func `has_target_rotation`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_has_target_rotation, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_clear_angular_target_rotation = lookupMethod("Generic6DOFJoint3D", "clear_angular_target_rotation", 3218959716)
-    @inlinable @inline(__always) public func `clear_angular_target_rotation`() {
-        defer { withExtendedLifetime((self)) {} }
-        api.object_method_bind_ptrcall!(Self.mb_clear_angular_target_rotation, requireHandle(), nil, nil)
-}
 }
 extension Geometry2D {
     @usableFromInline nonisolated(unsafe) internal static let mb_is_point_in_circle = lookupMethod("Geometry2D", "is_point_in_circle", 2929491703)

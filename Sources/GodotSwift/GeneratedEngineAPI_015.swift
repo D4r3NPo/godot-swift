@@ -1067,26 +1067,18 @@ extension DisplayServer {
             api.object_method_bind_ptrcall!(Self.mb_clipboard_get_primary, requireHandle(), nil, result)
         })
 }
-    nonisolated(unsafe) private static let mb_get_display_cutouts = lookupMethod("DisplayServer", "get_display_cutouts", 1388654637)
-    public func `get_display_cutouts`(_ `screen`: Int64 = -1) -> GodotArrayOf<Rect2> {
+    nonisolated(unsafe) private static let mb_get_display_cutouts = lookupMethod("DisplayServer", "get_display_cutouts", 3995934104)
+    public func `get_display_cutouts`() -> GodotArrayOf<Rect2> {
         defer { withExtendedLifetime((self)) {} }
-        var a0 = `screen`
         return GodotArrayOf<Rect2>(initializing: { result in
-            withUnsafePointer(to: &a0) { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_display_cutouts, requireHandle(), &arguments, result)
-            }
+            api.object_method_bind_ptrcall!(Self.mb_get_display_cutouts, requireHandle(), nil, result)
         })
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_display_safe_area = lookupMethod("DisplayServer", "get_display_safe_area", 2439012528)
-    @inlinable @inline(__always) public func `get_display_safe_area`(_ `screen`: Int64 = -1) -> Rect2i {
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_display_safe_area = lookupMethod("DisplayServer", "get_display_safe_area", 410525958)
+    @inlinable @inline(__always) public func `get_display_safe_area`() -> Rect2i {
         defer { withExtendedLifetime((self)) {} }
-        var a0 = `screen`
         return withUnsafeTemporaryAllocation(of: Rect2i.self, capacity: 1) { result in
-            withUnsafePointer(to: &a0) { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_display_safe_area, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
-            }
+            api.object_method_bind_ptrcall!(Self.mb_get_display_safe_area, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
             return result.baseAddress!.move()
         }
 }
@@ -3113,34 +3105,6 @@ extension DisplayServer {
                     }
                 }
             }
-        }
-}
-    nonisolated(unsafe) private static let mb_send_toast_notification = lookupMethod("DisplayServer", "send_toast_notification", 3914862447)
-    public func `send_toast_notification`(_ `title`: borrowing GodotString, _ `text`: borrowing GodotString, _ `image`: Texture2D?, _ `callback`: borrowing GodotCallable) -> Int64 {
-        defer { withExtendedLifetime((self, `image`)) {} }
-        var a2 = `image`?.requireHandle()
-        var result: Int64 = 0
-        `title`.withStorage { p0 in
-            `text`.withStorage { p1 in
-                withUnsafePointer(to: &a2) { p2 in
-                    `callback`.withStorage { p3 in
-                        var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p3)))
-                        withUnsafePointer(to: &arguments) { arguments in
-                            api.object_method_bind_ptrcall!(Self.mb_send_toast_notification, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                        }
-                    }
-                }
-            }
-        }
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_hide_toast_notification = lookupMethod("DisplayServer", "hide_toast_notification", 1286410249)
-    @inlinable @inline(__always) public func `hide_toast_notification`(_ `id`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `id`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_hide_toast_notification, requireHandle(), &arguments, nil)
         }
 }
     @usableFromInline nonisolated(unsafe) internal static let mb_get_swap_cancel_ok = lookupMethod("DisplayServer", "get_swap_cancel_ok", 2240911060)

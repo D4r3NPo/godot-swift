@@ -893,68 +893,6 @@ extension TextureRect {
         return TextureRect.StretchMode(rawValue: result)
 }
 }
-extension TextureStreaming {
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_min_lod_override = lookupMethod("TextureStreaming", "get_min_lod_override", 3905245786)
-    @inlinable @inline(__always) public func `get_min_lod_override`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_min_lod_override, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_min_lod_override = lookupMethod("TextureStreaming", "set_min_lod_override", 1286410249)
-    @inlinable @inline(__always) public func `set_min_lod_override`(_ `min_lod`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `min_lod`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_min_lod_override, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_max_lod_override = lookupMethod("TextureStreaming", "get_max_lod_override", 3905245786)
-    @inlinable @inline(__always) public func `get_max_lod_override`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_max_lod_override, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_max_lod_override = lookupMethod("TextureStreaming", "set_max_lod_override", 1286410249)
-    @inlinable @inline(__always) public func `set_max_lod_override`(_ `max_lod`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `max_lod`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_max_lod_override, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_memory_budget_mb_override = lookupMethod("TextureStreaming", "get_memory_budget_mb_override", 3905245786)
-    @inlinable @inline(__always) public func `get_memory_budget_mb_override`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_memory_budget_mb_override, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_memory_budget_mb_override = lookupMethod("TextureStreaming", "set_memory_budget_mb_override", 1286410249)
-    @inlinable @inline(__always) public func `set_memory_budget_mb_override`(_ `mb`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `mb`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_memory_budget_mb_override, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_memory_budget_bytes_used = lookupMethod("TextureStreaming", "get_memory_budget_bytes_used", 2455072627)
-    @inlinable @inline(__always) public func `get_memory_budget_bytes_used`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_memory_budget_bytes_used, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_flush_texture_streaming = lookupMethod("TextureStreaming", "flush_texture_streaming", 3218959716)
-    @inlinable @inline(__always) public func `flush_texture_streaming`() {
-        defer { withExtendedLifetime((self)) {} }
-        api.object_method_bind_ptrcall!(Self.mb_flush_texture_streaming, requireHandle(), nil, nil)
-}
-}
 extension Theme {
     nonisolated(unsafe) private static let mb_set_icon = lookupMethod("Theme", "set_icon", 2188371082)
     public func `set_icon`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName, _ `texture`: Texture2D?) {
@@ -1481,95 +1419,6 @@ extension Theme {
             api.object_method_bind_ptrcall!(Self.mb_get_constant_type_list, requireHandle(), nil, result)
         })
 }
-    nonisolated(unsafe) private static let mb_set_sound = lookupMethod("Theme", "set_sound", 2577918927)
-    public func `set_sound`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName, _ `sound`: AudioStream?) {
-        defer { withExtendedLifetime((self, `sound`)) {} }
-        var a2 = `sound`?.requireHandle()
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                withUnsafePointer(to: &a2) { p2 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
-                    withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_set_sound, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                    }
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_get_sound = lookupMethod("Theme", "get_sound", 1175136407)
-    public func `get_sound`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) -> AudioStream? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_get_sound, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &nativeResult)
-                }
-            }
-        }
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? AudioStream
-}
-    nonisolated(unsafe) private static let mb_has_sound = lookupMethod("Theme", "has_sound", 471820014)
-    public func `has_sound`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_has_sound, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                }
-            }
-        }
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_rename_sound = lookupMethod("Theme", "rename_sound", 642128662)
-    public func `rename_sound`(_ `old_name`: borrowing GodotStringName, _ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `old_name`.withStorage { p0 in
-            `name`.withStorage { p1 in
-                `theme_type`.withStorage { p2 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
-                    withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_rename_sound, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                    }
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_clear_sound = lookupMethod("Theme", "clear_sound", 3740211285)
-    public func `clear_sound`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_clear_sound, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_get_sound_list = lookupMethod("Theme", "get_sound_list", 4291131558)
-    public func `get_sound_list`(_ `theme_type`: borrowing GodotString) -> GodotPackedStringArray {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotPackedStringArray(initializing: { result in
-            `theme_type`.withStorage { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_sound_list, requireHandle(), &arguments, result)
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_get_sound_type_list = lookupMethod("Theme", "get_sound_type_list", 1139954409)
-    public func `get_sound_type_list`() -> GodotPackedStringArray {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotPackedStringArray(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_sound_type_list, requireHandle(), nil, result)
-        })
-}
     @usableFromInline nonisolated(unsafe) internal static let mb_set_default_base_scale = lookupMethod("Theme", "set_default_base_scale", 373806689)
     @inlinable @inline(__always) public func `set_default_base_scale`(_ `base_scale`: Double) {
         defer { withExtendedLifetime((self)) {} }
@@ -1964,25 +1813,6 @@ extension ThemeDB {
         let object = Object.resolve(nativeResult)
         releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
         return object as? StyleBox
-}
-    nonisolated(unsafe) private static let mb_set_fallback_sound = lookupMethod("ThemeDB", "set_fallback_sound", 2210767741)
-    public func `set_fallback_sound`(_ `audio`: AudioStream?) {
-        defer { withExtendedLifetime((self, `audio`)) {} }
-        var a0 = `audio`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_fallback_sound, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_fallback_sound = lookupMethod("ThemeDB", "get_fallback_sound", 1183832186)
-    public func `get_fallback_sound`() -> AudioStream? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_fallback_sound, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? AudioStream
 }
 }
 extension Thread {

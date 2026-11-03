@@ -1,6 +1,6 @@
 // Generated from extension_api.json. Do not edit.
 import CGodot
-public let godotAPIVersion = "Godot Engine v4.8.dev.custom_build"
+public let godotAPIVersion = "Godot Engine v4.7.2.stable.official"
 public let godotVariantSize = 24
 @frozen public struct Vector2: Equatable, Sendable {
     public var x: Float

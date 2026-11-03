@@ -1,2945 +1,5 @@
 // Generated engine API partition. Do not edit.
 import CGodot
-extension BackBufferCopy {
-    public var `copy_mode`: BackBufferCopy.CopyMode {
-        get { `get_copy_mode`() }
-        set { `set_copy_mode`(newValue) }
-    }
-    public var `rect`: Rect2 {
-        get { `get_rect`() }
-        set { `set_rect`(newValue) }
-    }
-}
-extension BaseButton {
-    public var `disabled`: Bool {
-        get { `is_disabled`() }
-        set { `set_disabled`(newValue) }
-    }
-    public var `toggle_mode`: Bool {
-        get { `is_toggle_mode`() }
-        set { `set_toggle_mode`(newValue) }
-    }
-    public var `button_pressed`: Bool {
-        get { `is_pressed`() }
-        set { `set_pressed`(newValue) }
-    }
-    public var `action_mode`: BaseButton.ActionMode {
-        get { `get_action_mode`() }
-        set { `set_action_mode`(newValue) }
-    }
-    public var `button_mask`: Godot.MouseButtonMask {
-        get { `get_button_mask`() }
-        set { `set_button_mask`(newValue) }
-    }
-    public var `keep_pressed_outside`: Bool {
-        get { `is_keep_pressed_outside`() }
-        set { `set_keep_pressed_outside`(newValue) }
-    }
-    public var `button_group`: ButtonGroup? {
-        get { `get_button_group`() }
-        set { `set_button_group`(newValue) }
-    }
-    public var `shortcut`: Shortcut? {
-        get { `get_shortcut`() }
-        set { `set_shortcut`(newValue) }
-    }
-    public var `shortcut_feedback`: Bool {
-        get { `is_shortcut_feedback`() }
-        set { `set_shortcut_feedback`(newValue) }
-    }
-    public var `shortcut_in_tooltip`: Bool {
-        get { `is_shortcut_in_tooltip_enabled`() }
-        set { `set_shortcut_in_tooltip`(newValue) }
-    }
-}
-extension BaseMaterial3D {
-    public var `transparency`: BaseMaterial3D.Transparency {
-        get { `get_transparency`() }
-        set { `set_transparency`(newValue) }
-    }
-    public var `alpha_scissor_threshold`: Double {
-        get { `get_alpha_scissor_threshold`() }
-        set { `set_alpha_scissor_threshold`(newValue) }
-    }
-    public var `alpha_hash_scale`: Double {
-        get { `get_alpha_hash_scale`() }
-        set { `set_alpha_hash_scale`(newValue) }
-    }
-    public var `alpha_antialiasing_mode`: BaseMaterial3D.AlphaAntiAliasing {
-        get { `get_alpha_antialiasing`() }
-        set { `set_alpha_antialiasing`(newValue) }
-    }
-    public var `alpha_antialiasing_edge`: Double {
-        get { `get_alpha_antialiasing_edge`() }
-        set { `set_alpha_antialiasing_edge`(newValue) }
-    }
-    public var `blend_mode`: BaseMaterial3D.BlendMode {
-        get { `get_blend_mode`() }
-        set { `set_blend_mode`(newValue) }
-    }
-    public var `cull_mode`: BaseMaterial3D.CullMode {
-        get { `get_cull_mode`() }
-        set { `set_cull_mode`(newValue) }
-    }
-    public var `depth_draw_mode`: BaseMaterial3D.DepthDrawMode {
-        get { `get_depth_draw_mode`() }
-        set { `set_depth_draw_mode`(newValue) }
-    }
-    public var `no_depth_test`: Bool {
-        get { `get_flag`(0) }
-        set { `set_flag`(0, newValue) }
-    }
-    public var `depth_test`: BaseMaterial3D.DepthTest {
-        get { `get_depth_test`() }
-        set { `set_depth_test`(newValue) }
-    }
-    public var `shading_mode`: BaseMaterial3D.ShadingMode {
-        get { `get_shading_mode`() }
-        set { `set_shading_mode`(newValue) }
-    }
-    public var `diffuse_mode`: BaseMaterial3D.DiffuseMode {
-        get { `get_diffuse_mode`() }
-        set { `set_diffuse_mode`(newValue) }
-    }
-    public var `specular_mode`: BaseMaterial3D.SpecularMode {
-        get { `get_specular_mode`() }
-        set { `set_specular_mode`(newValue) }
-    }
-    public var `disable_ambient_light`: Bool {
-        get { `get_flag`(14) }
-        set { `set_flag`(14, newValue) }
-    }
-    public var `disable_fog`: Bool {
-        get { `get_flag`(21) }
-        set { `set_flag`(21, newValue) }
-    }
-    public var `disable_specular_occlusion`: Bool {
-        get { `get_flag`(22) }
-        set { `set_flag`(22, newValue) }
-    }
-    public var `vertex_color_use_as_albedo`: Bool {
-        get { `get_flag`(1) }
-        set { `set_flag`(1, newValue) }
-    }
-    public var `vertex_color_is_srgb`: Bool {
-        get { `get_flag`(2) }
-        set { `set_flag`(2, newValue) }
-    }
-    public var `albedo_color`: Color {
-        get { `get_albedo`() }
-        set { `set_albedo`(newValue) }
-    }
-    public var `albedo_texture`: Texture2D? {
-        get { `get_texture`(0) }
-        set { `set_texture`(0, newValue) }
-    }
-    public var `albedo_texture_force_srgb`: Bool {
-        get { `get_flag`(12) }
-        set { `set_flag`(12, newValue) }
-    }
-    public var `albedo_texture_msdf`: Bool {
-        get { `get_flag`(20) }
-        set { `set_flag`(20, newValue) }
-    }
-    public var `orm_texture`: Texture2D? {
-        get { `get_texture`(17) }
-        set { `set_texture`(17, newValue) }
-    }
-    public var `metallic`: Double {
-        get { `get_metallic`() }
-        set { `set_metallic`(newValue) }
-    }
-    public var `metallic_specular`: Double {
-        get { `get_specular`() }
-        set { `set_specular`(newValue) }
-    }
-    public var `metallic_texture`: Texture2D? {
-        get { `get_texture`(1) }
-        set { `set_texture`(1, newValue) }
-    }
-    public var `metallic_texture_channel`: BaseMaterial3D.TextureChannel {
-        get { `get_metallic_texture_channel`() }
-        set { `set_metallic_texture_channel`(newValue) }
-    }
-    public var `roughness`: Double {
-        get { `get_roughness`() }
-        set { `set_roughness`(newValue) }
-    }
-    public var `roughness_texture`: Texture2D? {
-        get { `get_texture`(2) }
-        set { `set_texture`(2, newValue) }
-    }
-    public var `roughness_texture_channel`: BaseMaterial3D.TextureChannel {
-        get { `get_roughness_texture_channel`() }
-        set { `set_roughness_texture_channel`(newValue) }
-    }
-    public var `emission_enabled`: Bool {
-        get { `get_feature`(0) }
-        set { `set_feature`(0, newValue) }
-    }
-    public var `emission`: Color {
-        get { `get_emission`() }
-        set { `set_emission`(newValue) }
-    }
-    public var `emission_energy_multiplier`: Double {
-        get { `get_emission_energy_multiplier`() }
-        set { `set_emission_energy_multiplier`(newValue) }
-    }
-    public var `emission_intensity`: Double {
-        get { `get_emission_intensity`() }
-        set { `set_emission_intensity`(newValue) }
-    }
-    public var `emission_operator`: BaseMaterial3D.EmissionOperator {
-        get { `get_emission_operator`() }
-        set { `set_emission_operator`(newValue) }
-    }
-    public var `emission_on_uv2`: Bool {
-        get { `get_flag`(11) }
-        set { `set_flag`(11, newValue) }
-    }
-    public var `emission_texture`: Texture2D? {
-        get { `get_texture`(3) }
-        set { `set_texture`(3, newValue) }
-    }
-    public var `normal_enabled`: Bool {
-        get { `get_feature`(1) }
-        set { `set_feature`(1, newValue) }
-    }
-    public var `normal_scale`: Double {
-        get { `get_normal_scale`() }
-        set { `set_normal_scale`(newValue) }
-    }
-    public var `normal_texture`: Texture2D? {
-        get { `get_texture`(4) }
-        set { `set_texture`(4, newValue) }
-    }
-    public var `bent_normal_enabled`: Bool {
-        get { `get_feature`(12) }
-        set { `set_feature`(12, newValue) }
-    }
-    public var `bent_normal_texture`: Texture2D? {
-        get { `get_texture`(18) }
-        set { `set_texture`(18, newValue) }
-    }
-    public var `rim_enabled`: Bool {
-        get { `get_feature`(2) }
-        set { `set_feature`(2, newValue) }
-    }
-    public var `rim`: Double {
-        get { `get_rim`() }
-        set { `set_rim`(newValue) }
-    }
-    public var `rim_tint`: Double {
-        get { `get_rim_tint`() }
-        set { `set_rim_tint`(newValue) }
-    }
-    public var `rim_texture`: Texture2D? {
-        get { `get_texture`(5) }
-        set { `set_texture`(5, newValue) }
-    }
-    public var `clearcoat_enabled`: Bool {
-        get { `get_feature`(3) }
-        set { `set_feature`(3, newValue) }
-    }
-    public var `clearcoat`: Double {
-        get { `get_clearcoat`() }
-        set { `set_clearcoat`(newValue) }
-    }
-    public var `clearcoat_roughness`: Double {
-        get { `get_clearcoat_roughness`() }
-        set { `set_clearcoat_roughness`(newValue) }
-    }
-    public var `clearcoat_texture`: Texture2D? {
-        get { `get_texture`(6) }
-        set { `set_texture`(6, newValue) }
-    }
-    public var `anisotropy_enabled`: Bool {
-        get { `get_feature`(4) }
-        set { `set_feature`(4, newValue) }
-    }
-    public var `anisotropy`: Double {
-        get { `get_anisotropy`() }
-        set { `set_anisotropy`(newValue) }
-    }
-    public var `anisotropy_flowmap`: Texture2D? {
-        get { `get_texture`(7) }
-        set { `set_texture`(7, newValue) }
-    }
-    public var `ao_enabled`: Bool {
-        get { `get_feature`(5) }
-        set { `set_feature`(5, newValue) }
-    }
-    public var `ao_light_affect`: Double {
-        get { `get_ao_light_affect`() }
-        set { `set_ao_light_affect`(newValue) }
-    }
-    public var `ao_texture`: Texture2D? {
-        get { `get_texture`(8) }
-        set { `set_texture`(8, newValue) }
-    }
-    public var `ao_on_uv2`: Bool {
-        get { `get_flag`(10) }
-        set { `set_flag`(10, newValue) }
-    }
-    public var `ao_texture_channel`: BaseMaterial3D.TextureChannel {
-        get { `get_ao_texture_channel`() }
-        set { `set_ao_texture_channel`(newValue) }
-    }
-    public var `heightmap_enabled`: Bool {
-        get { `get_feature`(6) }
-        set { `set_feature`(6, newValue) }
-    }
-    public var `heightmap_scale`: Double {
-        get { `get_heightmap_scale`() }
-        set { `set_heightmap_scale`(newValue) }
-    }
-    public var `heightmap_deep_parallax`: Bool {
-        get { `is_heightmap_deep_parallax_enabled`() }
-        set { `set_heightmap_deep_parallax`(newValue) }
-    }
-    public var `heightmap_min_layers`: Int64 {
-        get { `get_heightmap_deep_parallax_min_layers`() }
-        set { `set_heightmap_deep_parallax_min_layers`(newValue) }
-    }
-    public var `heightmap_max_layers`: Int64 {
-        get { `get_heightmap_deep_parallax_max_layers`() }
-        set { `set_heightmap_deep_parallax_max_layers`(newValue) }
-    }
-    public var `heightmap_flip_tangent`: Bool {
-        get { `get_heightmap_deep_parallax_flip_tangent`() }
-        set { `set_heightmap_deep_parallax_flip_tangent`(newValue) }
-    }
-    public var `heightmap_flip_binormal`: Bool {
-        get { `get_heightmap_deep_parallax_flip_binormal`() }
-        set { `set_heightmap_deep_parallax_flip_binormal`(newValue) }
-    }
-    public var `heightmap_texture`: Texture2D? {
-        get { `get_texture`(9) }
-        set { `set_texture`(9, newValue) }
-    }
-    public var `heightmap_flip_texture`: Bool {
-        get { `get_flag`(17) }
-        set { `set_flag`(17, newValue) }
-    }
-    public var `subsurf_scatter_enabled`: Bool {
-        get { `get_feature`(7) }
-        set { `set_feature`(7, newValue) }
-    }
-    public var `subsurf_scatter_strength`: Double {
-        get { `get_subsurface_scattering_strength`() }
-        set { `set_subsurface_scattering_strength`(newValue) }
-    }
-    public var `subsurf_scatter_skin_mode`: Bool {
-        get { `get_flag`(18) }
-        set { `set_flag`(18, newValue) }
-    }
-    public var `subsurf_scatter_texture`: Texture2D? {
-        get { `get_texture`(10) }
-        set { `set_texture`(10, newValue) }
-    }
-    public var `subsurf_scatter_transmittance_enabled`: Bool {
-        get { `get_feature`(8) }
-        set { `set_feature`(8, newValue) }
-    }
-    public var `subsurf_scatter_transmittance_color`: Color {
-        get { `get_transmittance_color`() }
-        set { `set_transmittance_color`(newValue) }
-    }
-    public var `subsurf_scatter_transmittance_texture`: Texture2D? {
-        get { `get_texture`(11) }
-        set { `set_texture`(11, newValue) }
-    }
-    public var `subsurf_scatter_transmittance_depth`: Double {
-        get { `get_transmittance_depth`() }
-        set { `set_transmittance_depth`(newValue) }
-    }
-    public var `subsurf_scatter_transmittance_boost`: Double {
-        get { `get_transmittance_boost`() }
-        set { `set_transmittance_boost`(newValue) }
-    }
-    public var `backlight_enabled`: Bool {
-        get { `get_feature`(9) }
-        set { `set_feature`(9, newValue) }
-    }
-    public var `backlight`: Color {
-        get { `get_backlight`() }
-        set { `set_backlight`(newValue) }
-    }
-    public var `backlight_texture`: Texture2D? {
-        get { `get_texture`(12) }
-        set { `set_texture`(12, newValue) }
-    }
-    public var `refraction_enabled`: Bool {
-        get { `get_feature`(10) }
-        set { `set_feature`(10, newValue) }
-    }
-    public var `refraction_scale`: Double {
-        get { `get_refraction`() }
-        set { `set_refraction`(newValue) }
-    }
-    public var `refraction_texture`: Texture2D? {
-        get { `get_texture`(13) }
-        set { `set_texture`(13, newValue) }
-    }
-    public var `refraction_texture_channel`: BaseMaterial3D.TextureChannel {
-        get { `get_refraction_texture_channel`() }
-        set { `set_refraction_texture_channel`(newValue) }
-    }
-    public var `detail_enabled`: Bool {
-        get { `get_feature`(11) }
-        set { `set_feature`(11, newValue) }
-    }
-    public var `detail_mask`: Texture2D? {
-        get { `get_texture`(14) }
-        set { `set_texture`(14, newValue) }
-    }
-    public var `detail_blend_mode`: BaseMaterial3D.BlendMode {
-        get { `get_detail_blend_mode`() }
-        set { `set_detail_blend_mode`(newValue) }
-    }
-    public var `detail_uv_layer`: BaseMaterial3D.DetailUV {
-        get { `get_detail_uv`() }
-        set { `set_detail_uv`(newValue) }
-    }
-    public var `detail_albedo`: Texture2D? {
-        get { `get_texture`(15) }
-        set { `set_texture`(15, newValue) }
-    }
-    public var `detail_normal`: Texture2D? {
-        get { `get_texture`(16) }
-        set { `set_texture`(16, newValue) }
-    }
-    public var `uv1_scale`: Vector3 {
-        get { `get_uv1_scale`() }
-        set { `set_uv1_scale`(newValue) }
-    }
-    public var `uv1_offset`: Vector3 {
-        get { `get_uv1_offset`() }
-        set { `set_uv1_offset`(newValue) }
-    }
-    public var `uv1_triplanar`: Bool {
-        get { `get_flag`(6) }
-        set { `set_flag`(6, newValue) }
-    }
-    public var `uv1_triplanar_sharpness`: Double {
-        get { `get_uv1_triplanar_blend_sharpness`() }
-        set { `set_uv1_triplanar_blend_sharpness`(newValue) }
-    }
-    public var `uv1_world_triplanar`: Bool {
-        get { `get_flag`(8) }
-        set { `set_flag`(8, newValue) }
-    }
-    public var `uv2_scale`: Vector3 {
-        get { `get_uv2_scale`() }
-        set { `set_uv2_scale`(newValue) }
-    }
-    public var `uv2_offset`: Vector3 {
-        get { `get_uv2_offset`() }
-        set { `set_uv2_offset`(newValue) }
-    }
-    public var `uv2_triplanar`: Bool {
-        get { `get_flag`(7) }
-        set { `set_flag`(7, newValue) }
-    }
-    public var `uv2_triplanar_sharpness`: Double {
-        get { `get_uv2_triplanar_blend_sharpness`() }
-        set { `set_uv2_triplanar_blend_sharpness`(newValue) }
-    }
-    public var `uv2_world_triplanar`: Bool {
-        get { `get_flag`(9) }
-        set { `set_flag`(9, newValue) }
-    }
-    public var `texture_filter`: BaseMaterial3D.TextureFilter {
-        get { `get_texture_filter`() }
-        set { `set_texture_filter`(newValue) }
-    }
-    public var `texture_repeat`: Bool {
-        get { `get_flag`(16) }
-        set { `set_flag`(16, newValue) }
-    }
-    public var `disable_receive_shadows`: Bool {
-        get { `get_flag`(13) }
-        set { `set_flag`(13, newValue) }
-    }
-    public var `shadow_to_opacity`: Bool {
-        get { `get_flag`(15) }
-        set { `set_flag`(15, newValue) }
-    }
-    public var `billboard_mode`: BaseMaterial3D.BillboardMode {
-        get { `get_billboard_mode`() }
-        set { `set_billboard_mode`(newValue) }
-    }
-    public var `billboard_keep_scale`: Bool {
-        get { `get_flag`(5) }
-        set { `set_flag`(5, newValue) }
-    }
-    public var `particles_anim_enabled`: Bool {
-        get { `get_feature`(13) }
-        set { `set_feature`(13, newValue) }
-    }
-    public var `particles_anim_h_frames`: Int64 {
-        get { `get_particles_anim_h_frames`() }
-        set { `set_particles_anim_h_frames`(newValue) }
-    }
-    public var `particles_anim_v_frames`: Int64 {
-        get { `get_particles_anim_v_frames`() }
-        set { `set_particles_anim_v_frames`(newValue) }
-    }
-    public var `particles_anim_loop`: Bool {
-        get { `get_particles_anim_loop`() }
-        set { `set_particles_anim_loop`(newValue) }
-    }
-    public var `grow`: Bool {
-        get { `is_grow_enabled`() }
-        set { `set_grow_enabled`(newValue) }
-    }
-    public var `grow_amount`: Double {
-        get { `get_grow`() }
-        set { `set_grow`(newValue) }
-    }
-    public var `fixed_size`: Bool {
-        get { `get_flag`(4) }
-        set { `set_flag`(4, newValue) }
-    }
-    public var `use_point_size`: Bool {
-        get { `get_flag`(3) }
-        set { `set_flag`(3, newValue) }
-    }
-    public var `point_size`: Double {
-        get { `get_point_size`() }
-        set { `set_point_size`(newValue) }
-    }
-    public var `use_particle_trails`: Bool {
-        get { `get_flag`(19) }
-        set { `set_flag`(19, newValue) }
-    }
-    public var `use_z_clip_scale`: Bool {
-        get { `get_flag`(23) }
-        set { `set_flag`(23, newValue) }
-    }
-    public var `z_clip_scale`: Double {
-        get { `get_z_clip_scale`() }
-        set { `set_z_clip_scale`(newValue) }
-    }
-    public var `use_fov_override`: Bool {
-        get { `get_flag`(24) }
-        set { `set_flag`(24, newValue) }
-    }
-    public var `fov_override`: Double {
-        get { `get_fov_override`() }
-        set { `set_fov_override`(newValue) }
-    }
-    public var `proximity_fade_enabled`: Bool {
-        get { `is_proximity_fade_enabled`() }
-        set { `set_proximity_fade_enabled`(newValue) }
-    }
-    public var `proximity_fade_distance`: Double {
-        get { `get_proximity_fade_distance`() }
-        set { `set_proximity_fade_distance`(newValue) }
-    }
-    public var `msdf_pixel_range`: Double {
-        get { `get_msdf_pixel_range`() }
-        set { `set_msdf_pixel_range`(newValue) }
-    }
-    public var `msdf_outline_size`: Double {
-        get { `get_msdf_outline_size`() }
-        set { `set_msdf_outline_size`(newValue) }
-    }
-    public var `distance_fade_mode`: BaseMaterial3D.DistanceFadeMode {
-        get { `get_distance_fade`() }
-        set { `set_distance_fade`(newValue) }
-    }
-    public var `distance_fade_min_distance`: Double {
-        get { `get_distance_fade_min_distance`() }
-        set { `set_distance_fade_min_distance`(newValue) }
-    }
-    public var `distance_fade_max_distance`: Double {
-        get { `get_distance_fade_max_distance`() }
-        set { `set_distance_fade_max_distance`(newValue) }
-    }
-    public var `stencil_mode`: BaseMaterial3D.StencilMode {
-        get { `get_stencil_mode`() }
-        set { `set_stencil_mode`(newValue) }
-    }
-    public var `stencil_flags`: Int64 {
-        get { `get_stencil_flags`() }
-        set { `set_stencil_flags`(newValue) }
-    }
-    public var `stencil_compare`: BaseMaterial3D.StencilCompare {
-        get { `get_stencil_compare`() }
-        set { `set_stencil_compare`(newValue) }
-    }
-    public var `stencil_reference`: Int64 {
-        get { `get_stencil_reference`() }
-        set { `set_stencil_reference`(newValue) }
-    }
-    public var `stencil_color`: Color {
-        get { `get_stencil_effect_color`() }
-        set { `set_stencil_effect_color`(newValue) }
-    }
-    public var `stencil_outline_thickness`: Double {
-        get { `get_stencil_effect_outline_thickness`() }
-        set { `set_stencil_effect_outline_thickness`(newValue) }
-    }
-}
-extension BlitMaterial {
-    public var `blend_mode`: BlitMaterial.BlendMode {
-        get { `get_blend_mode`() }
-        set { `set_blend_mode`(newValue) }
-    }
-}
-extension Bone2D {
-    public var `rest`: Transform2D {
-        get { `get_rest`() }
-        set { `set_rest`(newValue) }
-    }
-}
-extension BoneAttachment3D {
-    public var `bone_idx`: Int64 {
-        get { `get_bone_idx`() }
-        set { `set_bone_idx`(newValue) }
-    }
-    public var `override_pose`: Bool {
-        get { `get_override_pose`() }
-        set { `set_override_pose`(newValue) }
-    }
-    public var `use_external_skeleton`: Bool {
-        get { `get_use_external_skeleton`() }
-        set { `set_use_external_skeleton`(newValue) }
-    }
-    public var `external_skeleton`: GodotNodePath {
-        get { `get_external_skeleton`() }
-        set { `set_external_skeleton`(newValue) }
-    }
-}
-extension BoneMap {
-    public var `profile`: SkeletonProfile? {
-        get { `get_profile`() }
-        set { `set_profile`(newValue) }
-    }
-}
-extension BoneSpaceAdjuster3D {
-    public var `use_bone_skin_scale_for_all_bones`: Bool {
-        get { `are_all_bones_using_bone_skin_scale`() }
-        set { `set_use_bone_skin_scale_for_all_bones`(newValue) }
-    }
-    public var `setting_size`: Int64 {
-        get { `get_setting_size`() }
-        set { `set_setting_size`(newValue) }
-    }
-}
-extension BoneTwistDisperser3D {
-    public var `mutable_bone_axes`: Bool {
-        get { `are_bone_axes_mutable`() }
-        set { `set_mutable_bone_axes`(newValue) }
-    }
-    public var `setting_count`: Int64 {
-        get { `get_setting_count`() }
-        set { `set_setting_count`(newValue) }
-    }
-}
-extension BoxContainer {
-    public var `alignment`: BoxContainer.AlignmentMode {
-        get { `get_alignment`() }
-        set { `set_alignment`(newValue) }
-    }
-    public var `vertical`: Bool {
-        get { `is_vertical`() }
-        set { `set_vertical`(newValue) }
-    }
-    public var `reverse_sort`: Bool {
-        get { `is_reverse_sort`() }
-        set { `set_reverse_sort`(newValue) }
-    }
-}
-extension BoxMesh {
-    public var `size`: Vector3 {
-        get { `get_size`() }
-        set { `set_size`(newValue) }
-    }
-    public var `subdivide_width`: Int64 {
-        get { `get_subdivide_width`() }
-        set { `set_subdivide_width`(newValue) }
-    }
-    public var `subdivide_height`: Int64 {
-        get { `get_subdivide_height`() }
-        set { `set_subdivide_height`(newValue) }
-    }
-    public var `subdivide_depth`: Int64 {
-        get { `get_subdivide_depth`() }
-        set { `set_subdivide_depth`(newValue) }
-    }
-}
-extension BoxOccluder3D {
-    public var `size`: Vector3 {
-        get { `get_size`() }
-        set { `set_size`(newValue) }
-    }
-}
-extension BoxShape3D {
-    public var `size`: Vector3 {
-        get { `get_size`() }
-        set { `set_size`(newValue) }
-    }
-}
-extension Button {
-    public var `text`: GodotString {
-        get { `get_text`() }
-        set { `set_text`(newValue) }
-    }
-    public var `icon`: Texture2D? {
-        get { `get_button_icon`() }
-        set { `set_button_icon`(newValue) }
-    }
-    public var `flat`: Bool {
-        get { `is_flat`() }
-        set { `set_flat`(newValue) }
-    }
-    public var `alignment`: Godot.HorizontalAlignment {
-        get { `get_text_alignment`() }
-        set { `set_text_alignment`(newValue) }
-    }
-    public var `text_overrun_behavior`: TextServer.OverrunBehavior {
-        get { `get_text_overrun_behavior`() }
-        set { `set_text_overrun_behavior`(newValue) }
-    }
-    public var `autowrap_mode`: TextServer.AutowrapMode {
-        get { `get_autowrap_mode`() }
-        set { `set_autowrap_mode`(newValue) }
-    }
-    public var `autowrap_trim_flags`: TextServer.LineBreakFlag {
-        get { `get_autowrap_trim_flags`() }
-        set { `set_autowrap_trim_flags`(newValue) }
-    }
-    public var `clip_text`: Bool {
-        get { `get_clip_text`() }
-        set { `set_clip_text`(newValue) }
-    }
-    public var `icon_alignment`: Godot.HorizontalAlignment {
-        get { `get_icon_alignment`() }
-        set { `set_icon_alignment`(newValue) }
-    }
-    public var `vertical_icon_alignment`: Godot.VerticalAlignment {
-        get { `get_vertical_icon_alignment`() }
-        set { `set_vertical_icon_alignment`(newValue) }
-    }
-    public var `expand_icon`: Bool {
-        get { `is_expand_icon`() }
-        set { `set_expand_icon`(newValue) }
-    }
-    public var `text_direction`: Control.TextDirection {
-        get { `get_text_direction`() }
-        set { `set_text_direction`(newValue) }
-    }
-    public var `language`: GodotString {
-        get { `get_language`() }
-        set { `set_language`(newValue) }
-    }
-}
-extension ButtonGroup {
-    public var `allow_unpress`: Bool {
-        get { `is_allow_unpress`() }
-        set { `set_allow_unpress`(newValue) }
-    }
-}
-extension CPUParticles2D {
-    public var `emitting`: Bool {
-        get { `is_emitting`() }
-        set { `set_emitting`(newValue) }
-    }
-    public var `amount`: Int64 {
-        get { `get_amount`() }
-        set { `set_amount`(newValue) }
-    }
-    public var `texture`: Texture2D? {
-        get { `get_texture`() }
-        set { `set_texture`(newValue) }
-    }
-    public var `lifetime`: Double {
-        get { `get_lifetime`() }
-        set { `set_lifetime`(newValue) }
-    }
-    public var `one_shot`: Bool {
-        get { `get_one_shot`() }
-        set { `set_one_shot`(newValue) }
-    }
-    public var `preprocess`: Double {
-        get { `get_pre_process_time`() }
-        set { `set_pre_process_time`(newValue) }
-    }
-    public var `speed_scale`: Double {
-        get { `get_speed_scale`() }
-        set { `set_speed_scale`(newValue) }
-    }
-    public var `explosiveness`: Double {
-        get { `get_explosiveness_ratio`() }
-        set { `set_explosiveness_ratio`(newValue) }
-    }
-    public var `randomness`: Double {
-        get { `get_randomness_ratio`() }
-        set { `set_randomness_ratio`(newValue) }
-    }
-    public var `use_fixed_seed`: Bool {
-        get { `get_use_fixed_seed`() }
-        set { `set_use_fixed_seed`(newValue) }
-    }
-    public var `seed`: Int64 {
-        get { `get_seed`() }
-        set { `set_seed`(newValue) }
-    }
-    public var `lifetime_randomness`: Double {
-        get { `get_lifetime_randomness`() }
-        set { `set_lifetime_randomness`(newValue) }
-    }
-    public var `fixed_fps`: Int64 {
-        get { `get_fixed_fps`() }
-        set { `set_fixed_fps`(newValue) }
-    }
-    public var `fract_delta`: Bool {
-        get { `get_fractional_delta`() }
-        set { `set_fractional_delta`(newValue) }
-    }
-    public var `local_coords`: Bool {
-        get { `get_use_local_coordinates`() }
-        set { `set_use_local_coordinates`(newValue) }
-    }
-    public var `draw_order`: CPUParticles2D.DrawOrder {
-        get { `get_draw_order`() }
-        set { `set_draw_order`(newValue) }
-    }
-    public var `emission_shape`: CPUParticles2D.EmissionShape {
-        get { `get_emission_shape`() }
-        set { `set_emission_shape`(newValue) }
-    }
-    public var `emission_sphere_radius`: Double {
-        get { `get_emission_sphere_radius`() }
-        set { `set_emission_sphere_radius`(newValue) }
-    }
-    public var `emission_rect_extents`: Vector2 {
-        get { `get_emission_rect_extents`() }
-        set { `set_emission_rect_extents`(newValue) }
-    }
-    public var `emission_points`: GodotPackedVector2Array {
-        get { `get_emission_points`() }
-        set { `set_emission_points`(newValue) }
-    }
-    public var `emission_normals`: GodotPackedVector2Array {
-        get { `get_emission_normals`() }
-        set { `set_emission_normals`(newValue) }
-    }
-    public var `emission_colors`: GodotPackedColorArray {
-        get { `get_emission_colors`() }
-        set { `set_emission_colors`(newValue) }
-    }
-    public var `emission_ring_inner_radius`: Double {
-        get { `get_emission_ring_inner_radius`() }
-        set { `set_emission_ring_inner_radius`(newValue) }
-    }
-    public var `emission_ring_radius`: Double {
-        get { `get_emission_ring_radius`() }
-        set { `set_emission_ring_radius`(newValue) }
-    }
-    public var `particle_flag_align_y`: Bool {
-        get { `get_particle_flag`(0) }
-        set { `set_particle_flag`(0, newValue) }
-    }
-    public var `direction`: Vector2 {
-        get { `get_direction`() }
-        set { `set_direction`(newValue) }
-    }
-    public var `spread`: Double {
-        get { `get_spread`() }
-        set { `set_spread`(newValue) }
-    }
-    public var `gravity`: Vector2 {
-        get { `get_gravity`() }
-        set { `set_gravity`(newValue) }
-    }
-    public var `initial_velocity_min`: Double {
-        get { `get_param_min`(0) }
-        set { `set_param_min`(0, newValue) }
-    }
-    public var `initial_velocity_max`: Double {
-        get { `get_param_max`(0) }
-        set { `set_param_max`(0, newValue) }
-    }
-    public var `angular_velocity_min`: Double {
-        get { `get_param_min`(1) }
-        set { `set_param_min`(1, newValue) }
-    }
-    public var `angular_velocity_max`: Double {
-        get { `get_param_max`(1) }
-        set { `set_param_max`(1, newValue) }
-    }
-    public var `angular_velocity_curve`: Curve? {
-        get { `get_param_curve`(1) }
-        set { `set_param_curve`(1, newValue) }
-    }
-    public var `orbit_velocity_min`: Double {
-        get { `get_param_min`(2) }
-        set { `set_param_min`(2, newValue) }
-    }
-    public var `orbit_velocity_max`: Double {
-        get { `get_param_max`(2) }
-        set { `set_param_max`(2, newValue) }
-    }
-    public var `orbit_velocity_curve`: Curve? {
-        get { `get_param_curve`(2) }
-        set { `set_param_curve`(2, newValue) }
-    }
-    public var `linear_accel_min`: Double {
-        get { `get_param_min`(3) }
-        set { `set_param_min`(3, newValue) }
-    }
-    public var `linear_accel_max`: Double {
-        get { `get_param_max`(3) }
-        set { `set_param_max`(3, newValue) }
-    }
-    public var `linear_accel_curve`: Curve? {
-        get { `get_param_curve`(3) }
-        set { `set_param_curve`(3, newValue) }
-    }
-    public var `radial_accel_min`: Double {
-        get { `get_param_min`(4) }
-        set { `set_param_min`(4, newValue) }
-    }
-    public var `radial_accel_max`: Double {
-        get { `get_param_max`(4) }
-        set { `set_param_max`(4, newValue) }
-    }
-    public var `radial_accel_curve`: Curve? {
-        get { `get_param_curve`(4) }
-        set { `set_param_curve`(4, newValue) }
-    }
-    public var `tangential_accel_min`: Double {
-        get { `get_param_min`(5) }
-        set { `set_param_min`(5, newValue) }
-    }
-    public var `tangential_accel_max`: Double {
-        get { `get_param_max`(5) }
-        set { `set_param_max`(5, newValue) }
-    }
-    public var `tangential_accel_curve`: Curve? {
-        get { `get_param_curve`(5) }
-        set { `set_param_curve`(5, newValue) }
-    }
-    public var `damping_min`: Double {
-        get { `get_param_min`(6) }
-        set { `set_param_min`(6, newValue) }
-    }
-    public var `damping_max`: Double {
-        get { `get_param_max`(6) }
-        set { `set_param_max`(6, newValue) }
-    }
-    public var `damping_curve`: Curve? {
-        get { `get_param_curve`(6) }
-        set { `set_param_curve`(6, newValue) }
-    }
-    public var `angle_min`: Double {
-        get { `get_param_min`(7) }
-        set { `set_param_min`(7, newValue) }
-    }
-    public var `angle_max`: Double {
-        get { `get_param_max`(7) }
-        set { `set_param_max`(7, newValue) }
-    }
-    public var `angle_curve`: Curve? {
-        get { `get_param_curve`(7) }
-        set { `set_param_curve`(7, newValue) }
-    }
-    public var `scale_amount_min`: Double {
-        get { `get_param_min`(8) }
-        set { `set_param_min`(8, newValue) }
-    }
-    public var `scale_amount_max`: Double {
-        get { `get_param_max`(8) }
-        set { `set_param_max`(8, newValue) }
-    }
-    public var `scale_amount_curve`: Curve? {
-        get { `get_param_curve`(8) }
-        set { `set_param_curve`(8, newValue) }
-    }
-    public var `split_scale`: Bool {
-        get { `get_split_scale`() }
-        set { `set_split_scale`(newValue) }
-    }
-    public var `scale_curve_x`: Curve? {
-        get { `get_scale_curve_x`() }
-        set { `set_scale_curve_x`(newValue) }
-    }
-    public var `scale_curve_y`: Curve? {
-        get { `get_scale_curve_y`() }
-        set { `set_scale_curve_y`(newValue) }
-    }
-    public var `color`: Color {
-        get { `get_color`() }
-        set { `set_color`(newValue) }
-    }
-    public var `color_ramp`: Gradient? {
-        get { `get_color_ramp`() }
-        set { `set_color_ramp`(newValue) }
-    }
-    public var `color_initial_ramp`: Gradient? {
-        get { `get_color_initial_ramp`() }
-        set { `set_color_initial_ramp`(newValue) }
-    }
-    public var `hue_variation_min`: Double {
-        get { `get_param_min`(9) }
-        set { `set_param_min`(9, newValue) }
-    }
-    public var `hue_variation_max`: Double {
-        get { `get_param_max`(9) }
-        set { `set_param_max`(9, newValue) }
-    }
-    public var `hue_variation_curve`: Curve? {
-        get { `get_param_curve`(9) }
-        set { `set_param_curve`(9, newValue) }
-    }
-    public var `anim_speed_min`: Double {
-        get { `get_param_min`(10) }
-        set { `set_param_min`(10, newValue) }
-    }
-    public var `anim_speed_max`: Double {
-        get { `get_param_max`(10) }
-        set { `set_param_max`(10, newValue) }
-    }
-    public var `anim_speed_curve`: Curve? {
-        get { `get_param_curve`(10) }
-        set { `set_param_curve`(10, newValue) }
-    }
-    public var `anim_offset_min`: Double {
-        get { `get_param_min`(11) }
-        set { `set_param_min`(11, newValue) }
-    }
-    public var `anim_offset_max`: Double {
-        get { `get_param_max`(11) }
-        set { `set_param_max`(11, newValue) }
-    }
-    public var `anim_offset_curve`: Curve? {
-        get { `get_param_curve`(11) }
-        set { `set_param_curve`(11, newValue) }
-    }
-}
-extension CPUParticles3D {
-    public var `emitting`: Bool {
-        get { `is_emitting`() }
-        set { `set_emitting`(newValue) }
-    }
-    public var `amount`: Int64 {
-        get { `get_amount`() }
-        set { `set_amount`(newValue) }
-    }
-    public var `lifetime`: Double {
-        get { `get_lifetime`() }
-        set { `set_lifetime`(newValue) }
-    }
-    public var `one_shot`: Bool {
-        get { `get_one_shot`() }
-        set { `set_one_shot`(newValue) }
-    }
-    public var `preprocess`: Double {
-        get { `get_pre_process_time`() }
-        set { `set_pre_process_time`(newValue) }
-    }
-    public var `speed_scale`: Double {
-        get { `get_speed_scale`() }
-        set { `set_speed_scale`(newValue) }
-    }
-    public var `explosiveness`: Double {
-        get { `get_explosiveness_ratio`() }
-        set { `set_explosiveness_ratio`(newValue) }
-    }
-    public var `randomness`: Double {
-        get { `get_randomness_ratio`() }
-        set { `set_randomness_ratio`(newValue) }
-    }
-    public var `use_fixed_seed`: Bool {
-        get { `get_use_fixed_seed`() }
-        set { `set_use_fixed_seed`(newValue) }
-    }
-    public var `seed`: Int64 {
-        get { `get_seed`() }
-        set { `set_seed`(newValue) }
-    }
-    public var `lifetime_randomness`: Double {
-        get { `get_lifetime_randomness`() }
-        set { `set_lifetime_randomness`(newValue) }
-    }
-    public var `fixed_fps`: Int64 {
-        get { `get_fixed_fps`() }
-        set { `set_fixed_fps`(newValue) }
-    }
-    public var `fract_delta`: Bool {
-        get { `get_fractional_delta`() }
-        set { `set_fractional_delta`(newValue) }
-    }
-    public var `visibility_aabb`: AABB {
-        get { `get_visibility_aabb`() }
-        set { `set_visibility_aabb`(newValue) }
-    }
-    public var `local_coords`: Bool {
-        get { `get_use_local_coordinates`() }
-        set { `set_use_local_coordinates`(newValue) }
-    }
-    public var `draw_order`: CPUParticles3D.DrawOrder {
-        get { `get_draw_order`() }
-        set { `set_draw_order`(newValue) }
-    }
-    public var `emission_shape`: CPUParticles3D.EmissionShape {
-        get { `get_emission_shape`() }
-        set { `set_emission_shape`(newValue) }
-    }
-    public var `emission_sphere_radius`: Double {
-        get { `get_emission_sphere_radius`() }
-        set { `set_emission_sphere_radius`(newValue) }
-    }
-    public var `emission_box_extents`: Vector3 {
-        get { `get_emission_box_extents`() }
-        set { `set_emission_box_extents`(newValue) }
-    }
-    public var `emission_points`: GodotPackedVector3Array {
-        get { `get_emission_points`() }
-        set { `set_emission_points`(newValue) }
-    }
-    public var `emission_normals`: GodotPackedVector3Array {
-        get { `get_emission_normals`() }
-        set { `set_emission_normals`(newValue) }
-    }
-    public var `emission_colors`: GodotPackedColorArray {
-        get { `get_emission_colors`() }
-        set { `set_emission_colors`(newValue) }
-    }
-    public var `emission_ring_axis`: Vector3 {
-        get { `get_emission_ring_axis`() }
-        set { `set_emission_ring_axis`(newValue) }
-    }
-    public var `emission_ring_height`: Double {
-        get { `get_emission_ring_height`() }
-        set { `set_emission_ring_height`(newValue) }
-    }
-    public var `emission_ring_radius`: Double {
-        get { `get_emission_ring_radius`() }
-        set { `set_emission_ring_radius`(newValue) }
-    }
-    public var `emission_ring_inner_radius`: Double {
-        get { `get_emission_ring_inner_radius`() }
-        set { `set_emission_ring_inner_radius`(newValue) }
-    }
-    public var `emission_ring_cone_angle`: Double {
-        get { `get_emission_ring_cone_angle`() }
-        set { `set_emission_ring_cone_angle`(newValue) }
-    }
-    public var `particle_flag_align_y`: Bool {
-        get { `get_particle_flag`(0) }
-        set { `set_particle_flag`(0, newValue) }
-    }
-    public var `particle_flag_rotate_y`: Bool {
-        get { `get_particle_flag`(1) }
-        set { `set_particle_flag`(1, newValue) }
-    }
-    public var `particle_flag_disable_z`: Bool {
-        get { `get_particle_flag`(2) }
-        set { `set_particle_flag`(2, newValue) }
-    }
-    public var `direction`: Vector3 {
-        get { `get_direction`() }
-        set { `set_direction`(newValue) }
-    }
-    public var `spread`: Double {
-        get { `get_spread`() }
-        set { `set_spread`(newValue) }
-    }
-    public var `flatness`: Double {
-        get { `get_flatness`() }
-        set { `set_flatness`(newValue) }
-    }
-    public var `gravity`: Vector3 {
-        get { `get_gravity`() }
-        set { `set_gravity`(newValue) }
-    }
-    public var `initial_velocity_min`: Double {
-        get { `get_param_min`(0) }
-        set { `set_param_min`(0, newValue) }
-    }
-    public var `initial_velocity_max`: Double {
-        get { `get_param_max`(0) }
-        set { `set_param_max`(0, newValue) }
-    }
-    public var `angular_velocity_min`: Double {
-        get { `get_param_min`(1) }
-        set { `set_param_min`(1, newValue) }
-    }
-    public var `angular_velocity_max`: Double {
-        get { `get_param_max`(1) }
-        set { `set_param_max`(1, newValue) }
-    }
-    public var `angular_velocity_curve`: Curve? {
-        get { `get_param_curve`(1) }
-        set { `set_param_curve`(1, newValue) }
-    }
-    public var `orbit_velocity_min`: Double {
-        get { `get_param_min`(2) }
-        set { `set_param_min`(2, newValue) }
-    }
-    public var `orbit_velocity_max`: Double {
-        get { `get_param_max`(2) }
-        set { `set_param_max`(2, newValue) }
-    }
-    public var `orbit_velocity_curve`: Curve? {
-        get { `get_param_curve`(2) }
-        set { `set_param_curve`(2, newValue) }
-    }
-    public var `linear_accel_min`: Double {
-        get { `get_param_min`(3) }
-        set { `set_param_min`(3, newValue) }
-    }
-    public var `linear_accel_max`: Double {
-        get { `get_param_max`(3) }
-        set { `set_param_max`(3, newValue) }
-    }
-    public var `linear_accel_curve`: Curve? {
-        get { `get_param_curve`(3) }
-        set { `set_param_curve`(3, newValue) }
-    }
-    public var `radial_accel_min`: Double {
-        get { `get_param_min`(4) }
-        set { `set_param_min`(4, newValue) }
-    }
-    public var `radial_accel_max`: Double {
-        get { `get_param_max`(4) }
-        set { `set_param_max`(4, newValue) }
-    }
-    public var `radial_accel_curve`: Curve? {
-        get { `get_param_curve`(4) }
-        set { `set_param_curve`(4, newValue) }
-    }
-    public var `tangential_accel_min`: Double {
-        get { `get_param_min`(5) }
-        set { `set_param_min`(5, newValue) }
-    }
-    public var `tangential_accel_max`: Double {
-        get { `get_param_max`(5) }
-        set { `set_param_max`(5, newValue) }
-    }
-    public var `tangential_accel_curve`: Curve? {
-        get { `get_param_curve`(5) }
-        set { `set_param_curve`(5, newValue) }
-    }
-    public var `damping_min`: Double {
-        get { `get_param_min`(6) }
-        set { `set_param_min`(6, newValue) }
-    }
-    public var `damping_max`: Double {
-        get { `get_param_max`(6) }
-        set { `set_param_max`(6, newValue) }
-    }
-    public var `damping_curve`: Curve? {
-        get { `get_param_curve`(6) }
-        set { `set_param_curve`(6, newValue) }
-    }
-    public var `angle_min`: Double {
-        get { `get_param_min`(7) }
-        set { `set_param_min`(7, newValue) }
-    }
-    public var `angle_max`: Double {
-        get { `get_param_max`(7) }
-        set { `set_param_max`(7, newValue) }
-    }
-    public var `angle_curve`: Curve? {
-        get { `get_param_curve`(7) }
-        set { `set_param_curve`(7, newValue) }
-    }
-    public var `scale_amount_min`: Double {
-        get { `get_param_min`(8) }
-        set { `set_param_min`(8, newValue) }
-    }
-    public var `scale_amount_max`: Double {
-        get { `get_param_max`(8) }
-        set { `set_param_max`(8, newValue) }
-    }
-    public var `scale_amount_curve`: Curve? {
-        get { `get_param_curve`(8) }
-        set { `set_param_curve`(8, newValue) }
-    }
-    public var `split_scale`: Bool {
-        get { `get_split_scale`() }
-        set { `set_split_scale`(newValue) }
-    }
-    public var `scale_curve_x`: Curve? {
-        get { `get_scale_curve_x`() }
-        set { `set_scale_curve_x`(newValue) }
-    }
-    public var `scale_curve_y`: Curve? {
-        get { `get_scale_curve_y`() }
-        set { `set_scale_curve_y`(newValue) }
-    }
-    public var `scale_curve_z`: Curve? {
-        get { `get_scale_curve_z`() }
-        set { `set_scale_curve_z`(newValue) }
-    }
-    public var `color`: Color {
-        get { `get_color`() }
-        set { `set_color`(newValue) }
-    }
-    public var `color_ramp`: Gradient? {
-        get { `get_color_ramp`() }
-        set { `set_color_ramp`(newValue) }
-    }
-    public var `color_initial_ramp`: Gradient? {
-        get { `get_color_initial_ramp`() }
-        set { `set_color_initial_ramp`(newValue) }
-    }
-    public var `hue_variation_min`: Double {
-        get { `get_param_min`(9) }
-        set { `set_param_min`(9, newValue) }
-    }
-    public var `hue_variation_max`: Double {
-        get { `get_param_max`(9) }
-        set { `set_param_max`(9, newValue) }
-    }
-    public var `hue_variation_curve`: Curve? {
-        get { `get_param_curve`(9) }
-        set { `set_param_curve`(9, newValue) }
-    }
-    public var `anim_speed_min`: Double {
-        get { `get_param_min`(10) }
-        set { `set_param_min`(10, newValue) }
-    }
-    public var `anim_speed_max`: Double {
-        get { `get_param_max`(10) }
-        set { `set_param_max`(10, newValue) }
-    }
-    public var `anim_speed_curve`: Curve? {
-        get { `get_param_curve`(10) }
-        set { `set_param_curve`(10, newValue) }
-    }
-    public var `anim_offset_min`: Double {
-        get { `get_param_min`(11) }
-        set { `set_param_min`(11, newValue) }
-    }
-    public var `anim_offset_max`: Double {
-        get { `get_param_max`(11) }
-        set { `set_param_max`(11, newValue) }
-    }
-    public var `anim_offset_curve`: Curve? {
-        get { `get_param_curve`(11) }
-        set { `set_param_curve`(11, newValue) }
-    }
-}
-extension CSGBox3D {
-    public var `size`: Vector3 {
-        get { `get_size`() }
-        set { `set_size`(newValue) }
-    }
-}
-extension CSGCylinder3D {
-    public var `radius`: Double {
-        get { `get_radius`() }
-        set { `set_radius`(newValue) }
-    }
-    public var `height`: Double {
-        get { `get_height`() }
-        set { `set_height`(newValue) }
-    }
-    public var `sides`: Int64 {
-        get { `get_sides`() }
-        set { `set_sides`(newValue) }
-    }
-    public var `cone`: Bool {
-        get { `is_cone`() }
-        set { `set_cone`(newValue) }
-    }
-    public var `smooth_faces`: Bool {
-        get { `get_smooth_faces`() }
-        set { `set_smooth_faces`(newValue) }
-    }
-}
-extension CSGPolygon3D {
-    public var `polygon`: GodotPackedVector2Array {
-        get { `get_polygon`() }
-        set { `set_polygon`(newValue) }
-    }
-    public var `mode`: CSGPolygon3D.Mode {
-        get { `get_mode`() }
-        set { `set_mode`(newValue) }
-    }
-    public var `depth`: Double {
-        get { `get_depth`() }
-        set { `set_depth`(newValue) }
-    }
-    public var `spin_degrees`: Double {
-        get { `get_spin_degrees`() }
-        set { `set_spin_degrees`(newValue) }
-    }
-    public var `spin_sides`: Int64 {
-        get { `get_spin_sides`() }
-        set { `set_spin_sides`(newValue) }
-    }
-    public var `path_node`: GodotNodePath {
-        get { `get_path_node`() }
-        set { `set_path_node`(newValue) }
-    }
-    public var `path_interval_type`: CSGPolygon3D.PathIntervalType {
-        get { `get_path_interval_type`() }
-        set { `set_path_interval_type`(newValue) }
-    }
-    public var `path_interval`: Double {
-        get { `get_path_interval`() }
-        set { `set_path_interval`(newValue) }
-    }
-    public var `path_simplify_angle`: Double {
-        get { `get_path_simplify_angle`() }
-        set { `set_path_simplify_angle`(newValue) }
-    }
-    public var `path_rotation`: CSGPolygon3D.PathRotation {
-        get { `get_path_rotation`() }
-        set { `set_path_rotation`(newValue) }
-    }
-    public var `path_rotation_accurate`: Bool {
-        get { `get_path_rotation_accurate`() }
-        set { `set_path_rotation_accurate`(newValue) }
-    }
-    public var `path_local`: Bool {
-        get { `is_path_local`() }
-        set { `set_path_local`(newValue) }
-    }
-    public var `path_continuous_u`: Bool {
-        get { `is_path_continuous_u`() }
-        set { `set_path_continuous_u`(newValue) }
-    }
-    public var `path_u_distance`: Double {
-        get { `get_path_u_distance`() }
-        set { `set_path_u_distance`(newValue) }
-    }
-    public var `path_joined`: Bool {
-        get { `is_path_joined`() }
-        set { `set_path_joined`(newValue) }
-    }
-    public var `smooth_faces`: Bool {
-        get { `get_smooth_faces`() }
-        set { `set_smooth_faces`(newValue) }
-    }
-}
-extension CSGPrimitive3D {
-    public var `flip_faces`: Bool {
-        get { `get_flip_faces`() }
-        set { `set_flip_faces`(newValue) }
-    }
-}
-extension CSGShape3D {
-    public var `autosmooth`: Bool {
-        get { `is_autosmooth`() }
-        set { `set_autosmooth`(newValue) }
-    }
-    public var `smoothing_angle`: Double {
-        get { `get_smoothing_angle`() }
-        set { `set_smoothing_angle`(newValue) }
-    }
-    public var `operation`: CSGShape3D.Operation {
-        get { `get_operation`() }
-        set { `set_operation`(newValue) }
-    }
-    public var `snap`: Double {
-        get { `get_snap`() }
-        set { `set_snap`(newValue) }
-    }
-    public var `calculate_tangents`: Bool {
-        get { `is_calculating_tangents`() }
-        set { `set_calculate_tangents`(newValue) }
-    }
-    public var `use_collision`: Bool {
-        get { `is_using_collision`() }
-        set { `set_use_collision`(newValue) }
-    }
-    public var `collision_layer`: Int64 {
-        get { `get_collision_layer`() }
-        set { `set_collision_layer`(newValue) }
-    }
-    public var `collision_mask`: Int64 {
-        get { `get_collision_mask`() }
-        set { `set_collision_mask`(newValue) }
-    }
-    public var `collision_priority`: Double {
-        get { `get_collision_priority`() }
-        set { `set_collision_priority`(newValue) }
-    }
-}
-extension CSGSphere3D {
-    public var `radius`: Double {
-        get { `get_radius`() }
-        set { `set_radius`(newValue) }
-    }
-    public var `radial_segments`: Int64 {
-        get { `get_radial_segments`() }
-        set { `set_radial_segments`(newValue) }
-    }
-    public var `rings`: Int64 {
-        get { `get_rings`() }
-        set { `set_rings`(newValue) }
-    }
-    public var `smooth_faces`: Bool {
-        get { `get_smooth_faces`() }
-        set { `set_smooth_faces`(newValue) }
-    }
-}
-extension CSGTorus3D {
-    public var `inner_radius`: Double {
-        get { `get_inner_radius`() }
-        set { `set_inner_radius`(newValue) }
-    }
-    public var `outer_radius`: Double {
-        get { `get_outer_radius`() }
-        set { `set_outer_radius`(newValue) }
-    }
-    public var `sides`: Int64 {
-        get { `get_sides`() }
-        set { `set_sides`(newValue) }
-    }
-    public var `ring_sides`: Int64 {
-        get { `get_ring_sides`() }
-        set { `set_ring_sides`(newValue) }
-    }
-    public var `smooth_faces`: Bool {
-        get { `get_smooth_faces`() }
-        set { `set_smooth_faces`(newValue) }
-    }
-}
-extension Camera2D {
-    public var `offset`: Vector2 {
-        get { `get_offset`() }
-        set { `set_offset`(newValue) }
-    }
-    public var `anchor_mode`: Camera2D.AnchorMode {
-        get { `get_anchor_mode`() }
-        set { `set_anchor_mode`(newValue) }
-    }
-    public var `ignore_rotation`: Bool {
-        get { `is_ignoring_rotation`() }
-        set { `set_ignore_rotation`(newValue) }
-    }
-    public var `enabled`: Bool {
-        get { `is_enabled`() }
-        set { `set_enabled`(newValue) }
-    }
-    public var `zoom`: Vector2 {
-        get { `get_zoom`() }
-        set { `set_zoom`(newValue) }
-    }
-    public var `process_callback`: Camera2D.Camera2DProcessCallback {
-        get { `get_process_callback`() }
-        set { `set_process_callback`(newValue) }
-    }
-    public var `limit_enabled`: Bool {
-        get { `is_limit_enabled`() }
-        set { `set_limit_enabled`(newValue) }
-    }
-    public var `limit_left`: Int64 {
-        get { `get_limit`(0) }
-        set { `set_limit`(0, newValue) }
-    }
-    public var `limit_top`: Int64 {
-        get { `get_limit`(1) }
-        set { `set_limit`(1, newValue) }
-    }
-    public var `limit_right`: Int64 {
-        get { `get_limit`(2) }
-        set { `set_limit`(2, newValue) }
-    }
-    public var `limit_bottom`: Int64 {
-        get { `get_limit`(3) }
-        set { `set_limit`(3, newValue) }
-    }
-    public var `limit_smoothed`: Bool {
-        get { `is_limit_smoothing_enabled`() }
-        set { `set_limit_smoothing_enabled`(newValue) }
-    }
-    public var `position_smoothing_enabled`: Bool {
-        get { `is_position_smoothing_enabled`() }
-        set { `set_position_smoothing_enabled`(newValue) }
-    }
-    public var `position_smoothing_speed`: Double {
-        get { `get_position_smoothing_speed`() }
-        set { `set_position_smoothing_speed`(newValue) }
-    }
-    public var `rotation_smoothing_enabled`: Bool {
-        get { `is_rotation_smoothing_enabled`() }
-        set { `set_rotation_smoothing_enabled`(newValue) }
-    }
-    public var `rotation_smoothing_speed`: Double {
-        get { `get_rotation_smoothing_speed`() }
-        set { `set_rotation_smoothing_speed`(newValue) }
-    }
-    public var `drag_horizontal_enabled`: Bool {
-        get { `is_drag_horizontal_enabled`() }
-        set { `set_drag_horizontal_enabled`(newValue) }
-    }
-    public var `drag_vertical_enabled`: Bool {
-        get { `is_drag_vertical_enabled`() }
-        set { `set_drag_vertical_enabled`(newValue) }
-    }
-    public var `drag_horizontal_offset`: Double {
-        get { `get_drag_horizontal_offset`() }
-        set { `set_drag_horizontal_offset`(newValue) }
-    }
-    public var `drag_vertical_offset`: Double {
-        get { `get_drag_vertical_offset`() }
-        set { `set_drag_vertical_offset`(newValue) }
-    }
-    public var `drag_left_margin`: Double {
-        get { `get_drag_margin`(0) }
-        set { `set_drag_margin`(0, newValue) }
-    }
-    public var `drag_top_margin`: Double {
-        get { `get_drag_margin`(1) }
-        set { `set_drag_margin`(1, newValue) }
-    }
-    public var `drag_right_margin`: Double {
-        get { `get_drag_margin`(2) }
-        set { `set_drag_margin`(2, newValue) }
-    }
-    public var `drag_bottom_margin`: Double {
-        get { `get_drag_margin`(3) }
-        set { `set_drag_margin`(3, newValue) }
-    }
-    public var `editor_draw_screen`: Bool {
-        get { `is_screen_drawing_enabled`() }
-        set { `set_screen_drawing_enabled`(newValue) }
-    }
-    public var `editor_draw_limits`: Bool {
-        get { `is_limit_drawing_enabled`() }
-        set { `set_limit_drawing_enabled`(newValue) }
-    }
-    public var `editor_draw_drag_margin`: Bool {
-        get { `is_margin_drawing_enabled`() }
-        set { `set_margin_drawing_enabled`(newValue) }
-    }
-}
-extension Camera3D {
-    public var `keep_aspect`: Camera3D.KeepAspect {
-        get { `get_keep_aspect_mode`() }
-        set { `set_keep_aspect_mode`(newValue) }
-    }
-    public var `cull_mask`: Int64 {
-        get { `get_cull_mask`() }
-        set { `set_cull_mask`(newValue) }
-    }
-    public var `environment`: Environment? {
-        get { `get_environment`() }
-        set { `set_environment`(newValue) }
-    }
-    public var `compositor`: Compositor? {
-        get { `get_compositor`() }
-        set { `set_compositor`(newValue) }
-    }
-    public var `h_offset`: Double {
-        get { `get_h_offset`() }
-        set { `set_h_offset`(newValue) }
-    }
-    public var `v_offset`: Double {
-        get { `get_v_offset`() }
-        set { `set_v_offset`(newValue) }
-    }
-    public var `doppler_tracking`: Camera3D.DopplerTracking {
-        get { `get_doppler_tracking`() }
-        set { `set_doppler_tracking`(newValue) }
-    }
-    public var `projection`: Camera3D.ProjectionType {
-        get { `get_projection`() }
-        set { `set_projection`(newValue) }
-    }
-    public var `current`: Bool {
-        get { `is_current`() }
-        set { `set_current`(newValue) }
-    }
-    public var `fov`: Double {
-        get { `get_fov`() }
-        set { `set_fov`(newValue) }
-    }
-    public var `size`: Double {
-        get { `get_size`() }
-        set { `set_size`(newValue) }
-    }
-    public var `frustum_offset`: Vector2 {
-        get { `get_frustum_offset`() }
-        set { `set_frustum_offset`(newValue) }
-    }
-    public var `near`: Double {
-        get { `get_near`() }
-        set { `set_near`(newValue) }
-    }
-    public var `far`: Double {
-        get { `get_far`() }
-        set { `set_far`(newValue) }
-    }
-}
-extension CameraAttributes {
-    public var `exposure_sensitivity`: Double {
-        get { `get_exposure_sensitivity`() }
-        set { `set_exposure_sensitivity`(newValue) }
-    }
-    public var `exposure_multiplier`: Double {
-        get { `get_exposure_multiplier`() }
-        set { `set_exposure_multiplier`(newValue) }
-    }
-    public var `auto_exposure_enabled`: Bool {
-        get { `is_auto_exposure_enabled`() }
-        set { `set_auto_exposure_enabled`(newValue) }
-    }
-    public var `auto_exposure_scale`: Double {
-        get { `get_auto_exposure_scale`() }
-        set { `set_auto_exposure_scale`(newValue) }
-    }
-    public var `auto_exposure_speed`: Double {
-        get { `get_auto_exposure_speed`() }
-        set { `set_auto_exposure_speed`(newValue) }
-    }
-}
-extension CameraAttributesPhysical {
-    public var `frustum_focus_distance`: Double {
-        get { `get_focus_distance`() }
-        set { `set_focus_distance`(newValue) }
-    }
-    public var `frustum_focal_length`: Double {
-        get { `get_focal_length`() }
-        set { `set_focal_length`(newValue) }
-    }
-    public var `frustum_near`: Double {
-        get { `get_near`() }
-        set { `set_near`(newValue) }
-    }
-    public var `frustum_far`: Double {
-        get { `get_far`() }
-        set { `set_far`(newValue) }
-    }
-    public var `exposure_aperture`: Double {
-        get { `get_aperture`() }
-        set { `set_aperture`(newValue) }
-    }
-    public var `exposure_shutter_speed`: Double {
-        get { `get_shutter_speed`() }
-        set { `set_shutter_speed`(newValue) }
-    }
-    public var `auto_exposure_min_exposure_value`: Double {
-        get { `get_auto_exposure_min_exposure_value`() }
-        set { `set_auto_exposure_min_exposure_value`(newValue) }
-    }
-    public var `auto_exposure_max_exposure_value`: Double {
-        get { `get_auto_exposure_max_exposure_value`() }
-        set { `set_auto_exposure_max_exposure_value`(newValue) }
-    }
-}
-extension CameraAttributesPractical {
-    public var `dof_blur_far_enabled`: Bool {
-        get { `is_dof_blur_far_enabled`() }
-        set { `set_dof_blur_far_enabled`(newValue) }
-    }
-    public var `dof_blur_far_distance`: Double {
-        get { `get_dof_blur_far_distance`() }
-        set { `set_dof_blur_far_distance`(newValue) }
-    }
-    public var `dof_blur_far_transition`: Double {
-        get { `get_dof_blur_far_transition`() }
-        set { `set_dof_blur_far_transition`(newValue) }
-    }
-    public var `dof_blur_near_enabled`: Bool {
-        get { `is_dof_blur_near_enabled`() }
-        set { `set_dof_blur_near_enabled`(newValue) }
-    }
-    public var `dof_blur_near_distance`: Double {
-        get { `get_dof_blur_near_distance`() }
-        set { `set_dof_blur_near_distance`(newValue) }
-    }
-    public var `dof_blur_near_transition`: Double {
-        get { `get_dof_blur_near_transition`() }
-        set { `set_dof_blur_near_transition`(newValue) }
-    }
-    public var `dof_blur_amount`: Double {
-        get { `get_dof_blur_amount`() }
-        set { `set_dof_blur_amount`(newValue) }
-    }
-    public var `auto_exposure_min_sensitivity`: Double {
-        get { `get_auto_exposure_min_sensitivity`() }
-        set { `set_auto_exposure_min_sensitivity`(newValue) }
-    }
-    public var `auto_exposure_max_sensitivity`: Double {
-        get { `get_auto_exposure_max_sensitivity`() }
-        set { `set_auto_exposure_max_sensitivity`(newValue) }
-    }
-}
-extension CameraFeed {
-    public var `feed_is_active`: Bool {
-        get { `is_active`() }
-        set { `set_active`(newValue) }
-    }
-    public var `feed_transform`: Transform2D {
-        get { `get_transform`() }
-        set { `set_transform`(newValue) }
-    }
-    public var `formats`: GodotArray {
-        get { `get_formats`() }
-    }
-}
-extension CameraServer {
-    public var `monitoring_feeds`: Bool {
-        get { `is_monitoring_feeds`() }
-        set { `set_monitoring_feeds`(newValue) }
-    }
-}
-extension CameraTexture {
-    public var `camera_feed_id`: Int64 {
-        get { `get_camera_feed_id`() }
-        set { `set_camera_feed_id`(newValue) }
-    }
-    public var `which_feed`: CameraServer.FeedImage {
-        get { `get_which_feed`() }
-        set { `set_which_feed`(newValue) }
-    }
-    public var `camera_is_active`: Bool {
-        get { `get_camera_active`() }
-        set { `set_camera_active`(newValue) }
-    }
-}
-extension CanvasGroup {
-    public var `fit_margin`: Double {
-        get { `get_fit_margin`() }
-        set { `set_fit_margin`(newValue) }
-    }
-    public var `clear_margin`: Double {
-        get { `get_clear_margin`() }
-        set { `set_clear_margin`(newValue) }
-    }
-    public var `use_mipmaps`: Bool {
-        get { `is_using_mipmaps`() }
-        set { `set_use_mipmaps`(newValue) }
-    }
-}
-extension CanvasItem {
-    public var `visible`: Bool {
-        get { `is_visible`() }
-        set { `set_visible`(newValue) }
-    }
-    public var `modulate`: Color {
-        get { `get_modulate`() }
-        set { `set_modulate`(newValue) }
-    }
-    public var `self_modulate`: Color {
-        get { `get_self_modulate`() }
-        set { `set_self_modulate`(newValue) }
-    }
-    public var `show_behind_parent`: Bool {
-        get { `is_draw_behind_parent_enabled`() }
-        set { `set_draw_behind_parent`(newValue) }
-    }
-    public var `top_level`: Bool {
-        get { `is_set_as_top_level`() }
-        set { `set_as_top_level`(newValue) }
-    }
-    public var `clip_children`: CanvasItem.ClipChildrenMode {
-        get { `get_clip_children_mode`() }
-        set { `set_clip_children_mode`(newValue) }
-    }
-    public var `oversampling_with_scale`: CanvasItem.OversamplingWithScale {
-        get { `get_oversampling_with_scale`() }
-        set { `set_oversampling_with_scale`(newValue) }
-    }
-    public var `light_mask`: Int64 {
-        get { `get_light_mask`() }
-        set { `set_light_mask`(newValue) }
-    }
-    public var `visibility_layer`: Int64 {
-        get { `get_visibility_layer`() }
-        set { `set_visibility_layer`(newValue) }
-    }
-    public var `z_index`: Int64 {
-        get { `get_z_index`() }
-        set { `set_z_index`(newValue) }
-    }
-    public var `z_as_relative`: Bool {
-        get { `is_z_relative`() }
-        set { `set_z_as_relative`(newValue) }
-    }
-    public var `y_sort_enabled`: Bool {
-        get { `is_y_sort_enabled`() }
-        set { `set_y_sort_enabled`(newValue) }
-    }
-    public var `texture_filter`: CanvasItem.TextureFilter {
-        get { `get_texture_filter`() }
-        set { `set_texture_filter`(newValue) }
-    }
-    public var `texture_repeat`: CanvasItem.TextureRepeat {
-        get { `get_texture_repeat`() }
-        set { `set_texture_repeat`(newValue) }
-    }
-    public var `use_parent_material`: Bool {
-        get { `get_use_parent_material`() }
-        set { `set_use_parent_material`(newValue) }
-    }
-}
-extension CanvasItemMaterial {
-    public var `blend_mode`: CanvasItemMaterial.BlendMode {
-        get { `get_blend_mode`() }
-        set { `set_blend_mode`(newValue) }
-    }
-    public var `light_mode`: CanvasItemMaterial.LightMode {
-        get { `get_light_mode`() }
-        set { `set_light_mode`(newValue) }
-    }
-    public var `particles_animation`: Bool {
-        get { `get_particles_animation`() }
-        set { `set_particles_animation`(newValue) }
-    }
-    public var `particles_anim_h_frames`: Int64 {
-        get { `get_particles_anim_h_frames`() }
-        set { `set_particles_anim_h_frames`(newValue) }
-    }
-    public var `particles_anim_v_frames`: Int64 {
-        get { `get_particles_anim_v_frames`() }
-        set { `set_particles_anim_v_frames`(newValue) }
-    }
-    public var `particles_anim_loop`: Bool {
-        get { `get_particles_anim_loop`() }
-        set { `set_particles_anim_loop`(newValue) }
-    }
-}
-extension CanvasLayer {
-    public var `layer`: Int64 {
-        get { `get_layer`() }
-        set { `set_layer`(newValue) }
-    }
-    public var `visible`: Bool {
-        get { `is_visible`() }
-        set { `set_visible`(newValue) }
-    }
-    public var `offset`: Vector2 {
-        get { `get_offset`() }
-        set { `set_offset`(newValue) }
-    }
-    public var `rotation`: Double {
-        get { `get_rotation`() }
-        set { `set_rotation`(newValue) }
-    }
-    public var `scale`: Vector2 {
-        get { `get_scale`() }
-        set { `set_scale`(newValue) }
-    }
-    public var `transform`: Transform2D {
-        get { `get_transform`() }
-        set { `set_transform`(newValue) }
-    }
-    public var `follow_viewport_enabled`: Bool {
-        get { `is_following_viewport`() }
-        set { `set_follow_viewport`(newValue) }
-    }
-    public var `follow_viewport_scale`: Double {
-        get { `get_follow_viewport_scale`() }
-        set { `set_follow_viewport_scale`(newValue) }
-    }
-}
-extension CanvasModulate {
-    public var `color`: Color {
-        get { `get_color`() }
-        set { `set_color`(newValue) }
-    }
-}
-extension CanvasTexture {
-    public var `diffuse_texture`: Texture2D? {
-        get { `get_diffuse_texture`() }
-        set { `set_diffuse_texture`(newValue) }
-    }
-    public var `normal_texture`: Texture2D? {
-        get { `get_normal_texture`() }
-        set { `set_normal_texture`(newValue) }
-    }
-    public var `specular_texture`: Texture2D? {
-        get { `get_specular_texture`() }
-        set { `set_specular_texture`(newValue) }
-    }
-    public var `specular_color`: Color {
-        get { `get_specular_color`() }
-        set { `set_specular_color`(newValue) }
-    }
-    public var `specular_shininess`: Double {
-        get { `get_specular_shininess`() }
-        set { `set_specular_shininess`(newValue) }
-    }
-    public var `texture_filter`: CanvasItem.TextureFilter {
-        get { `get_texture_filter`() }
-        set { `set_texture_filter`(newValue) }
-    }
-    public var `texture_repeat`: CanvasItem.TextureRepeat {
-        get { `get_texture_repeat`() }
-        set { `set_texture_repeat`(newValue) }
-    }
-}
-extension CapsuleMesh {
-    public var `radius`: Double {
-        get { `get_radius`() }
-        set { `set_radius`(newValue) }
-    }
-    public var `height`: Double {
-        get { `get_height`() }
-        set { `set_height`(newValue) }
-    }
-    public var `radial_segments`: Int64 {
-        get { `get_radial_segments`() }
-        set { `set_radial_segments`(newValue) }
-    }
-    public var `rings`: Int64 {
-        get { `get_rings`() }
-        set { `set_rings`(newValue) }
-    }
-}
-extension CapsuleShape2D {
-    public var `radius`: Double {
-        get { `get_radius`() }
-        set { `set_radius`(newValue) }
-    }
-    public var `height`: Double {
-        get { `get_height`() }
-        set { `set_height`(newValue) }
-    }
-    public var `mid_height`: Double {
-        get { `get_mid_height`() }
-        set { `set_mid_height`(newValue) }
-    }
-}
-extension CapsuleShape3D {
-    public var `radius`: Double {
-        get { `get_radius`() }
-        set { `set_radius`(newValue) }
-    }
-    public var `height`: Double {
-        get { `get_height`() }
-        set { `set_height`(newValue) }
-    }
-    public var `mid_height`: Double {
-        get { `get_mid_height`() }
-        set { `set_mid_height`(newValue) }
-    }
-}
-extension CenterContainer {
-    public var `use_top_left`: Bool {
-        get { `is_using_top_left`() }
-        set { `set_use_top_left`(newValue) }
-    }
-}
-extension CharFXTransform {
-    public var `transform`: Transform2D {
-        get { `get_transform`() }
-        set { `set_transform`(newValue) }
-    }
-    public var `range`: Vector2i {
-        get { `get_range`() }
-        set { `set_range`(newValue) }
-    }
-    public var `elapsed_time`: Double {
-        get { `get_elapsed_time`() }
-        set { `set_elapsed_time`(newValue) }
-    }
-    public var `visible`: Bool {
-        get { `is_visible`() }
-        set { `set_visibility`(newValue) }
-    }
-    public var `outline`: Bool {
-        get { `is_outline`() }
-        set { `set_outline`(newValue) }
-    }
-    public var `offset`: Vector2 {
-        get { `get_offset`() }
-        set { `set_offset`(newValue) }
-    }
-    public var `color`: Color {
-        get { `get_color`() }
-        set { `set_color`(newValue) }
-    }
-    public var `env`: GodotDictionary {
-        get { `get_environment`() }
-        set { `set_environment`(newValue) }
-    }
-    public var `glyph_index`: Int64 {
-        get { `get_glyph_index`() }
-        set { `set_glyph_index`(newValue) }
-    }
-    public var `glyph_count`: Int64 {
-        get { `get_glyph_count`() }
-        set { `set_glyph_count`(newValue) }
-    }
-    public var `glyph_flags`: Int64 {
-        get { `get_glyph_flags`() }
-        set { `set_glyph_flags`(newValue) }
-    }
-    public var `relative_index`: Int64 {
-        get { `get_relative_index`() }
-        set { `set_relative_index`(newValue) }
-    }
-    public var `font`: GodotRID {
-        get { `get_font`() }
-        set { `set_font`(newValue) }
-    }
-}
-extension CharacterBody2D {
-    public var `motion_mode`: CharacterBody2D.MotionMode {
-        get { `get_motion_mode`() }
-        set { `set_motion_mode`(newValue) }
-    }
-    public var `up_direction`: Vector2 {
-        get { `get_up_direction`() }
-        set { `set_up_direction`(newValue) }
-    }
-    public var `velocity`: Vector2 {
-        get { `get_velocity`() }
-        set { `set_velocity`(newValue) }
-    }
-    public var `slide_on_ceiling`: Bool {
-        get { `is_slide_on_ceiling_enabled`() }
-        set { `set_slide_on_ceiling_enabled`(newValue) }
-    }
-    public var `max_slides`: Int64 {
-        get { `get_max_slides`() }
-        set { `set_max_slides`(newValue) }
-    }
-    public var `wall_min_slide_angle`: Double {
-        get { `get_wall_min_slide_angle`() }
-        set { `set_wall_min_slide_angle`(newValue) }
-    }
-    public var `floor_stop_on_slope`: Bool {
-        get { `is_floor_stop_on_slope_enabled`() }
-        set { `set_floor_stop_on_slope_enabled`(newValue) }
-    }
-    public var `floor_constant_speed`: Bool {
-        get { `is_floor_constant_speed_enabled`() }
-        set { `set_floor_constant_speed_enabled`(newValue) }
-    }
-    public var `floor_block_on_wall`: Bool {
-        get { `is_floor_block_on_wall_enabled`() }
-        set { `set_floor_block_on_wall_enabled`(newValue) }
-    }
-    public var `floor_max_angle`: Double {
-        get { `get_floor_max_angle`() }
-        set { `set_floor_max_angle`(newValue) }
-    }
-    public var `floor_snap_length`: Double {
-        get { `get_floor_snap_length`() }
-        set { `set_floor_snap_length`(newValue) }
-    }
-    public var `platform_on_leave`: CharacterBody2D.PlatformOnLeave {
-        get { `get_platform_on_leave`() }
-        set { `set_platform_on_leave`(newValue) }
-    }
-    public var `platform_floor_layers`: Int64 {
-        get { `get_platform_floor_layers`() }
-        set { `set_platform_floor_layers`(newValue) }
-    }
-    public var `platform_wall_layers`: Int64 {
-        get { `get_platform_wall_layers`() }
-        set { `set_platform_wall_layers`(newValue) }
-    }
-    public var `safe_margin`: Double {
-        get { `get_safe_margin`() }
-        set { `set_safe_margin`(newValue) }
-    }
-}
-extension CharacterBody3D {
-    public var `motion_mode`: CharacterBody3D.MotionMode {
-        get { `get_motion_mode`() }
-        set { `set_motion_mode`(newValue) }
-    }
-    public var `up_direction`: Vector3 {
-        get { `get_up_direction`() }
-        set { `set_up_direction`(newValue) }
-    }
-    public var `slide_on_ceiling`: Bool {
-        get { `is_slide_on_ceiling_enabled`() }
-        set { `set_slide_on_ceiling_enabled`(newValue) }
-    }
-    public var `velocity`: Vector3 {
-        get { `get_velocity`() }
-        set { `set_velocity`(newValue) }
-    }
-    public var `max_slides`: Int64 {
-        get { `get_max_slides`() }
-        set { `set_max_slides`(newValue) }
-    }
-    public var `wall_min_slide_angle`: Double {
-        get { `get_wall_min_slide_angle`() }
-        set { `set_wall_min_slide_angle`(newValue) }
-    }
-    public var `floor_stop_on_slope`: Bool {
-        get { `is_floor_stop_on_slope_enabled`() }
-        set { `set_floor_stop_on_slope_enabled`(newValue) }
-    }
-    public var `floor_constant_speed`: Bool {
-        get { `is_floor_constant_speed_enabled`() }
-        set { `set_floor_constant_speed_enabled`(newValue) }
-    }
-    public var `floor_block_on_wall`: Bool {
-        get { `is_floor_block_on_wall_enabled`() }
-        set { `set_floor_block_on_wall_enabled`(newValue) }
-    }
-    public var `floor_max_angle`: Double {
-        get { `get_floor_max_angle`() }
-        set { `set_floor_max_angle`(newValue) }
-    }
-    public var `floor_snap_length`: Double {
-        get { `get_floor_snap_length`() }
-        set { `set_floor_snap_length`(newValue) }
-    }
-    public var `platform_on_leave`: CharacterBody3D.PlatformOnLeave {
-        get { `get_platform_on_leave`() }
-        set { `set_platform_on_leave`(newValue) }
-    }
-    public var `platform_floor_layers`: Int64 {
-        get { `get_platform_floor_layers`() }
-        set { `set_platform_floor_layers`(newValue) }
-    }
-    public var `platform_wall_layers`: Int64 {
-        get { `get_platform_wall_layers`() }
-        set { `set_platform_wall_layers`(newValue) }
-    }
-    public var `safe_margin`: Double {
-        get { `get_safe_margin`() }
-        set { `set_safe_margin`(newValue) }
-    }
-}
-extension CircleShape2D {
-    public var `radius`: Double {
-        get { `get_radius`() }
-        set { `set_radius`(newValue) }
-    }
-}
-extension CodeEdit {
-    public var `symbol_lookup_on_click`: Bool {
-        get { `is_symbol_lookup_on_click_enabled`() }
-        set { `set_symbol_lookup_on_click_enabled`(newValue) }
-    }
-    public var `symbol_tooltip_on_hover`: Bool {
-        get { `is_symbol_tooltip_on_hover_enabled`() }
-        set { `set_symbol_tooltip_on_hover_enabled`(newValue) }
-    }
-    public var `line_folding`: Bool {
-        get { `is_line_folding_enabled`() }
-        set { `set_line_folding_enabled`(newValue) }
-    }
-    public var `gutters_draw_breakpoints_gutter`: Bool {
-        get { `is_drawing_breakpoints_gutter`() }
-        set { `set_draw_breakpoints_gutter`(newValue) }
-    }
-    public var `gutters_draw_bookmarks`: Bool {
-        get { `is_drawing_bookmarks_gutter`() }
-        set { `set_draw_bookmarks_gutter`(newValue) }
-    }
-    public var `gutters_draw_executing_lines`: Bool {
-        get { `is_drawing_executing_lines_gutter`() }
-        set { `set_draw_executing_lines_gutter`(newValue) }
-    }
-    public var `gutters_draw_line_numbers`: Bool {
-        get { `is_draw_line_numbers_enabled`() }
-        set { `set_draw_line_numbers`(newValue) }
-    }
-    public var `gutters_zero_pad_line_numbers`: Bool {
-        get { `is_line_numbers_zero_padded`() }
-        set { `set_line_numbers_zero_padded`(newValue) }
-    }
-    public var `gutters_line_numbers_min_digits`: Int64 {
-        get { `get_line_numbers_min_digits`() }
-        set { `set_line_numbers_min_digits`(newValue) }
-    }
-    public var `gutters_draw_fold_gutter`: Bool {
-        get { `is_drawing_fold_gutter`() }
-        set { `set_draw_fold_gutter`(newValue) }
-    }
-    public var `code_completion_enabled`: Bool {
-        get { `is_code_completion_enabled`() }
-        set { `set_code_completion_enabled`(newValue) }
-    }
-    public var `indent_size`: Int64 {
-        get { `get_indent_size`() }
-        set { `set_indent_size`(newValue) }
-    }
-    public var `indent_use_spaces`: Bool {
-        get { `is_indent_using_spaces`() }
-        set { `set_indent_using_spaces`(newValue) }
-    }
-    public var `indent_automatic`: Bool {
-        get { `is_auto_indent_enabled`() }
-        set { `set_auto_indent_enabled`(newValue) }
-    }
-    public var `auto_brace_completion_enabled`: Bool {
-        get { `is_auto_brace_completion_enabled`() }
-        set { `set_auto_brace_completion_enabled`(newValue) }
-    }
-    public var `auto_brace_completion_highlight_matching`: Bool {
-        get { `is_highlight_matching_braces_enabled`() }
-        set { `set_highlight_matching_braces_enabled`(newValue) }
-    }
-    public var `auto_brace_completion_pairs`: GodotDictionary {
-        get { `get_auto_brace_completion_pairs`() }
-        set { `set_auto_brace_completion_pairs`(newValue) }
-    }
-}
-extension CodeHighlighter {
-    public var `number_color`: Color {
-        get { `get_number_color`() }
-        set { `set_number_color`(newValue) }
-    }
-    public var `symbol_color`: Color {
-        get { `get_symbol_color`() }
-        set { `set_symbol_color`(newValue) }
-    }
-    public var `function_color`: Color {
-        get { `get_function_color`() }
-        set { `set_function_color`(newValue) }
-    }
-    public var `member_variable_color`: Color {
-        get { `get_member_variable_color`() }
-        set { `set_member_variable_color`(newValue) }
-    }
-    public var `keyword_colors`: GodotDictionary {
-        get { `get_keyword_colors`() }
-        set { `set_keyword_colors`(newValue) }
-    }
-    public var `member_keyword_colors`: GodotDictionary {
-        get { `get_member_keyword_colors`() }
-        set { `set_member_keyword_colors`(newValue) }
-    }
-    public var `color_regions`: GodotDictionary {
-        get { `get_color_regions`() }
-        set { `set_color_regions`(newValue) }
-    }
-}
-extension CollisionObject2D {
-    public var `disable_mode`: CollisionObject2D.DisableMode {
-        get { `get_disable_mode`() }
-        set { `set_disable_mode`(newValue) }
-    }
-    public var `collision_layer`: Int64 {
-        get { `get_collision_layer`() }
-        set { `set_collision_layer`(newValue) }
-    }
-    public var `collision_mask`: Int64 {
-        get { `get_collision_mask`() }
-        set { `set_collision_mask`(newValue) }
-    }
-    public var `collision_priority`: Double {
-        get { `get_collision_priority`() }
-        set { `set_collision_priority`(newValue) }
-    }
-    public var `input_pickable`: Bool {
-        get { `is_pickable`() }
-        set { `set_pickable`(newValue) }
-    }
-}
-extension CollisionObject3D {
-    public var `disable_mode`: CollisionObject3D.DisableMode {
-        get { `get_disable_mode`() }
-        set { `set_disable_mode`(newValue) }
-    }
-    public var `collision_layer`: Int64 {
-        get { `get_collision_layer`() }
-        set { `set_collision_layer`(newValue) }
-    }
-    public var `collision_mask`: Int64 {
-        get { `get_collision_mask`() }
-        set { `set_collision_mask`(newValue) }
-    }
-    public var `collision_priority`: Double {
-        get { `get_collision_priority`() }
-        set { `set_collision_priority`(newValue) }
-    }
-    public var `input_ray_pickable`: Bool {
-        get { `is_ray_pickable`() }
-        set { `set_ray_pickable`(newValue) }
-    }
-    public var `input_capture_on_drag`: Bool {
-        get { `get_capture_input_on_drag`() }
-        set { `set_capture_input_on_drag`(newValue) }
-    }
-}
-extension CollisionPolygon2D {
-    public var `build_mode`: CollisionPolygon2D.BuildMode {
-        get { `get_build_mode`() }
-        set { `set_build_mode`(newValue) }
-    }
-    public var `polygon`: GodotPackedVector2Array {
-        get { `get_polygon`() }
-        set { `set_polygon`(newValue) }
-    }
-    public var `disabled`: Bool {
-        get { `is_disabled`() }
-        set { `set_disabled`(newValue) }
-    }
-    public var `one_way_collision`: Bool {
-        get { `is_one_way_collision_enabled`() }
-        set { `set_one_way_collision`(newValue) }
-    }
-    public var `one_way_collision_margin`: Double {
-        get { `get_one_way_collision_margin`() }
-        set { `set_one_way_collision_margin`(newValue) }
-    }
-    public var `one_way_collision_direction`: Vector2 {
-        get { `get_one_way_collision_direction`() }
-        set { `set_one_way_collision_direction`(newValue) }
-    }
-}
-extension CollisionPolygon3D {
-    public var `depth`: Double {
-        get { `get_depth`() }
-        set { `set_depth`(newValue) }
-    }
-    public var `disabled`: Bool {
-        get { `is_disabled`() }
-        set { `set_disabled`(newValue) }
-    }
-    public var `polygon`: GodotPackedVector2Array {
-        get { `get_polygon`() }
-        set { `set_polygon`(newValue) }
-    }
-    public var `margin`: Double {
-        get { `get_margin`() }
-        set { `set_margin`(newValue) }
-    }
-    public var `debug_color`: Color {
-        get { `get_debug_color`() }
-        set { `set_debug_color`(newValue) }
-    }
-    public var `debug_fill`: Bool {
-        get { `get_enable_debug_fill`() }
-        set { `set_enable_debug_fill`(newValue) }
-    }
-}
-extension CollisionShape2D {
-    public var `disabled`: Bool {
-        get { `is_disabled`() }
-        set { `set_disabled`(newValue) }
-    }
-    public var `one_way_collision`: Bool {
-        get { `is_one_way_collision_enabled`() }
-        set { `set_one_way_collision`(newValue) }
-    }
-    public var `one_way_collision_margin`: Double {
-        get { `get_one_way_collision_margin`() }
-        set { `set_one_way_collision_margin`(newValue) }
-    }
-    public var `one_way_collision_direction`: Vector2 {
-        get { `get_one_way_collision_direction`() }
-        set { `set_one_way_collision_direction`(newValue) }
-    }
-    public var `debug_color`: Color {
-        get { `get_debug_color`() }
-        set { `set_debug_color`(newValue) }
-    }
-}
-extension CollisionShape3D {
-    public var `disabled`: Bool {
-        get { `is_disabled`() }
-        set { `set_disabled`(newValue) }
-    }
-    public var `debug_color`: Color {
-        get { `get_debug_color`() }
-        set { `set_debug_color`(newValue) }
-    }
-    public var `debug_fill`: Bool {
-        get { `get_enable_debug_fill`() }
-        set { `set_enable_debug_fill`(newValue) }
-    }
-}
-extension ColorPalette {
-    public var `colors`: GodotPackedColorArray {
-        get { `get_colors`() }
-        set { `set_colors`(newValue) }
-    }
-}
-extension ColorPicker {
-    public var `color`: Color {
-        get { `get_pick_color`() }
-        set { `set_pick_color`(newValue) }
-    }
-    public var `edit_alpha`: Bool {
-        get { `is_editing_alpha`() }
-        set { `set_edit_alpha`(newValue) }
-    }
-    public var `edit_intensity`: Bool {
-        get { `is_editing_intensity`() }
-        set { `set_edit_intensity`(newValue) }
-    }
-    public var `color_mode`: ColorPicker.ColorModeType {
-        get { `get_color_mode`() }
-        set { `set_color_mode`(newValue) }
-    }
-    public var `deferred_mode`: Bool {
-        get { `is_deferred_mode`() }
-        set { `set_deferred_mode`(newValue) }
-    }
-    public var `picker_shape`: ColorPicker.PickerShapeType {
-        get { `get_picker_shape`() }
-        set { `set_picker_shape`(newValue) }
-    }
-    public var `can_add_swatches`: Bool {
-        get { `are_swatches_enabled`() }
-        set { `set_can_add_swatches`(newValue) }
-    }
-    public var `sampler_visible`: Bool {
-        get { `is_sampler_visible`() }
-        set { `set_sampler_visible`(newValue) }
-    }
-    public var `color_modes_visible`: Bool {
-        get { `are_modes_visible`() }
-        set { `set_modes_visible`(newValue) }
-    }
-    public var `sliders_visible`: Bool {
-        get { `are_sliders_visible`() }
-        set { `set_sliders_visible`(newValue) }
-    }
-    public var `hex_visible`: Bool {
-        get { `is_hex_visible`() }
-        set { `set_hex_visible`(newValue) }
-    }
-    public var `presets_visible`: Bool {
-        get { `are_presets_visible`() }
-        set { `set_presets_visible`(newValue) }
-    }
-}
-extension ColorPickerButton {
-    public var `color`: Color {
-        get { `get_pick_color`() }
-        set { `set_pick_color`(newValue) }
-    }
-    public var `edit_alpha`: Bool {
-        get { `is_editing_alpha`() }
-        set { `set_edit_alpha`(newValue) }
-    }
-    public var `edit_intensity`: Bool {
-        get { `is_editing_intensity`() }
-        set { `set_edit_intensity`(newValue) }
-    }
-}
-extension ColorRect {
-    public var `color`: Color {
-        get { `get_color`() }
-        set { `set_color`(newValue) }
-    }
-}
-extension Compositor {
-    public var `compositor_effects`: GodotArrayOf<CompositorEffect> {
-        get { `get_compositor_effects`() }
-        set { `set_compositor_effects`(newValue) }
-    }
-}
-extension CompositorEffect {
-    public var `enabled`: Bool {
-        get { `get_enabled`() }
-        set { `set_enabled`(newValue) }
-    }
-    public var `effect_callback_type`: CompositorEffect.EffectCallbackType {
-        get { `get_effect_callback_type`() }
-        set { `set_effect_callback_type`(newValue) }
-    }
-    public var `access_resolved_color`: Bool {
-        get { `get_access_resolved_color`() }
-        set { `set_access_resolved_color`(newValue) }
-    }
-    public var `access_resolved_depth`: Bool {
-        get { `get_access_resolved_depth`() }
-        set { `set_access_resolved_depth`(newValue) }
-    }
-    public var `needs_motion_vectors`: Bool {
-        get { `get_needs_motion_vectors`() }
-        set { `set_needs_motion_vectors`(newValue) }
-    }
-    public var `needs_normal_roughness`: Bool {
-        get { `get_needs_normal_roughness`() }
-        set { `set_needs_normal_roughness`(newValue) }
-    }
-    public var `needs_separate_specular`: Bool {
-        get { `get_needs_separate_specular`() }
-        set { `set_needs_separate_specular`(newValue) }
-    }
-}
-extension CompressedTexture2D {
-    public var `load_path`: GodotString {
-        get { `get_load_path`() }
-        set { `load`(newValue) }
-    }
-}
-extension CompressedTexture3D {
-    public var `load_path`: GodotString {
-        get { `get_load_path`() }
-        set { `load`(newValue) }
-    }
-}
-extension CompressedTextureLayered {
-    public var `load_path`: GodotString {
-        get { `get_load_path`() }
-        set { `load`(newValue) }
-    }
-}
-extension ConcavePolygonShape2D {
-    public var `segments`: GodotPackedVector2Array {
-        get { `get_segments`() }
-        set { `set_segments`(newValue) }
-    }
-}
-extension ConcavePolygonShape3D {
-    public var `data`: GodotPackedVector3Array {
-        get { `get_faces`() }
-        set { `set_faces`(newValue) }
-    }
-    public var `backface_collision`: Bool {
-        get { `is_backface_collision_enabled`() }
-        set { `set_backface_collision_enabled`(newValue) }
-    }
-}
-extension ConeTwistJoint3D {
-    public var `swing_span`: Double {
-        get { `get_param`(0) }
-        set { `set_param`(0, newValue) }
-    }
-    public var `twist_span`: Double {
-        get { `get_param`(1) }
-        set { `set_param`(1, newValue) }
-    }
-    public var `bias`: Double {
-        get { `get_param`(2) }
-        set { `set_param`(2, newValue) }
-    }
-    public var `softness`: Double {
-        get { `get_param`(3) }
-        set { `set_param`(3, newValue) }
-    }
-    public var `relaxation`: Double {
-        get { `get_param`(4) }
-        set { `set_param`(4, newValue) }
-    }
-}
-extension ConfirmationDialog {
-    public var `cancel_button_text`: GodotString {
-        get { `get_cancel_button_text`() }
-        set { `set_cancel_button_text`(newValue) }
-    }
-}
-extension Container {
-    public var `accessibility_region`: Bool {
-        get { `is_accessibility_region`() }
-        set { `set_accessibility_region`(newValue) }
-    }
-}
-extension Control {
-    public var `custom_minimum_size`: Vector2 {
-        get { `get_custom_minimum_size`() }
-        set { `set_custom_minimum_size`(newValue) }
-    }
-    public var `custom_maximum_size`: Vector2 {
-        get { `get_custom_maximum_size`() }
-        set { `set_custom_maximum_size`(newValue) }
-    }
-    public var `propagate_maximum_size`: Bool {
-        get { `is_propagating_maximum_size`() }
-        set { `set_propagate_maximum_size`(newValue) }
-    }
-    public var `clip_contents`: Bool {
-        get { `is_clipping_contents`() }
-        set { `set_clip_contents`(newValue) }
-    }
-    public var `anchor_left`: Double {
-        get { `get_anchor`(0) }
-    }
-    public var `anchor_top`: Double {
-        get { `get_anchor`(1) }
-    }
-    public var `anchor_right`: Double {
-        get { `get_anchor`(2) }
-    }
-    public var `anchor_bottom`: Double {
-        get { `get_anchor`(3) }
-    }
-    public var `offset_left`: Double {
-        get { `get_offset`(0) }
-        set { `set_offset`(0, newValue) }
-    }
-    public var `offset_top`: Double {
-        get { `get_offset`(1) }
-        set { `set_offset`(1, newValue) }
-    }
-    public var `offset_right`: Double {
-        get { `get_offset`(2) }
-        set { `set_offset`(2, newValue) }
-    }
-    public var `offset_bottom`: Double {
-        get { `get_offset`(3) }
-        set { `set_offset`(3, newValue) }
-    }
-    public var `grow_horizontal`: Control.GrowDirection {
-        get { `get_h_grow_direction`() }
-        set { `set_h_grow_direction`(newValue) }
-    }
-    public var `grow_vertical`: Control.GrowDirection {
-        get { `get_v_grow_direction`() }
-        set { `set_v_grow_direction`(newValue) }
-    }
-    public var `size`: Vector2 {
-        get { `get_size`() }
-    }
-    public var `position`: Vector2 {
-        get { `get_position`() }
-    }
-    public var `global_position`: Vector2 {
-        get { `get_global_position`() }
-    }
-    public var `rotation`: Double {
-        get { `get_rotation`() }
-        set { `set_rotation`(newValue) }
-    }
-    public var `rotation_degrees`: Double {
-        get { `get_rotation_degrees`() }
-        set { `set_rotation_degrees`(newValue) }
-    }
-    public var `scale`: Vector2 {
-        get { `get_scale`() }
-        set { `set_scale`(newValue) }
-    }
-    public var `pivot_offset`: Vector2 {
-        get { `get_pivot_offset`() }
-        set { `set_pivot_offset`(newValue) }
-    }
-    public var `pivot_offset_ratio`: Vector2 {
-        get { `get_pivot_offset_ratio`() }
-        set { `set_pivot_offset_ratio`(newValue) }
-    }
-    public var `size_flags_horizontal`: Control.SizeFlags {
-        get { `get_h_size_flags`() }
-        set { `set_h_size_flags`(newValue) }
-    }
-    public var `size_flags_vertical`: Control.SizeFlags {
-        get { `get_v_size_flags`() }
-        set { `set_v_size_flags`(newValue) }
-    }
-    public var `size_flags_stretch_ratio`: Double {
-        get { `get_stretch_ratio`() }
-        set { `set_stretch_ratio`(newValue) }
-    }
-    public var `offset_transform_enabled`: Bool {
-        get { `is_offset_transform_enabled`() }
-        set { `set_offset_transform_enabled`(newValue) }
-    }
-    public var `offset_transform_position`: Vector2 {
-        get { `get_offset_transform_position`() }
-        set { `set_offset_transform_position`(newValue) }
-    }
-    public var `offset_transform_position_ratio`: Vector2 {
-        get { `get_offset_transform_position_ratio`() }
-        set { `set_offset_transform_position_ratio`(newValue) }
-    }
-    public var `offset_transform_scale`: Vector2 {
-        get { `get_offset_transform_scale`() }
-        set { `set_offset_transform_scale`(newValue) }
-    }
-    public var `offset_transform_rotation`: Double {
-        get { `get_offset_transform_rotation`() }
-        set { `set_offset_transform_rotation`(newValue) }
-    }
-    public var `offset_transform_pivot`: Vector2 {
-        get { `get_offset_transform_pivot`() }
-        set { `set_offset_transform_pivot`(newValue) }
-    }
-    public var `offset_transform_pivot_ratio`: Vector2 {
-        get { `get_offset_transform_pivot_ratio`() }
-        set { `set_offset_transform_pivot_ratio`(newValue) }
-    }
-    public var `offset_transform_visual_only`: Bool {
-        get { `is_offset_transform_visual_only`() }
-        set { `set_offset_transform_visual_only`(newValue) }
-    }
-    public var `localize_numeral_system`: Bool {
-        get { `is_localizing_numeral_system`() }
-        set { `set_localize_numeral_system`(newValue) }
-    }
-    public var `layout_direction`: Control.LayoutDirection {
-        get { `get_layout_direction`() }
-        set { `set_layout_direction`(newValue) }
-    }
-    public var `translation_context`: GodotStringName {
-        get { `get_translation_context`() }
-        set { `set_translation_context`(newValue) }
-    }
-    public var `auto_translate`: Bool {
-        get { `is_auto_translating`() }
-        set { `set_auto_translate`(newValue) }
-    }
-    public var `tooltip_text`: GodotString {
-        get { `get_tooltip_text`() }
-        set { `set_tooltip_text`(newValue) }
-    }
-    public var `tooltip_auto_translate_mode`: Node.AutoTranslateMode {
-        get { `get_tooltip_auto_translate_mode`() }
-        set { `set_tooltip_auto_translate_mode`(newValue) }
-    }
-    public var `focus_neighbor_left`: GodotNodePath {
-        get { `get_focus_neighbor`(0) }
-        set { `set_focus_neighbor`(0, newValue) }
-    }
-    public var `focus_neighbor_top`: GodotNodePath {
-        get { `get_focus_neighbor`(1) }
-        set { `set_focus_neighbor`(1, newValue) }
-    }
-    public var `focus_neighbor_right`: GodotNodePath {
-        get { `get_focus_neighbor`(2) }
-        set { `set_focus_neighbor`(2, newValue) }
-    }
-    public var `focus_neighbor_bottom`: GodotNodePath {
-        get { `get_focus_neighbor`(3) }
-        set { `set_focus_neighbor`(3, newValue) }
-    }
-    public var `focus_next`: GodotNodePath {
-        get { `get_focus_next`() }
-        set { `set_focus_next`(newValue) }
-    }
-    public var `focus_previous`: GodotNodePath {
-        get { `get_focus_previous`() }
-        set { `set_focus_previous`(newValue) }
-    }
-    public var `focus_mode`: Control.FocusMode {
-        get { `get_focus_mode`() }
-        set { `set_focus_mode`(newValue) }
-    }
-    public var `focus_behavior_recursive`: Control.FocusBehaviorRecursive {
-        get { `get_focus_behavior_recursive`() }
-        set { `set_focus_behavior_recursive`(newValue) }
-    }
-    public var `mouse_filter`: Control.MouseFilter {
-        get { `get_mouse_filter`() }
-        set { `set_mouse_filter`(newValue) }
-    }
-    public var `mouse_behavior_recursive`: Control.MouseBehaviorRecursive {
-        get { `get_mouse_behavior_recursive`() }
-        set { `set_mouse_behavior_recursive`(newValue) }
-    }
-    public var `mouse_force_pass_scroll_events`: Bool {
-        get { `is_force_pass_scroll_events`() }
-        set { `set_force_pass_scroll_events`(newValue) }
-    }
-    public var `mouse_default_cursor_shape`: Control.CursorShape {
-        get { `get_default_cursor_shape`() }
-        set { `set_default_cursor_shape`(newValue) }
-    }
-    public var `accessibility_name`: GodotString {
-        get { `get_accessibility_name`() }
-        set { `set_accessibility_name`(newValue) }
-    }
-    public var `accessibility_description`: GodotString {
-        get { `get_accessibility_description`() }
-        set { `set_accessibility_description`(newValue) }
-    }
-    public var `accessibility_live`: AccessibilityServer.AccessibilityLiveMode {
-        get { `get_accessibility_live`() }
-        set { `set_accessibility_live`(newValue) }
-    }
-    public var `accessibility_controls_nodes`: GodotArrayOf<GodotNodePath> {
-        get { `get_accessibility_controls_nodes`() }
-        set { `set_accessibility_controls_nodes`(newValue) }
-    }
-    public var `accessibility_described_by_nodes`: GodotArrayOf<GodotNodePath> {
-        get { `get_accessibility_described_by_nodes`() }
-        set { `set_accessibility_described_by_nodes`(newValue) }
-    }
-    public var `accessibility_labeled_by_nodes`: GodotArrayOf<GodotNodePath> {
-        get { `get_accessibility_labeled_by_nodes`() }
-        set { `set_accessibility_labeled_by_nodes`(newValue) }
-    }
-    public var `accessibility_flow_to_nodes`: GodotArrayOf<GodotNodePath> {
-        get { `get_accessibility_flow_to_nodes`() }
-        set { `set_accessibility_flow_to_nodes`(newValue) }
-    }
-    public var `theme`: Theme? {
-        get { `get_theme`() }
-        set { `set_theme`(newValue) }
-    }
-}
-extension ConvertTransformModifier3D {
-    public var `setting_count`: Int64 {
-        get { `get_setting_count`() }
-        set { `set_setting_count`(newValue) }
-    }
-}
-extension ConvexPolygonShape2D {
-    public var `points`: GodotPackedVector2Array {
-        get { `get_points`() }
-        set { `set_points`(newValue) }
-    }
-}
-extension CopyTransformModifier3D {
-    public var `setting_count`: Int64 {
-        get { `get_setting_count`() }
-        set { `set_setting_count`(newValue) }
-    }
-}
-extension Curve {
-    public var `min_domain`: Double {
-        get { `get_min_domain`() }
-        set { `set_min_domain`(newValue) }
-    }
-    public var `max_domain`: Double {
-        get { `get_max_domain`() }
-        set { `set_max_domain`(newValue) }
-    }
-    public var `min_value`: Double {
-        get { `get_min_value`() }
-        set { `set_min_value`(newValue) }
-    }
-    public var `max_value`: Double {
-        get { `get_max_value`() }
-        set { `set_max_value`(newValue) }
-    }
-    public var `bake_resolution`: Int64 {
-        get { `get_bake_resolution`() }
-        set { `set_bake_resolution`(newValue) }
-    }
-    public var `point_count`: Int64 {
-        get { `get_point_count`() }
-        set { `set_point_count`(newValue) }
-    }
-}
-extension Curve2D {
-    public var `bake_interval`: Double {
-        get { `get_bake_interval`() }
-        set { `set_bake_interval`(newValue) }
-    }
-    public var `point_count`: Int64 {
-        get { `get_point_count`() }
-        set { `set_point_count`(newValue) }
-    }
-}
-extension Curve3D {
-    public var `closed`: Bool {
-        get { `is_closed`() }
-        set { `set_closed`(newValue) }
-    }
-    public var `bake_interval`: Double {
-        get { `get_bake_interval`() }
-        set { `set_bake_interval`(newValue) }
-    }
-    public var `point_count`: Int64 {
-        get { `get_point_count`() }
-        set { `set_point_count`(newValue) }
-    }
-    public var `up_vector_enabled`: Bool {
-        get { `is_up_vector_enabled`() }
-        set { `set_up_vector_enabled`(newValue) }
-    }
-}
-extension CurveTexture {
-    public var `width`: Int64 {
-        get { `get_width`() }
-        set { `set_width`(newValue) }
-    }
-    public var `texture_mode`: CurveTexture.TextureMode {
-        get { `get_texture_mode`() }
-        set { `set_texture_mode`(newValue) }
-    }
-    public var `curve`: Curve? {
-        get { `get_curve`() }
-        set { `set_curve`(newValue) }
-    }
-}
 extension CurveXYZTexture {
     public var `width`: Int64 {
         get { `get_width`() }
@@ -3105,10 +165,6 @@ extension DirectionalLight2D {
     }
 }
 extension DirectionalLight3D {
-    public var `sky_mode`: DirectionalLight3D.SkyMode {
-        get { `get_sky_mode`() }
-        set { `set_sky_mode`(newValue) }
-    }
     public var `directional_shadow_mode`: DirectionalLight3D.ShadowMode {
         get { `get_shadow_mode`() }
         set { `set_shadow_mode`(newValue) }
@@ -3141,6 +197,10 @@ extension DirectionalLight3D {
         get { `get_param`(16) }
         set { `set_param`(16, newValue) }
     }
+    public var `sky_mode`: DirectionalLight3D.SkyMode {
+        get { `get_sky_mode`() }
+        set { `set_sky_mode`(newValue) }
+    }
 }
 extension ENetMultiplayerPeer {
     public var `host`: ENetConnection? {
@@ -3167,10 +227,6 @@ extension EditorDock {
     public var `closable`: Bool {
         get { `is_closable`() }
         set { `set_closable`(newValue) }
-    }
-    public var `allow_switch_screen`: Bool {
-        get { `is_allow_switch_screen`() }
-        set { `set_allow_switch_screen`(newValue) }
     }
     public var `icon_name`: GodotStringName {
         get { `get_icon_name`() }
@@ -3904,18 +960,6 @@ extension FileDialog {
         get { `is_customization_flag_enabled`(8) }
         set { `set_customization_flag_enabled`(8, newValue) }
     }
-    public var `navigation_buttons_enabled`: Bool {
-        get { `is_customization_flag_enabled`(9) }
-        set { `set_customization_flag_enabled`(9, newValue) }
-    }
-    public var `drive_selector_enabled`: Bool {
-        get { `is_customization_flag_enabled`(10) }
-        set { `set_customization_flag_enabled`(10, newValue) }
-    }
-    public var `filters_enabled`: Bool {
-        get { `is_customization_flag_enabled`(11) }
-        set { `set_customization_flag_enabled`(11, newValue) }
-    }
     public var `current_dir`: GodotString {
         get { `get_current_dir`() }
         set { `set_current_dir`(newValue) }
@@ -4171,54 +1215,6 @@ extension FontVariation {
     public var `palette_custom_colors`: GodotPackedColorArray {
         get { `get_palette_custom_colors`() }
         set { `set_palette_custom_colors`(newValue) }
-    }
-}
-extension FuzzySearch {
-    public var `start_offset`: Int64 {
-        get { `get_start_offset`() }
-        set { `set_start_offset`(newValue) }
-    }
-    public var `max_results`: Int64 {
-        get { `get_max_results`() }
-        set { `set_max_results`(newValue) }
-    }
-    public var `max_misses`: Int64 {
-        get { `get_max_misses`() }
-        set { `set_max_misses`(newValue) }
-    }
-    public var `use_exact_tokens`: Bool {
-        get { `get_use_exact_tokens`() }
-        set { `set_use_exact_tokens`(newValue) }
-    }
-    public var `case_sensitive`: Bool {
-        get { `get_case_sensitive`() }
-        set { `set_case_sensitive`(newValue) }
-    }
-    public var `filter_low_scores`: Bool {
-        get { `get_filter_low_scores`() }
-        set { `set_filter_low_scores`(newValue) }
-    }
-    public var `filter_factor`: Double {
-        get { `get_filter_factor`() }
-        set { `set_filter_factor`(newValue) }
-    }
-    public var `filter_cutoff`: Double {
-        get { `get_filter_cutoff`() }
-        set { `set_filter_cutoff`(newValue) }
-    }
-}
-extension FuzzySearchMatch {
-    public var `target`: GodotString {
-        get { `get_target`() }
-        set { `set_target`(newValue) }
-    }
-    public var `score`: Int64 {
-        get { `get_score`() }
-        set { `set_score`(newValue) }
-    }
-    public var `original_index`: Int64 {
-        get { `get_original_index`() }
-        set { `set_original_index`(newValue) }
     }
 }
 extension GLTFAccessor {
@@ -4990,6 +1986,22 @@ extension GPUParticles3D {
         get { `get_draw_passes`() }
         set { `set_draw_passes`(newValue) }
     }
+    public var `draw_pass_1`: Mesh? {
+        get { `get_draw_pass_mesh`(0) }
+        set { `set_draw_pass_mesh`(0, newValue) }
+    }
+    public var `draw_pass_2`: Mesh? {
+        get { `get_draw_pass_mesh`(1) }
+        set { `set_draw_pass_mesh`(1, newValue) }
+    }
+    public var `draw_pass_3`: Mesh? {
+        get { `get_draw_pass_mesh`(2) }
+        set { `set_draw_pass_mesh`(2, newValue) }
+    }
+    public var `draw_pass_4`: Mesh? {
+        get { `get_draw_pass_mesh`(3) }
+        set { `set_draw_pass_mesh`(3, newValue) }
+    }
     public var `draw_skin`: Skin? {
         get { `get_skin`() }
         set { `set_skin`(newValue) }
@@ -5448,12 +2460,2954 @@ extension GridMap {
         get { `is_baking_navigation`() }
         set { `set_bake_navigation`(newValue) }
     }
-    public var `debug_show_octants`: Bool {
-        get { `get_debug_show_octants`() }
-        set { `set_debug_show_octants`(newValue) }
+}
+extension GrooveJoint2D {
+    public var `length`: Double {
+        get { `get_length`() }
+        set { `set_length`(newValue) }
     }
-    public var `debug_octant_color`: Color {
-        get { `get_debug_octant_color`() }
-        set { `set_debug_octant_color`(newValue) }
+    public var `initial_offset`: Double {
+        get { `get_initial_offset`() }
+        set { `set_initial_offset`(newValue) }
+    }
+}
+extension HTTPClient {
+    public var `blocking_mode_enabled`: Bool {
+        get { `is_blocking_mode_enabled`() }
+        set { `set_blocking_mode`(newValue) }
+    }
+    public var `connection`: StreamPeer? {
+        get { `get_connection`() }
+        set { `set_connection`(newValue) }
+    }
+    public var `read_chunk_size`: Int64 {
+        get { `get_read_chunk_size`() }
+        set { `set_read_chunk_size`(newValue) }
+    }
+}
+extension HTTPRequest {
+    public var `download_file`: GodotString {
+        get { `get_download_file`() }
+        set { `set_download_file`(newValue) }
+    }
+    public var `download_chunk_size`: Int64 {
+        get { `get_download_chunk_size`() }
+        set { `set_download_chunk_size`(newValue) }
+    }
+    public var `use_threads`: Bool {
+        get { `is_using_threads`() }
+        set { `set_use_threads`(newValue) }
+    }
+    public var `accept_gzip`: Bool {
+        get { `is_accepting_gzip`() }
+        set { `set_accept_gzip`(newValue) }
+    }
+    public var `body_size_limit`: Int64 {
+        get { `get_body_size_limit`() }
+        set { `set_body_size_limit`(newValue) }
+    }
+    public var `max_redirects`: Int64 {
+        get { `get_max_redirects`() }
+        set { `set_max_redirects`(newValue) }
+    }
+    public var `timeout`: Double {
+        get { `get_timeout`() }
+        set { `set_timeout`(newValue) }
+    }
+}
+extension HeightMapShape3D {
+    public var `map_width`: Int64 {
+        get { `get_map_width`() }
+        set { `set_map_width`(newValue) }
+    }
+    public var `map_depth`: Int64 {
+        get { `get_map_depth`() }
+        set { `set_map_depth`(newValue) }
+    }
+    public var `map_data`: GodotPackedFloat32Array {
+        get { `get_map_data`() }
+        set { `set_map_data`(newValue) }
+    }
+}
+extension IKModifier3D {
+    public var `mutable_bone_axes`: Bool {
+        get { `are_bone_axes_mutable`() }
+        set { `set_mutable_bone_axes`(newValue) }
+    }
+}
+extension ImageTexture {
+    public var `image`: Image? {
+        get { `get_image`() }
+    }
+}
+extension ImporterMeshInstance3D {
+    public var `mesh`: ImporterMesh? {
+        get { `get_mesh`() }
+        set { `set_mesh`(newValue) }
+    }
+    public var `skin`: Skin? {
+        get { `get_skin`() }
+        set { `set_skin`(newValue) }
+    }
+    public var `skeleton_path`: GodotNodePath {
+        get { `get_skeleton_path`() }
+        set { `set_skeleton_path`(newValue) }
+    }
+    public var `layer_mask`: Int64 {
+        get { `get_layer_mask`() }
+        set { `set_layer_mask`(newValue) }
+    }
+    public var `cast_shadow`: GeometryInstance3D.ShadowCastingSetting {
+        get { `get_cast_shadows_setting`() }
+        set { `set_cast_shadows_setting`(newValue) }
+    }
+    public var `visibility_range_begin`: Double {
+        get { `get_visibility_range_begin`() }
+        set { `set_visibility_range_begin`(newValue) }
+    }
+    public var `visibility_range_begin_margin`: Double {
+        get { `get_visibility_range_begin_margin`() }
+        set { `set_visibility_range_begin_margin`(newValue) }
+    }
+    public var `visibility_range_end`: Double {
+        get { `get_visibility_range_end`() }
+        set { `set_visibility_range_end`(newValue) }
+    }
+    public var `visibility_range_end_margin`: Double {
+        get { `get_visibility_range_end_margin`() }
+        set { `set_visibility_range_end_margin`(newValue) }
+    }
+    public var `visibility_range_fade_mode`: GeometryInstance3D.VisibilityRangeFadeMode {
+        get { `get_visibility_range_fade_mode`() }
+        set { `set_visibility_range_fade_mode`(newValue) }
+    }
+}
+extension Input {
+    public var `mouse_mode`: Input.MouseMode {
+        get { `get_mouse_mode`() }
+        set { `set_mouse_mode`(newValue) }
+    }
+    public var `use_accumulated_input`: Bool {
+        get { `is_using_accumulated_input`() }
+        set { `set_use_accumulated_input`(newValue) }
+    }
+    public var `emulate_mouse_from_touch`: Bool {
+        get { `is_emulating_mouse_from_touch`() }
+        set { `set_emulate_mouse_from_touch`(newValue) }
+    }
+    public var `emulate_touch_from_mouse`: Bool {
+        get { `is_emulating_touch_from_mouse`() }
+        set { `set_emulate_touch_from_mouse`(newValue) }
+    }
+    public var `ignore_joypad_on_unfocused_application`: Bool {
+        get { `is_ignoring_joypad_on_unfocused_application`() }
+        set { `set_ignore_joypad_on_unfocused_application`(newValue) }
+    }
+}
+extension InputEvent {
+    public var `device`: Int64 {
+        get { `get_device`() }
+        set { `set_device`(newValue) }
+    }
+}
+extension InputEventAction {
+    public var `action`: GodotStringName {
+        get { `get_action`() }
+        set { `set_action`(newValue) }
+    }
+    public var `pressed`: Bool {
+        get { `is_pressed`() }
+        set { `set_pressed`(newValue) }
+    }
+    public var `strength`: Double {
+        get { `get_strength`() }
+        set { `set_strength`(newValue) }
+    }
+    public var `event_index`: Int64 {
+        get { `get_event_index`() }
+        set { `set_event_index`(newValue) }
+    }
+}
+extension InputEventFromWindow {
+    public var `window_id`: Int64 {
+        get { `get_window_id`() }
+        set { `set_window_id`(newValue) }
+    }
+}
+extension InputEventGesture {
+    public var `position`: Vector2 {
+        get { `get_position`() }
+        set { `set_position`(newValue) }
+    }
+}
+extension InputEventJoypadButton {
+    public var `button_index`: Godot.JoyButton {
+        get { `get_button_index`() }
+        set { `set_button_index`(newValue) }
+    }
+    public var `pressure`: Double {
+        get { `get_pressure`() }
+        set { `set_pressure`(newValue) }
+    }
+    public var `pressed`: Bool {
+        get { `is_pressed`() }
+        set { `set_pressed`(newValue) }
+    }
+}
+extension InputEventJoypadMotion {
+    public var `axis`: Godot.JoyAxis {
+        get { `get_axis`() }
+        set { `set_axis`(newValue) }
+    }
+    public var `axis_value`: Double {
+        get { `get_axis_value`() }
+        set { `set_axis_value`(newValue) }
+    }
+}
+extension InputEventKey {
+    public var `pressed`: Bool {
+        get { `is_pressed`() }
+        set { `set_pressed`(newValue) }
+    }
+    public var `keycode`: Godot.Key {
+        get { `get_keycode`() }
+        set { `set_keycode`(newValue) }
+    }
+    public var `physical_keycode`: Godot.Key {
+        get { `get_physical_keycode`() }
+        set { `set_physical_keycode`(newValue) }
+    }
+    public var `key_label`: Godot.Key {
+        get { `get_key_label`() }
+        set { `set_key_label`(newValue) }
+    }
+    public var `unicode`: Int64 {
+        get { `get_unicode`() }
+        set { `set_unicode`(newValue) }
+    }
+    public var `location`: Godot.KeyLocation {
+        get { `get_location`() }
+        set { `set_location`(newValue) }
+    }
+    public var `echo`: Bool {
+        get { `is_echo`() }
+        set { `set_echo`(newValue) }
+    }
+}
+extension InputEventMIDI {
+    public var `channel`: Int64 {
+        get { `get_channel`() }
+        set { `set_channel`(newValue) }
+    }
+    public var `message`: Godot.MIDIMessage {
+        get { `get_message`() }
+        set { `set_message`(newValue) }
+    }
+    public var `pitch`: Int64 {
+        get { `get_pitch`() }
+        set { `set_pitch`(newValue) }
+    }
+    public var `velocity`: Int64 {
+        get { `get_velocity`() }
+        set { `set_velocity`(newValue) }
+    }
+    public var `instrument`: Int64 {
+        get { `get_instrument`() }
+        set { `set_instrument`(newValue) }
+    }
+    public var `pressure`: Int64 {
+        get { `get_pressure`() }
+        set { `set_pressure`(newValue) }
+    }
+    public var `controller_number`: Int64 {
+        get { `get_controller_number`() }
+        set { `set_controller_number`(newValue) }
+    }
+    public var `controller_value`: Int64 {
+        get { `get_controller_value`() }
+        set { `set_controller_value`(newValue) }
+    }
+}
+extension InputEventMagnifyGesture {
+    public var `factor`: Double {
+        get { `get_factor`() }
+        set { `set_factor`(newValue) }
+    }
+}
+extension InputEventMouse {
+    public var `button_mask`: Godot.MouseButtonMask {
+        get { `get_button_mask`() }
+        set { `set_button_mask`(newValue) }
+    }
+    public var `position`: Vector2 {
+        get { `get_position`() }
+        set { `set_position`(newValue) }
+    }
+    public var `global_position`: Vector2 {
+        get { `get_global_position`() }
+        set { `set_global_position`(newValue) }
+    }
+}
+extension InputEventMouseButton {
+    public var `factor`: Double {
+        get { `get_factor`() }
+        set { `set_factor`(newValue) }
+    }
+    public var `button_index`: Godot.MouseButton {
+        get { `get_button_index`() }
+        set { `set_button_index`(newValue) }
+    }
+    public var `canceled`: Bool {
+        get { `is_canceled`() }
+        set { `set_canceled`(newValue) }
+    }
+    public var `pressed`: Bool {
+        get { `is_pressed`() }
+        set { `set_pressed`(newValue) }
+    }
+    public var `double_click`: Bool {
+        get { `is_double_click`() }
+        set { `set_double_click`(newValue) }
+    }
+}
+extension InputEventMouseMotion {
+    public var `tilt`: Vector2 {
+        get { `get_tilt`() }
+        set { `set_tilt`(newValue) }
+    }
+    public var `pressure`: Double {
+        get { `get_pressure`() }
+        set { `set_pressure`(newValue) }
+    }
+    public var `pen_inverted`: Bool {
+        get { `get_pen_inverted`() }
+        set { `set_pen_inverted`(newValue) }
+    }
+    public var `relative`: Vector2 {
+        get { `get_relative`() }
+        set { `set_relative`(newValue) }
+    }
+    public var `screen_relative`: Vector2 {
+        get { `get_screen_relative`() }
+        set { `set_screen_relative`(newValue) }
+    }
+    public var `velocity`: Vector2 {
+        get { `get_velocity`() }
+        set { `set_velocity`(newValue) }
+    }
+    public var `screen_velocity`: Vector2 {
+        get { `get_screen_velocity`() }
+        set { `set_screen_velocity`(newValue) }
+    }
+}
+extension InputEventPanGesture {
+    public var `delta`: Vector2 {
+        get { `get_delta`() }
+        set { `set_delta`(newValue) }
+    }
+}
+extension InputEventScreenDrag {
+    public var `index`: Int64 {
+        get { `get_index`() }
+        set { `set_index`(newValue) }
+    }
+    public var `tilt`: Vector2 {
+        get { `get_tilt`() }
+        set { `set_tilt`(newValue) }
+    }
+    public var `pressure`: Double {
+        get { `get_pressure`() }
+        set { `set_pressure`(newValue) }
+    }
+    public var `pen_inverted`: Bool {
+        get { `get_pen_inverted`() }
+        set { `set_pen_inverted`(newValue) }
+    }
+    public var `position`: Vector2 {
+        get { `get_position`() }
+        set { `set_position`(newValue) }
+    }
+    public var `relative`: Vector2 {
+        get { `get_relative`() }
+        set { `set_relative`(newValue) }
+    }
+    public var `screen_relative`: Vector2 {
+        get { `get_screen_relative`() }
+        set { `set_screen_relative`(newValue) }
+    }
+    public var `velocity`: Vector2 {
+        get { `get_velocity`() }
+        set { `set_velocity`(newValue) }
+    }
+    public var `screen_velocity`: Vector2 {
+        get { `get_screen_velocity`() }
+        set { `set_screen_velocity`(newValue) }
+    }
+}
+extension InputEventScreenTouch {
+    public var `index`: Int64 {
+        get { `get_index`() }
+        set { `set_index`(newValue) }
+    }
+    public var `position`: Vector2 {
+        get { `get_position`() }
+        set { `set_position`(newValue) }
+    }
+    public var `canceled`: Bool {
+        get { `is_canceled`() }
+        set { `set_canceled`(newValue) }
+    }
+    public var `pressed`: Bool {
+        get { `is_pressed`() }
+        set { `set_pressed`(newValue) }
+    }
+    public var `double_tap`: Bool {
+        get { `is_double_tap`() }
+        set { `set_double_tap`(newValue) }
+    }
+}
+extension InputEventShortcut {
+    public var `shortcut`: Shortcut? {
+        get { `get_shortcut`() }
+        set { `set_shortcut`(newValue) }
+    }
+}
+extension InputEventWithModifiers {
+    public var `command_or_control_autoremap`: Bool {
+        get { `is_command_or_control_autoremap`() }
+        set { `set_command_or_control_autoremap`(newValue) }
+    }
+    public var `alt_pressed`: Bool {
+        get { `is_alt_pressed`() }
+        set { `set_alt_pressed`(newValue) }
+    }
+    public var `shift_pressed`: Bool {
+        get { `is_shift_pressed`() }
+        set { `set_shift_pressed`(newValue) }
+    }
+    public var `ctrl_pressed`: Bool {
+        get { `is_ctrl_pressed`() }
+        set { `set_ctrl_pressed`(newValue) }
+    }
+    public var `meta_pressed`: Bool {
+        get { `is_meta_pressed`() }
+        set { `set_meta_pressed`(newValue) }
+    }
+}
+extension ItemList {
+    public var `select_mode`: ItemList.SelectMode {
+        get { `get_select_mode`() }
+        set { `set_select_mode`(newValue) }
+    }
+    public var `allow_reselect`: Bool {
+        get { `get_allow_reselect`() }
+        set { `set_allow_reselect`(newValue) }
+    }
+    public var `allow_rmb_select`: Bool {
+        get { `get_allow_rmb_select`() }
+        set { `set_allow_rmb_select`(newValue) }
+    }
+    public var `allow_search`: Bool {
+        get { `get_allow_search`() }
+        set { `set_allow_search`(newValue) }
+    }
+    public var `max_text_lines`: Int64 {
+        get { `get_max_text_lines`() }
+        set { `set_max_text_lines`(newValue) }
+    }
+    public var `auto_width`: Bool {
+        get { `has_auto_width`() }
+        set { `set_auto_width`(newValue) }
+    }
+    public var `auto_height`: Bool {
+        get { `has_auto_height`() }
+        set { `set_auto_height`(newValue) }
+    }
+    public var `text_overrun_behavior`: TextServer.OverrunBehavior {
+        get { `get_text_overrun_behavior`() }
+        set { `set_text_overrun_behavior`(newValue) }
+    }
+    public var `wraparound_items`: Bool {
+        get { `has_wraparound_items`() }
+        set { `set_wraparound_items`(newValue) }
+    }
+    public var `scroll_hint_mode`: ItemList.ScrollHintMode {
+        get { `get_scroll_hint_mode`() }
+        set { `set_scroll_hint_mode`(newValue) }
+    }
+    public var `tile_scroll_hint`: Bool {
+        get { `is_scroll_hint_tiled`() }
+        set { `set_tile_scroll_hint`(newValue) }
+    }
+    public var `item_count`: Int64 {
+        get { `get_item_count`() }
+        set { `set_item_count`(newValue) }
+    }
+    public var `max_columns`: Int64 {
+        get { `get_max_columns`() }
+        set { `set_max_columns`(newValue) }
+    }
+    public var `same_column_width`: Bool {
+        get { `is_same_column_width`() }
+        set { `set_same_column_width`(newValue) }
+    }
+    public var `fixed_column_width`: Int64 {
+        get { `get_fixed_column_width`() }
+        set { `set_fixed_column_width`(newValue) }
+    }
+    public var `icon_mode`: ItemList.IconMode {
+        get { `get_icon_mode`() }
+        set { `set_icon_mode`(newValue) }
+    }
+    public var `icon_scale`: Double {
+        get { `get_icon_scale`() }
+        set { `set_icon_scale`(newValue) }
+    }
+    public var `fixed_icon_size`: Vector2i {
+        get { `get_fixed_icon_size`() }
+        set { `set_fixed_icon_size`(newValue) }
+    }
+}
+extension IterateIK3D {
+    public var `max_iterations`: Int64 {
+        get { `get_max_iterations`() }
+        set { `set_max_iterations`(newValue) }
+    }
+    public var `min_distance`: Double {
+        get { `get_min_distance`() }
+        set { `set_min_distance`(newValue) }
+    }
+    public var `angular_delta_limit`: Double {
+        get { `get_angular_delta_limit`() }
+        set { `set_angular_delta_limit`(newValue) }
+    }
+    public var `deterministic`: Bool {
+        get { `is_deterministic`() }
+        set { `set_deterministic`(newValue) }
+    }
+    public var `setting_count`: Int64 {
+        get { `get_setting_count`() }
+        set { `set_setting_count`(newValue) }
+    }
+}
+extension JSON {
+    public var `data`: GodotVariant {
+        get { `get_data`() }
+        set { `set_data`(newValue) }
+    }
+}
+extension Joint2D {
+    public var `node_a`: GodotNodePath {
+        get { `get_node_a`() }
+        set { `set_node_a`(newValue) }
+    }
+    public var `node_b`: GodotNodePath {
+        get { `get_node_b`() }
+        set { `set_node_b`(newValue) }
+    }
+    public var `bias`: Double {
+        get { `get_bias`() }
+        set { `set_bias`(newValue) }
+    }
+    public var `disable_collision`: Bool {
+        get { `get_exclude_nodes_from_collision`() }
+        set { `set_exclude_nodes_from_collision`(newValue) }
+    }
+}
+extension Joint3D {
+    public var `node_a`: GodotNodePath {
+        get { `get_node_a`() }
+        set { `set_node_a`(newValue) }
+    }
+    public var `node_b`: GodotNodePath {
+        get { `get_node_b`() }
+        set { `set_node_b`(newValue) }
+    }
+    public var `solver_priority`: Int64 {
+        get { `get_solver_priority`() }
+        set { `set_solver_priority`(newValue) }
+    }
+    public var `exclude_nodes_from_collision`: Bool {
+        get { `get_exclude_nodes_from_collision`() }
+        set { `set_exclude_nodes_from_collision`(newValue) }
+    }
+}
+extension JointLimitationCone3D {
+    public var `angle`: Double {
+        get { `get_angle`() }
+        set { `set_angle`(newValue) }
+    }
+}
+extension Label {
+    public var `text`: GodotString {
+        get { `get_text`() }
+        set { `set_text`(newValue) }
+    }
+    public var `label_settings`: LabelSettings? {
+        get { `get_label_settings`() }
+        set { `set_label_settings`(newValue) }
+    }
+    public var `horizontal_alignment`: Godot.HorizontalAlignment {
+        get { `get_horizontal_alignment`() }
+        set { `set_horizontal_alignment`(newValue) }
+    }
+    public var `vertical_alignment`: Godot.VerticalAlignment {
+        get { `get_vertical_alignment`() }
+        set { `set_vertical_alignment`(newValue) }
+    }
+    public var `autowrap_mode`: TextServer.AutowrapMode {
+        get { `get_autowrap_mode`() }
+        set { `set_autowrap_mode`(newValue) }
+    }
+    public var `autowrap_trim_flags`: TextServer.LineBreakFlag {
+        get { `get_autowrap_trim_flags`() }
+        set { `set_autowrap_trim_flags`(newValue) }
+    }
+    public var `justification_flags`: TextServer.JustificationFlag {
+        get { `get_justification_flags`() }
+        set { `set_justification_flags`(newValue) }
+    }
+    public var `paragraph_separator`: GodotString {
+        get { `get_paragraph_separator`() }
+        set { `set_paragraph_separator`(newValue) }
+    }
+    public var `clip_text`: Bool {
+        get { `is_clipping_text`() }
+        set { `set_clip_text`(newValue) }
+    }
+    public var `text_overrun_behavior`: TextServer.OverrunBehavior {
+        get { `get_text_overrun_behavior`() }
+        set { `set_text_overrun_behavior`(newValue) }
+    }
+    public var `ellipsis_char`: GodotString {
+        get { `get_ellipsis_char`() }
+        set { `set_ellipsis_char`(newValue) }
+    }
+    public var `uppercase`: Bool {
+        get { `is_uppercase`() }
+        set { `set_uppercase`(newValue) }
+    }
+    public var `tab_stops`: GodotPackedFloat32Array {
+        get { `get_tab_stops`() }
+        set { `set_tab_stops`(newValue) }
+    }
+    public var `lines_skipped`: Int64 {
+        get { `get_lines_skipped`() }
+        set { `set_lines_skipped`(newValue) }
+    }
+    public var `max_lines_visible`: Int64 {
+        get { `get_max_lines_visible`() }
+        set { `set_max_lines_visible`(newValue) }
+    }
+    public var `visible_characters`: Int64 {
+        get { `get_visible_characters`() }
+        set { `set_visible_characters`(newValue) }
+    }
+    public var `visible_characters_behavior`: TextServer.VisibleCharactersBehavior {
+        get { `get_visible_characters_behavior`() }
+        set { `set_visible_characters_behavior`(newValue) }
+    }
+    public var `visible_ratio`: Double {
+        get { `get_visible_ratio`() }
+        set { `set_visible_ratio`(newValue) }
+    }
+    public var `text_direction`: Control.TextDirection {
+        get { `get_text_direction`() }
+        set { `set_text_direction`(newValue) }
+    }
+    public var `language`: GodotString {
+        get { `get_language`() }
+        set { `set_language`(newValue) }
+    }
+    public var `structured_text_bidi_override`: TextServer.StructuredTextParser {
+        get { `get_structured_text_bidi_override`() }
+        set { `set_structured_text_bidi_override`(newValue) }
+    }
+    public var `structured_text_bidi_override_options`: GodotArray {
+        get { `get_structured_text_bidi_override_options`() }
+        set { `set_structured_text_bidi_override_options`(newValue) }
+    }
+}
+extension Label3D {
+    public var `pixel_size`: Double {
+        get { `get_pixel_size`() }
+        set { `set_pixel_size`(newValue) }
+    }
+    public var `offset`: Vector2 {
+        get { `get_offset`() }
+        set { `set_offset`(newValue) }
+    }
+    public var `billboard`: BaseMaterial3D.BillboardMode {
+        get { `get_billboard_mode`() }
+        set { `set_billboard_mode`(newValue) }
+    }
+    public var `shaded`: Bool {
+        get { `get_draw_flag`(0) }
+        set { `set_draw_flag`(0, newValue) }
+    }
+    public var `double_sided`: Bool {
+        get { `get_draw_flag`(1) }
+        set { `set_draw_flag`(1, newValue) }
+    }
+    public var `no_depth_test`: Bool {
+        get { `get_draw_flag`(2) }
+        set { `set_draw_flag`(2, newValue) }
+    }
+    public var `fixed_size`: Bool {
+        get { `get_draw_flag`(3) }
+        set { `set_draw_flag`(3, newValue) }
+    }
+    public var `alpha_cut`: Label3D.AlphaCutMode {
+        get { `get_alpha_cut_mode`() }
+        set { `set_alpha_cut_mode`(newValue) }
+    }
+    public var `alpha_scissor_threshold`: Double {
+        get { `get_alpha_scissor_threshold`() }
+        set { `set_alpha_scissor_threshold`(newValue) }
+    }
+    public var `alpha_hash_scale`: Double {
+        get { `get_alpha_hash_scale`() }
+        set { `set_alpha_hash_scale`(newValue) }
+    }
+    public var `alpha_antialiasing_mode`: BaseMaterial3D.AlphaAntiAliasing {
+        get { `get_alpha_antialiasing`() }
+        set { `set_alpha_antialiasing`(newValue) }
+    }
+    public var `alpha_antialiasing_edge`: Double {
+        get { `get_alpha_antialiasing_edge`() }
+        set { `set_alpha_antialiasing_edge`(newValue) }
+    }
+    public var `texture_filter`: BaseMaterial3D.TextureFilter {
+        get { `get_texture_filter`() }
+        set { `set_texture_filter`(newValue) }
+    }
+    public var `render_priority`: Int64 {
+        get { `get_render_priority`() }
+        set { `set_render_priority`(newValue) }
+    }
+    public var `outline_render_priority`: Int64 {
+        get { `get_outline_render_priority`() }
+        set { `set_outline_render_priority`(newValue) }
+    }
+    public var `modulate`: Color {
+        get { `get_modulate`() }
+        set { `set_modulate`(newValue) }
+    }
+    public var `outline_modulate`: Color {
+        get { `get_outline_modulate`() }
+        set { `set_outline_modulate`(newValue) }
+    }
+    public var `text`: GodotString {
+        get { `get_text`() }
+        set { `set_text`(newValue) }
+    }
+    public var `font`: Font? {
+        get { `get_font`() }
+        set { `set_font`(newValue) }
+    }
+    public var `font_size`: Int64 {
+        get { `get_font_size`() }
+        set { `set_font_size`(newValue) }
+    }
+    public var `outline_size`: Int64 {
+        get { `get_outline_size`() }
+        set { `set_outline_size`(newValue) }
+    }
+    public var `horizontal_alignment`: Godot.HorizontalAlignment {
+        get { `get_horizontal_alignment`() }
+        set { `set_horizontal_alignment`(newValue) }
+    }
+    public var `vertical_alignment`: Godot.VerticalAlignment {
+        get { `get_vertical_alignment`() }
+        set { `set_vertical_alignment`(newValue) }
+    }
+    public var `uppercase`: Bool {
+        get { `is_uppercase`() }
+        set { `set_uppercase`(newValue) }
+    }
+    public var `line_spacing`: Double {
+        get { `get_line_spacing`() }
+        set { `set_line_spacing`(newValue) }
+    }
+    public var `autowrap_mode`: TextServer.AutowrapMode {
+        get { `get_autowrap_mode`() }
+        set { `set_autowrap_mode`(newValue) }
+    }
+    public var `autowrap_trim_flags`: TextServer.LineBreakFlag {
+        get { `get_autowrap_trim_flags`() }
+        set { `set_autowrap_trim_flags`(newValue) }
+    }
+    public var `justification_flags`: TextServer.JustificationFlag {
+        get { `get_justification_flags`() }
+        set { `set_justification_flags`(newValue) }
+    }
+    public var `width`: Double {
+        get { `get_width`() }
+        set { `set_width`(newValue) }
+    }
+    public var `text_direction`: TextServer.Direction {
+        get { `get_text_direction`() }
+        set { `set_text_direction`(newValue) }
+    }
+    public var `language`: GodotString {
+        get { `get_language`() }
+        set { `set_language`(newValue) }
+    }
+    public var `structured_text_bidi_override`: TextServer.StructuredTextParser {
+        get { `get_structured_text_bidi_override`() }
+        set { `set_structured_text_bidi_override`(newValue) }
+    }
+    public var `structured_text_bidi_override_options`: GodotArray {
+        get { `get_structured_text_bidi_override_options`() }
+        set { `set_structured_text_bidi_override_options`(newValue) }
+    }
+}
+extension LabelSettings {
+    public var `line_spacing`: Double {
+        get { `get_line_spacing`() }
+        set { `set_line_spacing`(newValue) }
+    }
+    public var `paragraph_spacing`: Double {
+        get { `get_paragraph_spacing`() }
+        set { `set_paragraph_spacing`(newValue) }
+    }
+    public var `font`: Font? {
+        get { `get_font`() }
+        set { `set_font`(newValue) }
+    }
+    public var `font_size`: Int64 {
+        get { `get_font_size`() }
+        set { `set_font_size`(newValue) }
+    }
+    public var `font_color`: Color {
+        get { `get_font_color`() }
+        set { `set_font_color`(newValue) }
+    }
+    public var `outline_size`: Int64 {
+        get { `get_outline_size`() }
+        set { `set_outline_size`(newValue) }
+    }
+    public var `outline_color`: Color {
+        get { `get_outline_color`() }
+        set { `set_outline_color`(newValue) }
+    }
+    public var `shadow_size`: Int64 {
+        get { `get_shadow_size`() }
+        set { `set_shadow_size`(newValue) }
+    }
+    public var `shadow_color`: Color {
+        get { `get_shadow_color`() }
+        set { `set_shadow_color`(newValue) }
+    }
+    public var `shadow_offset`: Vector2 {
+        get { `get_shadow_offset`() }
+        set { `set_shadow_offset`(newValue) }
+    }
+    public var `stacked_outline_count`: Int64 {
+        get { `get_stacked_outline_count`() }
+        set { `set_stacked_outline_count`(newValue) }
+    }
+    public var `stacked_shadow_count`: Int64 {
+        get { `get_stacked_shadow_count`() }
+        set { `set_stacked_shadow_count`(newValue) }
+    }
+}
+extension Light2D {
+    public var `enabled`: Bool {
+        get { `is_enabled`() }
+        set { `set_enabled`(newValue) }
+    }
+    public var `editor_only`: Bool {
+        get { `is_editor_only`() }
+        set { `set_editor_only`(newValue) }
+    }
+    public var `color`: Color {
+        get { `get_color`() }
+        set { `set_color`(newValue) }
+    }
+    public var `energy`: Double {
+        get { `get_energy`() }
+        set { `set_energy`(newValue) }
+    }
+    public var `blend_mode`: Light2D.BlendMode {
+        get { `get_blend_mode`() }
+        set { `set_blend_mode`(newValue) }
+    }
+    public var `range_z_min`: Int64 {
+        get { `get_z_range_min`() }
+        set { `set_z_range_min`(newValue) }
+    }
+    public var `range_z_max`: Int64 {
+        get { `get_z_range_max`() }
+        set { `set_z_range_max`(newValue) }
+    }
+    public var `range_layer_min`: Int64 {
+        get { `get_layer_range_min`() }
+        set { `set_layer_range_min`(newValue) }
+    }
+    public var `range_layer_max`: Int64 {
+        get { `get_layer_range_max`() }
+        set { `set_layer_range_max`(newValue) }
+    }
+    public var `range_item_cull_mask`: Int64 {
+        get { `get_item_cull_mask`() }
+        set { `set_item_cull_mask`(newValue) }
+    }
+    public var `shadow_enabled`: Bool {
+        get { `is_shadow_enabled`() }
+        set { `set_shadow_enabled`(newValue) }
+    }
+    public var `shadow_color`: Color {
+        get { `get_shadow_color`() }
+        set { `set_shadow_color`(newValue) }
+    }
+    public var `shadow_filter`: Light2D.ShadowFilter {
+        get { `get_shadow_filter`() }
+        set { `set_shadow_filter`(newValue) }
+    }
+    public var `shadow_filter_smooth`: Double {
+        get { `get_shadow_smooth`() }
+        set { `set_shadow_smooth`(newValue) }
+    }
+    public var `shadow_item_cull_mask`: Int64 {
+        get { `get_item_shadow_cull_mask`() }
+        set { `set_item_shadow_cull_mask`(newValue) }
+    }
+}
+extension Light3D {
+    public var `light_intensity_lumens`: Double {
+        get { `get_param`(20) }
+        set { `set_param`(20, newValue) }
+    }
+    public var `light_intensity_lux`: Double {
+        get { `get_param`(20) }
+        set { `set_param`(20, newValue) }
+    }
+    public var `light_temperature`: Double {
+        get { `get_temperature`() }
+        set { `set_temperature`(newValue) }
+    }
+    public var `light_color`: Color {
+        get { `get_color`() }
+        set { `set_color`(newValue) }
+    }
+    public var `light_energy`: Double {
+        get { `get_param`(0) }
+        set { `set_param`(0, newValue) }
+    }
+    public var `light_indirect_energy`: Double {
+        get { `get_param`(1) }
+        set { `set_param`(1, newValue) }
+    }
+    public var `light_volumetric_fog_energy`: Double {
+        get { `get_param`(2) }
+        set { `set_param`(2, newValue) }
+    }
+    public var `light_size`: Double {
+        get { `get_param`(5) }
+        set { `set_param`(5, newValue) }
+    }
+    public var `light_angular_distance`: Double {
+        get { `get_param`(5) }
+        set { `set_param`(5, newValue) }
+    }
+    public var `light_negative`: Bool {
+        get { `is_negative`() }
+        set { `set_negative`(newValue) }
+    }
+    public var `light_specular`: Double {
+        get { `get_param`(3) }
+        set { `set_param`(3, newValue) }
+    }
+    public var `light_bake_mode`: Light3D.BakeMode {
+        get { `get_bake_mode`() }
+        set { `set_bake_mode`(newValue) }
+    }
+    public var `light_cull_mask`: Int64 {
+        get { `get_cull_mask`() }
+        set { `set_cull_mask`(newValue) }
+    }
+    public var `shadow_enabled`: Bool {
+        get { `has_shadow`() }
+        set { `set_shadow`(newValue) }
+    }
+    public var `shadow_bias`: Double {
+        get { `get_param`(15) }
+        set { `set_param`(15, newValue) }
+    }
+    public var `shadow_normal_bias`: Double {
+        get { `get_param`(14) }
+        set { `set_param`(14, newValue) }
+    }
+    public var `shadow_reverse_cull_face`: Bool {
+        get { `get_shadow_reverse_cull_face`() }
+        set { `set_shadow_reverse_cull_face`(newValue) }
+    }
+    public var `shadow_transmittance_bias`: Double {
+        get { `get_param`(19) }
+        set { `set_param`(19, newValue) }
+    }
+    public var `shadow_opacity`: Double {
+        get { `get_param`(17) }
+        set { `set_param`(17, newValue) }
+    }
+    public var `shadow_blur`: Double {
+        get { `get_param`(18) }
+        set { `set_param`(18, newValue) }
+    }
+    public var `shadow_caster_mask`: Int64 {
+        get { `get_shadow_caster_mask`() }
+        set { `set_shadow_caster_mask`(newValue) }
+    }
+    public var `distance_fade_enabled`: Bool {
+        get { `is_distance_fade_enabled`() }
+        set { `set_enable_distance_fade`(newValue) }
+    }
+    public var `distance_fade_begin`: Double {
+        get { `get_distance_fade_begin`() }
+        set { `set_distance_fade_begin`(newValue) }
+    }
+    public var `distance_fade_shadow`: Double {
+        get { `get_distance_fade_shadow`() }
+        set { `set_distance_fade_shadow`(newValue) }
+    }
+    public var `distance_fade_length`: Double {
+        get { `get_distance_fade_length`() }
+        set { `set_distance_fade_length`(newValue) }
+    }
+    public var `editor_only`: Bool {
+        get { `is_editor_only`() }
+        set { `set_editor_only`(newValue) }
+    }
+}
+extension LightOccluder2D {
+    public var `occluder`: OccluderPolygon2D? {
+        get { `get_occluder_polygon`() }
+        set { `set_occluder_polygon`(newValue) }
+    }
+    public var `sdf_collision`: Bool {
+        get { `is_set_as_sdf_collision`() }
+        set { `set_as_sdf_collision`(newValue) }
+    }
+    public var `occluder_light_mask`: Int64 {
+        get { `get_occluder_light_mask`() }
+        set { `set_occluder_light_mask`(newValue) }
+    }
+}
+extension LightmapGI {
+    public var `quality`: LightmapGI.BakeQuality {
+        get { `get_bake_quality`() }
+        set { `set_bake_quality`(newValue) }
+    }
+    public var `supersampling`: Bool {
+        get { `is_supersampling_enabled`() }
+        set { `set_supersampling_enabled`(newValue) }
+    }
+    public var `supersampling_factor`: Double {
+        get { `get_supersampling_factor`() }
+        set { `set_supersampling_factor`(newValue) }
+    }
+    public var `bounces`: Int64 {
+        get { `get_bounces`() }
+        set { `set_bounces`(newValue) }
+    }
+    public var `bounce_indirect_energy`: Double {
+        get { `get_bounce_indirect_energy`() }
+        set { `set_bounce_indirect_energy`(newValue) }
+    }
+    public var `directional`: Bool {
+        get { `is_directional`() }
+        set { `set_directional`(newValue) }
+    }
+    public var `shadowmask_mode`: LightmapGIData.ShadowmaskMode {
+        get { `get_shadowmask_mode`() }
+        set { `set_shadowmask_mode`(newValue) }
+    }
+    public var `use_texture_for_bounces`: Bool {
+        get { `is_using_texture_for_bounces`() }
+        set { `set_use_texture_for_bounces`(newValue) }
+    }
+    public var `interior`: Bool {
+        get { `is_interior`() }
+        set { `set_interior`(newValue) }
+    }
+    public var `use_denoiser`: Bool {
+        get { `is_using_denoiser`() }
+        set { `set_use_denoiser`(newValue) }
+    }
+    public var `denoiser_strength`: Double {
+        get { `get_denoiser_strength`() }
+        set { `set_denoiser_strength`(newValue) }
+    }
+    public var `denoiser_range`: Int64 {
+        get { `get_denoiser_range`() }
+        set { `set_denoiser_range`(newValue) }
+    }
+    public var `bias`: Double {
+        get { `get_bias`() }
+        set { `set_bias`(newValue) }
+    }
+    public var `texel_scale`: Double {
+        get { `get_texel_scale`() }
+        set { `set_texel_scale`(newValue) }
+    }
+    public var `max_texture_size`: Int64 {
+        get { `get_max_texture_size`() }
+        set { `set_max_texture_size`(newValue) }
+    }
+    public var `environment_mode`: LightmapGI.EnvironmentMode {
+        get { `get_environment_mode`() }
+        set { `set_environment_mode`(newValue) }
+    }
+    public var `environment_custom_sky`: Sky? {
+        get { `get_environment_custom_sky`() }
+        set { `set_environment_custom_sky`(newValue) }
+    }
+    public var `environment_custom_color`: Color {
+        get { `get_environment_custom_color`() }
+        set { `set_environment_custom_color`(newValue) }
+    }
+    public var `environment_custom_energy`: Double {
+        get { `get_environment_custom_energy`() }
+        set { `set_environment_custom_energy`(newValue) }
+    }
+    public var `generate_probes_subdiv`: LightmapGI.GenerateProbes {
+        get { `get_generate_probes`() }
+        set { `set_generate_probes`(newValue) }
+    }
+    public var `light_data`: LightmapGIData? {
+        get { `get_light_data`() }
+        set { `set_light_data`(newValue) }
+    }
+}
+extension LightmapGIData {
+    public var `lightmap_textures`: GodotArrayOf<TextureLayered> {
+        get { `get_lightmap_textures`() }
+        set { `set_lightmap_textures`(newValue) }
+    }
+    public var `shadowmask_textures`: GodotArrayOf<TextureLayered> {
+        get { `get_shadowmask_textures`() }
+        set { `set_shadowmask_textures`(newValue) }
+    }
+    public var `uses_spherical_harmonics`: Bool {
+        get { `is_using_spherical_harmonics`() }
+        set { `set_uses_spherical_harmonics`(newValue) }
+    }
+    public var `light_texture`: TextureLayered? {
+        get { `get_light_texture`() }
+        set { `set_light_texture`(newValue) }
+    }
+}
+extension LimitAngularVelocityModifier3D {
+    public var `max_angular_velocity`: Double {
+        get { `get_max_angular_velocity`() }
+        set { `set_max_angular_velocity`(newValue) }
+    }
+    public var `exclude`: Bool {
+        get { `is_exclude`() }
+        set { `set_exclude`(newValue) }
+    }
+    public var `chain_count`: Int64 {
+        get { `get_chain_count`() }
+        set { `set_chain_count`(newValue) }
+    }
+}
+extension Line2D {
+    public var `points`: GodotPackedVector2Array {
+        get { `get_points`() }
+        set { `set_points`(newValue) }
+    }
+    public var `closed`: Bool {
+        get { `is_closed`() }
+        set { `set_closed`(newValue) }
+    }
+    public var `width`: Double {
+        get { `get_width`() }
+        set { `set_width`(newValue) }
+    }
+    public var `width_curve`: Curve? {
+        get { `get_curve`() }
+        set { `set_curve`(newValue) }
+    }
+    public var `default_color`: Color {
+        get { `get_default_color`() }
+        set { `set_default_color`(newValue) }
+    }
+    public var `gradient`: Gradient? {
+        get { `get_gradient`() }
+        set { `set_gradient`(newValue) }
+    }
+    public var `texture`: Texture2D? {
+        get { `get_texture`() }
+        set { `set_texture`(newValue) }
+    }
+    public var `texture_mode`: Line2D.LineTextureMode {
+        get { `get_texture_mode`() }
+        set { `set_texture_mode`(newValue) }
+    }
+    public var `joint_mode`: Line2D.LineJointMode {
+        get { `get_joint_mode`() }
+        set { `set_joint_mode`(newValue) }
+    }
+    public var `begin_cap_mode`: Line2D.LineCapMode {
+        get { `get_begin_cap_mode`() }
+        set { `set_begin_cap_mode`(newValue) }
+    }
+    public var `end_cap_mode`: Line2D.LineCapMode {
+        get { `get_end_cap_mode`() }
+        set { `set_end_cap_mode`(newValue) }
+    }
+    public var `sharp_limit`: Double {
+        get { `get_sharp_limit`() }
+        set { `set_sharp_limit`(newValue) }
+    }
+    public var `round_precision`: Int64 {
+        get { `get_round_precision`() }
+        set { `set_round_precision`(newValue) }
+    }
+    public var `antialiased`: Bool {
+        get { `get_antialiased`() }
+        set { `set_antialiased`(newValue) }
+    }
+}
+extension LineEdit {
+    public var `text`: GodotString {
+        get { `get_text`() }
+        set { `set_text`(newValue) }
+    }
+    public var `placeholder_text`: GodotString {
+        get { `get_placeholder`() }
+        set { `set_placeholder`(newValue) }
+    }
+    public var `alignment`: Godot.HorizontalAlignment {
+        get { `get_horizontal_alignment`() }
+        set { `set_horizontal_alignment`(newValue) }
+    }
+    public var `max_length`: Int64 {
+        get { `get_max_length`() }
+        set { `set_max_length`(newValue) }
+    }
+    public var `editable`: Bool {
+        get { `is_editable`() }
+        set { `set_editable`(newValue) }
+    }
+    public var `keep_editing_on_text_submit`: Bool {
+        get { `is_editing_kept_on_text_submit`() }
+        set { `set_keep_editing_on_text_submit`(newValue) }
+    }
+    public var `expand_to_text_length`: Bool {
+        get { `is_expand_to_text_length_enabled`() }
+        set { `set_expand_to_text_length_enabled`(newValue) }
+    }
+    public var `context_menu_enabled`: Bool {
+        get { `is_context_menu_enabled`() }
+        set { `set_context_menu_enabled`(newValue) }
+    }
+    public var `emoji_menu_enabled`: Bool {
+        get { `is_emoji_menu_enabled`() }
+        set { `set_emoji_menu_enabled`(newValue) }
+    }
+    public var `backspace_deletes_composite_character_enabled`: Bool {
+        get { `is_backspace_deletes_composite_character_enabled`() }
+        set { `set_backspace_deletes_composite_character_enabled`(newValue) }
+    }
+    public var `clear_button_enabled`: Bool {
+        get { `is_clear_button_enabled`() }
+        set { `set_clear_button_enabled`(newValue) }
+    }
+    public var `shortcut_keys_enabled`: Bool {
+        get { `is_shortcut_keys_enabled`() }
+        set { `set_shortcut_keys_enabled`(newValue) }
+    }
+    public var `middle_mouse_paste_enabled`: Bool {
+        get { `is_middle_mouse_paste_enabled`() }
+        set { `set_middle_mouse_paste_enabled`(newValue) }
+    }
+    public var `selecting_enabled`: Bool {
+        get { `is_selecting_enabled`() }
+        set { `set_selecting_enabled`(newValue) }
+    }
+    public var `deselect_on_focus_loss_enabled`: Bool {
+        get { `is_deselect_on_focus_loss_enabled`() }
+        set { `set_deselect_on_focus_loss_enabled`(newValue) }
+    }
+    public var `drag_and_drop_selection_enabled`: Bool {
+        get { `is_drag_and_drop_selection_enabled`() }
+        set { `set_drag_and_drop_selection_enabled`(newValue) }
+    }
+    public var `flat`: Bool {
+        get { `is_flat`() }
+        set { `set_flat`(newValue) }
+    }
+    public var `draw_control_chars`: Bool {
+        get { `get_draw_control_chars`() }
+        set { `set_draw_control_chars`(newValue) }
+    }
+    public var `select_all_on_focus`: Bool {
+        get { `is_select_all_on_focus`() }
+        set { `set_select_all_on_focus`(newValue) }
+    }
+    public var `virtual_keyboard_enabled`: Bool {
+        get { `is_virtual_keyboard_enabled`() }
+        set { `set_virtual_keyboard_enabled`(newValue) }
+    }
+    public var `virtual_keyboard_show_on_focus`: Bool {
+        get { `get_virtual_keyboard_show_on_focus`() }
+        set { `set_virtual_keyboard_show_on_focus`(newValue) }
+    }
+    public var `virtual_keyboard_type`: LineEdit.VirtualKeyboardType {
+        get { `get_virtual_keyboard_type`() }
+        set { `set_virtual_keyboard_type`(newValue) }
+    }
+    public var `caret_blink`: Bool {
+        get { `is_caret_blink_enabled`() }
+        set { `set_caret_blink_enabled`(newValue) }
+    }
+    public var `caret_blink_interval`: Double {
+        get { `get_caret_blink_interval`() }
+        set { `set_caret_blink_interval`(newValue) }
+    }
+    public var `caret_column`: Int64 {
+        get { `get_caret_column`() }
+        set { `set_caret_column`(newValue) }
+    }
+    public var `caret_force_displayed`: Bool {
+        get { `is_caret_force_displayed`() }
+        set { `set_caret_force_displayed`(newValue) }
+    }
+    public var `caret_mid_grapheme`: Bool {
+        get { `is_caret_mid_grapheme_enabled`() }
+        set { `set_caret_mid_grapheme_enabled`(newValue) }
+    }
+    public var `secret`: Bool {
+        get { `is_secret`() }
+        set { `set_secret`(newValue) }
+    }
+    public var `secret_character`: GodotString {
+        get { `get_secret_character`() }
+        set { `set_secret_character`(newValue) }
+    }
+    public var `text_direction`: Control.TextDirection {
+        get { `get_text_direction`() }
+        set { `set_text_direction`(newValue) }
+    }
+    public var `language`: GodotString {
+        get { `get_language`() }
+        set { `set_language`(newValue) }
+    }
+    public var `structured_text_bidi_override`: TextServer.StructuredTextParser {
+        get { `get_structured_text_bidi_override`() }
+        set { `set_structured_text_bidi_override`(newValue) }
+    }
+    public var `structured_text_bidi_override_options`: GodotArray {
+        get { `get_structured_text_bidi_override_options`() }
+        set { `set_structured_text_bidi_override_options`(newValue) }
+    }
+    public var `right_icon`: Texture2D? {
+        get { `get_right_icon`() }
+        set { `set_right_icon`(newValue) }
+    }
+    public var `icon_expand_mode`: LineEdit.ExpandMode {
+        get { `get_icon_expand_mode`() }
+        set { `set_icon_expand_mode`(newValue) }
+    }
+    public var `right_icon_scale`: Double {
+        get { `get_right_icon_scale`() }
+        set { `set_right_icon_scale`(newValue) }
+    }
+}
+extension LinkButton {
+    public var `text`: GodotString {
+        get { `get_text`() }
+        set { `set_text`(newValue) }
+    }
+    public var `underline`: LinkButton.UnderlineMode {
+        get { `get_underline_mode`() }
+        set { `set_underline_mode`(newValue) }
+    }
+    public var `uri`: GodotString {
+        get { `get_uri`() }
+        set { `set_uri`(newValue) }
+    }
+    public var `text_overrun_behavior`: TextServer.OverrunBehavior {
+        get { `get_text_overrun_behavior`() }
+        set { `set_text_overrun_behavior`(newValue) }
+    }
+    public var `ellipsis_char`: GodotString {
+        get { `get_ellipsis_char`() }
+        set { `set_ellipsis_char`(newValue) }
+    }
+    public var `text_direction`: Control.TextDirection {
+        get { `get_text_direction`() }
+        set { `set_text_direction`(newValue) }
+    }
+    public var `language`: GodotString {
+        get { `get_language`() }
+        set { `set_language`(newValue) }
+    }
+    public var `structured_text_bidi_override`: TextServer.StructuredTextParser {
+        get { `get_structured_text_bidi_override`() }
+        set { `set_structured_text_bidi_override`(newValue) }
+    }
+    public var `structured_text_bidi_override_options`: GodotArray {
+        get { `get_structured_text_bidi_override_options`() }
+        set { `set_structured_text_bidi_override_options`(newValue) }
+    }
+}
+extension LookAtModifier3D {
+    public var `target_node`: GodotNodePath {
+        get { `get_target_node`() }
+        set { `set_target_node`(newValue) }
+    }
+    public var `bone_name`: GodotString {
+        get { `get_bone_name`() }
+        set { `set_bone_name`(newValue) }
+    }
+    public var `bone`: Int64 {
+        get { `get_bone`() }
+        set { `set_bone`(newValue) }
+    }
+    public var `forward_axis`: SkeletonModifier3D.BoneAxis {
+        get { `get_forward_axis`() }
+        set { `set_forward_axis`(newValue) }
+    }
+    public var `primary_rotation_axis`: Vector3.Axis {
+        get { `get_primary_rotation_axis`() }
+        set { `set_primary_rotation_axis`(newValue) }
+    }
+    public var `use_secondary_rotation`: Bool {
+        get { `is_using_secondary_rotation`() }
+        set { `set_use_secondary_rotation`(newValue) }
+    }
+    public var `relative`: Bool {
+        get { `is_relative`() }
+        set { `set_relative`(newValue) }
+    }
+    public var `origin_from`: LookAtModifier3D.OriginFrom {
+        get { `get_origin_from`() }
+        set { `set_origin_from`(newValue) }
+    }
+    public var `origin_bone_name`: GodotString {
+        get { `get_origin_bone_name`() }
+        set { `set_origin_bone_name`(newValue) }
+    }
+    public var `origin_bone`: Int64 {
+        get { `get_origin_bone`() }
+        set { `set_origin_bone`(newValue) }
+    }
+    public var `origin_external_node`: GodotNodePath {
+        get { `get_origin_external_node`() }
+        set { `set_origin_external_node`(newValue) }
+    }
+    public var `origin_offset`: Vector3 {
+        get { `get_origin_offset`() }
+        set { `set_origin_offset`(newValue) }
+    }
+    public var `origin_safe_margin`: Double {
+        get { `get_origin_safe_margin`() }
+        set { `set_origin_safe_margin`(newValue) }
+    }
+    public var `duration`: Double {
+        get { `get_duration`() }
+        set { `set_duration`(newValue) }
+    }
+    public var `transition_type`: Tween.TransitionType {
+        get { `get_transition_type`() }
+        set { `set_transition_type`(newValue) }
+    }
+    public var `ease_type`: Tween.EaseType {
+        get { `get_ease_type`() }
+        set { `set_ease_type`(newValue) }
+    }
+    public var `use_angle_limitation`: Bool {
+        get { `is_using_angle_limitation`() }
+        set { `set_use_angle_limitation`(newValue) }
+    }
+    public var `symmetry_limitation`: Bool {
+        get { `is_limitation_symmetry`() }
+        set { `set_symmetry_limitation`(newValue) }
+    }
+    public var `primary_limit_angle`: Double {
+        get { `get_primary_limit_angle`() }
+        set { `set_primary_limit_angle`(newValue) }
+    }
+    public var `primary_damp_threshold`: Double {
+        get { `get_primary_damp_threshold`() }
+        set { `set_primary_damp_threshold`(newValue) }
+    }
+    public var `primary_positive_limit_angle`: Double {
+        get { `get_primary_positive_limit_angle`() }
+        set { `set_primary_positive_limit_angle`(newValue) }
+    }
+    public var `primary_positive_damp_threshold`: Double {
+        get { `get_primary_positive_damp_threshold`() }
+        set { `set_primary_positive_damp_threshold`(newValue) }
+    }
+    public var `primary_negative_limit_angle`: Double {
+        get { `get_primary_negative_limit_angle`() }
+        set { `set_primary_negative_limit_angle`(newValue) }
+    }
+    public var `primary_negative_damp_threshold`: Double {
+        get { `get_primary_negative_damp_threshold`() }
+        set { `set_primary_negative_damp_threshold`(newValue) }
+    }
+    public var `secondary_limit_angle`: Double {
+        get { `get_secondary_limit_angle`() }
+        set { `set_secondary_limit_angle`(newValue) }
+    }
+    public var `secondary_damp_threshold`: Double {
+        get { `get_secondary_damp_threshold`() }
+        set { `set_secondary_damp_threshold`(newValue) }
+    }
+    public var `secondary_positive_limit_angle`: Double {
+        get { `get_secondary_positive_limit_angle`() }
+        set { `set_secondary_positive_limit_angle`(newValue) }
+    }
+    public var `secondary_positive_damp_threshold`: Double {
+        get { `get_secondary_positive_damp_threshold`() }
+        set { `set_secondary_positive_damp_threshold`(newValue) }
+    }
+    public var `secondary_negative_limit_angle`: Double {
+        get { `get_secondary_negative_limit_angle`() }
+        set { `set_secondary_negative_limit_angle`(newValue) }
+    }
+    public var `secondary_negative_damp_threshold`: Double {
+        get { `get_secondary_negative_damp_threshold`() }
+        set { `set_secondary_negative_damp_threshold`(newValue) }
+    }
+}
+extension Marker2D {
+    public var `gizmo_extents`: Double {
+        get { `get_gizmo_extents`() }
+        set { `set_gizmo_extents`(newValue) }
+    }
+}
+extension Marker3D {
+    public var `gizmo_extents`: Double {
+        get { `get_gizmo_extents`() }
+        set { `set_gizmo_extents`(newValue) }
+    }
+}
+extension Material {
+    public var `render_priority`: Int64 {
+        get { `get_render_priority`() }
+        set { `set_render_priority`(newValue) }
+    }
+    public var `next_pass`: Material? {
+        get { `get_next_pass`() }
+        set { `set_next_pass`(newValue) }
+    }
+}
+extension MenuBar {
+    public var `flat`: Bool {
+        get { `is_flat`() }
+        set { `set_flat`(newValue) }
+    }
+    public var `start_index`: Int64 {
+        get { `get_start_index`() }
+        set { `set_start_index`(newValue) }
+    }
+    public var `switch_on_hover`: Bool {
+        get { `is_switch_on_hover`() }
+        set { `set_switch_on_hover`(newValue) }
+    }
+    public var `prefer_global_menu`: Bool {
+        get { `is_prefer_global_menu`() }
+        set { `set_prefer_global_menu`(newValue) }
+    }
+    public var `text_direction`: Control.TextDirection {
+        get { `get_text_direction`() }
+        set { `set_text_direction`(newValue) }
+    }
+    public var `language`: GodotString {
+        get { `get_language`() }
+        set { `set_language`(newValue) }
+    }
+}
+extension MenuButton {
+    public var `switch_on_hover`: Bool {
+        get { `is_switch_on_hover`() }
+        set { `set_switch_on_hover`(newValue) }
+    }
+    public var `item_count`: Int64 {
+        get { `get_item_count`() }
+        set { `set_item_count`(newValue) }
+    }
+}
+extension Mesh {
+    public var `lightmap_size_hint`: Vector2i {
+        get { `get_lightmap_size_hint`() }
+        set { `set_lightmap_size_hint`(newValue) }
+    }
+}
+extension MeshConvexDecompositionSettings {
+    public var `max_concavity`: Double {
+        get { `get_max_concavity`() }
+        set { `set_max_concavity`(newValue) }
+    }
+    public var `symmetry_planes_clipping_bias`: Double {
+        get { `get_symmetry_planes_clipping_bias`() }
+        set { `set_symmetry_planes_clipping_bias`(newValue) }
+    }
+    public var `revolution_axes_clipping_bias`: Double {
+        get { `get_revolution_axes_clipping_bias`() }
+        set { `set_revolution_axes_clipping_bias`(newValue) }
+    }
+    public var `min_volume_per_convex_hull`: Double {
+        get { `get_min_volume_per_convex_hull`() }
+        set { `set_min_volume_per_convex_hull`(newValue) }
+    }
+    public var `resolution`: Int64 {
+        get { `get_resolution`() }
+        set { `set_resolution`(newValue) }
+    }
+    public var `max_num_vertices_per_convex_hull`: Int64 {
+        get { `get_max_num_vertices_per_convex_hull`() }
+        set { `set_max_num_vertices_per_convex_hull`(newValue) }
+    }
+    public var `plane_downsampling`: Int64 {
+        get { `get_plane_downsampling`() }
+        set { `set_plane_downsampling`(newValue) }
+    }
+    public var `convex_hull_downsampling`: Int64 {
+        get { `get_convex_hull_downsampling`() }
+        set { `set_convex_hull_downsampling`(newValue) }
+    }
+    public var `normalize_mesh`: Bool {
+        get { `get_normalize_mesh`() }
+        set { `set_normalize_mesh`(newValue) }
+    }
+    public var `mode`: MeshConvexDecompositionSettings.Mode {
+        get { `get_mode`() }
+        set { `set_mode`(newValue) }
+    }
+    public var `convex_hull_approximation`: Bool {
+        get { `get_convex_hull_approximation`() }
+        set { `set_convex_hull_approximation`(newValue) }
+    }
+    public var `max_convex_hulls`: Int64 {
+        get { `get_max_convex_hulls`() }
+        set { `set_max_convex_hulls`(newValue) }
+    }
+    public var `project_hull_vertices`: Bool {
+        get { `get_project_hull_vertices`() }
+        set { `set_project_hull_vertices`(newValue) }
+    }
+}
+extension MeshInstance2D {
+    public var `mesh`: Mesh? {
+        get { `get_mesh`() }
+        set { `set_mesh`(newValue) }
+    }
+    public var `texture`: Texture2D? {
+        get { `get_texture`() }
+        set { `set_texture`(newValue) }
+    }
+}
+extension MeshInstance3D {
+    public var `mesh`: Mesh? {
+        get { `get_mesh`() }
+        set { `set_mesh`(newValue) }
+    }
+    public var `skin`: Skin? {
+        get { `get_skin`() }
+        set { `set_skin`(newValue) }
+    }
+    public var `skeleton`: GodotNodePath {
+        get { `get_skeleton_path`() }
+        set { `set_skeleton_path`(newValue) }
+    }
+}
+extension MeshTexture {
+    public var `mesh`: Mesh? {
+        get { `get_mesh`() }
+        set { `set_mesh`(newValue) }
+    }
+    public var `base_texture`: Texture2D? {
+        get { `get_base_texture`() }
+        set { `set_base_texture`(newValue) }
+    }
+    public var `image_size`: Vector2 {
+        get { `get_image_size`() }
+        set { `set_image_size`(newValue) }
+    }
+}
+extension MissingNode {
+    public var `original_class`: GodotString {
+        get { `get_original_class`() }
+        set { `set_original_class`(newValue) }
+    }
+    public var `original_scene`: GodotString {
+        get { `get_original_scene`() }
+        set { `set_original_scene`(newValue) }
+    }
+    public var `recording_properties`: Bool {
+        get { `is_recording_properties`() }
+        set { `set_recording_properties`(newValue) }
+    }
+    public var `recording_signals`: Bool {
+        get { `is_recording_signals`() }
+        set { `set_recording_signals`(newValue) }
+    }
+}
+extension MissingResource {
+    public var `original_class`: GodotString {
+        get { `get_original_class`() }
+        set { `set_original_class`(newValue) }
+    }
+    public var `recording_properties`: Bool {
+        get { `is_recording_properties`() }
+        set { `set_recording_properties`(newValue) }
+    }
+}
+extension MobileVRInterface {
+    public var `eye_height`: Double {
+        get { `get_eye_height`() }
+        set { `set_eye_height`(newValue) }
+    }
+    public var `iod`: Double {
+        get { `get_iod`() }
+        set { `set_iod`(newValue) }
+    }
+    public var `display_width`: Double {
+        get { `get_display_width`() }
+        set { `set_display_width`(newValue) }
+    }
+    public var `display_to_lens`: Double {
+        get { `get_display_to_lens`() }
+        set { `set_display_to_lens`(newValue) }
+    }
+    public var `offset_rect`: Rect2 {
+        get { `get_offset_rect`() }
+        set { `set_offset_rect`(newValue) }
+    }
+    public var `oversample`: Double {
+        get { `get_oversample`() }
+        set { `set_oversample`(newValue) }
+    }
+    public var `k1`: Double {
+        get { `get_k1`() }
+        set { `set_k1`(newValue) }
+    }
+    public var `k2`: Double {
+        get { `get_k2`() }
+        set { `set_k2`(newValue) }
+    }
+    public var `vrs_min_radius`: Double {
+        get { `get_vrs_min_radius`() }
+        set { `set_vrs_min_radius`(newValue) }
+    }
+    public var `vrs_strength`: Double {
+        get { `get_vrs_strength`() }
+        set { `set_vrs_strength`(newValue) }
+    }
+}
+extension ModifierBoneTarget3D {
+    public var `bone_name`: GodotString {
+        get { `get_bone_name`() }
+        set { `set_bone_name`(newValue) }
+    }
+    public var `bone`: Int64 {
+        get { `get_bone`() }
+        set { `set_bone`(newValue) }
+    }
+}
+extension MultiMesh {
+    public var `transform_format`: MultiMesh.TransformFormat {
+        get { `get_transform_format`() }
+        set { `set_transform_format`(newValue) }
+    }
+    public var `use_colors`: Bool {
+        get { `is_using_colors`() }
+        set { `set_use_colors`(newValue) }
+    }
+    public var `use_custom_data`: Bool {
+        get { `is_using_custom_data`() }
+        set { `set_use_custom_data`(newValue) }
+    }
+    public var `custom_aabb`: AABB {
+        get { `get_custom_aabb`() }
+        set { `set_custom_aabb`(newValue) }
+    }
+    public var `instance_count`: Int64 {
+        get { `get_instance_count`() }
+        set { `set_instance_count`(newValue) }
+    }
+    public var `visible_instance_count`: Int64 {
+        get { `get_visible_instance_count`() }
+        set { `set_visible_instance_count`(newValue) }
+    }
+    public var `mesh`: Mesh? {
+        get { `get_mesh`() }
+        set { `set_mesh`(newValue) }
+    }
+    public var `buffer`: GodotPackedFloat32Array {
+        get { `get_buffer`() }
+        set { `set_buffer`(newValue) }
+    }
+    public var `physics_interpolation_quality`: MultiMesh.PhysicsInterpolationQuality {
+        get { `get_physics_interpolation_quality`() }
+        set { `set_physics_interpolation_quality`(newValue) }
+    }
+}
+extension MultiMeshInstance2D {
+    public var `multimesh`: MultiMesh? {
+        get { `get_multimesh`() }
+        set { `set_multimesh`(newValue) }
+    }
+    public var `texture`: Texture2D? {
+        get { `get_texture`() }
+        set { `set_texture`(newValue) }
+    }
+}
+extension MultiMeshInstance3D {
+    public var `multimesh`: MultiMesh? {
+        get { `get_multimesh`() }
+        set { `set_multimesh`(newValue) }
+    }
+}
+extension MultiplayerAPI {
+    public var `multiplayer_peer`: MultiplayerPeer? {
+        get { `get_multiplayer_peer`() }
+        set { `set_multiplayer_peer`(newValue) }
+    }
+}
+extension MultiplayerPeer {
+    public var `refuse_new_connections`: Bool {
+        get { `is_refusing_new_connections`() }
+        set { `set_refuse_new_connections`(newValue) }
+    }
+    public var `transfer_mode`: MultiplayerPeer.TransferMode {
+        get { `get_transfer_mode`() }
+        set { `set_transfer_mode`(newValue) }
+    }
+    public var `transfer_channel`: Int64 {
+        get { `get_transfer_channel`() }
+        set { `set_transfer_channel`(newValue) }
+    }
+}
+extension MultiplayerSpawner {
+    public var `spawn_path`: GodotNodePath {
+        get { `get_spawn_path`() }
+        set { `set_spawn_path`(newValue) }
+    }
+    public var `spawn_limit`: Int64 {
+        get { `get_spawn_limit`() }
+        set { `set_spawn_limit`(newValue) }
+    }
+    public var `spawn_function`: GodotCallable {
+        get { `get_spawn_function`() }
+        set { `set_spawn_function`(newValue) }
+    }
+}
+extension MultiplayerSynchronizer {
+    public var `root_path`: GodotNodePath {
+        get { `get_root_path`() }
+        set { `set_root_path`(newValue) }
+    }
+    public var `replication_interval`: Double {
+        get { `get_replication_interval`() }
+        set { `set_replication_interval`(newValue) }
+    }
+    public var `delta_interval`: Double {
+        get { `get_delta_interval`() }
+        set { `set_delta_interval`(newValue) }
+    }
+    public var `replication_config`: SceneReplicationConfig? {
+        get { `get_replication_config`() }
+        set { `set_replication_config`(newValue) }
+    }
+    public var `visibility_update_mode`: MultiplayerSynchronizer.VisibilityUpdateMode {
+        get { `get_visibility_update_mode`() }
+        set { `set_visibility_update_mode`(newValue) }
+    }
+    public var `public_visibility`: Bool {
+        get { `is_visibility_public`() }
+        set { `set_visibility_public`(newValue) }
+    }
+}
+extension NavigationAgent2D {
+    public var `target_position`: Vector2 {
+        get { `get_target_position`() }
+        set { `set_target_position`(newValue) }
+    }
+    public var `path_desired_distance`: Double {
+        get { `get_path_desired_distance`() }
+        set { `set_path_desired_distance`(newValue) }
+    }
+    public var `target_desired_distance`: Double {
+        get { `get_target_desired_distance`() }
+        set { `set_target_desired_distance`(newValue) }
+    }
+    public var `path_max_distance`: Double {
+        get { `get_path_max_distance`() }
+        set { `set_path_max_distance`(newValue) }
+    }
+    public var `navigation_layers`: Int64 {
+        get { `get_navigation_layers`() }
+        set { `set_navigation_layers`(newValue) }
+    }
+    public var `pathfinding_algorithm`: NavigationPathQueryParameters2D.PathfindingAlgorithm {
+        get { `get_pathfinding_algorithm`() }
+        set { `set_pathfinding_algorithm`(newValue) }
+    }
+    public var `path_postprocessing`: NavigationPathQueryParameters2D.PathPostProcessing {
+        get { `get_path_postprocessing`() }
+        set { `set_path_postprocessing`(newValue) }
+    }
+    public var `path_metadata_flags`: NavigationPathQueryParameters2D.PathMetadataFlags {
+        get { `get_path_metadata_flags`() }
+        set { `set_path_metadata_flags`(newValue) }
+    }
+    public var `simplify_path`: Bool {
+        get { `get_simplify_path`() }
+        set { `set_simplify_path`(newValue) }
+    }
+    public var `simplify_epsilon`: Double {
+        get { `get_simplify_epsilon`() }
+        set { `set_simplify_epsilon`(newValue) }
+    }
+    public var `path_return_max_length`: Double {
+        get { `get_path_return_max_length`() }
+        set { `set_path_return_max_length`(newValue) }
+    }
+    public var `path_return_max_radius`: Double {
+        get { `get_path_return_max_radius`() }
+        set { `set_path_return_max_radius`(newValue) }
+    }
+    public var `path_search_max_polygons`: Int64 {
+        get { `get_path_search_max_polygons`() }
+        set { `set_path_search_max_polygons`(newValue) }
+    }
+    public var `path_search_max_distance`: Double {
+        get { `get_path_search_max_distance`() }
+        set { `set_path_search_max_distance`(newValue) }
+    }
+    public var `avoidance_enabled`: Bool {
+        get { `get_avoidance_enabled`() }
+        set { `set_avoidance_enabled`(newValue) }
+    }
+    public var `velocity`: Vector2 {
+        get { `get_velocity`() }
+        set { `set_velocity`(newValue) }
+    }
+    public var `radius`: Double {
+        get { `get_radius`() }
+        set { `set_radius`(newValue) }
+    }
+    public var `neighbor_distance`: Double {
+        get { `get_neighbor_distance`() }
+        set { `set_neighbor_distance`(newValue) }
+    }
+    public var `max_neighbors`: Int64 {
+        get { `get_max_neighbors`() }
+        set { `set_max_neighbors`(newValue) }
+    }
+    public var `time_horizon_agents`: Double {
+        get { `get_time_horizon_agents`() }
+        set { `set_time_horizon_agents`(newValue) }
+    }
+    public var `time_horizon_obstacles`: Double {
+        get { `get_time_horizon_obstacles`() }
+        set { `set_time_horizon_obstacles`(newValue) }
+    }
+    public var `max_speed`: Double {
+        get { `get_max_speed`() }
+        set { `set_max_speed`(newValue) }
+    }
+    public var `avoidance_layers`: Int64 {
+        get { `get_avoidance_layers`() }
+        set { `set_avoidance_layers`(newValue) }
+    }
+    public var `avoidance_mask`: Int64 {
+        get { `get_avoidance_mask`() }
+        set { `set_avoidance_mask`(newValue) }
+    }
+    public var `avoidance_priority`: Double {
+        get { `get_avoidance_priority`() }
+        set { `set_avoidance_priority`(newValue) }
+    }
+    public var `debug_enabled`: Bool {
+        get { `get_debug_enabled`() }
+        set { `set_debug_enabled`(newValue) }
+    }
+    public var `debug_use_custom`: Bool {
+        get { `get_debug_use_custom`() }
+        set { `set_debug_use_custom`(newValue) }
+    }
+    public var `debug_path_custom_color`: Color {
+        get { `get_debug_path_custom_color`() }
+        set { `set_debug_path_custom_color`(newValue) }
+    }
+    public var `debug_path_custom_point_size`: Double {
+        get { `get_debug_path_custom_point_size`() }
+        set { `set_debug_path_custom_point_size`(newValue) }
+    }
+    public var `debug_path_custom_line_width`: Double {
+        get { `get_debug_path_custom_line_width`() }
+        set { `set_debug_path_custom_line_width`(newValue) }
+    }
+}
+extension NavigationAgent3D {
+    public var `target_position`: Vector3 {
+        get { `get_target_position`() }
+        set { `set_target_position`(newValue) }
+    }
+    public var `path_desired_distance`: Double {
+        get { `get_path_desired_distance`() }
+        set { `set_path_desired_distance`(newValue) }
+    }
+    public var `target_desired_distance`: Double {
+        get { `get_target_desired_distance`() }
+        set { `set_target_desired_distance`(newValue) }
+    }
+    public var `path_height_offset`: Double {
+        get { `get_path_height_offset`() }
+        set { `set_path_height_offset`(newValue) }
+    }
+    public var `path_max_distance`: Double {
+        get { `get_path_max_distance`() }
+        set { `set_path_max_distance`(newValue) }
+    }
+    public var `navigation_layers`: Int64 {
+        get { `get_navigation_layers`() }
+        set { `set_navigation_layers`(newValue) }
+    }
+    public var `pathfinding_algorithm`: NavigationPathQueryParameters3D.PathfindingAlgorithm {
+        get { `get_pathfinding_algorithm`() }
+        set { `set_pathfinding_algorithm`(newValue) }
+    }
+    public var `path_postprocessing`: NavigationPathQueryParameters3D.PathPostProcessing {
+        get { `get_path_postprocessing`() }
+        set { `set_path_postprocessing`(newValue) }
+    }
+    public var `path_metadata_flags`: NavigationPathQueryParameters3D.PathMetadataFlags {
+        get { `get_path_metadata_flags`() }
+        set { `set_path_metadata_flags`(newValue) }
+    }
+    public var `simplify_path`: Bool {
+        get { `get_simplify_path`() }
+        set { `set_simplify_path`(newValue) }
+    }
+    public var `simplify_epsilon`: Double {
+        get { `get_simplify_epsilon`() }
+        set { `set_simplify_epsilon`(newValue) }
+    }
+    public var `path_return_max_length`: Double {
+        get { `get_path_return_max_length`() }
+        set { `set_path_return_max_length`(newValue) }
+    }
+    public var `path_return_max_radius`: Double {
+        get { `get_path_return_max_radius`() }
+        set { `set_path_return_max_radius`(newValue) }
+    }
+    public var `path_search_max_polygons`: Int64 {
+        get { `get_path_search_max_polygons`() }
+        set { `set_path_search_max_polygons`(newValue) }
+    }
+    public var `path_search_max_distance`: Double {
+        get { `get_path_search_max_distance`() }
+        set { `set_path_search_max_distance`(newValue) }
+    }
+    public var `avoidance_enabled`: Bool {
+        get { `get_avoidance_enabled`() }
+        set { `set_avoidance_enabled`(newValue) }
+    }
+    public var `velocity`: Vector3 {
+        get { `get_velocity`() }
+        set { `set_velocity`(newValue) }
+    }
+    public var `height`: Double {
+        get { `get_height`() }
+        set { `set_height`(newValue) }
+    }
+    public var `radius`: Double {
+        get { `get_radius`() }
+        set { `set_radius`(newValue) }
+    }
+    public var `neighbor_distance`: Double {
+        get { `get_neighbor_distance`() }
+        set { `set_neighbor_distance`(newValue) }
+    }
+    public var `max_neighbors`: Int64 {
+        get { `get_max_neighbors`() }
+        set { `set_max_neighbors`(newValue) }
+    }
+    public var `time_horizon_agents`: Double {
+        get { `get_time_horizon_agents`() }
+        set { `set_time_horizon_agents`(newValue) }
+    }
+    public var `time_horizon_obstacles`: Double {
+        get { `get_time_horizon_obstacles`() }
+        set { `set_time_horizon_obstacles`(newValue) }
+    }
+    public var `max_speed`: Double {
+        get { `get_max_speed`() }
+        set { `set_max_speed`(newValue) }
+    }
+    public var `use_3d_avoidance`: Bool {
+        get { `get_use_3d_avoidance`() }
+        set { `set_use_3d_avoidance`(newValue) }
+    }
+    public var `keep_y_velocity`: Bool {
+        get { `get_keep_y_velocity`() }
+        set { `set_keep_y_velocity`(newValue) }
+    }
+    public var `avoidance_layers`: Int64 {
+        get { `get_avoidance_layers`() }
+        set { `set_avoidance_layers`(newValue) }
+    }
+    public var `avoidance_mask`: Int64 {
+        get { `get_avoidance_mask`() }
+        set { `set_avoidance_mask`(newValue) }
+    }
+    public var `avoidance_priority`: Double {
+        get { `get_avoidance_priority`() }
+        set { `set_avoidance_priority`(newValue) }
+    }
+    public var `debug_enabled`: Bool {
+        get { `get_debug_enabled`() }
+        set { `set_debug_enabled`(newValue) }
+    }
+    public var `debug_use_custom`: Bool {
+        get { `get_debug_use_custom`() }
+        set { `set_debug_use_custom`(newValue) }
+    }
+    public var `debug_path_custom_color`: Color {
+        get { `get_debug_path_custom_color`() }
+        set { `set_debug_path_custom_color`(newValue) }
+    }
+    public var `debug_path_custom_point_size`: Double {
+        get { `get_debug_path_custom_point_size`() }
+        set { `set_debug_path_custom_point_size`(newValue) }
+    }
+}
+extension NavigationLink2D {
+    public var `enabled`: Bool {
+        get { `is_enabled`() }
+        set { `set_enabled`(newValue) }
+    }
+    public var `bidirectional`: Bool {
+        get { `is_bidirectional`() }
+        set { `set_bidirectional`(newValue) }
+    }
+    public var `navigation_layers`: Int64 {
+        get { `get_navigation_layers`() }
+        set { `set_navigation_layers`(newValue) }
+    }
+    public var `start_position`: Vector2 {
+        get { `get_start_position`() }
+        set { `set_start_position`(newValue) }
+    }
+    public var `end_position`: Vector2 {
+        get { `get_end_position`() }
+        set { `set_end_position`(newValue) }
+    }
+    public var `enter_cost`: Double {
+        get { `get_enter_cost`() }
+        set { `set_enter_cost`(newValue) }
+    }
+    public var `travel_cost`: Double {
+        get { `get_travel_cost`() }
+        set { `set_travel_cost`(newValue) }
+    }
+}
+extension NavigationLink3D {
+    public var `enabled`: Bool {
+        get { `is_enabled`() }
+        set { `set_enabled`(newValue) }
+    }
+    public var `bidirectional`: Bool {
+        get { `is_bidirectional`() }
+        set { `set_bidirectional`(newValue) }
+    }
+    public var `navigation_layers`: Int64 {
+        get { `get_navigation_layers`() }
+        set { `set_navigation_layers`(newValue) }
+    }
+    public var `start_position`: Vector3 {
+        get { `get_start_position`() }
+        set { `set_start_position`(newValue) }
+    }
+    public var `end_position`: Vector3 {
+        get { `get_end_position`() }
+        set { `set_end_position`(newValue) }
+    }
+    public var `enter_cost`: Double {
+        get { `get_enter_cost`() }
+        set { `set_enter_cost`(newValue) }
+    }
+    public var `travel_cost`: Double {
+        get { `get_travel_cost`() }
+        set { `set_travel_cost`(newValue) }
+    }
+}
+extension NavigationMesh {
+    public var `vertices`: GodotPackedVector3Array {
+        get { `get_vertices`() }
+        set { `set_vertices`(newValue) }
+    }
+    public var `sample_partition_type`: NavigationMesh.SamplePartitionType {
+        get { `get_sample_partition_type`() }
+        set { `set_sample_partition_type`(newValue) }
+    }
+    public var `geometry_parsed_geometry_type`: NavigationMesh.ParsedGeometryType {
+        get { `get_parsed_geometry_type`() }
+        set { `set_parsed_geometry_type`(newValue) }
+    }
+    public var `geometry_collision_mask`: Int64 {
+        get { `get_collision_mask`() }
+        set { `set_collision_mask`(newValue) }
+    }
+    public var `geometry_source_geometry_mode`: NavigationMesh.SourceGeometryMode {
+        get { `get_source_geometry_mode`() }
+        set { `set_source_geometry_mode`(newValue) }
+    }
+    public var `cell_size`: Double {
+        get { `get_cell_size`() }
+        set { `set_cell_size`(newValue) }
+    }
+    public var `cell_height`: Double {
+        get { `get_cell_height`() }
+        set { `set_cell_height`(newValue) }
+    }
+    public var `border_size`: Double {
+        get { `get_border_size`() }
+        set { `set_border_size`(newValue) }
+    }
+    public var `agent_height`: Double {
+        get { `get_agent_height`() }
+        set { `set_agent_height`(newValue) }
+    }
+    public var `agent_radius`: Double {
+        get { `get_agent_radius`() }
+        set { `set_agent_radius`(newValue) }
+    }
+    public var `agent_max_climb`: Double {
+        get { `get_agent_max_climb`() }
+        set { `set_agent_max_climb`(newValue) }
+    }
+    public var `agent_max_slope`: Double {
+        get { `get_agent_max_slope`() }
+        set { `set_agent_max_slope`(newValue) }
+    }
+    public var `region_min_size`: Double {
+        get { `get_region_min_size`() }
+        set { `set_region_min_size`(newValue) }
+    }
+    public var `region_merge_size`: Double {
+        get { `get_region_merge_size`() }
+        set { `set_region_merge_size`(newValue) }
+    }
+    public var `edge_max_length`: Double {
+        get { `get_edge_max_length`() }
+        set { `set_edge_max_length`(newValue) }
+    }
+    public var `edge_max_error`: Double {
+        get { `get_edge_max_error`() }
+        set { `set_edge_max_error`(newValue) }
+    }
+    public var `vertices_per_polygon`: Double {
+        get { `get_vertices_per_polygon`() }
+        set { `set_vertices_per_polygon`(newValue) }
+    }
+    public var `detail_sample_distance`: Double {
+        get { `get_detail_sample_distance`() }
+        set { `set_detail_sample_distance`(newValue) }
+    }
+    public var `detail_sample_max_error`: Double {
+        get { `get_detail_sample_max_error`() }
+        set { `set_detail_sample_max_error`(newValue) }
+    }
+    public var `filter_low_hanging_obstacles`: Bool {
+        get { `get_filter_low_hanging_obstacles`() }
+        set { `set_filter_low_hanging_obstacles`(newValue) }
+    }
+    public var `filter_ledge_spans`: Bool {
+        get { `get_filter_ledge_spans`() }
+        set { `set_filter_ledge_spans`(newValue) }
+    }
+    public var `filter_walkable_low_height_spans`: Bool {
+        get { `get_filter_walkable_low_height_spans`() }
+        set { `set_filter_walkable_low_height_spans`(newValue) }
+    }
+    public var `filter_baking_aabb`: AABB {
+        get { `get_filter_baking_aabb`() }
+        set { `set_filter_baking_aabb`(newValue) }
+    }
+    public var `filter_baking_aabb_offset`: Vector3 {
+        get { `get_filter_baking_aabb_offset`() }
+        set { `set_filter_baking_aabb_offset`(newValue) }
+    }
+}
+extension NavigationMeshSourceGeometryData2D {
+    public var `traversable_outlines`: GodotArrayOf<GodotPackedVector2Array> {
+        get { `get_traversable_outlines`() }
+        set { `set_traversable_outlines`(newValue) }
+    }
+    public var `obstruction_outlines`: GodotArrayOf<GodotPackedVector2Array> {
+        get { `get_obstruction_outlines`() }
+        set { `set_obstruction_outlines`(newValue) }
+    }
+    public var `projected_obstructions`: GodotArray {
+        get { `get_projected_obstructions`() }
+        set { `set_projected_obstructions`(newValue) }
+    }
+}
+extension NavigationMeshSourceGeometryData3D {
+    public var `indices`: GodotPackedInt32Array {
+        get { `get_indices`() }
+        set { `set_indices`(newValue) }
+    }
+    public var `projected_obstructions`: GodotArray {
+        get { `get_projected_obstructions`() }
+        set { `set_projected_obstructions`(newValue) }
+    }
+}
+extension NavigationObstacle2D {
+    public var `radius`: Double {
+        get { `get_radius`() }
+        set { `set_radius`(newValue) }
+    }
+    public var `vertices`: GodotPackedVector2Array {
+        get { `get_vertices`() }
+        set { `set_vertices`(newValue) }
+    }
+    public var `affect_navigation_mesh`: Bool {
+        get { `get_affect_navigation_mesh`() }
+        set { `set_affect_navigation_mesh`(newValue) }
+    }
+    public var `carve_navigation_mesh`: Bool {
+        get { `get_carve_navigation_mesh`() }
+        set { `set_carve_navigation_mesh`(newValue) }
+    }
+    public var `avoidance_enabled`: Bool {
+        get { `get_avoidance_enabled`() }
+        set { `set_avoidance_enabled`(newValue) }
+    }
+    public var `velocity`: Vector2 {
+        get { `get_velocity`() }
+        set { `set_velocity`(newValue) }
+    }
+    public var `avoidance_layers`: Int64 {
+        get { `get_avoidance_layers`() }
+        set { `set_avoidance_layers`(newValue) }
+    }
+}
+extension NavigationObstacle3D {
+    public var `radius`: Double {
+        get { `get_radius`() }
+        set { `set_radius`(newValue) }
+    }
+    public var `height`: Double {
+        get { `get_height`() }
+        set { `set_height`(newValue) }
+    }
+    public var `vertices`: GodotPackedVector3Array {
+        get { `get_vertices`() }
+        set { `set_vertices`(newValue) }
+    }
+    public var `affect_navigation_mesh`: Bool {
+        get { `get_affect_navigation_mesh`() }
+        set { `set_affect_navigation_mesh`(newValue) }
+    }
+    public var `carve_navigation_mesh`: Bool {
+        get { `get_carve_navigation_mesh`() }
+        set { `set_carve_navigation_mesh`(newValue) }
+    }
+    public var `avoidance_enabled`: Bool {
+        get { `get_avoidance_enabled`() }
+        set { `set_avoidance_enabled`(newValue) }
+    }
+    public var `velocity`: Vector3 {
+        get { `get_velocity`() }
+        set { `set_velocity`(newValue) }
+    }
+    public var `avoidance_layers`: Int64 {
+        get { `get_avoidance_layers`() }
+        set { `set_avoidance_layers`(newValue) }
+    }
+    public var `use_3d_avoidance`: Bool {
+        get { `get_use_3d_avoidance`() }
+        set { `set_use_3d_avoidance`(newValue) }
+    }
+}
+extension NavigationPathQueryParameters2D {
+    public var `map`: GodotRID {
+        get { `get_map`() }
+        set { `set_map`(newValue) }
+    }
+    public var `start_position`: Vector2 {
+        get { `get_start_position`() }
+        set { `set_start_position`(newValue) }
+    }
+    public var `target_position`: Vector2 {
+        get { `get_target_position`() }
+        set { `set_target_position`(newValue) }
+    }
+    public var `navigation_layers`: Int64 {
+        get { `get_navigation_layers`() }
+        set { `set_navigation_layers`(newValue) }
+    }
+    public var `pathfinding_algorithm`: NavigationPathQueryParameters2D.PathfindingAlgorithm {
+        get { `get_pathfinding_algorithm`() }
+        set { `set_pathfinding_algorithm`(newValue) }
+    }
+    public var `path_postprocessing`: NavigationPathQueryParameters2D.PathPostProcessing {
+        get { `get_path_postprocessing`() }
+        set { `set_path_postprocessing`(newValue) }
+    }
+    public var `metadata_flags`: NavigationPathQueryParameters2D.PathMetadataFlags {
+        get { `get_metadata_flags`() }
+        set { `set_metadata_flags`(newValue) }
+    }
+    public var `simplify_path`: Bool {
+        get { `get_simplify_path`() }
+        set { `set_simplify_path`(newValue) }
+    }
+    public var `simplify_epsilon`: Double {
+        get { `get_simplify_epsilon`() }
+        set { `set_simplify_epsilon`(newValue) }
+    }
+    public var `excluded_regions`: GodotArrayOf<GodotRID> {
+        get { `get_excluded_regions`() }
+        set { `set_excluded_regions`(newValue) }
+    }
+    public var `included_regions`: GodotArrayOf<GodotRID> {
+        get { `get_included_regions`() }
+        set { `set_included_regions`(newValue) }
+    }
+    public var `path_return_max_length`: Double {
+        get { `get_path_return_max_length`() }
+        set { `set_path_return_max_length`(newValue) }
+    }
+    public var `path_return_max_radius`: Double {
+        get { `get_path_return_max_radius`() }
+        set { `set_path_return_max_radius`(newValue) }
+    }
+    public var `path_search_max_polygons`: Int64 {
+        get { `get_path_search_max_polygons`() }
+        set { `set_path_search_max_polygons`(newValue) }
+    }
+    public var `path_search_max_distance`: Double {
+        get { `get_path_search_max_distance`() }
+        set { `set_path_search_max_distance`(newValue) }
+    }
+}
+extension NavigationPathQueryParameters3D {
+    public var `map`: GodotRID {
+        get { `get_map`() }
+        set { `set_map`(newValue) }
+    }
+    public var `start_position`: Vector3 {
+        get { `get_start_position`() }
+        set { `set_start_position`(newValue) }
+    }
+    public var `target_position`: Vector3 {
+        get { `get_target_position`() }
+        set { `set_target_position`(newValue) }
+    }
+    public var `navigation_layers`: Int64 {
+        get { `get_navigation_layers`() }
+        set { `set_navigation_layers`(newValue) }
+    }
+    public var `pathfinding_algorithm`: NavigationPathQueryParameters3D.PathfindingAlgorithm {
+        get { `get_pathfinding_algorithm`() }
+        set { `set_pathfinding_algorithm`(newValue) }
+    }
+    public var `path_postprocessing`: NavigationPathQueryParameters3D.PathPostProcessing {
+        get { `get_path_postprocessing`() }
+        set { `set_path_postprocessing`(newValue) }
+    }
+    public var `metadata_flags`: NavigationPathQueryParameters3D.PathMetadataFlags {
+        get { `get_metadata_flags`() }
+        set { `set_metadata_flags`(newValue) }
+    }
+    public var `simplify_path`: Bool {
+        get { `get_simplify_path`() }
+        set { `set_simplify_path`(newValue) }
+    }
+    public var `simplify_epsilon`: Double {
+        get { `get_simplify_epsilon`() }
+        set { `set_simplify_epsilon`(newValue) }
+    }
+    public var `excluded_regions`: GodotArrayOf<GodotRID> {
+        get { `get_excluded_regions`() }
+        set { `set_excluded_regions`(newValue) }
+    }
+    public var `included_regions`: GodotArrayOf<GodotRID> {
+        get { `get_included_regions`() }
+        set { `set_included_regions`(newValue) }
+    }
+    public var `path_return_max_length`: Double {
+        get { `get_path_return_max_length`() }
+        set { `set_path_return_max_length`(newValue) }
+    }
+    public var `path_return_max_radius`: Double {
+        get { `get_path_return_max_radius`() }
+        set { `set_path_return_max_radius`(newValue) }
+    }
+    public var `path_search_max_polygons`: Int64 {
+        get { `get_path_search_max_polygons`() }
+        set { `set_path_search_max_polygons`(newValue) }
+    }
+    public var `path_search_max_distance`: Double {
+        get { `get_path_search_max_distance`() }
+        set { `set_path_search_max_distance`(newValue) }
+    }
+}
+extension NavigationPathQueryResult2D {
+    public var `path`: GodotPackedVector2Array {
+        get { `get_path`() }
+        set { `set_path`(newValue) }
+    }
+    public var `path_types`: GodotPackedInt32Array {
+        get { `get_path_types`() }
+        set { `set_path_types`(newValue) }
+    }
+    public var `path_rids`: GodotArrayOf<GodotRID> {
+        get { `get_path_rids`() }
+        set { `set_path_rids`(newValue) }
+    }
+    public var `path_owner_ids`: GodotPackedInt64Array {
+        get { `get_path_owner_ids`() }
+        set { `set_path_owner_ids`(newValue) }
+    }
+    public var `path_length`: Double {
+        get { `get_path_length`() }
+        set { `set_path_length`(newValue) }
+    }
+}
+extension NavigationPathQueryResult3D {
+    public var `path`: GodotPackedVector3Array {
+        get { `get_path`() }
+        set { `set_path`(newValue) }
+    }
+    public var `path_types`: GodotPackedInt32Array {
+        get { `get_path_types`() }
+        set { `set_path_types`(newValue) }
+    }
+    public var `path_rids`: GodotArrayOf<GodotRID> {
+        get { `get_path_rids`() }
+        set { `set_path_rids`(newValue) }
+    }
+    public var `path_owner_ids`: GodotPackedInt64Array {
+        get { `get_path_owner_ids`() }
+        set { `set_path_owner_ids`(newValue) }
+    }
+    public var `path_length`: Double {
+        get { `get_path_length`() }
+        set { `set_path_length`(newValue) }
+    }
+}
+extension NavigationPolygon {
+    public var `vertices`: GodotPackedVector2Array {
+        get { `get_vertices`() }
+        set { `set_vertices`(newValue) }
+    }
+    public var `sample_partition_type`: NavigationPolygon.SamplePartitionType {
+        get { `get_sample_partition_type`() }
+        set { `set_sample_partition_type`(newValue) }
+    }
+    public var `parsed_geometry_type`: NavigationPolygon.ParsedGeometryType {
+        get { `get_parsed_geometry_type`() }
+        set { `set_parsed_geometry_type`(newValue) }
+    }
+    public var `parsed_collision_mask`: Int64 {
+        get { `get_parsed_collision_mask`() }
+        set { `set_parsed_collision_mask`(newValue) }
+    }
+    public var `source_geometry_mode`: NavigationPolygon.SourceGeometryMode {
+        get { `get_source_geometry_mode`() }
+        set { `set_source_geometry_mode`(newValue) }
+    }
+    public var `cell_size`: Double {
+        get { `get_cell_size`() }
+        set { `set_cell_size`(newValue) }
+    }
+    public var `border_size`: Double {
+        get { `get_border_size`() }
+        set { `set_border_size`(newValue) }
+    }
+    public var `agent_radius`: Double {
+        get { `get_agent_radius`() }
+        set { `set_agent_radius`(newValue) }
+    }
+    public var `baking_rect`: Rect2 {
+        get { `get_baking_rect`() }
+        set { `set_baking_rect`(newValue) }
+    }
+    public var `baking_rect_offset`: Vector2 {
+        get { `get_baking_rect_offset`() }
+        set { `set_baking_rect_offset`(newValue) }
+    }
+}
+extension NavigationRegion2D {
+    public var `navigation_polygon`: NavigationPolygon? {
+        get { `get_navigation_polygon`() }
+        set { `set_navigation_polygon`(newValue) }
+    }
+    public var `enabled`: Bool {
+        get { `is_enabled`() }
+        set { `set_enabled`(newValue) }
+    }
+    public var `use_edge_connections`: Bool {
+        get { `get_use_edge_connections`() }
+        set { `set_use_edge_connections`(newValue) }
+    }
+    public var `navigation_layers`: Int64 {
+        get { `get_navigation_layers`() }
+        set { `set_navigation_layers`(newValue) }
+    }
+    public var `enter_cost`: Double {
+        get { `get_enter_cost`() }
+        set { `set_enter_cost`(newValue) }
+    }
+    public var `travel_cost`: Double {
+        get { `get_travel_cost`() }
+        set { `set_travel_cost`(newValue) }
+    }
+}
+extension NavigationRegion3D {
+    public var `navigation_mesh`: NavigationMesh? {
+        get { `get_navigation_mesh`() }
+        set { `set_navigation_mesh`(newValue) }
+    }
+    public var `enabled`: Bool {
+        get { `is_enabled`() }
+        set { `set_enabled`(newValue) }
+    }
+    public var `use_edge_connections`: Bool {
+        get { `get_use_edge_connections`() }
+        set { `set_use_edge_connections`(newValue) }
+    }
+    public var `navigation_layers`: Int64 {
+        get { `get_navigation_layers`() }
+        set { `set_navigation_layers`(newValue) }
+    }
+    public var `enter_cost`: Double {
+        get { `get_enter_cost`() }
+        set { `set_enter_cost`(newValue) }
+    }
+    public var `travel_cost`: Double {
+        get { `get_travel_cost`() }
+        set { `set_travel_cost`(newValue) }
+    }
+}
+extension NinePatchRect {
+    public var `texture`: Texture2D? {
+        get { `get_texture`() }
+        set { `set_texture`(newValue) }
+    }
+    public var `draw_center`: Bool {
+        get { `is_draw_center_enabled`() }
+        set { `set_draw_center`(newValue) }
+    }
+    public var `region_rect`: Rect2 {
+        get { `get_region_rect`() }
+        set { `set_region_rect`(newValue) }
+    }
+    public var `patch_margin_left`: Int64 {
+        get { `get_patch_margin`(0) }
+        set { `set_patch_margin`(0, newValue) }
+    }
+    public var `patch_margin_top`: Int64 {
+        get { `get_patch_margin`(1) }
+        set { `set_patch_margin`(1, newValue) }
+    }
+    public var `patch_margin_right`: Int64 {
+        get { `get_patch_margin`(2) }
+        set { `set_patch_margin`(2, newValue) }
+    }
+    public var `patch_margin_bottom`: Int64 {
+        get { `get_patch_margin`(3) }
+        set { `set_patch_margin`(3, newValue) }
+    }
+    public var `axis_stretch_horizontal`: NinePatchRect.AxisStretchMode {
+        get { `get_h_axis_stretch_mode`() }
+        set { `set_h_axis_stretch_mode`(newValue) }
+    }
+    public var `axis_stretch_vertical`: NinePatchRect.AxisStretchMode {
+        get { `get_v_axis_stretch_mode`() }
+        set { `set_v_axis_stretch_mode`(newValue) }
+    }
+}
+extension Node {
+    public var `name`: GodotStringName {
+        get { `get_name`() }
+        set { `set_name`(newValue) }
+    }
+    public var `unique_name_in_owner`: Bool {
+        get { `is_unique_name_in_owner`() }
+        set { `set_unique_name_in_owner`(newValue) }
+    }
+    public var `scene_file_path`: GodotString {
+        get { `get_scene_file_path`() }
+        set { `set_scene_file_path`(newValue) }
+    }
+    public var `owner`: Node? {
+        get { `get_owner`() }
+        set { `set_owner`(newValue) }
+    }
+    public var `multiplayer`: MultiplayerAPI? {
+        get { `get_multiplayer`() }
+    }
+    public var `process_mode`: Node.ProcessMode {
+        get { `get_process_mode`() }
+        set { `set_process_mode`(newValue) }
+    }
+    public var `process_priority`: Int64 {
+        get { `get_process_priority`() }
+        set { `set_process_priority`(newValue) }
+    }
+    public var `process_physics_priority`: Int64 {
+        get { `get_physics_process_priority`() }
+        set { `set_physics_process_priority`(newValue) }
+    }
+    public var `process_thread_group`: Node.ProcessThreadGroup {
+        get { `get_process_thread_group`() }
+        set { `set_process_thread_group`(newValue) }
+    }
+    public var `process_thread_group_order`: Int64 {
+        get { `get_process_thread_group_order`() }
+        set { `set_process_thread_group_order`(newValue) }
+    }
+    public var `process_thread_messages`: Node.ProcessThreadMessages {
+        get { `get_process_thread_messages`() }
+        set { `set_process_thread_messages`(newValue) }
+    }
+    public var `physics_interpolation_mode`: Node.PhysicsInterpolationMode {
+        get { `get_physics_interpolation_mode`() }
+        set { `set_physics_interpolation_mode`(newValue) }
+    }
+    public var `auto_translate_mode`: Node.AutoTranslateMode {
+        get { `get_auto_translate_mode`() }
+        set { `set_auto_translate_mode`(newValue) }
+    }
+    public var `editor_description`: GodotString {
+        get { `get_editor_description`() }
+        set { `set_editor_description`(newValue) }
+    }
+}
+extension Node2D {
+    public var `position`: Vector2 {
+        get { `get_position`() }
+        set { `set_position`(newValue) }
+    }
+    public var `rotation`: Double {
+        get { `get_rotation`() }
+        set { `set_rotation`(newValue) }
+    }
+    public var `rotation_degrees`: Double {
+        get { `get_rotation_degrees`() }
+        set { `set_rotation_degrees`(newValue) }
+    }
+    public var `scale`: Vector2 {
+        get { `get_scale`() }
+        set { `set_scale`(newValue) }
+    }
+    public var `skew`: Double {
+        get { `get_skew`() }
+        set { `set_skew`(newValue) }
+    }
+    public var `transform`: Transform2D {
+        get { `get_transform`() }
+        set { `set_transform`(newValue) }
+    }
+    public var `global_position`: Vector2 {
+        get { `get_global_position`() }
+        set { `set_global_position`(newValue) }
+    }
+    public var `global_rotation`: Double {
+        get { `get_global_rotation`() }
+        set { `set_global_rotation`(newValue) }
+    }
+    public var `global_rotation_degrees`: Double {
+        get { `get_global_rotation_degrees`() }
+        set { `set_global_rotation_degrees`(newValue) }
+    }
+    public var `global_scale`: Vector2 {
+        get { `get_global_scale`() }
+        set { `set_global_scale`(newValue) }
+    }
+    public var `global_skew`: Double {
+        get { `get_global_skew`() }
+        set { `set_global_skew`(newValue) }
+    }
+    public var `global_transform`: Transform2D {
+        get { `get_global_transform`() }
+        set { `set_global_transform`(newValue) }
+    }
+}
+extension Node3D {
+    public var `transform`: Transform3D {
+        get { `get_transform`() }
+        set { `set_transform`(newValue) }
+    }
+    public var `global_transform`: Transform3D {
+        get { `get_global_transform`() }
+        set { `set_global_transform`(newValue) }
+    }
+    public var `position`: Vector3 {
+        get { `get_position`() }
+        set { `set_position`(newValue) }
+    }
+    public var `rotation`: Vector3 {
+        get { `get_rotation`() }
+        set { `set_rotation`(newValue) }
+    }
+    public var `rotation_degrees`: Vector3 {
+        get { `get_rotation_degrees`() }
+        set { `set_rotation_degrees`(newValue) }
+    }
+    public var `quaternion`: Quaternion {
+        get { `get_quaternion`() }
+        set { `set_quaternion`(newValue) }
+    }
+    public var `basis`: Basis {
+        get { `get_basis`() }
+        set { `set_basis`(newValue) }
+    }
+    public var `scale`: Vector3 {
+        get { `get_scale`() }
+        set { `set_scale`(newValue) }
+    }
+    public var `rotation_edit_mode`: Node3D.RotationEditMode {
+        get { `get_rotation_edit_mode`() }
+        set { `set_rotation_edit_mode`(newValue) }
+    }
+    public var `rotation_order`: Godot.EulerOrder {
+        get { `get_rotation_order`() }
+        set { `set_rotation_order`(newValue) }
+    }
+    public var `top_level`: Bool {
+        get { `is_set_as_top_level`() }
+        set { `set_as_top_level`(newValue) }
+    }
+    public var `global_position`: Vector3 {
+        get { `get_global_position`() }
+        set { `set_global_position`(newValue) }
+    }
+    public var `global_basis`: Basis {
+        get { `get_global_basis`() }
+        set { `set_global_basis`(newValue) }
+    }
+    public var `global_rotation`: Vector3 {
+        get { `get_global_rotation`() }
+        set { `set_global_rotation`(newValue) }
+    }
+    public var `global_rotation_degrees`: Vector3 {
+        get { `get_global_rotation_degrees`() }
+        set { `set_global_rotation_degrees`(newValue) }
+    }
+    public var `visible`: Bool {
+        get { `is_visible`() }
+        set { `set_visible`(newValue) }
+    }
+    public var `visibility_parent`: GodotNodePath {
+        get { `get_visibility_parent`() }
+        set { `set_visibility_parent`(newValue) }
+    }
+}
+extension NoiseTexture2D {
+    public var `width`: Int64 {
+        get { `get_width`() }
+        set { `set_width`(newValue) }
+    }
+    public var `height`: Int64 {
+        get { `get_height`() }
+        set { `set_height`(newValue) }
+    }
+    public var `generate_mipmaps`: Bool {
+        get { `is_generating_mipmaps`() }
+        set { `set_generate_mipmaps`(newValue) }
+    }
+    public var `noise`: Noise? {
+        get { `get_noise`() }
+        set { `set_noise`(newValue) }
+    }
+    public var `color_ramp`: Gradient? {
+        get { `get_color_ramp`() }
+        set { `set_color_ramp`(newValue) }
+    }
+    public var `seamless`: Bool {
+        get { `get_seamless`() }
+        set { `set_seamless`(newValue) }
+    }
+    public var `invert`: Bool {
+        get { `get_invert`() }
+        set { `set_invert`(newValue) }
+    }
+    public var `in_3d_space`: Bool {
+        get { `is_in_3d_space`() }
+        set { `set_in_3d_space`(newValue) }
+    }
+    public var `as_normal_map`: Bool {
+        get { `is_normal_map`() }
+        set { `set_as_normal_map`(newValue) }
+    }
+    public var `normalize`: Bool {
+        get { `is_normalized`() }
+        set { `set_normalize`(newValue) }
+    }
+    public var `seamless_blend_skirt`: Double {
+        get { `get_seamless_blend_skirt`() }
+        set { `set_seamless_blend_skirt`(newValue) }
+    }
+    public var `bump_strength`: Double {
+        get { `get_bump_strength`() }
+        set { `set_bump_strength`(newValue) }
+    }
+}
+extension NoiseTexture3D {
+    public var `width`: Int64 {
+        get { `get_width`() }
+        set { `set_width`(newValue) }
+    }
+    public var `height`: Int64 {
+        get { `get_height`() }
+        set { `set_height`(newValue) }
+    }
+    public var `depth`: Int64 {
+        get { `get_depth`() }
+        set { `set_depth`(newValue) }
+    }
+    public var `noise`: Noise? {
+        get { `get_noise`() }
+        set { `set_noise`(newValue) }
+    }
+    public var `color_ramp`: Gradient? {
+        get { `get_color_ramp`() }
+        set { `set_color_ramp`(newValue) }
+    }
+    public var `seamless`: Bool {
+        get { `get_seamless`() }
+        set { `set_seamless`(newValue) }
+    }
+    public var `invert`: Bool {
+        get { `get_invert`() }
+        set { `set_invert`(newValue) }
+    }
+    public var `normalize`: Bool {
+        get { `is_normalized`() }
+        set { `set_normalize`(newValue) }
+    }
+    public var `seamless_blend_skirt`: Double {
+        get { `get_seamless_blend_skirt`() }
+        set { `set_seamless_blend_skirt`(newValue) }
+    }
+}
+extension OS {
+    public var `low_processor_usage_mode`: Bool {
+        get { `is_in_low_processor_usage_mode`() }
+        set { `set_low_processor_usage_mode`(newValue) }
+    }
+    public var `low_processor_usage_mode_sleep_usec`: Int64 {
+        get { `get_low_processor_usage_mode_sleep_usec`() }
+        set { `set_low_processor_usage_mode_sleep_usec`(newValue) }
+    }
+    public var `delta_smoothing`: Bool {
+        get { `is_delta_smoothing_enabled`() }
+        set { `set_delta_smoothing`(newValue) }
     }
 }

@@ -1438,20 +1438,6 @@ extension PopupMenu {
             }
         }
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_item_indeterminate = lookupMethod("PopupMenu", "set_item_indeterminate", 300928843)
-    @inlinable @inline(__always) public func `set_item_indeterminate`(_ `index`: Int64, _ `indeterminate`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `index`
-        var a1 = `indeterminate` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_item_indeterminate, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
     @usableFromInline nonisolated(unsafe) internal static let mb_set_item_id = lookupMethod("PopupMenu", "set_item_id", 3937882851)
     @inlinable @inline(__always) public func `set_item_id`(_ `index`: Int64, _ `id`: Int64) {
         defer { withExtendedLifetime((self)) {} }
@@ -1783,17 +1769,6 @@ extension PopupMenu {
         withUnsafePointer(to: &a0) { p0 in
             var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
             api.object_method_bind_ptrcall!(Self.mb_is_item_checked, requireHandle(), &arguments, &result)
-        }
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_item_indeterminate = lookupMethod("PopupMenu", "is_item_indeterminate", 1116898809)
-    @inlinable @inline(__always) public func `is_item_indeterminate`(_ `index`: Int64) -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `index`
-        var result: UInt8 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_is_item_indeterminate, requireHandle(), &arguments, &result)
         }
         return result != 0
 }

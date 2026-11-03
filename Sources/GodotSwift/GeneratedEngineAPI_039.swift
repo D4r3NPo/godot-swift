@@ -2138,29 +2138,6 @@ extension PhysicsServer3D {
         }
         return result != 0
 }
-    nonisolated(unsafe) private static let mb_generic_6dof_joint_set_angular_target_rotation = lookupMethod("PhysicsServer3D", "generic_6dof_joint_set_angular_target_rotation", 514574805)
-    public func `generic_6dof_joint_set_angular_target_rotation`(_ `joint`: GodotRID, _ `target_rotation`: Quaternion) {
-        defer { withExtendedLifetime((self)) {} }
-        `joint`.withStorage { p0 in
-            `target_rotation`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_generic_6dof_joint_set_angular_target_rotation, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_generic_6dof_joint_get_angular_target_rotation = lookupMethod("PhysicsServer3D", "generic_6dof_joint_get_angular_target_rotation", 3909263396)
-    public func `generic_6dof_joint_get_angular_target_rotation`(_ `joint`: GodotRID) -> Quaternion {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Quaternion.self, capacity: 1) { result in
-            `joint`.withStorage { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_generic_6dof_joint_get_angular_target_rotation, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
-            }
-            return result.baseAddress!.move()
-        }
-}
     nonisolated(unsafe) private static let mb_free_rid = lookupMethod("PhysicsServer3D", "free_rid", 2722037293)
     public func `free_rid`(_ `rid`: GodotRID) {
         defer { withExtendedLifetime((self)) {} }

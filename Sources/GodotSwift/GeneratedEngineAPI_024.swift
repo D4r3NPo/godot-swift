@@ -138,22 +138,14 @@ extension Image {
         defer { withExtendedLifetime((self)) {} }
         api.object_method_bind_ptrcall!(Self.mb_flip_y, requireHandle(), nil, nil)
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_generate_mipmaps = lookupMethod("Image", "generate_mipmaps", 991832544)
-    @inlinable @inline(__always) public func `generate_mipmaps`(_ `renormalize`: Bool = false, _ `preserve_alpha_test_coverage`: Bool = false, _ `alpha_test_threshold`: Double = 0.5) -> Godot.Error {
+    @usableFromInline nonisolated(unsafe) internal static let mb_generate_mipmaps = lookupMethod("Image", "generate_mipmaps", 1633102583)
+    @inlinable @inline(__always) public func `generate_mipmaps`(_ `renormalize`: Bool = false) -> Godot.Error {
         defer { withExtendedLifetime((self)) {} }
         var a0 = `renormalize` ? UInt8(1) : UInt8(0)
-        var a1 = `preserve_alpha_test_coverage` ? UInt8(1) : UInt8(0)
-        var a2 = `alpha_test_threshold`
         var result: Int64 = 0
         withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                withUnsafePointer(to: &a2) { p2 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
-                    withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_generate_mipmaps, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                    }
-                }
-            }
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_generate_mipmaps, requireHandle(), &arguments, &result)
         }
         return Godot.Error(rawValue: result)
 }
@@ -446,12 +438,12 @@ extension Image {
         }
         return Image.UsedChannels(rawValue: result)
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_compress = lookupMethod("Image", "compress", 3872125418)
-    @inlinable @inline(__always) public func `compress`(_ `mode`: Image.CompressMode, _ `source`: Image.CompressSource = Image.CompressSource(rawValue: 0), _ `profile`: Image.CompressProfile = Image.CompressProfile(rawValue: 0)) -> Godot.Error {
+    @usableFromInline nonisolated(unsafe) internal static let mb_compress = lookupMethod("Image", "compress", 2975424957)
+    @inlinable @inline(__always) public func `compress`(_ `mode`: Image.CompressMode, _ `source`: Image.CompressSource = Image.CompressSource(rawValue: 0), _ `astc_format`: Image.ASTCFormat = Image.ASTCFormat(rawValue: 0)) -> Godot.Error {
         defer { withExtendedLifetime((self)) {} }
         var a0 = `mode`.rawValue
         var a1 = `source`.rawValue
-        var a2 = `profile`.rawValue
+        var a2 = `astc_format`.rawValue
         var result: Int64 = 0
         withUnsafePointer(to: &a0) { p0 in
             withUnsafePointer(to: &a1) { p1 in
@@ -465,12 +457,12 @@ extension Image {
         }
         return Godot.Error(rawValue: result)
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_compress_from_channels = lookupMethod("Image", "compress_from_channels", 2576825933)
-    @inlinable @inline(__always) public func `compress_from_channels`(_ `mode`: Image.CompressMode, _ `channels`: Image.UsedChannels, _ `profile`: Image.CompressProfile = Image.CompressProfile(rawValue: 0)) -> Godot.Error {
+    @usableFromInline nonisolated(unsafe) internal static let mb_compress_from_channels = lookupMethod("Image", "compress_from_channels", 4212890953)
+    @inlinable @inline(__always) public func `compress_from_channels`(_ `mode`: Image.CompressMode, _ `channels`: Image.UsedChannels, _ `astc_format`: Image.ASTCFormat = Image.ASTCFormat(rawValue: 0)) -> Godot.Error {
         defer { withExtendedLifetime((self)) {} }
         var a0 = `mode`.rawValue
         var a1 = `channels`.rawValue
-        var a2 = `profile`.rawValue
+        var a2 = `astc_format`.rawValue
         var result: Int64 = 0
         withUnsafePointer(to: &a0) { p0 in
             withUnsafePointer(to: &a1) { p1 in
@@ -2010,14 +2002,6 @@ extension Input {
             return result.baseAddress!.move()
         }
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_device_orientation = lookupMethod("Input", "get_device_orientation", 1222331677)
-    @inlinable @inline(__always) public func `get_device_orientation`() -> Quaternion {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Quaternion.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_device_orientation, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
     @usableFromInline nonisolated(unsafe) internal static let mb_get_joy_accelerometer = lookupMethod("Input", "get_joy_accelerometer", 711720468)
     @inlinable @inline(__always) public func `get_joy_accelerometer`(_ `device`: Int64) -> Vector3 {
         defer { withExtendedLifetime((self)) {} }
@@ -2174,97 +2158,6 @@ extension Input {
         }
         return result != 0
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_joy_motion_sensors_auto_calibration_enabled = lookupMethod("Input", "set_joy_motion_sensors_auto_calibration_enabled", 300928843)
-    @inlinable @inline(__always) public func `set_joy_motion_sensors_auto_calibration_enabled`(_ `device`: Int64, _ `enable`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `device`
-        var a1 = `enable` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_joy_motion_sensors_auto_calibration_enabled, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_joy_motion_sensors_auto_calibration_enabled = lookupMethod("Input", "is_joy_motion_sensors_auto_calibration_enabled", 1116898809)
-    @inlinable @inline(__always) public func `is_joy_motion_sensors_auto_calibration_enabled`(_ `device`: Int64) -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `device`
-        var result: UInt8 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_is_joy_motion_sensors_auto_calibration_enabled, requireHandle(), &arguments, &result)
-        }
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_joy_touchpad_finger_position = lookupMethod("Input", "get_joy_touchpad_finger_position", 4135671252)
-    @inlinable @inline(__always) public func `get_joy_touchpad_finger_position`(_ `device`: Int64, _ `finger`: Int64, _ `touchpad`: Int64 = 0) -> Vector2 {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `device`
-        var a1 = `finger`
-        var a2 = `touchpad`
-        return withUnsafeTemporaryAllocation(of: Vector2.self, capacity: 1) { result in
-            withUnsafePointer(to: &a0) { p0 in
-                withUnsafePointer(to: &a1) { p1 in
-                    withUnsafePointer(to: &a2) { p2 in
-                        var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
-                        withUnsafePointer(to: &arguments) { arguments in
-                            api.object_method_bind_ptrcall!(Self.mb_get_joy_touchpad_finger_position, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), UnsafeMutableRawPointer(result.baseAddress!))
-                        }
-                    }
-                }
-            }
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_joy_touchpad_finger_pressure = lookupMethod("Input", "get_joy_touchpad_finger_pressure", 4212583121)
-    @inlinable @inline(__always) public func `get_joy_touchpad_finger_pressure`(_ `device`: Int64, _ `finger`: Int64, _ `touchpad`: Int64 = 0) -> Double {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `device`
-        var a1 = `finger`
-        var a2 = `touchpad`
-        var result: Double = 0
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                withUnsafePointer(to: &a2) { p2 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
-                    withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_get_joy_touchpad_finger_pressure, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                    }
-                }
-            }
-        }
-        return result
-}
-    nonisolated(unsafe) private static let mb_get_joy_touchpad_fingers = lookupMethod("Input", "get_joy_touchpad_fingers", 3923454890)
-    public func `get_joy_touchpad_fingers`(_ `device`: Int64, _ `touchpad`: Int64 = 0) -> GodotPackedInt32Array {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `device`
-        var a1 = `touchpad`
-        return GodotPackedInt32Array(initializing: { result in
-            withUnsafePointer(to: &a0) { p0 in
-                withUnsafePointer(to: &a1) { p1 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                    withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_get_joy_touchpad_fingers, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), result)
-                    }
-                }
-            }
-        })
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_joy_num_touchpads = lookupMethod("Input", "get_joy_num_touchpads", 923996154)
-    @inlinable @inline(__always) public func `get_joy_num_touchpads`(_ `device`: Int64) -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `device`
-        var result: Int64 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_joy_num_touchpads, requireHandle(), &arguments, &result)
-        }
-        return result
-}
     @usableFromInline nonisolated(unsafe) internal static let mb_set_gravity = lookupMethod("Input", "set_gravity", 3460891852)
     @inlinable @inline(__always) public func `set_gravity`(_ `value`: Vector3) {
         defer { withExtendedLifetime((self)) {} }
@@ -2295,14 +2188,6 @@ extension Input {
         `value`.withStorage { p0 in
             var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
             api.object_method_bind_ptrcall!(Self.mb_set_gyroscope, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_device_orientation = lookupMethod("Input", "set_device_orientation", 1727505552)
-    @inlinable @inline(__always) public func `set_device_orientation`(_ `value`: Quaternion) {
-        defer { withExtendedLifetime((self)) {} }
-        `value`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_device_orientation, requireHandle(), &arguments, nil)
         }
 }
     @usableFromInline nonisolated(unsafe) internal static let mb_set_joy_light = lookupMethod("Input", "set_joy_light", 2878471219)
@@ -2828,5 +2713,154 @@ extension InputEventJoypadMotion {
         var result: Double = 0
         api.object_method_bind_ptrcall!(Self.mb_get_axis_value, requireHandle(), nil, &result)
         return result
+}
+}
+extension InputEventKey {
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_pressed = lookupMethod("InputEventKey", "set_pressed", 2586408642)
+    @inlinable @inline(__always) public func `set_pressed`(_ `pressed`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `pressed` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_pressed, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_keycode = lookupMethod("InputEventKey", "set_keycode", 888074362)
+    @inlinable @inline(__always) public func `set_keycode`(_ `keycode`: Godot.Key) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `keycode`.rawValue
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_keycode, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_keycode = lookupMethod("InputEventKey", "get_keycode", 1585896689)
+    @inlinable @inline(__always) public func `get_keycode`() -> Godot.Key {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_keycode, requireHandle(), nil, &result)
+        return Godot.Key(rawValue: result)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_physical_keycode = lookupMethod("InputEventKey", "set_physical_keycode", 888074362)
+    @inlinable @inline(__always) public func `set_physical_keycode`(_ `physical_keycode`: Godot.Key) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `physical_keycode`.rawValue
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_physical_keycode, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_physical_keycode = lookupMethod("InputEventKey", "get_physical_keycode", 1585896689)
+    @inlinable @inline(__always) public func `get_physical_keycode`() -> Godot.Key {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_physical_keycode, requireHandle(), nil, &result)
+        return Godot.Key(rawValue: result)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_key_label = lookupMethod("InputEventKey", "set_key_label", 888074362)
+    @inlinable @inline(__always) public func `set_key_label`(_ `key_label`: Godot.Key) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `key_label`.rawValue
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_key_label, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_key_label = lookupMethod("InputEventKey", "get_key_label", 1585896689)
+    @inlinable @inline(__always) public func `get_key_label`() -> Godot.Key {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_key_label, requireHandle(), nil, &result)
+        return Godot.Key(rawValue: result)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_unicode = lookupMethod("InputEventKey", "set_unicode", 1286410249)
+    @inlinable @inline(__always) public func `set_unicode`(_ `unicode`: Int64) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `unicode`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_unicode, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_unicode = lookupMethod("InputEventKey", "get_unicode", 3905245786)
+    @inlinable @inline(__always) public func `get_unicode`() -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_unicode, requireHandle(), nil, &result)
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_location = lookupMethod("InputEventKey", "set_location", 634453155)
+    @inlinable @inline(__always) public func `set_location`(_ `location`: Godot.KeyLocation) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `location`.rawValue
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_location, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_location = lookupMethod("InputEventKey", "get_location", 211810873)
+    @inlinable @inline(__always) public func `get_location`() -> Godot.KeyLocation {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_location, requireHandle(), nil, &result)
+        return Godot.KeyLocation(rawValue: result)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_echo = lookupMethod("InputEventKey", "set_echo", 2586408642)
+    @inlinable @inline(__always) public func `set_echo`(_ `echo`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `echo` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_echo, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_keycode_with_modifiers = lookupMethod("InputEventKey", "get_keycode_with_modifiers", 1585896689)
+    @inlinable @inline(__always) public func `get_keycode_with_modifiers`() -> Godot.Key {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_keycode_with_modifiers, requireHandle(), nil, &result)
+        return Godot.Key(rawValue: result)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_physical_keycode_with_modifiers = lookupMethod("InputEventKey", "get_physical_keycode_with_modifiers", 1585896689)
+    @inlinable @inline(__always) public func `get_physical_keycode_with_modifiers`() -> Godot.Key {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_physical_keycode_with_modifiers, requireHandle(), nil, &result)
+        return Godot.Key(rawValue: result)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_key_label_with_modifiers = lookupMethod("InputEventKey", "get_key_label_with_modifiers", 1585896689)
+    @inlinable @inline(__always) public func `get_key_label_with_modifiers`() -> Godot.Key {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_key_label_with_modifiers, requireHandle(), nil, &result)
+        return Godot.Key(rawValue: result)
+}
+    nonisolated(unsafe) private static let mb_as_text_keycode = lookupMethod("InputEventKey", "as_text_keycode", 201670096)
+    public func `as_text_keycode`() -> GodotString {
+        defer { withExtendedLifetime((self)) {} }
+        return GodotString(initializing: { result in
+            api.object_method_bind_ptrcall!(Self.mb_as_text_keycode, requireHandle(), nil, result)
+        })
+}
+    nonisolated(unsafe) private static let mb_as_text_physical_keycode = lookupMethod("InputEventKey", "as_text_physical_keycode", 201670096)
+    public func `as_text_physical_keycode`() -> GodotString {
+        defer { withExtendedLifetime((self)) {} }
+        return GodotString(initializing: { result in
+            api.object_method_bind_ptrcall!(Self.mb_as_text_physical_keycode, requireHandle(), nil, result)
+        })
+}
+    nonisolated(unsafe) private static let mb_as_text_key_label = lookupMethod("InputEventKey", "as_text_key_label", 201670096)
+    public func `as_text_key_label`() -> GodotString {
+        defer { withExtendedLifetime((self)) {} }
+        return GodotString(initializing: { result in
+            api.object_method_bind_ptrcall!(Self.mb_as_text_key_label, requireHandle(), nil, result)
+        })
+}
+    nonisolated(unsafe) private static let mb_as_text_location = lookupMethod("InputEventKey", "as_text_location", 201670096)
+    public func `as_text_location`() -> GodotString {
+        defer { withExtendedLifetime((self)) {} }
+        return GodotString(initializing: { result in
+            api.object_method_bind_ptrcall!(Self.mb_as_text_location, requireHandle(), nil, result)
+        })
 }
 }

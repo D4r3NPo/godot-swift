@@ -37,13 +37,6 @@ extension PhysicalBone3D {
         api.object_method_bind_ptrcall!(Self.mb_get_joint_type, requireHandle(), nil, &result)
         return PhysicalBone3D.JointType(rawValue: result)
 }
-    nonisolated(unsafe) private static let mb_get_joint_rid = lookupMethod("PhysicalBone3D", "get_joint_rid", 2944877500)
-    public func `get_joint_rid`() -> GodotRID {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotRID(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_joint_rid, requireHandle(), nil, result)
-        })
-}
     @usableFromInline nonisolated(unsafe) internal static let mb_set_joint_offset = lookupMethod("PhysicalBone3D", "set_joint_offset", 2952846383)
     @inlinable @inline(__always) public func `set_joint_offset`(_ `offset`: Transform3D) {
         defer { withExtendedLifetime((self)) {} }
@@ -717,136 +710,6 @@ extension PhysicsBody3D {
         withUnsafePointer(to: &a0) { p0 in
             var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
             api.object_method_bind_ptrcall!(Self.mb_remove_collision_exception_with, requireHandle(), &arguments, nil)
-        }
-}
-}
-extension PhysicsCastMotionResult2D {
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_safe_fraction = lookupMethod("PhysicsCastMotionResult2D", "get_safe_fraction", 1740695150)
-    @inlinable @inline(__always) public func `get_safe_fraction`() -> Double {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Double = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_safe_fraction, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_unsafe_fraction = lookupMethod("PhysicsCastMotionResult2D", "get_unsafe_fraction", 1740695150)
-    @inlinable @inline(__always) public func `get_unsafe_fraction`() -> Double {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Double = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_unsafe_fraction, requireHandle(), nil, &result)
-        return result
-}
-}
-extension PhysicsCastMotionResult3D {
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_safe_fraction = lookupMethod("PhysicsCastMotionResult3D", "get_safe_fraction", 1740695150)
-    @inlinable @inline(__always) public func `get_safe_fraction`() -> Double {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Double = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_safe_fraction, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_unsafe_fraction = lookupMethod("PhysicsCastMotionResult3D", "get_unsafe_fraction", 1740695150)
-    @inlinable @inline(__always) public func `get_unsafe_fraction`() -> Double {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Double = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_unsafe_fraction, requireHandle(), nil, &result)
-        return result
-}
-}
-extension PhysicsCollideShapeResult2D {
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_max_collisions = lookupMethod("PhysicsCollideShapeResult2D", "get_max_collisions", 3905245786)
-    @inlinable @inline(__always) public func `get_max_collisions`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_max_collisions, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_max_collisions = lookupMethod("PhysicsCollideShapeResult2D", "set_max_collisions", 1286410249)
-    @inlinable @inline(__always) public func `set_max_collisions`(_ `max_collisions`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `max_collisions`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_max_collisions, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_collision_count = lookupMethod("PhysicsCollideShapeResult2D", "get_collision_count", 3905245786)
-    @inlinable @inline(__always) public func `get_collision_count`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_collision_count, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_point_on_queried_shape = lookupMethod("PhysicsCollideShapeResult2D", "get_point_on_queried_shape", 2299179447)
-    @inlinable @inline(__always) public func `get_point_on_queried_shape`(_ `collision_index`: Int64) -> Vector2 {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `collision_index`
-        return withUnsafeTemporaryAllocation(of: Vector2.self, capacity: 1) { result in
-            withUnsafePointer(to: &a0) { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_point_on_queried_shape, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
-            }
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_point_on_colliding_shape = lookupMethod("PhysicsCollideShapeResult2D", "get_point_on_colliding_shape", 2299179447)
-    @inlinable @inline(__always) public func `get_point_on_colliding_shape`(_ `collision_index`: Int64) -> Vector2 {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `collision_index`
-        return withUnsafeTemporaryAllocation(of: Vector2.self, capacity: 1) { result in
-            withUnsafePointer(to: &a0) { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_point_on_colliding_shape, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
-            }
-            return result.baseAddress!.move()
-        }
-}
-}
-extension PhysicsCollideShapeResult3D {
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_max_collisions = lookupMethod("PhysicsCollideShapeResult3D", "get_max_collisions", 3905245786)
-    @inlinable @inline(__always) public func `get_max_collisions`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_max_collisions, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_max_collisions = lookupMethod("PhysicsCollideShapeResult3D", "set_max_collisions", 1286410249)
-    @inlinable @inline(__always) public func `set_max_collisions`(_ `max_collisions`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `max_collisions`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_max_collisions, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_collision_count = lookupMethod("PhysicsCollideShapeResult3D", "get_collision_count", 3905245786)
-    @inlinable @inline(__always) public func `get_collision_count`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_collision_count, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_point_on_queried_shape = lookupMethod("PhysicsCollideShapeResult3D", "get_point_on_queried_shape", 711720468)
-    @inlinable @inline(__always) public func `get_point_on_queried_shape`(_ `collision_index`: Int64) -> Vector3 {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `collision_index`
-        return withUnsafeTemporaryAllocation(of: Vector3.self, capacity: 1) { result in
-            withUnsafePointer(to: &a0) { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_point_on_queried_shape, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
-            }
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_point_on_colliding_shape = lookupMethod("PhysicsCollideShapeResult3D", "get_point_on_colliding_shape", 711720468)
-    @inlinable @inline(__always) public func `get_point_on_colliding_shape`(_ `collision_index`: Int64) -> Vector3 {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `collision_index`
-        return withUnsafeTemporaryAllocation(of: Vector3.self, capacity: 1) { result in
-            withUnsafePointer(to: &a0) { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_point_on_colliding_shape, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
-            }
-            return result.baseAddress!.move()
         }
 }
 }
@@ -1743,17 +1606,6 @@ extension PhysicsDirectBodyState3D {
 extension PhysicsDirectBodyState3DExtension {
 }
 extension PhysicsDirectSpaceState2D {
-    nonisolated(unsafe) private static let mb_intersect_ray = lookupMethod("PhysicsDirectSpaceState2D", "intersect_ray", 1590275562)
-    public func `intersect_ray`(_ `parameters`: PhysicsRayQueryParameters2D?) -> GodotDictionary {
-        defer { withExtendedLifetime((self, `parameters`)) {} }
-        var a0 = `parameters`?.requireHandle()
-        return GodotDictionary(initializing: { result in
-            withUnsafePointer(to: &a0) { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_intersect_ray, requireHandle(), &arguments, result)
-            }
-        })
-}
     nonisolated(unsafe) private static let mb_intersect_point = lookupMethod("PhysicsDirectSpaceState2D", "intersect_point", 2118456068)
     public func `intersect_point`(_ `parameters`: PhysicsPointQueryParameters2D?, _ `max_results`: Int64 = 32) -> GodotArrayOf<GodotDictionary> {
         defer { withExtendedLifetime((self, `parameters`)) {} }
@@ -1767,6 +1619,17 @@ extension PhysicsDirectSpaceState2D {
                         api.object_method_bind_ptrcall!(Self.mb_intersect_point, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), result)
                     }
                 }
+            }
+        })
+}
+    nonisolated(unsafe) private static let mb_intersect_ray = lookupMethod("PhysicsDirectSpaceState2D", "intersect_ray", 1590275562)
+    public func `intersect_ray`(_ `parameters`: PhysicsRayQueryParameters2D?) -> GodotDictionary {
+        defer { withExtendedLifetime((self, `parameters`)) {} }
+        var a0 = `parameters`?.requireHandle()
+        return GodotDictionary(initializing: { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_intersect_ray, requireHandle(), &arguments, result)
             }
         })
 }
@@ -1824,102 +1687,6 @@ extension PhysicsDirectSpaceState2D {
             }
         })
 }
-    nonisolated(unsafe) private static let mb_intersect_ray_into = lookupMethod("PhysicsDirectSpaceState2D", "intersect_ray_into", 2480877099)
-    public func `intersect_ray_into`(_ `parameters`: PhysicsRayQueryParameters2D?, _ `result_value`: PhysicsIntersectRayResult2D?) -> Bool {
-        defer { withExtendedLifetime((self, `parameters`, `result_value`)) {} }
-        var a0 = `parameters`?.requireHandle()
-        var a1 = `result_value`?.requireHandle()
-        var result: UInt8 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_intersect_ray_into, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                }
-            }
-        }
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_intersect_point_into = lookupMethod("PhysicsDirectSpaceState2D", "intersect_point_into", 2338147429)
-    public func `intersect_point_into`(_ `parameters`: PhysicsPointQueryParameters2D?, _ `result_value`: PhysicsIntersectPointResult2D?) -> Bool {
-        defer { withExtendedLifetime((self, `parameters`, `result_value`)) {} }
-        var a0 = `parameters`?.requireHandle()
-        var a1 = `result_value`?.requireHandle()
-        var result: UInt8 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_intersect_point_into, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                }
-            }
-        }
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_intersect_shape_into = lookupMethod("PhysicsDirectSpaceState2D", "intersect_shape_into", 1052395953)
-    public func `intersect_shape_into`(_ `parameters`: PhysicsShapeQueryParameters2D?, _ `result_value`: PhysicsIntersectShapeResult2D?) -> Bool {
-        defer { withExtendedLifetime((self, `parameters`, `result_value`)) {} }
-        var a0 = `parameters`?.requireHandle()
-        var a1 = `result_value`?.requireHandle()
-        var result: UInt8 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_intersect_shape_into, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                }
-            }
-        }
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_cast_motion_into = lookupMethod("PhysicsDirectSpaceState2D", "cast_motion_into", 1136743640)
-    public func `cast_motion_into`(_ `parameters`: PhysicsShapeQueryParameters2D?, _ `result_value`: PhysicsCastMotionResult2D?) -> Bool {
-        defer { withExtendedLifetime((self, `parameters`, `result_value`)) {} }
-        var a0 = `parameters`?.requireHandle()
-        var a1 = `result_value`?.requireHandle()
-        var result: UInt8 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_cast_motion_into, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                }
-            }
-        }
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_collide_shape_into = lookupMethod("PhysicsDirectSpaceState2D", "collide_shape_into", 2406737026)
-    public func `collide_shape_into`(_ `parameters`: PhysicsShapeQueryParameters2D?, _ `result_value`: PhysicsCollideShapeResult2D?) -> Bool {
-        defer { withExtendedLifetime((self, `parameters`, `result_value`)) {} }
-        var a0 = `parameters`?.requireHandle()
-        var a1 = `result_value`?.requireHandle()
-        var result: UInt8 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_collide_shape_into, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                }
-            }
-        }
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_get_rest_info_into = lookupMethod("PhysicsDirectSpaceState2D", "get_rest_info_into", 328042613)
-    public func `get_rest_info_into`(_ `parameters`: PhysicsShapeQueryParameters2D?, _ `result_value`: PhysicsGetRestInfoResult2D?) -> Bool {
-        defer { withExtendedLifetime((self, `parameters`, `result_value`)) {} }
-        var a0 = `parameters`?.requireHandle()
-        var a1 = `result_value`?.requireHandle()
-        var result: UInt8 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_get_rest_info_into, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                }
-            }
-        }
-        return result != 0
-}
 }
 extension PhysicsDirectSpaceState2DExtension {
     nonisolated(unsafe) private static let mb_is_body_excluded_from_query = lookupMethod("PhysicsDirectSpaceState2DExtension", "is_body_excluded_from_query", 4155700596)
@@ -1934,17 +1701,6 @@ extension PhysicsDirectSpaceState2DExtension {
 }
 }
 extension PhysicsDirectSpaceState3D {
-    nonisolated(unsafe) private static let mb_intersect_ray = lookupMethod("PhysicsDirectSpaceState3D", "intersect_ray", 3957970750)
-    public func `intersect_ray`(_ `parameters`: PhysicsRayQueryParameters3D?) -> GodotDictionary {
-        defer { withExtendedLifetime((self, `parameters`)) {} }
-        var a0 = `parameters`?.requireHandle()
-        return GodotDictionary(initializing: { result in
-            withUnsafePointer(to: &a0) { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_intersect_ray, requireHandle(), &arguments, result)
-            }
-        })
-}
     nonisolated(unsafe) private static let mb_intersect_point = lookupMethod("PhysicsDirectSpaceState3D", "intersect_point", 975173756)
     public func `intersect_point`(_ `parameters`: PhysicsPointQueryParameters3D?, _ `max_results`: Int64 = 32) -> GodotArrayOf<GodotDictionary> {
         defer { withExtendedLifetime((self, `parameters`)) {} }
@@ -1958,6 +1714,17 @@ extension PhysicsDirectSpaceState3D {
                         api.object_method_bind_ptrcall!(Self.mb_intersect_point, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), result)
                     }
                 }
+            }
+        })
+}
+    nonisolated(unsafe) private static let mb_intersect_ray = lookupMethod("PhysicsDirectSpaceState3D", "intersect_ray", 3957970750)
+    public func `intersect_ray`(_ `parameters`: PhysicsRayQueryParameters3D?) -> GodotDictionary {
+        defer { withExtendedLifetime((self, `parameters`)) {} }
+        var a0 = `parameters`?.requireHandle()
+        return GodotDictionary(initializing: { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_intersect_ray, requireHandle(), &arguments, result)
             }
         })
 }
@@ -2015,102 +1782,6 @@ extension PhysicsDirectSpaceState3D {
             }
         })
 }
-    nonisolated(unsafe) private static let mb_intersect_ray_into = lookupMethod("PhysicsDirectSpaceState3D", "intersect_ray_into", 1101524092)
-    public func `intersect_ray_into`(_ `parameters`: PhysicsRayQueryParameters3D?, _ `result_value`: PhysicsIntersectRayResult3D?) -> Bool {
-        defer { withExtendedLifetime((self, `parameters`, `result_value`)) {} }
-        var a0 = `parameters`?.requireHandle()
-        var a1 = `result_value`?.requireHandle()
-        var result: UInt8 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_intersect_ray_into, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                }
-            }
-        }
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_intersect_point_into = lookupMethod("PhysicsDirectSpaceState3D", "intersect_point_into", 4224456912)
-    public func `intersect_point_into`(_ `parameters`: PhysicsPointQueryParameters3D?, _ `result_value`: PhysicsIntersectPointResult3D?) -> Bool {
-        defer { withExtendedLifetime((self, `parameters`, `result_value`)) {} }
-        var a0 = `parameters`?.requireHandle()
-        var a1 = `result_value`?.requireHandle()
-        var result: UInt8 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_intersect_point_into, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                }
-            }
-        }
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_intersect_shape_into = lookupMethod("PhysicsDirectSpaceState3D", "intersect_shape_into", 2386936143)
-    public func `intersect_shape_into`(_ `parameters`: PhysicsShapeQueryParameters3D?, _ `result_value`: PhysicsIntersectShapeResult3D?) -> Bool {
-        defer { withExtendedLifetime((self, `parameters`, `result_value`)) {} }
-        var a0 = `parameters`?.requireHandle()
-        var a1 = `result_value`?.requireHandle()
-        var result: UInt8 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_intersect_shape_into, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                }
-            }
-        }
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_cast_motion_into = lookupMethod("PhysicsDirectSpaceState3D", "cast_motion_into", 1750186052)
-    public func `cast_motion_into`(_ `parameters`: PhysicsShapeQueryParameters3D?, _ `result_value`: PhysicsCastMotionResult3D?) -> Bool {
-        defer { withExtendedLifetime((self, `parameters`, `result_value`)) {} }
-        var a0 = `parameters`?.requireHandle()
-        var a1 = `result_value`?.requireHandle()
-        var result: UInt8 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_cast_motion_into, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                }
-            }
-        }
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_collide_shape_into = lookupMethod("PhysicsDirectSpaceState3D", "collide_shape_into", 117908487)
-    public func `collide_shape_into`(_ `parameters`: PhysicsShapeQueryParameters3D?, _ `result_value`: PhysicsCollideShapeResult3D?) -> Bool {
-        defer { withExtendedLifetime((self, `parameters`, `result_value`)) {} }
-        var a0 = `parameters`?.requireHandle()
-        var a1 = `result_value`?.requireHandle()
-        var result: UInt8 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_collide_shape_into, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                }
-            }
-        }
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_get_rest_info_into = lookupMethod("PhysicsDirectSpaceState3D", "get_rest_info_into", 383425697)
-    public func `get_rest_info_into`(_ `parameters`: PhysicsShapeQueryParameters3D?, _ `result_value`: PhysicsGetRestInfoResult3D?) -> Bool {
-        defer { withExtendedLifetime((self, `parameters`, `result_value`)) {} }
-        var a0 = `parameters`?.requireHandle()
-        var a1 = `result_value`?.requireHandle()
-        var result: UInt8 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_get_rest_info_into, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                }
-            }
-        }
-        return result != 0
-}
 }
 extension PhysicsDirectSpaceState3DExtension {
     nonisolated(unsafe) private static let mb_is_body_excluded_from_query = lookupMethod("PhysicsDirectSpaceState3DExtension", "is_body_excluded_from_query", 4155700596)
@@ -2122,487 +1793,6 @@ extension PhysicsDirectSpaceState3DExtension {
             api.object_method_bind_ptrcall!(Self.mb_is_body_excluded_from_query, requireHandle(), &arguments, &result)
         }
         return result != 0
-}
-}
-extension PhysicsGetRestInfoResult2D {
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_point = lookupMethod("PhysicsGetRestInfoResult2D", "get_point", 3341600327)
-    @inlinable @inline(__always) public func `get_point`() -> Vector2 {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Vector2.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_point, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_normal = lookupMethod("PhysicsGetRestInfoResult2D", "get_normal", 3341600327)
-    @inlinable @inline(__always) public func `get_normal`() -> Vector2 {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Vector2.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_normal, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-    nonisolated(unsafe) private static let mb_get_collider_rid = lookupMethod("PhysicsGetRestInfoResult2D", "get_collider_rid", 2944877500)
-    public func `get_collider_rid`() -> GodotRID {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotRID(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_collider_rid, requireHandle(), nil, result)
-        })
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_collider_id = lookupMethod("PhysicsGetRestInfoResult2D", "get_collider_id", 3905245786)
-    @inlinable @inline(__always) public func `get_collider_id`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_collider_id, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_collider_shape = lookupMethod("PhysicsGetRestInfoResult2D", "get_collider_shape", 3905245786)
-    @inlinable @inline(__always) public func `get_collider_shape`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_collider_shape, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_collider_velocity = lookupMethod("PhysicsGetRestInfoResult2D", "get_collider_velocity", 3341600327)
-    @inlinable @inline(__always) public func `get_collider_velocity`() -> Vector2 {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Vector2.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_collider_velocity, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-}
-extension PhysicsGetRestInfoResult3D {
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_point = lookupMethod("PhysicsGetRestInfoResult3D", "get_point", 3360562783)
-    @inlinable @inline(__always) public func `get_point`() -> Vector3 {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Vector3.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_point, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_normal = lookupMethod("PhysicsGetRestInfoResult3D", "get_normal", 3360562783)
-    @inlinable @inline(__always) public func `get_normal`() -> Vector3 {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Vector3.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_normal, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-    nonisolated(unsafe) private static let mb_get_collider_rid = lookupMethod("PhysicsGetRestInfoResult3D", "get_collider_rid", 2944877500)
-    public func `get_collider_rid`() -> GodotRID {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotRID(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_collider_rid, requireHandle(), nil, result)
-        })
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_collider_id = lookupMethod("PhysicsGetRestInfoResult3D", "get_collider_id", 3905245786)
-    @inlinable @inline(__always) public func `get_collider_id`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_collider_id, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_collider_shape = lookupMethod("PhysicsGetRestInfoResult3D", "get_collider_shape", 3905245786)
-    @inlinable @inline(__always) public func `get_collider_shape`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_collider_shape, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_collider_velocity = lookupMethod("PhysicsGetRestInfoResult3D", "get_collider_velocity", 3360562783)
-    @inlinable @inline(__always) public func `get_collider_velocity`() -> Vector3 {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Vector3.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_collider_velocity, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-}
-extension PhysicsIntersectPointResult2D {
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_max_intersections = lookupMethod("PhysicsIntersectPointResult2D", "get_max_intersections", 3905245786)
-    @inlinable @inline(__always) public func `get_max_intersections`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_max_intersections, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_max_intersections = lookupMethod("PhysicsIntersectPointResult2D", "set_max_intersections", 1286410249)
-    @inlinable @inline(__always) public func `set_max_intersections`(_ `max_intersections`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `max_intersections`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_max_intersections, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_intersection_count = lookupMethod("PhysicsIntersectPointResult2D", "get_intersection_count", 3905245786)
-    @inlinable @inline(__always) public func `get_intersection_count`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_intersection_count, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_collider_id = lookupMethod("PhysicsIntersectPointResult2D", "get_collider_id", 923996154)
-    @inlinable @inline(__always) public func `get_collider_id`(_ `intersection_index`: Int64) -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `intersection_index`
-        var result: Int64 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_collider_id, requireHandle(), &arguments, &result)
-        }
-        return result
-}
-    nonisolated(unsafe) private static let mb_get_collider_rid = lookupMethod("PhysicsIntersectPointResult2D", "get_collider_rid", 495598643)
-    public func `get_collider_rid`(_ `intersection_index`: Int64) -> GodotRID {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `intersection_index`
-        return GodotRID(initializing: { result in
-            withUnsafePointer(to: &a0) { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_collider_rid, requireHandle(), &arguments, result)
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_get_collider = lookupMethod("PhysicsIntersectPointResult2D", "get_collider", 3332903315)
-    public func `get_collider`(_ `intersection_index`: Int64) -> Object? {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `intersection_index`
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_collider, requireHandle(), &arguments, &nativeResult)
-        }
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        return object as? Object
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_collider_shape = lookupMethod("PhysicsIntersectPointResult2D", "get_collider_shape", 923996154)
-    @inlinable @inline(__always) public func `get_collider_shape`(_ `intersection_index`: Int64) -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `intersection_index`
-        var result: Int64 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_collider_shape, requireHandle(), &arguments, &result)
-        }
-        return result
-}
-}
-extension PhysicsIntersectPointResult3D {
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_max_intersections = lookupMethod("PhysicsIntersectPointResult3D", "get_max_intersections", 3905245786)
-    @inlinable @inline(__always) public func `get_max_intersections`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_max_intersections, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_max_intersections = lookupMethod("PhysicsIntersectPointResult3D", "set_max_intersections", 1286410249)
-    @inlinable @inline(__always) public func `set_max_intersections`(_ `max_intersections`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `max_intersections`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_max_intersections, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_intersection_count = lookupMethod("PhysicsIntersectPointResult3D", "get_intersection_count", 3905245786)
-    @inlinable @inline(__always) public func `get_intersection_count`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_intersection_count, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_collider_id = lookupMethod("PhysicsIntersectPointResult3D", "get_collider_id", 923996154)
-    @inlinable @inline(__always) public func `get_collider_id`(_ `intersection_index`: Int64) -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `intersection_index`
-        var result: Int64 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_collider_id, requireHandle(), &arguments, &result)
-        }
-        return result
-}
-    nonisolated(unsafe) private static let mb_get_collider_rid = lookupMethod("PhysicsIntersectPointResult3D", "get_collider_rid", 495598643)
-    public func `get_collider_rid`(_ `intersection_index`: Int64) -> GodotRID {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `intersection_index`
-        return GodotRID(initializing: { result in
-            withUnsafePointer(to: &a0) { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_collider_rid, requireHandle(), &arguments, result)
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_get_collider = lookupMethod("PhysicsIntersectPointResult3D", "get_collider", 3332903315)
-    public func `get_collider`(_ `intersection_index`: Int64) -> Object? {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `intersection_index`
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_collider, requireHandle(), &arguments, &nativeResult)
-        }
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        return object as? Object
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_collider_shape = lookupMethod("PhysicsIntersectPointResult3D", "get_collider_shape", 923996154)
-    @inlinable @inline(__always) public func `get_collider_shape`(_ `intersection_index`: Int64) -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `intersection_index`
-        var result: Int64 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_collider_shape, requireHandle(), &arguments, &result)
-        }
-        return result
-}
-}
-extension PhysicsIntersectRayResult2D {
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_position = lookupMethod("PhysicsIntersectRayResult2D", "get_position", 3341600327)
-    @inlinable @inline(__always) public func `get_position`() -> Vector2 {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Vector2.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_position, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_normal = lookupMethod("PhysicsIntersectRayResult2D", "get_normal", 3341600327)
-    @inlinable @inline(__always) public func `get_normal`() -> Vector2 {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Vector2.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_normal, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-    nonisolated(unsafe) private static let mb_get_collider_rid = lookupMethod("PhysicsIntersectRayResult2D", "get_collider_rid", 2944877500)
-    public func `get_collider_rid`() -> GodotRID {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotRID(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_collider_rid, requireHandle(), nil, result)
-        })
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_collider_id = lookupMethod("PhysicsIntersectRayResult2D", "get_collider_id", 3905245786)
-    @inlinable @inline(__always) public func `get_collider_id`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_collider_id, requireHandle(), nil, &result)
-        return result
-}
-    nonisolated(unsafe) private static let mb_get_collider = lookupMethod("PhysicsIntersectRayResult2D", "get_collider", 1981248198)
-    public func `get_collider`() -> Object? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_collider, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        return object as? Object
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_collider_shape = lookupMethod("PhysicsIntersectRayResult2D", "get_collider_shape", 3905245786)
-    @inlinable @inline(__always) public func `get_collider_shape`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_collider_shape, requireHandle(), nil, &result)
-        return result
-}
-}
-extension PhysicsIntersectRayResult3D {
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_position = lookupMethod("PhysicsIntersectRayResult3D", "get_position", 3360562783)
-    @inlinable @inline(__always) public func `get_position`() -> Vector3 {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Vector3.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_position, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_normal = lookupMethod("PhysicsIntersectRayResult3D", "get_normal", 3360562783)
-    @inlinable @inline(__always) public func `get_normal`() -> Vector3 {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Vector3.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_normal, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-    nonisolated(unsafe) private static let mb_get_collider_rid = lookupMethod("PhysicsIntersectRayResult3D", "get_collider_rid", 2944877500)
-    public func `get_collider_rid`() -> GodotRID {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotRID(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_collider_rid, requireHandle(), nil, result)
-        })
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_collider_id = lookupMethod("PhysicsIntersectRayResult3D", "get_collider_id", 3905245786)
-    @inlinable @inline(__always) public func `get_collider_id`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_collider_id, requireHandle(), nil, &result)
-        return result
-}
-    nonisolated(unsafe) private static let mb_get_collider = lookupMethod("PhysicsIntersectRayResult3D", "get_collider", 1981248198)
-    public func `get_collider`() -> Object? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_collider, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        return object as? Object
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_collider_shape = lookupMethod("PhysicsIntersectRayResult3D", "get_collider_shape", 3905245786)
-    @inlinable @inline(__always) public func `get_collider_shape`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_collider_shape, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_collider_face_index = lookupMethod("PhysicsIntersectRayResult3D", "get_collider_face_index", 3905245786)
-    @inlinable @inline(__always) public func `get_collider_face_index`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_collider_face_index, requireHandle(), nil, &result)
-        return result
-}
-}
-extension PhysicsIntersectShapeResult2D {
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_max_intersections = lookupMethod("PhysicsIntersectShapeResult2D", "get_max_intersections", 3905245786)
-    @inlinable @inline(__always) public func `get_max_intersections`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_max_intersections, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_max_intersections = lookupMethod("PhysicsIntersectShapeResult2D", "set_max_intersections", 1286410249)
-    @inlinable @inline(__always) public func `set_max_intersections`(_ `max_intersections`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `max_intersections`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_max_intersections, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_intersection_count = lookupMethod("PhysicsIntersectShapeResult2D", "get_intersection_count", 3905245786)
-    @inlinable @inline(__always) public func `get_intersection_count`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_intersection_count, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_collider_id = lookupMethod("PhysicsIntersectShapeResult2D", "get_collider_id", 923996154)
-    @inlinable @inline(__always) public func `get_collider_id`(_ `intersection_index`: Int64) -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `intersection_index`
-        var result: Int64 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_collider_id, requireHandle(), &arguments, &result)
-        }
-        return result
-}
-    nonisolated(unsafe) private static let mb_get_collider_rid = lookupMethod("PhysicsIntersectShapeResult2D", "get_collider_rid", 495598643)
-    public func `get_collider_rid`(_ `intersection_index`: Int64) -> GodotRID {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `intersection_index`
-        return GodotRID(initializing: { result in
-            withUnsafePointer(to: &a0) { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_collider_rid, requireHandle(), &arguments, result)
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_get_collider = lookupMethod("PhysicsIntersectShapeResult2D", "get_collider", 3332903315)
-    public func `get_collider`(_ `intersection_index`: Int64) -> Object? {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `intersection_index`
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_collider, requireHandle(), &arguments, &nativeResult)
-        }
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        return object as? Object
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_collider_shape = lookupMethod("PhysicsIntersectShapeResult2D", "get_collider_shape", 923996154)
-    @inlinable @inline(__always) public func `get_collider_shape`(_ `intersection_index`: Int64) -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `intersection_index`
-        var result: Int64 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_collider_shape, requireHandle(), &arguments, &result)
-        }
-        return result
-}
-}
-extension PhysicsIntersectShapeResult3D {
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_max_intersections = lookupMethod("PhysicsIntersectShapeResult3D", "get_max_intersections", 3905245786)
-    @inlinable @inline(__always) public func `get_max_intersections`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_max_intersections, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_max_intersections = lookupMethod("PhysicsIntersectShapeResult3D", "set_max_intersections", 1286410249)
-    @inlinable @inline(__always) public func `set_max_intersections`(_ `max_intersections`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `max_intersections`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_max_intersections, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_intersection_count = lookupMethod("PhysicsIntersectShapeResult3D", "get_intersection_count", 3905245786)
-    @inlinable @inline(__always) public func `get_intersection_count`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_intersection_count, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_collider_id = lookupMethod("PhysicsIntersectShapeResult3D", "get_collider_id", 923996154)
-    @inlinable @inline(__always) public func `get_collider_id`(_ `intersection_index`: Int64) -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `intersection_index`
-        var result: Int64 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_collider_id, requireHandle(), &arguments, &result)
-        }
-        return result
-}
-    nonisolated(unsafe) private static let mb_get_collider_rid = lookupMethod("PhysicsIntersectShapeResult3D", "get_collider_rid", 495598643)
-    public func `get_collider_rid`(_ `intersection_index`: Int64) -> GodotRID {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `intersection_index`
-        return GodotRID(initializing: { result in
-            withUnsafePointer(to: &a0) { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_collider_rid, requireHandle(), &arguments, result)
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_get_collider = lookupMethod("PhysicsIntersectShapeResult3D", "get_collider", 3332903315)
-    public func `get_collider`(_ `intersection_index`: Int64) -> Object? {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `intersection_index`
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_collider, requireHandle(), &arguments, &nativeResult)
-        }
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        return object as? Object
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_collider_shape = lookupMethod("PhysicsIntersectShapeResult3D", "get_collider_shape", 923996154)
-    @inlinable @inline(__always) public func `get_collider_shape`(_ `intersection_index`: Int64) -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `intersection_index`
-        var result: Int64 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_collider_shape, requireHandle(), &arguments, &result)
-        }
-        return result
 }
 }
 extension PhysicsMaterial {
@@ -2765,6 +1955,371 @@ extension PhysicsPointQueryParameters2D {
         defer { withExtendedLifetime((self)) {} }
         var result: UInt8 = 0
         api.object_method_bind_ptrcall!(Self.mb_is_collide_with_areas_enabled, requireHandle(), nil, &result)
+        return result != 0
+}
+}
+extension PhysicsPointQueryParameters3D {
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_position = lookupMethod("PhysicsPointQueryParameters3D", "set_position", 3460891852)
+    @inlinable @inline(__always) public func `set_position`(_ `position`: Vector3) {
+        defer { withExtendedLifetime((self)) {} }
+        `position`.withStorage { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_position, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_position = lookupMethod("PhysicsPointQueryParameters3D", "get_position", 3360562783)
+    @inlinable @inline(__always) public func `get_position`() -> Vector3 {
+        defer { withExtendedLifetime((self)) {} }
+        return withUnsafeTemporaryAllocation(of: Vector3.self, capacity: 1) { result in
+            api.object_method_bind_ptrcall!(Self.mb_get_position, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
+            return result.baseAddress!.move()
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_collision_mask = lookupMethod("PhysicsPointQueryParameters3D", "set_collision_mask", 1286410249)
+    @inlinable @inline(__always) public func `set_collision_mask`(_ `collision_mask`: Int64) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `collision_mask`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_collision_mask, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_collision_mask = lookupMethod("PhysicsPointQueryParameters3D", "get_collision_mask", 3905245786)
+    @inlinable @inline(__always) public func `get_collision_mask`() -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_collision_mask, requireHandle(), nil, &result)
+        return result
+}
+    nonisolated(unsafe) private static let mb_set_exclude = lookupMethod("PhysicsPointQueryParameters3D", "set_exclude", 381264803)
+    public func `set_exclude`(_ `exclude`: borrowing GodotArrayOf<GodotRID>) {
+        defer { withExtendedLifetime((self)) {} }
+        `exclude`.withStorage { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_exclude, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_get_exclude = lookupMethod("PhysicsPointQueryParameters3D", "get_exclude", 3995934104)
+    public func `get_exclude`() -> GodotArrayOf<GodotRID> {
+        defer { withExtendedLifetime((self)) {} }
+        return GodotArrayOf<GodotRID>(initializing: { result in
+            api.object_method_bind_ptrcall!(Self.mb_get_exclude, requireHandle(), nil, result)
+        })
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_collide_with_bodies = lookupMethod("PhysicsPointQueryParameters3D", "set_collide_with_bodies", 2586408642)
+    @inlinable @inline(__always) public func `set_collide_with_bodies`(_ `enable`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `enable` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_collide_with_bodies, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_collide_with_bodies_enabled = lookupMethod("PhysicsPointQueryParameters3D", "is_collide_with_bodies_enabled", 36873697)
+    @inlinable @inline(__always) public func `is_collide_with_bodies_enabled`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_collide_with_bodies_enabled, requireHandle(), nil, &result)
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_collide_with_areas = lookupMethod("PhysicsPointQueryParameters3D", "set_collide_with_areas", 2586408642)
+    @inlinable @inline(__always) public func `set_collide_with_areas`(_ `enable`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `enable` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_collide_with_areas, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_collide_with_areas_enabled = lookupMethod("PhysicsPointQueryParameters3D", "is_collide_with_areas_enabled", 36873697)
+    @inlinable @inline(__always) public func `is_collide_with_areas_enabled`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_collide_with_areas_enabled, requireHandle(), nil, &result)
+        return result != 0
+}
+}
+extension PhysicsRayQueryParameters2D {
+    nonisolated(unsafe) private static let mb_create = lookupMethod("PhysicsRayQueryParameters2D", "create", 3196569324)
+    public static func `create`(_ `from`: Vector2, _ `to`: Vector2, _ `collision_mask`: Int64 = 4294967295, _ `exclude`: borrowing GodotArrayOf<GodotRID> = GodotArrayOf<GodotRID>()) -> PhysicsRayQueryParameters2D? {
+        var a2 = `collision_mask`
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        `from`.withStorage { p0 in
+            `to`.withStorage { p1 in
+                withUnsafePointer(to: &a2) { p2 in
+                    `exclude`.withStorage { p3 in
+                        var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p3)))
+                        withUnsafePointer(to: &arguments) { arguments in
+                            api.object_method_bind_ptrcall!(Self.mb_create, nil, UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &nativeResult)
+                        }
+                    }
+                }
+            }
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? PhysicsRayQueryParameters2D
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_from = lookupMethod("PhysicsRayQueryParameters2D", "set_from", 743155724)
+    @inlinable @inline(__always) public func `set_from`(_ `from`: Vector2) {
+        defer { withExtendedLifetime((self)) {} }
+        `from`.withStorage { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_from, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_from = lookupMethod("PhysicsRayQueryParameters2D", "get_from", 3341600327)
+    @inlinable @inline(__always) public func `get_from`() -> Vector2 {
+        defer { withExtendedLifetime((self)) {} }
+        return withUnsafeTemporaryAllocation(of: Vector2.self, capacity: 1) { result in
+            api.object_method_bind_ptrcall!(Self.mb_get_from, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
+            return result.baseAddress!.move()
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_to = lookupMethod("PhysicsRayQueryParameters2D", "set_to", 743155724)
+    @inlinable @inline(__always) public func `set_to`(_ `to`: Vector2) {
+        defer { withExtendedLifetime((self)) {} }
+        `to`.withStorage { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_to, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_to = lookupMethod("PhysicsRayQueryParameters2D", "get_to", 3341600327)
+    @inlinable @inline(__always) public func `get_to`() -> Vector2 {
+        defer { withExtendedLifetime((self)) {} }
+        return withUnsafeTemporaryAllocation(of: Vector2.self, capacity: 1) { result in
+            api.object_method_bind_ptrcall!(Self.mb_get_to, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
+            return result.baseAddress!.move()
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_collision_mask = lookupMethod("PhysicsRayQueryParameters2D", "set_collision_mask", 1286410249)
+    @inlinable @inline(__always) public func `set_collision_mask`(_ `collision_mask`: Int64) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `collision_mask`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_collision_mask, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_collision_mask = lookupMethod("PhysicsRayQueryParameters2D", "get_collision_mask", 3905245786)
+    @inlinable @inline(__always) public func `get_collision_mask`() -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_collision_mask, requireHandle(), nil, &result)
+        return result
+}
+    nonisolated(unsafe) private static let mb_set_exclude = lookupMethod("PhysicsRayQueryParameters2D", "set_exclude", 381264803)
+    public func `set_exclude`(_ `exclude`: borrowing GodotArrayOf<GodotRID>) {
+        defer { withExtendedLifetime((self)) {} }
+        `exclude`.withStorage { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_exclude, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_get_exclude = lookupMethod("PhysicsRayQueryParameters2D", "get_exclude", 3995934104)
+    public func `get_exclude`() -> GodotArrayOf<GodotRID> {
+        defer { withExtendedLifetime((self)) {} }
+        return GodotArrayOf<GodotRID>(initializing: { result in
+            api.object_method_bind_ptrcall!(Self.mb_get_exclude, requireHandle(), nil, result)
+        })
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_collide_with_bodies = lookupMethod("PhysicsRayQueryParameters2D", "set_collide_with_bodies", 2586408642)
+    @inlinable @inline(__always) public func `set_collide_with_bodies`(_ `enable`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `enable` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_collide_with_bodies, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_collide_with_bodies_enabled = lookupMethod("PhysicsRayQueryParameters2D", "is_collide_with_bodies_enabled", 36873697)
+    @inlinable @inline(__always) public func `is_collide_with_bodies_enabled`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_collide_with_bodies_enabled, requireHandle(), nil, &result)
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_collide_with_areas = lookupMethod("PhysicsRayQueryParameters2D", "set_collide_with_areas", 2586408642)
+    @inlinable @inline(__always) public func `set_collide_with_areas`(_ `enable`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `enable` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_collide_with_areas, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_collide_with_areas_enabled = lookupMethod("PhysicsRayQueryParameters2D", "is_collide_with_areas_enabled", 36873697)
+    @inlinable @inline(__always) public func `is_collide_with_areas_enabled`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_collide_with_areas_enabled, requireHandle(), nil, &result)
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_hit_from_inside = lookupMethod("PhysicsRayQueryParameters2D", "set_hit_from_inside", 2586408642)
+    @inlinable @inline(__always) public func `set_hit_from_inside`(_ `enable`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `enable` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_hit_from_inside, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_hit_from_inside_enabled = lookupMethod("PhysicsRayQueryParameters2D", "is_hit_from_inside_enabled", 36873697)
+    @inlinable @inline(__always) public func `is_hit_from_inside_enabled`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_hit_from_inside_enabled, requireHandle(), nil, &result)
+        return result != 0
+}
+}
+extension PhysicsRayQueryParameters3D {
+    nonisolated(unsafe) private static let mb_create = lookupMethod("PhysicsRayQueryParameters3D", "create", 3110599579)
+    public static func `create`(_ `from`: Vector3, _ `to`: Vector3, _ `collision_mask`: Int64 = 4294967295, _ `exclude`: borrowing GodotArrayOf<GodotRID> = GodotArrayOf<GodotRID>()) -> PhysicsRayQueryParameters3D? {
+        var a2 = `collision_mask`
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        `from`.withStorage { p0 in
+            `to`.withStorage { p1 in
+                withUnsafePointer(to: &a2) { p2 in
+                    `exclude`.withStorage { p3 in
+                        var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p3)))
+                        withUnsafePointer(to: &arguments) { arguments in
+                            api.object_method_bind_ptrcall!(Self.mb_create, nil, UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &nativeResult)
+                        }
+                    }
+                }
+            }
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? PhysicsRayQueryParameters3D
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_from = lookupMethod("PhysicsRayQueryParameters3D", "set_from", 3460891852)
+    @inlinable @inline(__always) public func `set_from`(_ `from`: Vector3) {
+        defer { withExtendedLifetime((self)) {} }
+        `from`.withStorage { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_from, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_from = lookupMethod("PhysicsRayQueryParameters3D", "get_from", 3360562783)
+    @inlinable @inline(__always) public func `get_from`() -> Vector3 {
+        defer { withExtendedLifetime((self)) {} }
+        return withUnsafeTemporaryAllocation(of: Vector3.self, capacity: 1) { result in
+            api.object_method_bind_ptrcall!(Self.mb_get_from, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
+            return result.baseAddress!.move()
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_to = lookupMethod("PhysicsRayQueryParameters3D", "set_to", 3460891852)
+    @inlinable @inline(__always) public func `set_to`(_ `to`: Vector3) {
+        defer { withExtendedLifetime((self)) {} }
+        `to`.withStorage { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_to, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_to = lookupMethod("PhysicsRayQueryParameters3D", "get_to", 3360562783)
+    @inlinable @inline(__always) public func `get_to`() -> Vector3 {
+        defer { withExtendedLifetime((self)) {} }
+        return withUnsafeTemporaryAllocation(of: Vector3.self, capacity: 1) { result in
+            api.object_method_bind_ptrcall!(Self.mb_get_to, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
+            return result.baseAddress!.move()
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_collision_mask = lookupMethod("PhysicsRayQueryParameters3D", "set_collision_mask", 1286410249)
+    @inlinable @inline(__always) public func `set_collision_mask`(_ `collision_mask`: Int64) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `collision_mask`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_collision_mask, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_collision_mask = lookupMethod("PhysicsRayQueryParameters3D", "get_collision_mask", 3905245786)
+    @inlinable @inline(__always) public func `get_collision_mask`() -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_collision_mask, requireHandle(), nil, &result)
+        return result
+}
+    nonisolated(unsafe) private static let mb_set_exclude = lookupMethod("PhysicsRayQueryParameters3D", "set_exclude", 381264803)
+    public func `set_exclude`(_ `exclude`: borrowing GodotArrayOf<GodotRID>) {
+        defer { withExtendedLifetime((self)) {} }
+        `exclude`.withStorage { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_exclude, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_get_exclude = lookupMethod("PhysicsRayQueryParameters3D", "get_exclude", 3995934104)
+    public func `get_exclude`() -> GodotArrayOf<GodotRID> {
+        defer { withExtendedLifetime((self)) {} }
+        return GodotArrayOf<GodotRID>(initializing: { result in
+            api.object_method_bind_ptrcall!(Self.mb_get_exclude, requireHandle(), nil, result)
+        })
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_collide_with_bodies = lookupMethod("PhysicsRayQueryParameters3D", "set_collide_with_bodies", 2586408642)
+    @inlinable @inline(__always) public func `set_collide_with_bodies`(_ `enable`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `enable` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_collide_with_bodies, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_collide_with_bodies_enabled = lookupMethod("PhysicsRayQueryParameters3D", "is_collide_with_bodies_enabled", 36873697)
+    @inlinable @inline(__always) public func `is_collide_with_bodies_enabled`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_collide_with_bodies_enabled, requireHandle(), nil, &result)
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_collide_with_areas = lookupMethod("PhysicsRayQueryParameters3D", "set_collide_with_areas", 2586408642)
+    @inlinable @inline(__always) public func `set_collide_with_areas`(_ `enable`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `enable` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_collide_with_areas, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_collide_with_areas_enabled = lookupMethod("PhysicsRayQueryParameters3D", "is_collide_with_areas_enabled", 36873697)
+    @inlinable @inline(__always) public func `is_collide_with_areas_enabled`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_collide_with_areas_enabled, requireHandle(), nil, &result)
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_hit_from_inside = lookupMethod("PhysicsRayQueryParameters3D", "set_hit_from_inside", 2586408642)
+    @inlinable @inline(__always) public func `set_hit_from_inside`(_ `enable`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `enable` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_hit_from_inside, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_hit_from_inside_enabled = lookupMethod("PhysicsRayQueryParameters3D", "is_hit_from_inside_enabled", 36873697)
+    @inlinable @inline(__always) public func `is_hit_from_inside_enabled`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_hit_from_inside_enabled, requireHandle(), nil, &result)
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_hit_back_faces = lookupMethod("PhysicsRayQueryParameters3D", "set_hit_back_faces", 2586408642)
+    @inlinable @inline(__always) public func `set_hit_back_faces`(_ `enable`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `enable` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_hit_back_faces, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_hit_back_faces_enabled = lookupMethod("PhysicsRayQueryParameters3D", "is_hit_back_faces_enabled", 36873697)
+    @inlinable @inline(__always) public func `is_hit_back_faces_enabled`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_hit_back_faces_enabled, requireHandle(), nil, &result)
         return result != 0
 }
 }

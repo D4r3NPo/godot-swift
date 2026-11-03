@@ -1,71 +1,5 @@
 // Generated engine API partition. Do not edit.
 import CGodot
-open class XRInterfaceExtension: XRInterface {
-    override open class var nativeClassName: String { "XRInterfaceExtension" }
-    open func `_get_name`() -> GodotStringName { return GodotStringName("") }
-    open func `_get_capabilities`() -> Int64 { return 0 }
-    open func `_is_initialized`() -> Bool { return false }
-    open func `_initialize`() -> Bool { return false }
-    open func `_uninitialize`() {  }
-    open func `_get_system_info`() -> GodotDictionary { return GodotDictionary() }
-    open func `_supports_play_area_mode`(_ `mode`: XRInterface.PlayAreaMode) -> Bool { return false }
-    open func `_get_play_area_mode`() -> XRInterface.PlayAreaMode { return 0 }
-    open func `_set_play_area_mode`(_ `mode`: XRInterface.PlayAreaMode) -> Bool { return false }
-    open func `_get_play_area`() -> GodotPackedVector3Array { return GodotPackedVector3Array() }
-    open func `_get_render_target_size`() -> Vector2 { return Vector2() }
-    open func `_get_view_count`() -> Int64 { return 0 }
-    open func `_get_camera_transform`() -> Transform3D { return Transform3D() }
-    open func `_get_camera_projections`(_ `tracker_name`: borrowing GodotStringName, _ `aspect`: Double, _ `z_near`: Double, _ `z_far`: Double) -> GodotArrayOf<Projection> { return GodotArrayOf<Projection>() }
-    open func `_get_camera_offsets`(_ `tracker_name`: borrowing GodotStringName) -> GodotArrayOf<Transform3D> { return GodotArrayOf<Transform3D>() }
-    open func `_get_transform_for_view`(_ `view`: Int64, _ `cam_transform`: Transform3D) -> Transform3D { return Transform3D() }
-    open func `_get_projection_for_view`(_ `view`: Int64, _ `aspect`: Double, _ `z_near`: Double, _ `z_far`: Double) -> GodotPackedFloat64Array { return GodotPackedFloat64Array() }
-    open func `_get_vrs_texture`() -> GodotRID { return GodotRID() }
-    open func `_get_vrs_texture_format`() -> XRInterface.VRSTextureFormat { return 0 }
-    open func `_process`() {  }
-    open func `_pre_render`() {  }
-    open func `_pre_draw_viewport`(_ `render_target`: GodotRID) -> Bool { return false }
-    open func `_post_draw_viewport`(_ `render_target`: GodotRID, _ `screen_rect`: Rect2) {  }
-    open func `_end_frame`() {  }
-    open func `_get_suggested_tracker_names`() -> GodotPackedStringArray { return GodotPackedStringArray() }
-    open func `_get_suggested_pose_names`(_ `tracker_name`: borrowing GodotStringName) -> GodotPackedStringArray { return GodotPackedStringArray() }
-    open func `_get_tracking_status`() -> XRInterface.TrackingStatus { return 0 }
-    open func `_trigger_haptic_pulse`(_ `action_name`: borrowing GodotString, _ `tracker_name`: borrowing GodotStringName, _ `frequency`: Double, _ `amplitude`: Double, _ `duration_sec`: Double, _ `delay_sec`: Double) {  }
-    open func `_get_anchor_detection_is_enabled`() -> Bool { return false }
-    open func `_set_anchor_detection_is_enabled`(_ `enabled`: Bool) {  }
-    open func `_get_camera_feed_id`() -> Int64 { return 0 }
-    open func `_get_color_texture`() -> GodotRID { return GodotRID() }
-    open func `_get_depth_texture`() -> GodotRID { return GodotRID() }
-    open func `_get_velocity_texture`() -> GodotRID { return GodotRID() }
-}
-open class XRNode3D: Node3D {
-    override open class var nativeNodeClassName: String { "XRNode3D" }
-    override open class var nativeClassName: String { nativeNodeClassName }
-}
-open class XROrigin3D: Node3D {
-    override open class var nativeNodeClassName: String { "XROrigin3D" }
-    override open class var nativeClassName: String { nativeNodeClassName }
-}
-open class XRPose: RefCounted {
-    override open class var nativeClassName: String { "XRPose" }
-}
-open class XRPositionalTracker: XRTracker {
-    override open class var nativeClassName: String { "XRPositionalTracker" }
-}
-open class XRServer: Object {
-    override open class var nativeClassName: String { "XRServer" }
-}
-open class XRTracker: RefCounted {
-    override open class var nativeClassName: String { "XRTracker" }
-}
-open class XRVRS: Object {
-    override open class var nativeClassName: String { "XRVRS" }
-}
-open class ZIPPacker: RefCounted {
-    override open class var nativeClassName: String { "ZIPPacker" }
-}
-open class ZIPReader: RefCounted {
-    override open class var nativeClassName: String { "ZIPReader" }
-}
 enum NativeClassFactories {
     nonisolated(unsafe) static let types: [String: Object.Type] = [
         "AESContext": AESContext.self,
@@ -93,10 +27,6 @@ enum NativeClassFactories {
         "AnimationNodeBlendSpace2D": AnimationNodeBlendSpace2D.self,
         "AnimationNodeBlendTree": AnimationNodeBlendTree.self,
         "AnimationNodeExtension": AnimationNodeExtension.self,
-        "AnimationNodeObserver": AnimationNodeObserver.self,
-        "AnimationNodeObserverBlendSpace": AnimationNodeObserverBlendSpace.self,
-        "AnimationNodeObserverOneShot": AnimationNodeObserverOneShot.self,
-        "AnimationNodeObserverTransition": AnimationNodeObserverTransition.self,
         "AnimationNodeOneShot": AnimationNodeOneShot.self,
         "AnimationNodeOutput": AnimationNodeOutput.self,
         "AnimationNodeStateMachine": AnimationNodeStateMachine.self,
@@ -185,7 +115,6 @@ enum NativeClassFactories {
         "BoneAttachment3D": BoneAttachment3D.self,
         "BoneConstraint3D": BoneConstraint3D.self,
         "BoneMap": BoneMap.self,
-        "BoneSpaceAdjuster3D": BoneSpaceAdjuster3D.self,
         "BoneTwistDisperser3D": BoneTwistDisperser3D.self,
         "BoxContainer": BoxContainer.self,
         "BoxMesh": BoxMesh.self,
@@ -363,8 +292,6 @@ enum NativeClassFactories {
         "FontFile": FontFile.self,
         "FontVariation": FontVariation.self,
         "FramebufferCacheRD": FramebufferCacheRD.self,
-        "FuzzySearch": FuzzySearch.self,
-        "FuzzySearchMatch": FuzzySearchMatch.self,
         "GDExtension": GDExtension.self,
         "GDExtensionManager": GDExtensionManager.self,
         "GDScript": GDScript.self,
@@ -492,7 +419,6 @@ enum NativeClassFactories {
         "LightmapperRD": LightmapperRD.self,
         "LimitAngularVelocityModifier3D": LimitAngularVelocityModifier3D.self,
         "Line2D": Line2D.self,
-        "Line3D": Line3D.self,
         "LineEdit": LineEdit.self,
         "LinkButton": LinkButton.self,
         "Logger": Logger.self,
@@ -585,7 +511,6 @@ enum NativeClassFactories {
         "OpenXRDpadBindingModifier": OpenXRDpadBindingModifier.self,
         "OpenXRExtensionWrapper": OpenXRExtensionWrapper.self,
         "OpenXRExtensionWrapperExtension": OpenXRExtensionWrapperExtension.self,
-        "OpenXRFoveatedInsetViewport": OpenXRFoveatedInsetViewport.self,
         "OpenXRFrameSynthesisExtension": OpenXRFrameSynthesisExtension.self,
         "OpenXRFutureExtension": OpenXRFutureExtension.self,
         "OpenXRFutureResult": OpenXRFutureResult.self,
@@ -624,9 +549,6 @@ enum NativeClassFactories {
         "OpenXRSpatialComponentPlaneAlignmentList": OpenXRSpatialComponentPlaneAlignmentList.self,
         "OpenXRSpatialComponentPlaneSemanticLabelList": OpenXRSpatialComponentPlaneSemanticLabelList.self,
         "OpenXRSpatialComponentPolygon2DList": OpenXRSpatialComponentPolygon2DList.self,
-        "OpenXRSpatialContainerExtension": OpenXRSpatialContainerExtension.self,
-        "OpenXRSpatialContainerSelfRenderingExtension": OpenXRSpatialContainerSelfRenderingExtension.self,
-        "OpenXRSpatialContainerState": OpenXRSpatialContainerState.self,
         "OpenXRSpatialContextPersistenceConfig": OpenXRSpatialContextPersistenceConfig.self,
         "OpenXRSpatialEntityExtension": OpenXRSpatialEntityExtension.self,
         "OpenXRSpatialEntityTracker": OpenXRSpatialEntityTracker.self,
@@ -664,10 +586,6 @@ enum NativeClassFactories {
         "PhysicalSkyMaterial": PhysicalSkyMaterial.self,
         "PhysicsBody2D": PhysicsBody2D.self,
         "PhysicsBody3D": PhysicsBody3D.self,
-        "PhysicsCastMotionResult2D": PhysicsCastMotionResult2D.self,
-        "PhysicsCastMotionResult3D": PhysicsCastMotionResult3D.self,
-        "PhysicsCollideShapeResult2D": PhysicsCollideShapeResult2D.self,
-        "PhysicsCollideShapeResult3D": PhysicsCollideShapeResult3D.self,
         "PhysicsDirectBodyState2D": PhysicsDirectBodyState2D.self,
         "PhysicsDirectBodyState2DExtension": PhysicsDirectBodyState2DExtension.self,
         "PhysicsDirectBodyState3D": PhysicsDirectBodyState3D.self,
@@ -676,14 +594,6 @@ enum NativeClassFactories {
         "PhysicsDirectSpaceState2DExtension": PhysicsDirectSpaceState2DExtension.self,
         "PhysicsDirectSpaceState3D": PhysicsDirectSpaceState3D.self,
         "PhysicsDirectSpaceState3DExtension": PhysicsDirectSpaceState3DExtension.self,
-        "PhysicsGetRestInfoResult2D": PhysicsGetRestInfoResult2D.self,
-        "PhysicsGetRestInfoResult3D": PhysicsGetRestInfoResult3D.self,
-        "PhysicsIntersectPointResult2D": PhysicsIntersectPointResult2D.self,
-        "PhysicsIntersectPointResult3D": PhysicsIntersectPointResult3D.self,
-        "PhysicsIntersectRayResult2D": PhysicsIntersectRayResult2D.self,
-        "PhysicsIntersectRayResult3D": PhysicsIntersectRayResult3D.self,
-        "PhysicsIntersectShapeResult2D": PhysicsIntersectShapeResult2D.self,
-        "PhysicsIntersectShapeResult3D": PhysicsIntersectShapeResult3D.self,
         "PhysicsMaterial": PhysicsMaterial.self,
         "PhysicsPointQueryParameters2D": PhysicsPointQueryParameters2D.self,
         "PhysicsPointQueryParameters3D": PhysicsPointQueryParameters3D.self,
@@ -791,7 +701,6 @@ enum NativeClassFactories {
         "ResourceImporterSVG": ResourceImporterSVG.self,
         "ResourceImporterScene": ResourceImporterScene.self,
         "ResourceImporterShaderFile": ResourceImporterShaderFile.self,
-        "ResourceImporterStreamedTexture": ResourceImporterStreamedTexture.self,
         "ResourceImporterTexture": ResourceImporterTexture.self,
         "ResourceImporterTextureAtlas": ResourceImporterTextureAtlas.self,
         "ResourceImporterWAV": ResourceImporterWAV.self,
@@ -807,7 +716,6 @@ enum NativeClassFactories {
         "RigidBody3D": RigidBody3D.self,
         "RootMotionView": RootMotionView.self,
         "SceneMultiplayer": SceneMultiplayer.self,
-        "ScenePaint2DEditor": ScenePaint2DEditor.self,
         "SceneReplicationConfig": SceneReplicationConfig.self,
         "SceneState": SceneState.self,
         "SceneTree": SceneTree.self,
@@ -888,7 +796,6 @@ enum NativeClassFactories {
         "StreamPeerTCP": StreamPeerTCP.self,
         "StreamPeerTLS": StreamPeerTLS.self,
         "StreamPeerUDS": StreamPeerUDS.self,
-        "StreamedTexture2D": StreamedTexture2D.self,
         "StyleBox": StyleBox.self,
         "StyleBoxEmpty": StyleBoxEmpty.self,
         "StyleBoxFlat": StyleBoxFlat.self,
@@ -927,7 +834,6 @@ enum NativeClassFactories {
         "TextureLayeredRD": TextureLayeredRD.self,
         "TextureProgressBar": TextureProgressBar.self,
         "TextureRect": TextureRect.self,
-        "TextureStreaming": TextureStreaming.self,
         "Theme": Theme.self,
         "ThemeDB": ThemeDB.self,
         "Thread": Thread.self,
@@ -943,7 +849,6 @@ enum NativeClassFactories {
         "Timer": Timer.self,
         "TorusMesh": TorusMesh.self,
         "TouchScreenButton": TouchScreenButton.self,
-        "Trail3D": Trail3D.self,
         "Translation": Translation.self,
         "TranslationDomain": TranslationDomain.self,
         "TranslationServer": TranslationServer.self,
@@ -981,7 +886,6 @@ enum NativeClassFactories {
         "VisibleOnScreenNotifier3D": VisibleOnScreenNotifier3D.self,
         "VisualInstance3D": VisualInstance3D.self,
         "VisualShader": VisualShader.self,
-        "VisualShaderGroup": VisualShaderGroup.self,
         "VisualShaderNode": VisualShaderNode.self,
         "VisualShaderNodeBillboard": VisualShaderNodeBillboard.self,
         "VisualShaderNodeBooleanConstant": VisualShaderNodeBooleanConstant.self,
@@ -1012,10 +916,7 @@ enum NativeClassFactories {
         "VisualShaderNodeFrame": VisualShaderNodeFrame.self,
         "VisualShaderNodeFresnel": VisualShaderNodeFresnel.self,
         "VisualShaderNodeGlobalExpression": VisualShaderNodeGlobalExpression.self,
-        "VisualShaderNodeGroup": VisualShaderNodeGroup.self,
         "VisualShaderNodeGroupBase": VisualShaderNodeGroupBase.self,
-        "VisualShaderNodeGroupInput": VisualShaderNodeGroupInput.self,
-        "VisualShaderNodeGroupOutput": VisualShaderNodeGroupOutput.self,
         "VisualShaderNodeIf": VisualShaderNodeIf.self,
         "VisualShaderNodeInput": VisualShaderNodeInput.self,
         "VisualShaderNodeIntConstant": VisualShaderNodeIntConstant.self,

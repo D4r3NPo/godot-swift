@@ -173,26 +173,6 @@ extension OpenXRExtensionWrapper {
 }
 extension OpenXRExtensionWrapperExtension {
 }
-extension OpenXRFoveatedInsetViewport {
-    nonisolated(unsafe) private static let mb_get_xr_origin3d = lookupMethod("OpenXRFoveatedInsetViewport", "get_xr_origin3d", 505038244)
-    public func `get_xr_origin3d`() -> XROrigin3D? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_xr_origin3d, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        return object as? XROrigin3D
-}
-    nonisolated(unsafe) private static let mb_get_xr_camera3d = lookupMethod("OpenXRFoveatedInsetViewport", "get_xr_camera3d", 1715292258)
-    public func `get_xr_camera3d`() -> XRCamera3D? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_xr_camera3d, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        return object as? XRCamera3D
-}
-}
 extension OpenXRFrameSynthesisExtension {
     @usableFromInline nonisolated(unsafe) internal static let mb_is_available = lookupMethod("OpenXRFrameSynthesisExtension", "is_available", 36873697)
     @inlinable @inline(__always) public func `is_available`() -> Bool {
@@ -770,13 +750,6 @@ extension OpenXRInterface {
         api.object_method_bind_ptrcall!(Self.mb_is_user_present, requireHandle(), nil, &result)
         return result != 0
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_active_view_configuration = lookupMethod("OpenXRInterface", "get_active_view_configuration", 3905272016)
-    @inlinable @inline(__always) public func `get_active_view_configuration`() -> OpenXRInterface.ViewConfiguration {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_active_view_configuration, requireHandle(), nil, &result)
-        return OpenXRInterface.ViewConfiguration(rawValue: result)
-}
     @usableFromInline nonisolated(unsafe) internal static let mb_get_display_refresh_rate = lookupMethod("OpenXRInterface", "get_display_refresh_rate", 1740695150)
     @inlinable @inline(__always) public func `get_display_refresh_rate`() -> Double {
         defer { withExtendedLifetime((self)) {} }
@@ -791,14 +764,6 @@ extension OpenXRInterface {
         withUnsafePointer(to: &a0) { p0 in
             var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
             api.object_method_bind_ptrcall!(Self.mb_set_display_refresh_rate, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_recommended_target_size = lookupMethod("OpenXRInterface", "get_recommended_target_size", 3341600327)
-    @inlinable @inline(__always) public func `get_recommended_target_size`() -> Vector2 {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Vector2.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_recommended_target_size, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
         }
 }
     @usableFromInline nonisolated(unsafe) internal static let mb_get_render_target_size_multiplier = lookupMethod("OpenXRInterface", "get_render_target_size_multiplier", 1740695150)
@@ -1256,20 +1221,6 @@ extension OpenXRPlaneTracker {
             api.object_method_bind_ptrcall!(Self.mb_get_mesh_offset, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
             return result.baseAddress!.move()
         }
-}
-    nonisolated(unsafe) private static let mb_get_vertices = lookupMethod("OpenXRPlaneTracker", "get_vertices", 2961356807)
-    public func `get_vertices`() -> GodotPackedVector2Array {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotPackedVector2Array(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_vertices, requireHandle(), nil, result)
-        })
-}
-    nonisolated(unsafe) private static let mb_get_indices = lookupMethod("OpenXRPlaneTracker", "get_indices", 1930428628)
-    public func `get_indices`() -> GodotPackedInt32Array {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotPackedInt32Array(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_indices, requireHandle(), nil, result)
-        })
 }
     nonisolated(unsafe) private static let mb_get_mesh = lookupMethod("OpenXRPlaneTracker", "get_mesh", 4081188045)
     public func `get_mesh`() -> Mesh? {
@@ -2095,101 +2046,6 @@ extension OpenXRSpatialComponentPolygon2DList {
         })
 }
 }
-extension OpenXRSpatialContainerExtension {
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_enabled = lookupMethod("OpenXRSpatialContainerExtension", "is_enabled", 36873697)
-    @inlinable @inline(__always) public func `is_enabled`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_enabled, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_spatial_container_active = lookupMethod("OpenXRSpatialContainerExtension", "is_spatial_container_active", 36873697)
-    @inlinable @inline(__always) public func `is_spatial_container_active`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_spatial_container_active, requireHandle(), nil, &result)
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_get_supported_bounds_modes = lookupMethod("OpenXRSpatialContainerExtension", "get_supported_bounds_modes", 2915620761)
-    public func `get_supported_bounds_modes`() -> GodotArray {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotArray(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_supported_bounds_modes, requireHandle(), nil, result)
-        })
-}
-    nonisolated(unsafe) private static let mb_get_spatial_container_state = lookupMethod("OpenXRSpatialContainerExtension", "get_spatial_container_state", 212870561)
-    public func `get_spatial_container_state`() -> OpenXRSpatialContainerState? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_spatial_container_state, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? OpenXRSpatialContainerState
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_spatial_container_bounds = lookupMethod("OpenXRSpatialContainerExtension", "get_spatial_container_bounds", 3783033775)
-    @inlinable @inline(__always) public func `get_spatial_container_bounds`() -> Vector3 {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Vector3.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_spatial_container_bounds, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_request_spatial_container_bounds_mode = lookupMethod("OpenXRSpatialContainerExtension", "request_spatial_container_bounds_mode", 1261129373)
-    @inlinable @inline(__always) public func `request_spatial_container_bounds_mode`(_ `bounds_mode`: OpenXRSpatialContainerState.BoundsMode) -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `bounds_mode`.rawValue
-        var result: UInt8 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_request_spatial_container_bounds_mode, requireHandle(), &arguments, &result)
-        }
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_request_spatial_container_visible = lookupMethod("OpenXRSpatialContainerExtension", "request_spatial_container_visible", 2703660260)
-    @inlinable @inline(__always) public func `request_spatial_container_visible`(_ `visible`: Bool) -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `visible` ? UInt8(1) : UInt8(0)
-        var result: UInt8 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_request_spatial_container_visible, requireHandle(), &arguments, &result)
-        }
-        return result != 0
-}
-}
-extension OpenXRSpatialContainerSelfRenderingExtension {
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_enabled = lookupMethod("OpenXRSpatialContainerSelfRenderingExtension", "is_enabled", 36873697)
-    @inlinable @inline(__always) public func `is_enabled`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_enabled, requireHandle(), nil, &result)
-        return result != 0
-}
-}
-extension OpenXRSpatialContainerState {
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_bounds_mode = lookupMethod("OpenXRSpatialContainerState", "get_bounds_mode", 1708123309)
-    @inlinable @inline(__always) public func `get_bounds_mode`() -> OpenXRSpatialContainerState.BoundsMode {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_bounds_mode, requireHandle(), nil, &result)
-        return OpenXRSpatialContainerState.BoundsMode(rawValue: result)
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_interactable = lookupMethod("OpenXRSpatialContainerState", "is_interactable", 36873697)
-    @inlinable @inline(__always) public func `is_interactable`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_interactable, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_visible = lookupMethod("OpenXRSpatialContainerState", "is_visible", 36873697)
-    @inlinable @inline(__always) public func `is_visible`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_visible, requireHandle(), nil, &result)
-        return result != 0
-}
-}
 extension OpenXRSpatialContextPersistenceConfig {
     nonisolated(unsafe) private static let mb_add_persistence_context = lookupMethod("OpenXRSpatialContextPersistenceConfig", "add_persistence_context", 2722037293)
     public func `add_persistence_context`(_ `persistence_context`: GodotRID) {
@@ -2243,19 +2099,17 @@ extension OpenXRSpatialEntityExtension {
         }
         return result != 0
 }
-    nonisolated(unsafe) private static let mb_create_spatial_context = lookupMethod("OpenXRSpatialEntityExtension", "create_spatial_context", 1586751596)
-    public func `create_spatial_context`(_ `capability_configurations`: borrowing GodotArrayOf<OpenXRSpatialCapabilityConfigurationBaseHeader>, _ `next`: OpenXRStructureBase? = nil, _ `user_callback`: borrowing GodotCallable = GodotCallable(), _ `failed_callback`: borrowing GodotCallable = GodotCallable()) -> OpenXRFutureResult? {
+    nonisolated(unsafe) private static let mb_create_spatial_context = lookupMethod("OpenXRSpatialEntityExtension", "create_spatial_context", 1874506473)
+    public func `create_spatial_context`(_ `capability_configurations`: borrowing GodotArrayOf<OpenXRSpatialCapabilityConfigurationBaseHeader>, _ `next`: OpenXRStructureBase? = nil, _ `user_callback`: borrowing GodotCallable = GodotCallable()) -> OpenXRFutureResult? {
         defer { withExtendedLifetime((self, `next`)) {} }
         var a1 = `next`?.requireHandle()
         var nativeResult: UnsafeMutableRawPointer? = nil
         `capability_configurations`.withStorage { p0 in
             withUnsafePointer(to: &a1) { p1 in
                 `user_callback`.withStorage { p2 in
-                    `failed_callback`.withStorage { p3 in
-                        var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p3)))
-                        withUnsafePointer(to: &arguments) { arguments in
-                            api.object_method_bind_ptrcall!(Self.mb_create_spatial_context, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &nativeResult)
-                        }
+                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
+                    withUnsafePointer(to: &arguments) { arguments in
+                        api.object_method_bind_ptrcall!(Self.mb_create_spatial_context, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &nativeResult)
                     }
                 }
             }
@@ -2727,33 +2581,6 @@ extension OpenXRSpatialMarkerTrackingCapability {
             }
         }
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_built_in_tracking_state = lookupMethod("OpenXRSpatialMarkerTrackingCapability", "get_built_in_tracking_state", 434811308)
-    @inlinable @inline(__always) public func `get_built_in_tracking_state`() -> OpenXRSpatialEntityExtension.TrackingState {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_built_in_tracking_state, requireHandle(), nil, &result)
-        return OpenXRSpatialEntityExtension.TrackingState(rawValue: result)
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_start_built_in_tracking = lookupMethod("OpenXRSpatialMarkerTrackingCapability", "start_built_in_tracking", 4090240782)
-    @inlinable @inline(__always) public func `start_built_in_tracking`(_ `marker_types`: OpenXRSpatialMarkerTrackingCapability.MarkerTypeFlags) -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `marker_types`.rawValue
-        var result: UInt8 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_start_built_in_tracking, requireHandle(), &arguments, &result)
-        }
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_stop_built_in_tracking = lookupMethod("OpenXRSpatialMarkerTrackingCapability", "stop_built_in_tracking", 3216645846)
-    @inlinable @inline(__always) public func `stop_built_in_tracking`(_ `clear_trackers`: Bool = true) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `clear_trackers` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_stop_built_in_tracking, requireHandle(), &arguments, nil)
-        }
-}
 }
 extension OpenXRSpatialPlaneTrackingCapability {
     @usableFromInline nonisolated(unsafe) internal static let mb_is_supported = lookupMethod("OpenXRSpatialPlaneTrackingCapability", "is_supported", 2240911060)
@@ -2788,27 +2615,78 @@ extension OpenXRSpatialPlaneTrackingCapability {
         releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
         return object as? OpenXRFutureResult
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_built_in_tracking_state = lookupMethod("OpenXRSpatialPlaneTrackingCapability", "get_built_in_tracking_state", 434811308)
-    @inlinable @inline(__always) public func `get_built_in_tracking_state`() -> OpenXRSpatialEntityExtension.TrackingState {
+}
+extension OpenXRSpatialQueryResultData {
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_capacity = lookupMethod("OpenXRSpatialQueryResultData", "get_capacity", 3905245786)
+    @inlinable @inline(__always) public func `get_capacity`() -> Int64 {
         defer { withExtendedLifetime((self)) {} }
         var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_built_in_tracking_state, requireHandle(), nil, &result)
-        return OpenXRSpatialEntityExtension.TrackingState(rawValue: result)
+        api.object_method_bind_ptrcall!(Self.mb_get_capacity, requireHandle(), nil, &result)
+        return result
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_start_built_in_tracking = lookupMethod("OpenXRSpatialPlaneTrackingCapability", "start_built_in_tracking", 2240911060)
-    @inlinable @inline(__always) public func `start_built_in_tracking`() -> Bool {
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_entity_id = lookupMethod("OpenXRSpatialQueryResultData", "get_entity_id", 923996154)
+    @inlinable @inline(__always) public func `get_entity_id`(_ `index`: Int64) -> Int64 {
         defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_start_built_in_tracking, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_stop_built_in_tracking = lookupMethod("OpenXRSpatialPlaneTrackingCapability", "stop_built_in_tracking", 3216645846)
-    @inlinable @inline(__always) public func `stop_built_in_tracking`(_ `clear_trackers`: Bool = true) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `clear_trackers` ? UInt8(1) : UInt8(0)
+        var a0 = `index`
+        var result: Int64 = 0
         withUnsafePointer(to: &a0) { p0 in
             var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_stop_built_in_tracking, requireHandle(), &arguments, nil)
+            api.object_method_bind_ptrcall!(Self.mb_get_entity_id, requireHandle(), &arguments, &result)
         }
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_entity_state = lookupMethod("OpenXRSpatialQueryResultData", "get_entity_state", 1411962015)
+    @inlinable @inline(__always) public func `get_entity_state`(_ `index`: Int64) -> OpenXRSpatialEntityTracker.EntityTrackingState {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var result: Int64 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_entity_state, requireHandle(), &arguments, &result)
+        }
+        return OpenXRSpatialEntityTracker.EntityTrackingState(rawValue: result)
+}
+}
+extension OpenXRStructureBase {
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_structure_type = lookupMethod("OpenXRStructureBase", "get_structure_type", 2455072627)
+    @inlinable @inline(__always) public func `get_structure_type`() -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_structure_type, requireHandle(), nil, &result)
+        return result
+}
+    nonisolated(unsafe) private static let mb_set_next = lookupMethod("OpenXRStructureBase", "set_next", 334698771)
+    public func `set_next`(_ `entity`: OpenXRStructureBase?) {
+        defer { withExtendedLifetime((self, `entity`)) {} }
+        var a0 = `entity`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_next, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_get_next = lookupMethod("OpenXRStructureBase", "get_next", 2798796760)
+    public func `get_next`() -> OpenXRStructureBase? {
+        defer { withExtendedLifetime((self)) {} }
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        api.object_method_bind_ptrcall!(Self.mb_get_next, requireHandle(), nil, &nativeResult)
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? OpenXRStructureBase
+}
+}
+extension OpenXRVisibilityMask {
+}
+extension OptimizedTranslation {
+    nonisolated(unsafe) private static let mb_generate = lookupMethod("OptimizedTranslation", "generate", 2141509306)
+    public func `generate`(_ `from`: Translation?) -> Bool {
+        defer { withExtendedLifetime((self, `from`)) {} }
+        var a0 = `from`?.requireHandle()
+        var result: UInt8 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_generate, requireHandle(), &arguments, &result)
+        }
+        return result != 0
 }
 }

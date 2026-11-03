@@ -824,16 +824,6 @@ extension ClassDB {
         }
         return result != 0
 }
-    nonisolated(unsafe) private static let mb_is_class_exposed = lookupMethod("ClassDB", "is_class_exposed", 2619796661)
-    public func `is_class_exposed`(_ `class`: borrowing GodotStringName) -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        `class`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_is_class_exposed, requireHandle(), &arguments, &result)
-        }
-        return result != 0
-}
 }
 extension CodeEdit {
     @usableFromInline nonisolated(unsafe) internal static let mb_set_indent_size = lookupMethod("CodeEdit", "set_indent_size", 1286410249)

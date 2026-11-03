@@ -240,8 +240,6 @@ extension ResourceImporterScene {
 }
 extension ResourceImporterShaderFile {
 }
-extension ResourceImporterStreamedTexture {
-}
 extension ResourceImporterTexture {
 }
 extension ResourceImporterTextureAtlas {
@@ -414,16 +412,6 @@ extension ResourceLoader {
             api.object_method_bind_ptrcall!(Self.mb_get_resource_uid, requireHandle(), &arguments, &result)
         }
         return result
-}
-    nonisolated(unsafe) private static let mb_get_resource_type = lookupMethod("ResourceLoader", "get_resource_type", 1703090593)
-    public func `get_resource_type`(_ `path`: borrowing GodotString) -> GodotString {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotString(initializing: { result in
-            `path`.withStorage { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_resource_type, requireHandle(), &arguments, result)
-            }
-        })
 }
     nonisolated(unsafe) private static let mb_list_directory = lookupMethod("ResourceLoader", "list_directory", 3538744774)
     public func `list_directory`(_ `directory_path`: borrowing GodotString) -> GodotPackedStringArray {
@@ -728,22 +716,6 @@ extension RetargetModifier3D {
         let object = Object.resolve(nativeResult)
         releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
         return object as? SkeletonProfile
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_copy_bone_skin_scale = lookupMethod("RetargetModifier3D", "set_copy_bone_skin_scale", 2586408642)
-    @inlinable @inline(__always) public func `set_copy_bone_skin_scale`(_ `enabled`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `enabled` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_copy_bone_skin_scale, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_copying_bone_skin_scale = lookupMethod("RetargetModifier3D", "is_copying_bone_skin_scale", 36873697)
-    @inlinable @inline(__always) public func `is_copying_bone_skin_scale`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_copying_bone_skin_scale, requireHandle(), nil, &result)
-        return result != 0
 }
     @usableFromInline nonisolated(unsafe) internal static let mb_set_use_global_pose = lookupMethod("RetargetModifier3D", "set_use_global_pose", 2586408642)
     @inlinable @inline(__always) public func `set_use_global_pose`(_ `use_global_pose`: Bool) {
@@ -1738,61 +1710,6 @@ extension RichTextLabel {
         api.object_method_bind_ptrcall!(Self.mb_is_fit_content_enabled, requireHandle(), nil, &result)
         return result != 0
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_resize_font_to_fit = lookupMethod("RichTextLabel", "set_resize_font_to_fit", 2586408642)
-    @inlinable @inline(__always) public func `set_resize_font_to_fit`(_ `enabled`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `enabled` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_resize_font_to_fit, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_resize_font_to_fit_enabled = lookupMethod("RichTextLabel", "is_resize_font_to_fit_enabled", 36873697)
-    @inlinable @inline(__always) public func `is_resize_font_to_fit_enabled`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_resize_font_to_fit_enabled, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_minimum_font_size = lookupMethod("RichTextLabel", "set_minimum_font_size", 1286410249)
-    @inlinable @inline(__always) public func `set_minimum_font_size`(_ `size`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `size`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_minimum_font_size, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_minimum_font_size = lookupMethod("RichTextLabel", "get_minimum_font_size", 3905245786)
-    @inlinable @inline(__always) public func `get_minimum_font_size`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_minimum_font_size, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_maximum_font_size = lookupMethod("RichTextLabel", "set_maximum_font_size", 1286410249)
-    @inlinable @inline(__always) public func `set_maximum_font_size`(_ `size`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `size`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_maximum_font_size, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_maximum_font_size = lookupMethod("RichTextLabel", "get_maximum_font_size", 3905245786)
-    @inlinable @inline(__always) public func `get_maximum_font_size`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_maximum_font_size, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_rendered_font_size = lookupMethod("RichTextLabel", "get_rendered_font_size", 3905245786)
-    @inlinable @inline(__always) public func `get_rendered_font_size`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_rendered_font_size, requireHandle(), nil, &result)
-        return result
-}
     @usableFromInline nonisolated(unsafe) internal static let mb_set_selection_enabled = lookupMethod("RichTextLabel", "set_selection_enabled", 2586408642)
     @inlinable @inline(__always) public func `set_selection_enabled`(_ `enabled`: Bool) {
         defer { withExtendedLifetime((self)) {} }
@@ -2242,22 +2159,6 @@ extension RichTextLabel {
             api.object_method_bind_ptrcall!(Self.mb_menu_option, requireHandle(), &arguments, nil)
         }
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_resource_access_flags = lookupMethod("RichTextLabel", "get_resource_access_flags", 2228477831)
-    @inlinable @inline(__always) public func `get_resource_access_flags`() -> RichTextLabel.ResourceAccessFlag {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_resource_access_flags, requireHandle(), nil, &result)
-        return RichTextLabel.ResourceAccessFlag(rawValue: result)
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_resource_access_flags = lookupMethod("RichTextLabel", "set_resource_access_flags", 4127961739)
-    @inlinable @inline(__always) public func `set_resource_access_flags`(_ `flags`: RichTextLabel.ResourceAccessFlag) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `flags`.rawValue
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_resource_access_flags, requireHandle(), &arguments, nil)
-        }
-}
 }
 extension RigidBody2D {
     @usableFromInline nonisolated(unsafe) internal static let mb_set_mass = lookupMethod("RigidBody2D", "set_mass", 373806689)
@@ -2525,28 +2426,6 @@ extension RigidBody2D {
         var result: Int64 = 0
         api.object_method_bind_ptrcall!(Self.mb_get_continuous_collision_detection_mode, requireHandle(), nil, &result)
         return RigidBody2D.CCDMode(rawValue: result)
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_velocity_at_local_position = lookupMethod("RigidBody2D", "get_velocity_at_local_position", 2656412154)
-    @inlinable @inline(__always) public func `get_velocity_at_local_position`(_ `local_position`: Vector2) -> Vector2 {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Vector2.self, capacity: 1) { result in
-            `local_position`.withStorage { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_velocity_at_local_position, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
-            }
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_velocity_at_position = lookupMethod("RigidBody2D", "get_velocity_at_position", 2656412154)
-    @inlinable @inline(__always) public func `get_velocity_at_position`(_ `global_point`: Vector2) -> Vector2 {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Vector2.self, capacity: 1) { result in
-            `global_point`.withStorage { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_velocity_at_position, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
-            }
-            return result.baseAddress!.move()
-        }
 }
     @usableFromInline nonisolated(unsafe) internal static let mb_set_axis_velocity = lookupMethod("RigidBody2D", "set_axis_velocity", 743155724)
     @inlinable @inline(__always) public func `set_axis_velocity`(_ `axis_velocity`: Vector2) {

@@ -1937,38 +1937,6 @@ extension GridMap {
             }
         }
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_debug_show_octants = lookupMethod("GridMap", "set_debug_show_octants", 2586408642)
-    @inlinable @inline(__always) public func `set_debug_show_octants`(_ `enable`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `enable` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_debug_show_octants, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_debug_show_octants = lookupMethod("GridMap", "get_debug_show_octants", 36873697)
-    @inlinable @inline(__always) public func `get_debug_show_octants`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_debug_show_octants, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_debug_octant_color = lookupMethod("GridMap", "set_debug_octant_color", 2920490490)
-    @inlinable @inline(__always) public func `set_debug_octant_color`(_ `color`: Color) {
-        defer { withExtendedLifetime((self)) {} }
-        `color`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_debug_octant_color, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_debug_octant_color = lookupMethod("GridMap", "get_debug_octant_color", 3444240500)
-    @inlinable @inline(__always) public func `get_debug_octant_color`() -> Color {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Color.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_debug_octant_color, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
 }
 extension GridMapEditorPlugin {
     nonisolated(unsafe) private static let mb_get_current_grid_map = lookupMethod("GridMapEditorPlugin", "get_current_grid_map", 1184264483)
@@ -2467,38 +2435,6 @@ extension HTTPRequest {
         return GodotString(initializing: { result in
             api.object_method_bind_ptrcall!(Self.mb_get_download_file, requireHandle(), nil, result)
         })
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_keep_partial_download = lookupMethod("HTTPRequest", "set_keep_partial_download", 2586408642)
-    @inlinable @inline(__always) public func `set_keep_partial_download`(_ `enabled`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `enabled` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_keep_partial_download, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_keeping_partial_download = lookupMethod("HTTPRequest", "is_keeping_partial_download", 36873697)
-    @inlinable @inline(__always) public func `is_keeping_partial_download`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_keeping_partial_download, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_append_to_download_file = lookupMethod("HTTPRequest", "set_append_to_download_file", 2586408642)
-    @inlinable @inline(__always) public func `set_append_to_download_file`(_ `enabled`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `enabled` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_append_to_download_file, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_appending_to_download_file = lookupMethod("HTTPRequest", "is_appending_to_download_file", 36873697)
-    @inlinable @inline(__always) public func `is_appending_to_download_file`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_appending_to_download_file, requireHandle(), nil, &result)
-        return result != 0
 }
     @usableFromInline nonisolated(unsafe) internal static let mb_get_downloaded_bytes = lookupMethod("HTTPRequest", "get_downloaded_bytes", 3905245786)
     @inlinable @inline(__always) public func `get_downloaded_bytes`() -> Int64 {

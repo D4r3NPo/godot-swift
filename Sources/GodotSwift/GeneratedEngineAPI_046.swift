@@ -275,28 +275,6 @@ extension RigidBody3D {
         api.object_method_bind_ptrcall!(Self.mb_is_using_continuous_collision_detection, requireHandle(), nil, &result)
         return result != 0
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_velocity_at_local_position = lookupMethod("RigidBody3D", "get_velocity_at_local_position", 192990374)
-    @inlinable @inline(__always) public func `get_velocity_at_local_position`(_ `local_position`: Vector3) -> Vector3 {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Vector3.self, capacity: 1) { result in
-            `local_position`.withStorage { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_velocity_at_local_position, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
-            }
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_velocity_at_position = lookupMethod("RigidBody3D", "get_velocity_at_position", 192990374)
-    @inlinable @inline(__always) public func `get_velocity_at_position`(_ `global_point`: Vector3) -> Vector3 {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Vector3.self, capacity: 1) { result in
-            `global_point`.withStorage { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_velocity_at_position, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
-            }
-            return result.baseAddress!.move()
-        }
-}
     @usableFromInline nonisolated(unsafe) internal static let mb_set_axis_velocity = lookupMethod("RigidBody3D", "set_axis_velocity", 3460891852)
     @inlinable @inline(__always) public func `set_axis_velocity`(_ `axis_velocity`: Vector3) {
         defer { withExtendedLifetime((self)) {} }
@@ -784,48 +762,6 @@ extension SceneMultiplayer {
             var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
             api.object_method_bind_ptrcall!(Self.mb_set_max_delta_packet_size, requireHandle(), &arguments, nil)
         }
-}
-}
-extension ScenePaint2DEditor {
-    nonisolated(unsafe) private static let mb_register_scene_provider = lookupMethod("ScenePaint2DEditor", "register_scene_provider", 2575427985)
-    public func `register_scene_provider`(_ `control`: Control?, _ `callback`: borrowing GodotCallable) {
-        defer { withExtendedLifetime((self, `control`)) {} }
-        var a0 = `control`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            `callback`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_register_scene_provider, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_unregister_scene_provider = lookupMethod("ScenePaint2DEditor", "unregister_scene_provider", 1496901182)
-    public func `unregister_scene_provider`(_ `control`: Control?) {
-        defer { withExtendedLifetime((self, `control`)) {} }
-        var a0 = `control`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_unregister_scene_provider, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_set_painted_scene = lookupMethod("ScenePaint2DEditor", "set_painted_scene", 2735608809)
-    public func `set_painted_scene`(_ `scene`: Node2D?) {
-        defer { withExtendedLifetime((self, `scene`)) {} }
-        var a0 = `scene`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_painted_scene, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_painted_scene = lookupMethod("ScenePaint2DEditor", "get_painted_scene", 3536679914)
-    public func `get_painted_scene`() -> Node2D? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_painted_scene, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        return object as? Node2D
 }
 }
 extension SceneReplicationConfig {
@@ -2658,14 +2594,6 @@ extension Shader {
                 api.object_method_bind_ptrcall!(Self.mb_get_shader_uniform_list, requireHandle(), &arguments, result)
             }
         })
-}
-    nonisolated(unsafe) private static let mb_set_include_path = lookupMethod("Shader", "set_include_path", 83702148)
-    public func `set_include_path`(_ `path`: borrowing GodotString) {
-        defer { withExtendedLifetime((self)) {} }
-        `path`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_include_path, requireHandle(), &arguments, nil)
-        }
 }
     @usableFromInline nonisolated(unsafe) internal static let mb_inspect_native_shader_code = lookupMethod("Shader", "inspect_native_shader_code", 3218959716)
     @inlinable @inline(__always) public func `inspect_native_shader_code`() {

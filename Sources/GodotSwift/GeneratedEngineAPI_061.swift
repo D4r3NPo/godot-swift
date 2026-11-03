@@ -1,1568 +1,5 @@
 // Generated engine API partition. Do not edit.
 import CGodot
-extension World3D {
-    nonisolated(unsafe) private static let mb_get_space = lookupMethod("World3D", "get_space", 2944877500)
-    public func `get_space`() -> GodotRID {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotRID(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_space, requireHandle(), nil, result)
-        })
-}
-    nonisolated(unsafe) private static let mb_get_navigation_map = lookupMethod("World3D", "get_navigation_map", 2944877500)
-    public func `get_navigation_map`() -> GodotRID {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotRID(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_navigation_map, requireHandle(), nil, result)
-        })
-}
-    nonisolated(unsafe) private static let mb_get_scenario = lookupMethod("World3D", "get_scenario", 2944877500)
-    public func `get_scenario`() -> GodotRID {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotRID(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_scenario, requireHandle(), nil, result)
-        })
-}
-    nonisolated(unsafe) private static let mb_set_environment = lookupMethod("World3D", "set_environment", 4143518816)
-    public func `set_environment`(_ `env`: Environment?) {
-        defer { withExtendedLifetime((self, `env`)) {} }
-        var a0 = `env`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_environment, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_environment = lookupMethod("World3D", "get_environment", 3082064660)
-    public func `get_environment`() -> Environment? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_environment, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Environment
-}
-    nonisolated(unsafe) private static let mb_set_fallback_environment = lookupMethod("World3D", "set_fallback_environment", 4143518816)
-    public func `set_fallback_environment`(_ `env`: Environment?) {
-        defer { withExtendedLifetime((self, `env`)) {} }
-        var a0 = `env`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_fallback_environment, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_fallback_environment = lookupMethod("World3D", "get_fallback_environment", 3082064660)
-    public func `get_fallback_environment`() -> Environment? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_fallback_environment, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Environment
-}
-    nonisolated(unsafe) private static let mb_set_camera_attributes = lookupMethod("World3D", "set_camera_attributes", 2817810567)
-    public func `set_camera_attributes`(_ `attributes`: CameraAttributes?) {
-        defer { withExtendedLifetime((self, `attributes`)) {} }
-        var a0 = `attributes`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_camera_attributes, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_camera_attributes = lookupMethod("World3D", "get_camera_attributes", 3921283215)
-    public func `get_camera_attributes`() -> CameraAttributes? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_camera_attributes, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? CameraAttributes
-}
-    nonisolated(unsafe) private static let mb_get_direct_space_state = lookupMethod("World3D", "get_direct_space_state", 2069328350)
-    public func `get_direct_space_state`() -> PhysicsDirectSpaceState3D? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_direct_space_state, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        return object as? PhysicsDirectSpaceState3D
-}
-}
-extension WorldBoundaryShape2D {
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_normal = lookupMethod("WorldBoundaryShape2D", "set_normal", 743155724)
-    @inlinable @inline(__always) public func `set_normal`(_ `normal`: Vector2) {
-        defer { withExtendedLifetime((self)) {} }
-        `normal`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_normal, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_normal = lookupMethod("WorldBoundaryShape2D", "get_normal", 3341600327)
-    @inlinable @inline(__always) public func `get_normal`() -> Vector2 {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Vector2.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_normal, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_distance = lookupMethod("WorldBoundaryShape2D", "set_distance", 373806689)
-    @inlinable @inline(__always) public func `set_distance`(_ `distance`: Double) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `distance`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_distance, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_distance = lookupMethod("WorldBoundaryShape2D", "get_distance", 1740695150)
-    @inlinable @inline(__always) public func `get_distance`() -> Double {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Double = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_distance, requireHandle(), nil, &result)
-        return result
-}
-}
-extension WorldBoundaryShape3D {
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_plane = lookupMethod("WorldBoundaryShape3D", "set_plane", 3505987427)
-    @inlinable @inline(__always) public func `set_plane`(_ `plane`: Plane) {
-        defer { withExtendedLifetime((self)) {} }
-        `plane`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_plane, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_plane = lookupMethod("WorldBoundaryShape3D", "get_plane", 2753500971)
-    @inlinable @inline(__always) public func `get_plane`() -> Plane {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Plane.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_plane, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-}
-extension WorldEnvironment {
-    nonisolated(unsafe) private static let mb_set_environment = lookupMethod("WorldEnvironment", "set_environment", 4143518816)
-    public func `set_environment`(_ `env`: Environment?) {
-        defer { withExtendedLifetime((self, `env`)) {} }
-        var a0 = `env`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_environment, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_environment = lookupMethod("WorldEnvironment", "get_environment", 3082064660)
-    public func `get_environment`() -> Environment? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_environment, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Environment
-}
-    nonisolated(unsafe) private static let mb_set_camera_attributes = lookupMethod("WorldEnvironment", "set_camera_attributes", 2817810567)
-    public func `set_camera_attributes`(_ `camera_attributes`: CameraAttributes?) {
-        defer { withExtendedLifetime((self, `camera_attributes`)) {} }
-        var a0 = `camera_attributes`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_camera_attributes, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_camera_attributes = lookupMethod("WorldEnvironment", "get_camera_attributes", 3921283215)
-    public func `get_camera_attributes`() -> CameraAttributes? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_camera_attributes, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? CameraAttributes
-}
-    nonisolated(unsafe) private static let mb_set_compositor = lookupMethod("WorldEnvironment", "set_compositor", 1586754307)
-    public func `set_compositor`(_ `compositor`: Compositor?) {
-        defer { withExtendedLifetime((self, `compositor`)) {} }
-        var a0 = `compositor`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_compositor, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_compositor = lookupMethod("WorldEnvironment", "get_compositor", 3647707413)
-    public func `get_compositor`() -> Compositor? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_compositor, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Compositor
-}
-}
-extension X509Certificate {
-    nonisolated(unsafe) private static let mb_save = lookupMethod("X509Certificate", "save", 166001499)
-    public func `save`(_ `path`: borrowing GodotString) -> Godot.Error {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        `path`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_save, requireHandle(), &arguments, &result)
-        }
-        return Godot.Error(rawValue: result)
-}
-    nonisolated(unsafe) private static let mb_load = lookupMethod("X509Certificate", "load", 166001499)
-    public func `load`(_ `path`: borrowing GodotString) -> Godot.Error {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        `path`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_load, requireHandle(), &arguments, &result)
-        }
-        return Godot.Error(rawValue: result)
-}
-    nonisolated(unsafe) private static let mb_save_to_string = lookupMethod("X509Certificate", "save_to_string", 2841200299)
-    public func `save_to_string`() -> GodotString {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotString(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_save_to_string, requireHandle(), nil, result)
-        })
-}
-    nonisolated(unsafe) private static let mb_load_from_string = lookupMethod("X509Certificate", "load_from_string", 166001499)
-    public func `load_from_string`(_ `string`: borrowing GodotString) -> Godot.Error {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        `string`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_load_from_string, requireHandle(), &arguments, &result)
-        }
-        return Godot.Error(rawValue: result)
-}
-}
-extension XMLParser {
-    @usableFromInline nonisolated(unsafe) internal static let mb_read = lookupMethod("XMLParser", "read", 166280745)
-    @inlinable @inline(__always) public func `read`() -> Godot.Error {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_read, requireHandle(), nil, &result)
-        return Godot.Error(rawValue: result)
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_node_type = lookupMethod("XMLParser", "get_node_type", 2984359541)
-    @inlinable @inline(__always) public func `get_node_type`() -> XMLParser.NodeType {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_node_type, requireHandle(), nil, &result)
-        return XMLParser.NodeType(rawValue: result)
-}
-    nonisolated(unsafe) private static let mb_get_node_name = lookupMethod("XMLParser", "get_node_name", 201670096)
-    public func `get_node_name`() -> GodotString {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotString(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_node_name, requireHandle(), nil, result)
-        })
-}
-    nonisolated(unsafe) private static let mb_get_node_data = lookupMethod("XMLParser", "get_node_data", 201670096)
-    public func `get_node_data`() -> GodotString {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotString(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_node_data, requireHandle(), nil, result)
-        })
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_node_offset = lookupMethod("XMLParser", "get_node_offset", 3905245786)
-    @inlinable @inline(__always) public func `get_node_offset`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_node_offset, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_attribute_count = lookupMethod("XMLParser", "get_attribute_count", 3905245786)
-    @inlinable @inline(__always) public func `get_attribute_count`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_attribute_count, requireHandle(), nil, &result)
-        return result
-}
-    nonisolated(unsafe) private static let mb_get_attribute_name = lookupMethod("XMLParser", "get_attribute_name", 844755477)
-    public func `get_attribute_name`(_ `idx`: Int64) -> GodotString {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `idx`
-        return GodotString(initializing: { result in
-            withUnsafePointer(to: &a0) { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_attribute_name, requireHandle(), &arguments, result)
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_get_attribute_value = lookupMethod("XMLParser", "get_attribute_value", 844755477)
-    public func `get_attribute_value`(_ `idx`: Int64) -> GodotString {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `idx`
-        return GodotString(initializing: { result in
-            withUnsafePointer(to: &a0) { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_attribute_value, requireHandle(), &arguments, result)
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_has_attribute = lookupMethod("XMLParser", "has_attribute", 3927539163)
-    public func `has_attribute`(_ `name`: borrowing GodotString) -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        `name`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_has_attribute, requireHandle(), &arguments, &result)
-        }
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_get_named_attribute_value = lookupMethod("XMLParser", "get_named_attribute_value", 3135753539)
-    public func `get_named_attribute_value`(_ `name`: borrowing GodotString) -> GodotString {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotString(initializing: { result in
-            `name`.withStorage { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_named_attribute_value, requireHandle(), &arguments, result)
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_get_named_attribute_value_safe = lookupMethod("XMLParser", "get_named_attribute_value_safe", 3135753539)
-    public func `get_named_attribute_value_safe`(_ `name`: borrowing GodotString) -> GodotString {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotString(initializing: { result in
-            `name`.withStorage { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_named_attribute_value_safe, requireHandle(), &arguments, result)
-            }
-        })
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_empty = lookupMethod("XMLParser", "is_empty", 36873697)
-    @inlinable @inline(__always) public func `is_empty`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_empty, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_current_line = lookupMethod("XMLParser", "get_current_line", 3905245786)
-    @inlinable @inline(__always) public func `get_current_line`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_current_line, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_skip_section = lookupMethod("XMLParser", "skip_section", 3218959716)
-    @inlinable @inline(__always) public func `skip_section`() {
-        defer { withExtendedLifetime((self)) {} }
-        api.object_method_bind_ptrcall!(Self.mb_skip_section, requireHandle(), nil, nil)
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_seek = lookupMethod("XMLParser", "seek", 844576869)
-    @inlinable @inline(__always) public func `seek`(_ `position`: Int64) -> Godot.Error {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `position`
-        var result: Int64 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_seek, requireHandle(), &arguments, &result)
-        }
-        return Godot.Error(rawValue: result)
-}
-    nonisolated(unsafe) private static let mb_open = lookupMethod("XMLParser", "open", 166001499)
-    public func `open`(_ `file`: borrowing GodotString) -> Godot.Error {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        `file`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_open, requireHandle(), &arguments, &result)
-        }
-        return Godot.Error(rawValue: result)
-}
-    nonisolated(unsafe) private static let mb_open_buffer = lookupMethod("XMLParser", "open_buffer", 680677267)
-    public func `open_buffer`(_ `buffer`: borrowing GodotPackedByteArray) -> Godot.Error {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        `buffer`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_open_buffer, requireHandle(), &arguments, &result)
-        }
-        return Godot.Error(rawValue: result)
-}
-}
-extension XRAnchor3D {
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_size = lookupMethod("XRAnchor3D", "get_size", 3360562783)
-    @inlinable @inline(__always) public func `get_size`() -> Vector3 {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Vector3.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_size, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_plane = lookupMethod("XRAnchor3D", "get_plane", 2753500971)
-    @inlinable @inline(__always) public func `get_plane`() -> Plane {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Plane.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_plane, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-}
-extension XRBodyModifier3D {
-    nonisolated(unsafe) private static let mb_set_body_tracker = lookupMethod("XRBodyModifier3D", "set_body_tracker", 3304788590)
-    public func `set_body_tracker`(_ `tracker_name`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `tracker_name`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_body_tracker, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_body_tracker = lookupMethod("XRBodyModifier3D", "get_body_tracker", 2002593661)
-    public func `get_body_tracker`() -> GodotStringName {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotStringName(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_body_tracker, requireHandle(), nil, result)
-        })
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_body_update = lookupMethod("XRBodyModifier3D", "set_body_update", 2211199417)
-    @inlinable @inline(__always) public func `set_body_update`(_ `body_update`: XRBodyModifier3D.BodyUpdate) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `body_update`.rawValue
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_body_update, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_body_update = lookupMethod("XRBodyModifier3D", "get_body_update", 2642335328)
-    @inlinable @inline(__always) public func `get_body_update`() -> XRBodyModifier3D.BodyUpdate {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_body_update, requireHandle(), nil, &result)
-        return XRBodyModifier3D.BodyUpdate(rawValue: result)
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_bone_update = lookupMethod("XRBodyModifier3D", "set_bone_update", 3356796943)
-    @inlinable @inline(__always) public func `set_bone_update`(_ `bone_update`: XRBodyModifier3D.BoneUpdate) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `bone_update`.rawValue
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_bone_update, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_bone_update = lookupMethod("XRBodyModifier3D", "get_bone_update", 1309305964)
-    @inlinable @inline(__always) public func `get_bone_update`() -> XRBodyModifier3D.BoneUpdate {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_bone_update, requireHandle(), nil, &result)
-        return XRBodyModifier3D.BoneUpdate(rawValue: result)
-}
-}
-extension XRBodyTracker {
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_has_tracking_data = lookupMethod("XRBodyTracker", "set_has_tracking_data", 2586408642)
-    @inlinable @inline(__always) public func `set_has_tracking_data`(_ `has_data`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `has_data` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_has_tracking_data, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_has_tracking_data = lookupMethod("XRBodyTracker", "get_has_tracking_data", 36873697)
-    @inlinable @inline(__always) public func `get_has_tracking_data`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_has_tracking_data, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_body_flags = lookupMethod("XRBodyTracker", "set_body_flags", 2103235750)
-    @inlinable @inline(__always) public func `set_body_flags`(_ `flags`: XRBodyTracker.BodyFlags) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `flags`.rawValue
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_body_flags, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_body_flags = lookupMethod("XRBodyTracker", "get_body_flags", 3543166366)
-    @inlinable @inline(__always) public func `get_body_flags`() -> XRBodyTracker.BodyFlags {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_body_flags, requireHandle(), nil, &result)
-        return XRBodyTracker.BodyFlags(rawValue: result)
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_joint_flags = lookupMethod("XRBodyTracker", "set_joint_flags", 592144999)
-    @inlinable @inline(__always) public func `set_joint_flags`(_ `joint`: XRBodyTracker.Joint, _ `flags`: XRBodyTracker.JointFlags) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `joint`.rawValue
-        var a1 = `flags`.rawValue
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_joint_flags, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_joint_flags = lookupMethod("XRBodyTracker", "get_joint_flags", 1030162609)
-    @inlinable @inline(__always) public func `get_joint_flags`(_ `joint`: XRBodyTracker.Joint) -> XRBodyTracker.JointFlags {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `joint`.rawValue
-        var result: Int64 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_joint_flags, requireHandle(), &arguments, &result)
-        }
-        return XRBodyTracker.JointFlags(rawValue: result)
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_joint_transform = lookupMethod("XRBodyTracker", "set_joint_transform", 2635424328)
-    @inlinable @inline(__always) public func `set_joint_transform`(_ `joint`: XRBodyTracker.Joint, _ `transform`: Transform3D) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `joint`.rawValue
-        withUnsafePointer(to: &a0) { p0 in
-            `transform`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_joint_transform, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_joint_transform = lookupMethod("XRBodyTracker", "get_joint_transform", 3474811534)
-    @inlinable @inline(__always) public func `get_joint_transform`(_ `joint`: XRBodyTracker.Joint) -> Transform3D {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `joint`.rawValue
-        return withUnsafeTemporaryAllocation(of: Transform3D.self, capacity: 1) { result in
-            withUnsafePointer(to: &a0) { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_joint_transform, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
-            }
-            return result.baseAddress!.move()
-        }
-}
-}
-extension XRCamera3D {
-    nonisolated(unsafe) private static let mb_set_tracker = lookupMethod("XRCamera3D", "set_tracker", 3304788590)
-    public func `set_tracker`(_ `tracker_name`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `tracker_name`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_tracker, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_tracker = lookupMethod("XRCamera3D", "get_tracker", 2002593661)
-    public func `get_tracker`() -> GodotStringName {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotStringName(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_tracker, requireHandle(), nil, result)
-        })
-}
-}
-extension XRController3D {
-    nonisolated(unsafe) private static let mb_is_button_pressed = lookupMethod("XRController3D", "is_button_pressed", 2619796661)
-    public func `is_button_pressed`(_ `name`: borrowing GodotStringName) -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        `name`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_is_button_pressed, requireHandle(), &arguments, &result)
-        }
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_get_input = lookupMethod("XRController3D", "get_input", 2760726917)
-    public func `get_input`(_ `name`: borrowing GodotStringName) -> GodotVariant {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotVariant(initializing: { result in
-            `name`.withStorage { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_input, requireHandle(), &arguments, result)
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_get_float = lookupMethod("XRController3D", "get_float", 2349060816)
-    public func `get_float`(_ `name`: borrowing GodotStringName) -> Double {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Double = 0
-        `name`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_float, requireHandle(), &arguments, &result)
-        }
-        return result
-}
-    nonisolated(unsafe) private static let mb_get_vector2 = lookupMethod("XRController3D", "get_vector2", 3100822709)
-    public func `get_vector2`(_ `name`: borrowing GodotStringName) -> Vector2 {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Vector2.self, capacity: 1) { result in
-            `name`.withStorage { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_vector2, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
-            }
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_tracker_hand = lookupMethod("XRController3D", "get_tracker_hand", 4181770860)
-    @inlinable @inline(__always) public func `get_tracker_hand`() -> XRPositionalTracker.TrackerHand {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_tracker_hand, requireHandle(), nil, &result)
-        return XRPositionalTracker.TrackerHand(rawValue: result)
-}
-}
-extension XRControllerTracker {
-}
-extension XRFaceModifier3D {
-    nonisolated(unsafe) private static let mb_set_face_tracker = lookupMethod("XRFaceModifier3D", "set_face_tracker", 3304788590)
-    public func `set_face_tracker`(_ `tracker_name`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `tracker_name`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_face_tracker, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_face_tracker = lookupMethod("XRFaceModifier3D", "get_face_tracker", 2002593661)
-    public func `get_face_tracker`() -> GodotStringName {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotStringName(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_face_tracker, requireHandle(), nil, result)
-        })
-}
-    nonisolated(unsafe) private static let mb_set_target = lookupMethod("XRFaceModifier3D", "set_target", 1348162250)
-    public func `set_target`(_ `target`: borrowing GodotNodePath) {
-        defer { withExtendedLifetime((self)) {} }
-        `target`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_target, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_target = lookupMethod("XRFaceModifier3D", "get_target", 4075236667)
-    public func `get_target`() -> GodotNodePath {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotNodePath(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_target, requireHandle(), nil, result)
-        })
-}
-}
-extension XRFaceTracker {
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_blend_shape = lookupMethod("XRFaceTracker", "get_blend_shape", 330010046)
-    @inlinable @inline(__always) public func `get_blend_shape`(_ `blend_shape`: XRFaceTracker.BlendShapeEntry) -> Double {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `blend_shape`.rawValue
-        var result: Double = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_blend_shape, requireHandle(), &arguments, &result)
-        }
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_blend_shape = lookupMethod("XRFaceTracker", "set_blend_shape", 2352588791)
-    @inlinable @inline(__always) public func `set_blend_shape`(_ `blend_shape`: XRFaceTracker.BlendShapeEntry, _ `weight`: Double) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `blend_shape`.rawValue
-        var a1 = `weight`
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_blend_shape, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_get_blend_shapes = lookupMethod("XRFaceTracker", "get_blend_shapes", 675695659)
-    public func `get_blend_shapes`() -> GodotPackedFloat32Array {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotPackedFloat32Array(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_blend_shapes, requireHandle(), nil, result)
-        })
-}
-    nonisolated(unsafe) private static let mb_set_blend_shapes = lookupMethod("XRFaceTracker", "set_blend_shapes", 2899603908)
-    public func `set_blend_shapes`(_ `weights`: borrowing GodotPackedFloat32Array) {
-        defer { withExtendedLifetime((self)) {} }
-        `weights`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_blend_shapes, requireHandle(), &arguments, nil)
-        }
-}
-}
-extension XRHandModifier3D {
-    nonisolated(unsafe) private static let mb_set_hand_tracker = lookupMethod("XRHandModifier3D", "set_hand_tracker", 3304788590)
-    public func `set_hand_tracker`(_ `tracker_name`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `tracker_name`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_hand_tracker, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_hand_tracker = lookupMethod("XRHandModifier3D", "get_hand_tracker", 2002593661)
-    public func `get_hand_tracker`() -> GodotStringName {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotStringName(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_hand_tracker, requireHandle(), nil, result)
-        })
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_bone_update = lookupMethod("XRHandModifier3D", "set_bone_update", 3635701455)
-    @inlinable @inline(__always) public func `set_bone_update`(_ `bone_update`: XRHandModifier3D.BoneUpdate) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `bone_update`.rawValue
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_bone_update, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_bone_update = lookupMethod("XRHandModifier3D", "get_bone_update", 2873665691)
-    @inlinable @inline(__always) public func `get_bone_update`() -> XRHandModifier3D.BoneUpdate {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_bone_update, requireHandle(), nil, &result)
-        return XRHandModifier3D.BoneUpdate(rawValue: result)
-}
-}
-extension XRHandTracker {
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_has_tracking_data = lookupMethod("XRHandTracker", "set_has_tracking_data", 2586408642)
-    @inlinable @inline(__always) public func `set_has_tracking_data`(_ `has_data`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `has_data` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_has_tracking_data, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_has_tracking_data = lookupMethod("XRHandTracker", "get_has_tracking_data", 36873697)
-    @inlinable @inline(__always) public func `get_has_tracking_data`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_has_tracking_data, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_hand_tracking_source = lookupMethod("XRHandTracker", "set_hand_tracking_source", 2958308861)
-    @inlinable @inline(__always) public func `set_hand_tracking_source`(_ `source`: XRHandTracker.HandTrackingSource) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `source`.rawValue
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_hand_tracking_source, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_hand_tracking_source = lookupMethod("XRHandTracker", "get_hand_tracking_source", 2475045250)
-    @inlinable @inline(__always) public func `get_hand_tracking_source`() -> XRHandTracker.HandTrackingSource {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_hand_tracking_source, requireHandle(), nil, &result)
-        return XRHandTracker.HandTrackingSource(rawValue: result)
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_hand_joint_flags = lookupMethod("XRHandTracker", "set_hand_joint_flags", 3028437365)
-    @inlinable @inline(__always) public func `set_hand_joint_flags`(_ `joint`: XRHandTracker.HandJoint, _ `flags`: XRHandTracker.HandJointFlags) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `joint`.rawValue
-        var a1 = `flags`.rawValue
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_hand_joint_flags, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_hand_joint_flags = lookupMethod("XRHandTracker", "get_hand_joint_flags", 1730972401)
-    @inlinable @inline(__always) public func `get_hand_joint_flags`(_ `joint`: XRHandTracker.HandJoint) -> XRHandTracker.HandJointFlags {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `joint`.rawValue
-        var result: Int64 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_hand_joint_flags, requireHandle(), &arguments, &result)
-        }
-        return XRHandTracker.HandJointFlags(rawValue: result)
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_hand_joint_transform = lookupMethod("XRHandTracker", "set_hand_joint_transform", 2529959613)
-    @inlinable @inline(__always) public func `set_hand_joint_transform`(_ `joint`: XRHandTracker.HandJoint, _ `transform`: Transform3D) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `joint`.rawValue
-        withUnsafePointer(to: &a0) { p0 in
-            `transform`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_hand_joint_transform, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_hand_joint_transform = lookupMethod("XRHandTracker", "get_hand_joint_transform", 1090840196)
-    @inlinable @inline(__always) public func `get_hand_joint_transform`(_ `joint`: XRHandTracker.HandJoint) -> Transform3D {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `joint`.rawValue
-        return withUnsafeTemporaryAllocation(of: Transform3D.self, capacity: 1) { result in
-            withUnsafePointer(to: &a0) { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_hand_joint_transform, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
-            }
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_hand_joint_radius = lookupMethod("XRHandTracker", "set_hand_joint_radius", 2723659615)
-    @inlinable @inline(__always) public func `set_hand_joint_radius`(_ `joint`: XRHandTracker.HandJoint, _ `radius`: Double) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `joint`.rawValue
-        var a1 = `radius`
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_hand_joint_radius, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_hand_joint_radius = lookupMethod("XRHandTracker", "get_hand_joint_radius", 3400025734)
-    @inlinable @inline(__always) public func `get_hand_joint_radius`(_ `joint`: XRHandTracker.HandJoint) -> Double {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `joint`.rawValue
-        var result: Double = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_hand_joint_radius, requireHandle(), &arguments, &result)
-        }
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_hand_joint_linear_velocity = lookupMethod("XRHandTracker", "set_hand_joint_linear_velocity", 1978646737)
-    @inlinable @inline(__always) public func `set_hand_joint_linear_velocity`(_ `joint`: XRHandTracker.HandJoint, _ `linear_velocity`: Vector3) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `joint`.rawValue
-        withUnsafePointer(to: &a0) { p0 in
-            `linear_velocity`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_hand_joint_linear_velocity, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_hand_joint_linear_velocity = lookupMethod("XRHandTracker", "get_hand_joint_linear_velocity", 547240792)
-    @inlinable @inline(__always) public func `get_hand_joint_linear_velocity`(_ `joint`: XRHandTracker.HandJoint) -> Vector3 {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `joint`.rawValue
-        return withUnsafeTemporaryAllocation(of: Vector3.self, capacity: 1) { result in
-            withUnsafePointer(to: &a0) { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_hand_joint_linear_velocity, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
-            }
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_hand_joint_angular_velocity = lookupMethod("XRHandTracker", "set_hand_joint_angular_velocity", 1978646737)
-    @inlinable @inline(__always) public func `set_hand_joint_angular_velocity`(_ `joint`: XRHandTracker.HandJoint, _ `angular_velocity`: Vector3) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `joint`.rawValue
-        withUnsafePointer(to: &a0) { p0 in
-            `angular_velocity`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_hand_joint_angular_velocity, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_hand_joint_angular_velocity = lookupMethod("XRHandTracker", "get_hand_joint_angular_velocity", 547240792)
-    @inlinable @inline(__always) public func `get_hand_joint_angular_velocity`(_ `joint`: XRHandTracker.HandJoint) -> Vector3 {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `joint`.rawValue
-        return withUnsafeTemporaryAllocation(of: Vector3.self, capacity: 1) { result in
-            withUnsafePointer(to: &a0) { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_hand_joint_angular_velocity, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
-            }
-            return result.baseAddress!.move()
-        }
-}
-}
-extension XRInterface {
-    nonisolated(unsafe) private static let mb_get_name = lookupMethod("XRInterface", "get_name", 2002593661)
-    public func `get_name`() -> GodotStringName {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotStringName(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_name, requireHandle(), nil, result)
-        })
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_capabilities = lookupMethod("XRInterface", "get_capabilities", 3905245786)
-    @inlinable @inline(__always) public func `get_capabilities`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_capabilities, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_primary = lookupMethod("XRInterface", "is_primary", 2240911060)
-    @inlinable @inline(__always) public func `is_primary`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_primary, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_primary = lookupMethod("XRInterface", "set_primary", 2586408642)
-    @inlinable @inline(__always) public func `set_primary`(_ `primary`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `primary` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_primary, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_initialized = lookupMethod("XRInterface", "is_initialized", 36873697)
-    @inlinable @inline(__always) public func `is_initialized`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_initialized, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_initialize = lookupMethod("XRInterface", "initialize", 2240911060)
-    @inlinable @inline(__always) public func `initialize`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_initialize, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_uninitialize = lookupMethod("XRInterface", "uninitialize", 3218959716)
-    @inlinable @inline(__always) public func `uninitialize`() {
-        defer { withExtendedLifetime((self)) {} }
-        api.object_method_bind_ptrcall!(Self.mb_uninitialize, requireHandle(), nil, nil)
-}
-    nonisolated(unsafe) private static let mb_get_system_info = lookupMethod("XRInterface", "get_system_info", 2382534195)
-    public func `get_system_info`() -> GodotDictionary {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotDictionary(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_system_info, requireHandle(), nil, result)
-        })
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_tracking_status = lookupMethod("XRInterface", "get_tracking_status", 167423259)
-    @inlinable @inline(__always) public func `get_tracking_status`() -> XRInterface.TrackingStatus {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_tracking_status, requireHandle(), nil, &result)
-        return XRInterface.TrackingStatus(rawValue: result)
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_render_target_size = lookupMethod("XRInterface", "get_render_target_size", 1497962370)
-    @inlinable @inline(__always) public func `get_render_target_size`() -> Vector2 {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Vector2.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_render_target_size, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_view_count = lookupMethod("XRInterface", "get_view_count", 2455072627)
-    @inlinable @inline(__always) public func `get_view_count`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_view_count, requireHandle(), nil, &result)
-        return result
-}
-    nonisolated(unsafe) private static let mb_trigger_haptic_pulse = lookupMethod("XRInterface", "trigger_haptic_pulse", 3752640163)
-    public func `trigger_haptic_pulse`(_ `action_name`: borrowing GodotString, _ `tracker_name`: borrowing GodotStringName, _ `frequency`: Double, _ `amplitude`: Double, _ `duration_sec`: Double, _ `delay_sec`: Double) {
-        defer { withExtendedLifetime((self)) {} }
-        var a2 = `frequency`
-        var a3 = `amplitude`
-        var a4 = `duration_sec`
-        var a5 = `delay_sec`
-        `action_name`.withStorage { p0 in
-            `tracker_name`.withStorage { p1 in
-                withUnsafePointer(to: &a2) { p2 in
-                    withUnsafePointer(to: &a3) { p3 in
-                        withUnsafePointer(to: &a4) { p4 in
-                            withUnsafePointer(to: &a5) { p5 in
-                                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p3)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p4)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p5)))
-                                withUnsafePointer(to: &arguments) { arguments in
-                                    api.object_method_bind_ptrcall!(Self.mb_trigger_haptic_pulse, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_supports_play_area_mode = lookupMethod("XRInterface", "supports_play_area_mode", 3429955281)
-    @inlinable @inline(__always) public func `supports_play_area_mode`(_ `mode`: XRInterface.PlayAreaMode) -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `mode`.rawValue
-        var result: UInt8 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_supports_play_area_mode, requireHandle(), &arguments, &result)
-        }
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_play_area_mode = lookupMethod("XRInterface", "get_play_area_mode", 1615132885)
-    @inlinable @inline(__always) public func `get_play_area_mode`() -> XRInterface.PlayAreaMode {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_play_area_mode, requireHandle(), nil, &result)
-        return XRInterface.PlayAreaMode(rawValue: result)
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_play_area_mode = lookupMethod("XRInterface", "set_play_area_mode", 3429955281)
-    @inlinable @inline(__always) public func `set_play_area_mode`(_ `mode`: XRInterface.PlayAreaMode) -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `mode`.rawValue
-        var result: UInt8 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_play_area_mode, requireHandle(), &arguments, &result)
-        }
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_get_play_area = lookupMethod("XRInterface", "get_play_area", 497664490)
-    public func `get_play_area`() -> GodotPackedVector3Array {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotPackedVector3Array(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_play_area, requireHandle(), nil, result)
-        })
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_anchor_detection_is_enabled = lookupMethod("XRInterface", "get_anchor_detection_is_enabled", 36873697)
-    @inlinable @inline(__always) public func `get_anchor_detection_is_enabled`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_anchor_detection_is_enabled, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_anchor_detection_is_enabled = lookupMethod("XRInterface", "set_anchor_detection_is_enabled", 2586408642)
-    @inlinable @inline(__always) public func `set_anchor_detection_is_enabled`(_ `enable`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `enable` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_anchor_detection_is_enabled, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_camera_feed_id = lookupMethod("XRInterface", "get_camera_feed_id", 2455072627)
-    @inlinable @inline(__always) public func `get_camera_feed_id`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_camera_feed_id, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_passthrough_supported = lookupMethod("XRInterface", "is_passthrough_supported", 2240911060)
-    @inlinable @inline(__always) public func `is_passthrough_supported`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_passthrough_supported, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_passthrough_enabled = lookupMethod("XRInterface", "is_passthrough_enabled", 2240911060)
-    @inlinable @inline(__always) public func `is_passthrough_enabled`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_passthrough_enabled, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_start_passthrough = lookupMethod("XRInterface", "start_passthrough", 2240911060)
-    @inlinable @inline(__always) public func `start_passthrough`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_start_passthrough, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_stop_passthrough = lookupMethod("XRInterface", "stop_passthrough", 3218959716)
-    @inlinable @inline(__always) public func `stop_passthrough`() {
-        defer { withExtendedLifetime((self)) {} }
-        api.object_method_bind_ptrcall!(Self.mb_stop_passthrough, requireHandle(), nil, nil)
-}
-    nonisolated(unsafe) private static let mb_get_camera_projections = lookupMethod("XRInterface", "get_camera_projections", 2969235509)
-    public func `get_camera_projections`(_ `tracker_name`: borrowing GodotStringName, _ `aspect`: Double, _ `near`: Double, _ `far`: Double) -> GodotArrayOf<Projection> {
-        defer { withExtendedLifetime((self)) {} }
-        var a1 = `aspect`
-        var a2 = `near`
-        var a3 = `far`
-        return GodotArrayOf<Projection>(initializing: { result in
-            `tracker_name`.withStorage { p0 in
-                withUnsafePointer(to: &a1) { p1 in
-                    withUnsafePointer(to: &a2) { p2 in
-                        withUnsafePointer(to: &a3) { p3 in
-                            var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p3)))
-                            withUnsafePointer(to: &arguments) { arguments in
-                                api.object_method_bind_ptrcall!(Self.mb_get_camera_projections, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), result)
-                            }
-                        }
-                    }
-                }
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_get_camera_offsets = lookupMethod("XRInterface", "get_camera_offsets", 689397652)
-    public func `get_camera_offsets`(_ `tracker_name`: borrowing GodotStringName) -> GodotArrayOf<Transform3D> {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotArrayOf<Transform3D>(initializing: { result in
-            `tracker_name`.withStorage { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_camera_offsets, requireHandle(), &arguments, result)
-            }
-        })
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_transform_for_view = lookupMethod("XRInterface", "get_transform_for_view", 518934792)
-    @inlinable @inline(__always) public func `get_transform_for_view`(_ `view`: Int64, _ `cam_transform`: Transform3D) -> Transform3D {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `view`
-        return withUnsafeTemporaryAllocation(of: Transform3D.self, capacity: 1) { result in
-            withUnsafePointer(to: &a0) { p0 in
-                `cam_transform`.withStorage { p1 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                    withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_get_transform_for_view, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), UnsafeMutableRawPointer(result.baseAddress!))
-                    }
-                }
-            }
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_projection_for_view = lookupMethod("XRInterface", "get_projection_for_view", 3766090294)
-    @inlinable @inline(__always) public func `get_projection_for_view`(_ `view`: Int64, _ `aspect`: Double, _ `near`: Double, _ `far`: Double) -> Projection {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `view`
-        var a1 = `aspect`
-        var a2 = `near`
-        var a3 = `far`
-        return withUnsafeTemporaryAllocation(of: Projection.self, capacity: 1) { result in
-            withUnsafePointer(to: &a0) { p0 in
-                withUnsafePointer(to: &a1) { p1 in
-                    withUnsafePointer(to: &a2) { p2 in
-                        withUnsafePointer(to: &a3) { p3 in
-                            var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p3)))
-                            withUnsafePointer(to: &arguments) { arguments in
-                                api.object_method_bind_ptrcall!(Self.mb_get_projection_for_view, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), UnsafeMutableRawPointer(result.baseAddress!))
-                            }
-                        }
-                    }
-                }
-            }
-            return result.baseAddress!.move()
-        }
-}
-    nonisolated(unsafe) private static let mb_get_supported_environment_blend_modes = lookupMethod("XRInterface", "get_supported_environment_blend_modes", 2915620761)
-    public func `get_supported_environment_blend_modes`() -> GodotArray {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotArray(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_supported_environment_blend_modes, requireHandle(), nil, result)
-        })
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_environment_blend_mode = lookupMethod("XRInterface", "set_environment_blend_mode", 551152418)
-    @inlinable @inline(__always) public func `set_environment_blend_mode`(_ `mode`: XRInterface.EnvironmentBlendMode) -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `mode`.rawValue
-        var result: UInt8 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_environment_blend_mode, requireHandle(), &arguments, &result)
-        }
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_environment_blend_mode = lookupMethod("XRInterface", "get_environment_blend_mode", 1984334071)
-    @inlinable @inline(__always) public func `get_environment_blend_mode`() -> XRInterface.EnvironmentBlendMode {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_environment_blend_mode, requireHandle(), nil, &result)
-        return XRInterface.EnvironmentBlendMode(rawValue: result)
-}
-}
-extension XRInterfaceExtension {
-    nonisolated(unsafe) private static let mb_get_color_texture = lookupMethod("XRInterfaceExtension", "get_color_texture", 529393457)
-    public func `get_color_texture`() -> GodotRID {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotRID(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_color_texture, requireHandle(), nil, result)
-        })
-}
-    nonisolated(unsafe) private static let mb_get_depth_texture = lookupMethod("XRInterfaceExtension", "get_depth_texture", 529393457)
-    public func `get_depth_texture`() -> GodotRID {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotRID(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_depth_texture, requireHandle(), nil, result)
-        })
-}
-    nonisolated(unsafe) private static let mb_get_velocity_texture = lookupMethod("XRInterfaceExtension", "get_velocity_texture", 529393457)
-    public func `get_velocity_texture`() -> GodotRID {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotRID(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_velocity_texture, requireHandle(), nil, result)
-        })
-}
-    nonisolated(unsafe) private static let mb_add_blit = lookupMethod("XRInterfaceExtension", "add_blit", 258596971)
-    public func `add_blit`(_ `render_target`: GodotRID, _ `src_rect`: Rect2, _ `dst_rect`: Rect2i, _ `use_layer`: Bool, _ `layer`: Int64, _ `apply_lens_distortion`: Bool, _ `eye_center`: Vector2, _ `k1`: Double, _ `k2`: Double, _ `upscale`: Double, _ `aspect_ratio`: Double) {
-        defer { withExtendedLifetime((self)) {} }
-        var a3 = `use_layer` ? UInt8(1) : UInt8(0)
-        var a4 = `layer`
-        var a5 = `apply_lens_distortion` ? UInt8(1) : UInt8(0)
-        var a7 = `k1`
-        var a8 = `k2`
-        var a9 = `upscale`
-        var a10 = `aspect_ratio`
-        `render_target`.withStorage { p0 in
-            `src_rect`.withStorage { p1 in
-                `dst_rect`.withStorage { p2 in
-                    withUnsafePointer(to: &a3) { p3 in
-                        withUnsafePointer(to: &a4) { p4 in
-                            withUnsafePointer(to: &a5) { p5 in
-                                `eye_center`.withStorage { p6 in
-                                    withUnsafePointer(to: &a7) { p7 in
-                                        withUnsafePointer(to: &a8) { p8 in
-                                            withUnsafePointer(to: &a9) { p9 in
-                                                withUnsafePointer(to: &a10) { p10 in
-                                                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p3)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p4)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p5)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p6)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p7)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p8)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p9)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p10)))
-                                                    withUnsafePointer(to: &arguments) { arguments in
-                                                        api.object_method_bind_ptrcall!(Self.mb_add_blit, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_get_render_target_texture = lookupMethod("XRInterfaceExtension", "get_render_target_texture", 41030802)
-    public func `get_render_target_texture`(_ `render_target`: GodotRID) -> GodotRID {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotRID(initializing: { result in
-            `render_target`.withStorage { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_render_target_texture, requireHandle(), &arguments, result)
-            }
-        })
-}
-}
-extension XRNode3D {
-    nonisolated(unsafe) private static let mb_set_tracker = lookupMethod("XRNode3D", "set_tracker", 3304788590)
-    public func `set_tracker`(_ `tracker_name`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `tracker_name`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_tracker, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_tracker = lookupMethod("XRNode3D", "get_tracker", 2002593661)
-    public func `get_tracker`() -> GodotStringName {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotStringName(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_tracker, requireHandle(), nil, result)
-        })
-}
-    nonisolated(unsafe) private static let mb_set_pose_name = lookupMethod("XRNode3D", "set_pose_name", 3304788590)
-    public func `set_pose_name`(_ `pose`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `pose`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_pose_name, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_pose_name = lookupMethod("XRNode3D", "get_pose_name", 2002593661)
-    public func `get_pose_name`() -> GodotStringName {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotStringName(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_pose_name, requireHandle(), nil, result)
-        })
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_show_when_tracked = lookupMethod("XRNode3D", "set_show_when_tracked", 2586408642)
-    @inlinable @inline(__always) public func `set_show_when_tracked`(_ `show`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `show` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_show_when_tracked, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_show_when_tracked = lookupMethod("XRNode3D", "get_show_when_tracked", 36873697)
-    @inlinable @inline(__always) public func `get_show_when_tracked`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_show_when_tracked, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_is_active = lookupMethod("XRNode3D", "get_is_active", 36873697)
-    @inlinable @inline(__always) public func `get_is_active`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_is_active, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_has_tracking_data = lookupMethod("XRNode3D", "get_has_tracking_data", 36873697)
-    @inlinable @inline(__always) public func `get_has_tracking_data`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_has_tracking_data, requireHandle(), nil, &result)
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_get_pose = lookupMethod("XRNode3D", "get_pose", 2806551826)
-    public func `get_pose`() -> XRPose? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_pose, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? XRPose
-}
-    nonisolated(unsafe) private static let mb_trigger_haptic_pulse = lookupMethod("XRNode3D", "trigger_haptic_pulse", 508576839)
-    public func `trigger_haptic_pulse`(_ `action_name`: borrowing GodotString, _ `frequency`: Double, _ `amplitude`: Double, _ `duration_sec`: Double, _ `delay_sec`: Double) {
-        defer { withExtendedLifetime((self)) {} }
-        var a1 = `frequency`
-        var a2 = `amplitude`
-        var a3 = `duration_sec`
-        var a4 = `delay_sec`
-        `action_name`.withStorage { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                withUnsafePointer(to: &a2) { p2 in
-                    withUnsafePointer(to: &a3) { p3 in
-                        withUnsafePointer(to: &a4) { p4 in
-                            var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p3)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p4)))
-                            withUnsafePointer(to: &arguments) { arguments in
-                                api.object_method_bind_ptrcall!(Self.mb_trigger_haptic_pulse, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                            }
-                        }
-                    }
-                }
-            }
-        }
-}
-}
-extension XROrigin3D {
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_world_scale = lookupMethod("XROrigin3D", "set_world_scale", 373806689)
-    @inlinable @inline(__always) public func `set_world_scale`(_ `world_scale`: Double) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `world_scale`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_world_scale, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_world_scale = lookupMethod("XROrigin3D", "get_world_scale", 1740695150)
-    @inlinable @inline(__always) public func `get_world_scale`() -> Double {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Double = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_world_scale, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_current = lookupMethod("XROrigin3D", "set_current", 2586408642)
-    @inlinable @inline(__always) public func `set_current`(_ `enabled`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `enabled` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_current, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_current = lookupMethod("XROrigin3D", "is_current", 36873697)
-    @inlinable @inline(__always) public func `is_current`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_current, requireHandle(), nil, &result)
-        return result != 0
-}
-}
-extension XRPose {
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_has_tracking_data = lookupMethod("XRPose", "set_has_tracking_data", 2586408642)
-    @inlinable @inline(__always) public func `set_has_tracking_data`(_ `has_tracking_data`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `has_tracking_data` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_has_tracking_data, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_has_tracking_data = lookupMethod("XRPose", "get_has_tracking_data", 36873697)
-    @inlinable @inline(__always) public func `get_has_tracking_data`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_has_tracking_data, requireHandle(), nil, &result)
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_set_name = lookupMethod("XRPose", "set_name", 3304788590)
-    public func `set_name`(_ `name`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `name`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_name, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_name = lookupMethod("XRPose", "get_name", 2002593661)
-    public func `get_name`() -> GodotStringName {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotStringName(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_name, requireHandle(), nil, result)
-        })
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_transform = lookupMethod("XRPose", "set_transform", 2952846383)
-    @inlinable @inline(__always) public func `set_transform`(_ `transform`: Transform3D) {
-        defer { withExtendedLifetime((self)) {} }
-        `transform`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_transform, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_transform = lookupMethod("XRPose", "get_transform", 3229777777)
-    @inlinable @inline(__always) public func `get_transform`() -> Transform3D {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Transform3D.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_transform, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_adjusted_transform = lookupMethod("XRPose", "get_adjusted_transform", 3229777777)
-    @inlinable @inline(__always) public func `get_adjusted_transform`() -> Transform3D {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Transform3D.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_adjusted_transform, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_linear_velocity = lookupMethod("XRPose", "set_linear_velocity", 3460891852)
-    @inlinable @inline(__always) public func `set_linear_velocity`(_ `velocity`: Vector3) {
-        defer { withExtendedLifetime((self)) {} }
-        `velocity`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_linear_velocity, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_linear_velocity = lookupMethod("XRPose", "get_linear_velocity", 3360562783)
-    @inlinable @inline(__always) public func `get_linear_velocity`() -> Vector3 {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Vector3.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_linear_velocity, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_angular_velocity = lookupMethod("XRPose", "set_angular_velocity", 3460891852)
-    @inlinable @inline(__always) public func `set_angular_velocity`(_ `velocity`: Vector3) {
-        defer { withExtendedLifetime((self)) {} }
-        `velocity`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_angular_velocity, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_angular_velocity = lookupMethod("XRPose", "get_angular_velocity", 3360562783)
-    @inlinable @inline(__always) public func `get_angular_velocity`() -> Vector3 {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Vector3.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_angular_velocity, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_tracking_confidence = lookupMethod("XRPose", "set_tracking_confidence", 4171656666)
-    @inlinable @inline(__always) public func `set_tracking_confidence`(_ `tracking_confidence`: XRPose.TrackingConfidence) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `tracking_confidence`.rawValue
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_tracking_confidence, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_tracking_confidence = lookupMethod("XRPose", "get_tracking_confidence", 2064923680)
-    @inlinable @inline(__always) public func `get_tracking_confidence`() -> XRPose.TrackingConfidence {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_tracking_confidence, requireHandle(), nil, &result)
-        return XRPose.TrackingConfidence(rawValue: result)
-}
-}
-extension XRPositionalTracker {
-    nonisolated(unsafe) private static let mb_get_tracker_profile = lookupMethod("XRPositionalTracker", "get_tracker_profile", 201670096)
-    public func `get_tracker_profile`() -> GodotString {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotString(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_tracker_profile, requireHandle(), nil, result)
-        })
-}
-    nonisolated(unsafe) private static let mb_set_tracker_profile = lookupMethod("XRPositionalTracker", "set_tracker_profile", 83702148)
-    public func `set_tracker_profile`(_ `profile`: borrowing GodotString) {
-        defer { withExtendedLifetime((self)) {} }
-        `profile`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_tracker_profile, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_tracker_hand = lookupMethod("XRPositionalTracker", "get_tracker_hand", 4181770860)
-    @inlinable @inline(__always) public func `get_tracker_hand`() -> XRPositionalTracker.TrackerHand {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_tracker_hand, requireHandle(), nil, &result)
-        return XRPositionalTracker.TrackerHand(rawValue: result)
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_tracker_hand = lookupMethod("XRPositionalTracker", "set_tracker_hand", 3904108980)
-    @inlinable @inline(__always) public func `set_tracker_hand`(_ `hand`: XRPositionalTracker.TrackerHand) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `hand`.rawValue
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_tracker_hand, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_has_pose = lookupMethod("XRPositionalTracker", "has_pose", 2619796661)
-    public func `has_pose`(_ `name`: borrowing GodotStringName) -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        `name`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_has_pose, requireHandle(), &arguments, &result)
-        }
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_get_pose = lookupMethod("XRPositionalTracker", "get_pose", 4099720006)
-    public func `get_pose`(_ `name`: borrowing GodotStringName) -> XRPose? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        `name`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_pose, requireHandle(), &arguments, &nativeResult)
-        }
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? XRPose
-}
-    nonisolated(unsafe) private static let mb_invalidate_pose = lookupMethod("XRPositionalTracker", "invalidate_pose", 3304788590)
-    public func `invalidate_pose`(_ `name`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `name`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_invalidate_pose, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_set_pose = lookupMethod("XRPositionalTracker", "set_pose", 3451230163)
-    public func `set_pose`(_ `name`: borrowing GodotStringName, _ `transform`: Transform3D, _ `linear_velocity`: Vector3, _ `angular_velocity`: Vector3, _ `tracking_confidence`: XRPose.TrackingConfidence) {
-        defer { withExtendedLifetime((self)) {} }
-        var a4 = `tracking_confidence`.rawValue
-        `name`.withStorage { p0 in
-            `transform`.withStorage { p1 in
-                `linear_velocity`.withStorage { p2 in
-                    `angular_velocity`.withStorage { p3 in
-                        withUnsafePointer(to: &a4) { p4 in
-                            var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p3)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p4)))
-                            withUnsafePointer(to: &arguments) { arguments in
-                                api.object_method_bind_ptrcall!(Self.mb_set_pose, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                            }
-                        }
-                    }
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_get_input = lookupMethod("XRPositionalTracker", "get_input", 2760726917)
-    public func `get_input`(_ `name`: borrowing GodotStringName) -> GodotVariant {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotVariant(initializing: { result in
-            `name`.withStorage { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_input, requireHandle(), &arguments, result)
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_set_input = lookupMethod("XRPositionalTracker", "set_input", 3776071444)
-    public func `set_input`(_ `name`: borrowing GodotStringName, _ `value`: borrowing GodotVariant) {
-        defer { withExtendedLifetime((self)) {} }
-        `name`.withStorage { p0 in
-            `value`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_input, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-}
 extension XRServer {
     @usableFromInline nonisolated(unsafe) internal static let mb_get_world_scale = lookupMethod("XRServer", "get_world_scale", 1740695150)
     @inlinable @inline(__always) public func `get_world_scale`() -> Double {
@@ -1747,37 +184,6 @@ extension XRServer {
         let object = Object.resolve(nativeResult)
         releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
         return object as? XRTracker
-}
-    nonisolated(unsafe) private static let mb_get_camera_projections = lookupMethod("XRServer", "get_camera_projections", 2969235509)
-    public func `get_camera_projections`(_ `tracker_name`: borrowing GodotStringName, _ `aspect`: Double, _ `near`: Double, _ `far`: Double) -> GodotArrayOf<Projection> {
-        defer { withExtendedLifetime((self)) {} }
-        var a1 = `aspect`
-        var a2 = `near`
-        var a3 = `far`
-        return GodotArrayOf<Projection>(initializing: { result in
-            `tracker_name`.withStorage { p0 in
-                withUnsafePointer(to: &a1) { p1 in
-                    withUnsafePointer(to: &a2) { p2 in
-                        withUnsafePointer(to: &a3) { p3 in
-                            var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p3)))
-                            withUnsafePointer(to: &arguments) { arguments in
-                                api.object_method_bind_ptrcall!(Self.mb_get_camera_projections, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), result)
-                            }
-                        }
-                    }
-                }
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_get_camera_offsets = lookupMethod("XRServer", "get_camera_offsets", 689397652)
-    public func `get_camera_offsets`(_ `tracker_name`: borrowing GodotStringName) -> GodotArrayOf<Transform3D> {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotArrayOf<Transform3D>(initializing: { result in
-            `tracker_name`.withStorage { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_camera_offsets, requireHandle(), &arguments, result)
-            }
-        })
 }
     nonisolated(unsafe) private static let mb_get_primary_interface = lookupMethod("XRServer", "get_primary_interface", 2143545064)
     public func `get_primary_interface`() -> XRInterface? {
@@ -2598,10 +1004,6 @@ extension AnimationPlayer {
     public var `movie_quit_on_finish`: Bool {
         get { `is_movie_quit_on_finish_enabled`() }
         set { `set_movie_quit_on_finish_enabled`(newValue) }
-    }
-    public var `clear_cache_on_stop`: Bool {
-        get { `is_clear_cache_on_stop_enabled`() }
-        set { `set_clear_cache_on_stop_enabled`(newValue) }
     }
 }
 extension AnimationTree {
@@ -3770,5 +2172,2939 @@ extension AudioStreamWAV {
     public var `tags`: GodotDictionary {
         get { `get_tags`() }
         set { `set_tags`(newValue) }
+    }
+}
+extension BackBufferCopy {
+    public var `copy_mode`: BackBufferCopy.CopyMode {
+        get { `get_copy_mode`() }
+        set { `set_copy_mode`(newValue) }
+    }
+    public var `rect`: Rect2 {
+        get { `get_rect`() }
+        set { `set_rect`(newValue) }
+    }
+}
+extension BaseButton {
+    public var `disabled`: Bool {
+        get { `is_disabled`() }
+        set { `set_disabled`(newValue) }
+    }
+    public var `toggle_mode`: Bool {
+        get { `is_toggle_mode`() }
+        set { `set_toggle_mode`(newValue) }
+    }
+    public var `button_pressed`: Bool {
+        get { `is_pressed`() }
+        set { `set_pressed`(newValue) }
+    }
+    public var `action_mode`: BaseButton.ActionMode {
+        get { `get_action_mode`() }
+        set { `set_action_mode`(newValue) }
+    }
+    public var `button_mask`: Godot.MouseButtonMask {
+        get { `get_button_mask`() }
+        set { `set_button_mask`(newValue) }
+    }
+    public var `keep_pressed_outside`: Bool {
+        get { `is_keep_pressed_outside`() }
+        set { `set_keep_pressed_outside`(newValue) }
+    }
+    public var `button_group`: ButtonGroup? {
+        get { `get_button_group`() }
+        set { `set_button_group`(newValue) }
+    }
+    public var `shortcut`: Shortcut? {
+        get { `get_shortcut`() }
+        set { `set_shortcut`(newValue) }
+    }
+    public var `shortcut_feedback`: Bool {
+        get { `is_shortcut_feedback`() }
+        set { `set_shortcut_feedback`(newValue) }
+    }
+    public var `shortcut_in_tooltip`: Bool {
+        get { `is_shortcut_in_tooltip_enabled`() }
+        set { `set_shortcut_in_tooltip`(newValue) }
+    }
+}
+extension BaseMaterial3D {
+    public var `transparency`: BaseMaterial3D.Transparency {
+        get { `get_transparency`() }
+        set { `set_transparency`(newValue) }
+    }
+    public var `alpha_scissor_threshold`: Double {
+        get { `get_alpha_scissor_threshold`() }
+        set { `set_alpha_scissor_threshold`(newValue) }
+    }
+    public var `alpha_hash_scale`: Double {
+        get { `get_alpha_hash_scale`() }
+        set { `set_alpha_hash_scale`(newValue) }
+    }
+    public var `alpha_antialiasing_mode`: BaseMaterial3D.AlphaAntiAliasing {
+        get { `get_alpha_antialiasing`() }
+        set { `set_alpha_antialiasing`(newValue) }
+    }
+    public var `alpha_antialiasing_edge`: Double {
+        get { `get_alpha_antialiasing_edge`() }
+        set { `set_alpha_antialiasing_edge`(newValue) }
+    }
+    public var `blend_mode`: BaseMaterial3D.BlendMode {
+        get { `get_blend_mode`() }
+        set { `set_blend_mode`(newValue) }
+    }
+    public var `cull_mode`: BaseMaterial3D.CullMode {
+        get { `get_cull_mode`() }
+        set { `set_cull_mode`(newValue) }
+    }
+    public var `depth_draw_mode`: BaseMaterial3D.DepthDrawMode {
+        get { `get_depth_draw_mode`() }
+        set { `set_depth_draw_mode`(newValue) }
+    }
+    public var `no_depth_test`: Bool {
+        get { `get_flag`(0) }
+        set { `set_flag`(0, newValue) }
+    }
+    public var `depth_test`: BaseMaterial3D.DepthTest {
+        get { `get_depth_test`() }
+        set { `set_depth_test`(newValue) }
+    }
+    public var `shading_mode`: BaseMaterial3D.ShadingMode {
+        get { `get_shading_mode`() }
+        set { `set_shading_mode`(newValue) }
+    }
+    public var `diffuse_mode`: BaseMaterial3D.DiffuseMode {
+        get { `get_diffuse_mode`() }
+        set { `set_diffuse_mode`(newValue) }
+    }
+    public var `specular_mode`: BaseMaterial3D.SpecularMode {
+        get { `get_specular_mode`() }
+        set { `set_specular_mode`(newValue) }
+    }
+    public var `disable_ambient_light`: Bool {
+        get { `get_flag`(14) }
+        set { `set_flag`(14, newValue) }
+    }
+    public var `disable_fog`: Bool {
+        get { `get_flag`(21) }
+        set { `set_flag`(21, newValue) }
+    }
+    public var `disable_specular_occlusion`: Bool {
+        get { `get_flag`(22) }
+        set { `set_flag`(22, newValue) }
+    }
+    public var `vertex_color_use_as_albedo`: Bool {
+        get { `get_flag`(1) }
+        set { `set_flag`(1, newValue) }
+    }
+    public var `vertex_color_is_srgb`: Bool {
+        get { `get_flag`(2) }
+        set { `set_flag`(2, newValue) }
+    }
+    public var `albedo_color`: Color {
+        get { `get_albedo`() }
+        set { `set_albedo`(newValue) }
+    }
+    public var `albedo_texture`: Texture2D? {
+        get { `get_texture`(0) }
+        set { `set_texture`(0, newValue) }
+    }
+    public var `albedo_texture_force_srgb`: Bool {
+        get { `get_flag`(12) }
+        set { `set_flag`(12, newValue) }
+    }
+    public var `albedo_texture_msdf`: Bool {
+        get { `get_flag`(20) }
+        set { `set_flag`(20, newValue) }
+    }
+    public var `orm_texture`: Texture2D? {
+        get { `get_texture`(17) }
+        set { `set_texture`(17, newValue) }
+    }
+    public var `metallic`: Double {
+        get { `get_metallic`() }
+        set { `set_metallic`(newValue) }
+    }
+    public var `metallic_specular`: Double {
+        get { `get_specular`() }
+        set { `set_specular`(newValue) }
+    }
+    public var `metallic_texture`: Texture2D? {
+        get { `get_texture`(1) }
+        set { `set_texture`(1, newValue) }
+    }
+    public var `metallic_texture_channel`: BaseMaterial3D.TextureChannel {
+        get { `get_metallic_texture_channel`() }
+        set { `set_metallic_texture_channel`(newValue) }
+    }
+    public var `roughness`: Double {
+        get { `get_roughness`() }
+        set { `set_roughness`(newValue) }
+    }
+    public var `roughness_texture`: Texture2D? {
+        get { `get_texture`(2) }
+        set { `set_texture`(2, newValue) }
+    }
+    public var `roughness_texture_channel`: BaseMaterial3D.TextureChannel {
+        get { `get_roughness_texture_channel`() }
+        set { `set_roughness_texture_channel`(newValue) }
+    }
+    public var `emission_enabled`: Bool {
+        get { `get_feature`(0) }
+        set { `set_feature`(0, newValue) }
+    }
+    public var `emission`: Color {
+        get { `get_emission`() }
+        set { `set_emission`(newValue) }
+    }
+    public var `emission_energy_multiplier`: Double {
+        get { `get_emission_energy_multiplier`() }
+        set { `set_emission_energy_multiplier`(newValue) }
+    }
+    public var `emission_intensity`: Double {
+        get { `get_emission_intensity`() }
+        set { `set_emission_intensity`(newValue) }
+    }
+    public var `emission_operator`: BaseMaterial3D.EmissionOperator {
+        get { `get_emission_operator`() }
+        set { `set_emission_operator`(newValue) }
+    }
+    public var `emission_on_uv2`: Bool {
+        get { `get_flag`(11) }
+        set { `set_flag`(11, newValue) }
+    }
+    public var `emission_texture`: Texture2D? {
+        get { `get_texture`(3) }
+        set { `set_texture`(3, newValue) }
+    }
+    public var `normal_enabled`: Bool {
+        get { `get_feature`(1) }
+        set { `set_feature`(1, newValue) }
+    }
+    public var `normal_scale`: Double {
+        get { `get_normal_scale`() }
+        set { `set_normal_scale`(newValue) }
+    }
+    public var `normal_texture`: Texture2D? {
+        get { `get_texture`(4) }
+        set { `set_texture`(4, newValue) }
+    }
+    public var `bent_normal_enabled`: Bool {
+        get { `get_feature`(12) }
+        set { `set_feature`(12, newValue) }
+    }
+    public var `bent_normal_texture`: Texture2D? {
+        get { `get_texture`(18) }
+        set { `set_texture`(18, newValue) }
+    }
+    public var `rim_enabled`: Bool {
+        get { `get_feature`(2) }
+        set { `set_feature`(2, newValue) }
+    }
+    public var `rim`: Double {
+        get { `get_rim`() }
+        set { `set_rim`(newValue) }
+    }
+    public var `rim_tint`: Double {
+        get { `get_rim_tint`() }
+        set { `set_rim_tint`(newValue) }
+    }
+    public var `rim_texture`: Texture2D? {
+        get { `get_texture`(5) }
+        set { `set_texture`(5, newValue) }
+    }
+    public var `clearcoat_enabled`: Bool {
+        get { `get_feature`(3) }
+        set { `set_feature`(3, newValue) }
+    }
+    public var `clearcoat`: Double {
+        get { `get_clearcoat`() }
+        set { `set_clearcoat`(newValue) }
+    }
+    public var `clearcoat_roughness`: Double {
+        get { `get_clearcoat_roughness`() }
+        set { `set_clearcoat_roughness`(newValue) }
+    }
+    public var `clearcoat_texture`: Texture2D? {
+        get { `get_texture`(6) }
+        set { `set_texture`(6, newValue) }
+    }
+    public var `anisotropy_enabled`: Bool {
+        get { `get_feature`(4) }
+        set { `set_feature`(4, newValue) }
+    }
+    public var `anisotropy`: Double {
+        get { `get_anisotropy`() }
+        set { `set_anisotropy`(newValue) }
+    }
+    public var `anisotropy_flowmap`: Texture2D? {
+        get { `get_texture`(7) }
+        set { `set_texture`(7, newValue) }
+    }
+    public var `ao_enabled`: Bool {
+        get { `get_feature`(5) }
+        set { `set_feature`(5, newValue) }
+    }
+    public var `ao_light_affect`: Double {
+        get { `get_ao_light_affect`() }
+        set { `set_ao_light_affect`(newValue) }
+    }
+    public var `ao_texture`: Texture2D? {
+        get { `get_texture`(8) }
+        set { `set_texture`(8, newValue) }
+    }
+    public var `ao_on_uv2`: Bool {
+        get { `get_flag`(10) }
+        set { `set_flag`(10, newValue) }
+    }
+    public var `ao_texture_channel`: BaseMaterial3D.TextureChannel {
+        get { `get_ao_texture_channel`() }
+        set { `set_ao_texture_channel`(newValue) }
+    }
+    public var `heightmap_enabled`: Bool {
+        get { `get_feature`(6) }
+        set { `set_feature`(6, newValue) }
+    }
+    public var `heightmap_scale`: Double {
+        get { `get_heightmap_scale`() }
+        set { `set_heightmap_scale`(newValue) }
+    }
+    public var `heightmap_deep_parallax`: Bool {
+        get { `is_heightmap_deep_parallax_enabled`() }
+        set { `set_heightmap_deep_parallax`(newValue) }
+    }
+    public var `heightmap_min_layers`: Int64 {
+        get { `get_heightmap_deep_parallax_min_layers`() }
+        set { `set_heightmap_deep_parallax_min_layers`(newValue) }
+    }
+    public var `heightmap_max_layers`: Int64 {
+        get { `get_heightmap_deep_parallax_max_layers`() }
+        set { `set_heightmap_deep_parallax_max_layers`(newValue) }
+    }
+    public var `heightmap_flip_tangent`: Bool {
+        get { `get_heightmap_deep_parallax_flip_tangent`() }
+        set { `set_heightmap_deep_parallax_flip_tangent`(newValue) }
+    }
+    public var `heightmap_flip_binormal`: Bool {
+        get { `get_heightmap_deep_parallax_flip_binormal`() }
+        set { `set_heightmap_deep_parallax_flip_binormal`(newValue) }
+    }
+    public var `heightmap_texture`: Texture2D? {
+        get { `get_texture`(9) }
+        set { `set_texture`(9, newValue) }
+    }
+    public var `heightmap_flip_texture`: Bool {
+        get { `get_flag`(17) }
+        set { `set_flag`(17, newValue) }
+    }
+    public var `subsurf_scatter_enabled`: Bool {
+        get { `get_feature`(7) }
+        set { `set_feature`(7, newValue) }
+    }
+    public var `subsurf_scatter_strength`: Double {
+        get { `get_subsurface_scattering_strength`() }
+        set { `set_subsurface_scattering_strength`(newValue) }
+    }
+    public var `subsurf_scatter_skin_mode`: Bool {
+        get { `get_flag`(18) }
+        set { `set_flag`(18, newValue) }
+    }
+    public var `subsurf_scatter_texture`: Texture2D? {
+        get { `get_texture`(10) }
+        set { `set_texture`(10, newValue) }
+    }
+    public var `subsurf_scatter_transmittance_enabled`: Bool {
+        get { `get_feature`(8) }
+        set { `set_feature`(8, newValue) }
+    }
+    public var `subsurf_scatter_transmittance_color`: Color {
+        get { `get_transmittance_color`() }
+        set { `set_transmittance_color`(newValue) }
+    }
+    public var `subsurf_scatter_transmittance_texture`: Texture2D? {
+        get { `get_texture`(11) }
+        set { `set_texture`(11, newValue) }
+    }
+    public var `subsurf_scatter_transmittance_depth`: Double {
+        get { `get_transmittance_depth`() }
+        set { `set_transmittance_depth`(newValue) }
+    }
+    public var `subsurf_scatter_transmittance_boost`: Double {
+        get { `get_transmittance_boost`() }
+        set { `set_transmittance_boost`(newValue) }
+    }
+    public var `backlight_enabled`: Bool {
+        get { `get_feature`(9) }
+        set { `set_feature`(9, newValue) }
+    }
+    public var `backlight`: Color {
+        get { `get_backlight`() }
+        set { `set_backlight`(newValue) }
+    }
+    public var `backlight_texture`: Texture2D? {
+        get { `get_texture`(12) }
+        set { `set_texture`(12, newValue) }
+    }
+    public var `refraction_enabled`: Bool {
+        get { `get_feature`(10) }
+        set { `set_feature`(10, newValue) }
+    }
+    public var `refraction_scale`: Double {
+        get { `get_refraction`() }
+        set { `set_refraction`(newValue) }
+    }
+    public var `refraction_texture`: Texture2D? {
+        get { `get_texture`(13) }
+        set { `set_texture`(13, newValue) }
+    }
+    public var `refraction_texture_channel`: BaseMaterial3D.TextureChannel {
+        get { `get_refraction_texture_channel`() }
+        set { `set_refraction_texture_channel`(newValue) }
+    }
+    public var `detail_enabled`: Bool {
+        get { `get_feature`(11) }
+        set { `set_feature`(11, newValue) }
+    }
+    public var `detail_mask`: Texture2D? {
+        get { `get_texture`(14) }
+        set { `set_texture`(14, newValue) }
+    }
+    public var `detail_blend_mode`: BaseMaterial3D.BlendMode {
+        get { `get_detail_blend_mode`() }
+        set { `set_detail_blend_mode`(newValue) }
+    }
+    public var `detail_uv_layer`: BaseMaterial3D.DetailUV {
+        get { `get_detail_uv`() }
+        set { `set_detail_uv`(newValue) }
+    }
+    public var `detail_albedo`: Texture2D? {
+        get { `get_texture`(15) }
+        set { `set_texture`(15, newValue) }
+    }
+    public var `detail_normal`: Texture2D? {
+        get { `get_texture`(16) }
+        set { `set_texture`(16, newValue) }
+    }
+    public var `uv1_scale`: Vector3 {
+        get { `get_uv1_scale`() }
+        set { `set_uv1_scale`(newValue) }
+    }
+    public var `uv1_offset`: Vector3 {
+        get { `get_uv1_offset`() }
+        set { `set_uv1_offset`(newValue) }
+    }
+    public var `uv1_triplanar`: Bool {
+        get { `get_flag`(6) }
+        set { `set_flag`(6, newValue) }
+    }
+    public var `uv1_triplanar_sharpness`: Double {
+        get { `get_uv1_triplanar_blend_sharpness`() }
+        set { `set_uv1_triplanar_blend_sharpness`(newValue) }
+    }
+    public var `uv1_world_triplanar`: Bool {
+        get { `get_flag`(8) }
+        set { `set_flag`(8, newValue) }
+    }
+    public var `uv2_scale`: Vector3 {
+        get { `get_uv2_scale`() }
+        set { `set_uv2_scale`(newValue) }
+    }
+    public var `uv2_offset`: Vector3 {
+        get { `get_uv2_offset`() }
+        set { `set_uv2_offset`(newValue) }
+    }
+    public var `uv2_triplanar`: Bool {
+        get { `get_flag`(7) }
+        set { `set_flag`(7, newValue) }
+    }
+    public var `uv2_triplanar_sharpness`: Double {
+        get { `get_uv2_triplanar_blend_sharpness`() }
+        set { `set_uv2_triplanar_blend_sharpness`(newValue) }
+    }
+    public var `uv2_world_triplanar`: Bool {
+        get { `get_flag`(9) }
+        set { `set_flag`(9, newValue) }
+    }
+    public var `texture_filter`: BaseMaterial3D.TextureFilter {
+        get { `get_texture_filter`() }
+        set { `set_texture_filter`(newValue) }
+    }
+    public var `texture_repeat`: Bool {
+        get { `get_flag`(16) }
+        set { `set_flag`(16, newValue) }
+    }
+    public var `disable_receive_shadows`: Bool {
+        get { `get_flag`(13) }
+        set { `set_flag`(13, newValue) }
+    }
+    public var `shadow_to_opacity`: Bool {
+        get { `get_flag`(15) }
+        set { `set_flag`(15, newValue) }
+    }
+    public var `billboard_mode`: BaseMaterial3D.BillboardMode {
+        get { `get_billboard_mode`() }
+        set { `set_billboard_mode`(newValue) }
+    }
+    public var `billboard_keep_scale`: Bool {
+        get { `get_flag`(5) }
+        set { `set_flag`(5, newValue) }
+    }
+    public var `particles_anim_h_frames`: Int64 {
+        get { `get_particles_anim_h_frames`() }
+        set { `set_particles_anim_h_frames`(newValue) }
+    }
+    public var `particles_anim_v_frames`: Int64 {
+        get { `get_particles_anim_v_frames`() }
+        set { `set_particles_anim_v_frames`(newValue) }
+    }
+    public var `particles_anim_loop`: Bool {
+        get { `get_particles_anim_loop`() }
+        set { `set_particles_anim_loop`(newValue) }
+    }
+    public var `grow`: Bool {
+        get { `is_grow_enabled`() }
+        set { `set_grow_enabled`(newValue) }
+    }
+    public var `grow_amount`: Double {
+        get { `get_grow`() }
+        set { `set_grow`(newValue) }
+    }
+    public var `fixed_size`: Bool {
+        get { `get_flag`(4) }
+        set { `set_flag`(4, newValue) }
+    }
+    public var `use_point_size`: Bool {
+        get { `get_flag`(3) }
+        set { `set_flag`(3, newValue) }
+    }
+    public var `point_size`: Double {
+        get { `get_point_size`() }
+        set { `set_point_size`(newValue) }
+    }
+    public var `use_particle_trails`: Bool {
+        get { `get_flag`(19) }
+        set { `set_flag`(19, newValue) }
+    }
+    public var `use_z_clip_scale`: Bool {
+        get { `get_flag`(23) }
+        set { `set_flag`(23, newValue) }
+    }
+    public var `z_clip_scale`: Double {
+        get { `get_z_clip_scale`() }
+        set { `set_z_clip_scale`(newValue) }
+    }
+    public var `use_fov_override`: Bool {
+        get { `get_flag`(24) }
+        set { `set_flag`(24, newValue) }
+    }
+    public var `fov_override`: Double {
+        get { `get_fov_override`() }
+        set { `set_fov_override`(newValue) }
+    }
+    public var `proximity_fade_enabled`: Bool {
+        get { `is_proximity_fade_enabled`() }
+        set { `set_proximity_fade_enabled`(newValue) }
+    }
+    public var `proximity_fade_distance`: Double {
+        get { `get_proximity_fade_distance`() }
+        set { `set_proximity_fade_distance`(newValue) }
+    }
+    public var `msdf_pixel_range`: Double {
+        get { `get_msdf_pixel_range`() }
+        set { `set_msdf_pixel_range`(newValue) }
+    }
+    public var `msdf_outline_size`: Double {
+        get { `get_msdf_outline_size`() }
+        set { `set_msdf_outline_size`(newValue) }
+    }
+    public var `distance_fade_mode`: BaseMaterial3D.DistanceFadeMode {
+        get { `get_distance_fade`() }
+        set { `set_distance_fade`(newValue) }
+    }
+    public var `distance_fade_min_distance`: Double {
+        get { `get_distance_fade_min_distance`() }
+        set { `set_distance_fade_min_distance`(newValue) }
+    }
+    public var `distance_fade_max_distance`: Double {
+        get { `get_distance_fade_max_distance`() }
+        set { `set_distance_fade_max_distance`(newValue) }
+    }
+    public var `stencil_mode`: BaseMaterial3D.StencilMode {
+        get { `get_stencil_mode`() }
+        set { `set_stencil_mode`(newValue) }
+    }
+    public var `stencil_flags`: Int64 {
+        get { `get_stencil_flags`() }
+        set { `set_stencil_flags`(newValue) }
+    }
+    public var `stencil_compare`: BaseMaterial3D.StencilCompare {
+        get { `get_stencil_compare`() }
+        set { `set_stencil_compare`(newValue) }
+    }
+    public var `stencil_reference`: Int64 {
+        get { `get_stencil_reference`() }
+        set { `set_stencil_reference`(newValue) }
+    }
+    public var `stencil_color`: Color {
+        get { `get_stencil_effect_color`() }
+        set { `set_stencil_effect_color`(newValue) }
+    }
+    public var `stencil_outline_thickness`: Double {
+        get { `get_stencil_effect_outline_thickness`() }
+        set { `set_stencil_effect_outline_thickness`(newValue) }
+    }
+}
+extension BlitMaterial {
+    public var `blend_mode`: BlitMaterial.BlendMode {
+        get { `get_blend_mode`() }
+        set { `set_blend_mode`(newValue) }
+    }
+}
+extension Bone2D {
+    public var `rest`: Transform2D {
+        get { `get_rest`() }
+        set { `set_rest`(newValue) }
+    }
+}
+extension BoneAttachment3D {
+    public var `bone_idx`: Int64 {
+        get { `get_bone_idx`() }
+        set { `set_bone_idx`(newValue) }
+    }
+    public var `override_pose`: Bool {
+        get { `get_override_pose`() }
+        set { `set_override_pose`(newValue) }
+    }
+    public var `use_external_skeleton`: Bool {
+        get { `get_use_external_skeleton`() }
+        set { `set_use_external_skeleton`(newValue) }
+    }
+    public var `external_skeleton`: GodotNodePath {
+        get { `get_external_skeleton`() }
+        set { `set_external_skeleton`(newValue) }
+    }
+}
+extension BoneMap {
+    public var `profile`: SkeletonProfile? {
+        get { `get_profile`() }
+        set { `set_profile`(newValue) }
+    }
+}
+extension BoneTwistDisperser3D {
+    public var `mutable_bone_axes`: Bool {
+        get { `are_bone_axes_mutable`() }
+        set { `set_mutable_bone_axes`(newValue) }
+    }
+    public var `setting_count`: Int64 {
+        get { `get_setting_count`() }
+        set { `set_setting_count`(newValue) }
+    }
+}
+extension BoxContainer {
+    public var `alignment`: BoxContainer.AlignmentMode {
+        get { `get_alignment`() }
+        set { `set_alignment`(newValue) }
+    }
+    public var `vertical`: Bool {
+        get { `is_vertical`() }
+        set { `set_vertical`(newValue) }
+    }
+}
+extension BoxMesh {
+    public var `size`: Vector3 {
+        get { `get_size`() }
+        set { `set_size`(newValue) }
+    }
+    public var `subdivide_width`: Int64 {
+        get { `get_subdivide_width`() }
+        set { `set_subdivide_width`(newValue) }
+    }
+    public var `subdivide_height`: Int64 {
+        get { `get_subdivide_height`() }
+        set { `set_subdivide_height`(newValue) }
+    }
+    public var `subdivide_depth`: Int64 {
+        get { `get_subdivide_depth`() }
+        set { `set_subdivide_depth`(newValue) }
+    }
+}
+extension BoxOccluder3D {
+    public var `size`: Vector3 {
+        get { `get_size`() }
+        set { `set_size`(newValue) }
+    }
+}
+extension BoxShape3D {
+    public var `size`: Vector3 {
+        get { `get_size`() }
+        set { `set_size`(newValue) }
+    }
+}
+extension Button {
+    public var `text`: GodotString {
+        get { `get_text`() }
+        set { `set_text`(newValue) }
+    }
+    public var `icon`: Texture2D? {
+        get { `get_button_icon`() }
+        set { `set_button_icon`(newValue) }
+    }
+    public var `flat`: Bool {
+        get { `is_flat`() }
+        set { `set_flat`(newValue) }
+    }
+    public var `alignment`: Godot.HorizontalAlignment {
+        get { `get_text_alignment`() }
+        set { `set_text_alignment`(newValue) }
+    }
+    public var `text_overrun_behavior`: TextServer.OverrunBehavior {
+        get { `get_text_overrun_behavior`() }
+        set { `set_text_overrun_behavior`(newValue) }
+    }
+    public var `autowrap_mode`: TextServer.AutowrapMode {
+        get { `get_autowrap_mode`() }
+        set { `set_autowrap_mode`(newValue) }
+    }
+    public var `autowrap_trim_flags`: TextServer.LineBreakFlag {
+        get { `get_autowrap_trim_flags`() }
+        set { `set_autowrap_trim_flags`(newValue) }
+    }
+    public var `clip_text`: Bool {
+        get { `get_clip_text`() }
+        set { `set_clip_text`(newValue) }
+    }
+    public var `icon_alignment`: Godot.HorizontalAlignment {
+        get { `get_icon_alignment`() }
+        set { `set_icon_alignment`(newValue) }
+    }
+    public var `vertical_icon_alignment`: Godot.VerticalAlignment {
+        get { `get_vertical_icon_alignment`() }
+        set { `set_vertical_icon_alignment`(newValue) }
+    }
+    public var `expand_icon`: Bool {
+        get { `is_expand_icon`() }
+        set { `set_expand_icon`(newValue) }
+    }
+    public var `text_direction`: Control.TextDirection {
+        get { `get_text_direction`() }
+        set { `set_text_direction`(newValue) }
+    }
+    public var `language`: GodotString {
+        get { `get_language`() }
+        set { `set_language`(newValue) }
+    }
+}
+extension ButtonGroup {
+    public var `allow_unpress`: Bool {
+        get { `is_allow_unpress`() }
+        set { `set_allow_unpress`(newValue) }
+    }
+}
+extension CPUParticles2D {
+    public var `emitting`: Bool {
+        get { `is_emitting`() }
+        set { `set_emitting`(newValue) }
+    }
+    public var `amount`: Int64 {
+        get { `get_amount`() }
+        set { `set_amount`(newValue) }
+    }
+    public var `texture`: Texture2D? {
+        get { `get_texture`() }
+        set { `set_texture`(newValue) }
+    }
+    public var `lifetime`: Double {
+        get { `get_lifetime`() }
+        set { `set_lifetime`(newValue) }
+    }
+    public var `one_shot`: Bool {
+        get { `get_one_shot`() }
+        set { `set_one_shot`(newValue) }
+    }
+    public var `preprocess`: Double {
+        get { `get_pre_process_time`() }
+        set { `set_pre_process_time`(newValue) }
+    }
+    public var `speed_scale`: Double {
+        get { `get_speed_scale`() }
+        set { `set_speed_scale`(newValue) }
+    }
+    public var `explosiveness`: Double {
+        get { `get_explosiveness_ratio`() }
+        set { `set_explosiveness_ratio`(newValue) }
+    }
+    public var `randomness`: Double {
+        get { `get_randomness_ratio`() }
+        set { `set_randomness_ratio`(newValue) }
+    }
+    public var `use_fixed_seed`: Bool {
+        get { `get_use_fixed_seed`() }
+        set { `set_use_fixed_seed`(newValue) }
+    }
+    public var `seed`: Int64 {
+        get { `get_seed`() }
+        set { `set_seed`(newValue) }
+    }
+    public var `lifetime_randomness`: Double {
+        get { `get_lifetime_randomness`() }
+        set { `set_lifetime_randomness`(newValue) }
+    }
+    public var `fixed_fps`: Int64 {
+        get { `get_fixed_fps`() }
+        set { `set_fixed_fps`(newValue) }
+    }
+    public var `fract_delta`: Bool {
+        get { `get_fractional_delta`() }
+        set { `set_fractional_delta`(newValue) }
+    }
+    public var `local_coords`: Bool {
+        get { `get_use_local_coordinates`() }
+        set { `set_use_local_coordinates`(newValue) }
+    }
+    public var `draw_order`: CPUParticles2D.DrawOrder {
+        get { `get_draw_order`() }
+        set { `set_draw_order`(newValue) }
+    }
+    public var `emission_shape`: CPUParticles2D.EmissionShape {
+        get { `get_emission_shape`() }
+        set { `set_emission_shape`(newValue) }
+    }
+    public var `emission_sphere_radius`: Double {
+        get { `get_emission_sphere_radius`() }
+        set { `set_emission_sphere_radius`(newValue) }
+    }
+    public var `emission_rect_extents`: Vector2 {
+        get { `get_emission_rect_extents`() }
+        set { `set_emission_rect_extents`(newValue) }
+    }
+    public var `emission_points`: GodotPackedVector2Array {
+        get { `get_emission_points`() }
+        set { `set_emission_points`(newValue) }
+    }
+    public var `emission_normals`: GodotPackedVector2Array {
+        get { `get_emission_normals`() }
+        set { `set_emission_normals`(newValue) }
+    }
+    public var `emission_colors`: GodotPackedColorArray {
+        get { `get_emission_colors`() }
+        set { `set_emission_colors`(newValue) }
+    }
+    public var `emission_ring_inner_radius`: Double {
+        get { `get_emission_ring_inner_radius`() }
+        set { `set_emission_ring_inner_radius`(newValue) }
+    }
+    public var `emission_ring_radius`: Double {
+        get { `get_emission_ring_radius`() }
+        set { `set_emission_ring_radius`(newValue) }
+    }
+    public var `particle_flag_align_y`: Bool {
+        get { `get_particle_flag`(0) }
+        set { `set_particle_flag`(0, newValue) }
+    }
+    public var `direction`: Vector2 {
+        get { `get_direction`() }
+        set { `set_direction`(newValue) }
+    }
+    public var `spread`: Double {
+        get { `get_spread`() }
+        set { `set_spread`(newValue) }
+    }
+    public var `gravity`: Vector2 {
+        get { `get_gravity`() }
+        set { `set_gravity`(newValue) }
+    }
+    public var `initial_velocity_min`: Double {
+        get { `get_param_min`(0) }
+        set { `set_param_min`(0, newValue) }
+    }
+    public var `initial_velocity_max`: Double {
+        get { `get_param_max`(0) }
+        set { `set_param_max`(0, newValue) }
+    }
+    public var `angular_velocity_min`: Double {
+        get { `get_param_min`(1) }
+        set { `set_param_min`(1, newValue) }
+    }
+    public var `angular_velocity_max`: Double {
+        get { `get_param_max`(1) }
+        set { `set_param_max`(1, newValue) }
+    }
+    public var `angular_velocity_curve`: Curve? {
+        get { `get_param_curve`(1) }
+        set { `set_param_curve`(1, newValue) }
+    }
+    public var `orbit_velocity_min`: Double {
+        get { `get_param_min`(2) }
+        set { `set_param_min`(2, newValue) }
+    }
+    public var `orbit_velocity_max`: Double {
+        get { `get_param_max`(2) }
+        set { `set_param_max`(2, newValue) }
+    }
+    public var `orbit_velocity_curve`: Curve? {
+        get { `get_param_curve`(2) }
+        set { `set_param_curve`(2, newValue) }
+    }
+    public var `linear_accel_min`: Double {
+        get { `get_param_min`(3) }
+        set { `set_param_min`(3, newValue) }
+    }
+    public var `linear_accel_max`: Double {
+        get { `get_param_max`(3) }
+        set { `set_param_max`(3, newValue) }
+    }
+    public var `linear_accel_curve`: Curve? {
+        get { `get_param_curve`(3) }
+        set { `set_param_curve`(3, newValue) }
+    }
+    public var `radial_accel_min`: Double {
+        get { `get_param_min`(4) }
+        set { `set_param_min`(4, newValue) }
+    }
+    public var `radial_accel_max`: Double {
+        get { `get_param_max`(4) }
+        set { `set_param_max`(4, newValue) }
+    }
+    public var `radial_accel_curve`: Curve? {
+        get { `get_param_curve`(4) }
+        set { `set_param_curve`(4, newValue) }
+    }
+    public var `tangential_accel_min`: Double {
+        get { `get_param_min`(5) }
+        set { `set_param_min`(5, newValue) }
+    }
+    public var `tangential_accel_max`: Double {
+        get { `get_param_max`(5) }
+        set { `set_param_max`(5, newValue) }
+    }
+    public var `tangential_accel_curve`: Curve? {
+        get { `get_param_curve`(5) }
+        set { `set_param_curve`(5, newValue) }
+    }
+    public var `damping_min`: Double {
+        get { `get_param_min`(6) }
+        set { `set_param_min`(6, newValue) }
+    }
+    public var `damping_max`: Double {
+        get { `get_param_max`(6) }
+        set { `set_param_max`(6, newValue) }
+    }
+    public var `damping_curve`: Curve? {
+        get { `get_param_curve`(6) }
+        set { `set_param_curve`(6, newValue) }
+    }
+    public var `angle_min`: Double {
+        get { `get_param_min`(7) }
+        set { `set_param_min`(7, newValue) }
+    }
+    public var `angle_max`: Double {
+        get { `get_param_max`(7) }
+        set { `set_param_max`(7, newValue) }
+    }
+    public var `angle_curve`: Curve? {
+        get { `get_param_curve`(7) }
+        set { `set_param_curve`(7, newValue) }
+    }
+    public var `scale_amount_min`: Double {
+        get { `get_param_min`(8) }
+        set { `set_param_min`(8, newValue) }
+    }
+    public var `scale_amount_max`: Double {
+        get { `get_param_max`(8) }
+        set { `set_param_max`(8, newValue) }
+    }
+    public var `scale_amount_curve`: Curve? {
+        get { `get_param_curve`(8) }
+        set { `set_param_curve`(8, newValue) }
+    }
+    public var `split_scale`: Bool {
+        get { `get_split_scale`() }
+        set { `set_split_scale`(newValue) }
+    }
+    public var `scale_curve_x`: Curve? {
+        get { `get_scale_curve_x`() }
+        set { `set_scale_curve_x`(newValue) }
+    }
+    public var `scale_curve_y`: Curve? {
+        get { `get_scale_curve_y`() }
+        set { `set_scale_curve_y`(newValue) }
+    }
+    public var `color`: Color {
+        get { `get_color`() }
+        set { `set_color`(newValue) }
+    }
+    public var `color_ramp`: Gradient? {
+        get { `get_color_ramp`() }
+        set { `set_color_ramp`(newValue) }
+    }
+    public var `color_initial_ramp`: Gradient? {
+        get { `get_color_initial_ramp`() }
+        set { `set_color_initial_ramp`(newValue) }
+    }
+    public var `hue_variation_min`: Double {
+        get { `get_param_min`(9) }
+        set { `set_param_min`(9, newValue) }
+    }
+    public var `hue_variation_max`: Double {
+        get { `get_param_max`(9) }
+        set { `set_param_max`(9, newValue) }
+    }
+    public var `hue_variation_curve`: Curve? {
+        get { `get_param_curve`(9) }
+        set { `set_param_curve`(9, newValue) }
+    }
+    public var `anim_speed_min`: Double {
+        get { `get_param_min`(10) }
+        set { `set_param_min`(10, newValue) }
+    }
+    public var `anim_speed_max`: Double {
+        get { `get_param_max`(10) }
+        set { `set_param_max`(10, newValue) }
+    }
+    public var `anim_speed_curve`: Curve? {
+        get { `get_param_curve`(10) }
+        set { `set_param_curve`(10, newValue) }
+    }
+    public var `anim_offset_min`: Double {
+        get { `get_param_min`(11) }
+        set { `set_param_min`(11, newValue) }
+    }
+    public var `anim_offset_max`: Double {
+        get { `get_param_max`(11) }
+        set { `set_param_max`(11, newValue) }
+    }
+    public var `anim_offset_curve`: Curve? {
+        get { `get_param_curve`(11) }
+        set { `set_param_curve`(11, newValue) }
+    }
+}
+extension CPUParticles3D {
+    public var `emitting`: Bool {
+        get { `is_emitting`() }
+        set { `set_emitting`(newValue) }
+    }
+    public var `amount`: Int64 {
+        get { `get_amount`() }
+        set { `set_amount`(newValue) }
+    }
+    public var `lifetime`: Double {
+        get { `get_lifetime`() }
+        set { `set_lifetime`(newValue) }
+    }
+    public var `one_shot`: Bool {
+        get { `get_one_shot`() }
+        set { `set_one_shot`(newValue) }
+    }
+    public var `preprocess`: Double {
+        get { `get_pre_process_time`() }
+        set { `set_pre_process_time`(newValue) }
+    }
+    public var `speed_scale`: Double {
+        get { `get_speed_scale`() }
+        set { `set_speed_scale`(newValue) }
+    }
+    public var `explosiveness`: Double {
+        get { `get_explosiveness_ratio`() }
+        set { `set_explosiveness_ratio`(newValue) }
+    }
+    public var `randomness`: Double {
+        get { `get_randomness_ratio`() }
+        set { `set_randomness_ratio`(newValue) }
+    }
+    public var `use_fixed_seed`: Bool {
+        get { `get_use_fixed_seed`() }
+        set { `set_use_fixed_seed`(newValue) }
+    }
+    public var `seed`: Int64 {
+        get { `get_seed`() }
+        set { `set_seed`(newValue) }
+    }
+    public var `lifetime_randomness`: Double {
+        get { `get_lifetime_randomness`() }
+        set { `set_lifetime_randomness`(newValue) }
+    }
+    public var `fixed_fps`: Int64 {
+        get { `get_fixed_fps`() }
+        set { `set_fixed_fps`(newValue) }
+    }
+    public var `fract_delta`: Bool {
+        get { `get_fractional_delta`() }
+        set { `set_fractional_delta`(newValue) }
+    }
+    public var `visibility_aabb`: AABB {
+        get { `get_visibility_aabb`() }
+        set { `set_visibility_aabb`(newValue) }
+    }
+    public var `local_coords`: Bool {
+        get { `get_use_local_coordinates`() }
+        set { `set_use_local_coordinates`(newValue) }
+    }
+    public var `draw_order`: CPUParticles3D.DrawOrder {
+        get { `get_draw_order`() }
+        set { `set_draw_order`(newValue) }
+    }
+    public var `mesh`: Mesh? {
+        get { `get_mesh`() }
+        set { `set_mesh`(newValue) }
+    }
+    public var `emission_shape`: CPUParticles3D.EmissionShape {
+        get { `get_emission_shape`() }
+        set { `set_emission_shape`(newValue) }
+    }
+    public var `emission_sphere_radius`: Double {
+        get { `get_emission_sphere_radius`() }
+        set { `set_emission_sphere_radius`(newValue) }
+    }
+    public var `emission_box_extents`: Vector3 {
+        get { `get_emission_box_extents`() }
+        set { `set_emission_box_extents`(newValue) }
+    }
+    public var `emission_points`: GodotPackedVector3Array {
+        get { `get_emission_points`() }
+        set { `set_emission_points`(newValue) }
+    }
+    public var `emission_normals`: GodotPackedVector3Array {
+        get { `get_emission_normals`() }
+        set { `set_emission_normals`(newValue) }
+    }
+    public var `emission_colors`: GodotPackedColorArray {
+        get { `get_emission_colors`() }
+        set { `set_emission_colors`(newValue) }
+    }
+    public var `emission_ring_axis`: Vector3 {
+        get { `get_emission_ring_axis`() }
+        set { `set_emission_ring_axis`(newValue) }
+    }
+    public var `emission_ring_height`: Double {
+        get { `get_emission_ring_height`() }
+        set { `set_emission_ring_height`(newValue) }
+    }
+    public var `emission_ring_radius`: Double {
+        get { `get_emission_ring_radius`() }
+        set { `set_emission_ring_radius`(newValue) }
+    }
+    public var `emission_ring_inner_radius`: Double {
+        get { `get_emission_ring_inner_radius`() }
+        set { `set_emission_ring_inner_radius`(newValue) }
+    }
+    public var `emission_ring_cone_angle`: Double {
+        get { `get_emission_ring_cone_angle`() }
+        set { `set_emission_ring_cone_angle`(newValue) }
+    }
+    public var `particle_flag_align_y`: Bool {
+        get { `get_particle_flag`(0) }
+        set { `set_particle_flag`(0, newValue) }
+    }
+    public var `particle_flag_rotate_y`: Bool {
+        get { `get_particle_flag`(1) }
+        set { `set_particle_flag`(1, newValue) }
+    }
+    public var `particle_flag_disable_z`: Bool {
+        get { `get_particle_flag`(2) }
+        set { `set_particle_flag`(2, newValue) }
+    }
+    public var `direction`: Vector3 {
+        get { `get_direction`() }
+        set { `set_direction`(newValue) }
+    }
+    public var `spread`: Double {
+        get { `get_spread`() }
+        set { `set_spread`(newValue) }
+    }
+    public var `flatness`: Double {
+        get { `get_flatness`() }
+        set { `set_flatness`(newValue) }
+    }
+    public var `gravity`: Vector3 {
+        get { `get_gravity`() }
+        set { `set_gravity`(newValue) }
+    }
+    public var `initial_velocity_min`: Double {
+        get { `get_param_min`(0) }
+        set { `set_param_min`(0, newValue) }
+    }
+    public var `initial_velocity_max`: Double {
+        get { `get_param_max`(0) }
+        set { `set_param_max`(0, newValue) }
+    }
+    public var `angular_velocity_min`: Double {
+        get { `get_param_min`(1) }
+        set { `set_param_min`(1, newValue) }
+    }
+    public var `angular_velocity_max`: Double {
+        get { `get_param_max`(1) }
+        set { `set_param_max`(1, newValue) }
+    }
+    public var `angular_velocity_curve`: Curve? {
+        get { `get_param_curve`(1) }
+        set { `set_param_curve`(1, newValue) }
+    }
+    public var `orbit_velocity_min`: Double {
+        get { `get_param_min`(2) }
+        set { `set_param_min`(2, newValue) }
+    }
+    public var `orbit_velocity_max`: Double {
+        get { `get_param_max`(2) }
+        set { `set_param_max`(2, newValue) }
+    }
+    public var `orbit_velocity_curve`: Curve? {
+        get { `get_param_curve`(2) }
+        set { `set_param_curve`(2, newValue) }
+    }
+    public var `linear_accel_min`: Double {
+        get { `get_param_min`(3) }
+        set { `set_param_min`(3, newValue) }
+    }
+    public var `linear_accel_max`: Double {
+        get { `get_param_max`(3) }
+        set { `set_param_max`(3, newValue) }
+    }
+    public var `linear_accel_curve`: Curve? {
+        get { `get_param_curve`(3) }
+        set { `set_param_curve`(3, newValue) }
+    }
+    public var `radial_accel_min`: Double {
+        get { `get_param_min`(4) }
+        set { `set_param_min`(4, newValue) }
+    }
+    public var `radial_accel_max`: Double {
+        get { `get_param_max`(4) }
+        set { `set_param_max`(4, newValue) }
+    }
+    public var `radial_accel_curve`: Curve? {
+        get { `get_param_curve`(4) }
+        set { `set_param_curve`(4, newValue) }
+    }
+    public var `tangential_accel_min`: Double {
+        get { `get_param_min`(5) }
+        set { `set_param_min`(5, newValue) }
+    }
+    public var `tangential_accel_max`: Double {
+        get { `get_param_max`(5) }
+        set { `set_param_max`(5, newValue) }
+    }
+    public var `tangential_accel_curve`: Curve? {
+        get { `get_param_curve`(5) }
+        set { `set_param_curve`(5, newValue) }
+    }
+    public var `damping_min`: Double {
+        get { `get_param_min`(6) }
+        set { `set_param_min`(6, newValue) }
+    }
+    public var `damping_max`: Double {
+        get { `get_param_max`(6) }
+        set { `set_param_max`(6, newValue) }
+    }
+    public var `damping_curve`: Curve? {
+        get { `get_param_curve`(6) }
+        set { `set_param_curve`(6, newValue) }
+    }
+    public var `angle_min`: Double {
+        get { `get_param_min`(7) }
+        set { `set_param_min`(7, newValue) }
+    }
+    public var `angle_max`: Double {
+        get { `get_param_max`(7) }
+        set { `set_param_max`(7, newValue) }
+    }
+    public var `angle_curve`: Curve? {
+        get { `get_param_curve`(7) }
+        set { `set_param_curve`(7, newValue) }
+    }
+    public var `scale_amount_min`: Double {
+        get { `get_param_min`(8) }
+        set { `set_param_min`(8, newValue) }
+    }
+    public var `scale_amount_max`: Double {
+        get { `get_param_max`(8) }
+        set { `set_param_max`(8, newValue) }
+    }
+    public var `scale_amount_curve`: Curve? {
+        get { `get_param_curve`(8) }
+        set { `set_param_curve`(8, newValue) }
+    }
+    public var `split_scale`: Bool {
+        get { `get_split_scale`() }
+        set { `set_split_scale`(newValue) }
+    }
+    public var `scale_curve_x`: Curve? {
+        get { `get_scale_curve_x`() }
+        set { `set_scale_curve_x`(newValue) }
+    }
+    public var `scale_curve_y`: Curve? {
+        get { `get_scale_curve_y`() }
+        set { `set_scale_curve_y`(newValue) }
+    }
+    public var `scale_curve_z`: Curve? {
+        get { `get_scale_curve_z`() }
+        set { `set_scale_curve_z`(newValue) }
+    }
+    public var `color`: Color {
+        get { `get_color`() }
+        set { `set_color`(newValue) }
+    }
+    public var `color_ramp`: Gradient? {
+        get { `get_color_ramp`() }
+        set { `set_color_ramp`(newValue) }
+    }
+    public var `color_initial_ramp`: Gradient? {
+        get { `get_color_initial_ramp`() }
+        set { `set_color_initial_ramp`(newValue) }
+    }
+    public var `hue_variation_min`: Double {
+        get { `get_param_min`(9) }
+        set { `set_param_min`(9, newValue) }
+    }
+    public var `hue_variation_max`: Double {
+        get { `get_param_max`(9) }
+        set { `set_param_max`(9, newValue) }
+    }
+    public var `hue_variation_curve`: Curve? {
+        get { `get_param_curve`(9) }
+        set { `set_param_curve`(9, newValue) }
+    }
+    public var `anim_speed_min`: Double {
+        get { `get_param_min`(10) }
+        set { `set_param_min`(10, newValue) }
+    }
+    public var `anim_speed_max`: Double {
+        get { `get_param_max`(10) }
+        set { `set_param_max`(10, newValue) }
+    }
+    public var `anim_speed_curve`: Curve? {
+        get { `get_param_curve`(10) }
+        set { `set_param_curve`(10, newValue) }
+    }
+    public var `anim_offset_min`: Double {
+        get { `get_param_min`(11) }
+        set { `set_param_min`(11, newValue) }
+    }
+    public var `anim_offset_max`: Double {
+        get { `get_param_max`(11) }
+        set { `set_param_max`(11, newValue) }
+    }
+    public var `anim_offset_curve`: Curve? {
+        get { `get_param_curve`(11) }
+        set { `set_param_curve`(11, newValue) }
+    }
+}
+extension CSGBox3D {
+    public var `size`: Vector3 {
+        get { `get_size`() }
+        set { `set_size`(newValue) }
+    }
+}
+extension CSGCylinder3D {
+    public var `radius`: Double {
+        get { `get_radius`() }
+        set { `set_radius`(newValue) }
+    }
+    public var `height`: Double {
+        get { `get_height`() }
+        set { `set_height`(newValue) }
+    }
+    public var `sides`: Int64 {
+        get { `get_sides`() }
+        set { `set_sides`(newValue) }
+    }
+    public var `cone`: Bool {
+        get { `is_cone`() }
+        set { `set_cone`(newValue) }
+    }
+    public var `smooth_faces`: Bool {
+        get { `get_smooth_faces`() }
+        set { `set_smooth_faces`(newValue) }
+    }
+}
+extension CSGPolygon3D {
+    public var `polygon`: GodotPackedVector2Array {
+        get { `get_polygon`() }
+        set { `set_polygon`(newValue) }
+    }
+    public var `mode`: CSGPolygon3D.Mode {
+        get { `get_mode`() }
+        set { `set_mode`(newValue) }
+    }
+    public var `depth`: Double {
+        get { `get_depth`() }
+        set { `set_depth`(newValue) }
+    }
+    public var `spin_degrees`: Double {
+        get { `get_spin_degrees`() }
+        set { `set_spin_degrees`(newValue) }
+    }
+    public var `spin_sides`: Int64 {
+        get { `get_spin_sides`() }
+        set { `set_spin_sides`(newValue) }
+    }
+    public var `path_node`: GodotNodePath {
+        get { `get_path_node`() }
+        set { `set_path_node`(newValue) }
+    }
+    public var `path_interval_type`: CSGPolygon3D.PathIntervalType {
+        get { `get_path_interval_type`() }
+        set { `set_path_interval_type`(newValue) }
+    }
+    public var `path_interval`: Double {
+        get { `get_path_interval`() }
+        set { `set_path_interval`(newValue) }
+    }
+    public var `path_simplify_angle`: Double {
+        get { `get_path_simplify_angle`() }
+        set { `set_path_simplify_angle`(newValue) }
+    }
+    public var `path_rotation`: CSGPolygon3D.PathRotation {
+        get { `get_path_rotation`() }
+        set { `set_path_rotation`(newValue) }
+    }
+    public var `path_rotation_accurate`: Bool {
+        get { `get_path_rotation_accurate`() }
+        set { `set_path_rotation_accurate`(newValue) }
+    }
+    public var `path_local`: Bool {
+        get { `is_path_local`() }
+        set { `set_path_local`(newValue) }
+    }
+    public var `path_continuous_u`: Bool {
+        get { `is_path_continuous_u`() }
+        set { `set_path_continuous_u`(newValue) }
+    }
+    public var `path_u_distance`: Double {
+        get { `get_path_u_distance`() }
+        set { `set_path_u_distance`(newValue) }
+    }
+    public var `path_joined`: Bool {
+        get { `is_path_joined`() }
+        set { `set_path_joined`(newValue) }
+    }
+    public var `smooth_faces`: Bool {
+        get { `get_smooth_faces`() }
+        set { `set_smooth_faces`(newValue) }
+    }
+}
+extension CSGPrimitive3D {
+    public var `flip_faces`: Bool {
+        get { `get_flip_faces`() }
+        set { `set_flip_faces`(newValue) }
+    }
+}
+extension CSGShape3D {
+    public var `autosmooth`: Bool {
+        get { `is_autosmooth`() }
+        set { `set_autosmooth`(newValue) }
+    }
+    public var `smoothing_angle`: Double {
+        get { `get_smoothing_angle`() }
+        set { `set_smoothing_angle`(newValue) }
+    }
+    public var `operation`: CSGShape3D.Operation {
+        get { `get_operation`() }
+        set { `set_operation`(newValue) }
+    }
+    public var `snap`: Double {
+        get { `get_snap`() }
+        set { `set_snap`(newValue) }
+    }
+    public var `calculate_tangents`: Bool {
+        get { `is_calculating_tangents`() }
+        set { `set_calculate_tangents`(newValue) }
+    }
+    public var `use_collision`: Bool {
+        get { `is_using_collision`() }
+        set { `set_use_collision`(newValue) }
+    }
+    public var `collision_layer`: Int64 {
+        get { `get_collision_layer`() }
+        set { `set_collision_layer`(newValue) }
+    }
+    public var `collision_mask`: Int64 {
+        get { `get_collision_mask`() }
+        set { `set_collision_mask`(newValue) }
+    }
+    public var `collision_priority`: Double {
+        get { `get_collision_priority`() }
+        set { `set_collision_priority`(newValue) }
+    }
+}
+extension CSGSphere3D {
+    public var `radius`: Double {
+        get { `get_radius`() }
+        set { `set_radius`(newValue) }
+    }
+    public var `radial_segments`: Int64 {
+        get { `get_radial_segments`() }
+        set { `set_radial_segments`(newValue) }
+    }
+    public var `rings`: Int64 {
+        get { `get_rings`() }
+        set { `set_rings`(newValue) }
+    }
+    public var `smooth_faces`: Bool {
+        get { `get_smooth_faces`() }
+        set { `set_smooth_faces`(newValue) }
+    }
+}
+extension CSGTorus3D {
+    public var `inner_radius`: Double {
+        get { `get_inner_radius`() }
+        set { `set_inner_radius`(newValue) }
+    }
+    public var `outer_radius`: Double {
+        get { `get_outer_radius`() }
+        set { `set_outer_radius`(newValue) }
+    }
+    public var `sides`: Int64 {
+        get { `get_sides`() }
+        set { `set_sides`(newValue) }
+    }
+    public var `ring_sides`: Int64 {
+        get { `get_ring_sides`() }
+        set { `set_ring_sides`(newValue) }
+    }
+    public var `smooth_faces`: Bool {
+        get { `get_smooth_faces`() }
+        set { `set_smooth_faces`(newValue) }
+    }
+}
+extension Camera2D {
+    public var `offset`: Vector2 {
+        get { `get_offset`() }
+        set { `set_offset`(newValue) }
+    }
+    public var `anchor_mode`: Camera2D.AnchorMode {
+        get { `get_anchor_mode`() }
+        set { `set_anchor_mode`(newValue) }
+    }
+    public var `ignore_rotation`: Bool {
+        get { `is_ignoring_rotation`() }
+        set { `set_ignore_rotation`(newValue) }
+    }
+    public var `enabled`: Bool {
+        get { `is_enabled`() }
+        set { `set_enabled`(newValue) }
+    }
+    public var `zoom`: Vector2 {
+        get { `get_zoom`() }
+        set { `set_zoom`(newValue) }
+    }
+    public var `process_callback`: Camera2D.Camera2DProcessCallback {
+        get { `get_process_callback`() }
+        set { `set_process_callback`(newValue) }
+    }
+    public var `limit_enabled`: Bool {
+        get { `is_limit_enabled`() }
+        set { `set_limit_enabled`(newValue) }
+    }
+    public var `limit_left`: Int64 {
+        get { `get_limit`(0) }
+        set { `set_limit`(0, newValue) }
+    }
+    public var `limit_top`: Int64 {
+        get { `get_limit`(1) }
+        set { `set_limit`(1, newValue) }
+    }
+    public var `limit_right`: Int64 {
+        get { `get_limit`(2) }
+        set { `set_limit`(2, newValue) }
+    }
+    public var `limit_bottom`: Int64 {
+        get { `get_limit`(3) }
+        set { `set_limit`(3, newValue) }
+    }
+    public var `limit_smoothed`: Bool {
+        get { `is_limit_smoothing_enabled`() }
+        set { `set_limit_smoothing_enabled`(newValue) }
+    }
+    public var `position_smoothing_enabled`: Bool {
+        get { `is_position_smoothing_enabled`() }
+        set { `set_position_smoothing_enabled`(newValue) }
+    }
+    public var `position_smoothing_speed`: Double {
+        get { `get_position_smoothing_speed`() }
+        set { `set_position_smoothing_speed`(newValue) }
+    }
+    public var `rotation_smoothing_enabled`: Bool {
+        get { `is_rotation_smoothing_enabled`() }
+        set { `set_rotation_smoothing_enabled`(newValue) }
+    }
+    public var `rotation_smoothing_speed`: Double {
+        get { `get_rotation_smoothing_speed`() }
+        set { `set_rotation_smoothing_speed`(newValue) }
+    }
+    public var `drag_horizontal_enabled`: Bool {
+        get { `is_drag_horizontal_enabled`() }
+        set { `set_drag_horizontal_enabled`(newValue) }
+    }
+    public var `drag_vertical_enabled`: Bool {
+        get { `is_drag_vertical_enabled`() }
+        set { `set_drag_vertical_enabled`(newValue) }
+    }
+    public var `drag_horizontal_offset`: Double {
+        get { `get_drag_horizontal_offset`() }
+        set { `set_drag_horizontal_offset`(newValue) }
+    }
+    public var `drag_vertical_offset`: Double {
+        get { `get_drag_vertical_offset`() }
+        set { `set_drag_vertical_offset`(newValue) }
+    }
+    public var `drag_left_margin`: Double {
+        get { `get_drag_margin`(0) }
+        set { `set_drag_margin`(0, newValue) }
+    }
+    public var `drag_top_margin`: Double {
+        get { `get_drag_margin`(1) }
+        set { `set_drag_margin`(1, newValue) }
+    }
+    public var `drag_right_margin`: Double {
+        get { `get_drag_margin`(2) }
+        set { `set_drag_margin`(2, newValue) }
+    }
+    public var `drag_bottom_margin`: Double {
+        get { `get_drag_margin`(3) }
+        set { `set_drag_margin`(3, newValue) }
+    }
+    public var `editor_draw_screen`: Bool {
+        get { `is_screen_drawing_enabled`() }
+        set { `set_screen_drawing_enabled`(newValue) }
+    }
+    public var `editor_draw_limits`: Bool {
+        get { `is_limit_drawing_enabled`() }
+        set { `set_limit_drawing_enabled`(newValue) }
+    }
+    public var `editor_draw_drag_margin`: Bool {
+        get { `is_margin_drawing_enabled`() }
+        set { `set_margin_drawing_enabled`(newValue) }
+    }
+}
+extension Camera3D {
+    public var `keep_aspect`: Camera3D.KeepAspect {
+        get { `get_keep_aspect_mode`() }
+        set { `set_keep_aspect_mode`(newValue) }
+    }
+    public var `cull_mask`: Int64 {
+        get { `get_cull_mask`() }
+        set { `set_cull_mask`(newValue) }
+    }
+    public var `environment`: Environment? {
+        get { `get_environment`() }
+        set { `set_environment`(newValue) }
+    }
+    public var `compositor`: Compositor? {
+        get { `get_compositor`() }
+        set { `set_compositor`(newValue) }
+    }
+    public var `h_offset`: Double {
+        get { `get_h_offset`() }
+        set { `set_h_offset`(newValue) }
+    }
+    public var `v_offset`: Double {
+        get { `get_v_offset`() }
+        set { `set_v_offset`(newValue) }
+    }
+    public var `doppler_tracking`: Camera3D.DopplerTracking {
+        get { `get_doppler_tracking`() }
+        set { `set_doppler_tracking`(newValue) }
+    }
+    public var `projection`: Camera3D.ProjectionType {
+        get { `get_projection`() }
+        set { `set_projection`(newValue) }
+    }
+    public var `current`: Bool {
+        get { `is_current`() }
+        set { `set_current`(newValue) }
+    }
+    public var `fov`: Double {
+        get { `get_fov`() }
+        set { `set_fov`(newValue) }
+    }
+    public var `size`: Double {
+        get { `get_size`() }
+        set { `set_size`(newValue) }
+    }
+    public var `frustum_offset`: Vector2 {
+        get { `get_frustum_offset`() }
+        set { `set_frustum_offset`(newValue) }
+    }
+    public var `near`: Double {
+        get { `get_near`() }
+        set { `set_near`(newValue) }
+    }
+    public var `far`: Double {
+        get { `get_far`() }
+        set { `set_far`(newValue) }
+    }
+}
+extension CameraAttributes {
+    public var `exposure_sensitivity`: Double {
+        get { `get_exposure_sensitivity`() }
+        set { `set_exposure_sensitivity`(newValue) }
+    }
+    public var `exposure_multiplier`: Double {
+        get { `get_exposure_multiplier`() }
+        set { `set_exposure_multiplier`(newValue) }
+    }
+    public var `auto_exposure_enabled`: Bool {
+        get { `is_auto_exposure_enabled`() }
+        set { `set_auto_exposure_enabled`(newValue) }
+    }
+    public var `auto_exposure_scale`: Double {
+        get { `get_auto_exposure_scale`() }
+        set { `set_auto_exposure_scale`(newValue) }
+    }
+    public var `auto_exposure_speed`: Double {
+        get { `get_auto_exposure_speed`() }
+        set { `set_auto_exposure_speed`(newValue) }
+    }
+}
+extension CameraAttributesPhysical {
+    public var `frustum_focus_distance`: Double {
+        get { `get_focus_distance`() }
+        set { `set_focus_distance`(newValue) }
+    }
+    public var `frustum_focal_length`: Double {
+        get { `get_focal_length`() }
+        set { `set_focal_length`(newValue) }
+    }
+    public var `frustum_near`: Double {
+        get { `get_near`() }
+        set { `set_near`(newValue) }
+    }
+    public var `frustum_far`: Double {
+        get { `get_far`() }
+        set { `set_far`(newValue) }
+    }
+    public var `exposure_aperture`: Double {
+        get { `get_aperture`() }
+        set { `set_aperture`(newValue) }
+    }
+    public var `exposure_shutter_speed`: Double {
+        get { `get_shutter_speed`() }
+        set { `set_shutter_speed`(newValue) }
+    }
+    public var `auto_exposure_min_exposure_value`: Double {
+        get { `get_auto_exposure_min_exposure_value`() }
+        set { `set_auto_exposure_min_exposure_value`(newValue) }
+    }
+    public var `auto_exposure_max_exposure_value`: Double {
+        get { `get_auto_exposure_max_exposure_value`() }
+        set { `set_auto_exposure_max_exposure_value`(newValue) }
+    }
+}
+extension CameraAttributesPractical {
+    public var `dof_blur_far_enabled`: Bool {
+        get { `is_dof_blur_far_enabled`() }
+        set { `set_dof_blur_far_enabled`(newValue) }
+    }
+    public var `dof_blur_far_distance`: Double {
+        get { `get_dof_blur_far_distance`() }
+        set { `set_dof_blur_far_distance`(newValue) }
+    }
+    public var `dof_blur_far_transition`: Double {
+        get { `get_dof_blur_far_transition`() }
+        set { `set_dof_blur_far_transition`(newValue) }
+    }
+    public var `dof_blur_near_enabled`: Bool {
+        get { `is_dof_blur_near_enabled`() }
+        set { `set_dof_blur_near_enabled`(newValue) }
+    }
+    public var `dof_blur_near_distance`: Double {
+        get { `get_dof_blur_near_distance`() }
+        set { `set_dof_blur_near_distance`(newValue) }
+    }
+    public var `dof_blur_near_transition`: Double {
+        get { `get_dof_blur_near_transition`() }
+        set { `set_dof_blur_near_transition`(newValue) }
+    }
+    public var `dof_blur_amount`: Double {
+        get { `get_dof_blur_amount`() }
+        set { `set_dof_blur_amount`(newValue) }
+    }
+    public var `auto_exposure_min_sensitivity`: Double {
+        get { `get_auto_exposure_min_sensitivity`() }
+        set { `set_auto_exposure_min_sensitivity`(newValue) }
+    }
+    public var `auto_exposure_max_sensitivity`: Double {
+        get { `get_auto_exposure_max_sensitivity`() }
+        set { `set_auto_exposure_max_sensitivity`(newValue) }
+    }
+}
+extension CameraFeed {
+    public var `feed_is_active`: Bool {
+        get { `is_active`() }
+        set { `set_active`(newValue) }
+    }
+    public var `feed_transform`: Transform2D {
+        get { `get_transform`() }
+        set { `set_transform`(newValue) }
+    }
+    public var `formats`: GodotArray {
+        get { `get_formats`() }
+    }
+}
+extension CameraServer {
+    public var `monitoring_feeds`: Bool {
+        get { `is_monitoring_feeds`() }
+        set { `set_monitoring_feeds`(newValue) }
+    }
+}
+extension CameraTexture {
+    public var `camera_feed_id`: Int64 {
+        get { `get_camera_feed_id`() }
+        set { `set_camera_feed_id`(newValue) }
+    }
+    public var `which_feed`: CameraServer.FeedImage {
+        get { `get_which_feed`() }
+        set { `set_which_feed`(newValue) }
+    }
+    public var `camera_is_active`: Bool {
+        get { `get_camera_active`() }
+        set { `set_camera_active`(newValue) }
+    }
+}
+extension CanvasGroup {
+    public var `fit_margin`: Double {
+        get { `get_fit_margin`() }
+        set { `set_fit_margin`(newValue) }
+    }
+    public var `clear_margin`: Double {
+        get { `get_clear_margin`() }
+        set { `set_clear_margin`(newValue) }
+    }
+    public var `use_mipmaps`: Bool {
+        get { `is_using_mipmaps`() }
+        set { `set_use_mipmaps`(newValue) }
+    }
+}
+extension CanvasItem {
+    public var `visible`: Bool {
+        get { `is_visible`() }
+        set { `set_visible`(newValue) }
+    }
+    public var `modulate`: Color {
+        get { `get_modulate`() }
+        set { `set_modulate`(newValue) }
+    }
+    public var `self_modulate`: Color {
+        get { `get_self_modulate`() }
+        set { `set_self_modulate`(newValue) }
+    }
+    public var `show_behind_parent`: Bool {
+        get { `is_draw_behind_parent_enabled`() }
+        set { `set_draw_behind_parent`(newValue) }
+    }
+    public var `top_level`: Bool {
+        get { `is_set_as_top_level`() }
+        set { `set_as_top_level`(newValue) }
+    }
+    public var `clip_children`: CanvasItem.ClipChildrenMode {
+        get { `get_clip_children_mode`() }
+        set { `set_clip_children_mode`(newValue) }
+    }
+    public var `oversampling_with_scale`: CanvasItem.OversamplingWithScale {
+        get { `get_oversampling_with_scale`() }
+        set { `set_oversampling_with_scale`(newValue) }
+    }
+    public var `light_mask`: Int64 {
+        get { `get_light_mask`() }
+        set { `set_light_mask`(newValue) }
+    }
+    public var `visibility_layer`: Int64 {
+        get { `get_visibility_layer`() }
+        set { `set_visibility_layer`(newValue) }
+    }
+    public var `z_index`: Int64 {
+        get { `get_z_index`() }
+        set { `set_z_index`(newValue) }
+    }
+    public var `z_as_relative`: Bool {
+        get { `is_z_relative`() }
+        set { `set_z_as_relative`(newValue) }
+    }
+    public var `y_sort_enabled`: Bool {
+        get { `is_y_sort_enabled`() }
+        set { `set_y_sort_enabled`(newValue) }
+    }
+    public var `texture_filter`: CanvasItem.TextureFilter {
+        get { `get_texture_filter`() }
+        set { `set_texture_filter`(newValue) }
+    }
+    public var `texture_repeat`: CanvasItem.TextureRepeat {
+        get { `get_texture_repeat`() }
+        set { `set_texture_repeat`(newValue) }
+    }
+    public var `use_parent_material`: Bool {
+        get { `get_use_parent_material`() }
+        set { `set_use_parent_material`(newValue) }
+    }
+}
+extension CanvasItemMaterial {
+    public var `blend_mode`: CanvasItemMaterial.BlendMode {
+        get { `get_blend_mode`() }
+        set { `set_blend_mode`(newValue) }
+    }
+    public var `light_mode`: CanvasItemMaterial.LightMode {
+        get { `get_light_mode`() }
+        set { `set_light_mode`(newValue) }
+    }
+    public var `particles_animation`: Bool {
+        get { `get_particles_animation`() }
+        set { `set_particles_animation`(newValue) }
+    }
+    public var `particles_anim_h_frames`: Int64 {
+        get { `get_particles_anim_h_frames`() }
+        set { `set_particles_anim_h_frames`(newValue) }
+    }
+    public var `particles_anim_v_frames`: Int64 {
+        get { `get_particles_anim_v_frames`() }
+        set { `set_particles_anim_v_frames`(newValue) }
+    }
+    public var `particles_anim_loop`: Bool {
+        get { `get_particles_anim_loop`() }
+        set { `set_particles_anim_loop`(newValue) }
+    }
+}
+extension CanvasLayer {
+    public var `layer`: Int64 {
+        get { `get_layer`() }
+        set { `set_layer`(newValue) }
+    }
+    public var `visible`: Bool {
+        get { `is_visible`() }
+        set { `set_visible`(newValue) }
+    }
+    public var `offset`: Vector2 {
+        get { `get_offset`() }
+        set { `set_offset`(newValue) }
+    }
+    public var `rotation`: Double {
+        get { `get_rotation`() }
+        set { `set_rotation`(newValue) }
+    }
+    public var `scale`: Vector2 {
+        get { `get_scale`() }
+        set { `set_scale`(newValue) }
+    }
+    public var `transform`: Transform2D {
+        get { `get_transform`() }
+        set { `set_transform`(newValue) }
+    }
+    public var `follow_viewport_enabled`: Bool {
+        get { `is_following_viewport`() }
+        set { `set_follow_viewport`(newValue) }
+    }
+    public var `follow_viewport_scale`: Double {
+        get { `get_follow_viewport_scale`() }
+        set { `set_follow_viewport_scale`(newValue) }
+    }
+}
+extension CanvasModulate {
+    public var `color`: Color {
+        get { `get_color`() }
+        set { `set_color`(newValue) }
+    }
+}
+extension CanvasTexture {
+    public var `diffuse_texture`: Texture2D? {
+        get { `get_diffuse_texture`() }
+        set { `set_diffuse_texture`(newValue) }
+    }
+    public var `normal_texture`: Texture2D? {
+        get { `get_normal_texture`() }
+        set { `set_normal_texture`(newValue) }
+    }
+    public var `specular_texture`: Texture2D? {
+        get { `get_specular_texture`() }
+        set { `set_specular_texture`(newValue) }
+    }
+    public var `specular_color`: Color {
+        get { `get_specular_color`() }
+        set { `set_specular_color`(newValue) }
+    }
+    public var `specular_shininess`: Double {
+        get { `get_specular_shininess`() }
+        set { `set_specular_shininess`(newValue) }
+    }
+    public var `texture_filter`: CanvasItem.TextureFilter {
+        get { `get_texture_filter`() }
+        set { `set_texture_filter`(newValue) }
+    }
+    public var `texture_repeat`: CanvasItem.TextureRepeat {
+        get { `get_texture_repeat`() }
+        set { `set_texture_repeat`(newValue) }
+    }
+}
+extension CapsuleMesh {
+    public var `radius`: Double {
+        get { `get_radius`() }
+        set { `set_radius`(newValue) }
+    }
+    public var `height`: Double {
+        get { `get_height`() }
+        set { `set_height`(newValue) }
+    }
+    public var `radial_segments`: Int64 {
+        get { `get_radial_segments`() }
+        set { `set_radial_segments`(newValue) }
+    }
+    public var `rings`: Int64 {
+        get { `get_rings`() }
+        set { `set_rings`(newValue) }
+    }
+}
+extension CapsuleShape2D {
+    public var `radius`: Double {
+        get { `get_radius`() }
+        set { `set_radius`(newValue) }
+    }
+    public var `height`: Double {
+        get { `get_height`() }
+        set { `set_height`(newValue) }
+    }
+    public var `mid_height`: Double {
+        get { `get_mid_height`() }
+        set { `set_mid_height`(newValue) }
+    }
+}
+extension CapsuleShape3D {
+    public var `radius`: Double {
+        get { `get_radius`() }
+        set { `set_radius`(newValue) }
+    }
+    public var `height`: Double {
+        get { `get_height`() }
+        set { `set_height`(newValue) }
+    }
+    public var `mid_height`: Double {
+        get { `get_mid_height`() }
+        set { `set_mid_height`(newValue) }
+    }
+}
+extension CenterContainer {
+    public var `use_top_left`: Bool {
+        get { `is_using_top_left`() }
+        set { `set_use_top_left`(newValue) }
+    }
+}
+extension CharFXTransform {
+    public var `transform`: Transform2D {
+        get { `get_transform`() }
+        set { `set_transform`(newValue) }
+    }
+    public var `range`: Vector2i {
+        get { `get_range`() }
+        set { `set_range`(newValue) }
+    }
+    public var `elapsed_time`: Double {
+        get { `get_elapsed_time`() }
+        set { `set_elapsed_time`(newValue) }
+    }
+    public var `visible`: Bool {
+        get { `is_visible`() }
+        set { `set_visibility`(newValue) }
+    }
+    public var `outline`: Bool {
+        get { `is_outline`() }
+        set { `set_outline`(newValue) }
+    }
+    public var `offset`: Vector2 {
+        get { `get_offset`() }
+        set { `set_offset`(newValue) }
+    }
+    public var `color`: Color {
+        get { `get_color`() }
+        set { `set_color`(newValue) }
+    }
+    public var `env`: GodotDictionary {
+        get { `get_environment`() }
+        set { `set_environment`(newValue) }
+    }
+    public var `glyph_index`: Int64 {
+        get { `get_glyph_index`() }
+        set { `set_glyph_index`(newValue) }
+    }
+    public var `glyph_count`: Int64 {
+        get { `get_glyph_count`() }
+        set { `set_glyph_count`(newValue) }
+    }
+    public var `glyph_flags`: Int64 {
+        get { `get_glyph_flags`() }
+        set { `set_glyph_flags`(newValue) }
+    }
+    public var `relative_index`: Int64 {
+        get { `get_relative_index`() }
+        set { `set_relative_index`(newValue) }
+    }
+    public var `font`: GodotRID {
+        get { `get_font`() }
+        set { `set_font`(newValue) }
+    }
+}
+extension CharacterBody2D {
+    public var `motion_mode`: CharacterBody2D.MotionMode {
+        get { `get_motion_mode`() }
+        set { `set_motion_mode`(newValue) }
+    }
+    public var `up_direction`: Vector2 {
+        get { `get_up_direction`() }
+        set { `set_up_direction`(newValue) }
+    }
+    public var `velocity`: Vector2 {
+        get { `get_velocity`() }
+        set { `set_velocity`(newValue) }
+    }
+    public var `slide_on_ceiling`: Bool {
+        get { `is_slide_on_ceiling_enabled`() }
+        set { `set_slide_on_ceiling_enabled`(newValue) }
+    }
+    public var `max_slides`: Int64 {
+        get { `get_max_slides`() }
+        set { `set_max_slides`(newValue) }
+    }
+    public var `wall_min_slide_angle`: Double {
+        get { `get_wall_min_slide_angle`() }
+        set { `set_wall_min_slide_angle`(newValue) }
+    }
+    public var `floor_stop_on_slope`: Bool {
+        get { `is_floor_stop_on_slope_enabled`() }
+        set { `set_floor_stop_on_slope_enabled`(newValue) }
+    }
+    public var `floor_constant_speed`: Bool {
+        get { `is_floor_constant_speed_enabled`() }
+        set { `set_floor_constant_speed_enabled`(newValue) }
+    }
+    public var `floor_block_on_wall`: Bool {
+        get { `is_floor_block_on_wall_enabled`() }
+        set { `set_floor_block_on_wall_enabled`(newValue) }
+    }
+    public var `floor_max_angle`: Double {
+        get { `get_floor_max_angle`() }
+        set { `set_floor_max_angle`(newValue) }
+    }
+    public var `floor_snap_length`: Double {
+        get { `get_floor_snap_length`() }
+        set { `set_floor_snap_length`(newValue) }
+    }
+    public var `platform_on_leave`: CharacterBody2D.PlatformOnLeave {
+        get { `get_platform_on_leave`() }
+        set { `set_platform_on_leave`(newValue) }
+    }
+    public var `platform_floor_layers`: Int64 {
+        get { `get_platform_floor_layers`() }
+        set { `set_platform_floor_layers`(newValue) }
+    }
+    public var `platform_wall_layers`: Int64 {
+        get { `get_platform_wall_layers`() }
+        set { `set_platform_wall_layers`(newValue) }
+    }
+    public var `safe_margin`: Double {
+        get { `get_safe_margin`() }
+        set { `set_safe_margin`(newValue) }
+    }
+}
+extension CharacterBody3D {
+    public var `motion_mode`: CharacterBody3D.MotionMode {
+        get { `get_motion_mode`() }
+        set { `set_motion_mode`(newValue) }
+    }
+    public var `up_direction`: Vector3 {
+        get { `get_up_direction`() }
+        set { `set_up_direction`(newValue) }
+    }
+    public var `slide_on_ceiling`: Bool {
+        get { `is_slide_on_ceiling_enabled`() }
+        set { `set_slide_on_ceiling_enabled`(newValue) }
+    }
+    public var `velocity`: Vector3 {
+        get { `get_velocity`() }
+        set { `set_velocity`(newValue) }
+    }
+    public var `max_slides`: Int64 {
+        get { `get_max_slides`() }
+        set { `set_max_slides`(newValue) }
+    }
+    public var `wall_min_slide_angle`: Double {
+        get { `get_wall_min_slide_angle`() }
+        set { `set_wall_min_slide_angle`(newValue) }
+    }
+    public var `floor_stop_on_slope`: Bool {
+        get { `is_floor_stop_on_slope_enabled`() }
+        set { `set_floor_stop_on_slope_enabled`(newValue) }
+    }
+    public var `floor_constant_speed`: Bool {
+        get { `is_floor_constant_speed_enabled`() }
+        set { `set_floor_constant_speed_enabled`(newValue) }
+    }
+    public var `floor_block_on_wall`: Bool {
+        get { `is_floor_block_on_wall_enabled`() }
+        set { `set_floor_block_on_wall_enabled`(newValue) }
+    }
+    public var `floor_max_angle`: Double {
+        get { `get_floor_max_angle`() }
+        set { `set_floor_max_angle`(newValue) }
+    }
+    public var `floor_snap_length`: Double {
+        get { `get_floor_snap_length`() }
+        set { `set_floor_snap_length`(newValue) }
+    }
+    public var `platform_on_leave`: CharacterBody3D.PlatformOnLeave {
+        get { `get_platform_on_leave`() }
+        set { `set_platform_on_leave`(newValue) }
+    }
+    public var `platform_floor_layers`: Int64 {
+        get { `get_platform_floor_layers`() }
+        set { `set_platform_floor_layers`(newValue) }
+    }
+    public var `platform_wall_layers`: Int64 {
+        get { `get_platform_wall_layers`() }
+        set { `set_platform_wall_layers`(newValue) }
+    }
+    public var `safe_margin`: Double {
+        get { `get_safe_margin`() }
+        set { `set_safe_margin`(newValue) }
+    }
+}
+extension CircleShape2D {
+    public var `radius`: Double {
+        get { `get_radius`() }
+        set { `set_radius`(newValue) }
+    }
+}
+extension CodeEdit {
+    public var `symbol_lookup_on_click`: Bool {
+        get { `is_symbol_lookup_on_click_enabled`() }
+        set { `set_symbol_lookup_on_click_enabled`(newValue) }
+    }
+    public var `symbol_tooltip_on_hover`: Bool {
+        get { `is_symbol_tooltip_on_hover_enabled`() }
+        set { `set_symbol_tooltip_on_hover_enabled`(newValue) }
+    }
+    public var `line_folding`: Bool {
+        get { `is_line_folding_enabled`() }
+        set { `set_line_folding_enabled`(newValue) }
+    }
+    public var `gutters_draw_breakpoints_gutter`: Bool {
+        get { `is_drawing_breakpoints_gutter`() }
+        set { `set_draw_breakpoints_gutter`(newValue) }
+    }
+    public var `gutters_draw_bookmarks`: Bool {
+        get { `is_drawing_bookmarks_gutter`() }
+        set { `set_draw_bookmarks_gutter`(newValue) }
+    }
+    public var `gutters_draw_executing_lines`: Bool {
+        get { `is_drawing_executing_lines_gutter`() }
+        set { `set_draw_executing_lines_gutter`(newValue) }
+    }
+    public var `gutters_draw_line_numbers`: Bool {
+        get { `is_draw_line_numbers_enabled`() }
+        set { `set_draw_line_numbers`(newValue) }
+    }
+    public var `gutters_zero_pad_line_numbers`: Bool {
+        get { `is_line_numbers_zero_padded`() }
+        set { `set_line_numbers_zero_padded`(newValue) }
+    }
+    public var `gutters_line_numbers_min_digits`: Int64 {
+        get { `get_line_numbers_min_digits`() }
+        set { `set_line_numbers_min_digits`(newValue) }
+    }
+    public var `gutters_draw_fold_gutter`: Bool {
+        get { `is_drawing_fold_gutter`() }
+        set { `set_draw_fold_gutter`(newValue) }
+    }
+    public var `code_completion_enabled`: Bool {
+        get { `is_code_completion_enabled`() }
+        set { `set_code_completion_enabled`(newValue) }
+    }
+    public var `indent_size`: Int64 {
+        get { `get_indent_size`() }
+        set { `set_indent_size`(newValue) }
+    }
+    public var `indent_use_spaces`: Bool {
+        get { `is_indent_using_spaces`() }
+        set { `set_indent_using_spaces`(newValue) }
+    }
+    public var `indent_automatic`: Bool {
+        get { `is_auto_indent_enabled`() }
+        set { `set_auto_indent_enabled`(newValue) }
+    }
+    public var `auto_brace_completion_enabled`: Bool {
+        get { `is_auto_brace_completion_enabled`() }
+        set { `set_auto_brace_completion_enabled`(newValue) }
+    }
+    public var `auto_brace_completion_highlight_matching`: Bool {
+        get { `is_highlight_matching_braces_enabled`() }
+        set { `set_highlight_matching_braces_enabled`(newValue) }
+    }
+    public var `auto_brace_completion_pairs`: GodotDictionary {
+        get { `get_auto_brace_completion_pairs`() }
+        set { `set_auto_brace_completion_pairs`(newValue) }
+    }
+}
+extension CodeHighlighter {
+    public var `number_color`: Color {
+        get { `get_number_color`() }
+        set { `set_number_color`(newValue) }
+    }
+    public var `symbol_color`: Color {
+        get { `get_symbol_color`() }
+        set { `set_symbol_color`(newValue) }
+    }
+    public var `function_color`: Color {
+        get { `get_function_color`() }
+        set { `set_function_color`(newValue) }
+    }
+    public var `member_variable_color`: Color {
+        get { `get_member_variable_color`() }
+        set { `set_member_variable_color`(newValue) }
+    }
+    public var `keyword_colors`: GodotDictionary {
+        get { `get_keyword_colors`() }
+        set { `set_keyword_colors`(newValue) }
+    }
+    public var `member_keyword_colors`: GodotDictionary {
+        get { `get_member_keyword_colors`() }
+        set { `set_member_keyword_colors`(newValue) }
+    }
+    public var `color_regions`: GodotDictionary {
+        get { `get_color_regions`() }
+        set { `set_color_regions`(newValue) }
+    }
+}
+extension CollisionObject2D {
+    public var `disable_mode`: CollisionObject2D.DisableMode {
+        get { `get_disable_mode`() }
+        set { `set_disable_mode`(newValue) }
+    }
+    public var `collision_layer`: Int64 {
+        get { `get_collision_layer`() }
+        set { `set_collision_layer`(newValue) }
+    }
+    public var `collision_mask`: Int64 {
+        get { `get_collision_mask`() }
+        set { `set_collision_mask`(newValue) }
+    }
+    public var `collision_priority`: Double {
+        get { `get_collision_priority`() }
+        set { `set_collision_priority`(newValue) }
+    }
+    public var `input_pickable`: Bool {
+        get { `is_pickable`() }
+        set { `set_pickable`(newValue) }
+    }
+}
+extension CollisionObject3D {
+    public var `disable_mode`: CollisionObject3D.DisableMode {
+        get { `get_disable_mode`() }
+        set { `set_disable_mode`(newValue) }
+    }
+    public var `collision_layer`: Int64 {
+        get { `get_collision_layer`() }
+        set { `set_collision_layer`(newValue) }
+    }
+    public var `collision_mask`: Int64 {
+        get { `get_collision_mask`() }
+        set { `set_collision_mask`(newValue) }
+    }
+    public var `collision_priority`: Double {
+        get { `get_collision_priority`() }
+        set { `set_collision_priority`(newValue) }
+    }
+    public var `input_ray_pickable`: Bool {
+        get { `is_ray_pickable`() }
+        set { `set_ray_pickable`(newValue) }
+    }
+    public var `input_capture_on_drag`: Bool {
+        get { `get_capture_input_on_drag`() }
+        set { `set_capture_input_on_drag`(newValue) }
+    }
+}
+extension CollisionPolygon2D {
+    public var `build_mode`: CollisionPolygon2D.BuildMode {
+        get { `get_build_mode`() }
+        set { `set_build_mode`(newValue) }
+    }
+    public var `polygon`: GodotPackedVector2Array {
+        get { `get_polygon`() }
+        set { `set_polygon`(newValue) }
+    }
+    public var `disabled`: Bool {
+        get { `is_disabled`() }
+        set { `set_disabled`(newValue) }
+    }
+    public var `one_way_collision`: Bool {
+        get { `is_one_way_collision_enabled`() }
+        set { `set_one_way_collision`(newValue) }
+    }
+    public var `one_way_collision_margin`: Double {
+        get { `get_one_way_collision_margin`() }
+        set { `set_one_way_collision_margin`(newValue) }
+    }
+    public var `one_way_collision_direction`: Vector2 {
+        get { `get_one_way_collision_direction`() }
+        set { `set_one_way_collision_direction`(newValue) }
+    }
+}
+extension CollisionPolygon3D {
+    public var `depth`: Double {
+        get { `get_depth`() }
+        set { `set_depth`(newValue) }
+    }
+    public var `disabled`: Bool {
+        get { `is_disabled`() }
+        set { `set_disabled`(newValue) }
+    }
+    public var `polygon`: GodotPackedVector2Array {
+        get { `get_polygon`() }
+        set { `set_polygon`(newValue) }
+    }
+    public var `margin`: Double {
+        get { `get_margin`() }
+        set { `set_margin`(newValue) }
+    }
+    public var `debug_color`: Color {
+        get { `get_debug_color`() }
+        set { `set_debug_color`(newValue) }
+    }
+    public var `debug_fill`: Bool {
+        get { `get_enable_debug_fill`() }
+        set { `set_enable_debug_fill`(newValue) }
+    }
+}
+extension CollisionShape2D {
+    public var `shape`: Shape2D? {
+        get { `get_shape`() }
+        set { `set_shape`(newValue) }
+    }
+    public var `disabled`: Bool {
+        get { `is_disabled`() }
+        set { `set_disabled`(newValue) }
+    }
+    public var `one_way_collision`: Bool {
+        get { `is_one_way_collision_enabled`() }
+        set { `set_one_way_collision`(newValue) }
+    }
+    public var `one_way_collision_margin`: Double {
+        get { `get_one_way_collision_margin`() }
+        set { `set_one_way_collision_margin`(newValue) }
+    }
+    public var `one_way_collision_direction`: Vector2 {
+        get { `get_one_way_collision_direction`() }
+        set { `set_one_way_collision_direction`(newValue) }
+    }
+    public var `debug_color`: Color {
+        get { `get_debug_color`() }
+        set { `set_debug_color`(newValue) }
+    }
+}
+extension CollisionShape3D {
+    public var `shape`: Shape3D? {
+        get { `get_shape`() }
+        set { `set_shape`(newValue) }
+    }
+    public var `disabled`: Bool {
+        get { `is_disabled`() }
+        set { `set_disabled`(newValue) }
+    }
+    public var `debug_color`: Color {
+        get { `get_debug_color`() }
+        set { `set_debug_color`(newValue) }
+    }
+    public var `debug_fill`: Bool {
+        get { `get_enable_debug_fill`() }
+        set { `set_enable_debug_fill`(newValue) }
+    }
+}
+extension ColorPalette {
+    public var `colors`: GodotPackedColorArray {
+        get { `get_colors`() }
+        set { `set_colors`(newValue) }
+    }
+}
+extension ColorPicker {
+    public var `color`: Color {
+        get { `get_pick_color`() }
+        set { `set_pick_color`(newValue) }
+    }
+    public var `edit_alpha`: Bool {
+        get { `is_editing_alpha`() }
+        set { `set_edit_alpha`(newValue) }
+    }
+    public var `edit_intensity`: Bool {
+        get { `is_editing_intensity`() }
+        set { `set_edit_intensity`(newValue) }
+    }
+    public var `color_mode`: ColorPicker.ColorModeType {
+        get { `get_color_mode`() }
+        set { `set_color_mode`(newValue) }
+    }
+    public var `deferred_mode`: Bool {
+        get { `is_deferred_mode`() }
+        set { `set_deferred_mode`(newValue) }
+    }
+    public var `picker_shape`: ColorPicker.PickerShapeType {
+        get { `get_picker_shape`() }
+        set { `set_picker_shape`(newValue) }
+    }
+    public var `can_add_swatches`: Bool {
+        get { `are_swatches_enabled`() }
+        set { `set_can_add_swatches`(newValue) }
+    }
+    public var `sampler_visible`: Bool {
+        get { `is_sampler_visible`() }
+        set { `set_sampler_visible`(newValue) }
+    }
+    public var `color_modes_visible`: Bool {
+        get { `are_modes_visible`() }
+        set { `set_modes_visible`(newValue) }
+    }
+    public var `sliders_visible`: Bool {
+        get { `are_sliders_visible`() }
+        set { `set_sliders_visible`(newValue) }
+    }
+    public var `hex_visible`: Bool {
+        get { `is_hex_visible`() }
+        set { `set_hex_visible`(newValue) }
+    }
+    public var `presets_visible`: Bool {
+        get { `are_presets_visible`() }
+        set { `set_presets_visible`(newValue) }
+    }
+}
+extension ColorPickerButton {
+    public var `color`: Color {
+        get { `get_pick_color`() }
+        set { `set_pick_color`(newValue) }
+    }
+    public var `edit_alpha`: Bool {
+        get { `is_editing_alpha`() }
+        set { `set_edit_alpha`(newValue) }
+    }
+    public var `edit_intensity`: Bool {
+        get { `is_editing_intensity`() }
+        set { `set_edit_intensity`(newValue) }
+    }
+}
+extension ColorRect {
+    public var `color`: Color {
+        get { `get_color`() }
+        set { `set_color`(newValue) }
+    }
+}
+extension Compositor {
+    public var `compositor_effects`: GodotArrayOf<CompositorEffect> {
+        get { `get_compositor_effects`() }
+        set { `set_compositor_effects`(newValue) }
+    }
+}
+extension CompositorEffect {
+    public var `enabled`: Bool {
+        get { `get_enabled`() }
+        set { `set_enabled`(newValue) }
+    }
+    public var `effect_callback_type`: CompositorEffect.EffectCallbackType {
+        get { `get_effect_callback_type`() }
+        set { `set_effect_callback_type`(newValue) }
+    }
+    public var `access_resolved_color`: Bool {
+        get { `get_access_resolved_color`() }
+        set { `set_access_resolved_color`(newValue) }
+    }
+    public var `access_resolved_depth`: Bool {
+        get { `get_access_resolved_depth`() }
+        set { `set_access_resolved_depth`(newValue) }
+    }
+    public var `needs_motion_vectors`: Bool {
+        get { `get_needs_motion_vectors`() }
+        set { `set_needs_motion_vectors`(newValue) }
+    }
+    public var `needs_normal_roughness`: Bool {
+        get { `get_needs_normal_roughness`() }
+        set { `set_needs_normal_roughness`(newValue) }
+    }
+    public var `needs_separate_specular`: Bool {
+        get { `get_needs_separate_specular`() }
+        set { `set_needs_separate_specular`(newValue) }
+    }
+}
+extension CompressedTexture2D {
+    public var `load_path`: GodotString {
+        get { `get_load_path`() }
+        set { `load`(newValue) }
+    }
+}
+extension CompressedTexture3D {
+    public var `load_path`: GodotString {
+        get { `get_load_path`() }
+        set { `load`(newValue) }
+    }
+}
+extension CompressedTextureLayered {
+    public var `load_path`: GodotString {
+        get { `get_load_path`() }
+        set { `load`(newValue) }
+    }
+}
+extension ConcavePolygonShape2D {
+    public var `segments`: GodotPackedVector2Array {
+        get { `get_segments`() }
+        set { `set_segments`(newValue) }
+    }
+}
+extension ConcavePolygonShape3D {
+    public var `data`: GodotPackedVector3Array {
+        get { `get_faces`() }
+        set { `set_faces`(newValue) }
+    }
+    public var `backface_collision`: Bool {
+        get { `is_backface_collision_enabled`() }
+        set { `set_backface_collision_enabled`(newValue) }
+    }
+}
+extension ConeTwistJoint3D {
+    public var `swing_span`: Double {
+        get { `get_param`(0) }
+        set { `set_param`(0, newValue) }
+    }
+    public var `twist_span`: Double {
+        get { `get_param`(1) }
+        set { `set_param`(1, newValue) }
+    }
+    public var `bias`: Double {
+        get { `get_param`(2) }
+        set { `set_param`(2, newValue) }
+    }
+    public var `softness`: Double {
+        get { `get_param`(3) }
+        set { `set_param`(3, newValue) }
+    }
+    public var `relaxation`: Double {
+        get { `get_param`(4) }
+        set { `set_param`(4, newValue) }
+    }
+}
+extension ConfirmationDialog {
+    public var `cancel_button_text`: GodotString {
+        get { `get_cancel_button_text`() }
+        set { `set_cancel_button_text`(newValue) }
+    }
+}
+extension Container {
+    public var `accessibility_region`: Bool {
+        get { `is_accessibility_region`() }
+        set { `set_accessibility_region`(newValue) }
+    }
+}
+extension Control {
+    public var `custom_minimum_size`: Vector2 {
+        get { `get_custom_minimum_size`() }
+        set { `set_custom_minimum_size`(newValue) }
+    }
+    public var `custom_maximum_size`: Vector2 {
+        get { `get_custom_maximum_size`() }
+        set { `set_custom_maximum_size`(newValue) }
+    }
+    public var `propagate_maximum_size`: Bool {
+        get { `is_propagating_maximum_size`() }
+        set { `set_propagate_maximum_size`(newValue) }
+    }
+    public var `clip_contents`: Bool {
+        get { `is_clipping_contents`() }
+        set { `set_clip_contents`(newValue) }
+    }
+    public var `anchor_left`: Double {
+        get { `get_anchor`(0) }
+    }
+    public var `anchor_top`: Double {
+        get { `get_anchor`(1) }
+    }
+    public var `anchor_right`: Double {
+        get { `get_anchor`(2) }
+    }
+    public var `anchor_bottom`: Double {
+        get { `get_anchor`(3) }
+    }
+    public var `offset_left`: Double {
+        get { `get_offset`(0) }
+        set { `set_offset`(0, newValue) }
+    }
+    public var `offset_top`: Double {
+        get { `get_offset`(1) }
+        set { `set_offset`(1, newValue) }
+    }
+    public var `offset_right`: Double {
+        get { `get_offset`(2) }
+        set { `set_offset`(2, newValue) }
+    }
+    public var `offset_bottom`: Double {
+        get { `get_offset`(3) }
+        set { `set_offset`(3, newValue) }
+    }
+    public var `grow_horizontal`: Control.GrowDirection {
+        get { `get_h_grow_direction`() }
+        set { `set_h_grow_direction`(newValue) }
+    }
+    public var `grow_vertical`: Control.GrowDirection {
+        get { `get_v_grow_direction`() }
+        set { `set_v_grow_direction`(newValue) }
+    }
+    public var `size`: Vector2 {
+        get { `get_size`() }
+    }
+    public var `position`: Vector2 {
+        get { `get_position`() }
+    }
+    public var `global_position`: Vector2 {
+        get { `get_global_position`() }
+    }
+    public var `rotation`: Double {
+        get { `get_rotation`() }
+        set { `set_rotation`(newValue) }
+    }
+    public var `rotation_degrees`: Double {
+        get { `get_rotation_degrees`() }
+        set { `set_rotation_degrees`(newValue) }
+    }
+    public var `scale`: Vector2 {
+        get { `get_scale`() }
+        set { `set_scale`(newValue) }
+    }
+    public var `pivot_offset`: Vector2 {
+        get { `get_pivot_offset`() }
+        set { `set_pivot_offset`(newValue) }
+    }
+    public var `pivot_offset_ratio`: Vector2 {
+        get { `get_pivot_offset_ratio`() }
+        set { `set_pivot_offset_ratio`(newValue) }
+    }
+    public var `size_flags_horizontal`: Control.SizeFlags {
+        get { `get_h_size_flags`() }
+        set { `set_h_size_flags`(newValue) }
+    }
+    public var `size_flags_vertical`: Control.SizeFlags {
+        get { `get_v_size_flags`() }
+        set { `set_v_size_flags`(newValue) }
+    }
+    public var `size_flags_stretch_ratio`: Double {
+        get { `get_stretch_ratio`() }
+        set { `set_stretch_ratio`(newValue) }
+    }
+    public var `offset_transform_enabled`: Bool {
+        get { `is_offset_transform_enabled`() }
+        set { `set_offset_transform_enabled`(newValue) }
+    }
+    public var `offset_transform_position`: Vector2 {
+        get { `get_offset_transform_position`() }
+        set { `set_offset_transform_position`(newValue) }
+    }
+    public var `offset_transform_position_ratio`: Vector2 {
+        get { `get_offset_transform_position_ratio`() }
+        set { `set_offset_transform_position_ratio`(newValue) }
+    }
+    public var `offset_transform_scale`: Vector2 {
+        get { `get_offset_transform_scale`() }
+        set { `set_offset_transform_scale`(newValue) }
+    }
+    public var `offset_transform_rotation`: Double {
+        get { `get_offset_transform_rotation`() }
+        set { `set_offset_transform_rotation`(newValue) }
+    }
+    public var `offset_transform_pivot`: Vector2 {
+        get { `get_offset_transform_pivot`() }
+        set { `set_offset_transform_pivot`(newValue) }
+    }
+    public var `offset_transform_pivot_ratio`: Vector2 {
+        get { `get_offset_transform_pivot_ratio`() }
+        set { `set_offset_transform_pivot_ratio`(newValue) }
+    }
+    public var `offset_transform_visual_only`: Bool {
+        get { `is_offset_transform_visual_only`() }
+        set { `set_offset_transform_visual_only`(newValue) }
+    }
+    public var `localize_numeral_system`: Bool {
+        get { `is_localizing_numeral_system`() }
+        set { `set_localize_numeral_system`(newValue) }
+    }
+    public var `layout_direction`: Control.LayoutDirection {
+        get { `get_layout_direction`() }
+        set { `set_layout_direction`(newValue) }
+    }
+    public var `translation_context`: GodotStringName {
+        get { `get_translation_context`() }
+        set { `set_translation_context`(newValue) }
+    }
+    public var `auto_translate`: Bool {
+        get { `is_auto_translating`() }
+        set { `set_auto_translate`(newValue) }
+    }
+    public var `tooltip_text`: GodotString {
+        get { `get_tooltip_text`() }
+        set { `set_tooltip_text`(newValue) }
+    }
+    public var `tooltip_auto_translate_mode`: Node.AutoTranslateMode {
+        get { `get_tooltip_auto_translate_mode`() }
+        set { `set_tooltip_auto_translate_mode`(newValue) }
+    }
+    public var `focus_neighbor_left`: GodotNodePath {
+        get { `get_focus_neighbor`(0) }
+        set { `set_focus_neighbor`(0, newValue) }
+    }
+    public var `focus_neighbor_top`: GodotNodePath {
+        get { `get_focus_neighbor`(1) }
+        set { `set_focus_neighbor`(1, newValue) }
+    }
+    public var `focus_neighbor_right`: GodotNodePath {
+        get { `get_focus_neighbor`(2) }
+        set { `set_focus_neighbor`(2, newValue) }
+    }
+    public var `focus_neighbor_bottom`: GodotNodePath {
+        get { `get_focus_neighbor`(3) }
+        set { `set_focus_neighbor`(3, newValue) }
+    }
+    public var `focus_next`: GodotNodePath {
+        get { `get_focus_next`() }
+        set { `set_focus_next`(newValue) }
+    }
+    public var `focus_previous`: GodotNodePath {
+        get { `get_focus_previous`() }
+        set { `set_focus_previous`(newValue) }
+    }
+    public var `focus_mode`: Control.FocusMode {
+        get { `get_focus_mode`() }
+        set { `set_focus_mode`(newValue) }
+    }
+    public var `focus_behavior_recursive`: Control.FocusBehaviorRecursive {
+        get { `get_focus_behavior_recursive`() }
+        set { `set_focus_behavior_recursive`(newValue) }
+    }
+    public var `mouse_filter`: Control.MouseFilter {
+        get { `get_mouse_filter`() }
+        set { `set_mouse_filter`(newValue) }
+    }
+    public var `mouse_behavior_recursive`: Control.MouseBehaviorRecursive {
+        get { `get_mouse_behavior_recursive`() }
+        set { `set_mouse_behavior_recursive`(newValue) }
+    }
+    public var `mouse_force_pass_scroll_events`: Bool {
+        get { `is_force_pass_scroll_events`() }
+        set { `set_force_pass_scroll_events`(newValue) }
+    }
+    public var `mouse_default_cursor_shape`: Control.CursorShape {
+        get { `get_default_cursor_shape`() }
+        set { `set_default_cursor_shape`(newValue) }
+    }
+    public var `accessibility_name`: GodotString {
+        get { `get_accessibility_name`() }
+        set { `set_accessibility_name`(newValue) }
+    }
+    public var `accessibility_description`: GodotString {
+        get { `get_accessibility_description`() }
+        set { `set_accessibility_description`(newValue) }
+    }
+    public var `accessibility_live`: AccessibilityServer.AccessibilityLiveMode {
+        get { `get_accessibility_live`() }
+        set { `set_accessibility_live`(newValue) }
+    }
+    public var `accessibility_controls_nodes`: GodotArrayOf<GodotNodePath> {
+        get { `get_accessibility_controls_nodes`() }
+        set { `set_accessibility_controls_nodes`(newValue) }
+    }
+    public var `accessibility_described_by_nodes`: GodotArrayOf<GodotNodePath> {
+        get { `get_accessibility_described_by_nodes`() }
+        set { `set_accessibility_described_by_nodes`(newValue) }
+    }
+    public var `accessibility_labeled_by_nodes`: GodotArrayOf<GodotNodePath> {
+        get { `get_accessibility_labeled_by_nodes`() }
+        set { `set_accessibility_labeled_by_nodes`(newValue) }
+    }
+    public var `accessibility_flow_to_nodes`: GodotArrayOf<GodotNodePath> {
+        get { `get_accessibility_flow_to_nodes`() }
+        set { `set_accessibility_flow_to_nodes`(newValue) }
+    }
+    public var `theme`: Theme? {
+        get { `get_theme`() }
+        set { `set_theme`(newValue) }
+    }
+}
+extension ConvertTransformModifier3D {
+    public var `setting_count`: Int64 {
+        get { `get_setting_count`() }
+        set { `set_setting_count`(newValue) }
+    }
+}
+extension ConvexPolygonShape2D {
+    public var `points`: GodotPackedVector2Array {
+        get { `get_points`() }
+        set { `set_points`(newValue) }
+    }
+}
+extension CopyTransformModifier3D {
+    public var `setting_count`: Int64 {
+        get { `get_setting_count`() }
+        set { `set_setting_count`(newValue) }
+    }
+}
+extension Curve {
+    public var `min_domain`: Double {
+        get { `get_min_domain`() }
+        set { `set_min_domain`(newValue) }
+    }
+    public var `max_domain`: Double {
+        get { `get_max_domain`() }
+        set { `set_max_domain`(newValue) }
+    }
+    public var `min_value`: Double {
+        get { `get_min_value`() }
+        set { `set_min_value`(newValue) }
+    }
+    public var `max_value`: Double {
+        get { `get_max_value`() }
+        set { `set_max_value`(newValue) }
+    }
+    public var `bake_resolution`: Int64 {
+        get { `get_bake_resolution`() }
+        set { `set_bake_resolution`(newValue) }
+    }
+    public var `point_count`: Int64 {
+        get { `get_point_count`() }
+        set { `set_point_count`(newValue) }
+    }
+}
+extension Curve2D {
+    public var `bake_interval`: Double {
+        get { `get_bake_interval`() }
+        set { `set_bake_interval`(newValue) }
+    }
+    public var `point_count`: Int64 {
+        get { `get_point_count`() }
+        set { `set_point_count`(newValue) }
+    }
+}
+extension Curve3D {
+    public var `closed`: Bool {
+        get { `is_closed`() }
+        set { `set_closed`(newValue) }
+    }
+    public var `bake_interval`: Double {
+        get { `get_bake_interval`() }
+        set { `set_bake_interval`(newValue) }
+    }
+    public var `point_count`: Int64 {
+        get { `get_point_count`() }
+        set { `set_point_count`(newValue) }
+    }
+    public var `up_vector_enabled`: Bool {
+        get { `is_up_vector_enabled`() }
+        set { `set_up_vector_enabled`(newValue) }
+    }
+}
+extension CurveTexture {
+    public var `width`: Int64 {
+        get { `get_width`() }
+        set { `set_width`(newValue) }
+    }
+    public var `texture_mode`: CurveTexture.TextureMode {
+        get { `get_texture_mode`() }
+        set { `set_texture_mode`(newValue) }
+    }
+    public var `curve`: Curve? {
+        get { `get_curve`() }
+        set { `set_curve`(newValue) }
     }
 }
