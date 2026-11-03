@@ -45,7 +45,6 @@ int gs_load(GSInterface *api, GDExtensionInterfaceGetProcAddress get_proc) {
     api->variant_has_key = (GS_variant_has_key)get_proc("variant_has_key");
     api->variant_get_object_instance_id = (GS_variant_get_object_instance_id)get_proc("variant_get_object_instance_id");
     api->variant_get_type_name = (GS_variant_get_type_name)get_proc("variant_get_type_name");
-    api->variant_get_type_by_name = (GS_variant_get_type_by_name)get_proc("variant_get_type_by_name");
     api->variant_can_convert = (GS_variant_can_convert)get_proc("variant_can_convert");
     api->variant_can_convert_strict = (GS_variant_can_convert_strict)get_proc("variant_can_convert_strict"); if (!api->variant_can_convert_strict) return 0;
     api->get_variant_from_type_constructor = (GS_get_variant_from_type_constructor)get_proc("get_variant_from_type_constructor"); if (!api->get_variant_from_type_constructor) return 0;
@@ -155,7 +154,6 @@ int gs_load(GSInterface *api, GDExtensionInterfaceGetProcAddress get_proc) {
     api->callable_custom_get_userdata = (GS_callable_custom_get_userdata)get_proc("callable_custom_get_userdata");
     api->classdb_construct_object = (GS_classdb_construct_object)get_proc("classdb_construct_object");
     api->classdb_construct_object2 = (GS_classdb_construct_object2)get_proc("classdb_construct_object2"); if (!api->classdb_construct_object2) return 0;
-    api->classdb_construct_object3 = (GS_classdb_construct_object3)get_proc("classdb_construct_object3");
     api->classdb_get_method_bind = (GS_classdb_get_method_bind)get_proc("classdb_get_method_bind"); if (!api->classdb_get_method_bind) return 0;
     api->classdb_get_class_tag = (GS_classdb_get_class_tag)get_proc("classdb_get_class_tag"); if (!api->classdb_get_class_tag) return 0;
     api->classdb_register_extension_class = (GS_classdb_register_extension_class)get_proc("classdb_register_extension_class");
@@ -163,7 +161,6 @@ int gs_load(GSInterface *api, GDExtensionInterfaceGetProcAddress get_proc) {
     api->classdb_register_extension_class3 = (GS_classdb_register_extension_class3)get_proc("classdb_register_extension_class3");
     api->classdb_register_extension_class4 = (GS_classdb_register_extension_class4)get_proc("classdb_register_extension_class4");
     api->classdb_register_extension_class5 = (GS_classdb_register_extension_class5)get_proc("classdb_register_extension_class5"); if (!api->classdb_register_extension_class5) return 0;
-    api->classdb_register_extension_class6 = (GS_classdb_register_extension_class6)get_proc("classdb_register_extension_class6");
     api->classdb_register_extension_class_method = (GS_classdb_register_extension_class_method)get_proc("classdb_register_extension_class_method"); if (!api->classdb_register_extension_class_method) return 0;
     api->classdb_register_extension_class_virtual_method = (GS_classdb_register_extension_class_virtual_method)get_proc("classdb_register_extension_class_virtual_method");
     api->classdb_register_extension_class_integer_constant = (GS_classdb_register_extension_class_integer_constant)get_proc("classdb_register_extension_class_integer_constant");

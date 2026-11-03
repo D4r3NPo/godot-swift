@@ -199,7 +199,6 @@ typedef void (*GDExtensionClassUnreference)(GDExtensionClassInstancePtr p_instan
 typedef void (*GDExtensionClassCallVirtual)(GDExtensionClassInstancePtr p_instance, const GDExtensionConstTypePtr* p_args, GDExtensionTypePtr r_ret);
 typedef GDExtensionObjectPtr (*GDExtensionClassCreateInstance)(void* p_class_userdata);
 typedef GDExtensionObjectPtr (*GDExtensionClassCreateInstance2)(void* p_class_userdata, GDExtensionBool p_notify_postinitialize);
-typedef GDExtensionObjectPtr (*GDExtensionClassCreateInstance3)(void* p_class_userdata, GDExtensionBool p_notify_postinitialize);
 typedef void (*GDExtensionClassFreeInstance)(void* p_class_userdata, GDExtensionClassInstancePtr p_instance);
 typedef GDExtensionClassInstancePtr (*GDExtensionClassRecreateInstance)(void* p_class_userdata, GDExtensionObjectPtr p_object);
 typedef GDExtensionClassCallVirtual (*GDExtensionClassGetVirtual)(void* p_class_userdata, GDExtensionConstStringNamePtr p_name);
@@ -301,31 +300,6 @@ typedef struct {
     void* class_userdata;
 } GDExtensionClassCreationInfo4;
 typedef GDExtensionClassCreationInfo4 GDExtensionClassCreationInfo5;
-typedef struct {
-    GDExtensionBool is_virtual;
-    GDExtensionBool is_abstract;
-    GDExtensionBool is_exposed;
-    GDExtensionBool is_runtime;
-    GDExtensionConstStringPtr icon_path;
-    GDExtensionClassSet set_func;
-    GDExtensionClassGet get_func;
-    GDExtensionClassGetPropertyList get_property_list_func;
-    GDExtensionClassFreePropertyList2 free_property_list_func;
-    GDExtensionClassPropertyCanRevert property_can_revert_func;
-    GDExtensionClassPropertyGetRevert property_get_revert_func;
-    GDExtensionClassValidateProperty validate_property_func;
-    GDExtensionClassNotification2 notification_func;
-    GDExtensionClassToString to_string_func;
-    GDExtensionClassReference reference_func;
-    GDExtensionClassUnreference unreference_func;
-    GDExtensionClassCreateInstance3 create_instance_func;
-    GDExtensionClassFreeInstance free_instance_func;
-    GDExtensionClassRecreateInstance recreate_instance_func;
-    GDExtensionClassGetVirtual2 get_virtual_func;
-    GDExtensionClassGetVirtualCallData2 get_virtual_call_data_func;
-    GDExtensionClassCallVirtualWithData call_virtual_with_data_func;
-    void* class_userdata;
-} GDExtensionClassCreationInfo6;
 typedef void *GDExtensionClassLibraryPtr;
 typedef void (*GDExtensionEditorGetClassesUsedCallback)(GDExtensionTypePtr p_packed_string_array);
 typedef enum {
@@ -614,7 +588,6 @@ typedef GDExtensionBool (*GS_variant_has_member)(GDExtensionVariantType p_type, 
 typedef GDExtensionBool (*GS_variant_has_key)(GDExtensionConstVariantPtr p_self, GDExtensionConstVariantPtr p_key, GDExtensionBool* r_valid);
 typedef GDObjectInstanceID (*GS_variant_get_object_instance_id)(GDExtensionConstVariantPtr p_self);
 typedef void (*GS_variant_get_type_name)(GDExtensionVariantType p_type, GDExtensionUninitializedStringPtr r_name);
-typedef GDExtensionVariantType (*GS_variant_get_type_by_name)(GDExtensionConstStringPtr p_type_name);
 typedef GDExtensionBool (*GS_variant_can_convert)(GDExtensionVariantType p_from, GDExtensionVariantType p_to);
 typedef GDExtensionBool (*GS_variant_can_convert_strict)(GDExtensionVariantType p_from, GDExtensionVariantType p_to);
 typedef GDExtensionVariantFromTypeConstructorFunc (*GS_get_variant_from_type_constructor)(GDExtensionVariantType p_type);
@@ -718,13 +691,12 @@ typedef GDExtensionScriptInstancePtr (*GS_script_instance_create3)(const GDExten
 typedef GDExtensionScriptInstancePtr (*GS_placeholder_script_instance_create)(GDExtensionObjectPtr p_language, GDExtensionObjectPtr p_script, GDExtensionObjectPtr p_owner);
 typedef void (*GS_placeholder_script_instance_update)(GDExtensionScriptInstancePtr p_placeholder, GDExtensionConstTypePtr p_properties, GDExtensionConstTypePtr p_values);
 typedef GDExtensionScriptInstanceDataPtr (*GS_object_get_script_instance)(GDExtensionConstObjectPtr p_object, GDExtensionObjectPtr p_language);
-typedef void (*GS_object_set_script_instance)(GDExtensionObjectPtr p_object, GDExtensionScriptInstancePtr p_script_instance);
+typedef void (*GS_object_set_script_instance)(GDExtensionObjectPtr p_object, GDExtensionScriptInstanceDataPtr p_script_instance);
 typedef void (*GS_callable_custom_create)(GDExtensionUninitializedTypePtr r_callable, GDExtensionCallableCustomInfo* p_callable_custom_info);
 typedef void (*GS_callable_custom_create2)(GDExtensionUninitializedTypePtr r_callable, GDExtensionCallableCustomInfo2* p_callable_custom_info);
 typedef void* (*GS_callable_custom_get_userdata)(GDExtensionConstTypePtr p_callable, void* p_token);
 typedef GDExtensionObjectPtr (*GS_classdb_construct_object)(GDExtensionConstStringNamePtr p_classname);
 typedef GDExtensionObjectPtr (*GS_classdb_construct_object2)(GDExtensionConstStringNamePtr p_classname);
-typedef GDExtensionObjectPtr (*GS_classdb_construct_object3)(GDExtensionConstStringNamePtr p_classname);
 typedef GDExtensionMethodBindPtr (*GS_classdb_get_method_bind)(GDExtensionConstStringNamePtr p_classname, GDExtensionConstStringNamePtr p_methodname, GDExtensionInt p_hash);
 typedef void* (*GS_classdb_get_class_tag)(GDExtensionConstStringNamePtr p_classname);
 typedef void (*GS_classdb_register_extension_class)(GDExtensionClassLibraryPtr p_library, GDExtensionConstStringNamePtr p_class_name, GDExtensionConstStringNamePtr p_parent_class_name, const GDExtensionClassCreationInfo* p_extension_funcs);
@@ -732,7 +704,6 @@ typedef void (*GS_classdb_register_extension_class2)(GDExtensionClassLibraryPtr 
 typedef void (*GS_classdb_register_extension_class3)(GDExtensionClassLibraryPtr p_library, GDExtensionConstStringNamePtr p_class_name, GDExtensionConstStringNamePtr p_parent_class_name, const GDExtensionClassCreationInfo3* p_extension_funcs);
 typedef void (*GS_classdb_register_extension_class4)(GDExtensionClassLibraryPtr p_library, GDExtensionConstStringNamePtr p_class_name, GDExtensionConstStringNamePtr p_parent_class_name, const GDExtensionClassCreationInfo4* p_extension_funcs);
 typedef void (*GS_classdb_register_extension_class5)(GDExtensionClassLibraryPtr p_library, GDExtensionConstStringNamePtr p_class_name, GDExtensionConstStringNamePtr p_parent_class_name, const GDExtensionClassCreationInfo5* p_extension_funcs);
-typedef void (*GS_classdb_register_extension_class6)(GDExtensionClassLibraryPtr p_library, GDExtensionConstStringNamePtr p_class_name, GDExtensionConstStringNamePtr p_parent_class_name, const GDExtensionClassCreationInfo6* p_extension_funcs);
 typedef void (*GS_classdb_register_extension_class_method)(GDExtensionClassLibraryPtr p_library, GDExtensionConstStringNamePtr p_class_name, const GDExtensionClassMethodInfo* p_method_info);
 typedef void (*GS_classdb_register_extension_class_virtual_method)(GDExtensionClassLibraryPtr p_library, GDExtensionConstStringNamePtr p_class_name, const GDExtensionClassVirtualMethodInfo* p_method_info);
 typedef void (*GS_classdb_register_extension_class_integer_constant)(GDExtensionClassLibraryPtr p_library, GDExtensionConstStringNamePtr p_class_name, GDExtensionConstStringNamePtr p_enum_name, GDExtensionConstStringNamePtr p_constant_name, GDExtensionInt p_constant_value, GDExtensionBool p_is_bitfield);
@@ -794,7 +765,6 @@ typedef struct {
     GS_variant_has_key variant_has_key;
     GS_variant_get_object_instance_id variant_get_object_instance_id;
     GS_variant_get_type_name variant_get_type_name;
-    GS_variant_get_type_by_name variant_get_type_by_name;
     GS_variant_can_convert variant_can_convert;
     GS_variant_can_convert_strict variant_can_convert_strict;
     GS_get_variant_from_type_constructor get_variant_from_type_constructor;
@@ -904,7 +874,6 @@ typedef struct {
     GS_callable_custom_get_userdata callable_custom_get_userdata;
     GS_classdb_construct_object classdb_construct_object;
     GS_classdb_construct_object2 classdb_construct_object2;
-    GS_classdb_construct_object3 classdb_construct_object3;
     GS_classdb_get_method_bind classdb_get_method_bind;
     GS_classdb_get_class_tag classdb_get_class_tag;
     GS_classdb_register_extension_class classdb_register_extension_class;
@@ -912,7 +881,6 @@ typedef struct {
     GS_classdb_register_extension_class3 classdb_register_extension_class3;
     GS_classdb_register_extension_class4 classdb_register_extension_class4;
     GS_classdb_register_extension_class5 classdb_register_extension_class5;
-    GS_classdb_register_extension_class6 classdb_register_extension_class6;
     GS_classdb_register_extension_class_method classdb_register_extension_class_method;
     GS_classdb_register_extension_class_virtual_method classdb_register_extension_class_virtual_method;
     GS_classdb_register_extension_class_integer_constant classdb_register_extension_class_integer_constant;

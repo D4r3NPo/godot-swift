@@ -1,174 +1,537 @@
 // Generated engine API partition. Do not edit.
 import CGodot
-extension TextServerAdvanced {
-}
-extension TextServerDummy {
-}
-extension TextServerExtension {
-}
-extension TextServerManager {
-    nonisolated(unsafe) private static let mb_add_interface = lookupMethod("TextServerManager", "add_interface", 1799689403)
-    public func `add_interface`(_ `interface`: TextServer?) {
-        defer { withExtendedLifetime((self, `interface`)) {} }
-        var a0 = `interface`?.requireHandle()
+extension TreeItem {
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_cell_mode = lookupMethod("TreeItem", "set_cell_mode", 289920701)
+    @inlinable @inline(__always) public func `set_cell_mode`(_ `column`: Int64, _ `mode`: TreeItem.TreeCellMode) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var a1 = `mode`.rawValue
         withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_add_interface, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_interface_count = lookupMethod("TextServerManager", "get_interface_count", 3905245786)
-    @inlinable @inline(__always) public func `get_interface_count`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_interface_count, requireHandle(), nil, &result)
-        return result
-}
-    nonisolated(unsafe) private static let mb_remove_interface = lookupMethod("TextServerManager", "remove_interface", 1799689403)
-    public func `remove_interface`(_ `interface`: TextServer?) {
-        defer { withExtendedLifetime((self, `interface`)) {} }
-        var a0 = `interface`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_remove_interface, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_interface = lookupMethod("TextServerManager", "get_interface", 1672475555)
-    public func `get_interface`(_ `idx`: Int64) -> TextServer? {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `idx`
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_interface, requireHandle(), &arguments, &nativeResult)
-        }
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? TextServer
-}
-    nonisolated(unsafe) private static let mb_get_interfaces = lookupMethod("TextServerManager", "get_interfaces", 3995934104)
-    public func `get_interfaces`() -> GodotArrayOf<GodotDictionary> {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotArrayOf<GodotDictionary>(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_interfaces, requireHandle(), nil, result)
-        })
-}
-    nonisolated(unsafe) private static let mb_find_interface = lookupMethod("TextServerManager", "find_interface", 2240905781)
-    public func `find_interface`(_ `name`: borrowing GodotString) -> TextServer? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        `name`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_find_interface, requireHandle(), &arguments, &nativeResult)
-        }
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? TextServer
-}
-    nonisolated(unsafe) private static let mb_set_primary_interface = lookupMethod("TextServerManager", "set_primary_interface", 1799689403)
-    public func `set_primary_interface`(_ `index`: TextServer?) {
-        defer { withExtendedLifetime((self, `index`)) {} }
-        var a0 = `index`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_primary_interface, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_primary_interface = lookupMethod("TextServerManager", "get_primary_interface", 905850878)
-    public func `get_primary_interface`() -> TextServer? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_primary_interface, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? TextServer
-}
-}
-extension Texture {
-}
-extension Texture2D {
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_format = lookupMethod("Texture2D", "get_format", 3847873762)
-    @inlinable @inline(__always) public func `get_format`() -> Image.Format {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_format, requireHandle(), nil, &result)
-        return Image.Format(rawValue: result)
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_mipmap_count = lookupMethod("Texture2D", "get_mipmap_count", 3905245786)
-    @inlinable @inline(__always) public func `get_mipmap_count`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_mipmap_count, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_width = lookupMethod("Texture2D", "get_width", 3905245786)
-    @inlinable @inline(__always) public func `get_width`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_width, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_height = lookupMethod("Texture2D", "get_height", 3905245786)
-    @inlinable @inline(__always) public func `get_height`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_height, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_size = lookupMethod("Texture2D", "get_size", 3341600327)
-    @inlinable @inline(__always) public func `get_size`() -> Vector2 {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Vector2.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_size, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_has_alpha = lookupMethod("Texture2D", "has_alpha", 36873697)
-    @inlinable @inline(__always) public func `has_alpha`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_has_alpha, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_has_mipmaps = lookupMethod("Texture2D", "has_mipmaps", 36873697)
-    @inlinable @inline(__always) public func `has_mipmaps`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_has_mipmaps, requireHandle(), nil, &result)
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_draw = lookupMethod("Texture2D", "draw", 2729649137)
-    public func `draw`(_ `canvas_item`: GodotRID, _ `position`: Vector2, _ `modulate`: Color = Color(1, 1, 1, 1), _ `transpose`: Bool = false) {
-        defer { withExtendedLifetime((self)) {} }
-        var a3 = `transpose` ? UInt8(1) : UInt8(0)
-        `canvas_item`.withStorage { p0 in
-            `position`.withStorage { p1 in
-                `modulate`.withStorage { p2 in
-                    withUnsafePointer(to: &a3) { p3 in
-                        var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p3)))
-                        withUnsafePointer(to: &arguments) { arguments in
-                            api.object_method_bind_ptrcall!(Self.mb_draw, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                        }
-                    }
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_cell_mode, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
                 }
             }
         }
 }
-    nonisolated(unsafe) private static let mb_draw_rect = lookupMethod("Texture2D", "draw_rect", 3499451691)
-    public func `draw_rect`(_ `canvas_item`: GodotRID, _ `rect`: Rect2, _ `tile`: Bool, _ `modulate`: Color = Color(1, 1, 1, 1), _ `transpose`: Bool = false) {
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_cell_mode = lookupMethod("TreeItem", "get_cell_mode", 3406114978)
+    @inlinable @inline(__always) public func `get_cell_mode`(_ `column`: Int64) -> TreeItem.TreeCellMode {
         defer { withExtendedLifetime((self)) {} }
-        var a2 = `tile` ? UInt8(1) : UInt8(0)
-        var a4 = `transpose` ? UInt8(1) : UInt8(0)
-        `canvas_item`.withStorage { p0 in
-            `rect`.withStorage { p1 in
+        var a0 = `column`
+        var result: Int64 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_cell_mode, requireHandle(), &arguments, &result)
+        }
+        return TreeItem.TreeCellMode(rawValue: result)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_auto_translate_mode = lookupMethod("TreeItem", "set_auto_translate_mode", 287402019)
+    @inlinable @inline(__always) public func `set_auto_translate_mode`(_ `column`: Int64, _ `mode`: Node.AutoTranslateMode) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var a1 = `mode`.rawValue
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_auto_translate_mode, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_auto_translate_mode = lookupMethod("TreeItem", "get_auto_translate_mode", 906302372)
+    @inlinable @inline(__always) public func `get_auto_translate_mode`(_ `column`: Int64) -> Node.AutoTranslateMode {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var result: Int64 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_auto_translate_mode, requireHandle(), &arguments, &result)
+        }
+        return Node.AutoTranslateMode(rawValue: result)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_edit_multiline = lookupMethod("TreeItem", "set_edit_multiline", 300928843)
+    @inlinable @inline(__always) public func `set_edit_multiline`(_ `column`: Int64, _ `multiline`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var a1 = `multiline` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_edit_multiline, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_edit_multiline = lookupMethod("TreeItem", "is_edit_multiline", 1116898809)
+    @inlinable @inline(__always) public func `is_edit_multiline`(_ `column`: Int64) -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var result: UInt8 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_is_edit_multiline, requireHandle(), &arguments, &result)
+        }
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_checked = lookupMethod("TreeItem", "set_checked", 300928843)
+    @inlinable @inline(__always) public func `set_checked`(_ `column`: Int64, _ `checked`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var a1 = `checked` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_checked, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_indeterminate = lookupMethod("TreeItem", "set_indeterminate", 300928843)
+    @inlinable @inline(__always) public func `set_indeterminate`(_ `column`: Int64, _ `indeterminate`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var a1 = `indeterminate` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_indeterminate, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_checked = lookupMethod("TreeItem", "is_checked", 1116898809)
+    @inlinable @inline(__always) public func `is_checked`(_ `column`: Int64) -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var result: UInt8 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_is_checked, requireHandle(), &arguments, &result)
+        }
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_indeterminate = lookupMethod("TreeItem", "is_indeterminate", 1116898809)
+    @inlinable @inline(__always) public func `is_indeterminate`(_ `column`: Int64) -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var result: UInt8 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_is_indeterminate, requireHandle(), &arguments, &result)
+        }
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_propagate_check = lookupMethod("TreeItem", "propagate_check", 972357352)
+    @inlinable @inline(__always) public func `propagate_check`(_ `column`: Int64, _ `emit_signal`: Bool = true) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var a1 = `emit_signal` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_propagate_check, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_set_text = lookupMethod("TreeItem", "set_text", 501894301)
+    public func `set_text`(_ `column`: Int64, _ `text`: borrowing GodotString) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        withUnsafePointer(to: &a0) { p0 in
+            `text`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_text, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_get_text = lookupMethod("TreeItem", "get_text", 844755477)
+    public func `get_text`(_ `column`: Int64) -> GodotString {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        return GodotString(initializing: { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_text, requireHandle(), &arguments, result)
+            }
+        })
+}
+    nonisolated(unsafe) private static let mb_set_description = lookupMethod("TreeItem", "set_description", 501894301)
+    public func `set_description`(_ `column`: Int64, _ `description`: borrowing GodotString) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        withUnsafePointer(to: &a0) { p0 in
+            `description`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_description, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_get_description = lookupMethod("TreeItem", "get_description", 844755477)
+    public func `get_description`(_ `column`: Int64) -> GodotString {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        return GodotString(initializing: { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_description, requireHandle(), &arguments, result)
+            }
+        })
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_text_direction = lookupMethod("TreeItem", "set_text_direction", 1707680378)
+    @inlinable @inline(__always) public func `set_text_direction`(_ `column`: Int64, _ `direction`: Control.TextDirection) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var a1 = `direction`.rawValue
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_text_direction, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_text_direction = lookupMethod("TreeItem", "get_text_direction", 4235602388)
+    @inlinable @inline(__always) public func `get_text_direction`(_ `column`: Int64) -> Control.TextDirection {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var result: Int64 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_text_direction, requireHandle(), &arguments, &result)
+        }
+        return Control.TextDirection(rawValue: result)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_autowrap_mode = lookupMethod("TreeItem", "set_autowrap_mode", 3633006561)
+    @inlinable @inline(__always) public func `set_autowrap_mode`(_ `column`: Int64, _ `autowrap_mode`: TextServer.AutowrapMode) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var a1 = `autowrap_mode`.rawValue
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_autowrap_mode, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_autowrap_mode = lookupMethod("TreeItem", "get_autowrap_mode", 2902757236)
+    @inlinable @inline(__always) public func `get_autowrap_mode`(_ `column`: Int64) -> TextServer.AutowrapMode {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var result: Int64 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_autowrap_mode, requireHandle(), &arguments, &result)
+        }
+        return TextServer.AutowrapMode(rawValue: result)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_text_overrun_behavior = lookupMethod("TreeItem", "set_text_overrun_behavior", 1940772195)
+    @inlinable @inline(__always) public func `set_text_overrun_behavior`(_ `column`: Int64, _ `overrun_behavior`: TextServer.OverrunBehavior) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var a1 = `overrun_behavior`.rawValue
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_text_overrun_behavior, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_text_overrun_behavior = lookupMethod("TreeItem", "get_text_overrun_behavior", 3782727860)
+    @inlinable @inline(__always) public func `get_text_overrun_behavior`(_ `column`: Int64) -> TextServer.OverrunBehavior {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var result: Int64 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_text_overrun_behavior, requireHandle(), &arguments, &result)
+        }
+        return TextServer.OverrunBehavior(rawValue: result)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_structured_text_bidi_override = lookupMethod("TreeItem", "set_structured_text_bidi_override", 868756907)
+    @inlinable @inline(__always) public func `set_structured_text_bidi_override`(_ `column`: Int64, _ `parser`: TextServer.StructuredTextParser) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var a1 = `parser`.rawValue
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_structured_text_bidi_override, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_structured_text_bidi_override = lookupMethod("TreeItem", "get_structured_text_bidi_override", 3377823772)
+    @inlinable @inline(__always) public func `get_structured_text_bidi_override`(_ `column`: Int64) -> TextServer.StructuredTextParser {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var result: Int64 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_structured_text_bidi_override, requireHandle(), &arguments, &result)
+        }
+        return TextServer.StructuredTextParser(rawValue: result)
+}
+    nonisolated(unsafe) private static let mb_set_structured_text_bidi_override_options = lookupMethod("TreeItem", "set_structured_text_bidi_override_options", 537221740)
+    public func `set_structured_text_bidi_override_options`(_ `column`: Int64, _ `args`: borrowing GodotArray) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        withUnsafePointer(to: &a0) { p0 in
+            `args`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_structured_text_bidi_override_options, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_get_structured_text_bidi_override_options = lookupMethod("TreeItem", "get_structured_text_bidi_override_options", 663333327)
+    public func `get_structured_text_bidi_override_options`(_ `column`: Int64) -> GodotArray {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        return GodotArray(initializing: { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_structured_text_bidi_override_options, requireHandle(), &arguments, result)
+            }
+        })
+}
+    nonisolated(unsafe) private static let mb_set_language = lookupMethod("TreeItem", "set_language", 501894301)
+    public func `set_language`(_ `column`: Int64, _ `language`: borrowing GodotString) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        withUnsafePointer(to: &a0) { p0 in
+            `language`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_language, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_get_language = lookupMethod("TreeItem", "get_language", 844755477)
+    public func `get_language`(_ `column`: Int64) -> GodotString {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        return GodotString(initializing: { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_language, requireHandle(), &arguments, result)
+            }
+        })
+}
+    nonisolated(unsafe) private static let mb_set_suffix = lookupMethod("TreeItem", "set_suffix", 501894301)
+    public func `set_suffix`(_ `column`: Int64, _ `text`: borrowing GodotString) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        withUnsafePointer(to: &a0) { p0 in
+            `text`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_suffix, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_get_suffix = lookupMethod("TreeItem", "get_suffix", 844755477)
+    public func `get_suffix`(_ `column`: Int64) -> GodotString {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        return GodotString(initializing: { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_suffix, requireHandle(), &arguments, result)
+            }
+        })
+}
+    nonisolated(unsafe) private static let mb_set_icon = lookupMethod("TreeItem", "set_icon", 666127730)
+    public func `set_icon`(_ `column`: Int64, _ `texture`: Texture2D?) {
+        defer { withExtendedLifetime((self, `texture`)) {} }
+        var a0 = `column`
+        var a1 = `texture`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_icon, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_get_icon = lookupMethod("TreeItem", "get_icon", 3536238170)
+    public func `get_icon`(_ `column`: Int64) -> Texture2D? {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_icon, requireHandle(), &arguments, &nativeResult)
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? Texture2D
+}
+    nonisolated(unsafe) private static let mb_set_icon_overlay = lookupMethod("TreeItem", "set_icon_overlay", 666127730)
+    public func `set_icon_overlay`(_ `column`: Int64, _ `texture`: Texture2D?) {
+        defer { withExtendedLifetime((self, `texture`)) {} }
+        var a0 = `column`
+        var a1 = `texture`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_icon_overlay, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_get_icon_overlay = lookupMethod("TreeItem", "get_icon_overlay", 3536238170)
+    public func `get_icon_overlay`(_ `column`: Int64) -> Texture2D? {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_icon_overlay, requireHandle(), &arguments, &nativeResult)
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? Texture2D
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_icon_region = lookupMethod("TreeItem", "set_icon_region", 1356297692)
+    @inlinable @inline(__always) public func `set_icon_region`(_ `column`: Int64, _ `region`: Rect2) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        withUnsafePointer(to: &a0) { p0 in
+            `region`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_icon_region, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_icon_region = lookupMethod("TreeItem", "get_icon_region", 3327874267)
+    @inlinable @inline(__always) public func `get_icon_region`(_ `column`: Int64) -> Rect2 {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        return withUnsafeTemporaryAllocation(of: Rect2.self, capacity: 1) { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_icon_region, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
+            }
+            return result.baseAddress!.move()
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_icon_max_width = lookupMethod("TreeItem", "set_icon_max_width", 3937882851)
+    @inlinable @inline(__always) public func `set_icon_max_width`(_ `column`: Int64, _ `width`: Int64) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var a1 = `width`
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_icon_max_width, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_icon_max_width = lookupMethod("TreeItem", "get_icon_max_width", 923996154)
+    @inlinable @inline(__always) public func `get_icon_max_width`(_ `column`: Int64) -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var result: Int64 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_icon_max_width, requireHandle(), &arguments, &result)
+        }
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_icon_modulate = lookupMethod("TreeItem", "set_icon_modulate", 2878471219)
+    @inlinable @inline(__always) public func `set_icon_modulate`(_ `column`: Int64, _ `modulate`: Color) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        withUnsafePointer(to: &a0) { p0 in
+            `modulate`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_icon_modulate, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_icon_modulate = lookupMethod("TreeItem", "get_icon_modulate", 3457211756)
+    @inlinable @inline(__always) public func `get_icon_modulate`(_ `column`: Int64) -> Color {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        return withUnsafeTemporaryAllocation(of: Color.self, capacity: 1) { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_icon_modulate, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
+            }
+            return result.baseAddress!.move()
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_range = lookupMethod("TreeItem", "set_range", 1602489585)
+    @inlinable @inline(__always) public func `set_range`(_ `column`: Int64, _ `value`: Double) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var a1 = `value`
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_range, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_range = lookupMethod("TreeItem", "get_range", 2339986948)
+    @inlinable @inline(__always) public func `get_range`(_ `column`: Int64) -> Double {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var result: Double = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_range, requireHandle(), &arguments, &result)
+        }
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_range_config = lookupMethod("TreeItem", "set_range_config", 1547181014)
+    @inlinable @inline(__always) public func `set_range_config`(_ `column`: Int64, _ `min`: Double, _ `max`: Double, _ `step`: Double, _ `expr`: Bool = false) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var a1 = `min`
+        var a2 = `max`
+        var a3 = `step`
+        var a4 = `expr` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
                 withUnsafePointer(to: &a2) { p2 in
-                    `modulate`.withStorage { p3 in
+                    withUnsafePointer(to: &a3) { p3 in
                         withUnsafePointer(to: &a4) { p4 in
                             var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p3)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p4)))
                             withUnsafePointer(to: &arguments) { arguments in
-                                api.object_method_bind_ptrcall!(Self.mb_draw_rect, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                                api.object_method_bind_ptrcall!(Self.mb_set_range_config, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
                             }
                         }
                     }
@@ -176,20 +539,438 @@ extension Texture2D {
             }
         }
 }
-    nonisolated(unsafe) private static let mb_draw_rect_region = lookupMethod("Texture2D", "draw_rect_region", 2963678660)
-    public func `draw_rect_region`(_ `canvas_item`: GodotRID, _ `rect`: Rect2, _ `src_rect`: Rect2, _ `modulate`: Color = Color(1, 1, 1, 1), _ `transpose`: Bool = false, _ `clip_uv`: Bool = true) {
+    nonisolated(unsafe) private static let mb_get_range_config = lookupMethod("TreeItem", "get_range_config", 3554694381)
+    public func `get_range_config`(_ `column`: Int64) -> GodotDictionary {
         defer { withExtendedLifetime((self)) {} }
-        var a4 = `transpose` ? UInt8(1) : UInt8(0)
-        var a5 = `clip_uv` ? UInt8(1) : UInt8(0)
-        `canvas_item`.withStorage { p0 in
-            `rect`.withStorage { p1 in
-                `src_rect`.withStorage { p2 in
-                    `modulate`.withStorage { p3 in
-                        withUnsafePointer(to: &a4) { p4 in
-                            withUnsafePointer(to: &a5) { p5 in
+        var a0 = `column`
+        return GodotDictionary(initializing: { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_range_config, requireHandle(), &arguments, result)
+            }
+        })
+}
+    nonisolated(unsafe) private static let mb_set_metadata = lookupMethod("TreeItem", "set_metadata", 2152698145)
+    public func `set_metadata`(_ `column`: Int64, _ `meta`: borrowing GodotVariant) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        withUnsafePointer(to: &a0) { p0 in
+            `meta`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_metadata, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_get_metadata = lookupMethod("TreeItem", "get_metadata", 4227898402)
+    public func `get_metadata`(_ `column`: Int64) -> GodotVariant {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        return GodotVariant(initializing: { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_metadata, requireHandle(), &arguments, result)
+            }
+        })
+}
+    nonisolated(unsafe) private static let mb_set_custom_draw = lookupMethod("TreeItem", "set_custom_draw", 272420368)
+    public func `set_custom_draw`(_ `column`: Int64, _ `object_value`: Object?, _ `callback`: borrowing GodotStringName) {
+        defer { withExtendedLifetime((self, `object_value`)) {} }
+        var a0 = `column`
+        var a1 = `object_value`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                `callback`.withStorage { p2 in
+                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
+                    withUnsafePointer(to: &arguments) { arguments in
+                        api.object_method_bind_ptrcall!(Self.mb_set_custom_draw, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                    }
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_set_custom_draw_callback = lookupMethod("TreeItem", "set_custom_draw_callback", 957362965)
+    public func `set_custom_draw_callback`(_ `column`: Int64, _ `callback`: borrowing GodotCallable) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        withUnsafePointer(to: &a0) { p0 in
+            `callback`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_custom_draw_callback, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_get_custom_draw_callback = lookupMethod("TreeItem", "get_custom_draw_callback", 1317077508)
+    public func `get_custom_draw_callback`(_ `column`: Int64) -> GodotCallable {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        return GodotCallable(initializing: { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_custom_draw_callback, requireHandle(), &arguments, result)
+            }
+        })
+}
+    nonisolated(unsafe) private static let mb_set_custom_stylebox = lookupMethod("TreeItem", "set_custom_stylebox", 1433009359)
+    public func `set_custom_stylebox`(_ `column`: Int64, _ `stylebox`: StyleBox?) {
+        defer { withExtendedLifetime((self, `stylebox`)) {} }
+        var a0 = `column`
+        var a1 = `stylebox`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_custom_stylebox, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_get_custom_stylebox = lookupMethod("TreeItem", "get_custom_stylebox", 3362509644)
+    public func `get_custom_stylebox`(_ `column`: Int64) -> StyleBox? {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_custom_stylebox, requireHandle(), &arguments, &nativeResult)
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? StyleBox
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_collapsed = lookupMethod("TreeItem", "set_collapsed", 2586408642)
+    @inlinable @inline(__always) public func `set_collapsed`(_ `enable`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `enable` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_collapsed, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_collapsed = lookupMethod("TreeItem", "is_collapsed", 2240911060)
+    @inlinable @inline(__always) public func `is_collapsed`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_collapsed, requireHandle(), nil, &result)
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_collapsed_recursive = lookupMethod("TreeItem", "set_collapsed_recursive", 2586408642)
+    @inlinable @inline(__always) public func `set_collapsed_recursive`(_ `enable`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `enable` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_collapsed_recursive, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_any_collapsed = lookupMethod("TreeItem", "is_any_collapsed", 2595650253)
+    @inlinable @inline(__always) public func `is_any_collapsed`(_ `only_visible`: Bool = false) -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `only_visible` ? UInt8(1) : UInt8(0)
+        var result: UInt8 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_is_any_collapsed, requireHandle(), &arguments, &result)
+        }
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_visible = lookupMethod("TreeItem", "set_visible", 2586408642)
+    @inlinable @inline(__always) public func `set_visible`(_ `enable`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `enable` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_visible, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_visible = lookupMethod("TreeItem", "is_visible", 2240911060)
+    @inlinable @inline(__always) public func `is_visible`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_visible, requireHandle(), nil, &result)
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_visible_in_tree = lookupMethod("TreeItem", "is_visible_in_tree", 36873697)
+    @inlinable @inline(__always) public func `is_visible_in_tree`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_visible_in_tree, requireHandle(), nil, &result)
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_uncollapse_tree = lookupMethod("TreeItem", "uncollapse_tree", 3218959716)
+    @inlinable @inline(__always) public func `uncollapse_tree`() {
+        defer { withExtendedLifetime((self)) {} }
+        api.object_method_bind_ptrcall!(Self.mb_uncollapse_tree, requireHandle(), nil, nil)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_custom_minimum_height = lookupMethod("TreeItem", "set_custom_minimum_height", 1286410249)
+    @inlinable @inline(__always) public func `set_custom_minimum_height`(_ `height`: Int64) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `height`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_custom_minimum_height, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_custom_minimum_height = lookupMethod("TreeItem", "get_custom_minimum_height", 3905245786)
+    @inlinable @inline(__always) public func `get_custom_minimum_height`() -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_custom_minimum_height, requireHandle(), nil, &result)
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_selectable = lookupMethod("TreeItem", "set_selectable", 300928843)
+    @inlinable @inline(__always) public func `set_selectable`(_ `column`: Int64, _ `selectable`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var a1 = `selectable` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_selectable, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_selectable = lookupMethod("TreeItem", "is_selectable", 1116898809)
+    @inlinable @inline(__always) public func `is_selectable`(_ `column`: Int64) -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var result: UInt8 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_is_selectable, requireHandle(), &arguments, &result)
+        }
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_selected = lookupMethod("TreeItem", "is_selected", 3067735520)
+    @inlinable @inline(__always) public func `is_selected`(_ `column`: Int64) -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var result: UInt8 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_is_selected, requireHandle(), &arguments, &result)
+        }
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_select = lookupMethod("TreeItem", "select", 1286410249)
+    @inlinable @inline(__always) public func `select`(_ `column`: Int64) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_select, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_deselect = lookupMethod("TreeItem", "deselect", 1286410249)
+    @inlinable @inline(__always) public func `deselect`(_ `column`: Int64) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_deselect, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_editable = lookupMethod("TreeItem", "set_editable", 300928843)
+    @inlinable @inline(__always) public func `set_editable`(_ `column`: Int64, _ `enabled`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var a1 = `enabled` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_editable, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_editable = lookupMethod("TreeItem", "is_editable", 3067735520)
+    @inlinable @inline(__always) public func `is_editable`(_ `column`: Int64) -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var result: UInt8 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_is_editable, requireHandle(), &arguments, &result)
+        }
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_custom_color = lookupMethod("TreeItem", "set_custom_color", 2878471219)
+    @inlinable @inline(__always) public func `set_custom_color`(_ `column`: Int64, _ `color`: Color) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        withUnsafePointer(to: &a0) { p0 in
+            `color`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_custom_color, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_custom_color = lookupMethod("TreeItem", "get_custom_color", 3457211756)
+    @inlinable @inline(__always) public func `get_custom_color`(_ `column`: Int64) -> Color {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        return withUnsafeTemporaryAllocation(of: Color.self, capacity: 1) { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_custom_color, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
+            }
+            return result.baseAddress!.move()
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_clear_custom_color = lookupMethod("TreeItem", "clear_custom_color", 1286410249)
+    @inlinable @inline(__always) public func `clear_custom_color`(_ `column`: Int64) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_clear_custom_color, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_set_custom_font = lookupMethod("TreeItem", "set_custom_font", 2637609184)
+    public func `set_custom_font`(_ `column`: Int64, _ `font`: Font?) {
+        defer { withExtendedLifetime((self, `font`)) {} }
+        var a0 = `column`
+        var a1 = `font`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_custom_font, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_get_custom_font = lookupMethod("TreeItem", "get_custom_font", 4244553094)
+    public func `get_custom_font`(_ `column`: Int64) -> Font? {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_custom_font, requireHandle(), &arguments, &nativeResult)
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? Font
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_custom_font_size = lookupMethod("TreeItem", "set_custom_font_size", 3937882851)
+    @inlinable @inline(__always) public func `set_custom_font_size`(_ `column`: Int64, _ `font_size`: Int64) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var a1 = `font_size`
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_custom_font_size, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_custom_font_size = lookupMethod("TreeItem", "get_custom_font_size", 923996154)
+    @inlinable @inline(__always) public func `get_custom_font_size`(_ `column`: Int64) -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var result: Int64 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_custom_font_size, requireHandle(), &arguments, &result)
+        }
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_custom_bg_color = lookupMethod("TreeItem", "set_custom_bg_color", 894174518)
+    @inlinable @inline(__always) public func `set_custom_bg_color`(_ `column`: Int64, _ `color`: Color, _ `just_outline`: Bool = false) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var a2 = `just_outline` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            `color`.withStorage { p1 in
+                withUnsafePointer(to: &a2) { p2 in
+                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
+                    withUnsafePointer(to: &arguments) { arguments in
+                        api.object_method_bind_ptrcall!(Self.mb_set_custom_bg_color, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                    }
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_clear_custom_bg_color = lookupMethod("TreeItem", "clear_custom_bg_color", 1286410249)
+    @inlinable @inline(__always) public func `clear_custom_bg_color`(_ `column`: Int64) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_clear_custom_bg_color, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_custom_bg_color = lookupMethod("TreeItem", "get_custom_bg_color", 3457211756)
+    @inlinable @inline(__always) public func `get_custom_bg_color`(_ `column`: Int64) -> Color {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        return withUnsafeTemporaryAllocation(of: Color.self, capacity: 1) { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_custom_bg_color, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
+            }
+            return result.baseAddress!.move()
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_custom_as_button = lookupMethod("TreeItem", "set_custom_as_button", 300928843)
+    @inlinable @inline(__always) public func `set_custom_as_button`(_ `column`: Int64, _ `enable`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var a1 = `enable` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_custom_as_button, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_custom_set_as_button = lookupMethod("TreeItem", "is_custom_set_as_button", 1116898809)
+    @inlinable @inline(__always) public func `is_custom_set_as_button`(_ `column`: Int64) -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var result: UInt8 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_is_custom_set_as_button, requireHandle(), &arguments, &result)
+        }
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_clear_buttons = lookupMethod("TreeItem", "clear_buttons", 3218959716)
+    @inlinable @inline(__always) public func `clear_buttons`() {
+        defer { withExtendedLifetime((self)) {} }
+        api.object_method_bind_ptrcall!(Self.mb_clear_buttons, requireHandle(), nil, nil)
+}
+    nonisolated(unsafe) private static let mb_add_button = lookupMethod("TreeItem", "add_button", 973481897)
+    public func `add_button`(_ `column`: Int64, _ `button`: Texture2D?, _ `id`: Int64 = -1, _ `disabled`: Bool = false, _ `tooltip_text`: borrowing GodotString = GodotString(""), _ `description`: borrowing GodotString = GodotString("")) {
+        defer { withExtendedLifetime((self, `button`)) {} }
+        var a0 = `column`
+        var a1 = `button`?.requireHandle()
+        var a2 = `id`
+        var a3 = `disabled` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                withUnsafePointer(to: &a2) { p2 in
+                    withUnsafePointer(to: &a3) { p3 in
+                        `tooltip_text`.withStorage { p4 in
+                            `description`.withStorage { p5 in
                                 var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p3)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p4)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p5)))
                                 withUnsafePointer(to: &arguments) { arguments in
-                                    api.object_method_bind_ptrcall!(Self.mb_draw_rect_region, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                                    api.object_method_bind_ptrcall!(Self.mb_add_button, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
                                 }
                             }
                         }
@@ -198,788 +979,93 @@ extension Texture2D {
             }
         }
 }
-    nonisolated(unsafe) private static let mb_get_image = lookupMethod("Texture2D", "get_image", 4190603485)
-    public func `get_image`() -> Image? {
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_button_count = lookupMethod("TreeItem", "get_button_count", 923996154)
+    @inlinable @inline(__always) public func `get_button_count`(_ `column`: Int64) -> Int64 {
         defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_image, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Image
-}
-    nonisolated(unsafe) private static let mb_create_placeholder = lookupMethod("Texture2D", "create_placeholder", 121922552)
-    public func `create_placeholder`() -> Resource? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_create_placeholder, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Resource
-}
-}
-extension Texture2DArray {
-    nonisolated(unsafe) private static let mb_create_placeholder = lookupMethod("Texture2DArray", "create_placeholder", 121922552)
-    public func `create_placeholder`() -> Resource? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_create_placeholder, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Resource
-}
-}
-extension Texture2DArrayRD {
-}
-extension Texture2DRD {
-    nonisolated(unsafe) private static let mb_set_texture_rd_rid = lookupMethod("Texture2DRD", "set_texture_rd_rid", 2722037293)
-    public func `set_texture_rd_rid`(_ `texture_rd_rid`: GodotRID) {
-        defer { withExtendedLifetime((self)) {} }
-        `texture_rd_rid`.withStorage { p0 in
+        var a0 = `column`
+        var result: Int64 = 0
+        withUnsafePointer(to: &a0) { p0 in
             var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_texture_rd_rid, requireHandle(), &arguments, nil)
+            api.object_method_bind_ptrcall!(Self.mb_get_button_count, requireHandle(), &arguments, &result)
         }
+        return result
 }
-    nonisolated(unsafe) private static let mb_get_texture_rd_rid = lookupMethod("Texture2DRD", "get_texture_rd_rid", 2944877500)
-    public func `get_texture_rd_rid`() -> GodotRID {
+    nonisolated(unsafe) private static let mb_get_button_tooltip_text = lookupMethod("TreeItem", "get_button_tooltip_text", 1391810591)
+    public func `get_button_tooltip_text`(_ `column`: Int64, _ `button_index`: Int64) -> GodotString {
         defer { withExtendedLifetime((self)) {} }
-        return GodotRID(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_texture_rd_rid, requireHandle(), nil, result)
+        var a0 = `column`
+        var a1 = `button_index`
+        return GodotString(initializing: { result in
+            withUnsafePointer(to: &a0) { p0 in
+                withUnsafePointer(to: &a1) { p1 in
+                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                    withUnsafePointer(to: &arguments) { arguments in
+                        api.object_method_bind_ptrcall!(Self.mb_get_button_tooltip_text, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), result)
+                    }
+                }
+            }
         })
 }
-}
-extension Texture3D {
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_format = lookupMethod("Texture3D", "get_format", 3847873762)
-    @inlinable @inline(__always) public func `get_format`() -> Image.Format {
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_button_id = lookupMethod("TreeItem", "get_button_id", 3175239445)
+    @inlinable @inline(__always) public func `get_button_id`(_ `column`: Int64, _ `button_index`: Int64) -> Int64 {
         defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var a1 = `button_index`
         var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_format, requireHandle(), nil, &result)
-        return Image.Format(rawValue: result)
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_width = lookupMethod("Texture3D", "get_width", 3905245786)
-    @inlinable @inline(__always) public func `get_width`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_width, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_height = lookupMethod("Texture3D", "get_height", 3905245786)
-    @inlinable @inline(__always) public func `get_height`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_height, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_depth = lookupMethod("Texture3D", "get_depth", 3905245786)
-    @inlinable @inline(__always) public func `get_depth`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_depth, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_has_mipmaps = lookupMethod("Texture3D", "has_mipmaps", 36873697)
-    @inlinable @inline(__always) public func `has_mipmaps`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_has_mipmaps, requireHandle(), nil, &result)
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_get_data = lookupMethod("Texture3D", "get_data", 3995934104)
-    public func `get_data`() -> GodotArrayOf<Image> {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotArrayOf<Image>(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_data, requireHandle(), nil, result)
-        })
-}
-    nonisolated(unsafe) private static let mb_create_placeholder = lookupMethod("Texture3D", "create_placeholder", 121922552)
-    public func `create_placeholder`() -> Resource? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_create_placeholder, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Resource
-}
-}
-extension Texture3DRD {
-    nonisolated(unsafe) private static let mb_set_texture_rd_rid = lookupMethod("Texture3DRD", "set_texture_rd_rid", 2722037293)
-    public func `set_texture_rd_rid`(_ `texture_rd_rid`: GodotRID) {
-        defer { withExtendedLifetime((self)) {} }
-        `texture_rd_rid`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_texture_rd_rid, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_texture_rd_rid = lookupMethod("Texture3DRD", "get_texture_rd_rid", 2944877500)
-    public func `get_texture_rd_rid`() -> GodotRID {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotRID(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_texture_rd_rid, requireHandle(), nil, result)
-        })
-}
-}
-extension TextureButton {
-    nonisolated(unsafe) private static let mb_set_texture_normal = lookupMethod("TextureButton", "set_texture_normal", 4051416890)
-    public func `set_texture_normal`(_ `texture`: Texture2D?) {
-        defer { withExtendedLifetime((self, `texture`)) {} }
-        var a0 = `texture`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_texture_normal, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_set_texture_pressed = lookupMethod("TextureButton", "set_texture_pressed", 4051416890)
-    public func `set_texture_pressed`(_ `texture`: Texture2D?) {
-        defer { withExtendedLifetime((self, `texture`)) {} }
-        var a0 = `texture`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_texture_pressed, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_set_texture_hover = lookupMethod("TextureButton", "set_texture_hover", 4051416890)
-    public func `set_texture_hover`(_ `texture`: Texture2D?) {
-        defer { withExtendedLifetime((self, `texture`)) {} }
-        var a0 = `texture`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_texture_hover, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_set_texture_disabled = lookupMethod("TextureButton", "set_texture_disabled", 4051416890)
-    public func `set_texture_disabled`(_ `texture`: Texture2D?) {
-        defer { withExtendedLifetime((self, `texture`)) {} }
-        var a0 = `texture`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_texture_disabled, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_set_texture_focused = lookupMethod("TextureButton", "set_texture_focused", 4051416890)
-    public func `set_texture_focused`(_ `texture`: Texture2D?) {
-        defer { withExtendedLifetime((self, `texture`)) {} }
-        var a0 = `texture`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_texture_focused, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_set_click_mask = lookupMethod("TextureButton", "set_click_mask", 698588216)
-    public func `set_click_mask`(_ `mask`: BitMap?) {
-        defer { withExtendedLifetime((self, `mask`)) {} }
-        var a0 = `mask`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_click_mask, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_ignore_texture_size = lookupMethod("TextureButton", "set_ignore_texture_size", 2586408642)
-    @inlinable @inline(__always) public func `set_ignore_texture_size`(_ `ignore`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `ignore` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_ignore_texture_size, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_stretch_mode = lookupMethod("TextureButton", "set_stretch_mode", 252530840)
-    @inlinable @inline(__always) public func `set_stretch_mode`(_ `mode`: TextureButton.StretchMode) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `mode`.rawValue
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_stretch_mode, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_flip_h = lookupMethod("TextureButton", "set_flip_h", 2586408642)
-    @inlinable @inline(__always) public func `set_flip_h`(_ `enable`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `enable` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_flip_h, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_flipped_h = lookupMethod("TextureButton", "is_flipped_h", 36873697)
-    @inlinable @inline(__always) public func `is_flipped_h`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_flipped_h, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_flip_v = lookupMethod("TextureButton", "set_flip_v", 2586408642)
-    @inlinable @inline(__always) public func `set_flip_v`(_ `enable`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `enable` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_flip_v, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_flipped_v = lookupMethod("TextureButton", "is_flipped_v", 36873697)
-    @inlinable @inline(__always) public func `is_flipped_v`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_flipped_v, requireHandle(), nil, &result)
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_get_texture_normal = lookupMethod("TextureButton", "get_texture_normal", 3635182373)
-    public func `get_texture_normal`() -> Texture2D? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_texture_normal, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Texture2D
-}
-    nonisolated(unsafe) private static let mb_get_texture_pressed = lookupMethod("TextureButton", "get_texture_pressed", 3635182373)
-    public func `get_texture_pressed`() -> Texture2D? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_texture_pressed, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Texture2D
-}
-    nonisolated(unsafe) private static let mb_get_texture_hover = lookupMethod("TextureButton", "get_texture_hover", 3635182373)
-    public func `get_texture_hover`() -> Texture2D? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_texture_hover, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Texture2D
-}
-    nonisolated(unsafe) private static let mb_get_texture_disabled = lookupMethod("TextureButton", "get_texture_disabled", 3635182373)
-    public func `get_texture_disabled`() -> Texture2D? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_texture_disabled, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Texture2D
-}
-    nonisolated(unsafe) private static let mb_get_texture_focused = lookupMethod("TextureButton", "get_texture_focused", 3635182373)
-    public func `get_texture_focused`() -> Texture2D? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_texture_focused, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Texture2D
-}
-    nonisolated(unsafe) private static let mb_get_click_mask = lookupMethod("TextureButton", "get_click_mask", 2459671998)
-    public func `get_click_mask`() -> BitMap? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_click_mask, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? BitMap
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_ignore_texture_size = lookupMethod("TextureButton", "get_ignore_texture_size", 36873697)
-    @inlinable @inline(__always) public func `get_ignore_texture_size`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_ignore_texture_size, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_stretch_mode = lookupMethod("TextureButton", "get_stretch_mode", 33815122)
-    @inlinable @inline(__always) public func `get_stretch_mode`() -> TextureButton.StretchMode {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_stretch_mode, requireHandle(), nil, &result)
-        return TextureButton.StretchMode(rawValue: result)
-}
-}
-extension TextureCubemapArrayRD {
-}
-extension TextureCubemapRD {
-}
-extension TextureLayered {
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_format = lookupMethod("TextureLayered", "get_format", 3847873762)
-    @inlinable @inline(__always) public func `get_format`() -> Image.Format {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_format, requireHandle(), nil, &result)
-        return Image.Format(rawValue: result)
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_layered_type = lookupMethod("TextureLayered", "get_layered_type", 518123893)
-    @inlinable @inline(__always) public func `get_layered_type`() -> TextureLayered.LayeredType {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_layered_type, requireHandle(), nil, &result)
-        return TextureLayered.LayeredType(rawValue: result)
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_width = lookupMethod("TextureLayered", "get_width", 3905245786)
-    @inlinable @inline(__always) public func `get_width`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_width, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_height = lookupMethod("TextureLayered", "get_height", 3905245786)
-    @inlinable @inline(__always) public func `get_height`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_height, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_layers = lookupMethod("TextureLayered", "get_layers", 3905245786)
-    @inlinable @inline(__always) public func `get_layers`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_layers, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_has_mipmaps = lookupMethod("TextureLayered", "has_mipmaps", 36873697)
-    @inlinable @inline(__always) public func `has_mipmaps`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_has_mipmaps, requireHandle(), nil, &result)
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_get_layer_data = lookupMethod("TextureLayered", "get_layer_data", 3655284255)
-    public func `get_layer_data`(_ `layer`: Int64) -> Image? {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `layer`
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_layer_data, requireHandle(), &arguments, &nativeResult)
-        }
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Image
-}
-}
-extension TextureLayeredRD {
-    nonisolated(unsafe) private static let mb_set_texture_rd_rid = lookupMethod("TextureLayeredRD", "set_texture_rd_rid", 2722037293)
-    public func `set_texture_rd_rid`(_ `texture_rd_rid`: GodotRID) {
-        defer { withExtendedLifetime((self)) {} }
-        `texture_rd_rid`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_texture_rd_rid, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_texture_rd_rid = lookupMethod("TextureLayeredRD", "get_texture_rd_rid", 2944877500)
-    public func `get_texture_rd_rid`() -> GodotRID {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotRID(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_texture_rd_rid, requireHandle(), nil, result)
-        })
-}
-}
-extension TextureProgressBar {
-    nonisolated(unsafe) private static let mb_set_under_texture = lookupMethod("TextureProgressBar", "set_under_texture", 4051416890)
-    public func `set_under_texture`(_ `tex`: Texture2D?) {
-        defer { withExtendedLifetime((self, `tex`)) {} }
-        var a0 = `tex`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_under_texture, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_under_texture = lookupMethod("TextureProgressBar", "get_under_texture", 3635182373)
-    public func `get_under_texture`() -> Texture2D? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_under_texture, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Texture2D
-}
-    nonisolated(unsafe) private static let mb_set_progress_texture = lookupMethod("TextureProgressBar", "set_progress_texture", 4051416890)
-    public func `set_progress_texture`(_ `tex`: Texture2D?) {
-        defer { withExtendedLifetime((self, `tex`)) {} }
-        var a0 = `tex`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_progress_texture, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_progress_texture = lookupMethod("TextureProgressBar", "get_progress_texture", 3635182373)
-    public func `get_progress_texture`() -> Texture2D? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_progress_texture, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Texture2D
-}
-    nonisolated(unsafe) private static let mb_set_over_texture = lookupMethod("TextureProgressBar", "set_over_texture", 4051416890)
-    public func `set_over_texture`(_ `tex`: Texture2D?) {
-        defer { withExtendedLifetime((self, `tex`)) {} }
-        var a0 = `tex`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_over_texture, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_over_texture = lookupMethod("TextureProgressBar", "get_over_texture", 3635182373)
-    public func `get_over_texture`() -> Texture2D? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_over_texture, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Texture2D
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_fill_mode = lookupMethod("TextureProgressBar", "set_fill_mode", 1286410249)
-    @inlinable @inline(__always) public func `set_fill_mode`(_ `mode`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `mode`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_fill_mode, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_fill_mode = lookupMethod("TextureProgressBar", "get_fill_mode", 2455072627)
-    @inlinable @inline(__always) public func `get_fill_mode`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_fill_mode, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_tint_under = lookupMethod("TextureProgressBar", "set_tint_under", 2920490490)
-    @inlinable @inline(__always) public func `set_tint_under`(_ `tint`: Color) {
-        defer { withExtendedLifetime((self)) {} }
-        `tint`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_tint_under, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_tint_under = lookupMethod("TextureProgressBar", "get_tint_under", 3444240500)
-    @inlinable @inline(__always) public func `get_tint_under`() -> Color {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Color.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_tint_under, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_tint_progress = lookupMethod("TextureProgressBar", "set_tint_progress", 2920490490)
-    @inlinable @inline(__always) public func `set_tint_progress`(_ `tint`: Color) {
-        defer { withExtendedLifetime((self)) {} }
-        `tint`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_tint_progress, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_tint_progress = lookupMethod("TextureProgressBar", "get_tint_progress", 3444240500)
-    @inlinable @inline(__always) public func `get_tint_progress`() -> Color {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Color.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_tint_progress, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_tint_over = lookupMethod("TextureProgressBar", "set_tint_over", 2920490490)
-    @inlinable @inline(__always) public func `set_tint_over`(_ `tint`: Color) {
-        defer { withExtendedLifetime((self)) {} }
-        `tint`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_tint_over, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_tint_over = lookupMethod("TextureProgressBar", "get_tint_over", 3444240500)
-    @inlinable @inline(__always) public func `get_tint_over`() -> Color {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Color.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_tint_over, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_texture_progress_offset = lookupMethod("TextureProgressBar", "set_texture_progress_offset", 743155724)
-    @inlinable @inline(__always) public func `set_texture_progress_offset`(_ `offset`: Vector2) {
-        defer { withExtendedLifetime((self)) {} }
-        `offset`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_texture_progress_offset, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_texture_progress_offset = lookupMethod("TextureProgressBar", "get_texture_progress_offset", 3341600327)
-    @inlinable @inline(__always) public func `get_texture_progress_offset`() -> Vector2 {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Vector2.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_texture_progress_offset, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_radial_initial_angle = lookupMethod("TextureProgressBar", "set_radial_initial_angle", 373806689)
-    @inlinable @inline(__always) public func `set_radial_initial_angle`(_ `mode`: Double) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `mode`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_radial_initial_angle, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_radial_initial_angle = lookupMethod("TextureProgressBar", "get_radial_initial_angle", 191475506)
-    @inlinable @inline(__always) public func `get_radial_initial_angle`() -> Double {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Double = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_radial_initial_angle, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_radial_center_offset = lookupMethod("TextureProgressBar", "set_radial_center_offset", 743155724)
-    @inlinable @inline(__always) public func `set_radial_center_offset`(_ `mode`: Vector2) {
-        defer { withExtendedLifetime((self)) {} }
-        `mode`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_radial_center_offset, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_radial_center_offset = lookupMethod("TextureProgressBar", "get_radial_center_offset", 1497962370)
-    @inlinable @inline(__always) public func `get_radial_center_offset`() -> Vector2 {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Vector2.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_radial_center_offset, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_fill_degrees = lookupMethod("TextureProgressBar", "set_fill_degrees", 373806689)
-    @inlinable @inline(__always) public func `set_fill_degrees`(_ `mode`: Double) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `mode`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_fill_degrees, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_fill_degrees = lookupMethod("TextureProgressBar", "get_fill_degrees", 191475506)
-    @inlinable @inline(__always) public func `get_fill_degrees`() -> Double {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Double = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_fill_degrees, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_stretch_margin = lookupMethod("TextureProgressBar", "set_stretch_margin", 437707142)
-    @inlinable @inline(__always) public func `set_stretch_margin`(_ `margin`: Godot.Side, _ `value`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `margin`.rawValue
-        var a1 = `value`
         withUnsafePointer(to: &a0) { p0 in
             withUnsafePointer(to: &a1) { p1 in
                 var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
                 withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_stretch_margin, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                    api.object_method_bind_ptrcall!(Self.mb_get_button_id, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
                 }
             }
         }
+        return result
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_stretch_margin = lookupMethod("TextureProgressBar", "get_stretch_margin", 1983885014)
-    @inlinable @inline(__always) public func `get_stretch_margin`(_ `margin`: Godot.Side) -> Int64 {
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_button_by_id = lookupMethod("TreeItem", "get_button_by_id", 3175239445)
+    @inlinable @inline(__always) public func `get_button_by_id`(_ `column`: Int64, _ `id`: Int64) -> Int64 {
         defer { withExtendedLifetime((self)) {} }
-        var a0 = `margin`.rawValue
+        var a0 = `column`
+        var a1 = `id`
         var result: Int64 = 0
         withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_stretch_margin, requireHandle(), &arguments, &result)
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_get_button_by_id, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
+                }
+            }
         }
         return result
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_nine_patch_stretch = lookupMethod("TextureProgressBar", "set_nine_patch_stretch", 2586408642)
-    @inlinable @inline(__always) public func `set_nine_patch_stretch`(_ `stretch`: Bool) {
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_button_color = lookupMethod("TreeItem", "get_button_color", 2165839948)
+    @inlinable @inline(__always) public func `get_button_color`(_ `column`: Int64, _ `id`: Int64) -> Color {
         defer { withExtendedLifetime((self)) {} }
-        var a0 = `stretch` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_nine_patch_stretch, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_nine_patch_stretch = lookupMethod("TextureProgressBar", "get_nine_patch_stretch", 36873697)
-    @inlinable @inline(__always) public func `get_nine_patch_stretch`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_nine_patch_stretch, requireHandle(), nil, &result)
-        return result != 0
-}
-}
-extension TextureRect {
-    nonisolated(unsafe) private static let mb_set_texture = lookupMethod("TextureRect", "set_texture", 4051416890)
-    public func `set_texture`(_ `texture`: Texture2D?) {
-        defer { withExtendedLifetime((self, `texture`)) {} }
-        var a0 = `texture`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_texture, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_texture = lookupMethod("TextureRect", "get_texture", 3635182373)
-    public func `get_texture`() -> Texture2D? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_texture, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Texture2D
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_expand_mode = lookupMethod("TextureRect", "set_expand_mode", 1870766882)
-    @inlinable @inline(__always) public func `set_expand_mode`(_ `expand_mode`: TextureRect.ExpandMode) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `expand_mode`.rawValue
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_expand_mode, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_expand_mode = lookupMethod("TextureRect", "get_expand_mode", 3863824733)
-    @inlinable @inline(__always) public func `get_expand_mode`() -> TextureRect.ExpandMode {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_expand_mode, requireHandle(), nil, &result)
-        return TextureRect.ExpandMode(rawValue: result)
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_flip_h = lookupMethod("TextureRect", "set_flip_h", 2586408642)
-    @inlinable @inline(__always) public func `set_flip_h`(_ `enable`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `enable` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_flip_h, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_flipped_h = lookupMethod("TextureRect", "is_flipped_h", 36873697)
-    @inlinable @inline(__always) public func `is_flipped_h`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_flipped_h, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_flip_v = lookupMethod("TextureRect", "set_flip_v", 2586408642)
-    @inlinable @inline(__always) public func `set_flip_v`(_ `enable`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `enable` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_flip_v, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_flipped_v = lookupMethod("TextureRect", "is_flipped_v", 36873697)
-    @inlinable @inline(__always) public func `is_flipped_v`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_flipped_v, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_stretch_mode = lookupMethod("TextureRect", "set_stretch_mode", 58788729)
-    @inlinable @inline(__always) public func `set_stretch_mode`(_ `stretch_mode`: TextureRect.StretchMode) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `stretch_mode`.rawValue
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_stretch_mode, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_stretch_mode = lookupMethod("TextureRect", "get_stretch_mode", 346396079)
-    @inlinable @inline(__always) public func `get_stretch_mode`() -> TextureRect.StretchMode {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_stretch_mode, requireHandle(), nil, &result)
-        return TextureRect.StretchMode(rawValue: result)
-}
-}
-extension TextureStreaming {
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_min_lod_override = lookupMethod("TextureStreaming", "get_min_lod_override", 3905245786)
-    @inlinable @inline(__always) public func `get_min_lod_override`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_min_lod_override, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_min_lod_override = lookupMethod("TextureStreaming", "set_min_lod_override", 1286410249)
-    @inlinable @inline(__always) public func `set_min_lod_override`(_ `min_lod`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `min_lod`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_min_lod_override, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_max_lod_override = lookupMethod("TextureStreaming", "get_max_lod_override", 3905245786)
-    @inlinable @inline(__always) public func `get_max_lod_override`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_max_lod_override, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_max_lod_override = lookupMethod("TextureStreaming", "set_max_lod_override", 1286410249)
-    @inlinable @inline(__always) public func `set_max_lod_override`(_ `max_lod`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `max_lod`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_max_lod_override, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_memory_budget_mb_override = lookupMethod("TextureStreaming", "get_memory_budget_mb_override", 3905245786)
-    @inlinable @inline(__always) public func `get_memory_budget_mb_override`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_memory_budget_mb_override, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_memory_budget_mb_override = lookupMethod("TextureStreaming", "set_memory_budget_mb_override", 1286410249)
-    @inlinable @inline(__always) public func `set_memory_budget_mb_override`(_ `mb`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `mb`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_memory_budget_mb_override, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_memory_budget_bytes_used = lookupMethod("TextureStreaming", "get_memory_budget_bytes_used", 2455072627)
-    @inlinable @inline(__always) public func `get_memory_budget_bytes_used`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_memory_budget_bytes_used, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_flush_texture_streaming = lookupMethod("TextureStreaming", "flush_texture_streaming", 3218959716)
-    @inlinable @inline(__always) public func `flush_texture_streaming`() {
-        defer { withExtendedLifetime((self)) {} }
-        api.object_method_bind_ptrcall!(Self.mb_flush_texture_streaming, requireHandle(), nil, nil)
-}
-}
-extension Theme {
-    nonisolated(unsafe) private static let mb_set_icon = lookupMethod("Theme", "set_icon", 2188371082)
-    public func `set_icon`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName, _ `texture`: Texture2D?) {
-        defer { withExtendedLifetime((self, `texture`)) {} }
-        var a2 = `texture`?.requireHandle()
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                withUnsafePointer(to: &a2) { p2 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
+        var a0 = `column`
+        var a1 = `id`
+        return withUnsafeTemporaryAllocation(of: Color.self, capacity: 1) { result in
+            withUnsafePointer(to: &a0) { p0 in
+                withUnsafePointer(to: &a1) { p1 in
+                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
                     withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_set_icon, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                        api.object_method_bind_ptrcall!(Self.mb_get_button_color, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), UnsafeMutableRawPointer(result.baseAddress!))
                     }
                 }
             }
+            return result.baseAddress!.move()
         }
 }
-    nonisolated(unsafe) private static let mb_get_icon = lookupMethod("Theme", "get_icon", 934555193)
-    public func `get_icon`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) -> Texture2D? {
+    nonisolated(unsafe) private static let mb_get_button = lookupMethod("TreeItem", "get_button", 2584904275)
+    public func `get_button`(_ `column`: Int64, _ `button_index`: Int64) -> Texture2D? {
         defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var a1 = `button_index`
         var nativeResult: UnsafeMutableRawPointer? = nil
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
                 var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
                 withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_get_icon, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &nativeResult)
+                    api.object_method_bind_ptrcall!(Self.mb_get_button, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &nativeResult)
                 }
             }
         }
@@ -988,1699 +1074,1944 @@ extension Theme {
         releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
         return object as? Texture2D
 }
-    nonisolated(unsafe) private static let mb_has_icon = lookupMethod("Theme", "has_icon", 471820014)
-    public func `has_icon`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) -> Bool {
+    nonisolated(unsafe) private static let mb_set_button_tooltip_text = lookupMethod("TreeItem", "set_button_tooltip_text", 2285447957)
+    public func `set_button_tooltip_text`(_ `column`: Int64, _ `button_index`: Int64, _ `tooltip`: borrowing GodotString) {
         defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_has_icon, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                }
-            }
-        }
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_rename_icon = lookupMethod("Theme", "rename_icon", 642128662)
-    public func `rename_icon`(_ `old_name`: borrowing GodotStringName, _ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `old_name`.withStorage { p0 in
-            `name`.withStorage { p1 in
-                `theme_type`.withStorage { p2 in
+        var a0 = `column`
+        var a1 = `button_index`
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                `tooltip`.withStorage { p2 in
                     var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
                     withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_rename_icon, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                        api.object_method_bind_ptrcall!(Self.mb_set_button_tooltip_text, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
                     }
                 }
             }
         }
 }
-    nonisolated(unsafe) private static let mb_clear_icon = lookupMethod("Theme", "clear_icon", 3740211285)
-    public func `clear_icon`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_clear_icon, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_get_icon_list = lookupMethod("Theme", "get_icon_list", 4291131558)
-    public func `get_icon_list`(_ `theme_type`: borrowing GodotString) -> GodotPackedStringArray {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotPackedStringArray(initializing: { result in
-            `theme_type`.withStorage { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_icon_list, requireHandle(), &arguments, result)
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_get_icon_type_list = lookupMethod("Theme", "get_icon_type_list", 1139954409)
-    public func `get_icon_type_list`() -> GodotPackedStringArray {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotPackedStringArray(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_icon_type_list, requireHandle(), nil, result)
-        })
-}
-    nonisolated(unsafe) private static let mb_set_stylebox = lookupMethod("Theme", "set_stylebox", 2075907568)
-    public func `set_stylebox`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName, _ `texture`: StyleBox?) {
-        defer { withExtendedLifetime((self, `texture`)) {} }
-        var a2 = `texture`?.requireHandle()
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
+    nonisolated(unsafe) private static let mb_set_button = lookupMethod("TreeItem", "set_button", 176101966)
+    public func `set_button`(_ `column`: Int64, _ `button_index`: Int64, _ `button`: Texture2D?) {
+        defer { withExtendedLifetime((self, `button`)) {} }
+        var a0 = `column`
+        var a1 = `button_index`
+        var a2 = `button`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
                 withUnsafePointer(to: &a2) { p2 in
                     var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
                     withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_set_stylebox, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                        api.object_method_bind_ptrcall!(Self.mb_set_button, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
                     }
                 }
             }
         }
 }
-    nonisolated(unsafe) private static let mb_get_stylebox = lookupMethod("Theme", "get_stylebox", 3405608165)
-    public func `get_stylebox`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) -> StyleBox? {
+    @usableFromInline nonisolated(unsafe) internal static let mb_erase_button = lookupMethod("TreeItem", "erase_button", 3937882851)
+    @inlinable @inline(__always) public func `erase_button`(_ `column`: Int64, _ `button_index`: Int64) {
         defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
+        var a0 = `column`
+        var a1 = `button_index`
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
                 var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
                 withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_get_stylebox, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &nativeResult)
+                    api.object_method_bind_ptrcall!(Self.mb_erase_button, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
                 }
             }
         }
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? StyleBox
 }
-    nonisolated(unsafe) private static let mb_has_stylebox = lookupMethod("Theme", "has_stylebox", 471820014)
-    public func `has_stylebox`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) -> Bool {
+    nonisolated(unsafe) private static let mb_set_button_description = lookupMethod("TreeItem", "set_button_description", 2285447957)
+    public func `set_button_description`(_ `column`: Int64, _ `button_index`: Int64, _ `description`: borrowing GodotString) {
         defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_has_stylebox, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                }
-            }
-        }
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_rename_stylebox = lookupMethod("Theme", "rename_stylebox", 642128662)
-    public func `rename_stylebox`(_ `old_name`: borrowing GodotStringName, _ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `old_name`.withStorage { p0 in
-            `name`.withStorage { p1 in
-                `theme_type`.withStorage { p2 in
+        var a0 = `column`
+        var a1 = `button_index`
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                `description`.withStorage { p2 in
                     var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
                     withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_rename_stylebox, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                        api.object_method_bind_ptrcall!(Self.mb_set_button_description, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
                     }
                 }
             }
         }
 }
-    nonisolated(unsafe) private static let mb_clear_stylebox = lookupMethod("Theme", "clear_stylebox", 3740211285)
-    public func `clear_stylebox`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) {
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_button_disabled = lookupMethod("TreeItem", "set_button_disabled", 1383440665)
+    @inlinable @inline(__always) public func `set_button_disabled`(_ `column`: Int64, _ `button_index`: Int64, _ `disabled`: Bool) {
         defer { withExtendedLifetime((self)) {} }
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_clear_stylebox, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_get_stylebox_list = lookupMethod("Theme", "get_stylebox_list", 4291131558)
-    public func `get_stylebox_list`(_ `theme_type`: borrowing GodotString) -> GodotPackedStringArray {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotPackedStringArray(initializing: { result in
-            `theme_type`.withStorage { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_stylebox_list, requireHandle(), &arguments, result)
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_get_stylebox_type_list = lookupMethod("Theme", "get_stylebox_type_list", 1139954409)
-    public func `get_stylebox_type_list`() -> GodotPackedStringArray {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotPackedStringArray(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_stylebox_type_list, requireHandle(), nil, result)
-        })
-}
-    nonisolated(unsafe) private static let mb_set_font = lookupMethod("Theme", "set_font", 177292320)
-    public func `set_font`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName, _ `font`: Font?) {
-        defer { withExtendedLifetime((self, `font`)) {} }
-        var a2 = `font`?.requireHandle()
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
+        var a0 = `column`
+        var a1 = `button_index`
+        var a2 = `disabled` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
                 withUnsafePointer(to: &a2) { p2 in
                     var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
                     withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_set_font, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                        api.object_method_bind_ptrcall!(Self.mb_set_button_disabled, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
                     }
                 }
             }
         }
 }
-    nonisolated(unsafe) private static let mb_get_font = lookupMethod("Theme", "get_font", 3445063586)
-    public func `get_font`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) -> Font? {
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_button_color = lookupMethod("TreeItem", "set_button_color", 3733378741)
+    @inlinable @inline(__always) public func `set_button_color`(_ `column`: Int64, _ `button_index`: Int64, _ `color`: Color) {
         defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_get_font, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &nativeResult)
-                }
-            }
-        }
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Font
-}
-    nonisolated(unsafe) private static let mb_has_font = lookupMethod("Theme", "has_font", 471820014)
-    public func `has_font`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_has_font, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                }
-            }
-        }
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_rename_font = lookupMethod("Theme", "rename_font", 642128662)
-    public func `rename_font`(_ `old_name`: borrowing GodotStringName, _ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `old_name`.withStorage { p0 in
-            `name`.withStorage { p1 in
-                `theme_type`.withStorage { p2 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
-                    withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_rename_font, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                    }
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_clear_font = lookupMethod("Theme", "clear_font", 3740211285)
-    public func `clear_font`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_clear_font, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_get_font_list = lookupMethod("Theme", "get_font_list", 4291131558)
-    public func `get_font_list`(_ `theme_type`: borrowing GodotString) -> GodotPackedStringArray {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotPackedStringArray(initializing: { result in
-            `theme_type`.withStorage { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_font_list, requireHandle(), &arguments, result)
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_get_font_type_list = lookupMethod("Theme", "get_font_type_list", 1139954409)
-    public func `get_font_type_list`() -> GodotPackedStringArray {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotPackedStringArray(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_font_type_list, requireHandle(), nil, result)
-        })
-}
-    nonisolated(unsafe) private static let mb_set_font_size = lookupMethod("Theme", "set_font_size", 281601298)
-    public func `set_font_size`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName, _ `font_size`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a2 = `font_size`
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                withUnsafePointer(to: &a2) { p2 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
-                    withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_set_font_size, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                    }
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_get_font_size = lookupMethod("Theme", "get_font_size", 2419549490)
-    public func `get_font_size`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_get_font_size, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                }
-            }
-        }
-        return result
-}
-    nonisolated(unsafe) private static let mb_has_font_size = lookupMethod("Theme", "has_font_size", 471820014)
-    public func `has_font_size`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_has_font_size, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                }
-            }
-        }
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_rename_font_size = lookupMethod("Theme", "rename_font_size", 642128662)
-    public func `rename_font_size`(_ `old_name`: borrowing GodotStringName, _ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `old_name`.withStorage { p0 in
-            `name`.withStorage { p1 in
-                `theme_type`.withStorage { p2 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
-                    withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_rename_font_size, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                    }
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_clear_font_size = lookupMethod("Theme", "clear_font_size", 3740211285)
-    public func `clear_font_size`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_clear_font_size, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_get_font_size_list = lookupMethod("Theme", "get_font_size_list", 4291131558)
-    public func `get_font_size_list`(_ `theme_type`: borrowing GodotString) -> GodotPackedStringArray {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotPackedStringArray(initializing: { result in
-            `theme_type`.withStorage { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_font_size_list, requireHandle(), &arguments, result)
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_get_font_size_type_list = lookupMethod("Theme", "get_font_size_type_list", 1139954409)
-    public func `get_font_size_type_list`() -> GodotPackedStringArray {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotPackedStringArray(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_font_size_type_list, requireHandle(), nil, result)
-        })
-}
-    nonisolated(unsafe) private static let mb_set_color = lookupMethod("Theme", "set_color", 4111215154)
-    public func `set_color`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName, _ `color`: Color) {
-        defer { withExtendedLifetime((self)) {} }
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
+        var a0 = `column`
+        var a1 = `button_index`
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
                 `color`.withStorage { p2 in
                     var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
                     withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_set_color, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                        api.object_method_bind_ptrcall!(Self.mb_set_button_color, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
                     }
                 }
             }
         }
 }
-    nonisolated(unsafe) private static let mb_get_color = lookupMethod("Theme", "get_color", 2015923404)
-    public func `get_color`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) -> Color {
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_button_disabled = lookupMethod("TreeItem", "is_button_disabled", 2522259332)
+    @inlinable @inline(__always) public func `is_button_disabled`(_ `column`: Int64, _ `button_index`: Int64) -> Bool {
         defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Color.self, capacity: 1) { result in
-            `name`.withStorage { p0 in
-                `theme_type`.withStorage { p1 in
+        var a0 = `column`
+        var a1 = `button_index`
+        var result: UInt8 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_is_button_disabled, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
+                }
+            }
+        }
+        return result != 0
+}
+    nonisolated(unsafe) private static let mb_set_tooltip_text = lookupMethod("TreeItem", "set_tooltip_text", 501894301)
+    public func `set_tooltip_text`(_ `column`: Int64, _ `tooltip`: borrowing GodotString) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        withUnsafePointer(to: &a0) { p0 in
+            `tooltip`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_tooltip_text, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_get_tooltip_text = lookupMethod("TreeItem", "get_tooltip_text", 844755477)
+    public func `get_tooltip_text`(_ `column`: Int64) -> GodotString {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        return GodotString(initializing: { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_tooltip_text, requireHandle(), &arguments, result)
+            }
+        })
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_text_alignment = lookupMethod("TreeItem", "set_text_alignment", 3276431499)
+    @inlinable @inline(__always) public func `set_text_alignment`(_ `column`: Int64, _ `text_alignment`: Godot.HorizontalAlignment) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var a1 = `text_alignment`.rawValue
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_text_alignment, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_text_alignment = lookupMethod("TreeItem", "get_text_alignment", 4171562184)
+    @inlinable @inline(__always) public func `get_text_alignment`(_ `column`: Int64) -> Godot.HorizontalAlignment {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var result: Int64 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_text_alignment, requireHandle(), &arguments, &result)
+        }
+        return Godot.HorizontalAlignment(rawValue: result)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_expand_right = lookupMethod("TreeItem", "set_expand_right", 300928843)
+    @inlinable @inline(__always) public func `set_expand_right`(_ `column`: Int64, _ `enable`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var a1 = `enable` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_expand_right, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_expand_right = lookupMethod("TreeItem", "get_expand_right", 1116898809)
+    @inlinable @inline(__always) public func `get_expand_right`(_ `column`: Int64) -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `column`
+        var result: UInt8 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_expand_right, requireHandle(), &arguments, &result)
+        }
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_disable_folding = lookupMethod("TreeItem", "set_disable_folding", 2586408642)
+    @inlinable @inline(__always) public func `set_disable_folding`(_ `disable`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `disable` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_disable_folding, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_folding_disabled = lookupMethod("TreeItem", "is_folding_disabled", 36873697)
+    @inlinable @inline(__always) public func `is_folding_disabled`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_folding_disabled, requireHandle(), nil, &result)
+        return result != 0
+}
+    nonisolated(unsafe) private static let mb_create_child = lookupMethod("TreeItem", "create_child", 954243986)
+    public func `create_child`(_ `index`: Int64 = -1) -> TreeItem? {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_create_child, requireHandle(), &arguments, &nativeResult)
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        return object as? TreeItem
+}
+    nonisolated(unsafe) private static let mb_add_child = lookupMethod("TreeItem", "add_child", 1819951137)
+    public func `add_child`(_ `child`: TreeItem?) {
+        defer { withExtendedLifetime((self, `child`)) {} }
+        var a0 = `child`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_add_child, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_remove_child = lookupMethod("TreeItem", "remove_child", 1819951137)
+    public func `remove_child`(_ `child`: TreeItem?) {
+        defer { withExtendedLifetime((self, `child`)) {} }
+        var a0 = `child`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_remove_child, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_get_tree = lookupMethod("TreeItem", "get_tree", 2243340556)
+    public func `get_tree`() -> Tree? {
+        defer { withExtendedLifetime((self)) {} }
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        api.object_method_bind_ptrcall!(Self.mb_get_tree, requireHandle(), nil, &nativeResult)
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        return object as? Tree
+}
+    nonisolated(unsafe) private static let mb_get_next = lookupMethod("TreeItem", "get_next", 1514277247)
+    public func `get_next`() -> TreeItem? {
+        defer { withExtendedLifetime((self)) {} }
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        api.object_method_bind_ptrcall!(Self.mb_get_next, requireHandle(), nil, &nativeResult)
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        return object as? TreeItem
+}
+    nonisolated(unsafe) private static let mb_get_prev = lookupMethod("TreeItem", "get_prev", 2768121250)
+    public func `get_prev`() -> TreeItem? {
+        defer { withExtendedLifetime((self)) {} }
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        api.object_method_bind_ptrcall!(Self.mb_get_prev, requireHandle(), nil, &nativeResult)
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        return object as? TreeItem
+}
+    nonisolated(unsafe) private static let mb_get_parent = lookupMethod("TreeItem", "get_parent", 1514277247)
+    public func `get_parent`() -> TreeItem? {
+        defer { withExtendedLifetime((self)) {} }
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        api.object_method_bind_ptrcall!(Self.mb_get_parent, requireHandle(), nil, &nativeResult)
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        return object as? TreeItem
+}
+    nonisolated(unsafe) private static let mb_get_first_child = lookupMethod("TreeItem", "get_first_child", 1514277247)
+    public func `get_first_child`() -> TreeItem? {
+        defer { withExtendedLifetime((self)) {} }
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        api.object_method_bind_ptrcall!(Self.mb_get_first_child, requireHandle(), nil, &nativeResult)
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        return object as? TreeItem
+}
+    nonisolated(unsafe) private static let mb_get_next_in_tree = lookupMethod("TreeItem", "get_next_in_tree", 1666920593)
+    public func `get_next_in_tree`(_ `wrap`: Bool = false) -> TreeItem? {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `wrap` ? UInt8(1) : UInt8(0)
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_next_in_tree, requireHandle(), &arguments, &nativeResult)
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        return object as? TreeItem
+}
+    nonisolated(unsafe) private static let mb_get_prev_in_tree = lookupMethod("TreeItem", "get_prev_in_tree", 1666920593)
+    public func `get_prev_in_tree`(_ `wrap`: Bool = false) -> TreeItem? {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `wrap` ? UInt8(1) : UInt8(0)
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_prev_in_tree, requireHandle(), &arguments, &nativeResult)
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        return object as? TreeItem
+}
+    nonisolated(unsafe) private static let mb_get_next_visible = lookupMethod("TreeItem", "get_next_visible", 1666920593)
+    public func `get_next_visible`(_ `wrap`: Bool = false) -> TreeItem? {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `wrap` ? UInt8(1) : UInt8(0)
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_next_visible, requireHandle(), &arguments, &nativeResult)
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        return object as? TreeItem
+}
+    nonisolated(unsafe) private static let mb_get_prev_visible = lookupMethod("TreeItem", "get_prev_visible", 1666920593)
+    public func `get_prev_visible`(_ `wrap`: Bool = false) -> TreeItem? {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `wrap` ? UInt8(1) : UInt8(0)
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_prev_visible, requireHandle(), &arguments, &nativeResult)
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        return object as? TreeItem
+}
+    nonisolated(unsafe) private static let mb_get_child = lookupMethod("TreeItem", "get_child", 306700752)
+    public func `get_child`(_ `index`: Int64) -> TreeItem? {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_child, requireHandle(), &arguments, &nativeResult)
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        return object as? TreeItem
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_child_count = lookupMethod("TreeItem", "get_child_count", 2455072627)
+    @inlinable @inline(__always) public func `get_child_count`() -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_child_count, requireHandle(), nil, &result)
+        return result
+}
+    nonisolated(unsafe) private static let mb_get_children = lookupMethod("TreeItem", "get_children", 2915620761)
+    public func `get_children`() -> GodotArrayOf<TreeItem> {
+        defer { withExtendedLifetime((self)) {} }
+        return GodotArrayOf<TreeItem>(initializing: { result in
+            api.object_method_bind_ptrcall!(Self.mb_get_children, requireHandle(), nil, result)
+        })
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_index = lookupMethod("TreeItem", "get_index", 2455072627)
+    @inlinable @inline(__always) public func `get_index`() -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_index, requireHandle(), nil, &result)
+        return result
+}
+    nonisolated(unsafe) private static let mb_move_before = lookupMethod("TreeItem", "move_before", 1819951137)
+    public func `move_before`(_ `item`: TreeItem?) {
+        defer { withExtendedLifetime((self, `item`)) {} }
+        var a0 = `item`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_move_before, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_move_after = lookupMethod("TreeItem", "move_after", 1819951137)
+    public func `move_after`(_ `item`: TreeItem?) {
+        defer { withExtendedLifetime((self, `item`)) {} }
+        var a0 = `item`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_move_after, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_call_recursive = lookupMethod("TreeItem", "call_recursive", 2866548813)
+    public func `call_recursive`(_ `method`: borrowing GodotStringName, arguments: borrowing VariantArguments) throws {
+        defer { withExtendedLifetime(self) {} }
+        var all = VariantArguments(capacity: arguments.count + 1)
+        all.append(GodotVariant(`method`))
+        all.append(contentsOf: arguments)
+        _ = try invokeVariantMethod(Self.mb_call_recursive, requireHandle(), arguments: all)
+    }
+}
+extension TriangleMesh {
+    nonisolated(unsafe) private static let mb_create_from_faces = lookupMethod("TriangleMesh", "create_from_faces", 2637816732)
+    public func `create_from_faces`(_ `faces`: borrowing GodotPackedVector3Array) -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        `faces`.withStorage { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_create_from_faces, requireHandle(), &arguments, &result)
+        }
+        return result != 0
+}
+    nonisolated(unsafe) private static let mb_get_faces = lookupMethod("TriangleMesh", "get_faces", 497664490)
+    public func `get_faces`() -> GodotPackedVector3Array {
+        defer { withExtendedLifetime((self)) {} }
+        return GodotPackedVector3Array(initializing: { result in
+            api.object_method_bind_ptrcall!(Self.mb_get_faces, requireHandle(), nil, result)
+        })
+}
+    nonisolated(unsafe) private static let mb_intersect_segment = lookupMethod("TriangleMesh", "intersect_segment", 3648293151)
+    public func `intersect_segment`(_ `begin`: Vector3, _ `end`: Vector3) -> GodotDictionary {
+        defer { withExtendedLifetime((self)) {} }
+        return GodotDictionary(initializing: { result in
+            `begin`.withStorage { p0 in
+                `end`.withStorage { p1 in
                     var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
                     withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_get_color, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), UnsafeMutableRawPointer(result.baseAddress!))
+                        api.object_method_bind_ptrcall!(Self.mb_intersect_segment, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), result)
                     }
                 }
+            }
+        })
+}
+    nonisolated(unsafe) private static let mb_intersect_ray = lookupMethod("TriangleMesh", "intersect_ray", 3648293151)
+    public func `intersect_ray`(_ `begin`: Vector3, _ `dir`: Vector3) -> GodotDictionary {
+        defer { withExtendedLifetime((self)) {} }
+        return GodotDictionary(initializing: { result in
+            `begin`.withStorage { p0 in
+                `dir`.withStorage { p1 in
+                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                    withUnsafePointer(to: &arguments) { arguments in
+                        api.object_method_bind_ptrcall!(Self.mb_intersect_ray, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), result)
+                    }
+                }
+            }
+        })
+}
+}
+extension TubeTrailMesh {
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_radius = lookupMethod("TubeTrailMesh", "set_radius", 373806689)
+    @inlinable @inline(__always) public func `set_radius`(_ `radius`: Double) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `radius`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_radius, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_radius = lookupMethod("TubeTrailMesh", "get_radius", 1740695150)
+    @inlinable @inline(__always) public func `get_radius`() -> Double {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Double = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_radius, requireHandle(), nil, &result)
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_radial_steps = lookupMethod("TubeTrailMesh", "set_radial_steps", 1286410249)
+    @inlinable @inline(__always) public func `set_radial_steps`(_ `radial_steps`: Int64) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `radial_steps`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_radial_steps, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_radial_steps = lookupMethod("TubeTrailMesh", "get_radial_steps", 3905245786)
+    @inlinable @inline(__always) public func `get_radial_steps`() -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_radial_steps, requireHandle(), nil, &result)
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_sections = lookupMethod("TubeTrailMesh", "set_sections", 1286410249)
+    @inlinable @inline(__always) public func `set_sections`(_ `sections`: Int64) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `sections`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_sections, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_sections = lookupMethod("TubeTrailMesh", "get_sections", 3905245786)
+    @inlinable @inline(__always) public func `get_sections`() -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_sections, requireHandle(), nil, &result)
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_section_length = lookupMethod("TubeTrailMesh", "set_section_length", 373806689)
+    @inlinable @inline(__always) public func `set_section_length`(_ `section_length`: Double) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `section_length`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_section_length, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_section_length = lookupMethod("TubeTrailMesh", "get_section_length", 1740695150)
+    @inlinable @inline(__always) public func `get_section_length`() -> Double {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Double = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_section_length, requireHandle(), nil, &result)
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_section_rings = lookupMethod("TubeTrailMesh", "set_section_rings", 1286410249)
+    @inlinable @inline(__always) public func `set_section_rings`(_ `section_rings`: Int64) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `section_rings`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_section_rings, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_section_rings = lookupMethod("TubeTrailMesh", "get_section_rings", 3905245786)
+    @inlinable @inline(__always) public func `get_section_rings`() -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_section_rings, requireHandle(), nil, &result)
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_cap_top = lookupMethod("TubeTrailMesh", "set_cap_top", 2586408642)
+    @inlinable @inline(__always) public func `set_cap_top`(_ `cap_top`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `cap_top` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_cap_top, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_cap_top = lookupMethod("TubeTrailMesh", "is_cap_top", 36873697)
+    @inlinable @inline(__always) public func `is_cap_top`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_cap_top, requireHandle(), nil, &result)
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_cap_bottom = lookupMethod("TubeTrailMesh", "set_cap_bottom", 2586408642)
+    @inlinable @inline(__always) public func `set_cap_bottom`(_ `cap_bottom`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `cap_bottom` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_cap_bottom, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_cap_bottom = lookupMethod("TubeTrailMesh", "is_cap_bottom", 36873697)
+    @inlinable @inline(__always) public func `is_cap_bottom`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_cap_bottom, requireHandle(), nil, &result)
+        return result != 0
+}
+    nonisolated(unsafe) private static let mb_set_curve = lookupMethod("TubeTrailMesh", "set_curve", 270443179)
+    public func `set_curve`(_ `curve`: Curve?) {
+        defer { withExtendedLifetime((self, `curve`)) {} }
+        var a0 = `curve`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_curve, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_get_curve = lookupMethod("TubeTrailMesh", "get_curve", 2460114913)
+    public func `get_curve`() -> Curve? {
+        defer { withExtendedLifetime((self)) {} }
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        api.object_method_bind_ptrcall!(Self.mb_get_curve, requireHandle(), nil, &nativeResult)
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? Curve
+}
+}
+extension Tween {
+    nonisolated(unsafe) private static let mb_tween_property = lookupMethod("Tween", "tween_property", 4049770449)
+    public func `tween_property`(_ `object_value`: Object?, _ `property`: borrowing GodotNodePath, _ `final_val`: borrowing GodotVariant, _ `duration`: Double) -> PropertyTweener? {
+        defer { withExtendedLifetime((self, `object_value`)) {} }
+        var a0 = `object_value`?.requireHandle()
+        var a3 = `duration`
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        withUnsafePointer(to: &a0) { p0 in
+            `property`.withStorage { p1 in
+                `final_val`.withStorage { p2 in
+                    withUnsafePointer(to: &a3) { p3 in
+                        var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p3)))
+                        withUnsafePointer(to: &arguments) { arguments in
+                            api.object_method_bind_ptrcall!(Self.mb_tween_property, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &nativeResult)
+                        }
+                    }
+                }
+            }
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? PropertyTweener
+}
+    nonisolated(unsafe) private static let mb_tween_interval = lookupMethod("Tween", "tween_interval", 413360199)
+    public func `tween_interval`(_ `time`: Double) -> IntervalTweener? {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `time`
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_tween_interval, requireHandle(), &arguments, &nativeResult)
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? IntervalTweener
+}
+    nonisolated(unsafe) private static let mb_tween_callback = lookupMethod("Tween", "tween_callback", 1540176488)
+    public func `tween_callback`(_ `callback`: borrowing GodotCallable) -> CallbackTweener? {
+        defer { withExtendedLifetime((self)) {} }
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        `callback`.withStorage { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_tween_callback, requireHandle(), &arguments, &nativeResult)
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? CallbackTweener
+}
+    nonisolated(unsafe) private static let mb_tween_method = lookupMethod("Tween", "tween_method", 2337877153)
+    public func `tween_method`(_ `method`: borrowing GodotCallable, _ `from`: borrowing GodotVariant, _ `to`: borrowing GodotVariant, _ `duration`: Double) -> MethodTweener? {
+        defer { withExtendedLifetime((self)) {} }
+        var a3 = `duration`
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        `method`.withStorage { p0 in
+            `from`.withStorage { p1 in
+                `to`.withStorage { p2 in
+                    withUnsafePointer(to: &a3) { p3 in
+                        var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p3)))
+                        withUnsafePointer(to: &arguments) { arguments in
+                            api.object_method_bind_ptrcall!(Self.mb_tween_method, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &nativeResult)
+                        }
+                    }
+                }
+            }
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? MethodTweener
+}
+    nonisolated(unsafe) private static let mb_tween_subtween = lookupMethod("Tween", "tween_subtween", 1567358477)
+    public func `tween_subtween`(_ `subtween`: Tween?) -> SubtweenTweener? {
+        defer { withExtendedLifetime((self, `subtween`)) {} }
+        var a0 = `subtween`?.requireHandle()
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_tween_subtween, requireHandle(), &arguments, &nativeResult)
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? SubtweenTweener
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_custom_step = lookupMethod("Tween", "custom_step", 330693286)
+    @inlinable @inline(__always) public func `custom_step`(_ `delta`: Double) -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `delta`
+        var result: UInt8 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_custom_step, requireHandle(), &arguments, &result)
+        }
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_stop = lookupMethod("Tween", "stop", 3218959716)
+    @inlinable @inline(__always) public func `stop`() {
+        defer { withExtendedLifetime((self)) {} }
+        api.object_method_bind_ptrcall!(Self.mb_stop, requireHandle(), nil, nil)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_pause = lookupMethod("Tween", "pause", 3218959716)
+    @inlinable @inline(__always) public func `pause`() {
+        defer { withExtendedLifetime((self)) {} }
+        api.object_method_bind_ptrcall!(Self.mb_pause, requireHandle(), nil, nil)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_play = lookupMethod("Tween", "play", 3218959716)
+    @inlinable @inline(__always) public func `play`() {
+        defer { withExtendedLifetime((self)) {} }
+        api.object_method_bind_ptrcall!(Self.mb_play, requireHandle(), nil, nil)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_kill = lookupMethod("Tween", "kill", 3218959716)
+    @inlinable @inline(__always) public func `kill`() {
+        defer { withExtendedLifetime((self)) {} }
+        api.object_method_bind_ptrcall!(Self.mb_kill, requireHandle(), nil, nil)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_total_elapsed_time = lookupMethod("Tween", "get_total_elapsed_time", 1740695150)
+    @inlinable @inline(__always) public func `get_total_elapsed_time`() -> Double {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Double = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_total_elapsed_time, requireHandle(), nil, &result)
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_running = lookupMethod("Tween", "is_running", 2240911060)
+    @inlinable @inline(__always) public func `is_running`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_running, requireHandle(), nil, &result)
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_valid = lookupMethod("Tween", "is_valid", 2240911060)
+    @inlinable @inline(__always) public func `is_valid`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_valid, requireHandle(), nil, &result)
+        return result != 0
+}
+    nonisolated(unsafe) private static let mb_bind_node = lookupMethod("Tween", "bind_node", 2946786331)
+    public func `bind_node`(_ `node`: Node?) -> Tween? {
+        defer { withExtendedLifetime((self, `node`)) {} }
+        var a0 = `node`?.requireHandle()
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_bind_node, requireHandle(), &arguments, &nativeResult)
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? Tween
+}
+    nonisolated(unsafe) private static let mb_set_process_mode = lookupMethod("Tween", "set_process_mode", 855258840)
+    public func `set_process_mode`(_ `mode`: Tween.TweenProcessMode) -> Tween? {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `mode`.rawValue
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_process_mode, requireHandle(), &arguments, &nativeResult)
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? Tween
+}
+    nonisolated(unsafe) private static let mb_set_pause_mode = lookupMethod("Tween", "set_pause_mode", 3363368837)
+    public func `set_pause_mode`(_ `mode`: Tween.TweenPauseMode) -> Tween? {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `mode`.rawValue
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_pause_mode, requireHandle(), &arguments, &nativeResult)
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? Tween
+}
+    nonisolated(unsafe) private static let mb_set_ignore_time_scale = lookupMethod("Tween", "set_ignore_time_scale", 1942052223)
+    public func `set_ignore_time_scale`(_ `ignore`: Bool = true) -> Tween? {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `ignore` ? UInt8(1) : UInt8(0)
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_ignore_time_scale, requireHandle(), &arguments, &nativeResult)
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? Tween
+}
+    nonisolated(unsafe) private static let mb_set_parallel = lookupMethod("Tween", "set_parallel", 1942052223)
+    public func `set_parallel`(_ `parallel`: Bool = true) -> Tween? {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `parallel` ? UInt8(1) : UInt8(0)
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_parallel, requireHandle(), &arguments, &nativeResult)
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? Tween
+}
+    nonisolated(unsafe) private static let mb_set_loops = lookupMethod("Tween", "set_loops", 2670836414)
+    public func `set_loops`(_ `loops`: Int64 = 0) -> Tween? {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `loops`
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_loops, requireHandle(), &arguments, &nativeResult)
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? Tween
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_loops_left = lookupMethod("Tween", "get_loops_left", 3905245786)
+    @inlinable @inline(__always) public func `get_loops_left`() -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_loops_left, requireHandle(), nil, &result)
+        return result
+}
+    nonisolated(unsafe) private static let mb_set_speed_scale = lookupMethod("Tween", "set_speed_scale", 3961971106)
+    public func `set_speed_scale`(_ `speed`: Double) -> Tween? {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `speed`
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_speed_scale, requireHandle(), &arguments, &nativeResult)
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? Tween
+}
+    nonisolated(unsafe) private static let mb_set_trans = lookupMethod("Tween", "set_trans", 3965963875)
+    public func `set_trans`(_ `trans`: Tween.TransitionType) -> Tween? {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `trans`.rawValue
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_trans, requireHandle(), &arguments, &nativeResult)
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? Tween
+}
+    nonisolated(unsafe) private static let mb_set_ease = lookupMethod("Tween", "set_ease", 1208117252)
+    public func `set_ease`(_ `ease`: Tween.EaseType) -> Tween? {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `ease`.rawValue
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_ease, requireHandle(), &arguments, &nativeResult)
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? Tween
+}
+    nonisolated(unsafe) private static let mb_parallel = lookupMethod("Tween", "parallel", 3426978995)
+    public func `parallel`() -> Tween? {
+        defer { withExtendedLifetime((self)) {} }
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        api.object_method_bind_ptrcall!(Self.mb_parallel, requireHandle(), nil, &nativeResult)
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? Tween
+}
+    nonisolated(unsafe) private static let mb_chain = lookupMethod("Tween", "chain", 3426978995)
+    public func `chain`() -> Tween? {
+        defer { withExtendedLifetime((self)) {} }
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        api.object_method_bind_ptrcall!(Self.mb_chain, requireHandle(), nil, &nativeResult)
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? Tween
+}
+    nonisolated(unsafe) private static let mb_interpolate_value = lookupMethod("Tween", "interpolate_value", 3452526450)
+    public static func `interpolate_value`(_ `initial_value`: borrowing GodotVariant, _ `delta_value`: borrowing GodotVariant, _ `elapsed_time`: Double, _ `duration`: Double, _ `trans_type`: Tween.TransitionType, _ `ease_type`: Tween.EaseType) -> GodotVariant {
+        var a2 = `elapsed_time`
+        var a3 = `duration`
+        var a4 = `trans_type`.rawValue
+        var a5 = `ease_type`.rawValue
+        return GodotVariant(initializing: { result in
+            `initial_value`.withStorage { p0 in
+                `delta_value`.withStorage { p1 in
+                    withUnsafePointer(to: &a2) { p2 in
+                        withUnsafePointer(to: &a3) { p3 in
+                            withUnsafePointer(to: &a4) { p4 in
+                                withUnsafePointer(to: &a5) { p5 in
+                                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p3)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p4)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p5)))
+                                    withUnsafePointer(to: &arguments) { arguments in
+                                        api.object_method_bind_ptrcall!(Self.mb_interpolate_value, nil, UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), result)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        })
+}
+}
+extension Tweener {
+}
+extension TwoBoneIK3D {
+    nonisolated(unsafe) private static let mb_set_target_node = lookupMethod("TwoBoneIK3D", "set_target_node", 2761262315)
+    public func `set_target_node`(_ `index`: Int64, _ `target_node`: borrowing GodotNodePath) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        withUnsafePointer(to: &a0) { p0 in
+            `target_node`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_target_node, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_get_target_node = lookupMethod("TwoBoneIK3D", "get_target_node", 408788394)
+    public func `get_target_node`(_ `index`: Int64) -> GodotNodePath {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        return GodotNodePath(initializing: { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_target_node, requireHandle(), &arguments, result)
+            }
+        })
+}
+    nonisolated(unsafe) private static let mb_set_pole_node = lookupMethod("TwoBoneIK3D", "set_pole_node", 2761262315)
+    public func `set_pole_node`(_ `index`: Int64, _ `pole_node`: borrowing GodotNodePath) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        withUnsafePointer(to: &a0) { p0 in
+            `pole_node`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_pole_node, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_get_pole_node = lookupMethod("TwoBoneIK3D", "get_pole_node", 408788394)
+    public func `get_pole_node`(_ `index`: Int64) -> GodotNodePath {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        return GodotNodePath(initializing: { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_pole_node, requireHandle(), &arguments, result)
+            }
+        })
+}
+    nonisolated(unsafe) private static let mb_set_root_bone_name = lookupMethod("TwoBoneIK3D", "set_root_bone_name", 501894301)
+    public func `set_root_bone_name`(_ `index`: Int64, _ `bone_name`: borrowing GodotString) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        withUnsafePointer(to: &a0) { p0 in
+            `bone_name`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_root_bone_name, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_get_root_bone_name = lookupMethod("TwoBoneIK3D", "get_root_bone_name", 844755477)
+    public func `get_root_bone_name`(_ `index`: Int64) -> GodotString {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        return GodotString(initializing: { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_root_bone_name, requireHandle(), &arguments, result)
+            }
+        })
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_root_bone = lookupMethod("TwoBoneIK3D", "set_root_bone", 3937882851)
+    @inlinable @inline(__always) public func `set_root_bone`(_ `index`: Int64, _ `bone`: Int64) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var a1 = `bone`
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_root_bone, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_root_bone = lookupMethod("TwoBoneIK3D", "get_root_bone", 923996154)
+    @inlinable @inline(__always) public func `get_root_bone`(_ `index`: Int64) -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var result: Int64 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_root_bone, requireHandle(), &arguments, &result)
+        }
+        return result
+}
+    nonisolated(unsafe) private static let mb_set_middle_bone_name = lookupMethod("TwoBoneIK3D", "set_middle_bone_name", 501894301)
+    public func `set_middle_bone_name`(_ `index`: Int64, _ `bone_name`: borrowing GodotString) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        withUnsafePointer(to: &a0) { p0 in
+            `bone_name`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_middle_bone_name, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_get_middle_bone_name = lookupMethod("TwoBoneIK3D", "get_middle_bone_name", 844755477)
+    public func `get_middle_bone_name`(_ `index`: Int64) -> GodotString {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        return GodotString(initializing: { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_middle_bone_name, requireHandle(), &arguments, result)
+            }
+        })
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_middle_bone = lookupMethod("TwoBoneIK3D", "set_middle_bone", 3937882851)
+    @inlinable @inline(__always) public func `set_middle_bone`(_ `index`: Int64, _ `bone`: Int64) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var a1 = `bone`
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_middle_bone, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_middle_bone = lookupMethod("TwoBoneIK3D", "get_middle_bone", 923996154)
+    @inlinable @inline(__always) public func `get_middle_bone`(_ `index`: Int64) -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var result: Int64 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_middle_bone, requireHandle(), &arguments, &result)
+        }
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_pole_direction = lookupMethod("TwoBoneIK3D", "set_pole_direction", 258741388)
+    @inlinable @inline(__always) public func `set_pole_direction`(_ `index`: Int64, _ `direction`: SkeletonModifier3D.SecondaryDirection) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var a1 = `direction`.rawValue
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_pole_direction, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_pole_direction = lookupMethod("TwoBoneIK3D", "get_pole_direction", 377522128)
+    @inlinable @inline(__always) public func `get_pole_direction`(_ `index`: Int64) -> SkeletonModifier3D.SecondaryDirection {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var result: Int64 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_pole_direction, requireHandle(), &arguments, &result)
+        }
+        return SkeletonModifier3D.SecondaryDirection(rawValue: result)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_pole_direction_vector = lookupMethod("TwoBoneIK3D", "set_pole_direction_vector", 1530502735)
+    @inlinable @inline(__always) public func `set_pole_direction_vector`(_ `index`: Int64, _ `vector`: Vector3) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        withUnsafePointer(to: &a0) { p0 in
+            `vector`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_pole_direction_vector, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_pole_direction_vector = lookupMethod("TwoBoneIK3D", "get_pole_direction_vector", 711720468)
+    @inlinable @inline(__always) public func `get_pole_direction_vector`(_ `index`: Int64) -> Vector3 {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        return withUnsafeTemporaryAllocation(of: Vector3.self, capacity: 1) { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_pole_direction_vector, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
             }
             return result.baseAddress!.move()
         }
 }
-    nonisolated(unsafe) private static let mb_has_color = lookupMethod("Theme", "has_color", 471820014)
-    public func `has_color`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) -> Bool {
+    nonisolated(unsafe) private static let mb_set_end_bone_name = lookupMethod("TwoBoneIK3D", "set_end_bone_name", 501894301)
+    public func `set_end_bone_name`(_ `index`: Int64, _ `bone_name`: borrowing GodotString) {
         defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_has_color, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                }
-            }
-        }
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_rename_color = lookupMethod("Theme", "rename_color", 642128662)
-    public func `rename_color`(_ `old_name`: borrowing GodotStringName, _ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `old_name`.withStorage { p0 in
-            `name`.withStorage { p1 in
-                `theme_type`.withStorage { p2 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
-                    withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_rename_color, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                    }
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_clear_color = lookupMethod("Theme", "clear_color", 3740211285)
-    public func `clear_color`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_clear_color, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_get_color_list = lookupMethod("Theme", "get_color_list", 4291131558)
-    public func `get_color_list`(_ `theme_type`: borrowing GodotString) -> GodotPackedStringArray {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotPackedStringArray(initializing: { result in
-            `theme_type`.withStorage { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_color_list, requireHandle(), &arguments, result)
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_get_color_type_list = lookupMethod("Theme", "get_color_type_list", 1139954409)
-    public func `get_color_type_list`() -> GodotPackedStringArray {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotPackedStringArray(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_color_type_list, requireHandle(), nil, result)
-        })
-}
-    nonisolated(unsafe) private static let mb_set_constant = lookupMethod("Theme", "set_constant", 281601298)
-    public func `set_constant`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName, _ `constant`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a2 = `constant`
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                withUnsafePointer(to: &a2) { p2 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
-                    withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_set_constant, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                    }
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_get_constant = lookupMethod("Theme", "get_constant", 2419549490)
-    public func `get_constant`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_get_constant, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                }
-            }
-        }
-        return result
-}
-    nonisolated(unsafe) private static let mb_has_constant = lookupMethod("Theme", "has_constant", 471820014)
-    public func `has_constant`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_has_constant, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                }
-            }
-        }
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_rename_constant = lookupMethod("Theme", "rename_constant", 642128662)
-    public func `rename_constant`(_ `old_name`: borrowing GodotStringName, _ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `old_name`.withStorage { p0 in
-            `name`.withStorage { p1 in
-                `theme_type`.withStorage { p2 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
-                    withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_rename_constant, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                    }
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_clear_constant = lookupMethod("Theme", "clear_constant", 3740211285)
-    public func `clear_constant`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_clear_constant, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_get_constant_list = lookupMethod("Theme", "get_constant_list", 4291131558)
-    public func `get_constant_list`(_ `theme_type`: borrowing GodotString) -> GodotPackedStringArray {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotPackedStringArray(initializing: { result in
-            `theme_type`.withStorage { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_constant_list, requireHandle(), &arguments, result)
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_get_constant_type_list = lookupMethod("Theme", "get_constant_type_list", 1139954409)
-    public func `get_constant_type_list`() -> GodotPackedStringArray {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotPackedStringArray(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_constant_type_list, requireHandle(), nil, result)
-        })
-}
-    nonisolated(unsafe) private static let mb_set_sound = lookupMethod("Theme", "set_sound", 2577918927)
-    public func `set_sound`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName, _ `sound`: AudioStream?) {
-        defer { withExtendedLifetime((self, `sound`)) {} }
-        var a2 = `sound`?.requireHandle()
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                withUnsafePointer(to: &a2) { p2 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
-                    withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_set_sound, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                    }
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_get_sound = lookupMethod("Theme", "get_sound", 1175136407)
-    public func `get_sound`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) -> AudioStream? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_get_sound, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &nativeResult)
-                }
-            }
-        }
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? AudioStream
-}
-    nonisolated(unsafe) private static let mb_has_sound = lookupMethod("Theme", "has_sound", 471820014)
-    public func `has_sound`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_has_sound, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                }
-            }
-        }
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_rename_sound = lookupMethod("Theme", "rename_sound", 642128662)
-    public func `rename_sound`(_ `old_name`: borrowing GodotStringName, _ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `old_name`.withStorage { p0 in
-            `name`.withStorage { p1 in
-                `theme_type`.withStorage { p2 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
-                    withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_rename_sound, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                    }
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_clear_sound = lookupMethod("Theme", "clear_sound", 3740211285)
-    public func `clear_sound`(_ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `name`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_clear_sound, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_get_sound_list = lookupMethod("Theme", "get_sound_list", 4291131558)
-    public func `get_sound_list`(_ `theme_type`: borrowing GodotString) -> GodotPackedStringArray {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotPackedStringArray(initializing: { result in
-            `theme_type`.withStorage { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_sound_list, requireHandle(), &arguments, result)
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_get_sound_type_list = lookupMethod("Theme", "get_sound_type_list", 1139954409)
-    public func `get_sound_type_list`() -> GodotPackedStringArray {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotPackedStringArray(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_sound_type_list, requireHandle(), nil, result)
-        })
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_default_base_scale = lookupMethod("Theme", "set_default_base_scale", 373806689)
-    @inlinable @inline(__always) public func `set_default_base_scale`(_ `base_scale`: Double) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `base_scale`
+        var a0 = `index`
         withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_default_base_scale, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_default_base_scale = lookupMethod("Theme", "get_default_base_scale", 1740695150)
-    @inlinable @inline(__always) public func `get_default_base_scale`() -> Double {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Double = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_default_base_scale, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_has_default_base_scale = lookupMethod("Theme", "has_default_base_scale", 36873697)
-    @inlinable @inline(__always) public func `has_default_base_scale`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_has_default_base_scale, requireHandle(), nil, &result)
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_set_default_font = lookupMethod("Theme", "set_default_font", 1262170328)
-    public func `set_default_font`(_ `font`: Font?) {
-        defer { withExtendedLifetime((self, `font`)) {} }
-        var a0 = `font`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_default_font, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_default_font = lookupMethod("Theme", "get_default_font", 3229501585)
-    public func `get_default_font`() -> Font? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_default_font, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Font
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_has_default_font = lookupMethod("Theme", "has_default_font", 36873697)
-    @inlinable @inline(__always) public func `has_default_font`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_has_default_font, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_default_font_size = lookupMethod("Theme", "set_default_font_size", 1286410249)
-    @inlinable @inline(__always) public func `set_default_font_size`(_ `font_size`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `font_size`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_default_font_size, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_default_font_size = lookupMethod("Theme", "get_default_font_size", 3905245786)
-    @inlinable @inline(__always) public func `get_default_font_size`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_default_font_size, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_has_default_font_size = lookupMethod("Theme", "has_default_font_size", 36873697)
-    @inlinable @inline(__always) public func `has_default_font_size`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_has_default_font_size, requireHandle(), nil, &result)
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_set_theme_item = lookupMethod("Theme", "set_theme_item", 2492983623)
-    public func `set_theme_item`(_ `data_type`: Theme.DataType, _ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName, _ `value`: borrowing GodotVariant) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `data_type`.rawValue
-        withUnsafePointer(to: &a0) { p0 in
-            `name`.withStorage { p1 in
-                `theme_type`.withStorage { p2 in
-                    `value`.withStorage { p3 in
-                        var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p3)))
-                        withUnsafePointer(to: &arguments) { arguments in
-                            api.object_method_bind_ptrcall!(Self.mb_set_theme_item, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                        }
-                    }
+            `bone_name`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_end_bone_name, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
                 }
             }
         }
 }
-    nonisolated(unsafe) private static let mb_get_theme_item = lookupMethod("Theme", "get_theme_item", 2191024021)
-    public func `get_theme_item`(_ `data_type`: Theme.DataType, _ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) -> GodotVariant {
+    nonisolated(unsafe) private static let mb_get_end_bone_name = lookupMethod("TwoBoneIK3D", "get_end_bone_name", 844755477)
+    public func `get_end_bone_name`(_ `index`: Int64) -> GodotString {
         defer { withExtendedLifetime((self)) {} }
-        var a0 = `data_type`.rawValue
-        return GodotVariant(initializing: { result in
-            withUnsafePointer(to: &a0) { p0 in
-                `name`.withStorage { p1 in
-                    `theme_type`.withStorage { p2 in
-                        var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
-                        withUnsafePointer(to: &arguments) { arguments in
-                            api.object_method_bind_ptrcall!(Self.mb_get_theme_item, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), result)
-                        }
-                    }
-                }
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_has_theme_item = lookupMethod("Theme", "has_theme_item", 1739311056)
-    public func `has_theme_item`(_ `data_type`: Theme.DataType, _ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `data_type`.rawValue
-        var result: UInt8 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            `name`.withStorage { p1 in
-                `theme_type`.withStorage { p2 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
-                    withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_has_theme_item, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                    }
-                }
-            }
-        }
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_rename_theme_item = lookupMethod("Theme", "rename_theme_item", 3900867553)
-    public func `rename_theme_item`(_ `data_type`: Theme.DataType, _ `old_name`: borrowing GodotStringName, _ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `data_type`.rawValue
-        withUnsafePointer(to: &a0) { p0 in
-            `old_name`.withStorage { p1 in
-                `name`.withStorage { p2 in
-                    `theme_type`.withStorage { p3 in
-                        var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p3)))
-                        withUnsafePointer(to: &arguments) { arguments in
-                            api.object_method_bind_ptrcall!(Self.mb_rename_theme_item, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                        }
-                    }
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_clear_theme_item = lookupMethod("Theme", "clear_theme_item", 2965505587)
-    public func `clear_theme_item`(_ `data_type`: Theme.DataType, _ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `data_type`.rawValue
-        withUnsafePointer(to: &a0) { p0 in
-            `name`.withStorage { p1 in
-                `theme_type`.withStorage { p2 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
-                    withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_clear_theme_item, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                    }
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_get_theme_item_list = lookupMethod("Theme", "get_theme_item_list", 3726716710)
-    public func `get_theme_item_list`(_ `data_type`: Theme.DataType, _ `theme_type`: borrowing GodotString) -> GodotPackedStringArray {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `data_type`.rawValue
-        return GodotPackedStringArray(initializing: { result in
-            withUnsafePointer(to: &a0) { p0 in
-                `theme_type`.withStorage { p1 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                    withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_get_theme_item_list, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), result)
-                    }
-                }
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_get_theme_item_type_list = lookupMethod("Theme", "get_theme_item_type_list", 1316004935)
-    public func `get_theme_item_type_list`(_ `data_type`: Theme.DataType) -> GodotPackedStringArray {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `data_type`.rawValue
-        return GodotPackedStringArray(initializing: { result in
+        var a0 = `index`
+        return GodotString(initializing: { result in
             withUnsafePointer(to: &a0) { p0 in
                 var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_theme_item_type_list, requireHandle(), &arguments, result)
+                api.object_method_bind_ptrcall!(Self.mb_get_end_bone_name, requireHandle(), &arguments, result)
             }
         })
 }
-    nonisolated(unsafe) private static let mb_set_type_variation = lookupMethod("Theme", "set_type_variation", 3740211285)
-    public func `set_type_variation`(_ `theme_type`: borrowing GodotStringName, _ `base_type`: borrowing GodotStringName) {
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_end_bone = lookupMethod("TwoBoneIK3D", "set_end_bone", 3937882851)
+    @inlinable @inline(__always) public func `set_end_bone`(_ `index`: Int64, _ `bone`: Int64) {
         defer { withExtendedLifetime((self)) {} }
-        `theme_type`.withStorage { p0 in
-            `base_type`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_type_variation, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_is_type_variation = lookupMethod("Theme", "is_type_variation", 471820014)
-    public func `is_type_variation`(_ `theme_type`: borrowing GodotStringName, _ `base_type`: borrowing GodotStringName) -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        `theme_type`.withStorage { p0 in
-            `base_type`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_is_type_variation, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                }
-            }
-        }
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_clear_type_variation = lookupMethod("Theme", "clear_type_variation", 3304788590)
-    public func `clear_type_variation`(_ `theme_type`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `theme_type`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_clear_type_variation, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_type_variation_base = lookupMethod("Theme", "get_type_variation_base", 1965194235)
-    public func `get_type_variation_base`(_ `theme_type`: borrowing GodotStringName) -> GodotStringName {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotStringName(initializing: { result in
-            `theme_type`.withStorage { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_type_variation_base, requireHandle(), &arguments, result)
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_get_type_variation_list = lookupMethod("Theme", "get_type_variation_list", 1761182771)
-    public func `get_type_variation_list`(_ `base_type`: borrowing GodotStringName) -> GodotPackedStringArray {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotPackedStringArray(initializing: { result in
-            `base_type`.withStorage { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_type_variation_list, requireHandle(), &arguments, result)
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_add_type = lookupMethod("Theme", "add_type", 3304788590)
-    public func `add_type`(_ `theme_type`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `theme_type`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_add_type, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_remove_type = lookupMethod("Theme", "remove_type", 3304788590)
-    public func `remove_type`(_ `theme_type`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `theme_type`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_remove_type, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_rename_type = lookupMethod("Theme", "rename_type", 3740211285)
-    public func `rename_type`(_ `old_theme_type`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        `old_theme_type`.withStorage { p0 in
-            `theme_type`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_rename_type, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_get_type_list = lookupMethod("Theme", "get_type_list", 1139954409)
-    public func `get_type_list`() -> GodotPackedStringArray {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotPackedStringArray(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_type_list, requireHandle(), nil, result)
-        })
-}
-    nonisolated(unsafe) private static let mb_merge_with = lookupMethod("Theme", "merge_with", 2326690814)
-    public func `merge_with`(_ `other`: Theme?) {
-        defer { withExtendedLifetime((self, `other`)) {} }
-        var a0 = `other`?.requireHandle()
+        var a0 = `index`
+        var a1 = `bone`
         withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_merge_with, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_clear = lookupMethod("Theme", "clear", 3218959716)
-    @inlinable @inline(__always) public func `clear`() {
-        defer { withExtendedLifetime((self)) {} }
-        api.object_method_bind_ptrcall!(Self.mb_clear, requireHandle(), nil, nil)
-}
-}
-extension ThemeDB {
-    nonisolated(unsafe) private static let mb_get_default_theme = lookupMethod("ThemeDB", "get_default_theme", 754276358)
-    public func `get_default_theme`() -> Theme? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_default_theme, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Theme
-}
-    nonisolated(unsafe) private static let mb_get_project_theme = lookupMethod("ThemeDB", "get_project_theme", 754276358)
-    public func `get_project_theme`() -> Theme? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_project_theme, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Theme
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_fallback_base_scale = lookupMethod("ThemeDB", "set_fallback_base_scale", 373806689)
-    @inlinable @inline(__always) public func `set_fallback_base_scale`(_ `base_scale`: Double) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `base_scale`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_fallback_base_scale, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_fallback_base_scale = lookupMethod("ThemeDB", "get_fallback_base_scale", 191475506)
-    @inlinable @inline(__always) public func `get_fallback_base_scale`() -> Double {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Double = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_fallback_base_scale, requireHandle(), nil, &result)
-        return result
-}
-    nonisolated(unsafe) private static let mb_set_fallback_font = lookupMethod("ThemeDB", "set_fallback_font", 1262170328)
-    public func `set_fallback_font`(_ `font`: Font?) {
-        defer { withExtendedLifetime((self, `font`)) {} }
-        var a0 = `font`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_fallback_font, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_fallback_font = lookupMethod("ThemeDB", "get_fallback_font", 3656929885)
-    public func `get_fallback_font`() -> Font? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_fallback_font, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Font
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_fallback_font_size = lookupMethod("ThemeDB", "set_fallback_font_size", 1286410249)
-    @inlinable @inline(__always) public func `set_fallback_font_size`(_ `font_size`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `font_size`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_fallback_font_size, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_fallback_font_size = lookupMethod("ThemeDB", "get_fallback_font_size", 2455072627)
-    @inlinable @inline(__always) public func `get_fallback_font_size`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_fallback_font_size, requireHandle(), nil, &result)
-        return result
-}
-    nonisolated(unsafe) private static let mb_set_fallback_icon = lookupMethod("ThemeDB", "set_fallback_icon", 4051416890)
-    public func `set_fallback_icon`(_ `icon`: Texture2D?) {
-        defer { withExtendedLifetime((self, `icon`)) {} }
-        var a0 = `icon`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_fallback_icon, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_fallback_icon = lookupMethod("ThemeDB", "get_fallback_icon", 255860311)
-    public func `get_fallback_icon`() -> Texture2D? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_fallback_icon, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Texture2D
-}
-    nonisolated(unsafe) private static let mb_set_fallback_stylebox = lookupMethod("ThemeDB", "set_fallback_stylebox", 2797200388)
-    public func `set_fallback_stylebox`(_ `stylebox`: StyleBox?) {
-        defer { withExtendedLifetime((self, `stylebox`)) {} }
-        var a0 = `stylebox`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_fallback_stylebox, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_fallback_stylebox = lookupMethod("ThemeDB", "get_fallback_stylebox", 496040854)
-    public func `get_fallback_stylebox`() -> StyleBox? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_fallback_stylebox, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? StyleBox
-}
-    nonisolated(unsafe) private static let mb_set_fallback_sound = lookupMethod("ThemeDB", "set_fallback_sound", 2210767741)
-    public func `set_fallback_sound`(_ `audio`: AudioStream?) {
-        defer { withExtendedLifetime((self, `audio`)) {} }
-        var a0 = `audio`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_fallback_sound, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_fallback_sound = lookupMethod("ThemeDB", "get_fallback_sound", 1183832186)
-    public func `get_fallback_sound`() -> AudioStream? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_fallback_sound, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? AudioStream
-}
-}
-extension Thread {
-    nonisolated(unsafe) private static let mb_start = lookupMethod("Thread", "start", 1327203254)
-    public func `start`(_ `callable`: borrowing GodotCallable, _ `priority`: Thread.Priority = Thread.Priority(rawValue: 1)) -> Godot.Error {
-        defer { withExtendedLifetime((self)) {} }
-        var a1 = `priority`.rawValue
-        var result: Int64 = 0
-        `callable`.withStorage { p0 in
             withUnsafePointer(to: &a1) { p1 in
                 var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
                 withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_start, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
+                    api.object_method_bind_ptrcall!(Self.mb_set_end_bone, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_end_bone = lookupMethod("TwoBoneIK3D", "get_end_bone", 923996154)
+    @inlinable @inline(__always) public func `get_end_bone`(_ `index`: Int64) -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var result: Int64 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_end_bone, requireHandle(), &arguments, &result)
+        }
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_use_virtual_end = lookupMethod("TwoBoneIK3D", "set_use_virtual_end", 300928843)
+    @inlinable @inline(__always) public func `set_use_virtual_end`(_ `index`: Int64, _ `enabled`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var a1 = `enabled` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_use_virtual_end, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_using_virtual_end = lookupMethod("TwoBoneIK3D", "is_using_virtual_end", 1116898809)
+    @inlinable @inline(__always) public func `is_using_virtual_end`(_ `index`: Int64) -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var result: UInt8 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_is_using_virtual_end, requireHandle(), &arguments, &result)
+        }
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_extend_end_bone = lookupMethod("TwoBoneIK3D", "set_extend_end_bone", 300928843)
+    @inlinable @inline(__always) public func `set_extend_end_bone`(_ `index`: Int64, _ `enabled`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var a1 = `enabled` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_extend_end_bone, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_end_bone_extended = lookupMethod("TwoBoneIK3D", "is_end_bone_extended", 1116898809)
+    @inlinable @inline(__always) public func `is_end_bone_extended`(_ `index`: Int64) -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var result: UInt8 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_is_end_bone_extended, requireHandle(), &arguments, &result)
+        }
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_end_bone_direction = lookupMethod("TwoBoneIK3D", "set_end_bone_direction", 2838484201)
+    @inlinable @inline(__always) public func `set_end_bone_direction`(_ `index`: Int64, _ `bone_direction`: SkeletonModifier3D.BoneDirection) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var a1 = `bone_direction`.rawValue
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_end_bone_direction, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_end_bone_direction = lookupMethod("TwoBoneIK3D", "get_end_bone_direction", 1843036459)
+    @inlinable @inline(__always) public func `get_end_bone_direction`(_ `index`: Int64) -> SkeletonModifier3D.BoneDirection {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var result: Int64 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_end_bone_direction, requireHandle(), &arguments, &result)
+        }
+        return SkeletonModifier3D.BoneDirection(rawValue: result)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_end_bone_length = lookupMethod("TwoBoneIK3D", "set_end_bone_length", 1602489585)
+    @inlinable @inline(__always) public func `set_end_bone_length`(_ `index`: Int64, _ `length`: Double) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var a1 = `length`
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_end_bone_length, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_end_bone_length = lookupMethod("TwoBoneIK3D", "get_end_bone_length", 2339986948)
+    @inlinable @inline(__always) public func `get_end_bone_length`(_ `index`: Int64) -> Double {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var result: Double = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_end_bone_length, requireHandle(), &arguments, &result)
+        }
+        return result
+}
+}
+extension UDPServer {
+    nonisolated(unsafe) private static let mb_listen = lookupMethod("UDPServer", "listen", 3167955072)
+    public func `listen`(_ `port`: Int64, _ `bind_address`: borrowing GodotString = GodotString("*")) -> Godot.Error {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `port`
+        var result: Int64 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            `bind_address`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_listen, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
                 }
             }
         }
         return Godot.Error(rawValue: result)
 }
-    nonisolated(unsafe) private static let mb_get_id = lookupMethod("Thread", "get_id", 201670096)
-    public func `get_id`() -> GodotString {
+    @usableFromInline nonisolated(unsafe) internal static let mb_poll = lookupMethod("UDPServer", "poll", 166280745)
+    @inlinable @inline(__always) public func `poll`() -> Godot.Error {
         defer { withExtendedLifetime((self)) {} }
-        return GodotString(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_id, requireHandle(), nil, result)
-        })
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_poll, requireHandle(), nil, &result)
+        return Godot.Error(rawValue: result)
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_started = lookupMethod("Thread", "is_started", 36873697)
-    @inlinable @inline(__always) public func `is_started`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_started, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_alive = lookupMethod("Thread", "is_alive", 36873697)
-    @inlinable @inline(__always) public func `is_alive`() -> Bool {
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_connection_available = lookupMethod("UDPServer", "is_connection_available", 36873697)
+    @inlinable @inline(__always) public func `is_connection_available`() -> Bool {
         defer { withExtendedLifetime((self)) {} }
         var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_alive, requireHandle(), nil, &result)
+        api.object_method_bind_ptrcall!(Self.mb_is_connection_available, requireHandle(), nil, &result)
         return result != 0
 }
-    nonisolated(unsafe) private static let mb_wait_to_finish = lookupMethod("Thread", "wait_to_finish", 1460262497)
-    public func `wait_to_finish`() -> GodotVariant {
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_local_port = lookupMethod("UDPServer", "get_local_port", 3905245786)
+    @inlinable @inline(__always) public func `get_local_port`() -> Int64 {
         defer { withExtendedLifetime((self)) {} }
-        return GodotVariant(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_wait_to_finish, requireHandle(), nil, result)
-        })
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_local_port, requireHandle(), nil, &result)
+        return result
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_thread_safety_checks_enabled = lookupMethod("Thread", "set_thread_safety_checks_enabled", 2586408642)
-    @inlinable @inline(__always) public static func `set_thread_safety_checks_enabled`(_ `enabled`: Bool) {
-        var a0 = `enabled` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_thread_safety_checks_enabled, nil, &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_main_thread = lookupMethod("Thread", "is_main_thread", 2240911060)
-    @inlinable @inline(__always) public static func `is_main_thread`() -> Bool {
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_main_thread, nil, nil, &result)
-        return result != 0
-}
-}
-extension TileData {
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_flip_h = lookupMethod("TileData", "set_flip_h", 2586408642)
-    @inlinable @inline(__always) public func `set_flip_h`(_ `flip_h`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `flip_h` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_flip_h, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_flip_h = lookupMethod("TileData", "get_flip_h", 36873697)
-    @inlinable @inline(__always) public func `get_flip_h`() -> Bool {
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_listening = lookupMethod("UDPServer", "is_listening", 36873697)
+    @inlinable @inline(__always) public func `is_listening`() -> Bool {
         defer { withExtendedLifetime((self)) {} }
         var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_flip_h, requireHandle(), nil, &result)
+        api.object_method_bind_ptrcall!(Self.mb_is_listening, requireHandle(), nil, &result)
         return result != 0
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_flip_v = lookupMethod("TileData", "set_flip_v", 2586408642)
-    @inlinable @inline(__always) public func `set_flip_v`(_ `flip_v`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `flip_v` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_flip_v, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_flip_v = lookupMethod("TileData", "get_flip_v", 36873697)
-    @inlinable @inline(__always) public func `get_flip_v`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_flip_v, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_transpose = lookupMethod("TileData", "set_transpose", 2586408642)
-    @inlinable @inline(__always) public func `set_transpose`(_ `transpose`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `transpose` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_transpose, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_transpose = lookupMethod("TileData", "get_transpose", 36873697)
-    @inlinable @inline(__always) public func `get_transpose`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_transpose, requireHandle(), nil, &result)
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_set_material = lookupMethod("TileData", "set_material", 2757459619)
-    public func `set_material`(_ `material`: Material?) {
-        defer { withExtendedLifetime((self, `material`)) {} }
-        var a0 = `material`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_material, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_material = lookupMethod("TileData", "get_material", 5934680)
-    public func `get_material`() -> Material? {
+    nonisolated(unsafe) private static let mb_take_connection = lookupMethod("UDPServer", "take_connection", 808734560)
+    public func `take_connection`() -> PacketPeerUDP? {
         defer { withExtendedLifetime((self)) {} }
         var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_material, requireHandle(), nil, &nativeResult)
+        api.object_method_bind_ptrcall!(Self.mb_take_connection, requireHandle(), nil, &nativeResult)
         guard let nativeResult else { return nil }
         let object = Object.resolve(nativeResult)
         releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Material
+        return object as? PacketPeerUDP
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_texture_origin = lookupMethod("TileData", "set_texture_origin", 1130785943)
-    @inlinable @inline(__always) public func `set_texture_origin`(_ `texture_origin`: Vector2i) {
+    @usableFromInline nonisolated(unsafe) internal static let mb_stop = lookupMethod("UDPServer", "stop", 3218959716)
+    @inlinable @inline(__always) public func `stop`() {
         defer { withExtendedLifetime((self)) {} }
-        `texture_origin`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_texture_origin, requireHandle(), &arguments, nil)
-        }
+        api.object_method_bind_ptrcall!(Self.mb_stop, requireHandle(), nil, nil)
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_texture_origin = lookupMethod("TileData", "get_texture_origin", 3690982128)
-    @inlinable @inline(__always) public func `get_texture_origin`() -> Vector2i {
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_max_pending_connections = lookupMethod("UDPServer", "set_max_pending_connections", 1286410249)
+    @inlinable @inline(__always) public func `set_max_pending_connections`(_ `max_pending_connections`: Int64) {
         defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Vector2i.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_texture_origin, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_modulate = lookupMethod("TileData", "set_modulate", 2920490490)
-    @inlinable @inline(__always) public func `set_modulate`(_ `modulate`: Color) {
-        defer { withExtendedLifetime((self)) {} }
-        `modulate`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_modulate, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_modulate = lookupMethod("TileData", "get_modulate", 3444240500)
-    @inlinable @inline(__always) public func `get_modulate`() -> Color {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Color.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_modulate, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_z_index = lookupMethod("TileData", "set_z_index", 1286410249)
-    @inlinable @inline(__always) public func `set_z_index`(_ `z_index`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `z_index`
+        var a0 = `max_pending_connections`
         withUnsafePointer(to: &a0) { p0 in
             var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_z_index, requireHandle(), &arguments, nil)
+            api.object_method_bind_ptrcall!(Self.mb_set_max_pending_connections, requireHandle(), &arguments, nil)
         }
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_z_index = lookupMethod("TileData", "get_z_index", 3905245786)
-    @inlinable @inline(__always) public func `get_z_index`() -> Int64 {
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_max_pending_connections = lookupMethod("UDPServer", "get_max_pending_connections", 3905245786)
+    @inlinable @inline(__always) public func `get_max_pending_connections`() -> Int64 {
         defer { withExtendedLifetime((self)) {} }
         var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_z_index, requireHandle(), nil, &result)
+        api.object_method_bind_ptrcall!(Self.mb_get_max_pending_connections, requireHandle(), nil, &result)
         return result
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_y_sort_origin = lookupMethod("TileData", "set_y_sort_origin", 1286410249)
-    @inlinable @inline(__always) public func `set_y_sort_origin`(_ `y_sort_origin`: Int64) {
+}
+extension UDSServer {
+    nonisolated(unsafe) private static let mb_listen = lookupMethod("UDSServer", "listen", 166001499)
+    public func `listen`(_ `path`: borrowing GodotString) -> Godot.Error {
         defer { withExtendedLifetime((self)) {} }
-        var a0 = `y_sort_origin`
+        var result: Int64 = 0
+        `path`.withStorage { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_listen, requireHandle(), &arguments, &result)
+        }
+        return Godot.Error(rawValue: result)
+}
+    nonisolated(unsafe) private static let mb_take_connection = lookupMethod("UDSServer", "take_connection", 1623851112)
+    public func `take_connection`() -> StreamPeerUDS? {
+        defer { withExtendedLifetime((self)) {} }
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        api.object_method_bind_ptrcall!(Self.mb_take_connection, requireHandle(), nil, &nativeResult)
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? StreamPeerUDS
+}
+}
+extension UPNP {
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_device_count = lookupMethod("UPNP", "get_device_count", 3905245786)
+    @inlinable @inline(__always) public func `get_device_count`() -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_device_count, requireHandle(), nil, &result)
+        return result
+}
+    nonisolated(unsafe) private static let mb_get_device = lookupMethod("UPNP", "get_device", 2193290270)
+    public func `get_device`(_ `index`: Int64) -> UPNPDevice? {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var nativeResult: UnsafeMutableRawPointer? = nil
         withUnsafePointer(to: &a0) { p0 in
             var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_y_sort_origin, requireHandle(), &arguments, nil)
+            api.object_method_bind_ptrcall!(Self.mb_get_device, requireHandle(), &arguments, &nativeResult)
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? UPNPDevice
+}
+    nonisolated(unsafe) private static let mb_add_device = lookupMethod("UPNP", "add_device", 986715920)
+    public func `add_device`(_ `device`: UPNPDevice?) {
+        defer { withExtendedLifetime((self, `device`)) {} }
+        var a0 = `device`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_add_device, requireHandle(), &arguments, nil)
         }
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_y_sort_origin = lookupMethod("TileData", "get_y_sort_origin", 3905245786)
-    @inlinable @inline(__always) public func `get_y_sort_origin`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_y_sort_origin, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_occluder_polygons_count = lookupMethod("TileData", "set_occluder_polygons_count", 3937882851)
-    @inlinable @inline(__always) public func `set_occluder_polygons_count`(_ `layer_id`: Int64, _ `polygons_count`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `layer_id`
-        var a1 = `polygons_count`
+    nonisolated(unsafe) private static let mb_set_device = lookupMethod("UPNP", "set_device", 3015133723)
+    public func `set_device`(_ `index`: Int64, _ `device`: UPNPDevice?) {
+        defer { withExtendedLifetime((self, `device`)) {} }
+        var a0 = `index`
+        var a1 = `device`?.requireHandle()
         withUnsafePointer(to: &a0) { p0 in
             withUnsafePointer(to: &a1) { p1 in
                 var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
                 withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_occluder_polygons_count, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                    api.object_method_bind_ptrcall!(Self.mb_set_device, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
                 }
             }
         }
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_occluder_polygons_count = lookupMethod("TileData", "get_occluder_polygons_count", 923996154)
-    @inlinable @inline(__always) public func `get_occluder_polygons_count`(_ `layer_id`: Int64) -> Int64 {
+    @usableFromInline nonisolated(unsafe) internal static let mb_remove_device = lookupMethod("UPNP", "remove_device", 1286410249)
+    @inlinable @inline(__always) public func `remove_device`(_ `index`: Int64) {
         defer { withExtendedLifetime((self)) {} }
-        var a0 = `layer_id`
+        var a0 = `index`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_remove_device, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_clear_devices = lookupMethod("UPNP", "clear_devices", 3218959716)
+    @inlinable @inline(__always) public func `clear_devices`() {
+        defer { withExtendedLifetime((self)) {} }
+        api.object_method_bind_ptrcall!(Self.mb_clear_devices, requireHandle(), nil, nil)
+}
+    nonisolated(unsafe) private static let mb_get_gateway = lookupMethod("UPNP", "get_gateway", 2276800779)
+    public func `get_gateway`() -> UPNPDevice? {
+        defer { withExtendedLifetime((self)) {} }
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        api.object_method_bind_ptrcall!(Self.mb_get_gateway, requireHandle(), nil, &nativeResult)
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? UPNPDevice
+}
+    nonisolated(unsafe) private static let mb_discover = lookupMethod("UPNP", "discover", 1575334765)
+    public func `discover`(_ `timeout`: Int64 = 2000, _ `ttl`: Int64 = 2, _ `device_filter`: borrowing GodotString = GodotString("InternetGatewayDevice")) -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `timeout`
+        var a1 = `ttl`
         var result: Int64 = 0
         withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_occluder_polygons_count, requireHandle(), &arguments, &result)
-        }
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_add_occluder_polygon = lookupMethod("TileData", "add_occluder_polygon", 1286410249)
-    @inlinable @inline(__always) public func `add_occluder_polygon`(_ `layer_id`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `layer_id`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_add_occluder_polygon, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_remove_occluder_polygon = lookupMethod("TileData", "remove_occluder_polygon", 3937882851)
-    @inlinable @inline(__always) public func `remove_occluder_polygon`(_ `layer_id`: Int64, _ `polygon_index`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `layer_id`
-        var a1 = `polygon_index`
-        withUnsafePointer(to: &a0) { p0 in
             withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_remove_occluder_polygon, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_set_occluder_polygon = lookupMethod("TileData", "set_occluder_polygon", 164249167)
-    public func `set_occluder_polygon`(_ `layer_id`: Int64, _ `polygon_index`: Int64, _ `polygon`: OccluderPolygon2D?) {
-        defer { withExtendedLifetime((self, `polygon`)) {} }
-        var a0 = `layer_id`
-        var a1 = `polygon_index`
-        var a2 = `polygon`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                withUnsafePointer(to: &a2) { p2 in
+                `device_filter`.withStorage { p2 in
                     var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
                     withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_set_occluder_polygon, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                        api.object_method_bind_ptrcall!(Self.mb_discover, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
                     }
                 }
             }
         }
+        return result
 }
-    nonisolated(unsafe) private static let mb_get_occluder_polygon = lookupMethod("TileData", "get_occluder_polygon", 971166743)
-    public func `get_occluder_polygon`(_ `layer_id`: Int64, _ `polygon_index`: Int64, _ `flip_h`: Bool = false, _ `flip_v`: Bool = false, _ `transpose`: Bool = false) -> OccluderPolygon2D? {
+    nonisolated(unsafe) private static let mb_query_external_address = lookupMethod("UPNP", "query_external_address", 201670096)
+    public func `query_external_address`() -> GodotString {
         defer { withExtendedLifetime((self)) {} }
-        var a0 = `layer_id`
-        var a1 = `polygon_index`
-        var a2 = `flip_h` ? UInt8(1) : UInt8(0)
-        var a3 = `flip_v` ? UInt8(1) : UInt8(0)
-        var a4 = `transpose` ? UInt8(1) : UInt8(0)
-        var nativeResult: UnsafeMutableRawPointer? = nil
+        return GodotString(initializing: { result in
+            api.object_method_bind_ptrcall!(Self.mb_query_external_address, requireHandle(), nil, result)
+        })
+}
+    nonisolated(unsafe) private static let mb_add_port_mapping = lookupMethod("UPNP", "add_port_mapping", 818314583)
+    public func `add_port_mapping`(_ `port`: Int64, _ `port_internal`: Int64 = 0, _ `desc`: borrowing GodotString = GodotString(""), _ `proto`: borrowing GodotString = GodotString("UDP"), _ `duration`: Int64 = 0) -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `port`
+        var a1 = `port_internal`
+        var a4 = `duration`
+        var result: Int64 = 0
         withUnsafePointer(to: &a0) { p0 in
             withUnsafePointer(to: &a1) { p1 in
-                withUnsafePointer(to: &a2) { p2 in
-                    withUnsafePointer(to: &a3) { p3 in
+                `desc`.withStorage { p2 in
+                    `proto`.withStorage { p3 in
                         withUnsafePointer(to: &a4) { p4 in
                             var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p3)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p4)))
                             withUnsafePointer(to: &arguments) { arguments in
-                                api.object_method_bind_ptrcall!(Self.mb_get_occluder_polygon, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &nativeResult)
+                                api.object_method_bind_ptrcall!(Self.mb_add_port_mapping, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
                             }
                         }
                     }
                 }
             }
         }
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? OccluderPolygon2D
+        return result
 }
-    nonisolated(unsafe) private static let mb_set_occluder = lookupMethod("TileData", "set_occluder", 914399637)
-    public func `set_occluder`(_ `layer_id`: Int64, _ `occluder_polygon`: OccluderPolygon2D?) {
-        defer { withExtendedLifetime((self, `occluder_polygon`)) {} }
-        var a0 = `layer_id`
-        var a1 = `occluder_polygon`?.requireHandle()
+    nonisolated(unsafe) private static let mb_delete_port_mapping = lookupMethod("UPNP", "delete_port_mapping", 3444187325)
+    public func `delete_port_mapping`(_ `port`: Int64, _ `proto`: borrowing GodotString = GodotString("UDP")) -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `port`
+        var result: Int64 = 0
         withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
+            `proto`.withStorage { p1 in
                 var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
                 withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_occluder, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                    api.object_method_bind_ptrcall!(Self.mb_delete_port_mapping, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
                 }
             }
         }
+        return result
 }
-    nonisolated(unsafe) private static let mb_get_occluder = lookupMethod("TileData", "get_occluder", 2377324099)
-    public func `get_occluder`(_ `layer_id`: Int64, _ `flip_h`: Bool = false, _ `flip_v`: Bool = false, _ `transpose`: Bool = false) -> OccluderPolygon2D? {
+    nonisolated(unsafe) private static let mb_set_discover_multicast_if = lookupMethod("UPNP", "set_discover_multicast_if", 83702148)
+    public func `set_discover_multicast_if`(_ `m_if`: borrowing GodotString) {
         defer { withExtendedLifetime((self)) {} }
-        var a0 = `layer_id`
-        var a1 = `flip_h` ? UInt8(1) : UInt8(0)
-        var a2 = `flip_v` ? UInt8(1) : UInt8(0)
-        var a3 = `transpose` ? UInt8(1) : UInt8(0)
-        var nativeResult: UnsafeMutableRawPointer? = nil
+        `m_if`.withStorage { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_discover_multicast_if, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_get_discover_multicast_if = lookupMethod("UPNP", "get_discover_multicast_if", 201670096)
+    public func `get_discover_multicast_if`() -> GodotString {
+        defer { withExtendedLifetime((self)) {} }
+        return GodotString(initializing: { result in
+            api.object_method_bind_ptrcall!(Self.mb_get_discover_multicast_if, requireHandle(), nil, result)
+        })
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_discover_local_port = lookupMethod("UPNP", "set_discover_local_port", 1286410249)
+    @inlinable @inline(__always) public func `set_discover_local_port`(_ `port`: Int64) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `port`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_discover_local_port, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_discover_local_port = lookupMethod("UPNP", "get_discover_local_port", 3905245786)
+    @inlinable @inline(__always) public func `get_discover_local_port`() -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_discover_local_port, requireHandle(), nil, &result)
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_discover_ipv6 = lookupMethod("UPNP", "set_discover_ipv6", 2586408642)
+    @inlinable @inline(__always) public func `set_discover_ipv6`(_ `ipv6`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `ipv6` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_discover_ipv6, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_discover_ipv6 = lookupMethod("UPNP", "is_discover_ipv6", 36873697)
+    @inlinable @inline(__always) public func `is_discover_ipv6`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_discover_ipv6, requireHandle(), nil, &result)
+        return result != 0
+}
+}
+extension UPNPDevice {
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_valid_gateway = lookupMethod("UPNPDevice", "is_valid_gateway", 36873697)
+    @inlinable @inline(__always) public func `is_valid_gateway`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_valid_gateway, requireHandle(), nil, &result)
+        return result != 0
+}
+    nonisolated(unsafe) private static let mb_query_external_address = lookupMethod("UPNPDevice", "query_external_address", 201670096)
+    public func `query_external_address`() -> GodotString {
+        defer { withExtendedLifetime((self)) {} }
+        return GodotString(initializing: { result in
+            api.object_method_bind_ptrcall!(Self.mb_query_external_address, requireHandle(), nil, result)
+        })
+}
+    nonisolated(unsafe) private static let mb_add_port_mapping = lookupMethod("UPNPDevice", "add_port_mapping", 818314583)
+    public func `add_port_mapping`(_ `port`: Int64, _ `port_internal`: Int64 = 0, _ `desc`: borrowing GodotString = GodotString(""), _ `proto`: borrowing GodotString = GodotString("UDP"), _ `duration`: Int64 = 0) -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `port`
+        var a1 = `port_internal`
+        var a4 = `duration`
+        var result: Int64 = 0
         withUnsafePointer(to: &a0) { p0 in
             withUnsafePointer(to: &a1) { p1 in
-                withUnsafePointer(to: &a2) { p2 in
-                    withUnsafePointer(to: &a3) { p3 in
-                        var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p3)))
-                        withUnsafePointer(to: &arguments) { arguments in
-                            api.object_method_bind_ptrcall!(Self.mb_get_occluder, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &nativeResult)
+                `desc`.withStorage { p2 in
+                    `proto`.withStorage { p3 in
+                        withUnsafePointer(to: &a4) { p4 in
+                            var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p3)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p4)))
+                            withUnsafePointer(to: &arguments) { arguments in
+                                api.object_method_bind_ptrcall!(Self.mb_add_port_mapping, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
+                            }
                         }
                     }
                 }
             }
         }
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? OccluderPolygon2D
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_constant_linear_velocity = lookupMethod("TileData", "set_constant_linear_velocity", 163021252)
-    @inlinable @inline(__always) public func `set_constant_linear_velocity`(_ `layer_id`: Int64, _ `velocity`: Vector2) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `layer_id`
-        withUnsafePointer(to: &a0) { p0 in
-            `velocity`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_constant_linear_velocity, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_constant_linear_velocity = lookupMethod("TileData", "get_constant_linear_velocity", 2299179447)
-    @inlinable @inline(__always) public func `get_constant_linear_velocity`(_ `layer_id`: Int64) -> Vector2 {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `layer_id`
-        return withUnsafeTemporaryAllocation(of: Vector2.self, capacity: 1) { result in
-            withUnsafePointer(to: &a0) { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_constant_linear_velocity, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
-            }
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_constant_angular_velocity = lookupMethod("TileData", "set_constant_angular_velocity", 1602489585)
-    @inlinable @inline(__always) public func `set_constant_angular_velocity`(_ `layer_id`: Int64, _ `velocity`: Double) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `layer_id`
-        var a1 = `velocity`
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_constant_angular_velocity, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_constant_angular_velocity = lookupMethod("TileData", "get_constant_angular_velocity", 2339986948)
-    @inlinable @inline(__always) public func `get_constant_angular_velocity`(_ `layer_id`: Int64) -> Double {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `layer_id`
-        var result: Double = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_constant_angular_velocity, requireHandle(), &arguments, &result)
-        }
         return result
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_collision_polygons_count = lookupMethod("TileData", "set_collision_polygons_count", 3937882851)
-    @inlinable @inline(__always) public func `set_collision_polygons_count`(_ `layer_id`: Int64, _ `polygons_count`: Int64) {
+    nonisolated(unsafe) private static let mb_delete_port_mapping = lookupMethod("UPNPDevice", "delete_port_mapping", 3444187325)
+    public func `delete_port_mapping`(_ `port`: Int64, _ `proto`: borrowing GodotString = GodotString("UDP")) -> Int64 {
         defer { withExtendedLifetime((self)) {} }
-        var a0 = `layer_id`
-        var a1 = `polygons_count`
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_collision_polygons_count, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_collision_polygons_count = lookupMethod("TileData", "get_collision_polygons_count", 923996154)
-    @inlinable @inline(__always) public func `get_collision_polygons_count`(_ `layer_id`: Int64) -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `layer_id`
+        var a0 = `port`
         var result: Int64 = 0
         withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_collision_polygons_count, requireHandle(), &arguments, &result)
-        }
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_add_collision_polygon = lookupMethod("TileData", "add_collision_polygon", 1286410249)
-    @inlinable @inline(__always) public func `add_collision_polygon`(_ `layer_id`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `layer_id`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_add_collision_polygon, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_remove_collision_polygon = lookupMethod("TileData", "remove_collision_polygon", 3937882851)
-    @inlinable @inline(__always) public func `remove_collision_polygon`(_ `layer_id`: Int64, _ `polygon_index`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `layer_id`
-        var a1 = `polygon_index`
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
+            `proto`.withStorage { p1 in
                 var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
                 withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_remove_collision_polygon, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                    api.object_method_bind_ptrcall!(Self.mb_delete_port_mapping, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
                 }
             }
         }
+        return result
 }
-    nonisolated(unsafe) private static let mb_set_collision_polygon_points = lookupMethod("TileData", "set_collision_polygon_points", 3230546541)
-    public func `set_collision_polygon_points`(_ `layer_id`: Int64, _ `polygon_index`: Int64, _ `polygon`: borrowing GodotPackedVector2Array) {
+    nonisolated(unsafe) private static let mb_set_description_url = lookupMethod("UPNPDevice", "set_description_url", 83702148)
+    public func `set_description_url`(_ `url`: borrowing GodotString) {
         defer { withExtendedLifetime((self)) {} }
-        var a0 = `layer_id`
-        var a1 = `polygon_index`
+        `url`.withStorage { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_description_url, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_get_description_url = lookupMethod("UPNPDevice", "get_description_url", 201670096)
+    public func `get_description_url`() -> GodotString {
+        defer { withExtendedLifetime((self)) {} }
+        return GodotString(initializing: { result in
+            api.object_method_bind_ptrcall!(Self.mb_get_description_url, requireHandle(), nil, result)
+        })
+}
+    nonisolated(unsafe) private static let mb_set_service_type = lookupMethod("UPNPDevice", "set_service_type", 83702148)
+    public func `set_service_type`(_ `type`: borrowing GodotString) {
+        defer { withExtendedLifetime((self)) {} }
+        `type`.withStorage { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_service_type, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_get_service_type = lookupMethod("UPNPDevice", "get_service_type", 201670096)
+    public func `get_service_type`() -> GodotString {
+        defer { withExtendedLifetime((self)) {} }
+        return GodotString(initializing: { result in
+            api.object_method_bind_ptrcall!(Self.mb_get_service_type, requireHandle(), nil, result)
+        })
+}
+    nonisolated(unsafe) private static let mb_set_igd_control_url = lookupMethod("UPNPDevice", "set_igd_control_url", 83702148)
+    public func `set_igd_control_url`(_ `url`: borrowing GodotString) {
+        defer { withExtendedLifetime((self)) {} }
+        `url`.withStorage { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_igd_control_url, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_get_igd_control_url = lookupMethod("UPNPDevice", "get_igd_control_url", 201670096)
+    public func `get_igd_control_url`() -> GodotString {
+        defer { withExtendedLifetime((self)) {} }
+        return GodotString(initializing: { result in
+            api.object_method_bind_ptrcall!(Self.mb_get_igd_control_url, requireHandle(), nil, result)
+        })
+}
+    nonisolated(unsafe) private static let mb_set_igd_service_type = lookupMethod("UPNPDevice", "set_igd_service_type", 83702148)
+    public func `set_igd_service_type`(_ `type`: borrowing GodotString) {
+        defer { withExtendedLifetime((self)) {} }
+        `type`.withStorage { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_igd_service_type, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_get_igd_service_type = lookupMethod("UPNPDevice", "get_igd_service_type", 201670096)
+    public func `get_igd_service_type`() -> GodotString {
+        defer { withExtendedLifetime((self)) {} }
+        return GodotString(initializing: { result in
+            api.object_method_bind_ptrcall!(Self.mb_get_igd_service_type, requireHandle(), nil, result)
+        })
+}
+    nonisolated(unsafe) private static let mb_set_igd_our_addr = lookupMethod("UPNPDevice", "set_igd_our_addr", 83702148)
+    public func `set_igd_our_addr`(_ `addr`: borrowing GodotString) {
+        defer { withExtendedLifetime((self)) {} }
+        `addr`.withStorage { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_igd_our_addr, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_get_igd_our_addr = lookupMethod("UPNPDevice", "get_igd_our_addr", 201670096)
+    public func `get_igd_our_addr`() -> GodotString {
+        defer { withExtendedLifetime((self)) {} }
+        return GodotString(initializing: { result in
+            api.object_method_bind_ptrcall!(Self.mb_get_igd_our_addr, requireHandle(), nil, result)
+        })
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_igd_status = lookupMethod("UPNPDevice", "set_igd_status", 519504122)
+    @inlinable @inline(__always) public func `set_igd_status`(_ `status`: UPNPDevice.IGDStatus) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `status`.rawValue
         withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_igd_status, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_igd_status = lookupMethod("UPNPDevice", "get_igd_status", 180887011)
+    @inlinable @inline(__always) public func `get_igd_status`() -> UPNPDevice.IGDStatus {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_igd_status, requireHandle(), nil, &result)
+        return UPNPDevice.IGDStatus(rawValue: result)
+}
+}
+extension UndoRedo {
+    nonisolated(unsafe) private static let mb_create_action = lookupMethod("UndoRedo", "create_action", 3171901514)
+    public func `create_action`(_ `name`: borrowing GodotString, _ `merge_mode`: UndoRedo.MergeMode = UndoRedo.MergeMode(rawValue: 0), _ `backward_undo_ops`: Bool = false) {
+        defer { withExtendedLifetime((self)) {} }
+        var a1 = `merge_mode`.rawValue
+        var a2 = `backward_undo_ops` ? UInt8(1) : UInt8(0)
+        `name`.withStorage { p0 in
             withUnsafePointer(to: &a1) { p1 in
-                `polygon`.withStorage { p2 in
+                withUnsafePointer(to: &a2) { p2 in
                     var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
                     withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_set_collision_polygon_points, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                        api.object_method_bind_ptrcall!(Self.mb_create_action, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
                     }
                 }
             }
         }
 }
-    nonisolated(unsafe) private static let mb_get_collision_polygon_points = lookupMethod("TileData", "get_collision_polygon_points", 103942801)
-    public func `get_collision_polygon_points`(_ `layer_id`: Int64, _ `polygon_index`: Int64) -> GodotPackedVector2Array {
+    @usableFromInline nonisolated(unsafe) internal static let mb_commit_action = lookupMethod("UndoRedo", "commit_action", 3216645846)
+    @inlinable @inline(__always) public func `commit_action`(_ `execute`: Bool = true) {
         defer { withExtendedLifetime((self)) {} }
-        var a0 = `layer_id`
-        var a1 = `polygon_index`
-        return GodotPackedVector2Array(initializing: { result in
+        var a0 = `execute` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_commit_action, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_committing_action = lookupMethod("UndoRedo", "is_committing_action", 36873697)
+    @inlinable @inline(__always) public func `is_committing_action`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_committing_action, requireHandle(), nil, &result)
+        return result != 0
+}
+    nonisolated(unsafe) private static let mb_add_do_method = lookupMethod("UndoRedo", "add_do_method", 1611583062)
+    public func `add_do_method`(_ `callable`: borrowing GodotCallable) {
+        defer { withExtendedLifetime((self)) {} }
+        `callable`.withStorage { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_add_do_method, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_add_undo_method = lookupMethod("UndoRedo", "add_undo_method", 1611583062)
+    public func `add_undo_method`(_ `callable`: borrowing GodotCallable) {
+        defer { withExtendedLifetime((self)) {} }
+        `callable`.withStorage { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_add_undo_method, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_add_do_property = lookupMethod("UndoRedo", "add_do_property", 1017172818)
+    public func `add_do_property`(_ `object_value`: Object?, _ `property`: borrowing GodotStringName, _ `value`: borrowing GodotVariant) {
+        defer { withExtendedLifetime((self, `object_value`)) {} }
+        var a0 = `object_value`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            `property`.withStorage { p1 in
+                `value`.withStorage { p2 in
+                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
+                    withUnsafePointer(to: &arguments) { arguments in
+                        api.object_method_bind_ptrcall!(Self.mb_add_do_property, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                    }
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_add_undo_property = lookupMethod("UndoRedo", "add_undo_property", 1017172818)
+    public func `add_undo_property`(_ `object_value`: Object?, _ `property`: borrowing GodotStringName, _ `value`: borrowing GodotVariant) {
+        defer { withExtendedLifetime((self, `object_value`)) {} }
+        var a0 = `object_value`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            `property`.withStorage { p1 in
+                `value`.withStorage { p2 in
+                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
+                    withUnsafePointer(to: &arguments) { arguments in
+                        api.object_method_bind_ptrcall!(Self.mb_add_undo_property, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                    }
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_add_do_reference = lookupMethod("UndoRedo", "add_do_reference", 3975164845)
+    public func `add_do_reference`(_ `object_value`: Object?) {
+        defer { withExtendedLifetime((self, `object_value`)) {} }
+        var a0 = `object_value`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_add_do_reference, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_add_undo_reference = lookupMethod("UndoRedo", "add_undo_reference", 3975164845)
+    public func `add_undo_reference`(_ `object_value`: Object?) {
+        defer { withExtendedLifetime((self, `object_value`)) {} }
+        var a0 = `object_value`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_add_undo_reference, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_start_force_keep_in_merge_ends = lookupMethod("UndoRedo", "start_force_keep_in_merge_ends", 3218959716)
+    @inlinable @inline(__always) public func `start_force_keep_in_merge_ends`() {
+        defer { withExtendedLifetime((self)) {} }
+        api.object_method_bind_ptrcall!(Self.mb_start_force_keep_in_merge_ends, requireHandle(), nil, nil)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_end_force_keep_in_merge_ends = lookupMethod("UndoRedo", "end_force_keep_in_merge_ends", 3218959716)
+    @inlinable @inline(__always) public func `end_force_keep_in_merge_ends`() {
+        defer { withExtendedLifetime((self)) {} }
+        api.object_method_bind_ptrcall!(Self.mb_end_force_keep_in_merge_ends, requireHandle(), nil, nil)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_history_count = lookupMethod("UndoRedo", "get_history_count", 2455072627)
+    @inlinable @inline(__always) public func `get_history_count`() -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_history_count, requireHandle(), nil, &result)
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_current_action = lookupMethod("UndoRedo", "get_current_action", 2455072627)
+    @inlinable @inline(__always) public func `get_current_action`() -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_current_action, requireHandle(), nil, &result)
+        return result
+}
+    nonisolated(unsafe) private static let mb_get_action_name = lookupMethod("UndoRedo", "get_action_name", 990163283)
+    public func `get_action_name`(_ `id`: Int64) -> GodotString {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `id`
+        return GodotString(initializing: { result in
             withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_action_name, requireHandle(), &arguments, result)
+            }
+        })
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_clear_history = lookupMethod("UndoRedo", "clear_history", 3216645846)
+    @inlinable @inline(__always) public func `clear_history`(_ `increase_version`: Bool = true) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `increase_version` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_clear_history, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_get_current_action_name = lookupMethod("UndoRedo", "get_current_action_name", 201670096)
+    public func `get_current_action_name`() -> GodotString {
+        defer { withExtendedLifetime((self)) {} }
+        return GodotString(initializing: { result in
+            api.object_method_bind_ptrcall!(Self.mb_get_current_action_name, requireHandle(), nil, result)
+        })
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_has_undo = lookupMethod("UndoRedo", "has_undo", 36873697)
+    @inlinable @inline(__always) public func `has_undo`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_has_undo, requireHandle(), nil, &result)
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_has_redo = lookupMethod("UndoRedo", "has_redo", 36873697)
+    @inlinable @inline(__always) public func `has_redo`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_has_redo, requireHandle(), nil, &result)
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_version = lookupMethod("UndoRedo", "get_version", 3905245786)
+    @inlinable @inline(__always) public func `get_version`() -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_version, requireHandle(), nil, &result)
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_max_steps = lookupMethod("UndoRedo", "set_max_steps", 1286410249)
+    @inlinable @inline(__always) public func `set_max_steps`(_ `max_steps`: Int64) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `max_steps`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_max_steps, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_max_steps = lookupMethod("UndoRedo", "get_max_steps", 3905245786)
+    @inlinable @inline(__always) public func `get_max_steps`() -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_max_steps, requireHandle(), nil, &result)
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_redo = lookupMethod("UndoRedo", "redo", 2240911060)
+    @inlinable @inline(__always) public func `redo`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_redo, requireHandle(), nil, &result)
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_undo = lookupMethod("UndoRedo", "undo", 2240911060)
+    @inlinable @inline(__always) public func `undo`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_undo, requireHandle(), nil, &result)
+        return result != 0
+}
+}
+extension UniformSetCacheRD {
+    nonisolated(unsafe) private static let mb_get_cache = lookupMethod("UniformSetCacheRD", "get_cache", 658571723)
+    public static func `get_cache`(_ `shader`: GodotRID, _ `set`: Int64, _ `uniforms`: borrowing GodotArrayOf<RDUniform>) -> GodotRID {
+        var a1 = `set`
+        return GodotRID(initializing: { result in
+            `shader`.withStorage { p0 in
                 withUnsafePointer(to: &a1) { p1 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                    withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_get_collision_polygon_points, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), result)
-                    }
-                }
-            }
-        })
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_collision_polygon_one_way = lookupMethod("TileData", "set_collision_polygon_one_way", 1383440665)
-    @inlinable @inline(__always) public func `set_collision_polygon_one_way`(_ `layer_id`: Int64, _ `polygon_index`: Int64, _ `one_way`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `layer_id`
-        var a1 = `polygon_index`
-        var a2 = `one_way` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                withUnsafePointer(to: &a2) { p2 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
-                    withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_set_collision_polygon_one_way, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                    }
-                }
-            }
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_collision_polygon_one_way = lookupMethod("TileData", "is_collision_polygon_one_way", 2522259332)
-    @inlinable @inline(__always) public func `is_collision_polygon_one_way`(_ `layer_id`: Int64, _ `polygon_index`: Int64) -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `layer_id`
-        var a1 = `polygon_index`
-        var result: UInt8 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_is_collision_polygon_one_way, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                }
-            }
-        }
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_collision_polygon_one_way_margin = lookupMethod("TileData", "set_collision_polygon_one_way_margin", 3506521499)
-    @inlinable @inline(__always) public func `set_collision_polygon_one_way_margin`(_ `layer_id`: Int64, _ `polygon_index`: Int64, _ `one_way_margin`: Double) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `layer_id`
-        var a1 = `polygon_index`
-        var a2 = `one_way_margin`
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                withUnsafePointer(to: &a2) { p2 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
-                    withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_set_collision_polygon_one_way_margin, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                    }
-                }
-            }
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_collision_polygon_one_way_margin = lookupMethod("TileData", "get_collision_polygon_one_way_margin", 3085491603)
-    @inlinable @inline(__always) public func `get_collision_polygon_one_way_margin`(_ `layer_id`: Int64, _ `polygon_index`: Int64) -> Double {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `layer_id`
-        var a1 = `polygon_index`
-        var result: Double = 0
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_get_collision_polygon_one_way_margin, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
-                }
-            }
-        }
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_terrain_set = lookupMethod("TileData", "set_terrain_set", 1286410249)
-    @inlinable @inline(__always) public func `set_terrain_set`(_ `terrain_set`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `terrain_set`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_terrain_set, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_terrain_set = lookupMethod("TileData", "get_terrain_set", 3905245786)
-    @inlinable @inline(__always) public func `get_terrain_set`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_terrain_set, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_terrain = lookupMethod("TileData", "set_terrain", 1286410249)
-    @inlinable @inline(__always) public func `set_terrain`(_ `terrain`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `terrain`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_terrain, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_terrain = lookupMethod("TileData", "get_terrain", 3905245786)
-    @inlinable @inline(__always) public func `get_terrain`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_terrain, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_terrain_peering_bit = lookupMethod("TileData", "set_terrain_peering_bit", 1084452308)
-    @inlinable @inline(__always) public func `set_terrain_peering_bit`(_ `peering_bit`: TileSet.CellNeighbor, _ `terrain`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `peering_bit`.rawValue
-        var a1 = `terrain`
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_terrain_peering_bit, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_terrain_peering_bit = lookupMethod("TileData", "get_terrain_peering_bit", 3831796792)
-    @inlinable @inline(__always) public func `get_terrain_peering_bit`(_ `peering_bit`: TileSet.CellNeighbor) -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `peering_bit`.rawValue
-        var result: Int64 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_terrain_peering_bit, requireHandle(), &arguments, &result)
-        }
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_valid_terrain_peering_bit = lookupMethod("TileData", "is_valid_terrain_peering_bit", 845723972)
-    @inlinable @inline(__always) public func `is_valid_terrain_peering_bit`(_ `peering_bit`: TileSet.CellNeighbor) -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `peering_bit`.rawValue
-        var result: UInt8 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_is_valid_terrain_peering_bit, requireHandle(), &arguments, &result)
-        }
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_set_navigation_polygon = lookupMethod("TileData", "set_navigation_polygon", 2224691167)
-    public func `set_navigation_polygon`(_ `layer_id`: Int64, _ `navigation_polygon`: NavigationPolygon?) {
-        defer { withExtendedLifetime((self, `navigation_polygon`)) {} }
-        var a0 = `layer_id`
-        var a1 = `navigation_polygon`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_navigation_polygon, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_get_navigation_polygon = lookupMethod("TileData", "get_navigation_polygon", 2907127272)
-    public func `get_navigation_polygon`(_ `layer_id`: Int64, _ `flip_h`: Bool = false, _ `flip_v`: Bool = false, _ `transpose`: Bool = false) -> NavigationPolygon? {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `layer_id`
-        var a1 = `flip_h` ? UInt8(1) : UInt8(0)
-        var a2 = `flip_v` ? UInt8(1) : UInt8(0)
-        var a3 = `transpose` ? UInt8(1) : UInt8(0)
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                withUnsafePointer(to: &a2) { p2 in
-                    withUnsafePointer(to: &a3) { p3 in
-                        var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p3)))
+                    `uniforms`.withStorage { p2 in
+                        var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
                         withUnsafePointer(to: &arguments) { arguments in
-                            api.object_method_bind_ptrcall!(Self.mb_get_navigation_polygon, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &nativeResult)
+                            api.object_method_bind_ptrcall!(Self.mb_get_cache, nil, UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), result)
                         }
                     }
                 }
             }
-        }
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? NavigationPolygon
+        })
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_probability = lookupMethod("TileData", "set_probability", 373806689)
-    @inlinable @inline(__always) public func `set_probability`(_ `probability`: Double) {
+}
+extension VBoxContainer {
+}
+extension VFlowContainer {
+}
+extension VScrollBar {
+}
+extension VSeparator {
+}
+extension VSlider {
+}
+extension VSplitContainer {
+}
+extension VehicleBody3D {
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_engine_force = lookupMethod("VehicleBody3D", "set_engine_force", 373806689)
+    @inlinable @inline(__always) public func `set_engine_force`(_ `engine_force`: Double) {
         defer { withExtendedLifetime((self)) {} }
-        var a0 = `probability`
+        var a0 = `engine_force`
         withUnsafePointer(to: &a0) { p0 in
             var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_probability, requireHandle(), &arguments, nil)
+            api.object_method_bind_ptrcall!(Self.mb_set_engine_force, requireHandle(), &arguments, nil)
         }
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_probability = lookupMethod("TileData", "get_probability", 1740695150)
-    @inlinable @inline(__always) public func `get_probability`() -> Double {
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_engine_force = lookupMethod("VehicleBody3D", "get_engine_force", 1740695150)
+    @inlinable @inline(__always) public func `get_engine_force`() -> Double {
         defer { withExtendedLifetime((self)) {} }
         var result: Double = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_probability, requireHandle(), nil, &result)
+        api.object_method_bind_ptrcall!(Self.mb_get_engine_force, requireHandle(), nil, &result)
         return result
 }
-    nonisolated(unsafe) private static let mb_set_custom_data = lookupMethod("TileData", "set_custom_data", 402577236)
-    public func `set_custom_data`(_ `layer_name`: borrowing GodotString, _ `value`: borrowing GodotVariant) {
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_brake = lookupMethod("VehicleBody3D", "set_brake", 373806689)
+    @inlinable @inline(__always) public func `set_brake`(_ `brake`: Double) {
         defer { withExtendedLifetime((self)) {} }
-        `layer_name`.withStorage { p0 in
-            `value`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_custom_data, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_get_custom_data = lookupMethod("TileData", "get_custom_data", 1868160156)
-    public func `get_custom_data`(_ `layer_name`: borrowing GodotString) -> GodotVariant {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotVariant(initializing: { result in
-            `layer_name`.withStorage { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_custom_data, requireHandle(), &arguments, result)
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_has_custom_data = lookupMethod("TileData", "has_custom_data", 3927539163)
-    public func `has_custom_data`(_ `layer_name`: borrowing GodotString) -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        `layer_name`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_has_custom_data, requireHandle(), &arguments, &result)
-        }
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_set_custom_data_by_layer_id = lookupMethod("TileData", "set_custom_data_by_layer_id", 2152698145)
-    public func `set_custom_data_by_layer_id`(_ `layer_id`: Int64, _ `value`: borrowing GodotVariant) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `layer_id`
+        var a0 = `brake`
         withUnsafePointer(to: &a0) { p0 in
-            `value`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_custom_data_by_layer_id, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_brake, requireHandle(), &arguments, nil)
         }
 }
-    nonisolated(unsafe) private static let mb_get_custom_data_by_layer_id = lookupMethod("TileData", "get_custom_data_by_layer_id", 4227898402)
-    public func `get_custom_data_by_layer_id`(_ `layer_id`: Int64) -> GodotVariant {
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_brake = lookupMethod("VehicleBody3D", "get_brake", 1740695150)
+    @inlinable @inline(__always) public func `get_brake`() -> Double {
         defer { withExtendedLifetime((self)) {} }
-        var a0 = `layer_id`
-        return GodotVariant(initializing: { result in
-            withUnsafePointer(to: &a0) { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_custom_data_by_layer_id, requireHandle(), &arguments, result)
-            }
-        })
+        var result: Double = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_brake, requireHandle(), nil, &result)
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_steering = lookupMethod("VehicleBody3D", "set_steering", 373806689)
+    @inlinable @inline(__always) public func `set_steering`(_ `steering`: Double) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `steering`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_steering, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_steering = lookupMethod("VehicleBody3D", "get_steering", 1740695150)
+    @inlinable @inline(__always) public func `get_steering`() -> Double {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Double = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_steering, requireHandle(), nil, &result)
+        return result
 }
 }

@@ -1199,13 +1199,6 @@ extension Vector2 {
         withStorage { base in Self.builtin_is_finite(UnsafeMutableRawPointer(mutating: base), nil, &result, 0) }
         return result != 0
     }
-    nonisolated(unsafe) private static let builtin_inverse = api.variant_get_ptr_builtin_method!(GDEXTENSION_VARIANT_TYPE_VECTOR2, makeName("inverse"), 2428350749)!
-    public func `inverse`() -> Vector2 {
-        return withUnsafeTemporaryAllocation(of: Vector2.self, capacity: 1) { result in
-            withStorage { base in Self.builtin_inverse(UnsafeMutableRawPointer(mutating: base), nil, UnsafeMutableRawPointer(result.baseAddress!), 0) }
-            return result.baseAddress!.move()
-        }
-    }
     nonisolated(unsafe) private static let builtin_posmod = api.variant_get_ptr_builtin_method!(GDEXTENSION_VARIANT_TYPE_VECTOR2, makeName("posmod"), 2544004089)!
     public func `posmod`(_ `mod`: Double) -> Vector2 {
         var a0 = `mod`
@@ -4555,12 +4548,6 @@ extension Basis {
         withStorage { base in Self.builtin_is_finite(UnsafeMutableRawPointer(mutating: base), nil, &result, 0) }
         return result != 0
     }
-    nonisolated(unsafe) private static let builtin_is_orthonormal = api.variant_get_ptr_builtin_method!(GDEXTENSION_VARIANT_TYPE_BASIS, makeName("is_orthonormal"), 3918633141)!
-    public func `is_orthonormal`() -> Bool {
-        var result: UInt8 = 0
-        withStorage { base in Self.builtin_is_orthonormal(UnsafeMutableRawPointer(mutating: base), nil, &result, 0) }
-        return result != 0
-    }
     nonisolated(unsafe) private static let builtin_get_rotation_quaternion = api.variant_get_ptr_builtin_method!(GDEXTENSION_VARIANT_TYPE_BASIS, makeName("get_rotation_quaternion"), 4274879941)!
     public func `get_rotation_quaternion`() -> Quaternion {
         return withUnsafeTemporaryAllocation(of: Quaternion.self, capacity: 1) { result in
@@ -7504,10 +7491,10 @@ extension GodotArray {
         return result
     }
     nonisolated(unsafe) private static let builtin_find_custom = api.variant_get_ptr_builtin_method!(GDEXTENSION_VARIANT_TYPE_ARRAY, makeName("find_custom"), 2145562546)!
-    public borrowing func `find_custom`(_ `callable`: borrowing GodotCallable, _ `from`: Int64 = 0) -> Int64 {
+    public borrowing func `find_custom`(_ `method`: borrowing GodotCallable, _ `from`: Int64 = 0) -> Int64 {
         var a1 = `from`
         var result: Int64 = 0
-        `callable`.withStorage { p0 in
+        `method`.withStorage { p0 in
             withUnsafePointer(to: &a1) { p1 in
                 var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
                 withUnsafePointer(to: &arguments) { arguments in
@@ -7532,10 +7519,10 @@ extension GodotArray {
         return result
     }
     nonisolated(unsafe) private static let builtin_rfind_custom = api.variant_get_ptr_builtin_method!(GDEXTENSION_VARIANT_TYPE_ARRAY, makeName("rfind_custom"), 2145562546)!
-    public borrowing func `rfind_custom`(_ `callable`: borrowing GodotCallable, _ `from`: Int64 = -1) -> Int64 {
+    public borrowing func `rfind_custom`(_ `method`: borrowing GodotCallable, _ `from`: Int64 = -1) -> Int64 {
         var a1 = `from`
         var result: Int64 = 0
-        `callable`.withStorage { p0 in
+        `method`.withStorage { p0 in
             withUnsafePointer(to: &a1) { p1 in
                 var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
                 withUnsafePointer(to: &arguments) { arguments in
@@ -7676,27 +7663,27 @@ extension GodotArray {
         })
     }
     nonisolated(unsafe) private static let builtin_filter = api.variant_get_ptr_builtin_method!(GDEXTENSION_VARIANT_TYPE_ARRAY, makeName("filter"), 4075186556)!
-    public borrowing func `filter`(_ `callable`: borrowing GodotCallable) -> GodotArray {
+    public borrowing func `filter`(_ `method`: borrowing GodotCallable) -> GodotArray {
         return GodotArray(initializing: { result in
-            `callable`.withStorage { p0 in
+            `method`.withStorage { p0 in
                 var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
                 withStorage { base in Self.builtin_filter(UnsafeMutableRawPointer(mutating: base), &arguments, result, 1) }
             }
         })
     }
     nonisolated(unsafe) private static let builtin_map = api.variant_get_ptr_builtin_method!(GDEXTENSION_VARIANT_TYPE_ARRAY, makeName("map"), 4075186556)!
-    public borrowing func `map`(_ `callable`: borrowing GodotCallable) -> GodotArray {
+    public borrowing func `map`(_ `method`: borrowing GodotCallable) -> GodotArray {
         return GodotArray(initializing: { result in
-            `callable`.withStorage { p0 in
+            `method`.withStorage { p0 in
                 var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
                 withStorage { base in Self.builtin_map(UnsafeMutableRawPointer(mutating: base), &arguments, result, 1) }
             }
         })
     }
     nonisolated(unsafe) private static let builtin_reduce = api.variant_get_ptr_builtin_method!(GDEXTENSION_VARIANT_TYPE_ARRAY, makeName("reduce"), 4272450342)!
-    public borrowing func `reduce`(_ `callable`: borrowing GodotCallable, _ `accum`: borrowing GodotVariant = GodotVariant()) -> GodotVariant {
+    public borrowing func `reduce`(_ `method`: borrowing GodotCallable, _ `accum`: borrowing GodotVariant = GodotVariant()) -> GodotVariant {
         return GodotVariant(initializing: { result in
-            `callable`.withStorage { p0 in
+            `method`.withStorage { p0 in
                 `accum`.withStorage { p1 in
                     var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
                     withUnsafePointer(to: &arguments) { arguments in
@@ -7707,18 +7694,18 @@ extension GodotArray {
         })
     }
     nonisolated(unsafe) private static let builtin_any = api.variant_get_ptr_builtin_method!(GDEXTENSION_VARIANT_TYPE_ARRAY, makeName("any"), 4129521963)!
-    public borrowing func `any`(_ `callable`: borrowing GodotCallable) -> Bool {
+    public borrowing func `any`(_ `method`: borrowing GodotCallable) -> Bool {
         var result: UInt8 = 0
-        `callable`.withStorage { p0 in
+        `method`.withStorage { p0 in
             var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
             withStorage { base in Self.builtin_any(UnsafeMutableRawPointer(mutating: base), &arguments, &result, 1) }
         }
         return result != 0
     }
     nonisolated(unsafe) private static let builtin_all = api.variant_get_ptr_builtin_method!(GDEXTENSION_VARIANT_TYPE_ARRAY, makeName("all"), 4129521963)!
-    public borrowing func `all`(_ `callable`: borrowing GodotCallable) -> Bool {
+    public borrowing func `all`(_ `method`: borrowing GodotCallable) -> Bool {
         var result: UInt8 = 0
-        `callable`.withStorage { p0 in
+        `method`.withStorage { p0 in
             var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
             withStorage { base in Self.builtin_all(UnsafeMutableRawPointer(mutating: base), &arguments, &result, 1) }
         }

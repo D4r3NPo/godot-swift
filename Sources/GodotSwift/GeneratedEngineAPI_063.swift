@@ -1,5402 +1,2477 @@
 // Generated engine API partition. Do not edit.
 import CGodot
-extension GrooveJoint2D {
-    public var `length`: Double {
-        get { `get_length`() }
-        set { `set_length`(newValue) }
-    }
-    public var `initial_offset`: Double {
-        get { `get_initial_offset`() }
-        set { `set_initial_offset`(newValue) }
+extension RenderingServer {
+    public static var shared: RenderingServer {
+        guard let singleton = Object.resolve(api.global_get_singleton!(makeName("RenderingServer"))) as? RenderingServer else {
+            fatalError("Godot singleton 'RenderingServer' is unavailable. Check engine initialization and runtime support.")
+        }
+        return singleton
     }
-}
-extension HTTPClient {
-    public var `blocking_mode_enabled`: Bool {
-        get { `is_blocking_mode_enabled`() }
-        set { `set_blocking_mode`(newValue) }
-    }
-    public var `connection`: StreamPeer? {
-        get { `get_connection`() }
-        set { `set_connection`(newValue) }
-    }
-    public var `read_chunk_size`: Int64 {
-        get { `get_read_chunk_size`() }
-        set { `set_read_chunk_size`(newValue) }
+    @inline(__always) public static func `texture_2d_create`(_ `image`: Image?) -> GodotRID {
+        return shared.`texture_2d_create`(`image`)
+    }
+    @inline(__always) public static func `texture_2d_layered_create`(_ `layers`: borrowing GodotArrayOf<Image>, _ `layered_type`: RenderingServer.TextureLayeredType) -> GodotRID {
+        return shared.`texture_2d_layered_create`(`layers`, `layered_type`)
+    }
+    @inline(__always) public static func `texture_3d_create`(_ `format`: Image.Format, _ `width`: Int64, _ `height`: Int64, _ `depth`: Int64, _ `mipmaps`: Bool, _ `data`: borrowing GodotArrayOf<Image>) -> GodotRID {
+        return shared.`texture_3d_create`(`format`, `width`, `height`, `depth`, `mipmaps`, `data`)
+    }
+    @inline(__always) public static func `texture_proxy_create`(_ `base_value`: GodotRID) -> GodotRID {
+        return shared.`texture_proxy_create`(`base_value`)
+    }
+    @inline(__always) public static func `texture_create_from_native_handle`(_ `type`: RenderingServer.TextureType, _ `format`: Image.Format, _ `native_handle`: Int64, _ `width`: Int64, _ `height`: Int64, _ `depth`: Int64, _ `layers`: Int64 = 1, _ `layered_type`: RenderingServer.TextureLayeredType = RenderingServer.TextureLayeredType(rawValue: 0)) -> GodotRID {
+        return shared.`texture_create_from_native_handle`(`type`, `format`, `native_handle`, `width`, `height`, `depth`, `layers`, `layered_type`)
+    }
+    @inline(__always) public static func `texture_2d_update`(_ `texture`: GodotRID, _ `image`: Image?, _ `layer`: Int64) {
+        shared.`texture_2d_update`(`texture`, `image`, `layer`)
+    }
+    @inline(__always) public static func `texture_3d_update`(_ `texture`: GodotRID, _ `data`: borrowing GodotArrayOf<Image>) {
+        shared.`texture_3d_update`(`texture`, `data`)
+    }
+    @inline(__always) public static func `texture_proxy_update`(_ `texture`: GodotRID, _ `proxy_to`: GodotRID) {
+        shared.`texture_proxy_update`(`texture`, `proxy_to`)
+    }
+    @inline(__always) public static func `texture_2d_placeholder_create`() -> GodotRID {
+        return shared.`texture_2d_placeholder_create`()
+    }
+    @inline(__always) public static func `texture_2d_layered_placeholder_create`(_ `layered_type`: RenderingServer.TextureLayeredType) -> GodotRID {
+        return shared.`texture_2d_layered_placeholder_create`(`layered_type`)
+    }
+    @inline(__always) public static func `texture_3d_placeholder_create`() -> GodotRID {
+        return shared.`texture_3d_placeholder_create`()
+    }
+    @inline(__always) public static func `texture_2d_get`(_ `texture`: GodotRID) -> Image? {
+        return shared.`texture_2d_get`(`texture`)
+    }
+    @inline(__always) public static func `texture_2d_layer_get`(_ `texture`: GodotRID, _ `layer`: Int64) -> Image? {
+        return shared.`texture_2d_layer_get`(`texture`, `layer`)
+    }
+    @inline(__always) public static func `texture_3d_get`(_ `texture`: GodotRID) -> GodotArrayOf<Image> {
+        return shared.`texture_3d_get`(`texture`)
+    }
+    @inline(__always) public static func `texture_replace`(_ `texture`: GodotRID, _ `by_texture`: GodotRID) {
+        shared.`texture_replace`(`texture`, `by_texture`)
+    }
+    @inline(__always) public static func `texture_set_size_override`(_ `texture`: GodotRID, _ `width`: Int64, _ `height`: Int64) {
+        shared.`texture_set_size_override`(`texture`, `width`, `height`)
+    }
+    @inline(__always) public static func `texture_set_path`(_ `texture`: GodotRID, _ `path`: borrowing GodotString) {
+        shared.`texture_set_path`(`texture`, `path`)
+    }
+    @inline(__always) public static func `texture_get_path`(_ `texture`: GodotRID) -> GodotString {
+        return shared.`texture_get_path`(`texture`)
+    }
+    @inline(__always) public static func `texture_get_format`(_ `texture`: GodotRID) -> Image.Format {
+        return shared.`texture_get_format`(`texture`)
+    }
+    @inline(__always) public static func `texture_set_force_redraw_if_visible`(_ `texture`: GodotRID, _ `enable`: Bool) {
+        shared.`texture_set_force_redraw_if_visible`(`texture`, `enable`)
+    }
+    @inline(__always) public static func `texture_rd_create`(_ `rd_texture`: GodotRID, _ `layer_type`: RenderingServer.TextureLayeredType = RenderingServer.TextureLayeredType(rawValue: 0)) -> GodotRID {
+        return shared.`texture_rd_create`(`rd_texture`, `layer_type`)
+    }
+    @inline(__always) public static func `texture_get_rd_texture`(_ `texture`: GodotRID, _ `srgb`: Bool = false) -> GodotRID {
+        return shared.`texture_get_rd_texture`(`texture`, `srgb`)
+    }
+    @inline(__always) public static func `texture_get_native_handle`(_ `texture`: GodotRID, _ `srgb`: Bool = false) -> Int64 {
+        return shared.`texture_get_native_handle`(`texture`, `srgb`)
+    }
+    @inline(__always) public static func `shader_create`() -> GodotRID {
+        return shared.`shader_create`()
+    }
+    @inline(__always) public static func `shader_set_code`(_ `shader`: GodotRID, _ `code`: borrowing GodotString) {
+        shared.`shader_set_code`(`shader`, `code`)
+    }
+    @inline(__always) public static func `shader_set_path_hint`(_ `shader`: GodotRID, _ `path`: borrowing GodotString) {
+        shared.`shader_set_path_hint`(`shader`, `path`)
+    }
+    @inline(__always) public static func `shader_get_code`(_ `shader`: GodotRID) -> GodotString {
+        return shared.`shader_get_code`(`shader`)
+    }
+    @inline(__always) public static func `get_shader_parameter_list`(_ `shader`: GodotRID) -> GodotArrayOf<GodotDictionary> {
+        return shared.`get_shader_parameter_list`(`shader`)
+    }
+    @inline(__always) public static func `shader_get_parameter_default`(_ `shader`: GodotRID, _ `name`: borrowing GodotStringName) -> GodotVariant {
+        return shared.`shader_get_parameter_default`(`shader`, `name`)
+    }
+    @inline(__always) public static func `shader_set_default_texture_parameter`(_ `shader`: GodotRID, _ `name`: borrowing GodotStringName, _ `texture`: GodotRID, _ `index`: Int64 = 0) {
+        shared.`shader_set_default_texture_parameter`(`shader`, `name`, `texture`, `index`)
+    }
+    @inline(__always) public static func `shader_get_default_texture_parameter`(_ `shader`: GodotRID, _ `name`: borrowing GodotStringName, _ `index`: Int64 = 0) -> GodotRID {
+        return shared.`shader_get_default_texture_parameter`(`shader`, `name`, `index`)
+    }
+    @inline(__always) public static func `material_create`() -> GodotRID {
+        return shared.`material_create`()
+    }
+    @inline(__always) public static func `material_set_shader`(_ `shader_material`: GodotRID, _ `shader`: GodotRID) {
+        shared.`material_set_shader`(`shader_material`, `shader`)
+    }
+    @inline(__always) public static func `material_set_param`(_ `material`: GodotRID, _ `parameter`: borrowing GodotStringName, _ `value`: borrowing GodotVariant) {
+        shared.`material_set_param`(`material`, `parameter`, `value`)
+    }
+    @inline(__always) public static func `material_get_param`(_ `material`: GodotRID, _ `parameter`: borrowing GodotStringName) -> GodotVariant {
+        return shared.`material_get_param`(`material`, `parameter`)
+    }
+    @inline(__always) public static func `material_set_render_priority`(_ `material`: GodotRID, _ `priority`: Int64) {
+        shared.`material_set_render_priority`(`material`, `priority`)
+    }
+    @inline(__always) public static func `material_set_next_pass`(_ `material`: GodotRID, _ `next_material`: GodotRID) {
+        shared.`material_set_next_pass`(`material`, `next_material`)
+    }
+    @inline(__always) public static func `material_set_use_debanding`(_ `enable`: Bool) {
+        shared.`material_set_use_debanding`(`enable`)
+    }
+    @inline(__always) public static func `mesh_create_from_surfaces`(_ `surfaces`: borrowing GodotArrayOf<GodotDictionary>, _ `blend_shape_count`: Int64 = 0) -> GodotRID {
+        return shared.`mesh_create_from_surfaces`(`surfaces`, `blend_shape_count`)
+    }
+    @inline(__always) public static func `mesh_create`() -> GodotRID {
+        return shared.`mesh_create`()
+    }
+    @inline(__always) public static func `mesh_surface_get_format_offset`(_ `format`: RenderingServer.ArrayFormat, _ `vertex_count`: Int64, _ `array_index`: Int64) -> Int64 {
+        return shared.`mesh_surface_get_format_offset`(`format`, `vertex_count`, `array_index`)
+    }
+    @inline(__always) public static func `mesh_surface_get_format_vertex_stride`(_ `format`: RenderingServer.ArrayFormat, _ `vertex_count`: Int64) -> Int64 {
+        return shared.`mesh_surface_get_format_vertex_stride`(`format`, `vertex_count`)
+    }
+    @inline(__always) public static func `mesh_surface_get_format_normal_tangent_stride`(_ `format`: RenderingServer.ArrayFormat, _ `vertex_count`: Int64) -> Int64 {
+        return shared.`mesh_surface_get_format_normal_tangent_stride`(`format`, `vertex_count`)
+    }
+    @inline(__always) public static func `mesh_surface_get_format_attribute_stride`(_ `format`: RenderingServer.ArrayFormat, _ `vertex_count`: Int64) -> Int64 {
+        return shared.`mesh_surface_get_format_attribute_stride`(`format`, `vertex_count`)
+    }
+    @inline(__always) public static func `mesh_surface_get_format_skin_stride`(_ `format`: RenderingServer.ArrayFormat, _ `vertex_count`: Int64) -> Int64 {
+        return shared.`mesh_surface_get_format_skin_stride`(`format`, `vertex_count`)
+    }
+    @inline(__always) public static func `mesh_surface_get_format_index_stride`(_ `format`: RenderingServer.ArrayFormat, _ `vertex_count`: Int64) -> Int64 {
+        return shared.`mesh_surface_get_format_index_stride`(`format`, `vertex_count`)
+    }
+    @inline(__always) public static func `mesh_add_surface`(_ `mesh`: GodotRID, _ `surface`: borrowing GodotDictionary) {
+        shared.`mesh_add_surface`(`mesh`, `surface`)
+    }
+    @inline(__always) public static func `mesh_add_surface_from_arrays`(_ `mesh`: GodotRID, _ `primitive`: RenderingServer.PrimitiveType, _ `arrays`: borrowing GodotArray, _ `blend_shapes`: borrowing GodotArray = GodotArray(), _ `lods`: borrowing GodotDictionary = GodotDictionary(), _ `compress_format`: RenderingServer.ArrayFormat = RenderingServer.ArrayFormat(rawValue: 0)) {
+        shared.`mesh_add_surface_from_arrays`(`mesh`, `primitive`, `arrays`, `blend_shapes`, `lods`, `compress_format`)
+    }
+    @inline(__always) public static func `mesh_get_blend_shape_count`(_ `mesh`: GodotRID) -> Int64 {
+        return shared.`mesh_get_blend_shape_count`(`mesh`)
+    }
+    @inline(__always) public static func `mesh_set_blend_shape_mode`(_ `mesh`: GodotRID, _ `mode`: RenderingServer.BlendShapeMode) {
+        shared.`mesh_set_blend_shape_mode`(`mesh`, `mode`)
+    }
+    @inline(__always) public static func `mesh_get_blend_shape_mode`(_ `mesh`: GodotRID) -> RenderingServer.BlendShapeMode {
+        return shared.`mesh_get_blend_shape_mode`(`mesh`)
+    }
+    @inline(__always) public static func `mesh_surface_set_material`(_ `mesh`: GodotRID, _ `surface`: Int64, _ `material`: GodotRID) {
+        shared.`mesh_surface_set_material`(`mesh`, `surface`, `material`)
+    }
+    @inline(__always) public static func `mesh_surface_get_material`(_ `mesh`: GodotRID, _ `surface`: Int64) -> GodotRID {
+        return shared.`mesh_surface_get_material`(`mesh`, `surface`)
+    }
+    @inline(__always) public static func `mesh_get_surface`(_ `mesh`: GodotRID, _ `surface`: Int64) -> GodotDictionary {
+        return shared.`mesh_get_surface`(`mesh`, `surface`)
+    }
+    @inline(__always) public static func `mesh_surface_get_arrays`(_ `mesh`: GodotRID, _ `surface`: Int64) -> GodotArray {
+        return shared.`mesh_surface_get_arrays`(`mesh`, `surface`)
+    }
+    @inline(__always) public static func `mesh_surface_get_blend_shape_arrays`(_ `mesh`: GodotRID, _ `surface`: Int64) -> GodotArrayOf<GodotArray> {
+        return shared.`mesh_surface_get_blend_shape_arrays`(`mesh`, `surface`)
+    }
+    @inline(__always) public static func `mesh_get_surface_count`(_ `mesh`: GodotRID) -> Int64 {
+        return shared.`mesh_get_surface_count`(`mesh`)
+    }
+    @inline(__always) public static func `mesh_set_custom_aabb`(_ `mesh`: GodotRID, _ `aabb`: AABB) {
+        shared.`mesh_set_custom_aabb`(`mesh`, `aabb`)
+    }
+    @inline(__always) public static func `mesh_get_custom_aabb`(_ `mesh`: GodotRID) -> AABB {
+        return shared.`mesh_get_custom_aabb`(`mesh`)
+    }
+    @inline(__always) public static func `mesh_surface_remove`(_ `mesh`: GodotRID, _ `surface`: Int64) {
+        shared.`mesh_surface_remove`(`mesh`, `surface`)
+    }
+    @inline(__always) public static func `mesh_clear`(_ `mesh`: GodotRID) {
+        shared.`mesh_clear`(`mesh`)
+    }
+    @inline(__always) public static func `mesh_surface_update_vertex_region`(_ `mesh`: GodotRID, _ `surface`: Int64, _ `offset`: Int64, _ `data`: borrowing GodotPackedByteArray) {
+        shared.`mesh_surface_update_vertex_region`(`mesh`, `surface`, `offset`, `data`)
+    }
+    @inline(__always) public static func `mesh_surface_update_attribute_region`(_ `mesh`: GodotRID, _ `surface`: Int64, _ `offset`: Int64, _ `data`: borrowing GodotPackedByteArray) {
+        shared.`mesh_surface_update_attribute_region`(`mesh`, `surface`, `offset`, `data`)
+    }
+    @inline(__always) public static func `mesh_surface_update_skin_region`(_ `mesh`: GodotRID, _ `surface`: Int64, _ `offset`: Int64, _ `data`: borrowing GodotPackedByteArray) {
+        shared.`mesh_surface_update_skin_region`(`mesh`, `surface`, `offset`, `data`)
+    }
+    @inline(__always) public static func `mesh_surface_update_index_region`(_ `mesh`: GodotRID, _ `surface`: Int64, _ `offset`: Int64, _ `data`: borrowing GodotPackedByteArray) {
+        shared.`mesh_surface_update_index_region`(`mesh`, `surface`, `offset`, `data`)
+    }
+    @inline(__always) public static func `mesh_set_shadow_mesh`(_ `mesh`: GodotRID, _ `shadow_mesh`: GodotRID) {
+        shared.`mesh_set_shadow_mesh`(`mesh`, `shadow_mesh`)
+    }
+    @inline(__always) public static func `multimesh_create`() -> GodotRID {
+        return shared.`multimesh_create`()
+    }
+    @inline(__always) public static func `multimesh_allocate_data`(_ `multimesh`: GodotRID, _ `instances`: Int64, _ `transform_format`: RenderingServer.MultimeshTransformFormat, _ `color_format`: Bool = false, _ `custom_data_format`: Bool = false, _ `use_indirect`: Bool = false) {
+        shared.`multimesh_allocate_data`(`multimesh`, `instances`, `transform_format`, `color_format`, `custom_data_format`, `use_indirect`)
+    }
+    @inline(__always) public static func `multimesh_get_instance_count`(_ `multimesh`: GodotRID) -> Int64 {
+        return shared.`multimesh_get_instance_count`(`multimesh`)
+    }
+    @inline(__always) public static func `multimesh_set_mesh`(_ `multimesh`: GodotRID, _ `mesh`: GodotRID) {
+        shared.`multimesh_set_mesh`(`multimesh`, `mesh`)
+    }
+    @inline(__always) public static func `multimesh_instance_set_transform`(_ `multimesh`: GodotRID, _ `index`: Int64, _ `transform`: Transform3D) {
+        shared.`multimesh_instance_set_transform`(`multimesh`, `index`, `transform`)
+    }
+    @inline(__always) public static func `multimesh_instance_set_transform_2d`(_ `multimesh`: GodotRID, _ `index`: Int64, _ `transform`: Transform2D) {
+        shared.`multimesh_instance_set_transform_2d`(`multimesh`, `index`, `transform`)
+    }
+    @inline(__always) public static func `multimesh_instance_set_color`(_ `multimesh`: GodotRID, _ `index`: Int64, _ `color`: Color) {
+        shared.`multimesh_instance_set_color`(`multimesh`, `index`, `color`)
+    }
+    @inline(__always) public static func `multimesh_instance_set_custom_data`(_ `multimesh`: GodotRID, _ `index`: Int64, _ `custom_data`: Color) {
+        shared.`multimesh_instance_set_custom_data`(`multimesh`, `index`, `custom_data`)
+    }
+    @inline(__always) public static func `multimesh_get_mesh`(_ `multimesh`: GodotRID) -> GodotRID {
+        return shared.`multimesh_get_mesh`(`multimesh`)
+    }
+    @inline(__always) public static func `multimesh_get_aabb`(_ `multimesh`: GodotRID) -> AABB {
+        return shared.`multimesh_get_aabb`(`multimesh`)
+    }
+    @inline(__always) public static func `multimesh_set_custom_aabb`(_ `multimesh`: GodotRID, _ `aabb`: AABB) {
+        shared.`multimesh_set_custom_aabb`(`multimesh`, `aabb`)
+    }
+    @inline(__always) public static func `multimesh_get_custom_aabb`(_ `multimesh`: GodotRID) -> AABB {
+        return shared.`multimesh_get_custom_aabb`(`multimesh`)
+    }
+    @inline(__always) public static func `multimesh_instance_get_transform`(_ `multimesh`: GodotRID, _ `index`: Int64) -> Transform3D {
+        return shared.`multimesh_instance_get_transform`(`multimesh`, `index`)
+    }
+    @inline(__always) public static func `multimesh_instance_get_transform_2d`(_ `multimesh`: GodotRID, _ `index`: Int64) -> Transform2D {
+        return shared.`multimesh_instance_get_transform_2d`(`multimesh`, `index`)
+    }
+    @inline(__always) public static func `multimesh_instance_get_color`(_ `multimesh`: GodotRID, _ `index`: Int64) -> Color {
+        return shared.`multimesh_instance_get_color`(`multimesh`, `index`)
+    }
+    @inline(__always) public static func `multimesh_instance_get_custom_data`(_ `multimesh`: GodotRID, _ `index`: Int64) -> Color {
+        return shared.`multimesh_instance_get_custom_data`(`multimesh`, `index`)
+    }
+    @inline(__always) public static func `multimesh_set_visible_instances`(_ `multimesh`: GodotRID, _ `visible`: Int64) {
+        shared.`multimesh_set_visible_instances`(`multimesh`, `visible`)
+    }
+    @inline(__always) public static func `multimesh_get_visible_instances`(_ `multimesh`: GodotRID) -> Int64 {
+        return shared.`multimesh_get_visible_instances`(`multimesh`)
+    }
+    @inline(__always) public static func `multimesh_set_buffer`(_ `multimesh`: GodotRID, _ `buffer`: borrowing GodotPackedFloat32Array) {
+        shared.`multimesh_set_buffer`(`multimesh`, `buffer`)
+    }
+    @inline(__always) public static func `multimesh_get_command_buffer_rd_rid`(_ `multimesh`: GodotRID) -> GodotRID {
+        return shared.`multimesh_get_command_buffer_rd_rid`(`multimesh`)
+    }
+    @inline(__always) public static func `multimesh_get_buffer_rd_rid`(_ `multimesh`: GodotRID) -> GodotRID {
+        return shared.`multimesh_get_buffer_rd_rid`(`multimesh`)
+    }
+    @inline(__always) public static func `multimesh_get_buffer`(_ `multimesh`: GodotRID) -> GodotPackedFloat32Array {
+        return shared.`multimesh_get_buffer`(`multimesh`)
+    }
+    @inline(__always) public static func `multimesh_set_buffer_interpolated`(_ `multimesh`: GodotRID, _ `buffer`: borrowing GodotPackedFloat32Array, _ `buffer_previous`: borrowing GodotPackedFloat32Array) {
+        shared.`multimesh_set_buffer_interpolated`(`multimesh`, `buffer`, `buffer_previous`)
+    }
+    @inline(__always) public static func `multimesh_set_physics_interpolated`(_ `multimesh`: GodotRID, _ `interpolated`: Bool) {
+        shared.`multimesh_set_physics_interpolated`(`multimesh`, `interpolated`)
+    }
+    @inline(__always) public static func `multimesh_set_physics_interpolation_quality`(_ `multimesh`: GodotRID, _ `quality`: RenderingServer.MultimeshPhysicsInterpolationQuality) {
+        shared.`multimesh_set_physics_interpolation_quality`(`multimesh`, `quality`)
+    }
+    @inline(__always) public static func `multimesh_instance_reset_physics_interpolation`(_ `multimesh`: GodotRID, _ `index`: Int64) {
+        shared.`multimesh_instance_reset_physics_interpolation`(`multimesh`, `index`)
+    }
+    @inline(__always) public static func `multimesh_instances_reset_physics_interpolation`(_ `multimesh`: GodotRID) {
+        shared.`multimesh_instances_reset_physics_interpolation`(`multimesh`)
+    }
+    @inline(__always) public static func `skeleton_create`() -> GodotRID {
+        return shared.`skeleton_create`()
+    }
+    @inline(__always) public static func `skeleton_allocate_data`(_ `skeleton`: GodotRID, _ `bones`: Int64, _ `is_2d_skeleton`: Bool = false) {
+        shared.`skeleton_allocate_data`(`skeleton`, `bones`, `is_2d_skeleton`)
+    }
+    @inline(__always) public static func `skeleton_get_bone_count`(_ `skeleton`: GodotRID) -> Int64 {
+        return shared.`skeleton_get_bone_count`(`skeleton`)
+    }
+    @inline(__always) public static func `skeleton_bone_set_transform`(_ `skeleton`: GodotRID, _ `bone`: Int64, _ `transform`: Transform3D) {
+        shared.`skeleton_bone_set_transform`(`skeleton`, `bone`, `transform`)
+    }
+    @inline(__always) public static func `skeleton_bone_get_transform`(_ `skeleton`: GodotRID, _ `bone`: Int64) -> Transform3D {
+        return shared.`skeleton_bone_get_transform`(`skeleton`, `bone`)
+    }
+    @inline(__always) public static func `skeleton_bone_set_transform_2d`(_ `skeleton`: GodotRID, _ `bone`: Int64, _ `transform`: Transform2D) {
+        shared.`skeleton_bone_set_transform_2d`(`skeleton`, `bone`, `transform`)
+    }
+    @inline(__always) public static func `skeleton_bone_get_transform_2d`(_ `skeleton`: GodotRID, _ `bone`: Int64) -> Transform2D {
+        return shared.`skeleton_bone_get_transform_2d`(`skeleton`, `bone`)
+    }
+    @inline(__always) public static func `skeleton_set_base_transform_2d`(_ `skeleton`: GodotRID, _ `base_transform`: Transform2D) {
+        shared.`skeleton_set_base_transform_2d`(`skeleton`, `base_transform`)
+    }
+    @inline(__always) public static func `directional_light_create`() -> GodotRID {
+        return shared.`directional_light_create`()
+    }
+    @inline(__always) public static func `omni_light_create`() -> GodotRID {
+        return shared.`omni_light_create`()
+    }
+    @inline(__always) public static func `spot_light_create`() -> GodotRID {
+        return shared.`spot_light_create`()
+    }
+    @inline(__always) public static func `light_set_color`(_ `light`: GodotRID, _ `color`: Color) {
+        shared.`light_set_color`(`light`, `color`)
+    }
+    @inline(__always) public static func `light_set_param`(_ `light`: GodotRID, _ `param`: RenderingServer.LightParam, _ `value`: Double) {
+        shared.`light_set_param`(`light`, `param`, `value`)
+    }
+    @inline(__always) public static func `light_set_shadow`(_ `light`: GodotRID, _ `enabled`: Bool) {
+        shared.`light_set_shadow`(`light`, `enabled`)
+    }
+    @inline(__always) public static func `light_set_projector`(_ `light`: GodotRID, _ `texture`: GodotRID) {
+        shared.`light_set_projector`(`light`, `texture`)
+    }
+    @inline(__always) public static func `light_set_negative`(_ `light`: GodotRID, _ `enable`: Bool) {
+        shared.`light_set_negative`(`light`, `enable`)
+    }
+    @inline(__always) public static func `light_set_cull_mask`(_ `light`: GodotRID, _ `mask`: Int64) {
+        shared.`light_set_cull_mask`(`light`, `mask`)
+    }
+    @inline(__always) public static func `light_set_distance_fade`(_ `decal`: GodotRID, _ `enabled`: Bool, _ `begin`: Double, _ `shadow`: Double, _ `length`: Double) {
+        shared.`light_set_distance_fade`(`decal`, `enabled`, `begin`, `shadow`, `length`)
+    }
+    @inline(__always) public static func `light_set_reverse_cull_face_mode`(_ `light`: GodotRID, _ `enabled`: Bool) {
+        shared.`light_set_reverse_cull_face_mode`(`light`, `enabled`)
+    }
+    @inline(__always) public static func `light_set_shadow_caster_mask`(_ `light`: GodotRID, _ `mask`: Int64) {
+        shared.`light_set_shadow_caster_mask`(`light`, `mask`)
+    }
+    @inline(__always) public static func `light_set_bake_mode`(_ `light`: GodotRID, _ `bake_mode`: RenderingServer.LightBakeMode) {
+        shared.`light_set_bake_mode`(`light`, `bake_mode`)
+    }
+    @inline(__always) public static func `light_set_max_sdfgi_cascade`(_ `light`: GodotRID, _ `cascade`: Int64) {
+        shared.`light_set_max_sdfgi_cascade`(`light`, `cascade`)
+    }
+    @inline(__always) public static func `light_omni_set_shadow_mode`(_ `light`: GodotRID, _ `mode`: RenderingServer.LightOmniShadowMode) {
+        shared.`light_omni_set_shadow_mode`(`light`, `mode`)
+    }
+    @inline(__always) public static func `light_directional_set_shadow_mode`(_ `light`: GodotRID, _ `mode`: RenderingServer.LightDirectionalShadowMode) {
+        shared.`light_directional_set_shadow_mode`(`light`, `mode`)
+    }
+    @inline(__always) public static func `light_directional_set_blend_splits`(_ `light`: GodotRID, _ `enable`: Bool) {
+        shared.`light_directional_set_blend_splits`(`light`, `enable`)
+    }
+    @inline(__always) public static func `light_directional_set_sky_mode`(_ `light`: GodotRID, _ `mode`: RenderingServer.LightDirectionalSkyMode) {
+        shared.`light_directional_set_sky_mode`(`light`, `mode`)
+    }
+    @inline(__always) public static func `light_projectors_set_filter`(_ `filter`: RenderingServer.LightProjectorFilter) {
+        shared.`light_projectors_set_filter`(`filter`)
+    }
+    @inline(__always) public static func `lightmaps_set_bicubic_filter`(_ `enable`: Bool) {
+        shared.`lightmaps_set_bicubic_filter`(`enable`)
+    }
+    @inline(__always) public static func `positional_soft_shadow_filter_set_quality`(_ `quality`: RenderingServer.ShadowQuality) {
+        shared.`positional_soft_shadow_filter_set_quality`(`quality`)
+    }
+    @inline(__always) public static func `directional_soft_shadow_filter_set_quality`(_ `quality`: RenderingServer.ShadowQuality) {
+        shared.`directional_soft_shadow_filter_set_quality`(`quality`)
+    }
+    @inline(__always) public static func `directional_shadow_atlas_set_size`(_ `size`: Int64, _ `is_16bits`: Bool) {
+        shared.`directional_shadow_atlas_set_size`(`size`, `is_16bits`)
+    }
+    @inline(__always) public static func `reflection_probe_create`() -> GodotRID {
+        return shared.`reflection_probe_create`()
+    }
+    @inline(__always) public static func `reflection_probe_set_update_mode`(_ `probe`: GodotRID, _ `mode`: RenderingServer.ReflectionProbeUpdateMode) {
+        shared.`reflection_probe_set_update_mode`(`probe`, `mode`)
+    }
+    @inline(__always) public static func `reflection_probe_set_intensity`(_ `probe`: GodotRID, _ `intensity`: Double) {
+        shared.`reflection_probe_set_intensity`(`probe`, `intensity`)
+    }
+    @inline(__always) public static func `reflection_probe_set_blend_distance`(_ `probe`: GodotRID, _ `blend_distance`: Double) {
+        shared.`reflection_probe_set_blend_distance`(`probe`, `blend_distance`)
+    }
+    @inline(__always) public static func `reflection_probe_set_ambient_mode`(_ `probe`: GodotRID, _ `mode`: RenderingServer.ReflectionProbeAmbientMode) {
+        shared.`reflection_probe_set_ambient_mode`(`probe`, `mode`)
+    }
+    @inline(__always) public static func `reflection_probe_set_ambient_color`(_ `probe`: GodotRID, _ `color`: Color) {
+        shared.`reflection_probe_set_ambient_color`(`probe`, `color`)
+    }
+    @inline(__always) public static func `reflection_probe_set_ambient_energy`(_ `probe`: GodotRID, _ `energy`: Double) {
+        shared.`reflection_probe_set_ambient_energy`(`probe`, `energy`)
+    }
+    @inline(__always) public static func `reflection_probe_set_max_distance`(_ `probe`: GodotRID, _ `distance`: Double) {
+        shared.`reflection_probe_set_max_distance`(`probe`, `distance`)
+    }
+    @inline(__always) public static func `reflection_probe_set_size`(_ `probe`: GodotRID, _ `size`: Vector3) {
+        shared.`reflection_probe_set_size`(`probe`, `size`)
+    }
+    @inline(__always) public static func `reflection_probe_set_origin_offset`(_ `probe`: GodotRID, _ `offset`: Vector3) {
+        shared.`reflection_probe_set_origin_offset`(`probe`, `offset`)
+    }
+    @inline(__always) public static func `reflection_probe_set_as_interior`(_ `probe`: GodotRID, _ `enable`: Bool) {
+        shared.`reflection_probe_set_as_interior`(`probe`, `enable`)
+    }
+    @inline(__always) public static func `reflection_probe_set_enable_box_projection`(_ `probe`: GodotRID, _ `enable`: Bool) {
+        shared.`reflection_probe_set_enable_box_projection`(`probe`, `enable`)
+    }
+    @inline(__always) public static func `reflection_probe_set_enable_shadows`(_ `probe`: GodotRID, _ `enable`: Bool) {
+        shared.`reflection_probe_set_enable_shadows`(`probe`, `enable`)
+    }
+    @inline(__always) public static func `reflection_probe_set_cull_mask`(_ `probe`: GodotRID, _ `layers`: Int64) {
+        shared.`reflection_probe_set_cull_mask`(`probe`, `layers`)
+    }
+    @inline(__always) public static func `reflection_probe_set_reflection_mask`(_ `probe`: GodotRID, _ `layers`: Int64) {
+        shared.`reflection_probe_set_reflection_mask`(`probe`, `layers`)
+    }
+    @inline(__always) public static func `reflection_probe_set_resolution`(_ `probe`: GodotRID, _ `resolution`: Int64) {
+        shared.`reflection_probe_set_resolution`(`probe`, `resolution`)
+    }
+    @inline(__always) public static func `reflection_probe_set_mesh_lod_threshold`(_ `probe`: GodotRID, _ `pixels`: Double) {
+        shared.`reflection_probe_set_mesh_lod_threshold`(`probe`, `pixels`)
+    }
+    @inline(__always) public static func `decal_create`() -> GodotRID {
+        return shared.`decal_create`()
+    }
+    @inline(__always) public static func `decal_set_size`(_ `decal`: GodotRID, _ `size`: Vector3) {
+        shared.`decal_set_size`(`decal`, `size`)
+    }
+    @inline(__always) public static func `decal_set_texture`(_ `decal`: GodotRID, _ `type`: RenderingServer.DecalTexture, _ `texture`: GodotRID) {
+        shared.`decal_set_texture`(`decal`, `type`, `texture`)
+    }
+    @inline(__always) public static func `decal_set_emission_energy`(_ `decal`: GodotRID, _ `energy`: Double) {
+        shared.`decal_set_emission_energy`(`decal`, `energy`)
+    }
+    @inline(__always) public static func `decal_set_albedo_mix`(_ `decal`: GodotRID, _ `albedo_mix`: Double) {
+        shared.`decal_set_albedo_mix`(`decal`, `albedo_mix`)
+    }
+    @inline(__always) public static func `decal_set_modulate`(_ `decal`: GodotRID, _ `color`: Color) {
+        shared.`decal_set_modulate`(`decal`, `color`)
+    }
+    @inline(__always) public static func `decal_set_cull_mask`(_ `decal`: GodotRID, _ `mask`: Int64) {
+        shared.`decal_set_cull_mask`(`decal`, `mask`)
+    }
+    @inline(__always) public static func `decal_set_distance_fade`(_ `decal`: GodotRID, _ `enabled`: Bool, _ `begin`: Double, _ `length`: Double) {
+        shared.`decal_set_distance_fade`(`decal`, `enabled`, `begin`, `length`)
+    }
+    @inline(__always) public static func `decal_set_fade`(_ `decal`: GodotRID, _ `above`: Double, _ `below`: Double) {
+        shared.`decal_set_fade`(`decal`, `above`, `below`)
+    }
+    @inline(__always) public static func `decal_set_normal_fade`(_ `decal`: GodotRID, _ `fade`: Double) {
+        shared.`decal_set_normal_fade`(`decal`, `fade`)
+    }
+    @inline(__always) public static func `decals_set_filter`(_ `filter`: RenderingServer.DecalFilter) {
+        shared.`decals_set_filter`(`filter`)
+    }
+    @inline(__always) public static func `gi_set_use_half_resolution`(_ `half_resolution`: Bool) {
+        shared.`gi_set_use_half_resolution`(`half_resolution`)
+    }
+    @inline(__always) public static func `voxel_gi_create`() -> GodotRID {
+        return shared.`voxel_gi_create`()
+    }
+    @inline(__always) public static func `voxel_gi_allocate_data`(_ `voxel_gi`: GodotRID, _ `to_cell_xform`: Transform3D, _ `aabb`: AABB, _ `octree_size`: Vector3i, _ `octree_cells`: borrowing GodotPackedByteArray, _ `data_cells`: borrowing GodotPackedByteArray, _ `distance_field`: borrowing GodotPackedByteArray, _ `level_counts`: borrowing GodotPackedInt32Array) {
+        shared.`voxel_gi_allocate_data`(`voxel_gi`, `to_cell_xform`, `aabb`, `octree_size`, `octree_cells`, `data_cells`, `distance_field`, `level_counts`)
+    }
+    @inline(__always) public static func `voxel_gi_get_octree_size`(_ `voxel_gi`: GodotRID) -> Vector3i {
+        return shared.`voxel_gi_get_octree_size`(`voxel_gi`)
+    }
+    @inline(__always) public static func `voxel_gi_get_octree_cells`(_ `voxel_gi`: GodotRID) -> GodotPackedByteArray {
+        return shared.`voxel_gi_get_octree_cells`(`voxel_gi`)
+    }
+    @inline(__always) public static func `voxel_gi_get_data_cells`(_ `voxel_gi`: GodotRID) -> GodotPackedByteArray {
+        return shared.`voxel_gi_get_data_cells`(`voxel_gi`)
+    }
+    @inline(__always) public static func `voxel_gi_get_distance_field`(_ `voxel_gi`: GodotRID) -> GodotPackedByteArray {
+        return shared.`voxel_gi_get_distance_field`(`voxel_gi`)
+    }
+    @inline(__always) public static func `voxel_gi_get_level_counts`(_ `voxel_gi`: GodotRID) -> GodotPackedInt32Array {
+        return shared.`voxel_gi_get_level_counts`(`voxel_gi`)
+    }
+    @inline(__always) public static func `voxel_gi_get_to_cell_xform`(_ `voxel_gi`: GodotRID) -> Transform3D {
+        return shared.`voxel_gi_get_to_cell_xform`(`voxel_gi`)
+    }
+    @inline(__always) public static func `voxel_gi_set_dynamic_range`(_ `voxel_gi`: GodotRID, _ `range`: Double) {
+        shared.`voxel_gi_set_dynamic_range`(`voxel_gi`, `range`)
+    }
+    @inline(__always) public static func `voxel_gi_set_propagation`(_ `voxel_gi`: GodotRID, _ `amount`: Double) {
+        shared.`voxel_gi_set_propagation`(`voxel_gi`, `amount`)
+    }
+    @inline(__always) public static func `voxel_gi_set_energy`(_ `voxel_gi`: GodotRID, _ `energy`: Double) {
+        shared.`voxel_gi_set_energy`(`voxel_gi`, `energy`)
+    }
+    @inline(__always) public static func `voxel_gi_set_baked_exposure_normalization`(_ `voxel_gi`: GodotRID, _ `baked_exposure`: Double) {
+        shared.`voxel_gi_set_baked_exposure_normalization`(`voxel_gi`, `baked_exposure`)
+    }
+    @inline(__always) public static func `voxel_gi_set_bias`(_ `voxel_gi`: GodotRID, _ `bias`: Double) {
+        shared.`voxel_gi_set_bias`(`voxel_gi`, `bias`)
+    }
+    @inline(__always) public static func `voxel_gi_set_normal_bias`(_ `voxel_gi`: GodotRID, _ `bias`: Double) {
+        shared.`voxel_gi_set_normal_bias`(`voxel_gi`, `bias`)
+    }
+    @inline(__always) public static func `voxel_gi_set_interior`(_ `voxel_gi`: GodotRID, _ `enable`: Bool) {
+        shared.`voxel_gi_set_interior`(`voxel_gi`, `enable`)
+    }
+    @inline(__always) public static func `voxel_gi_set_use_two_bounces`(_ `voxel_gi`: GodotRID, _ `enable`: Bool) {
+        shared.`voxel_gi_set_use_two_bounces`(`voxel_gi`, `enable`)
+    }
+    @inline(__always) public static func `voxel_gi_set_quality`(_ `quality`: RenderingServer.VoxelGIQuality) {
+        shared.`voxel_gi_set_quality`(`quality`)
+    }
+    @inline(__always) public static func `lightmap_create`() -> GodotRID {
+        return shared.`lightmap_create`()
+    }
+    @inline(__always) public static func `lightmap_set_textures`(_ `lightmap`: GodotRID, _ `light`: GodotRID, _ `uses_sh`: Bool) {
+        shared.`lightmap_set_textures`(`lightmap`, `light`, `uses_sh`)
+    }
+    @inline(__always) public static func `lightmap_set_probe_bounds`(_ `lightmap`: GodotRID, _ `bounds`: AABB) {
+        shared.`lightmap_set_probe_bounds`(`lightmap`, `bounds`)
+    }
+    @inline(__always) public static func `lightmap_set_probe_interior`(_ `lightmap`: GodotRID, _ `interior`: Bool) {
+        shared.`lightmap_set_probe_interior`(`lightmap`, `interior`)
+    }
+    @inline(__always) public static func `lightmap_set_probe_capture_data`(_ `lightmap`: GodotRID, _ `points`: borrowing GodotPackedVector3Array, _ `point_sh`: borrowing GodotPackedColorArray, _ `tetrahedra`: borrowing GodotPackedInt32Array, _ `bsp_tree`: borrowing GodotPackedInt32Array) {
+        shared.`lightmap_set_probe_capture_data`(`lightmap`, `points`, `point_sh`, `tetrahedra`, `bsp_tree`)
+    }
+    @inline(__always) public static func `lightmap_get_probe_capture_points`(_ `lightmap`: GodotRID) -> GodotPackedVector3Array {
+        return shared.`lightmap_get_probe_capture_points`(`lightmap`)
+    }
+    @inline(__always) public static func `lightmap_get_probe_capture_sh`(_ `lightmap`: GodotRID) -> GodotPackedColorArray {
+        return shared.`lightmap_get_probe_capture_sh`(`lightmap`)
+    }
+    @inline(__always) public static func `lightmap_get_probe_capture_tetrahedra`(_ `lightmap`: GodotRID) -> GodotPackedInt32Array {
+        return shared.`lightmap_get_probe_capture_tetrahedra`(`lightmap`)
+    }
+    @inline(__always) public static func `lightmap_get_probe_capture_bsp_tree`(_ `lightmap`: GodotRID) -> GodotPackedInt32Array {
+        return shared.`lightmap_get_probe_capture_bsp_tree`(`lightmap`)
+    }
+    @inline(__always) public static func `lightmap_set_baked_exposure_normalization`(_ `lightmap`: GodotRID, _ `baked_exposure`: Double) {
+        shared.`lightmap_set_baked_exposure_normalization`(`lightmap`, `baked_exposure`)
+    }
+    @inline(__always) public static func `lightmap_set_probe_capture_update_speed`(_ `speed`: Double) {
+        shared.`lightmap_set_probe_capture_update_speed`(`speed`)
+    }
+    @inline(__always) public static func `particles_create`() -> GodotRID {
+        return shared.`particles_create`()
+    }
+    @inline(__always) public static func `particles_set_mode`(_ `particles`: GodotRID, _ `mode`: RenderingServer.ParticlesMode) {
+        shared.`particles_set_mode`(`particles`, `mode`)
+    }
+    @inline(__always) public static func `particles_set_emitting`(_ `particles`: GodotRID, _ `emitting`: Bool) {
+        shared.`particles_set_emitting`(`particles`, `emitting`)
+    }
+    @inline(__always) public static func `particles_get_emitting`(_ `particles`: GodotRID) -> Bool {
+        return shared.`particles_get_emitting`(`particles`)
+    }
+    @inline(__always) public static func `particles_set_amount`(_ `particles`: GodotRID, _ `amount`: Int64) {
+        shared.`particles_set_amount`(`particles`, `amount`)
+    }
+    @inline(__always) public static func `particles_set_amount_ratio`(_ `particles`: GodotRID, _ `ratio`: Double) {
+        shared.`particles_set_amount_ratio`(`particles`, `ratio`)
+    }
+    @inline(__always) public static func `particles_set_lifetime`(_ `particles`: GodotRID, _ `lifetime`: Double) {
+        shared.`particles_set_lifetime`(`particles`, `lifetime`)
+    }
+    @inline(__always) public static func `particles_set_one_shot`(_ `particles`: GodotRID, _ `one_shot`: Bool) {
+        shared.`particles_set_one_shot`(`particles`, `one_shot`)
+    }
+    @inline(__always) public static func `particles_set_pre_process_time`(_ `particles`: GodotRID, _ `time`: Double) {
+        shared.`particles_set_pre_process_time`(`particles`, `time`)
+    }
+    @inline(__always) public static func `particles_request_process_time`(_ `particles`: GodotRID, _ `time`: Double) {
+        shared.`particles_request_process_time`(`particles`, `time`)
+    }
+    @inline(__always) public static func `particles_set_explosiveness_ratio`(_ `particles`: GodotRID, _ `ratio`: Double) {
+        shared.`particles_set_explosiveness_ratio`(`particles`, `ratio`)
+    }
+    @inline(__always) public static func `particles_set_randomness_ratio`(_ `particles`: GodotRID, _ `ratio`: Double) {
+        shared.`particles_set_randomness_ratio`(`particles`, `ratio`)
+    }
+    @inline(__always) public static func `particles_set_interp_to_end`(_ `particles`: GodotRID, _ `factor`: Double) {
+        shared.`particles_set_interp_to_end`(`particles`, `factor`)
+    }
+    @inline(__always) public static func `particles_set_emitter_velocity`(_ `particles`: GodotRID, _ `velocity`: Vector3) {
+        shared.`particles_set_emitter_velocity`(`particles`, `velocity`)
+    }
+    @inline(__always) public static func `particles_set_custom_aabb`(_ `particles`: GodotRID, _ `aabb`: AABB) {
+        shared.`particles_set_custom_aabb`(`particles`, `aabb`)
+    }
+    @inline(__always) public static func `particles_set_speed_scale`(_ `particles`: GodotRID, _ `scale`: Double) {
+        shared.`particles_set_speed_scale`(`particles`, `scale`)
+    }
+    @inline(__always) public static func `particles_set_use_local_coordinates`(_ `particles`: GodotRID, _ `enable`: Bool) {
+        shared.`particles_set_use_local_coordinates`(`particles`, `enable`)
+    }
+    @inline(__always) public static func `particles_set_process_material`(_ `particles`: GodotRID, _ `material`: GodotRID) {
+        shared.`particles_set_process_material`(`particles`, `material`)
+    }
+    @inline(__always) public static func `particles_set_fixed_fps`(_ `particles`: GodotRID, _ `fps`: Int64) {
+        shared.`particles_set_fixed_fps`(`particles`, `fps`)
+    }
+    @inline(__always) public static func `particles_set_interpolate`(_ `particles`: GodotRID, _ `enable`: Bool) {
+        shared.`particles_set_interpolate`(`particles`, `enable`)
+    }
+    @inline(__always) public static func `particles_set_fractional_delta`(_ `particles`: GodotRID, _ `enable`: Bool) {
+        shared.`particles_set_fractional_delta`(`particles`, `enable`)
+    }
+    @inline(__always) public static func `particles_set_collision_base_size`(_ `particles`: GodotRID, _ `size`: Double) {
+        shared.`particles_set_collision_base_size`(`particles`, `size`)
+    }
+    @inline(__always) public static func `particles_set_transform_align`(_ `particles`: GodotRID, _ `align`: RenderingServer.ParticlesTransformAlign) {
+        shared.`particles_set_transform_align`(`particles`, `align`)
+    }
+    @inline(__always) public static func `particles_set_trails`(_ `particles`: GodotRID, _ `enable`: Bool, _ `length_sec`: Double) {
+        shared.`particles_set_trails`(`particles`, `enable`, `length_sec`)
+    }
+    @inline(__always) public static func `particles_set_trail_bind_poses`(_ `particles`: GodotRID, _ `bind_poses`: borrowing GodotArrayOf<Transform3D>) {
+        shared.`particles_set_trail_bind_poses`(`particles`, `bind_poses`)
+    }
+    @inline(__always) public static func `particles_is_inactive`(_ `particles`: GodotRID) -> Bool {
+        return shared.`particles_is_inactive`(`particles`)
+    }
+    @inline(__always) public static func `particles_request_process`(_ `particles`: GodotRID) {
+        shared.`particles_request_process`(`particles`)
+    }
+    @inline(__always) public static func `particles_restart`(_ `particles`: GodotRID) {
+        shared.`particles_restart`(`particles`)
+    }
+    @inline(__always) public static func `particles_set_subemitter`(_ `particles`: GodotRID, _ `subemitter_particles`: GodotRID) {
+        shared.`particles_set_subemitter`(`particles`, `subemitter_particles`)
+    }
+    @inline(__always) public static func `particles_emit`(_ `particles`: GodotRID, _ `transform`: Transform3D, _ `velocity`: Vector3, _ `color`: Color, _ `custom`: Color, _ `emit_flags`: Int64) {
+        shared.`particles_emit`(`particles`, `transform`, `velocity`, `color`, `custom`, `emit_flags`)
+    }
+    @inline(__always) public static func `particles_set_draw_order`(_ `particles`: GodotRID, _ `order`: RenderingServer.ParticlesDrawOrder) {
+        shared.`particles_set_draw_order`(`particles`, `order`)
+    }
+    @inline(__always) public static func `particles_set_draw_passes`(_ `particles`: GodotRID, _ `count`: Int64) {
+        shared.`particles_set_draw_passes`(`particles`, `count`)
+    }
+    @inline(__always) public static func `particles_set_draw_pass_mesh`(_ `particles`: GodotRID, _ `pass`: Int64, _ `mesh`: GodotRID) {
+        shared.`particles_set_draw_pass_mesh`(`particles`, `pass`, `mesh`)
+    }
+    @inline(__always) public static func `particles_get_current_aabb`(_ `particles`: GodotRID) -> AABB {
+        return shared.`particles_get_current_aabb`(`particles`)
+    }
+    @inline(__always) public static func `particles_set_emission_transform`(_ `particles`: GodotRID, _ `transform`: Transform3D) {
+        shared.`particles_set_emission_transform`(`particles`, `transform`)
+    }
+    @inline(__always) public static func `particles_collision_create`() -> GodotRID {
+        return shared.`particles_collision_create`()
+    }
+    @inline(__always) public static func `particles_collision_set_collision_type`(_ `particles_collision`: GodotRID, _ `type`: RenderingServer.ParticlesCollisionType) {
+        shared.`particles_collision_set_collision_type`(`particles_collision`, `type`)
+    }
+    @inline(__always) public static func `particles_collision_set_cull_mask`(_ `particles_collision`: GodotRID, _ `mask`: Int64) {
+        shared.`particles_collision_set_cull_mask`(`particles_collision`, `mask`)
+    }
+    @inline(__always) public static func `particles_collision_set_sphere_radius`(_ `particles_collision`: GodotRID, _ `radius`: Double) {
+        shared.`particles_collision_set_sphere_radius`(`particles_collision`, `radius`)
+    }
+    @inline(__always) public static func `particles_collision_set_box_extents`(_ `particles_collision`: GodotRID, _ `extents`: Vector3) {
+        shared.`particles_collision_set_box_extents`(`particles_collision`, `extents`)
+    }
+    @inline(__always) public static func `particles_collision_set_attractor_strength`(_ `particles_collision`: GodotRID, _ `strength`: Double) {
+        shared.`particles_collision_set_attractor_strength`(`particles_collision`, `strength`)
+    }
+    @inline(__always) public static func `particles_collision_set_attractor_directionality`(_ `particles_collision`: GodotRID, _ `amount`: Double) {
+        shared.`particles_collision_set_attractor_directionality`(`particles_collision`, `amount`)
+    }
+    @inline(__always) public static func `particles_collision_set_attractor_attenuation`(_ `particles_collision`: GodotRID, _ `curve`: Double) {
+        shared.`particles_collision_set_attractor_attenuation`(`particles_collision`, `curve`)
+    }
+    @inline(__always) public static func `particles_collision_set_field_texture`(_ `particles_collision`: GodotRID, _ `texture`: GodotRID) {
+        shared.`particles_collision_set_field_texture`(`particles_collision`, `texture`)
+    }
+    @inline(__always) public static func `particles_collision_height_field_update`(_ `particles_collision`: GodotRID) {
+        shared.`particles_collision_height_field_update`(`particles_collision`)
+    }
+    @inline(__always) public static func `particles_collision_set_height_field_resolution`(_ `particles_collision`: GodotRID, _ `resolution`: RenderingServer.ParticlesCollisionHeightfieldResolution) {
+        shared.`particles_collision_set_height_field_resolution`(`particles_collision`, `resolution`)
+    }
+    @inline(__always) public static func `particles_collision_set_height_field_mask`(_ `particles_collision`: GodotRID, _ `mask`: Int64) {
+        shared.`particles_collision_set_height_field_mask`(`particles_collision`, `mask`)
+    }
+    @inline(__always) public static func `fog_volume_create`() -> GodotRID {
+        return shared.`fog_volume_create`()
+    }
+    @inline(__always) public static func `fog_volume_set_shape`(_ `fog_volume`: GodotRID, _ `shape`: RenderingServer.FogVolumeShape) {
+        shared.`fog_volume_set_shape`(`fog_volume`, `shape`)
+    }
+    @inline(__always) public static func `fog_volume_set_size`(_ `fog_volume`: GodotRID, _ `size`: Vector3) {
+        shared.`fog_volume_set_size`(`fog_volume`, `size`)
+    }
+    @inline(__always) public static func `fog_volume_set_material`(_ `fog_volume`: GodotRID, _ `material`: GodotRID) {
+        shared.`fog_volume_set_material`(`fog_volume`, `material`)
+    }
+    @inline(__always) public static func `visibility_notifier_create`() -> GodotRID {
+        return shared.`visibility_notifier_create`()
+    }
+    @inline(__always) public static func `visibility_notifier_set_aabb`(_ `notifier`: GodotRID, _ `aabb`: AABB) {
+        shared.`visibility_notifier_set_aabb`(`notifier`, `aabb`)
+    }
+    @inline(__always) public static func `visibility_notifier_set_callbacks`(_ `notifier`: GodotRID, _ `enter_callable`: borrowing GodotCallable, _ `exit_callable`: borrowing GodotCallable) {
+        shared.`visibility_notifier_set_callbacks`(`notifier`, `enter_callable`, `exit_callable`)
+    }
+    @inline(__always) public static func `occluder_create`() -> GodotRID {
+        return shared.`occluder_create`()
+    }
+    @inline(__always) public static func `occluder_set_mesh`(_ `occluder`: GodotRID, _ `vertices`: borrowing GodotPackedVector3Array, _ `indices`: borrowing GodotPackedInt32Array) {
+        shared.`occluder_set_mesh`(`occluder`, `vertices`, `indices`)
+    }
+    @inline(__always) public static func `camera_create`() -> GodotRID {
+        return shared.`camera_create`()
+    }
+    @inline(__always) public static func `camera_set_perspective`(_ `camera`: GodotRID, _ `fovy_degrees`: Double, _ `z_near`: Double, _ `z_far`: Double) {
+        shared.`camera_set_perspective`(`camera`, `fovy_degrees`, `z_near`, `z_far`)
+    }
+    @inline(__always) public static func `camera_set_orthogonal`(_ `camera`: GodotRID, _ `size`: Double, _ `z_near`: Double, _ `z_far`: Double) {
+        shared.`camera_set_orthogonal`(`camera`, `size`, `z_near`, `z_far`)
+    }
+    @inline(__always) public static func `camera_set_frustum`(_ `camera`: GodotRID, _ `size`: Double, _ `offset`: Vector2, _ `z_near`: Double, _ `z_far`: Double) {
+        shared.`camera_set_frustum`(`camera`, `size`, `offset`, `z_near`, `z_far`)
+    }
+    @inline(__always) public static func `camera_set_transform`(_ `camera`: GodotRID, _ `transform`: Transform3D) {
+        shared.`camera_set_transform`(`camera`, `transform`)
+    }
+    @inline(__always) public static func `camera_set_cull_mask`(_ `camera`: GodotRID, _ `layers`: Int64) {
+        shared.`camera_set_cull_mask`(`camera`, `layers`)
+    }
+    @inline(__always) public static func `camera_set_environment`(_ `camera`: GodotRID, _ `env`: GodotRID) {
+        shared.`camera_set_environment`(`camera`, `env`)
+    }
+    @inline(__always) public static func `camera_set_camera_attributes`(_ `camera`: GodotRID, _ `effects`: GodotRID) {
+        shared.`camera_set_camera_attributes`(`camera`, `effects`)
+    }
+    @inline(__always) public static func `camera_set_compositor`(_ `camera`: GodotRID, _ `compositor`: GodotRID) {
+        shared.`camera_set_compositor`(`camera`, `compositor`)
+    }
+    @inline(__always) public static func `camera_set_use_vertical_aspect`(_ `camera`: GodotRID, _ `enable`: Bool) {
+        shared.`camera_set_use_vertical_aspect`(`camera`, `enable`)
+    }
+    @inline(__always) public static func `viewport_create`() -> GodotRID {
+        return shared.`viewport_create`()
+    }
+    @inline(__always) public static func `viewport_set_use_xr`(_ `viewport`: GodotRID, _ `use_xr`: Bool) {
+        shared.`viewport_set_use_xr`(`viewport`, `use_xr`)
+    }
+    @inline(__always) public static func `viewport_set_size`(_ `viewport`: GodotRID, _ `width`: Int64, _ `height`: Int64) {
+        shared.`viewport_set_size`(`viewport`, `width`, `height`)
+    }
+    @inline(__always) public static func `viewport_set_active`(_ `viewport`: GodotRID, _ `active`: Bool) {
+        shared.`viewport_set_active`(`viewport`, `active`)
+    }
+    @inline(__always) public static func `viewport_set_parent_viewport`(_ `viewport`: GodotRID, _ `parent_viewport`: GodotRID) {
+        shared.`viewport_set_parent_viewport`(`viewport`, `parent_viewport`)
+    }
+    @inline(__always) public static func `viewport_attach_to_screen`(_ `viewport`: GodotRID, _ `rect`: Rect2 = Rect2(0, 0, 0, 0), _ `screen`: Int64 = 0) {
+        shared.`viewport_attach_to_screen`(`viewport`, `rect`, `screen`)
+    }
+    @inline(__always) public static func `viewport_set_render_direct_to_screen`(_ `viewport`: GodotRID, _ `enabled`: Bool) {
+        shared.`viewport_set_render_direct_to_screen`(`viewport`, `enabled`)
+    }
+    @inline(__always) public static func `viewport_set_canvas_cull_mask`(_ `viewport`: GodotRID, _ `canvas_cull_mask`: Int64) {
+        shared.`viewport_set_canvas_cull_mask`(`viewport`, `canvas_cull_mask`)
+    }
+    @inline(__always) public static func `viewport_set_scaling_3d_mode`(_ `viewport`: GodotRID, _ `scaling_3d_mode`: RenderingServer.ViewportScaling3DMode) {
+        shared.`viewport_set_scaling_3d_mode`(`viewport`, `scaling_3d_mode`)
+    }
+    @inline(__always) public static func `viewport_set_scaling_3d_scale`(_ `viewport`: GodotRID, _ `scale`: Double) {
+        shared.`viewport_set_scaling_3d_scale`(`viewport`, `scale`)
+    }
+    @inline(__always) public static func `viewport_set_fsr_sharpness`(_ `viewport`: GodotRID, _ `sharpness`: Double) {
+        shared.`viewport_set_fsr_sharpness`(`viewport`, `sharpness`)
+    }
+    @inline(__always) public static func `viewport_set_texture_mipmap_bias`(_ `viewport`: GodotRID, _ `mipmap_bias`: Double) {
+        shared.`viewport_set_texture_mipmap_bias`(`viewport`, `mipmap_bias`)
+    }
+    @inline(__always) public static func `viewport_set_anisotropic_filtering_level`(_ `viewport`: GodotRID, _ `anisotropic_filtering_level`: RenderingServer.ViewportAnisotropicFiltering) {
+        shared.`viewport_set_anisotropic_filtering_level`(`viewport`, `anisotropic_filtering_level`)
+    }
+    @inline(__always) public static func `viewport_set_update_mode`(_ `viewport`: GodotRID, _ `update_mode`: RenderingServer.ViewportUpdateMode) {
+        shared.`viewport_set_update_mode`(`viewport`, `update_mode`)
+    }
+    @inline(__always) public static func `viewport_get_update_mode`(_ `viewport`: GodotRID) -> RenderingServer.ViewportUpdateMode {
+        return shared.`viewport_get_update_mode`(`viewport`)
+    }
+    @inline(__always) public static func `viewport_set_clear_mode`(_ `viewport`: GodotRID, _ `clear_mode`: RenderingServer.ViewportClearMode) {
+        shared.`viewport_set_clear_mode`(`viewport`, `clear_mode`)
+    }
+    @inline(__always) public static func `viewport_get_render_target`(_ `viewport`: GodotRID) -> GodotRID {
+        return shared.`viewport_get_render_target`(`viewport`)
+    }
+    @inline(__always) public static func `viewport_get_texture`(_ `viewport`: GodotRID) -> GodotRID {
+        return shared.`viewport_get_texture`(`viewport`)
+    }
+    @inline(__always) public static func `viewport_set_disable_3d`(_ `viewport`: GodotRID, _ `disable`: Bool) {
+        shared.`viewport_set_disable_3d`(`viewport`, `disable`)
+    }
+    @inline(__always) public static func `viewport_set_disable_2d`(_ `viewport`: GodotRID, _ `disable`: Bool) {
+        shared.`viewport_set_disable_2d`(`viewport`, `disable`)
+    }
+    @inline(__always) public static func `viewport_set_environment_mode`(_ `viewport`: GodotRID, _ `mode`: RenderingServer.ViewportEnvironmentMode) {
+        shared.`viewport_set_environment_mode`(`viewport`, `mode`)
+    }
+    @inline(__always) public static func `viewport_attach_camera`(_ `viewport`: GodotRID, _ `camera`: GodotRID) {
+        shared.`viewport_attach_camera`(`viewport`, `camera`)
+    }
+    @inline(__always) public static func `viewport_set_scenario`(_ `viewport`: GodotRID, _ `scenario`: GodotRID) {
+        shared.`viewport_set_scenario`(`viewport`, `scenario`)
+    }
+    @inline(__always) public static func `viewport_attach_canvas`(_ `viewport`: GodotRID, _ `canvas`: GodotRID) {
+        shared.`viewport_attach_canvas`(`viewport`, `canvas`)
+    }
+    @inline(__always) public static func `viewport_remove_canvas`(_ `viewport`: GodotRID, _ `canvas`: GodotRID) {
+        shared.`viewport_remove_canvas`(`viewport`, `canvas`)
+    }
+    @inline(__always) public static func `viewport_set_snap_2d_transforms_to_pixel`(_ `viewport`: GodotRID, _ `enabled`: Bool) {
+        shared.`viewport_set_snap_2d_transforms_to_pixel`(`viewport`, `enabled`)
+    }
+    @inline(__always) public static func `viewport_set_snap_2d_vertices_to_pixel`(_ `viewport`: GodotRID, _ `enabled`: Bool) {
+        shared.`viewport_set_snap_2d_vertices_to_pixel`(`viewport`, `enabled`)
+    }
+    @inline(__always) public static func `viewport_set_default_canvas_item_texture_filter`(_ `viewport`: GodotRID, _ `filter`: RenderingServer.CanvasItemTextureFilter) {
+        shared.`viewport_set_default_canvas_item_texture_filter`(`viewport`, `filter`)
+    }
+    @inline(__always) public static func `viewport_set_default_canvas_item_texture_repeat`(_ `viewport`: GodotRID, _ `repeat`: RenderingServer.CanvasItemTextureRepeat) {
+        shared.`viewport_set_default_canvas_item_texture_repeat`(`viewport`, `repeat`)
+    }
+    @inline(__always) public static func `viewport_set_canvas_transform`(_ `viewport`: GodotRID, _ `canvas`: GodotRID, _ `offset`: Transform2D) {
+        shared.`viewport_set_canvas_transform`(`viewport`, `canvas`, `offset`)
+    }
+    @inline(__always) public static func `viewport_set_canvas_stacking`(_ `viewport`: GodotRID, _ `canvas`: GodotRID, _ `layer`: Int64, _ `sublayer`: Int64) {
+        shared.`viewport_set_canvas_stacking`(`viewport`, `canvas`, `layer`, `sublayer`)
+    }
+    @inline(__always) public static func `viewport_set_transparent_background`(_ `viewport`: GodotRID, _ `enabled`: Bool) {
+        shared.`viewport_set_transparent_background`(`viewport`, `enabled`)
+    }
+    @inline(__always) public static func `viewport_set_global_canvas_transform`(_ `viewport`: GodotRID, _ `transform`: Transform2D) {
+        shared.`viewport_set_global_canvas_transform`(`viewport`, `transform`)
+    }
+    @inline(__always) public static func `viewport_set_sdf_oversize_and_scale`(_ `viewport`: GodotRID, _ `oversize`: RenderingServer.ViewportSDFOversize, _ `scale`: RenderingServer.ViewportSDFScale) {
+        shared.`viewport_set_sdf_oversize_and_scale`(`viewport`, `oversize`, `scale`)
+    }
+    @inline(__always) public static func `viewport_set_positional_shadow_atlas_size`(_ `viewport`: GodotRID, _ `size`: Int64, _ `use_16_bits`: Bool = false) {
+        shared.`viewport_set_positional_shadow_atlas_size`(`viewport`, `size`, `use_16_bits`)
+    }
+    @inline(__always) public static func `viewport_set_positional_shadow_atlas_quadrant_subdivision`(_ `viewport`: GodotRID, _ `quadrant`: Int64, _ `subdivision`: Int64) {
+        shared.`viewport_set_positional_shadow_atlas_quadrant_subdivision`(`viewport`, `quadrant`, `subdivision`)
+    }
+    @inline(__always) public static func `viewport_set_msaa_3d`(_ `viewport`: GodotRID, _ `msaa`: RenderingServer.ViewportMSAA) {
+        shared.`viewport_set_msaa_3d`(`viewport`, `msaa`)
+    }
+    @inline(__always) public static func `viewport_set_msaa_2d`(_ `viewport`: GodotRID, _ `msaa`: RenderingServer.ViewportMSAA) {
+        shared.`viewport_set_msaa_2d`(`viewport`, `msaa`)
+    }
+    @inline(__always) public static func `viewport_set_use_hdr_2d`(_ `viewport`: GodotRID, _ `enabled`: Bool) {
+        shared.`viewport_set_use_hdr_2d`(`viewport`, `enabled`)
+    }
+    @inline(__always) public static func `viewport_set_screen_space_aa`(_ `viewport`: GodotRID, _ `mode`: RenderingServer.ViewportScreenSpaceAA) {
+        shared.`viewport_set_screen_space_aa`(`viewport`, `mode`)
+    }
+    @inline(__always) public static func `viewport_set_use_taa`(_ `viewport`: GodotRID, _ `enable`: Bool) {
+        shared.`viewport_set_use_taa`(`viewport`, `enable`)
+    }
+    @inline(__always) public static func `viewport_set_use_debanding`(_ `viewport`: GodotRID, _ `enable`: Bool) {
+        shared.`viewport_set_use_debanding`(`viewport`, `enable`)
+    }
+    @inline(__always) public static func `viewport_set_use_occlusion_culling`(_ `viewport`: GodotRID, _ `enable`: Bool) {
+        shared.`viewport_set_use_occlusion_culling`(`viewport`, `enable`)
+    }
+    @inline(__always) public static func `viewport_set_occlusion_rays_per_thread`(_ `rays_per_thread`: Int64) {
+        shared.`viewport_set_occlusion_rays_per_thread`(`rays_per_thread`)
+    }
+    @inline(__always) public static func `viewport_set_occlusion_culling_build_quality`(_ `quality`: RenderingServer.ViewportOcclusionCullingBuildQuality) {
+        shared.`viewport_set_occlusion_culling_build_quality`(`quality`)
+    }
+    @inline(__always) public static func `viewport_get_render_info`(_ `viewport`: GodotRID, _ `type`: RenderingServer.ViewportRenderInfoType, _ `info`: RenderingServer.ViewportRenderInfo) -> Int64 {
+        return shared.`viewport_get_render_info`(`viewport`, `type`, `info`)
+    }
+    @inline(__always) public static func `viewport_set_debug_draw`(_ `viewport`: GodotRID, _ `draw`: RenderingServer.ViewportDebugDraw) {
+        shared.`viewport_set_debug_draw`(`viewport`, `draw`)
+    }
+    @inline(__always) public static func `viewport_set_measure_render_time`(_ `viewport`: GodotRID, _ `enable`: Bool) {
+        shared.`viewport_set_measure_render_time`(`viewport`, `enable`)
+    }
+    @inline(__always) public static func `viewport_get_measured_render_time_cpu`(_ `viewport`: GodotRID) -> Double {
+        return shared.`viewport_get_measured_render_time_cpu`(`viewport`)
+    }
+    @inline(__always) public static func `viewport_get_measured_render_time_gpu`(_ `viewport`: GodotRID) -> Double {
+        return shared.`viewport_get_measured_render_time_gpu`(`viewport`)
+    }
+    @inline(__always) public static func `viewport_set_vrs_mode`(_ `viewport`: GodotRID, _ `mode`: RenderingServer.ViewportVRSMode) {
+        shared.`viewport_set_vrs_mode`(`viewport`, `mode`)
+    }
+    @inline(__always) public static func `viewport_set_vrs_update_mode`(_ `viewport`: GodotRID, _ `mode`: RenderingServer.ViewportVRSUpdateMode) {
+        shared.`viewport_set_vrs_update_mode`(`viewport`, `mode`)
+    }
+    @inline(__always) public static func `viewport_set_vrs_texture`(_ `viewport`: GodotRID, _ `texture`: GodotRID) {
+        shared.`viewport_set_vrs_texture`(`viewport`, `texture`)
+    }
+    @inline(__always) public static func `sky_create`() -> GodotRID {
+        return shared.`sky_create`()
+    }
+    @inline(__always) public static func `sky_set_radiance_size`(_ `sky`: GodotRID, _ `radiance_size`: Int64) {
+        shared.`sky_set_radiance_size`(`sky`, `radiance_size`)
+    }
+    @inline(__always) public static func `sky_set_mode`(_ `sky`: GodotRID, _ `mode`: RenderingServer.SkyMode) {
+        shared.`sky_set_mode`(`sky`, `mode`)
+    }
+    @inline(__always) public static func `sky_set_material`(_ `sky`: GodotRID, _ `material`: GodotRID) {
+        shared.`sky_set_material`(`sky`, `material`)
+    }
+    @inline(__always) public static func `sky_bake_panorama`(_ `sky`: GodotRID, _ `energy`: Double, _ `bake_irradiance`: Bool, _ `size`: Vector2i) -> Image? {
+        return shared.`sky_bake_panorama`(`sky`, `energy`, `bake_irradiance`, `size`)
+    }
+    @inline(__always) public static func `compositor_effect_create`() -> GodotRID {
+        return shared.`compositor_effect_create`()
+    }
+    @inline(__always) public static func `compositor_effect_set_enabled`(_ `effect`: GodotRID, _ `enabled`: Bool) {
+        shared.`compositor_effect_set_enabled`(`effect`, `enabled`)
+    }
+    @inline(__always) public static func `compositor_effect_set_callback`(_ `effect`: GodotRID, _ `callback_type`: RenderingServer.CompositorEffectCallbackType, _ `callback`: borrowing GodotCallable) {
+        shared.`compositor_effect_set_callback`(`effect`, `callback_type`, `callback`)
+    }
+    @inline(__always) public static func `compositor_effect_set_flag`(_ `effect`: GodotRID, _ `flag`: RenderingServer.CompositorEffectFlags, _ `set`: Bool) {
+        shared.`compositor_effect_set_flag`(`effect`, `flag`, `set`)
+    }
+    @inline(__always) public static func `compositor_create`() -> GodotRID {
+        return shared.`compositor_create`()
+    }
+    @inline(__always) public static func `compositor_set_compositor_effects`(_ `compositor`: GodotRID, _ `effects`: borrowing GodotArrayOf<GodotRID>) {
+        shared.`compositor_set_compositor_effects`(`compositor`, `effects`)
+    }
+    @inline(__always) public static func `environment_create`() -> GodotRID {
+        return shared.`environment_create`()
+    }
+    @inline(__always) public static func `environment_set_background`(_ `env`: GodotRID, _ `bg`: RenderingServer.EnvironmentBG) {
+        shared.`environment_set_background`(`env`, `bg`)
+    }
+    @inline(__always) public static func `environment_set_camera_id`(_ `env`: GodotRID, _ `id`: Int64) {
+        shared.`environment_set_camera_id`(`env`, `id`)
+    }
+    @inline(__always) public static func `environment_set_sky`(_ `env`: GodotRID, _ `sky`: GodotRID) {
+        shared.`environment_set_sky`(`env`, `sky`)
+    }
+    @inline(__always) public static func `environment_set_sky_custom_fov`(_ `env`: GodotRID, _ `scale`: Double) {
+        shared.`environment_set_sky_custom_fov`(`env`, `scale`)
+    }
+    @inline(__always) public static func `environment_set_sky_orientation`(_ `env`: GodotRID, _ `orientation`: Basis) {
+        shared.`environment_set_sky_orientation`(`env`, `orientation`)
+    }
+    @inline(__always) public static func `environment_set_bg_color`(_ `env`: GodotRID, _ `color`: Color) {
+        shared.`environment_set_bg_color`(`env`, `color`)
+    }
+    @inline(__always) public static func `environment_set_bg_energy`(_ `env`: GodotRID, _ `multiplier`: Double, _ `exposure_value`: Double) {
+        shared.`environment_set_bg_energy`(`env`, `multiplier`, `exposure_value`)
+    }
+    @inline(__always) public static func `environment_set_canvas_max_layer`(_ `env`: GodotRID, _ `max_layer`: Int64) {
+        shared.`environment_set_canvas_max_layer`(`env`, `max_layer`)
+    }
+    @inline(__always) public static func `environment_set_ambient_light`(_ `env`: GodotRID, _ `color`: Color, _ `ambient`: RenderingServer.EnvironmentAmbientSource = RenderingServer.EnvironmentAmbientSource(rawValue: 0), _ `energy`: Double = 1.0, _ `sky_contribution`: Double = 0.0, _ `reflection_source`: RenderingServer.EnvironmentReflectionSource = RenderingServer.EnvironmentReflectionSource(rawValue: 0)) {
+        shared.`environment_set_ambient_light`(`env`, `color`, `ambient`, `energy`, `sky_contribution`, `reflection_source`)
+    }
+    @inline(__always) public static func `environment_set_glow`(_ `env`: GodotRID, _ `enable`: Bool, _ `levels`: borrowing GodotPackedFloat32Array, _ `intensity`: Double, _ `strength`: Double, _ `mix`: Double, _ `bloom_threshold`: Double, _ `blend_mode`: RenderingServer.EnvironmentGlowBlendMode, _ `hdr_bleed_threshold`: Double, _ `hdr_bleed_scale`: Double, _ `hdr_luminance_cap`: Double, _ `glow_map_strength`: Double, _ `glow_map`: GodotRID) {
+        shared.`environment_set_glow`(`env`, `enable`, `levels`, `intensity`, `strength`, `mix`, `bloom_threshold`, `blend_mode`, `hdr_bleed_threshold`, `hdr_bleed_scale`, `hdr_luminance_cap`, `glow_map_strength`, `glow_map`)
+    }
+    @inline(__always) public static func `environment_set_tonemap`(_ `env`: GodotRID, _ `tone_mapper`: RenderingServer.EnvironmentToneMapper, _ `exposure`: Double, _ `white`: Double) {
+        shared.`environment_set_tonemap`(`env`, `tone_mapper`, `exposure`, `white`)
+    }
+    @inline(__always) public static func `environment_set_tonemap_agx_contrast`(_ `env`: GodotRID, _ `agx_contrast`: Double) {
+        shared.`environment_set_tonemap_agx_contrast`(`env`, `agx_contrast`)
+    }
+    @inline(__always) public static func `environment_set_adjustment`(_ `env`: GodotRID, _ `enable`: Bool, _ `brightness`: Double, _ `contrast`: Double, _ `saturation`: Double, _ `use_1d_color_correction`: Bool, _ `color_correction`: GodotRID) {
+        shared.`environment_set_adjustment`(`env`, `enable`, `brightness`, `contrast`, `saturation`, `use_1d_color_correction`, `color_correction`)
+    }
+    @inline(__always) public static func `environment_set_ssr`(_ `env`: GodotRID, _ `enable`: Bool, _ `max_steps`: Int64, _ `fade_in`: Double, _ `fade_out`: Double, _ `depth_tolerance`: Double) {
+        shared.`environment_set_ssr`(`env`, `enable`, `max_steps`, `fade_in`, `fade_out`, `depth_tolerance`)
+    }
+    @inline(__always) public static func `environment_set_ssao`(_ `env`: GodotRID, _ `enable`: Bool, _ `radius`: Double, _ `intensity`: Double, _ `power`: Double, _ `detail`: Double, _ `horizon`: Double, _ `sharpness`: Double, _ `light_affect`: Double, _ `ao_channel_affect`: Double) {
+        shared.`environment_set_ssao`(`env`, `enable`, `radius`, `intensity`, `power`, `detail`, `horizon`, `sharpness`, `light_affect`, `ao_channel_affect`)
+    }
+    @inline(__always) public static func `environment_set_fog`(_ `env`: GodotRID, _ `enable`: Bool, _ `light_color`: Color, _ `light_energy`: Double, _ `sun_scatter`: Double, _ `density`: Double, _ `height`: Double, _ `height_density`: Double, _ `aerial_perspective`: Double, _ `sky_affect`: Double, _ `fog_mode`: RenderingServer.EnvironmentFogMode = RenderingServer.EnvironmentFogMode(rawValue: 0)) {
+        shared.`environment_set_fog`(`env`, `enable`, `light_color`, `light_energy`, `sun_scatter`, `density`, `height`, `height_density`, `aerial_perspective`, `sky_affect`, `fog_mode`)
+    }
+    @inline(__always) public static func `environment_set_fog_depth`(_ `env`: GodotRID, _ `curve`: Double, _ `begin`: Double, _ `end`: Double) {
+        shared.`environment_set_fog_depth`(`env`, `curve`, `begin`, `end`)
+    }
+    @inline(__always) public static func `environment_set_sdfgi`(_ `env`: GodotRID, _ `enable`: Bool, _ `cascades`: Int64, _ `min_cell_size`: Double, _ `y_scale`: RenderingServer.EnvironmentSDFGIYScale, _ `use_occlusion`: Bool, _ `bounce_feedback`: Double, _ `read_sky`: Bool, _ `energy`: Double, _ `normal_bias`: Double, _ `probe_bias`: Double) {
+        shared.`environment_set_sdfgi`(`env`, `enable`, `cascades`, `min_cell_size`, `y_scale`, `use_occlusion`, `bounce_feedback`, `read_sky`, `energy`, `normal_bias`, `probe_bias`)
+    }
+    @inline(__always) public static func `environment_set_volumetric_fog`(_ `env`: GodotRID, _ `enable`: Bool, _ `density`: Double, _ `albedo`: Color, _ `emission`: Color, _ `emission_energy`: Double, _ `anisotropy`: Double, _ `length`: Double, _ `p_detail_spread`: Double, _ `gi_inject`: Double, _ `temporal_reprojection`: Bool, _ `temporal_reprojection_amount`: Double, _ `ambient_inject`: Double, _ `sky_affect`: Double) {
+        shared.`environment_set_volumetric_fog`(`env`, `enable`, `density`, `albedo`, `emission`, `emission_energy`, `anisotropy`, `length`, `p_detail_spread`, `gi_inject`, `temporal_reprojection`, `temporal_reprojection_amount`, `ambient_inject`, `sky_affect`)
+    }
+    @inline(__always) public static func `environment_glow_set_use_bicubic_upscale`(_ `enable`: Bool) {
+        shared.`environment_glow_set_use_bicubic_upscale`(`enable`)
+    }
+    @inline(__always) public static func `environment_set_ssr_half_size`(_ `half_size`: Bool) {
+        shared.`environment_set_ssr_half_size`(`half_size`)
+    }
+    @inline(__always) public static func `environment_set_ssr_roughness_quality`(_ `quality`: RenderingServer.EnvironmentSSRRoughnessQuality) {
+        shared.`environment_set_ssr_roughness_quality`(`quality`)
+    }
+    @inline(__always) public static func `environment_set_ssao_quality`(_ `quality`: RenderingServer.EnvironmentSSAOQuality, _ `half_size`: Bool, _ `adaptive_target`: Double, _ `blur_passes`: Int64, _ `fadeout_from`: Double, _ `fadeout_to`: Double) {
+        shared.`environment_set_ssao_quality`(`quality`, `half_size`, `adaptive_target`, `blur_passes`, `fadeout_from`, `fadeout_to`)
+    }
+    @inline(__always) public static func `environment_set_ssil_quality`(_ `quality`: RenderingServer.EnvironmentSSILQuality, _ `half_size`: Bool, _ `adaptive_target`: Double, _ `blur_passes`: Int64, _ `fadeout_from`: Double, _ `fadeout_to`: Double) {
+        shared.`environment_set_ssil_quality`(`quality`, `half_size`, `adaptive_target`, `blur_passes`, `fadeout_from`, `fadeout_to`)
+    }
+    @inline(__always) public static func `environment_set_sdfgi_ray_count`(_ `ray_count`: RenderingServer.EnvironmentSDFGIRayCount) {
+        shared.`environment_set_sdfgi_ray_count`(`ray_count`)
+    }
+    @inline(__always) public static func `environment_set_sdfgi_frames_to_converge`(_ `frames`: RenderingServer.EnvironmentSDFGIFramesToConverge) {
+        shared.`environment_set_sdfgi_frames_to_converge`(`frames`)
+    }
+    @inline(__always) public static func `environment_set_sdfgi_frames_to_update_light`(_ `frames`: RenderingServer.EnvironmentSDFGIFramesToUpdateLight) {
+        shared.`environment_set_sdfgi_frames_to_update_light`(`frames`)
+    }
+    @inline(__always) public static func `environment_set_volumetric_fog_volume_size`(_ `size`: Int64, _ `depth`: Int64) {
+        shared.`environment_set_volumetric_fog_volume_size`(`size`, `depth`)
+    }
+    @inline(__always) public static func `environment_set_volumetric_fog_filter_active`(_ `active`: Bool) {
+        shared.`environment_set_volumetric_fog_filter_active`(`active`)
+    }
+    @inline(__always) public static func `environment_bake_panorama`(_ `environment`: GodotRID, _ `bake_irradiance`: Bool, _ `size`: Vector2i) -> Image? {
+        return shared.`environment_bake_panorama`(`environment`, `bake_irradiance`, `size`)
+    }
+    @inline(__always) public static func `screen_space_roughness_limiter_set_active`(_ `enable`: Bool, _ `amount`: Double, _ `limit`: Double) {
+        shared.`screen_space_roughness_limiter_set_active`(`enable`, `amount`, `limit`)
+    }
+    @inline(__always) public static func `sub_surface_scattering_set_quality`(_ `quality`: RenderingServer.SubSurfaceScatteringQuality) {
+        shared.`sub_surface_scattering_set_quality`(`quality`)
+    }
+    @inline(__always) public static func `sub_surface_scattering_set_scale`(_ `scale`: Double, _ `depth_scale`: Double) {
+        shared.`sub_surface_scattering_set_scale`(`scale`, `depth_scale`)
+    }
+    @inline(__always) public static func `camera_attributes_create`() -> GodotRID {
+        return shared.`camera_attributes_create`()
+    }
+    @inline(__always) public static func `camera_attributes_set_dof_blur_quality`(_ `quality`: RenderingServer.DOFBlurQuality, _ `use_jitter`: Bool) {
+        shared.`camera_attributes_set_dof_blur_quality`(`quality`, `use_jitter`)
+    }
+    @inline(__always) public static func `camera_attributes_set_dof_blur_bokeh_shape`(_ `shape`: RenderingServer.DOFBokehShape) {
+        shared.`camera_attributes_set_dof_blur_bokeh_shape`(`shape`)
+    }
+    @inline(__always) public static func `camera_attributes_set_dof_blur`(_ `camera_attributes`: GodotRID, _ `far_enable`: Bool, _ `far_distance`: Double, _ `far_transition`: Double, _ `near_enable`: Bool, _ `near_distance`: Double, _ `near_transition`: Double, _ `amount`: Double) {
+        shared.`camera_attributes_set_dof_blur`(`camera_attributes`, `far_enable`, `far_distance`, `far_transition`, `near_enable`, `near_distance`, `near_transition`, `amount`)
+    }
+    @inline(__always) public static func `camera_attributes_set_exposure`(_ `camera_attributes`: GodotRID, _ `multiplier`: Double, _ `normalization`: Double) {
+        shared.`camera_attributes_set_exposure`(`camera_attributes`, `multiplier`, `normalization`)
+    }
+    @inline(__always) public static func `camera_attributes_set_auto_exposure`(_ `camera_attributes`: GodotRID, _ `enable`: Bool, _ `min_sensitivity`: Double, _ `max_sensitivity`: Double, _ `speed`: Double, _ `scale`: Double) {
+        shared.`camera_attributes_set_auto_exposure`(`camera_attributes`, `enable`, `min_sensitivity`, `max_sensitivity`, `speed`, `scale`)
+    }
+    @inline(__always) public static func `scenario_create`() -> GodotRID {
+        return shared.`scenario_create`()
+    }
+    @inline(__always) public static func `scenario_set_environment`(_ `scenario`: GodotRID, _ `environment`: GodotRID) {
+        shared.`scenario_set_environment`(`scenario`, `environment`)
+    }
+    @inline(__always) public static func `scenario_set_fallback_environment`(_ `scenario`: GodotRID, _ `environment`: GodotRID) {
+        shared.`scenario_set_fallback_environment`(`scenario`, `environment`)
+    }
+    @inline(__always) public static func `scenario_set_camera_attributes`(_ `scenario`: GodotRID, _ `effects`: GodotRID) {
+        shared.`scenario_set_camera_attributes`(`scenario`, `effects`)
+    }
+    @inline(__always) public static func `scenario_set_compositor`(_ `scenario`: GodotRID, _ `compositor`: GodotRID) {
+        shared.`scenario_set_compositor`(`scenario`, `compositor`)
+    }
+    @inline(__always) public static func `instance_create2`(_ `base_value`: GodotRID, _ `scenario`: GodotRID) -> GodotRID {
+        return shared.`instance_create2`(`base_value`, `scenario`)
+    }
+    @inline(__always) public static func `instance_create`() -> GodotRID {
+        return shared.`instance_create`()
+    }
+    @inline(__always) public static func `instance_set_base`(_ `instance`: GodotRID, _ `base_value`: GodotRID) {
+        shared.`instance_set_base`(`instance`, `base_value`)
+    }
+    @inline(__always) public static func `instance_set_scenario`(_ `instance`: GodotRID, _ `scenario`: GodotRID) {
+        shared.`instance_set_scenario`(`instance`, `scenario`)
+    }
+    @inline(__always) public static func `instance_set_layer_mask`(_ `instance`: GodotRID, _ `mask`: Int64) {
+        shared.`instance_set_layer_mask`(`instance`, `mask`)
+    }
+    @inline(__always) public static func `instance_set_pivot_data`(_ `instance`: GodotRID, _ `sorting_offset`: Double, _ `use_aabb_center`: Bool) {
+        shared.`instance_set_pivot_data`(`instance`, `sorting_offset`, `use_aabb_center`)
+    }
+    @inline(__always) public static func `instance_set_transform`(_ `instance`: GodotRID, _ `transform`: Transform3D) {
+        shared.`instance_set_transform`(`instance`, `transform`)
+    }
+    @inline(__always) public static func `instance_attach_object_instance_id`(_ `instance`: GodotRID, _ `id`: Int64) {
+        shared.`instance_attach_object_instance_id`(`instance`, `id`)
+    }
+    @inline(__always) public static func `instance_set_blend_shape_weight`(_ `instance`: GodotRID, _ `shape`: Int64, _ `weight`: Double) {
+        shared.`instance_set_blend_shape_weight`(`instance`, `shape`, `weight`)
+    }
+    @inline(__always) public static func `instance_set_surface_override_material`(_ `instance`: GodotRID, _ `surface`: Int64, _ `material`: GodotRID) {
+        shared.`instance_set_surface_override_material`(`instance`, `surface`, `material`)
+    }
+    @inline(__always) public static func `instance_set_visible`(_ `instance`: GodotRID, _ `visible`: Bool) {
+        shared.`instance_set_visible`(`instance`, `visible`)
+    }
+    @inline(__always) public static func `instance_geometry_set_transparency`(_ `instance`: GodotRID, _ `transparency`: Double) {
+        shared.`instance_geometry_set_transparency`(`instance`, `transparency`)
+    }
+    @inline(__always) public static func `instance_teleport`(_ `instance`: GodotRID) {
+        shared.`instance_teleport`(`instance`)
+    }
+    @inline(__always) public static func `instance_set_custom_aabb`(_ `instance`: GodotRID, _ `aabb`: AABB) {
+        shared.`instance_set_custom_aabb`(`instance`, `aabb`)
+    }
+    @inline(__always) public static func `instance_attach_skeleton`(_ `instance`: GodotRID, _ `skeleton`: GodotRID) {
+        shared.`instance_attach_skeleton`(`instance`, `skeleton`)
+    }
+    @inline(__always) public static func `instance_set_extra_visibility_margin`(_ `instance`: GodotRID, _ `margin`: Double) {
+        shared.`instance_set_extra_visibility_margin`(`instance`, `margin`)
+    }
+    @inline(__always) public static func `instance_set_visibility_parent`(_ `instance`: GodotRID, _ `parent`: GodotRID) {
+        shared.`instance_set_visibility_parent`(`instance`, `parent`)
+    }
+    @inline(__always) public static func `instance_set_ignore_culling`(_ `instance`: GodotRID, _ `enabled`: Bool) {
+        shared.`instance_set_ignore_culling`(`instance`, `enabled`)
+    }
+    @inline(__always) public static func `instance_geometry_set_flag`(_ `instance`: GodotRID, _ `flag`: RenderingServer.InstanceFlags, _ `enabled`: Bool) {
+        shared.`instance_geometry_set_flag`(`instance`, `flag`, `enabled`)
+    }
+    @inline(__always) public static func `instance_geometry_set_cast_shadows_setting`(_ `instance`: GodotRID, _ `shadow_casting_setting`: RenderingServer.ShadowCastingSetting) {
+        shared.`instance_geometry_set_cast_shadows_setting`(`instance`, `shadow_casting_setting`)
+    }
+    @inline(__always) public static func `instance_geometry_set_material_override`(_ `instance`: GodotRID, _ `material`: GodotRID) {
+        shared.`instance_geometry_set_material_override`(`instance`, `material`)
+    }
+    @inline(__always) public static func `instance_geometry_set_material_overlay`(_ `instance`: GodotRID, _ `material`: GodotRID) {
+        shared.`instance_geometry_set_material_overlay`(`instance`, `material`)
+    }
+    @inline(__always) public static func `instance_geometry_set_visibility_range`(_ `instance`: GodotRID, _ `min`: Double, _ `max`: Double, _ `min_margin`: Double, _ `max_margin`: Double, _ `fade_mode`: RenderingServer.VisibilityRangeFadeMode) {
+        shared.`instance_geometry_set_visibility_range`(`instance`, `min`, `max`, `min_margin`, `max_margin`, `fade_mode`)
+    }
+    @inline(__always) public static func `instance_geometry_set_lightmap`(_ `instance`: GodotRID, _ `lightmap`: GodotRID, _ `lightmap_uv_scale`: Rect2, _ `lightmap_slice`: Int64) {
+        shared.`instance_geometry_set_lightmap`(`instance`, `lightmap`, `lightmap_uv_scale`, `lightmap_slice`)
+    }
+    @inline(__always) public static func `instance_geometry_set_lod_bias`(_ `instance`: GodotRID, _ `lod_bias`: Double) {
+        shared.`instance_geometry_set_lod_bias`(`instance`, `lod_bias`)
+    }
+    @inline(__always) public static func `instance_geometry_set_shader_parameter`(_ `instance`: GodotRID, _ `parameter`: borrowing GodotStringName, _ `value`: borrowing GodotVariant) {
+        shared.`instance_geometry_set_shader_parameter`(`instance`, `parameter`, `value`)
+    }
+    @inline(__always) public static func `instance_geometry_get_shader_parameter`(_ `instance`: GodotRID, _ `parameter`: borrowing GodotStringName) -> GodotVariant {
+        return shared.`instance_geometry_get_shader_parameter`(`instance`, `parameter`)
+    }
+    @inline(__always) public static func `instance_geometry_get_shader_parameter_default_value`(_ `instance`: GodotRID, _ `parameter`: borrowing GodotStringName) -> GodotVariant {
+        return shared.`instance_geometry_get_shader_parameter_default_value`(`instance`, `parameter`)
+    }
+    @inline(__always) public static func `instance_geometry_get_shader_parameter_list`(_ `instance`: GodotRID) -> GodotArrayOf<GodotDictionary> {
+        return shared.`instance_geometry_get_shader_parameter_list`(`instance`)
+    }
+    @inline(__always) public static func `instances_cull_aabb`(_ `aabb`: AABB, _ `scenario`: GodotRID = GodotRID()) -> GodotPackedInt64Array {
+        return shared.`instances_cull_aabb`(`aabb`, `scenario`)
+    }
+    @inline(__always) public static func `instances_cull_ray`(_ `from`: Vector3, _ `to`: Vector3, _ `scenario`: GodotRID = GodotRID()) -> GodotPackedInt64Array {
+        return shared.`instances_cull_ray`(`from`, `to`, `scenario`)
+    }
+    @inline(__always) public static func `instances_cull_convex`(_ `convex`: borrowing GodotArrayOf<Plane>, _ `scenario`: GodotRID = GodotRID()) -> GodotPackedInt64Array {
+        return shared.`instances_cull_convex`(`convex`, `scenario`)
+    }
+    @inline(__always) public static func `bake_render_uv2`(_ `base_value`: GodotRID, _ `material_overrides`: borrowing GodotArrayOf<GodotRID>, _ `image_size`: Vector2i) -> GodotArrayOf<Image> {
+        return shared.`bake_render_uv2`(`base_value`, `material_overrides`, `image_size`)
+    }
+    @inline(__always) public static func `canvas_create`() -> GodotRID {
+        return shared.`canvas_create`()
+    }
+    @inline(__always) public static func `canvas_set_item_mirroring`(_ `canvas`: GodotRID, _ `item`: GodotRID, _ `mirroring`: Vector2) {
+        shared.`canvas_set_item_mirroring`(`canvas`, `item`, `mirroring`)
+    }
+    @inline(__always) public static func `canvas_set_item_repeat`(_ `item`: GodotRID, _ `repeat_size`: Vector2, _ `repeat_times`: Int64) {
+        shared.`canvas_set_item_repeat`(`item`, `repeat_size`, `repeat_times`)
+    }
+    @inline(__always) public static func `canvas_set_modulate`(_ `canvas`: GodotRID, _ `color`: Color) {
+        shared.`canvas_set_modulate`(`canvas`, `color`)
+    }
+    @inline(__always) public static func `canvas_set_disable_scale`(_ `disable`: Bool) {
+        shared.`canvas_set_disable_scale`(`disable`)
+    }
+    @inline(__always) public static func `canvas_texture_create`() -> GodotRID {
+        return shared.`canvas_texture_create`()
+    }
+    @inline(__always) public static func `canvas_texture_set_channel`(_ `canvas_texture`: GodotRID, _ `channel`: RenderingServer.CanvasTextureChannel, _ `texture`: GodotRID) {
+        shared.`canvas_texture_set_channel`(`canvas_texture`, `channel`, `texture`)
+    }
+    @inline(__always) public static func `canvas_texture_set_shading_parameters`(_ `canvas_texture`: GodotRID, _ `base_color`: Color, _ `shininess`: Double) {
+        shared.`canvas_texture_set_shading_parameters`(`canvas_texture`, `base_color`, `shininess`)
+    }
+    @inline(__always) public static func `canvas_texture_set_texture_filter`(_ `canvas_texture`: GodotRID, _ `filter`: RenderingServer.CanvasItemTextureFilter) {
+        shared.`canvas_texture_set_texture_filter`(`canvas_texture`, `filter`)
+    }
+    @inline(__always) public static func `canvas_texture_set_texture_repeat`(_ `canvas_texture`: GodotRID, _ `repeat`: RenderingServer.CanvasItemTextureRepeat) {
+        shared.`canvas_texture_set_texture_repeat`(`canvas_texture`, `repeat`)
+    }
+    @inline(__always) public static func `canvas_item_create`() -> GodotRID {
+        return shared.`canvas_item_create`()
+    }
+    @inline(__always) public static func `canvas_item_set_parent`(_ `item`: GodotRID, _ `parent`: GodotRID) {
+        shared.`canvas_item_set_parent`(`item`, `parent`)
+    }
+    @inline(__always) public static func `canvas_item_set_default_texture_filter`(_ `item`: GodotRID, _ `filter`: RenderingServer.CanvasItemTextureFilter) {
+        shared.`canvas_item_set_default_texture_filter`(`item`, `filter`)
+    }
+    @inline(__always) public static func `canvas_item_set_default_texture_repeat`(_ `item`: GodotRID, _ `repeat`: RenderingServer.CanvasItemTextureRepeat) {
+        shared.`canvas_item_set_default_texture_repeat`(`item`, `repeat`)
+    }
+    @inline(__always) public static func `canvas_item_set_visible`(_ `item`: GodotRID, _ `visible`: Bool) {
+        shared.`canvas_item_set_visible`(`item`, `visible`)
+    }
+    @inline(__always) public static func `canvas_item_set_light_mask`(_ `item`: GodotRID, _ `mask`: Int64) {
+        shared.`canvas_item_set_light_mask`(`item`, `mask`)
+    }
+    @inline(__always) public static func `canvas_item_set_visibility_layer`(_ `item`: GodotRID, _ `visibility_layer`: Int64) {
+        shared.`canvas_item_set_visibility_layer`(`item`, `visibility_layer`)
+    }
+    @inline(__always) public static func `canvas_item_set_transform`(_ `item`: GodotRID, _ `transform`: Transform2D) {
+        shared.`canvas_item_set_transform`(`item`, `transform`)
+    }
+    @inline(__always) public static func `canvas_item_set_clip`(_ `item`: GodotRID, _ `clip`: Bool) {
+        shared.`canvas_item_set_clip`(`item`, `clip`)
+    }
+    @inline(__always) public static func `canvas_item_set_distance_field_mode`(_ `item`: GodotRID, _ `enabled`: Bool) {
+        shared.`canvas_item_set_distance_field_mode`(`item`, `enabled`)
+    }
+    @inline(__always) public static func `canvas_item_set_custom_rect`(_ `item`: GodotRID, _ `use_custom_rect`: Bool, _ `rect`: Rect2 = Rect2(0, 0, 0, 0)) {
+        shared.`canvas_item_set_custom_rect`(`item`, `use_custom_rect`, `rect`)
+    }
+    @inline(__always) public static func `canvas_item_set_modulate`(_ `item`: GodotRID, _ `color`: Color) {
+        shared.`canvas_item_set_modulate`(`item`, `color`)
+    }
+    @inline(__always) public static func `canvas_item_set_self_modulate`(_ `item`: GodotRID, _ `color`: Color) {
+        shared.`canvas_item_set_self_modulate`(`item`, `color`)
+    }
+    @inline(__always) public static func `canvas_item_set_draw_behind_parent`(_ `item`: GodotRID, _ `enabled`: Bool) {
+        shared.`canvas_item_set_draw_behind_parent`(`item`, `enabled`)
+    }
+    @inline(__always) public static func `canvas_item_set_interpolated`(_ `item`: GodotRID, _ `interpolated`: Bool) {
+        shared.`canvas_item_set_interpolated`(`item`, `interpolated`)
+    }
+    @inline(__always) public static func `canvas_item_reset_physics_interpolation`(_ `item`: GodotRID) {
+        shared.`canvas_item_reset_physics_interpolation`(`item`)
+    }
+    @inline(__always) public static func `canvas_item_transform_physics_interpolation`(_ `item`: GodotRID, _ `transform`: Transform2D) {
+        shared.`canvas_item_transform_physics_interpolation`(`item`, `transform`)
+    }
+    @inline(__always) public static func `canvas_item_add_line`(_ `item`: GodotRID, _ `from`: Vector2, _ `to`: Vector2, _ `color`: Color, _ `width`: Double = -1.0, _ `antialiased`: Bool = false) {
+        shared.`canvas_item_add_line`(`item`, `from`, `to`, `color`, `width`, `antialiased`)
+    }
+    @inline(__always) public static func `canvas_item_add_polyline`(_ `item`: GodotRID, _ `points`: borrowing GodotPackedVector2Array, _ `colors`: borrowing GodotPackedColorArray, _ `width`: Double = -1.0, _ `antialiased`: Bool = false) {
+        shared.`canvas_item_add_polyline`(`item`, `points`, `colors`, `width`, `antialiased`)
+    }
+    @inline(__always) public static func `canvas_item_add_multiline`(_ `item`: GodotRID, _ `points`: borrowing GodotPackedVector2Array, _ `colors`: borrowing GodotPackedColorArray, _ `width`: Double = -1.0, _ `antialiased`: Bool = false) {
+        shared.`canvas_item_add_multiline`(`item`, `points`, `colors`, `width`, `antialiased`)
+    }
+    @inline(__always) public static func `canvas_item_add_rect`(_ `item`: GodotRID, _ `rect`: Rect2, _ `color`: Color, _ `antialiased`: Bool = false) {
+        shared.`canvas_item_add_rect`(`item`, `rect`, `color`, `antialiased`)
+    }
+    @inline(__always) public static func `canvas_item_add_circle`(_ `item`: GodotRID, _ `pos`: Vector2, _ `radius`: Double, _ `color`: Color, _ `antialiased`: Bool = false) {
+        shared.`canvas_item_add_circle`(`item`, `pos`, `radius`, `color`, `antialiased`)
+    }
+    @inline(__always) public static func `canvas_item_add_ellipse`(_ `item`: GodotRID, _ `pos`: Vector2, _ `major`: Double, _ `minor`: Double, _ `color`: Color, _ `antialiased`: Bool = false) {
+        shared.`canvas_item_add_ellipse`(`item`, `pos`, `major`, `minor`, `color`, `antialiased`)
+    }
+    @inline(__always) public static func `canvas_item_add_texture_rect`(_ `item`: GodotRID, _ `rect`: Rect2, _ `texture`: GodotRID, _ `tile`: Bool = false, _ `modulate`: Color = Color(1, 1, 1, 1), _ `transpose`: Bool = false) {
+        shared.`canvas_item_add_texture_rect`(`item`, `rect`, `texture`, `tile`, `modulate`, `transpose`)
+    }
+    @inline(__always) public static func `canvas_item_add_msdf_texture_rect_region`(_ `item`: GodotRID, _ `rect`: Rect2, _ `texture`: GodotRID, _ `src_rect`: Rect2, _ `modulate`: Color = Color(1, 1, 1, 1), _ `outline_size`: Int64 = 0, _ `px_range`: Double = 1.0, _ `scale`: Double = 1.0) {
+        shared.`canvas_item_add_msdf_texture_rect_region`(`item`, `rect`, `texture`, `src_rect`, `modulate`, `outline_size`, `px_range`, `scale`)
+    }
+    @inline(__always) public static func `canvas_item_add_lcd_texture_rect_region`(_ `item`: GodotRID, _ `rect`: Rect2, _ `texture`: GodotRID, _ `src_rect`: Rect2, _ `modulate`: Color) {
+        shared.`canvas_item_add_lcd_texture_rect_region`(`item`, `rect`, `texture`, `src_rect`, `modulate`)
+    }
+    @inline(__always) public static func `canvas_item_add_texture_rect_region`(_ `item`: GodotRID, _ `rect`: Rect2, _ `texture`: GodotRID, _ `src_rect`: Rect2, _ `modulate`: Color = Color(1, 1, 1, 1), _ `transpose`: Bool = false, _ `clip_uv`: Bool = true) {
+        shared.`canvas_item_add_texture_rect_region`(`item`, `rect`, `texture`, `src_rect`, `modulate`, `transpose`, `clip_uv`)
+    }
+    @inline(__always) public static func `canvas_item_add_nine_patch`(_ `item`: GodotRID, _ `rect`: Rect2, _ `source`: Rect2, _ `texture`: GodotRID, _ `topleft`: Vector2, _ `bottomright`: Vector2, _ `x_axis_mode`: RenderingServer.NinePatchAxisMode = RenderingServer.NinePatchAxisMode(rawValue: 0), _ `y_axis_mode`: RenderingServer.NinePatchAxisMode = RenderingServer.NinePatchAxisMode(rawValue: 0), _ `draw_center`: Bool = true, _ `modulate`: Color = Color(1, 1, 1, 1)) {
+        shared.`canvas_item_add_nine_patch`(`item`, `rect`, `source`, `texture`, `topleft`, `bottomright`, `x_axis_mode`, `y_axis_mode`, `draw_center`, `modulate`)
+    }
+    @inline(__always) public static func `canvas_item_add_primitive`(_ `item`: GodotRID, _ `points`: borrowing GodotPackedVector2Array, _ `colors`: borrowing GodotPackedColorArray, _ `uvs`: borrowing GodotPackedVector2Array, _ `texture`: GodotRID) {
+        shared.`canvas_item_add_primitive`(`item`, `points`, `colors`, `uvs`, `texture`)
+    }
+    @inline(__always) public static func `canvas_item_add_polygon`(_ `item`: GodotRID, _ `points`: borrowing GodotPackedVector2Array, _ `colors`: borrowing GodotPackedColorArray, _ `uvs`: borrowing GodotPackedVector2Array = GodotPackedVector2Array(), _ `texture`: GodotRID = GodotRID()) {
+        shared.`canvas_item_add_polygon`(`item`, `points`, `colors`, `uvs`, `texture`)
+    }
+    @inline(__always) public static func `canvas_item_add_triangle_array`(_ `item`: GodotRID, _ `indices`: borrowing GodotPackedInt32Array, _ `points`: borrowing GodotPackedVector2Array, _ `colors`: borrowing GodotPackedColorArray, _ `uvs`: borrowing GodotPackedVector2Array = GodotPackedVector2Array(), _ `bones`: borrowing GodotPackedInt32Array = GodotPackedInt32Array(), _ `weights`: borrowing GodotPackedFloat32Array = GodotPackedFloat32Array(), _ `texture`: GodotRID = GodotRID(), _ `count`: Int64 = -1) {
+        shared.`canvas_item_add_triangle_array`(`item`, `indices`, `points`, `colors`, `uvs`, `bones`, `weights`, `texture`, `count`)
+    }
+    @inline(__always) public static func `canvas_item_add_mesh`(_ `item`: GodotRID, _ `mesh`: GodotRID, _ `transform`: Transform2D = Transform2D(Vector2(1, 0), Vector2(0, 1), Vector2(0, 0)), _ `modulate`: Color = Color(1, 1, 1, 1), _ `texture`: GodotRID = GodotRID()) {
+        shared.`canvas_item_add_mesh`(`item`, `mesh`, `transform`, `modulate`, `texture`)
+    }
+    @inline(__always) public static func `canvas_item_add_multimesh`(_ `item`: GodotRID, _ `mesh`: GodotRID, _ `texture`: GodotRID = GodotRID()) {
+        shared.`canvas_item_add_multimesh`(`item`, `mesh`, `texture`)
+    }
+    @inline(__always) public static func `canvas_item_add_particles`(_ `item`: GodotRID, _ `particles`: GodotRID, _ `texture`: GodotRID) {
+        shared.`canvas_item_add_particles`(`item`, `particles`, `texture`)
+    }
+    @inline(__always) public static func `canvas_item_add_set_transform`(_ `item`: GodotRID, _ `transform`: Transform2D) {
+        shared.`canvas_item_add_set_transform`(`item`, `transform`)
+    }
+    @inline(__always) public static func `canvas_item_add_clip_ignore`(_ `item`: GodotRID, _ `ignore`: Bool) {
+        shared.`canvas_item_add_clip_ignore`(`item`, `ignore`)
+    }
+    @inline(__always) public static func `canvas_item_add_animation_slice`(_ `item`: GodotRID, _ `animation_length`: Double, _ `slice_begin`: Double, _ `slice_end`: Double, _ `offset`: Double = 0.0) {
+        shared.`canvas_item_add_animation_slice`(`item`, `animation_length`, `slice_begin`, `slice_end`, `offset`)
+    }
+    @inline(__always) public static func `canvas_item_set_sort_children_by_y`(_ `item`: GodotRID, _ `enabled`: Bool) {
+        shared.`canvas_item_set_sort_children_by_y`(`item`, `enabled`)
+    }
+    @inline(__always) public static func `canvas_item_set_z_index`(_ `item`: GodotRID, _ `z_index`: Int64) {
+        shared.`canvas_item_set_z_index`(`item`, `z_index`)
+    }
+    @inline(__always) public static func `canvas_item_set_z_as_relative_to_parent`(_ `item`: GodotRID, _ `enabled`: Bool) {
+        shared.`canvas_item_set_z_as_relative_to_parent`(`item`, `enabled`)
+    }
+    @inline(__always) public static func `canvas_item_set_copy_to_backbuffer`(_ `item`: GodotRID, _ `enabled`: Bool, _ `rect`: Rect2) {
+        shared.`canvas_item_set_copy_to_backbuffer`(`item`, `enabled`, `rect`)
+    }
+    @inline(__always) public static func `canvas_item_attach_skeleton`(_ `item`: GodotRID, _ `skeleton`: GodotRID) {
+        shared.`canvas_item_attach_skeleton`(`item`, `skeleton`)
+    }
+    @inline(__always) public static func `canvas_item_clear`(_ `item`: GodotRID) {
+        shared.`canvas_item_clear`(`item`)
+    }
+    @inline(__always) public static func `canvas_item_set_draw_index`(_ `item`: GodotRID, _ `index`: Int64) {
+        shared.`canvas_item_set_draw_index`(`item`, `index`)
+    }
+    @inline(__always) public static func `canvas_item_set_material`(_ `item`: GodotRID, _ `material`: GodotRID) {
+        shared.`canvas_item_set_material`(`item`, `material`)
+    }
+    @inline(__always) public static func `canvas_item_set_use_parent_material`(_ `item`: GodotRID, _ `enabled`: Bool) {
+        shared.`canvas_item_set_use_parent_material`(`item`, `enabled`)
+    }
+    @inline(__always) public static func `canvas_item_set_instance_shader_parameter`(_ `instance`: GodotRID, _ `parameter`: borrowing GodotStringName, _ `value`: borrowing GodotVariant) {
+        shared.`canvas_item_set_instance_shader_parameter`(`instance`, `parameter`, `value`)
+    }
+    @inline(__always) public static func `canvas_item_get_instance_shader_parameter`(_ `instance`: GodotRID, _ `parameter`: borrowing GodotStringName) -> GodotVariant {
+        return shared.`canvas_item_get_instance_shader_parameter`(`instance`, `parameter`)
+    }
+    @inline(__always) public static func `canvas_item_get_instance_shader_parameter_default_value`(_ `instance`: GodotRID, _ `parameter`: borrowing GodotStringName) -> GodotVariant {
+        return shared.`canvas_item_get_instance_shader_parameter_default_value`(`instance`, `parameter`)
+    }
+    @inline(__always) public static func `canvas_item_get_instance_shader_parameter_list`(_ `instance`: GodotRID) -> GodotArrayOf<GodotDictionary> {
+        return shared.`canvas_item_get_instance_shader_parameter_list`(`instance`)
+    }
+    @inline(__always) public static func `canvas_item_set_visibility_notifier`(_ `item`: GodotRID, _ `enable`: Bool, _ `area`: Rect2, _ `enter_callable`: borrowing GodotCallable, _ `exit_callable`: borrowing GodotCallable) {
+        shared.`canvas_item_set_visibility_notifier`(`item`, `enable`, `area`, `enter_callable`, `exit_callable`)
+    }
+    @inline(__always) public static func `canvas_item_set_canvas_group_mode`(_ `item`: GodotRID, _ `mode`: RenderingServer.CanvasGroupMode, _ `clear_margin`: Double = 5.0, _ `fit_empty`: Bool = false, _ `fit_margin`: Double = 0.0, _ `blur_mipmaps`: Bool = false) {
+        shared.`canvas_item_set_canvas_group_mode`(`item`, `mode`, `clear_margin`, `fit_empty`, `fit_margin`, `blur_mipmaps`)
+    }
+    @inline(__always) public static func `debug_canvas_item_get_rect`(_ `item`: GodotRID) -> Rect2 {
+        return shared.`debug_canvas_item_get_rect`(`item`)
+    }
+    @inline(__always) public static func `canvas_light_create`() -> GodotRID {
+        return shared.`canvas_light_create`()
+    }
+    @inline(__always) public static func `canvas_light_attach_to_canvas`(_ `light`: GodotRID, _ `canvas`: GodotRID) {
+        shared.`canvas_light_attach_to_canvas`(`light`, `canvas`)
+    }
+    @inline(__always) public static func `canvas_light_set_enabled`(_ `light`: GodotRID, _ `enabled`: Bool) {
+        shared.`canvas_light_set_enabled`(`light`, `enabled`)
+    }
+    @inline(__always) public static func `canvas_light_set_texture_scale`(_ `light`: GodotRID, _ `scale`: Double) {
+        shared.`canvas_light_set_texture_scale`(`light`, `scale`)
+    }
+    @inline(__always) public static func `canvas_light_set_transform`(_ `light`: GodotRID, _ `transform`: Transform2D) {
+        shared.`canvas_light_set_transform`(`light`, `transform`)
+    }
+    @inline(__always) public static func `canvas_light_set_texture`(_ `light`: GodotRID, _ `texture`: GodotRID) {
+        shared.`canvas_light_set_texture`(`light`, `texture`)
+    }
+    @inline(__always) public static func `canvas_light_set_texture_offset`(_ `light`: GodotRID, _ `offset`: Vector2) {
+        shared.`canvas_light_set_texture_offset`(`light`, `offset`)
+    }
+    @inline(__always) public static func `canvas_light_set_color`(_ `light`: GodotRID, _ `color`: Color) {
+        shared.`canvas_light_set_color`(`light`, `color`)
+    }
+    @inline(__always) public static func `canvas_light_set_height`(_ `light`: GodotRID, _ `height`: Double) {
+        shared.`canvas_light_set_height`(`light`, `height`)
+    }
+    @inline(__always) public static func `canvas_light_set_energy`(_ `light`: GodotRID, _ `energy`: Double) {
+        shared.`canvas_light_set_energy`(`light`, `energy`)
+    }
+    @inline(__always) public static func `canvas_light_set_z_range`(_ `light`: GodotRID, _ `min_z`: Int64, _ `max_z`: Int64) {
+        shared.`canvas_light_set_z_range`(`light`, `min_z`, `max_z`)
+    }
+    @inline(__always) public static func `canvas_light_set_layer_range`(_ `light`: GodotRID, _ `min_layer`: Int64, _ `max_layer`: Int64) {
+        shared.`canvas_light_set_layer_range`(`light`, `min_layer`, `max_layer`)
+    }
+    @inline(__always) public static func `canvas_light_set_item_cull_mask`(_ `light`: GodotRID, _ `mask`: Int64) {
+        shared.`canvas_light_set_item_cull_mask`(`light`, `mask`)
+    }
+    @inline(__always) public static func `canvas_light_set_item_shadow_cull_mask`(_ `light`: GodotRID, _ `mask`: Int64) {
+        shared.`canvas_light_set_item_shadow_cull_mask`(`light`, `mask`)
+    }
+    @inline(__always) public static func `canvas_light_set_mode`(_ `light`: GodotRID, _ `mode`: RenderingServer.CanvasLightMode) {
+        shared.`canvas_light_set_mode`(`light`, `mode`)
+    }
+    @inline(__always) public static func `canvas_light_set_shadow_enabled`(_ `light`: GodotRID, _ `enabled`: Bool) {
+        shared.`canvas_light_set_shadow_enabled`(`light`, `enabled`)
+    }
+    @inline(__always) public static func `canvas_light_set_shadow_filter`(_ `light`: GodotRID, _ `filter`: RenderingServer.CanvasLightShadowFilter) {
+        shared.`canvas_light_set_shadow_filter`(`light`, `filter`)
+    }
+    @inline(__always) public static func `canvas_light_set_shadow_color`(_ `light`: GodotRID, _ `color`: Color) {
+        shared.`canvas_light_set_shadow_color`(`light`, `color`)
+    }
+    @inline(__always) public static func `canvas_light_set_shadow_smooth`(_ `light`: GodotRID, _ `smooth`: Double) {
+        shared.`canvas_light_set_shadow_smooth`(`light`, `smooth`)
+    }
+    @inline(__always) public static func `canvas_light_set_blend_mode`(_ `light`: GodotRID, _ `mode`: RenderingServer.CanvasLightBlendMode) {
+        shared.`canvas_light_set_blend_mode`(`light`, `mode`)
+    }
+    @inline(__always) public static func `canvas_light_set_interpolated`(_ `light`: GodotRID, _ `interpolated`: Bool) {
+        shared.`canvas_light_set_interpolated`(`light`, `interpolated`)
+    }
+    @inline(__always) public static func `canvas_light_reset_physics_interpolation`(_ `light`: GodotRID) {
+        shared.`canvas_light_reset_physics_interpolation`(`light`)
+    }
+    @inline(__always) public static func `canvas_light_transform_physics_interpolation`(_ `light`: GodotRID, _ `transform`: Transform2D) {
+        shared.`canvas_light_transform_physics_interpolation`(`light`, `transform`)
+    }
+    @inline(__always) public static func `canvas_light_occluder_create`() -> GodotRID {
+        return shared.`canvas_light_occluder_create`()
+    }
+    @inline(__always) public static func `canvas_light_occluder_attach_to_canvas`(_ `occluder`: GodotRID, _ `canvas`: GodotRID) {
+        shared.`canvas_light_occluder_attach_to_canvas`(`occluder`, `canvas`)
+    }
+    @inline(__always) public static func `canvas_light_occluder_set_enabled`(_ `occluder`: GodotRID, _ `enabled`: Bool) {
+        shared.`canvas_light_occluder_set_enabled`(`occluder`, `enabled`)
+    }
+    @inline(__always) public static func `canvas_light_occluder_set_polygon`(_ `occluder`: GodotRID, _ `polygon`: GodotRID) {
+        shared.`canvas_light_occluder_set_polygon`(`occluder`, `polygon`)
+    }
+    @inline(__always) public static func `canvas_light_occluder_set_as_sdf_collision`(_ `occluder`: GodotRID, _ `enable`: Bool) {
+        shared.`canvas_light_occluder_set_as_sdf_collision`(`occluder`, `enable`)
+    }
+    @inline(__always) public static func `canvas_light_occluder_set_transform`(_ `occluder`: GodotRID, _ `transform`: Transform2D) {
+        shared.`canvas_light_occluder_set_transform`(`occluder`, `transform`)
+    }
+    @inline(__always) public static func `canvas_light_occluder_set_light_mask`(_ `occluder`: GodotRID, _ `mask`: Int64) {
+        shared.`canvas_light_occluder_set_light_mask`(`occluder`, `mask`)
+    }
+    @inline(__always) public static func `canvas_light_occluder_set_interpolated`(_ `occluder`: GodotRID, _ `interpolated`: Bool) {
+        shared.`canvas_light_occluder_set_interpolated`(`occluder`, `interpolated`)
     }
-}
-extension HTTPRequest {
-    public var `download_file`: GodotString {
-        get { `get_download_file`() }
-        set { `set_download_file`(newValue) }
-    }
-    public var `download_chunk_size`: Int64 {
-        get { `get_download_chunk_size`() }
-        set { `set_download_chunk_size`(newValue) }
-    }
-    public var `keep_partial_download`: Bool {
-        get { `is_keeping_partial_download`() }
-        set { `set_keep_partial_download`(newValue) }
-    }
-    public var `append_to_download_file`: Bool {
-        get { `is_appending_to_download_file`() }
-        set { `set_append_to_download_file`(newValue) }
-    }
-    public var `use_threads`: Bool {
-        get { `is_using_threads`() }
-        set { `set_use_threads`(newValue) }
-    }
-    public var `accept_gzip`: Bool {
-        get { `is_accepting_gzip`() }
-        set { `set_accept_gzip`(newValue) }
-    }
-    public var `body_size_limit`: Int64 {
-        get { `get_body_size_limit`() }
-        set { `set_body_size_limit`(newValue) }
-    }
-    public var `max_redirects`: Int64 {
-        get { `get_max_redirects`() }
-        set { `set_max_redirects`(newValue) }
-    }
-    public var `timeout`: Double {
-        get { `get_timeout`() }
-        set { `set_timeout`(newValue) }
+    @inline(__always) public static func `canvas_light_occluder_reset_physics_interpolation`(_ `occluder`: GodotRID) {
+        shared.`canvas_light_occluder_reset_physics_interpolation`(`occluder`)
     }
-}
-extension HeightMapShape3D {
-    public var `map_width`: Int64 {
-        get { `get_map_width`() }
-        set { `set_map_width`(newValue) }
-    }
-    public var `map_depth`: Int64 {
-        get { `get_map_depth`() }
-        set { `set_map_depth`(newValue) }
-    }
-    public var `map_data`: GodotPackedFloat32Array {
-        get { `get_map_data`() }
-        set { `set_map_data`(newValue) }
+    @inline(__always) public static func `canvas_light_occluder_transform_physics_interpolation`(_ `occluder`: GodotRID, _ `transform`: Transform2D) {
+        shared.`canvas_light_occluder_transform_physics_interpolation`(`occluder`, `transform`)
     }
-}
-extension IKModifier3D {
-    public var `mutable_bone_axes`: Bool {
-        get { `are_bone_axes_mutable`() }
-        set { `set_mutable_bone_axes`(newValue) }
+    @inline(__always) public static func `canvas_occluder_polygon_create`() -> GodotRID {
+        return shared.`canvas_occluder_polygon_create`()
     }
-}
-extension ImageTexture {
-    public var `image`: Image? {
-        get { `get_image`() }
+    @inline(__always) public static func `canvas_occluder_polygon_set_shape`(_ `occluder_polygon`: GodotRID, _ `shape`: borrowing GodotPackedVector2Array, _ `closed`: Bool) {
+        shared.`canvas_occluder_polygon_set_shape`(`occluder_polygon`, `shape`, `closed`)
     }
-}
-extension ImporterMeshInstance3D {
-    public var `mesh`: ImporterMesh? {
-        get { `get_mesh`() }
-        set { `set_mesh`(newValue) }
-    }
-    public var `skin`: Skin? {
-        get { `get_skin`() }
-        set { `set_skin`(newValue) }
-    }
-    public var `skeleton_path`: GodotNodePath {
-        get { `get_skeleton_path`() }
-        set { `set_skeleton_path`(newValue) }
-    }
-    public var `layer_mask`: Int64 {
-        get { `get_layer_mask`() }
-        set { `set_layer_mask`(newValue) }
+    @inline(__always) public static func `canvas_occluder_polygon_set_cull_mode`(_ `occluder_polygon`: GodotRID, _ `mode`: RenderingServer.CanvasOccluderPolygonCullMode) {
+        shared.`canvas_occluder_polygon_set_cull_mode`(`occluder_polygon`, `mode`)
     }
-    public var `cast_shadow`: GeometryInstance3D.ShadowCastingSetting {
-        get { `get_cast_shadows_setting`() }
-        set { `set_cast_shadows_setting`(newValue) }
+    @inline(__always) public static func `canvas_set_shadow_texture_size`(_ `size`: Int64) {
+        shared.`canvas_set_shadow_texture_size`(`size`)
     }
-    public var `visibility_range_begin`: Double {
-        get { `get_visibility_range_begin`() }
-        set { `set_visibility_range_begin`(newValue) }
+    @inline(__always) public static func `global_shader_parameter_add`(_ `name`: borrowing GodotStringName, _ `type`: RenderingServer.GlobalShaderParameterType, _ `default_value`: borrowing GodotVariant) {
+        shared.`global_shader_parameter_add`(`name`, `type`, `default_value`)
     }
-    public var `visibility_range_begin_margin`: Double {
-        get { `get_visibility_range_begin_margin`() }
-        set { `set_visibility_range_begin_margin`(newValue) }
+    @inline(__always) public static func `global_shader_parameter_remove`(_ `name`: borrowing GodotStringName) {
+        shared.`global_shader_parameter_remove`(`name`)
     }
-    public var `visibility_range_end`: Double {
-        get { `get_visibility_range_end`() }
-        set { `set_visibility_range_end`(newValue) }
+    @inline(__always) public static func `global_shader_parameter_get_list`() -> GodotArrayOf<GodotStringName> {
+        return shared.`global_shader_parameter_get_list`()
     }
-    public var `visibility_range_end_margin`: Double {
-        get { `get_visibility_range_end_margin`() }
-        set { `set_visibility_range_end_margin`(newValue) }
+    @inline(__always) public static func `global_shader_parameter_set`(_ `name`: borrowing GodotStringName, _ `value`: borrowing GodotVariant) {
+        shared.`global_shader_parameter_set`(`name`, `value`)
     }
-    public var `visibility_range_fade_mode`: GeometryInstance3D.VisibilityRangeFadeMode {
-        get { `get_visibility_range_fade_mode`() }
-        set { `set_visibility_range_fade_mode`(newValue) }
+    @inline(__always) public static func `global_shader_parameter_set_override`(_ `name`: borrowing GodotStringName, _ `value`: borrowing GodotVariant) {
+        shared.`global_shader_parameter_set_override`(`name`, `value`)
     }
-}
-extension Input {
-    public var `mouse_mode`: Input.MouseMode {
-        get { `get_mouse_mode`() }
-        set { `set_mouse_mode`(newValue) }
-    }
-    public var `use_accumulated_input`: Bool {
-        get { `is_using_accumulated_input`() }
-        set { `set_use_accumulated_input`(newValue) }
-    }
-    public var `emulate_mouse_from_touch`: Bool {
-        get { `is_emulating_mouse_from_touch`() }
-        set { `set_emulate_mouse_from_touch`(newValue) }
-    }
-    public var `emulate_touch_from_mouse`: Bool {
-        get { `is_emulating_touch_from_mouse`() }
-        set { `set_emulate_touch_from_mouse`(newValue) }
-    }
-    public var `ignore_joypad_on_unfocused_application`: Bool {
-        get { `is_ignoring_joypad_on_unfocused_application`() }
-        set { `set_ignore_joypad_on_unfocused_application`(newValue) }
+    @inline(__always) public static func `global_shader_parameter_get`(_ `name`: borrowing GodotStringName) -> GodotVariant {
+        return shared.`global_shader_parameter_get`(`name`)
     }
-}
-extension InputEvent {
-    public var `device`: Int64 {
-        get { `get_device`() }
-        set { `set_device`(newValue) }
+    @inline(__always) public static func `global_shader_parameter_get_type`(_ `name`: borrowing GodotStringName) -> RenderingServer.GlobalShaderParameterType {
+        return shared.`global_shader_parameter_get_type`(`name`)
     }
-}
-extension InputEventAction {
-    public var `action`: GodotStringName {
-        get { `get_action`() }
-        set { `set_action`(newValue) }
-    }
-    public var `pressed`: Bool {
-        get { `is_pressed`() }
-        set { `set_pressed`(newValue) }
-    }
-    public var `strength`: Double {
-        get { `get_strength`() }
-        set { `set_strength`(newValue) }
-    }
-    public var `event_index`: Int64 {
-        get { `get_event_index`() }
-        set { `set_event_index`(newValue) }
+    @inline(__always) public static func `free_rid`(_ `rid`: GodotRID) {
+        shared.`free_rid`(`rid`)
     }
-}
-extension InputEventFromWindow {
-    public var `window_id`: Int64 {
-        get { `get_window_id`() }
-        set { `set_window_id`(newValue) }
+    @inline(__always) public static func `request_frame_drawn_callback`(_ `callable`: borrowing GodotCallable) {
+        shared.`request_frame_drawn_callback`(`callable`)
     }
-}
-extension InputEventGesture {
-    public var `position`: Vector2 {
-        get { `get_position`() }
-        set { `set_position`(newValue) }
+    @inline(__always) public static func `has_changed`() -> Bool {
+        return shared.`has_changed`()
     }
-}
-extension InputEventJoypadButton {
-    public var `button_index`: Godot.JoyButton {
-        get { `get_button_index`() }
-        set { `set_button_index`(newValue) }
-    }
-    public var `pressure`: Double {
-        get { `get_pressure`() }
-        set { `set_pressure`(newValue) }
-    }
-    public var `pressed`: Bool {
-        get { `is_pressed`() }
-        set { `set_pressed`(newValue) }
+    @inline(__always) public static func `get_rendering_info`(_ `info`: RenderingServer.RenderingInfo) -> Int64 {
+        return shared.`get_rendering_info`(`info`)
     }
-}
-extension InputEventJoypadMotion {
-    public var `axis`: Godot.JoyAxis {
-        get { `get_axis`() }
-        set { `set_axis`(newValue) }
-    }
-    public var `axis_value`: Double {
-        get { `get_axis_value`() }
-        set { `set_axis_value`(newValue) }
+    @inline(__always) public static func `get_video_adapter_name`() -> GodotString {
+        return shared.`get_video_adapter_name`()
     }
-}
-extension InputEventKey {
-    public var `pressed`: Bool {
-        get { `is_pressed`() }
-        set { `set_pressed`(newValue) }
-    }
-    public var `keycode`: Godot.Key {
-        get { `get_keycode`() }
-        set { `set_keycode`(newValue) }
-    }
-    public var `physical_keycode`: Godot.Key {
-        get { `get_physical_keycode`() }
-        set { `set_physical_keycode`(newValue) }
-    }
-    public var `key_label`: Godot.Key {
-        get { `get_key_label`() }
-        set { `set_key_label`(newValue) }
-    }
-    public var `unicode`: Int64 {
-        get { `get_unicode`() }
-        set { `set_unicode`(newValue) }
-    }
-    public var `location`: Godot.KeyLocation {
-        get { `get_location`() }
-        set { `set_location`(newValue) }
-    }
-    public var `echo`: Bool {
-        get { `is_echo`() }
-        set { `set_echo`(newValue) }
+    @inline(__always) public static func `get_video_adapter_vendor`() -> GodotString {
+        return shared.`get_video_adapter_vendor`()
     }
-}
-extension InputEventMIDI {
-    public var `channel`: Int64 {
-        get { `get_channel`() }
-        set { `set_channel`(newValue) }
-    }
-    public var `message`: Godot.MIDIMessage {
-        get { `get_message`() }
-        set { `set_message`(newValue) }
-    }
-    public var `pitch`: Int64 {
-        get { `get_pitch`() }
-        set { `set_pitch`(newValue) }
-    }
-    public var `velocity`: Int64 {
-        get { `get_velocity`() }
-        set { `set_velocity`(newValue) }
-    }
-    public var `instrument`: Int64 {
-        get { `get_instrument`() }
-        set { `set_instrument`(newValue) }
-    }
-    public var `pressure`: Int64 {
-        get { `get_pressure`() }
-        set { `set_pressure`(newValue) }
-    }
-    public var `controller_number`: Int64 {
-        get { `get_controller_number`() }
-        set { `set_controller_number`(newValue) }
-    }
-    public var `controller_value`: Int64 {
-        get { `get_controller_value`() }
-        set { `set_controller_value`(newValue) }
+    @inline(__always) public static func `get_video_adapter_type`() -> RenderingDevice.DeviceType {
+        return shared.`get_video_adapter_type`()
     }
-}
-extension InputEventMagnifyGesture {
-    public var `factor`: Double {
-        get { `get_factor`() }
-        set { `set_factor`(newValue) }
+    @inline(__always) public static func `get_video_adapter_api_version`() -> GodotString {
+        return shared.`get_video_adapter_api_version`()
     }
-}
-extension InputEventMouse {
-    public var `button_mask`: Godot.MouseButtonMask {
-        get { `get_button_mask`() }
-        set { `set_button_mask`(newValue) }
-    }
-    public var `position`: Vector2 {
-        get { `get_position`() }
-        set { `set_position`(newValue) }
-    }
-    public var `global_position`: Vector2 {
-        get { `get_global_position`() }
-        set { `set_global_position`(newValue) }
+    @inline(__always) public static func `get_current_rendering_driver_name`() -> GodotString {
+        return shared.`get_current_rendering_driver_name`()
     }
-}
-extension InputEventMouseButton {
-    public var `factor`: Double {
-        get { `get_factor`() }
-        set { `set_factor`(newValue) }
-    }
-    public var `button_index`: Godot.MouseButton {
-        get { `get_button_index`() }
-        set { `set_button_index`(newValue) }
-    }
-    public var `canceled`: Bool {
-        get { `is_canceled`() }
-        set { `set_canceled`(newValue) }
-    }
-    public var `pressed`: Bool {
-        get { `is_pressed`() }
-        set { `set_pressed`(newValue) }
-    }
-    public var `double_click`: Bool {
-        get { `is_double_click`() }
-        set { `set_double_click`(newValue) }
+    @inline(__always) public static func `get_current_rendering_method`() -> GodotString {
+        return shared.`get_current_rendering_method`()
     }
-}
-extension InputEventMouseMotion {
-    public var `tilt`: Vector2 {
-        get { `get_tilt`() }
-        set { `set_tilt`(newValue) }
-    }
-    public var `pressure`: Double {
-        get { `get_pressure`() }
-        set { `set_pressure`(newValue) }
-    }
-    public var `pen_inverted`: Bool {
-        get { `get_pen_inverted`() }
-        set { `set_pen_inverted`(newValue) }
-    }
-    public var `relative`: Vector2 {
-        get { `get_relative`() }
-        set { `set_relative`(newValue) }
-    }
-    public var `screen_relative`: Vector2 {
-        get { `get_screen_relative`() }
-        set { `set_screen_relative`(newValue) }
-    }
-    public var `velocity`: Vector2 {
-        get { `get_velocity`() }
-        set { `set_velocity`(newValue) }
-    }
-    public var `screen_velocity`: Vector2 {
-        get { `get_screen_velocity`() }
-        set { `set_screen_velocity`(newValue) }
+    @inline(__always) public static func `make_sphere_mesh`(_ `latitudes`: Int64, _ `longitudes`: Int64, _ `radius`: Double) -> GodotRID {
+        return shared.`make_sphere_mesh`(`latitudes`, `longitudes`, `radius`)
     }
-}
-extension InputEventPanGesture {
-    public var `delta`: Vector2 {
-        get { `get_delta`() }
-        set { `set_delta`(newValue) }
+    @inline(__always) public static func `get_test_cube`() -> GodotRID {
+        return shared.`get_test_cube`()
     }
-}
-extension InputEventScreenDrag {
-    public var `index`: Int64 {
-        get { `get_index`() }
-        set { `set_index`(newValue) }
-    }
-    public var `tilt`: Vector2 {
-        get { `get_tilt`() }
-        set { `set_tilt`(newValue) }
-    }
-    public var `pressure`: Double {
-        get { `get_pressure`() }
-        set { `set_pressure`(newValue) }
-    }
-    public var `pen_inverted`: Bool {
-        get { `get_pen_inverted`() }
-        set { `set_pen_inverted`(newValue) }
-    }
-    public var `position`: Vector2 {
-        get { `get_position`() }
-        set { `set_position`(newValue) }
-    }
-    public var `relative`: Vector2 {
-        get { `get_relative`() }
-        set { `set_relative`(newValue) }
-    }
-    public var `screen_relative`: Vector2 {
-        get { `get_screen_relative`() }
-        set { `set_screen_relative`(newValue) }
-    }
-    public var `velocity`: Vector2 {
-        get { `get_velocity`() }
-        set { `set_velocity`(newValue) }
-    }
-    public var `screen_velocity`: Vector2 {
-        get { `get_screen_velocity`() }
-        set { `set_screen_velocity`(newValue) }
+    @inline(__always) public static func `get_test_texture`() -> GodotRID {
+        return shared.`get_test_texture`()
     }
-}
-extension InputEventScreenTouch {
-    public var `index`: Int64 {
-        get { `get_index`() }
-        set { `set_index`(newValue) }
-    }
-    public var `position`: Vector2 {
-        get { `get_position`() }
-        set { `set_position`(newValue) }
-    }
-    public var `canceled`: Bool {
-        get { `is_canceled`() }
-        set { `set_canceled`(newValue) }
-    }
-    public var `pressed`: Bool {
-        get { `is_pressed`() }
-        set { `set_pressed`(newValue) }
-    }
-    public var `double_tap`: Bool {
-        get { `is_double_tap`() }
-        set { `set_double_tap`(newValue) }
-    }
-    public var `long_press`: Bool {
-        get { `is_long_press`() }
-        set { `set_long_press`(newValue) }
+    @inline(__always) public static func `get_white_texture`() -> GodotRID {
+        return shared.`get_white_texture`()
     }
-}
-extension InputEventShortcut {
-    public var `shortcut`: Shortcut? {
-        get { `get_shortcut`() }
-        set { `set_shortcut`(newValue) }
+    @inline(__always) public static func `set_boot_image_with_stretch`(_ `image`: Image?, _ `color`: Color, _ `stretch_mode`: RenderingServer.SplashStretchMode, _ `use_filter`: Bool = true) {
+        shared.`set_boot_image_with_stretch`(`image`, `color`, `stretch_mode`, `use_filter`)
     }
-}
-extension InputEventWithModifiers {
-    public var `command_or_control_autoremap`: Bool {
-        get { `is_command_or_control_autoremap`() }
-        set { `set_command_or_control_autoremap`(newValue) }
-    }
-    public var `alt_pressed`: Bool {
-        get { `is_alt_pressed`() }
-        set { `set_alt_pressed`(newValue) }
-    }
-    public var `shift_pressed`: Bool {
-        get { `is_shift_pressed`() }
-        set { `set_shift_pressed`(newValue) }
-    }
-    public var `ctrl_pressed`: Bool {
-        get { `is_ctrl_pressed`() }
-        set { `set_ctrl_pressed`(newValue) }
-    }
-    public var `meta_pressed`: Bool {
-        get { `is_meta_pressed`() }
-        set { `set_meta_pressed`(newValue) }
+    @inline(__always) public static func `set_boot_image`(_ `image`: Image?, _ `color`: Color, _ `scale`: Bool, _ `use_filter`: Bool = true) {
+        shared.`set_boot_image`(`image`, `color`, `scale`, `use_filter`)
     }
-}
-extension ItemList {
-    public var `select_mode`: ItemList.SelectMode {
-        get { `get_select_mode`() }
-        set { `set_select_mode`(newValue) }
-    }
-    public var `allow_reselect`: Bool {
-        get { `get_allow_reselect`() }
-        set { `set_allow_reselect`(newValue) }
-    }
-    public var `allow_rmb_select`: Bool {
-        get { `get_allow_rmb_select`() }
-        set { `set_allow_rmb_select`(newValue) }
-    }
-    public var `allow_search`: Bool {
-        get { `get_allow_search`() }
-        set { `set_allow_search`(newValue) }
-    }
-    public var `max_text_lines`: Int64 {
-        get { `get_max_text_lines`() }
-        set { `set_max_text_lines`(newValue) }
-    }
-    public var `auto_width`: Bool {
-        get { `has_auto_width`() }
-        set { `set_auto_width`(newValue) }
-    }
-    public var `auto_height`: Bool {
-        get { `has_auto_height`() }
-        set { `set_auto_height`(newValue) }
-    }
-    public var `text_overrun_behavior`: TextServer.OverrunBehavior {
-        get { `get_text_overrun_behavior`() }
-        set { `set_text_overrun_behavior`(newValue) }
-    }
-    public var `wraparound_items`: Bool {
-        get { `has_wraparound_items`() }
-        set { `set_wraparound_items`(newValue) }
-    }
-    public var `scroll_hint_mode`: ItemList.ScrollHintMode {
-        get { `get_scroll_hint_mode`() }
-        set { `set_scroll_hint_mode`(newValue) }
-    }
-    public var `tile_scroll_hint`: Bool {
-        get { `is_scroll_hint_tiled`() }
-        set { `set_tile_scroll_hint`(newValue) }
-    }
-    public var `item_count`: Int64 {
-        get { `get_item_count`() }
-        set { `set_item_count`(newValue) }
-    }
-    public var `max_columns`: Int64 {
-        get { `get_max_columns`() }
-        set { `set_max_columns`(newValue) }
-    }
-    public var `same_column_width`: Bool {
-        get { `is_same_column_width`() }
-        set { `set_same_column_width`(newValue) }
-    }
-    public var `fixed_column_width`: Int64 {
-        get { `get_fixed_column_width`() }
-        set { `set_fixed_column_width`(newValue) }
-    }
-    public var `icon_mode`: ItemList.IconMode {
-        get { `get_icon_mode`() }
-        set { `set_icon_mode`(newValue) }
-    }
-    public var `icon_scale`: Double {
-        get { `get_icon_scale`() }
-        set { `set_icon_scale`(newValue) }
-    }
-    public var `fixed_icon_size`: Vector2i {
-        get { `get_fixed_icon_size`() }
-        set { `set_fixed_icon_size`(newValue) }
+    @inline(__always) public static func `get_default_clear_color`() -> Color {
+        return shared.`get_default_clear_color`()
     }
-}
-extension IterateIK3D {
-    public var `max_iterations`: Int64 {
-        get { `get_max_iterations`() }
-        set { `set_max_iterations`(newValue) }
-    }
-    public var `min_distance`: Double {
-        get { `get_min_distance`() }
-        set { `set_min_distance`(newValue) }
-    }
-    public var `angular_delta_limit`: Double {
-        get { `get_angular_delta_limit`() }
-        set { `set_angular_delta_limit`(newValue) }
-    }
-    public var `deterministic`: Bool {
-        get { `is_deterministic`() }
-        set { `set_deterministic`(newValue) }
-    }
-    public var `setting_count`: Int64 {
-        get { `get_setting_count`() }
-        set { `set_setting_count`(newValue) }
+    @inline(__always) public static func `set_default_clear_color`(_ `color`: Color) {
+        shared.`set_default_clear_color`(`color`)
     }
-}
-extension JSON {
-    public var `data`: GodotVariant {
-        get { `get_data`() }
-        set { `set_data`(newValue) }
+    @inline(__always) public static func `has_os_feature`(_ `feature`: borrowing GodotString) -> Bool {
+        return shared.`has_os_feature`(`feature`)
     }
-}
-extension Joint2D {
-    public var `node_a`: GodotNodePath {
-        get { `get_node_a`() }
-        set { `set_node_a`(newValue) }
-    }
-    public var `node_b`: GodotNodePath {
-        get { `get_node_b`() }
-        set { `set_node_b`(newValue) }
-    }
-    public var `bias`: Double {
-        get { `get_bias`() }
-        set { `set_bias`(newValue) }
-    }
-    public var `disable_collision`: Bool {
-        get { `get_exclude_nodes_from_collision`() }
-        set { `set_exclude_nodes_from_collision`(newValue) }
+    @inline(__always) public static func `set_debug_generate_wireframes`(_ `generate`: Bool) {
+        shared.`set_debug_generate_wireframes`(`generate`)
     }
-}
-extension Joint3D {
-    public var `node_a`: GodotNodePath {
-        get { `get_node_a`() }
-        set { `set_node_a`(newValue) }
-    }
-    public var `node_b`: GodotNodePath {
-        get { `get_node_b`() }
-        set { `set_node_b`(newValue) }
-    }
-    public var `solver_priority`: Int64 {
-        get { `get_solver_priority`() }
-        set { `set_solver_priority`(newValue) }
-    }
-    public var `exclude_nodes_from_collision`: Bool {
-        get { `get_exclude_nodes_from_collision`() }
-        set { `set_exclude_nodes_from_collision`(newValue) }
+    @inline(__always) public static func `is_render_loop_enabled`() -> Bool {
+        return shared.`is_render_loop_enabled`()
     }
-}
-extension JointLimitationCone3D {
-    public var `angle`: Double {
-        get { `get_angle`() }
-        set { `set_angle`(newValue) }
+    @inline(__always) public static func `set_render_loop_enabled`(_ `enabled`: Bool) {
+        shared.`set_render_loop_enabled`(`enabled`)
     }
-}
-extension Label {
-    public var `text`: GodotString {
-        get { `get_text`() }
-        set { `set_text`(newValue) }
-    }
-    public var `label_settings`: LabelSettings? {
-        get { `get_label_settings`() }
-        set { `set_label_settings`(newValue) }
-    }
-    public var `horizontal_alignment`: Godot.HorizontalAlignment {
-        get { `get_horizontal_alignment`() }
-        set { `set_horizontal_alignment`(newValue) }
-    }
-    public var `vertical_alignment`: Godot.VerticalAlignment {
-        get { `get_vertical_alignment`() }
-        set { `set_vertical_alignment`(newValue) }
-    }
-    public var `autowrap_mode`: TextServer.AutowrapMode {
-        get { `get_autowrap_mode`() }
-        set { `set_autowrap_mode`(newValue) }
-    }
-    public var `autowrap_trim_flags`: TextServer.LineBreakFlag {
-        get { `get_autowrap_trim_flags`() }
-        set { `set_autowrap_trim_flags`(newValue) }
-    }
-    public var `justification_flags`: TextServer.JustificationFlag {
-        get { `get_justification_flags`() }
-        set { `set_justification_flags`(newValue) }
-    }
-    public var `paragraph_separator`: GodotString {
-        get { `get_paragraph_separator`() }
-        set { `set_paragraph_separator`(newValue) }
-    }
-    public var `clip_text`: Bool {
-        get { `is_clipping_text`() }
-        set { `set_clip_text`(newValue) }
-    }
-    public var `text_overrun_behavior`: TextServer.OverrunBehavior {
-        get { `get_text_overrun_behavior`() }
-        set { `set_text_overrun_behavior`(newValue) }
-    }
-    public var `ellipsis_char`: GodotString {
-        get { `get_ellipsis_char`() }
-        set { `set_ellipsis_char`(newValue) }
-    }
-    public var `uppercase`: Bool {
-        get { `is_uppercase`() }
-        set { `set_uppercase`(newValue) }
-    }
-    public var `tab_stops`: GodotPackedFloat32Array {
-        get { `get_tab_stops`() }
-        set { `set_tab_stops`(newValue) }
-    }
-    public var `resize_font_to_fit`: Bool {
-        get { `is_resize_font_to_fit_enabled`() }
-        set { `set_resize_font_to_fit`(newValue) }
-    }
-    public var `minimum_font_size`: Int64 {
-        get { `get_minimum_font_size`() }
-        set { `set_minimum_font_size`(newValue) }
-    }
-    public var `maximum_font_size`: Int64 {
-        get { `get_maximum_font_size`() }
-        set { `set_maximum_font_size`(newValue) }
-    }
-    public var `lines_skipped`: Int64 {
-        get { `get_lines_skipped`() }
-        set { `set_lines_skipped`(newValue) }
-    }
-    public var `max_lines_visible`: Int64 {
-        get { `get_max_lines_visible`() }
-        set { `set_max_lines_visible`(newValue) }
-    }
-    public var `visible_characters`: Int64 {
-        get { `get_visible_characters`() }
-        set { `set_visible_characters`(newValue) }
-    }
-    public var `visible_characters_behavior`: TextServer.VisibleCharactersBehavior {
-        get { `get_visible_characters_behavior`() }
-        set { `set_visible_characters_behavior`(newValue) }
-    }
-    public var `visible_ratio`: Double {
-        get { `get_visible_ratio`() }
-        set { `set_visible_ratio`(newValue) }
-    }
-    public var `text_direction`: Control.TextDirection {
-        get { `get_text_direction`() }
-        set { `set_text_direction`(newValue) }
-    }
-    public var `language`: GodotString {
-        get { `get_language`() }
-        set { `set_language`(newValue) }
-    }
-    public var `structured_text_bidi_override`: TextServer.StructuredTextParser {
-        get { `get_structured_text_bidi_override`() }
-        set { `set_structured_text_bidi_override`(newValue) }
-    }
-    public var `structured_text_bidi_override_options`: GodotArray {
-        get { `get_structured_text_bidi_override_options`() }
-        set { `set_structured_text_bidi_override_options`(newValue) }
+    @inline(__always) public static func `get_frame_setup_time_cpu`() -> Double {
+        return shared.`get_frame_setup_time_cpu`()
     }
-}
-extension Label3D {
-    public var `pixel_size`: Double {
-        get { `get_pixel_size`() }
-        set { `set_pixel_size`(newValue) }
-    }
-    public var `offset`: Vector2 {
-        get { `get_offset`() }
-        set { `set_offset`(newValue) }
-    }
-    public var `billboard`: BaseMaterial3D.BillboardMode {
-        get { `get_billboard_mode`() }
-        set { `set_billboard_mode`(newValue) }
-    }
-    public var `shaded`: Bool {
-        get { `get_draw_flag`(0) }
-        set { `set_draw_flag`(0, newValue) }
-    }
-    public var `double_sided`: Bool {
-        get { `get_draw_flag`(1) }
-        set { `set_draw_flag`(1, newValue) }
-    }
-    public var `no_depth_test`: Bool {
-        get { `get_draw_flag`(2) }
-        set { `set_draw_flag`(2, newValue) }
-    }
-    public var `fixed_size`: Bool {
-        get { `get_draw_flag`(3) }
-        set { `set_draw_flag`(3, newValue) }
-    }
-    public var `alpha_cut`: Label3D.AlphaCutMode {
-        get { `get_alpha_cut_mode`() }
-        set { `set_alpha_cut_mode`(newValue) }
-    }
-    public var `alpha_scissor_threshold`: Double {
-        get { `get_alpha_scissor_threshold`() }
-        set { `set_alpha_scissor_threshold`(newValue) }
-    }
-    public var `alpha_hash_scale`: Double {
-        get { `get_alpha_hash_scale`() }
-        set { `set_alpha_hash_scale`(newValue) }
-    }
-    public var `alpha_antialiasing_mode`: BaseMaterial3D.AlphaAntiAliasing {
-        get { `get_alpha_antialiasing`() }
-        set { `set_alpha_antialiasing`(newValue) }
-    }
-    public var `alpha_antialiasing_edge`: Double {
-        get { `get_alpha_antialiasing_edge`() }
-        set { `set_alpha_antialiasing_edge`(newValue) }
-    }
-    public var `texture_filter`: BaseMaterial3D.TextureFilter {
-        get { `get_texture_filter`() }
-        set { `set_texture_filter`(newValue) }
-    }
-    public var `render_priority`: Int64 {
-        get { `get_render_priority`() }
-        set { `set_render_priority`(newValue) }
-    }
-    public var `outline_render_priority`: Int64 {
-        get { `get_outline_render_priority`() }
-        set { `set_outline_render_priority`(newValue) }
-    }
-    public var `modulate`: Color {
-        get { `get_modulate`() }
-        set { `set_modulate`(newValue) }
-    }
-    public var `outline_modulate`: Color {
-        get { `get_outline_modulate`() }
-        set { `set_outline_modulate`(newValue) }
-    }
-    public var `text`: GodotString {
-        get { `get_text`() }
-        set { `set_text`(newValue) }
-    }
-    public var `font`: Font? {
-        get { `get_font`() }
-        set { `set_font`(newValue) }
-    }
-    public var `font_size`: Int64 {
-        get { `get_font_size`() }
-        set { `set_font_size`(newValue) }
-    }
-    public var `outline_size`: Int64 {
-        get { `get_outline_size`() }
-        set { `set_outline_size`(newValue) }
-    }
-    public var `horizontal_alignment`: Godot.HorizontalAlignment {
-        get { `get_horizontal_alignment`() }
-        set { `set_horizontal_alignment`(newValue) }
-    }
-    public var `vertical_alignment`: Godot.VerticalAlignment {
-        get { `get_vertical_alignment`() }
-        set { `set_vertical_alignment`(newValue) }
-    }
-    public var `uppercase`: Bool {
-        get { `is_uppercase`() }
-        set { `set_uppercase`(newValue) }
-    }
-    public var `line_spacing`: Double {
-        get { `get_line_spacing`() }
-        set { `set_line_spacing`(newValue) }
-    }
-    public var `autowrap_mode`: TextServer.AutowrapMode {
-        get { `get_autowrap_mode`() }
-        set { `set_autowrap_mode`(newValue) }
-    }
-    public var `autowrap_trim_flags`: TextServer.LineBreakFlag {
-        get { `get_autowrap_trim_flags`() }
-        set { `set_autowrap_trim_flags`(newValue) }
-    }
-    public var `justification_flags`: TextServer.JustificationFlag {
-        get { `get_justification_flags`() }
-        set { `set_justification_flags`(newValue) }
-    }
-    public var `width`: Double {
-        get { `get_width`() }
-        set { `set_width`(newValue) }
-    }
-    public var `text_direction`: TextServer.Direction {
-        get { `get_text_direction`() }
-        set { `set_text_direction`(newValue) }
-    }
-    public var `language`: GodotString {
-        get { `get_language`() }
-        set { `set_language`(newValue) }
-    }
-    public var `structured_text_bidi_override`: TextServer.StructuredTextParser {
-        get { `get_structured_text_bidi_override`() }
-        set { `set_structured_text_bidi_override`(newValue) }
-    }
-    public var `structured_text_bidi_override_options`: GodotArray {
-        get { `get_structured_text_bidi_override_options`() }
-        set { `set_structured_text_bidi_override_options`(newValue) }
+    @inline(__always) public static func `force_sync`() {
+        shared.`force_sync`()
     }
-}
-extension LabelSettings {
-    public var `line_spacing`: Double {
-        get { `get_line_spacing`() }
-        set { `set_line_spacing`(newValue) }
-    }
-    public var `paragraph_spacing`: Double {
-        get { `get_paragraph_spacing`() }
-        set { `set_paragraph_spacing`(newValue) }
-    }
-    public var `font`: Font? {
-        get { `get_font`() }
-        set { `set_font`(newValue) }
-    }
-    public var `font_size`: Int64 {
-        get { `get_font_size`() }
-        set { `set_font_size`(newValue) }
-    }
-    public var `font_color`: Color {
-        get { `get_font_color`() }
-        set { `set_font_color`(newValue) }
-    }
-    public var `outline_size`: Int64 {
-        get { `get_outline_size`() }
-        set { `set_outline_size`(newValue) }
-    }
-    public var `outline_color`: Color {
-        get { `get_outline_color`() }
-        set { `set_outline_color`(newValue) }
-    }
-    public var `shadow_size`: Int64 {
-        get { `get_shadow_size`() }
-        set { `set_shadow_size`(newValue) }
-    }
-    public var `shadow_color`: Color {
-        get { `get_shadow_color`() }
-        set { `set_shadow_color`(newValue) }
-    }
-    public var `shadow_offset`: Vector2 {
-        get { `get_shadow_offset`() }
-        set { `set_shadow_offset`(newValue) }
-    }
-    public var `stacked_outline_count`: Int64 {
-        get { `get_stacked_outline_count`() }
-        set { `set_stacked_outline_count`(newValue) }
-    }
-    public var `stacked_shadow_count`: Int64 {
-        get { `get_stacked_shadow_count`() }
-        set { `set_stacked_shadow_count`(newValue) }
+    @inline(__always) public static func `force_draw`(_ `swap_buffers`: Bool = true, _ `frame_step`: Double = 0.0) {
+        shared.`force_draw`(`swap_buffers`, `frame_step`)
     }
-}
-extension Light2D {
-    public var `enabled`: Bool {
-        get { `is_enabled`() }
-        set { `set_enabled`(newValue) }
-    }
-    public var `editor_only`: Bool {
-        get { `is_editor_only`() }
-        set { `set_editor_only`(newValue) }
-    }
-    public var `color`: Color {
-        get { `get_color`() }
-        set { `set_color`(newValue) }
-    }
-    public var `energy`: Double {
-        get { `get_energy`() }
-        set { `set_energy`(newValue) }
-    }
-    public var `blend_mode`: Light2D.BlendMode {
-        get { `get_blend_mode`() }
-        set { `set_blend_mode`(newValue) }
-    }
-    public var `range_z_min`: Int64 {
-        get { `get_z_range_min`() }
-        set { `set_z_range_min`(newValue) }
-    }
-    public var `range_z_max`: Int64 {
-        get { `get_z_range_max`() }
-        set { `set_z_range_max`(newValue) }
-    }
-    public var `range_layer_min`: Int64 {
-        get { `get_layer_range_min`() }
-        set { `set_layer_range_min`(newValue) }
-    }
-    public var `range_layer_max`: Int64 {
-        get { `get_layer_range_max`() }
-        set { `set_layer_range_max`(newValue) }
-    }
-    public var `range_item_cull_mask`: Int64 {
-        get { `get_item_cull_mask`() }
-        set { `set_item_cull_mask`(newValue) }
-    }
-    public var `shadow_enabled`: Bool {
-        get { `is_shadow_enabled`() }
-        set { `set_shadow_enabled`(newValue) }
-    }
-    public var `shadow_color`: Color {
-        get { `get_shadow_color`() }
-        set { `set_shadow_color`(newValue) }
-    }
-    public var `shadow_filter`: Light2D.ShadowFilter {
-        get { `get_shadow_filter`() }
-        set { `set_shadow_filter`(newValue) }
-    }
-    public var `shadow_filter_smooth`: Double {
-        get { `get_shadow_smooth`() }
-        set { `set_shadow_smooth`(newValue) }
-    }
-    public var `shadow_item_cull_mask`: Int64 {
-        get { `get_item_shadow_cull_mask`() }
-        set { `set_item_shadow_cull_mask`(newValue) }
+    @inline(__always) public static func `get_rendering_device`() -> RenderingDevice? {
+        return shared.`get_rendering_device`()
     }
-}
-extension Light3D {
-    public var `light_intensity_lumens`: Double {
-        get { `get_param`(20) }
-        set { `set_param`(20, newValue) }
-    }
-    public var `light_intensity_lux`: Double {
-        get { `get_param`(20) }
-        set { `set_param`(20, newValue) }
-    }
-    public var `light_temperature`: Double {
-        get { `get_temperature`() }
-        set { `set_temperature`(newValue) }
-    }
-    public var `light_color`: Color {
-        get { `get_color`() }
-        set { `set_color`(newValue) }
-    }
-    public var `light_energy`: Double {
-        get { `get_param`(0) }
-        set { `set_param`(0, newValue) }
-    }
-    public var `light_indirect_energy`: Double {
-        get { `get_param`(1) }
-        set { `set_param`(1, newValue) }
-    }
-    public var `light_volumetric_fog_energy`: Double {
-        get { `get_param`(2) }
-        set { `set_param`(2, newValue) }
-    }
-    public var `light_size`: Double {
-        get { `get_param`(5) }
-        set { `set_param`(5, newValue) }
-    }
-    public var `light_angular_distance`: Double {
-        get { `get_param`(5) }
-        set { `set_param`(5, newValue) }
-    }
-    public var `light_negative`: Bool {
-        get { `is_negative`() }
-        set { `set_negative`(newValue) }
-    }
-    public var `light_specular`: Double {
-        get { `get_param`(3) }
-        set { `set_param`(3, newValue) }
-    }
-    public var `light_bake_mode`: Light3D.BakeMode {
-        get { `get_bake_mode`() }
-        set { `set_bake_mode`(newValue) }
-    }
-    public var `light_cull_mask`: Int64 {
-        get { `get_cull_mask`() }
-        set { `set_cull_mask`(newValue) }
-    }
-    public var `shadow_enabled`: Bool {
-        get { `has_shadow`() }
-        set { `set_shadow`(newValue) }
-    }
-    public var `shadow_bias`: Double {
-        get { `get_param`(15) }
-        set { `set_param`(15, newValue) }
-    }
-    public var `shadow_normal_bias`: Double {
-        get { `get_param`(14) }
-        set { `set_param`(14, newValue) }
-    }
-    public var `shadow_reverse_cull_face`: Bool {
-        get { `get_shadow_reverse_cull_face`() }
-        set { `set_shadow_reverse_cull_face`(newValue) }
-    }
-    public var `shadow_transmittance_bias`: Double {
-        get { `get_param`(19) }
-        set { `set_param`(19, newValue) }
-    }
-    public var `shadow_opacity`: Double {
-        get { `get_param`(17) }
-        set { `set_param`(17, newValue) }
-    }
-    public var `shadow_blur`: Double {
-        get { `get_param`(18) }
-        set { `set_param`(18, newValue) }
-    }
-    public var `shadow_caster_mask`: Int64 {
-        get { `get_shadow_caster_mask`() }
-        set { `set_shadow_caster_mask`(newValue) }
-    }
-    public var `shadow_contact_shadows_allow`: Bool {
-        get { `get_allow_contact_shadows`() }
-        set { `set_allow_contact_shadows`(newValue) }
-    }
-    public var `shadow_contact_shadows_opacity`: Double {
-        get { `get_param`(21) }
-        set { `set_param`(21, newValue) }
-    }
-    public var `shadow_contact_shadows_blur`: Double {
-        get { `get_param`(22) }
-        set { `set_param`(22, newValue) }
-    }
-    public var `distance_fade_enabled`: Bool {
-        get { `is_distance_fade_enabled`() }
-        set { `set_enable_distance_fade`(newValue) }
-    }
-    public var `distance_fade_begin`: Double {
-        get { `get_distance_fade_begin`() }
-        set { `set_distance_fade_begin`(newValue) }
-    }
-    public var `distance_fade_shadow`: Double {
-        get { `get_distance_fade_shadow`() }
-        set { `set_distance_fade_shadow`(newValue) }
-    }
-    public var `distance_fade_length`: Double {
-        get { `get_distance_fade_length`() }
-        set { `set_distance_fade_length`(newValue) }
-    }
-    public var `editor_only`: Bool {
-        get { `is_editor_only`() }
-        set { `set_editor_only`(newValue) }
+    @inline(__always) public static func `create_local_rendering_device`() -> RenderingDevice? {
+        return shared.`create_local_rendering_device`()
     }
-}
-extension LightOccluder2D {
-    public var `occluder`: OccluderPolygon2D? {
-        get { `get_occluder_polygon`() }
-        set { `set_occluder_polygon`(newValue) }
-    }
-    public var `sdf_collision`: Bool {
-        get { `is_set_as_sdf_collision`() }
-        set { `set_as_sdf_collision`(newValue) }
-    }
-    public var `occluder_light_mask`: Int64 {
-        get { `get_occluder_light_mask`() }
-        set { `set_occluder_light_mask`(newValue) }
+    @inline(__always) public static func `is_on_render_thread`() -> Bool {
+        return shared.`is_on_render_thread`()
     }
-}
-extension LightmapGI {
-    public var `quality`: LightmapGI.BakeQuality {
-        get { `get_bake_quality`() }
-        set { `set_bake_quality`(newValue) }
-    }
-    public var `supersampling`: Bool {
-        get { `is_supersampling_enabled`() }
-        set { `set_supersampling_enabled`(newValue) }
-    }
-    public var `supersampling_factor`: Double {
-        get { `get_supersampling_factor`() }
-        set { `set_supersampling_factor`(newValue) }
-    }
-    public var `bounces`: Int64 {
-        get { `get_bounces`() }
-        set { `set_bounces`(newValue) }
-    }
-    public var `bounce_indirect_energy`: Double {
-        get { `get_bounce_indirect_energy`() }
-        set { `set_bounce_indirect_energy`(newValue) }
-    }
-    public var `directional`: Bool {
-        get { `is_directional`() }
-        set { `set_directional`(newValue) }
-    }
-    public var `specular_intensity`: Double {
-        get { `get_specular_intensity`() }
-        set { `set_specular_intensity`(newValue) }
-    }
-    public var `shadowmask_mode`: LightmapGIData.ShadowmaskMode {
-        get { `get_shadowmask_mode`() }
-        set { `set_shadowmask_mode`(newValue) }
-    }
-    public var `use_texture_for_bounces`: Bool {
-        get { `is_using_texture_for_bounces`() }
-        set { `set_use_texture_for_bounces`(newValue) }
-    }
-    public var `interior`: Bool {
-        get { `is_interior`() }
-        set { `set_interior`(newValue) }
-    }
-    public var `use_denoiser`: Bool {
-        get { `is_using_denoiser`() }
-        set { `set_use_denoiser`(newValue) }
-    }
-    public var `denoiser_strength`: Double {
-        get { `get_denoiser_strength`() }
-        set { `set_denoiser_strength`(newValue) }
-    }
-    public var `denoiser_range`: Int64 {
-        get { `get_denoiser_range`() }
-        set { `set_denoiser_range`(newValue) }
-    }
-    public var `bias`: Double {
-        get { `get_bias`() }
-        set { `set_bias`(newValue) }
-    }
-    public var `texel_scale`: Double {
-        get { `get_texel_scale`() }
-        set { `set_texel_scale`(newValue) }
-    }
-    public var `max_texture_size`: Int64 {
-        get { `get_max_texture_size`() }
-        set { `set_max_texture_size`(newValue) }
-    }
-    public var `environment_mode`: LightmapGI.EnvironmentMode {
-        get { `get_environment_mode`() }
-        set { `set_environment_mode`(newValue) }
-    }
-    public var `environment_custom_sky`: Sky? {
-        get { `get_environment_custom_sky`() }
-        set { `set_environment_custom_sky`(newValue) }
-    }
-    public var `environment_custom_color`: Color {
-        get { `get_environment_custom_color`() }
-        set { `set_environment_custom_color`(newValue) }
-    }
-    public var `environment_custom_energy`: Double {
-        get { `get_environment_custom_energy`() }
-        set { `set_environment_custom_energy`(newValue) }
-    }
-    public var `generate_probes_subdiv`: LightmapGI.GenerateProbes {
-        get { `get_generate_probes`() }
-        set { `set_generate_probes`(newValue) }
-    }
-    public var `light_data`: LightmapGIData? {
-        get { `get_light_data`() }
-        set { `set_light_data`(newValue) }
+    @inline(__always) public static func `call_on_render_thread`(_ `callable`: borrowing GodotCallable) {
+        shared.`call_on_render_thread`(`callable`)
     }
-}
-extension LightmapGIData {
-    public var `lightmap_textures`: GodotArrayOf<TextureLayered> {
-        get { `get_lightmap_textures`() }
-        set { `set_lightmap_textures`(newValue) }
-    }
-    public var `shadowmask_textures`: GodotArrayOf<TextureLayered> {
-        get { `get_shadowmask_textures`() }
-        set { `set_shadowmask_textures`(newValue) }
-    }
-    public var `uses_spherical_harmonics`: Bool {
-        get { `is_using_spherical_harmonics`() }
-        set { `set_uses_spherical_harmonics`(newValue) }
-    }
-    public var `light_texture`: TextureLayered? {
-        get { `get_light_texture`() }
-        set { `set_light_texture`(newValue) }
+    @inline(__always) public static func `has_feature`(_ `feature`: RenderingServer.Features) -> Bool {
+        return shared.`has_feature`(`feature`)
     }
 }
-extension LimitAngularVelocityModifier3D {
-    public var `max_angular_velocity`: Double {
-        get { `get_max_angular_velocity`() }
-        set { `set_max_angular_velocity`(newValue) }
-    }
-    public var `exclude`: Bool {
-        get { `is_exclude`() }
-        set { `set_exclude`(newValue) }
-    }
-    public var `chain_count`: Int64 {
-        get { `get_chain_count`() }
-        set { `set_chain_count`(newValue) }
+extension NavigationServer2D {
+    public static var shared: NavigationServer2D {
+        guard let singleton = Object.resolve(api.global_get_singleton!(makeName("NavigationServer2D"))) as? NavigationServer2D else {
+            fatalError("Godot singleton 'NavigationServer2D' is unavailable. Check engine initialization and runtime support.")
+        }
+        return singleton
     }
-}
-extension Line2D {
-    public var `points`: GodotPackedVector2Array {
-        get { `get_points`() }
-        set { `set_points`(newValue) }
-    }
-    public var `closed`: Bool {
-        get { `is_closed`() }
-        set { `set_closed`(newValue) }
-    }
-    public var `width`: Double {
-        get { `get_width`() }
-        set { `set_width`(newValue) }
-    }
-    public var `width_curve`: Curve? {
-        get { `get_curve`() }
-        set { `set_curve`(newValue) }
-    }
-    public var `default_color`: Color {
-        get { `get_default_color`() }
-        set { `set_default_color`(newValue) }
-    }
-    public var `gradient`: Gradient? {
-        get { `get_gradient`() }
-        set { `set_gradient`(newValue) }
-    }
-    public var `texture`: Texture2D? {
-        get { `get_texture`() }
-        set { `set_texture`(newValue) }
-    }
-    public var `texture_mode`: Line2D.LineTextureMode {
-        get { `get_texture_mode`() }
-        set { `set_texture_mode`(newValue) }
-    }
-    public var `joint_mode`: Line2D.LineJointMode {
-        get { `get_joint_mode`() }
-        set { `set_joint_mode`(newValue) }
-    }
-    public var `begin_cap_mode`: Line2D.LineCapMode {
-        get { `get_begin_cap_mode`() }
-        set { `set_begin_cap_mode`(newValue) }
-    }
-    public var `end_cap_mode`: Line2D.LineCapMode {
-        get { `get_end_cap_mode`() }
-        set { `set_end_cap_mode`(newValue) }
-    }
-    public var `sharp_limit`: Double {
-        get { `get_sharp_limit`() }
-        set { `set_sharp_limit`(newValue) }
-    }
-    public var `round_precision`: Int64 {
-        get { `get_round_precision`() }
-        set { `set_round_precision`(newValue) }
-    }
-    public var `antialiased`: Bool {
-        get { `get_antialiased`() }
-        set { `set_antialiased`(newValue) }
+    @inline(__always) public static func `get_maps`() -> GodotArrayOf<GodotRID> {
+        return shared.`get_maps`()
     }
-}
-extension LineEdit {
-    public var `text`: GodotString {
-        get { `get_text`() }
-        set { `set_text`(newValue) }
-    }
-    public var `placeholder_text`: GodotString {
-        get { `get_placeholder`() }
-        set { `set_placeholder`(newValue) }
-    }
-    public var `alignment`: Godot.HorizontalAlignment {
-        get { `get_horizontal_alignment`() }
-        set { `set_horizontal_alignment`(newValue) }
-    }
-    public var `max_length`: Int64 {
-        get { `get_max_length`() }
-        set { `set_max_length`(newValue) }
-    }
-    public var `editable`: Bool {
-        get { `is_editable`() }
-        set { `set_editable`(newValue) }
-    }
-    public var `keep_editing_on_text_submit`: Bool {
-        get { `is_editing_kept_on_text_submit`() }
-        set { `set_keep_editing_on_text_submit`(newValue) }
-    }
-    public var `expand_to_text_length`: Bool {
-        get { `is_expand_to_text_length_enabled`() }
-        set { `set_expand_to_text_length_enabled`(newValue) }
-    }
-    public var `context_menu_enabled`: Bool {
-        get { `is_context_menu_enabled`() }
-        set { `set_context_menu_enabled`(newValue) }
-    }
-    public var `emoji_menu_enabled`: Bool {
-        get { `is_emoji_menu_enabled`() }
-        set { `set_emoji_menu_enabled`(newValue) }
-    }
-    public var `backspace_deletes_composite_character_enabled`: Bool {
-        get { `is_backspace_deletes_composite_character_enabled`() }
-        set { `set_backspace_deletes_composite_character_enabled`(newValue) }
-    }
-    public var `clear_button_enabled`: Bool {
-        get { `is_clear_button_enabled`() }
-        set { `set_clear_button_enabled`(newValue) }
-    }
-    public var `shortcut_keys_enabled`: Bool {
-        get { `is_shortcut_keys_enabled`() }
-        set { `set_shortcut_keys_enabled`(newValue) }
-    }
-    public var `middle_mouse_paste_enabled`: Bool {
-        get { `is_middle_mouse_paste_enabled`() }
-        set { `set_middle_mouse_paste_enabled`(newValue) }
-    }
-    public var `selecting_enabled`: Bool {
-        get { `is_selecting_enabled`() }
-        set { `set_selecting_enabled`(newValue) }
-    }
-    public var `deselect_on_focus_loss_enabled`: Bool {
-        get { `is_deselect_on_focus_loss_enabled`() }
-        set { `set_deselect_on_focus_loss_enabled`(newValue) }
-    }
-    public var `drag_and_drop_selection_enabled`: Bool {
-        get { `is_drag_and_drop_selection_enabled`() }
-        set { `set_drag_and_drop_selection_enabled`(newValue) }
-    }
-    public var `flat`: Bool {
-        get { `is_flat`() }
-        set { `set_flat`(newValue) }
-    }
-    public var `draw_control_chars`: Bool {
-        get { `get_draw_control_chars`() }
-        set { `set_draw_control_chars`(newValue) }
-    }
-    public var `select_all_on_focus`: Bool {
-        get { `is_select_all_on_focus`() }
-        set { `set_select_all_on_focus`(newValue) }
-    }
-    public var `virtual_keyboard_enabled`: Bool {
-        get { `is_virtual_keyboard_enabled`() }
-        set { `set_virtual_keyboard_enabled`(newValue) }
-    }
-    public var `virtual_keyboard_show_on_focus`: Bool {
-        get { `get_virtual_keyboard_show_on_focus`() }
-        set { `set_virtual_keyboard_show_on_focus`(newValue) }
-    }
-    public var `virtual_keyboard_type`: LineEdit.VirtualKeyboardType {
-        get { `get_virtual_keyboard_type`() }
-        set { `set_virtual_keyboard_type`(newValue) }
-    }
-    public var `caret_blink`: Bool {
-        get { `is_caret_blink_enabled`() }
-        set { `set_caret_blink_enabled`(newValue) }
-    }
-    public var `caret_blink_interval`: Double {
-        get { `get_caret_blink_interval`() }
-        set { `set_caret_blink_interval`(newValue) }
-    }
-    public var `caret_column`: Int64 {
-        get { `get_caret_column`() }
-        set { `set_caret_column`(newValue) }
-    }
-    public var `caret_force_displayed`: Bool {
-        get { `is_caret_force_displayed`() }
-        set { `set_caret_force_displayed`(newValue) }
-    }
-    public var `caret_mid_grapheme`: Bool {
-        get { `is_caret_mid_grapheme_enabled`() }
-        set { `set_caret_mid_grapheme_enabled`(newValue) }
-    }
-    public var `secret`: Bool {
-        get { `is_secret`() }
-        set { `set_secret`(newValue) }
-    }
-    public var `secret_character`: GodotString {
-        get { `get_secret_character`() }
-        set { `set_secret_character`(newValue) }
-    }
-    public var `text_direction`: Control.TextDirection {
-        get { `get_text_direction`() }
-        set { `set_text_direction`(newValue) }
-    }
-    public var `language`: GodotString {
-        get { `get_language`() }
-        set { `set_language`(newValue) }
-    }
-    public var `structured_text_bidi_override`: TextServer.StructuredTextParser {
-        get { `get_structured_text_bidi_override`() }
-        set { `set_structured_text_bidi_override`(newValue) }
-    }
-    public var `structured_text_bidi_override_options`: GodotArray {
-        get { `get_structured_text_bidi_override_options`() }
-        set { `set_structured_text_bidi_override_options`(newValue) }
-    }
-    public var `right_icon`: Texture2D? {
-        get { `get_right_icon`() }
-        set { `set_right_icon`(newValue) }
-    }
-    public var `icon_expand_mode`: LineEdit.ExpandMode {
-        get { `get_icon_expand_mode`() }
-        set { `set_icon_expand_mode`(newValue) }
-    }
-    public var `right_icon_scale`: Double {
-        get { `get_right_icon_scale`() }
-        set { `set_right_icon_scale`(newValue) }
+    @inline(__always) public static func `map_create`() -> GodotRID {
+        return shared.`map_create`()
     }
-}
-extension LinkButton {
-    public var `text`: GodotString {
-        get { `get_text`() }
-        set { `set_text`(newValue) }
-    }
-    public var `underline`: LinkButton.UnderlineMode {
-        get { `get_underline_mode`() }
-        set { `set_underline_mode`(newValue) }
-    }
-    public var `uri`: GodotString {
-        get { `get_uri`() }
-        set { `set_uri`(newValue) }
-    }
-    public var `text_overrun_behavior`: TextServer.OverrunBehavior {
-        get { `get_text_overrun_behavior`() }
-        set { `set_text_overrun_behavior`(newValue) }
-    }
-    public var `ellipsis_char`: GodotString {
-        get { `get_ellipsis_char`() }
-        set { `set_ellipsis_char`(newValue) }
-    }
-    public var `text_direction`: Control.TextDirection {
-        get { `get_text_direction`() }
-        set { `set_text_direction`(newValue) }
-    }
-    public var `language`: GodotString {
-        get { `get_language`() }
-        set { `set_language`(newValue) }
-    }
-    public var `structured_text_bidi_override`: TextServer.StructuredTextParser {
-        get { `get_structured_text_bidi_override`() }
-        set { `set_structured_text_bidi_override`(newValue) }
-    }
-    public var `structured_text_bidi_override_options`: GodotArray {
-        get { `get_structured_text_bidi_override_options`() }
-        set { `set_structured_text_bidi_override_options`(newValue) }
+    @inline(__always) public static func `map_set_active`(_ `map`: GodotRID, _ `active`: Bool) {
+        shared.`map_set_active`(`map`, `active`)
     }
-}
-extension LookAtModifier3D {
-    public var `target_node`: GodotNodePath {
-        get { `get_target_node`() }
-        set { `set_target_node`(newValue) }
-    }
-    public var `bone_name`: GodotString {
-        get { `get_bone_name`() }
-        set { `set_bone_name`(newValue) }
-    }
-    public var `bone`: Int64 {
-        get { `get_bone`() }
-        set { `set_bone`(newValue) }
-    }
-    public var `forward_axis`: SkeletonModifier3D.BoneAxis {
-        get { `get_forward_axis`() }
-        set { `set_forward_axis`(newValue) }
-    }
-    public var `primary_rotation_axis`: Vector3.Axis {
-        get { `get_primary_rotation_axis`() }
-        set { `set_primary_rotation_axis`(newValue) }
-    }
-    public var `use_secondary_rotation`: Bool {
-        get { `is_using_secondary_rotation`() }
-        set { `set_use_secondary_rotation`(newValue) }
-    }
-    public var `relative`: Bool {
-        get { `is_relative`() }
-        set { `set_relative`(newValue) }
-    }
-    public var `origin_from`: LookAtModifier3D.OriginFrom {
-        get { `get_origin_from`() }
-        set { `set_origin_from`(newValue) }
-    }
-    public var `origin_bone_name`: GodotString {
-        get { `get_origin_bone_name`() }
-        set { `set_origin_bone_name`(newValue) }
-    }
-    public var `origin_bone`: Int64 {
-        get { `get_origin_bone`() }
-        set { `set_origin_bone`(newValue) }
-    }
-    public var `origin_external_node`: GodotNodePath {
-        get { `get_origin_external_node`() }
-        set { `set_origin_external_node`(newValue) }
-    }
-    public var `origin_offset`: Vector3 {
-        get { `get_origin_offset`() }
-        set { `set_origin_offset`(newValue) }
-    }
-    public var `origin_safe_margin`: Double {
-        get { `get_origin_safe_margin`() }
-        set { `set_origin_safe_margin`(newValue) }
-    }
-    public var `duration`: Double {
-        get { `get_duration`() }
-        set { `set_duration`(newValue) }
-    }
-    public var `transition_type`: Tween.TransitionType {
-        get { `get_transition_type`() }
-        set { `set_transition_type`(newValue) }
-    }
-    public var `ease_type`: Tween.EaseType {
-        get { `get_ease_type`() }
-        set { `set_ease_type`(newValue) }
-    }
-    public var `use_angle_limitation`: Bool {
-        get { `is_using_angle_limitation`() }
-        set { `set_use_angle_limitation`(newValue) }
-    }
-    public var `use_rest_for_limitation`: Bool {
-        get { `is_using_rest_for_limitation`() }
-        set { `set_use_rest_for_limitation`(newValue) }
-    }
-    public var `symmetry_limitation`: Bool {
-        get { `is_limitation_symmetry`() }
-        set { `set_symmetry_limitation`(newValue) }
-    }
-    public var `primary_limit_angle`: Double {
-        get { `get_primary_limit_angle`() }
-        set { `set_primary_limit_angle`(newValue) }
-    }
-    public var `primary_damp_threshold`: Double {
-        get { `get_primary_damp_threshold`() }
-        set { `set_primary_damp_threshold`(newValue) }
-    }
-    public var `primary_positive_limit_angle`: Double {
-        get { `get_primary_positive_limit_angle`() }
-        set { `set_primary_positive_limit_angle`(newValue) }
-    }
-    public var `primary_positive_damp_threshold`: Double {
-        get { `get_primary_positive_damp_threshold`() }
-        set { `set_primary_positive_damp_threshold`(newValue) }
-    }
-    public var `primary_negative_limit_angle`: Double {
-        get { `get_primary_negative_limit_angle`() }
-        set { `set_primary_negative_limit_angle`(newValue) }
-    }
-    public var `primary_negative_damp_threshold`: Double {
-        get { `get_primary_negative_damp_threshold`() }
-        set { `set_primary_negative_damp_threshold`(newValue) }
-    }
-    public var `secondary_limit_angle`: Double {
-        get { `get_secondary_limit_angle`() }
-        set { `set_secondary_limit_angle`(newValue) }
-    }
-    public var `secondary_damp_threshold`: Double {
-        get { `get_secondary_damp_threshold`() }
-        set { `set_secondary_damp_threshold`(newValue) }
-    }
-    public var `secondary_positive_limit_angle`: Double {
-        get { `get_secondary_positive_limit_angle`() }
-        set { `set_secondary_positive_limit_angle`(newValue) }
-    }
-    public var `secondary_positive_damp_threshold`: Double {
-        get { `get_secondary_positive_damp_threshold`() }
-        set { `set_secondary_positive_damp_threshold`(newValue) }
-    }
-    public var `secondary_negative_limit_angle`: Double {
-        get { `get_secondary_negative_limit_angle`() }
-        set { `set_secondary_negative_limit_angle`(newValue) }
-    }
-    public var `secondary_negative_damp_threshold`: Double {
-        get { `get_secondary_negative_damp_threshold`() }
-        set { `set_secondary_negative_damp_threshold`(newValue) }
+    @inline(__always) public static func `map_is_active`(_ `map`: GodotRID) -> Bool {
+        return shared.`map_is_active`(`map`)
     }
-}
-extension Marker2D {
-    public var `gizmo_extents`: Double {
-        get { `get_gizmo_extents`() }
-        set { `set_gizmo_extents`(newValue) }
+    @inline(__always) public static func `map_set_cell_size`(_ `map`: GodotRID, _ `cell_size`: Double) {
+        shared.`map_set_cell_size`(`map`, `cell_size`)
     }
-}
-extension Marker3D {
-    public var `gizmo_extents`: Double {
-        get { `get_gizmo_extents`() }
-        set { `set_gizmo_extents`(newValue) }
+    @inline(__always) public static func `map_get_cell_size`(_ `map`: GodotRID) -> Double {
+        return shared.`map_get_cell_size`(`map`)
     }
-}
-extension Material {
-    public var `render_priority`: Int64 {
-        get { `get_render_priority`() }
-        set { `set_render_priority`(newValue) }
-    }
-    public var `next_pass`: Material? {
-        get { `get_next_pass`() }
-        set { `set_next_pass`(newValue) }
+    @inline(__always) public static func `map_set_merge_rasterizer_cell_scale`(_ `map`: GodotRID, _ `scale`: Double) {
+        shared.`map_set_merge_rasterizer_cell_scale`(`map`, `scale`)
     }
-}
-extension MenuBar {
-    public var `flat`: Bool {
-        get { `is_flat`() }
-        set { `set_flat`(newValue) }
-    }
-    public var `start_index`: Int64 {
-        get { `get_start_index`() }
-        set { `set_start_index`(newValue) }
-    }
-    public var `switch_on_hover`: Bool {
-        get { `is_switch_on_hover`() }
-        set { `set_switch_on_hover`(newValue) }
-    }
-    public var `prefer_global_menu`: Bool {
-        get { `is_prefer_global_menu`() }
-        set { `set_prefer_global_menu`(newValue) }
-    }
-    public var `text_direction`: Control.TextDirection {
-        get { `get_text_direction`() }
-        set { `set_text_direction`(newValue) }
-    }
-    public var `language`: GodotString {
-        get { `get_language`() }
-        set { `set_language`(newValue) }
+    @inline(__always) public static func `map_get_merge_rasterizer_cell_scale`(_ `map`: GodotRID) -> Double {
+        return shared.`map_get_merge_rasterizer_cell_scale`(`map`)
     }
-}
-extension MenuButton {
-    public var `switch_on_hover`: Bool {
-        get { `is_switch_on_hover`() }
-        set { `set_switch_on_hover`(newValue) }
-    }
-    public var `item_count`: Int64 {
-        get { `get_item_count`() }
-        set { `set_item_count`(newValue) }
+    @inline(__always) public static func `map_set_use_edge_connections`(_ `map`: GodotRID, _ `enabled`: Bool) {
+        shared.`map_set_use_edge_connections`(`map`, `enabled`)
     }
-}
-extension Mesh {
-    public var `lightmap_size_hint`: Vector2i {
-        get { `get_lightmap_size_hint`() }
-        set { `set_lightmap_size_hint`(newValue) }
+    @inline(__always) public static func `map_get_use_edge_connections`(_ `map`: GodotRID) -> Bool {
+        return shared.`map_get_use_edge_connections`(`map`)
     }
-}
-extension MeshConvexDecompositionSettings {
-    public var `max_concavity`: Double {
-        get { `get_max_concavity`() }
-        set { `set_max_concavity`(newValue) }
-    }
-    public var `symmetry_planes_clipping_bias`: Double {
-        get { `get_symmetry_planes_clipping_bias`() }
-        set { `set_symmetry_planes_clipping_bias`(newValue) }
-    }
-    public var `revolution_axes_clipping_bias`: Double {
-        get { `get_revolution_axes_clipping_bias`() }
-        set { `set_revolution_axes_clipping_bias`(newValue) }
-    }
-    public var `min_volume_per_convex_hull`: Double {
-        get { `get_min_volume_per_convex_hull`() }
-        set { `set_min_volume_per_convex_hull`(newValue) }
-    }
-    public var `resolution`: Int64 {
-        get { `get_resolution`() }
-        set { `set_resolution`(newValue) }
-    }
-    public var `max_num_vertices_per_convex_hull`: Int64 {
-        get { `get_max_num_vertices_per_convex_hull`() }
-        set { `set_max_num_vertices_per_convex_hull`(newValue) }
-    }
-    public var `plane_downsampling`: Int64 {
-        get { `get_plane_downsampling`() }
-        set { `set_plane_downsampling`(newValue) }
-    }
-    public var `convex_hull_downsampling`: Int64 {
-        get { `get_convex_hull_downsampling`() }
-        set { `set_convex_hull_downsampling`(newValue) }
-    }
-    public var `normalize_mesh`: Bool {
-        get { `get_normalize_mesh`() }
-        set { `set_normalize_mesh`(newValue) }
-    }
-    public var `mode`: MeshConvexDecompositionSettings.Mode {
-        get { `get_mode`() }
-        set { `set_mode`(newValue) }
-    }
-    public var `convex_hull_approximation`: Bool {
-        get { `get_convex_hull_approximation`() }
-        set { `set_convex_hull_approximation`(newValue) }
-    }
-    public var `max_convex_hulls`: Int64 {
-        get { `get_max_convex_hulls`() }
-        set { `set_max_convex_hulls`(newValue) }
-    }
-    public var `project_hull_vertices`: Bool {
-        get { `get_project_hull_vertices`() }
-        set { `set_project_hull_vertices`(newValue) }
+    @inline(__always) public static func `map_set_edge_connection_margin`(_ `map`: GodotRID, _ `margin`: Double) {
+        shared.`map_set_edge_connection_margin`(`map`, `margin`)
     }
-}
-extension MeshInstance2D {
-    public var `texture`: Texture2D? {
-        get { `get_texture`() }
-        set { `set_texture`(newValue) }
+    @inline(__always) public static func `map_get_edge_connection_margin`(_ `map`: GodotRID) -> Double {
+        return shared.`map_get_edge_connection_margin`(`map`)
     }
-}
-extension MeshInstance3D {
-    public var `skin`: Skin? {
-        get { `get_skin`() }
-        set { `set_skin`(newValue) }
-    }
-    public var `skeleton`: GodotNodePath {
-        get { `get_skeleton_path`() }
-        set { `set_skeleton_path`(newValue) }
+    @inline(__always) public static func `map_set_link_connection_radius`(_ `map`: GodotRID, _ `radius`: Double) {
+        shared.`map_set_link_connection_radius`(`map`, `radius`)
     }
-}
-extension MeshTexture {
-    public var `mesh`: Mesh? {
-        get { `get_mesh`() }
-        set { `set_mesh`(newValue) }
-    }
-    public var `base_texture`: Texture2D? {
-        get { `get_base_texture`() }
-        set { `set_base_texture`(newValue) }
-    }
-    public var `image_size`: Vector2 {
-        get { `get_image_size`() }
-        set { `set_image_size`(newValue) }
+    @inline(__always) public static func `map_get_link_connection_radius`(_ `map`: GodotRID) -> Double {
+        return shared.`map_get_link_connection_radius`(`map`)
     }
-}
-extension MissingNode {
-    public var `original_class`: GodotString {
-        get { `get_original_class`() }
-        set { `set_original_class`(newValue) }
-    }
-    public var `original_scene`: GodotString {
-        get { `get_original_scene`() }
-        set { `set_original_scene`(newValue) }
-    }
-    public var `recording_properties`: Bool {
-        get { `is_recording_properties`() }
-        set { `set_recording_properties`(newValue) }
-    }
-    public var `recording_signals`: Bool {
-        get { `is_recording_signals`() }
-        set { `set_recording_signals`(newValue) }
+    @inline(__always) public static func `map_get_path`(_ `map`: GodotRID, _ `origin`: Vector2, _ `destination_value`: Vector2, _ `optimize`: Bool, _ `navigation_layers`: Int64 = 1) -> GodotPackedVector2Array {
+        return shared.`map_get_path`(`map`, `origin`, `destination_value`, `optimize`, `navigation_layers`)
     }
-}
-extension MissingResource {
-    public var `original_class`: GodotString {
-        get { `get_original_class`() }
-        set { `set_original_class`(newValue) }
-    }
-    public var `recording_properties`: Bool {
-        get { `is_recording_properties`() }
-        set { `set_recording_properties`(newValue) }
+    @inline(__always) public static func `map_get_closest_point`(_ `map`: GodotRID, _ `to_point`: Vector2) -> Vector2 {
+        return shared.`map_get_closest_point`(`map`, `to_point`)
     }
-}
-extension MobileVRInterface {
-    public var `eye_height`: Double {
-        get { `get_eye_height`() }
-        set { `set_eye_height`(newValue) }
-    }
-    public var `iod`: Double {
-        get { `get_iod`() }
-        set { `set_iod`(newValue) }
-    }
-    public var `display_width`: Double {
-        get { `get_display_width`() }
-        set { `set_display_width`(newValue) }
-    }
-    public var `display_to_lens`: Double {
-        get { `get_display_to_lens`() }
-        set { `set_display_to_lens`(newValue) }
-    }
-    public var `offset_rect`: Rect2 {
-        get { `get_offset_rect`() }
-        set { `set_offset_rect`(newValue) }
-    }
-    public var `oversample`: Double {
-        get { `get_oversample`() }
-        set { `set_oversample`(newValue) }
-    }
-    public var `k1`: Double {
-        get { `get_k1`() }
-        set { `set_k1`(newValue) }
-    }
-    public var `k2`: Double {
-        get { `get_k2`() }
-        set { `set_k2`(newValue) }
-    }
-    public var `vrs_min_radius`: Double {
-        get { `get_vrs_min_radius`() }
-        set { `set_vrs_min_radius`(newValue) }
-    }
-    public var `vrs_strength`: Double {
-        get { `get_vrs_strength`() }
-        set { `set_vrs_strength`(newValue) }
+    @inline(__always) public static func `map_get_closest_point_owner`(_ `map`: GodotRID, _ `to_point`: Vector2) -> GodotRID {
+        return shared.`map_get_closest_point_owner`(`map`, `to_point`)
     }
-}
-extension ModifierBoneTarget3D {
-    public var `bone_name`: GodotString {
-        get { `get_bone_name`() }
-        set { `set_bone_name`(newValue) }
-    }
-    public var `bone`: Int64 {
-        get { `get_bone`() }
-        set { `set_bone`(newValue) }
+    @inline(__always) public static func `map_get_links`(_ `map`: GodotRID) -> GodotArrayOf<GodotRID> {
+        return shared.`map_get_links`(`map`)
     }
-}
-extension MultiMesh {
-    public var `transform_format`: MultiMesh.TransformFormat {
-        get { `get_transform_format`() }
-        set { `set_transform_format`(newValue) }
-    }
-    public var `use_colors`: Bool {
-        get { `is_using_colors`() }
-        set { `set_use_colors`(newValue) }
-    }
-    public var `use_custom_data`: Bool {
-        get { `is_using_custom_data`() }
-        set { `set_use_custom_data`(newValue) }
-    }
-    public var `custom_aabb`: AABB {
-        get { `get_custom_aabb`() }
-        set { `set_custom_aabb`(newValue) }
-    }
-    public var `instance_count`: Int64 {
-        get { `get_instance_count`() }
-        set { `set_instance_count`(newValue) }
-    }
-    public var `visible_instance_count`: Int64 {
-        get { `get_visible_instance_count`() }
-        set { `set_visible_instance_count`(newValue) }
-    }
-    public var `buffer`: GodotPackedFloat32Array {
-        get { `get_buffer`() }
-        set { `set_buffer`(newValue) }
-    }
-    public var `physics_interpolation_quality`: MultiMesh.PhysicsInterpolationQuality {
-        get { `get_physics_interpolation_quality`() }
-        set { `set_physics_interpolation_quality`(newValue) }
+    @inline(__always) public static func `map_get_regions`(_ `map`: GodotRID) -> GodotArrayOf<GodotRID> {
+        return shared.`map_get_regions`(`map`)
     }
-}
-extension MultiMeshInstance2D {
-    public var `multimesh`: MultiMesh? {
-        get { `get_multimesh`() }
-        set { `set_multimesh`(newValue) }
-    }
-    public var `texture`: Texture2D? {
-        get { `get_texture`() }
-        set { `set_texture`(newValue) }
+    @inline(__always) public static func `map_get_agents`(_ `map`: GodotRID) -> GodotArrayOf<GodotRID> {
+        return shared.`map_get_agents`(`map`)
     }
-}
-extension MultiMeshInstance3D {
-    public var `multimesh`: MultiMesh? {
-        get { `get_multimesh`() }
-        set { `set_multimesh`(newValue) }
+    @inline(__always) public static func `map_get_obstacles`(_ `map`: GodotRID) -> GodotArrayOf<GodotRID> {
+        return shared.`map_get_obstacles`(`map`)
     }
-}
-extension MultiplayerAPI {
-    public var `multiplayer_peer`: MultiplayerPeer? {
-        get { `get_multiplayer_peer`() }
-        set { `set_multiplayer_peer`(newValue) }
+    @inline(__always) public static func `map_force_update`(_ `map`: GodotRID) {
+        shared.`map_force_update`(`map`)
     }
-}
-extension MultiplayerPeer {
-    public var `refuse_new_connections`: Bool {
-        get { `is_refusing_new_connections`() }
-        set { `set_refuse_new_connections`(newValue) }
-    }
-    public var `transfer_mode`: MultiplayerPeer.TransferMode {
-        get { `get_transfer_mode`() }
-        set { `set_transfer_mode`(newValue) }
-    }
-    public var `transfer_channel`: Int64 {
-        get { `get_transfer_channel`() }
-        set { `set_transfer_channel`(newValue) }
+    @inline(__always) public static func `map_get_iteration_id`(_ `map`: GodotRID) -> Int64 {
+        return shared.`map_get_iteration_id`(`map`)
     }
-}
-extension MultiplayerSpawner {
-    public var `spawn_path`: GodotNodePath {
-        get { `get_spawn_path`() }
-        set { `set_spawn_path`(newValue) }
-    }
-    public var `spawn_limit`: Int64 {
-        get { `get_spawn_limit`() }
-        set { `set_spawn_limit`(newValue) }
-    }
-    public var `spawn_function`: GodotCallable {
-        get { `get_spawn_function`() }
-        set { `set_spawn_function`(newValue) }
+    @inline(__always) public static func `map_set_use_async_iterations`(_ `map`: GodotRID, _ `enabled`: Bool) {
+        shared.`map_set_use_async_iterations`(`map`, `enabled`)
     }
-}
-extension MultiplayerSynchronizer {
-    public var `root_path`: GodotNodePath {
-        get { `get_root_path`() }
-        set { `set_root_path`(newValue) }
-    }
-    public var `replication_interval`: Double {
-        get { `get_replication_interval`() }
-        set { `set_replication_interval`(newValue) }
-    }
-    public var `delta_interval`: Double {
-        get { `get_delta_interval`() }
-        set { `set_delta_interval`(newValue) }
-    }
-    public var `replication_config`: SceneReplicationConfig? {
-        get { `get_replication_config`() }
-        set { `set_replication_config`(newValue) }
-    }
-    public var `visibility_update_mode`: MultiplayerSynchronizer.VisibilityUpdateMode {
-        get { `get_visibility_update_mode`() }
-        set { `set_visibility_update_mode`(newValue) }
-    }
-    public var `public_visibility`: Bool {
-        get { `is_visibility_public`() }
-        set { `set_visibility_public`(newValue) }
+    @inline(__always) public static func `map_get_use_async_iterations`(_ `map`: GodotRID) -> Bool {
+        return shared.`map_get_use_async_iterations`(`map`)
     }
-}
-extension NavigationAgent2D {
-    public var `target_position`: Vector2 {
-        get { `get_target_position`() }
-        set { `set_target_position`(newValue) }
-    }
-    public var `path_desired_distance`: Double {
-        get { `get_path_desired_distance`() }
-        set { `set_path_desired_distance`(newValue) }
-    }
-    public var `target_desired_distance`: Double {
-        get { `get_target_desired_distance`() }
-        set { `set_target_desired_distance`(newValue) }
-    }
-    public var `path_max_distance`: Double {
-        get { `get_path_max_distance`() }
-        set { `set_path_max_distance`(newValue) }
-    }
-    public var `navigation_layers`: Int64 {
-        get { `get_navigation_layers`() }
-        set { `set_navigation_layers`(newValue) }
-    }
-    public var `pathfinding_algorithm`: NavigationPathQueryParameters2D.PathfindingAlgorithm {
-        get { `get_pathfinding_algorithm`() }
-        set { `set_pathfinding_algorithm`(newValue) }
-    }
-    public var `path_postprocessing`: NavigationPathQueryParameters2D.PathPostProcessing {
-        get { `get_path_postprocessing`() }
-        set { `set_path_postprocessing`(newValue) }
-    }
-    public var `path_metadata_flags`: NavigationPathQueryParameters2D.PathMetadataFlags {
-        get { `get_path_metadata_flags`() }
-        set { `set_path_metadata_flags`(newValue) }
-    }
-    public var `simplify_path`: Bool {
-        get { `get_simplify_path`() }
-        set { `set_simplify_path`(newValue) }
-    }
-    public var `simplify_epsilon`: Double {
-        get { `get_simplify_epsilon`() }
-        set { `set_simplify_epsilon`(newValue) }
-    }
-    public var `path_return_max_length`: Double {
-        get { `get_path_return_max_length`() }
-        set { `set_path_return_max_length`(newValue) }
-    }
-    public var `path_return_max_radius`: Double {
-        get { `get_path_return_max_radius`() }
-        set { `set_path_return_max_radius`(newValue) }
-    }
-    public var `path_search_max_polygons`: Int64 {
-        get { `get_path_search_max_polygons`() }
-        set { `set_path_search_max_polygons`(newValue) }
-    }
-    public var `path_search_max_distance`: Double {
-        get { `get_path_search_max_distance`() }
-        set { `set_path_search_max_distance`(newValue) }
-    }
-    public var `avoidance_enabled`: Bool {
-        get { `get_avoidance_enabled`() }
-        set { `set_avoidance_enabled`(newValue) }
-    }
-    public var `velocity`: Vector2 {
-        get { `get_velocity`() }
-        set { `set_velocity`(newValue) }
-    }
-    public var `radius`: Double {
-        get { `get_radius`() }
-        set { `set_radius`(newValue) }
-    }
-    public var `neighbor_distance`: Double {
-        get { `get_neighbor_distance`() }
-        set { `set_neighbor_distance`(newValue) }
-    }
-    public var `max_neighbors`: Int64 {
-        get { `get_max_neighbors`() }
-        set { `set_max_neighbors`(newValue) }
-    }
-    public var `time_horizon_agents`: Double {
-        get { `get_time_horizon_agents`() }
-        set { `set_time_horizon_agents`(newValue) }
-    }
-    public var `time_horizon_obstacles`: Double {
-        get { `get_time_horizon_obstacles`() }
-        set { `set_time_horizon_obstacles`(newValue) }
-    }
-    public var `max_speed`: Double {
-        get { `get_max_speed`() }
-        set { `set_max_speed`(newValue) }
-    }
-    public var `avoidance_layers`: Int64 {
-        get { `get_avoidance_layers`() }
-        set { `set_avoidance_layers`(newValue) }
-    }
-    public var `avoidance_mask`: Int64 {
-        get { `get_avoidance_mask`() }
-        set { `set_avoidance_mask`(newValue) }
-    }
-    public var `avoidance_priority`: Double {
-        get { `get_avoidance_priority`() }
-        set { `set_avoidance_priority`(newValue) }
-    }
-    public var `debug_enabled`: Bool {
-        get { `get_debug_enabled`() }
-        set { `set_debug_enabled`(newValue) }
-    }
-    public var `debug_use_custom`: Bool {
-        get { `get_debug_use_custom`() }
-        set { `set_debug_use_custom`(newValue) }
-    }
-    public var `debug_path_custom_color`: Color {
-        get { `get_debug_path_custom_color`() }
-        set { `set_debug_path_custom_color`(newValue) }
-    }
-    public var `debug_path_custom_point_size`: Double {
-        get { `get_debug_path_custom_point_size`() }
-        set { `set_debug_path_custom_point_size`(newValue) }
-    }
-    public var `debug_path_custom_line_width`: Double {
-        get { `get_debug_path_custom_line_width`() }
-        set { `set_debug_path_custom_line_width`(newValue) }
+    @inline(__always) public static func `map_get_random_point`(_ `map`: GodotRID, _ `navigation_layers`: Int64, _ `uniformly`: Bool) -> Vector2 {
+        return shared.`map_get_random_point`(`map`, `navigation_layers`, `uniformly`)
     }
-}
-extension NavigationAgent3D {
-    public var `target_position`: Vector3 {
-        get { `get_target_position`() }
-        set { `set_target_position`(newValue) }
-    }
-    public var `path_desired_distance`: Double {
-        get { `get_path_desired_distance`() }
-        set { `set_path_desired_distance`(newValue) }
-    }
-    public var `target_desired_distance`: Double {
-        get { `get_target_desired_distance`() }
-        set { `set_target_desired_distance`(newValue) }
-    }
-    public var `path_height_offset`: Double {
-        get { `get_path_height_offset`() }
-        set { `set_path_height_offset`(newValue) }
-    }
-    public var `path_max_distance`: Double {
-        get { `get_path_max_distance`() }
-        set { `set_path_max_distance`(newValue) }
-    }
-    public var `navigation_layers`: Int64 {
-        get { `get_navigation_layers`() }
-        set { `set_navigation_layers`(newValue) }
-    }
-    public var `pathfinding_algorithm`: NavigationPathQueryParameters3D.PathfindingAlgorithm {
-        get { `get_pathfinding_algorithm`() }
-        set { `set_pathfinding_algorithm`(newValue) }
-    }
-    public var `path_postprocessing`: NavigationPathQueryParameters3D.PathPostProcessing {
-        get { `get_path_postprocessing`() }
-        set { `set_path_postprocessing`(newValue) }
-    }
-    public var `path_metadata_flags`: NavigationPathQueryParameters3D.PathMetadataFlags {
-        get { `get_path_metadata_flags`() }
-        set { `set_path_metadata_flags`(newValue) }
-    }
-    public var `simplify_path`: Bool {
-        get { `get_simplify_path`() }
-        set { `set_simplify_path`(newValue) }
-    }
-    public var `simplify_epsilon`: Double {
-        get { `get_simplify_epsilon`() }
-        set { `set_simplify_epsilon`(newValue) }
-    }
-    public var `path_return_max_length`: Double {
-        get { `get_path_return_max_length`() }
-        set { `set_path_return_max_length`(newValue) }
-    }
-    public var `path_return_max_radius`: Double {
-        get { `get_path_return_max_radius`() }
-        set { `set_path_return_max_radius`(newValue) }
-    }
-    public var `path_search_max_polygons`: Int64 {
-        get { `get_path_search_max_polygons`() }
-        set { `set_path_search_max_polygons`(newValue) }
-    }
-    public var `path_search_max_distance`: Double {
-        get { `get_path_search_max_distance`() }
-        set { `set_path_search_max_distance`(newValue) }
-    }
-    public var `avoidance_enabled`: Bool {
-        get { `get_avoidance_enabled`() }
-        set { `set_avoidance_enabled`(newValue) }
-    }
-    public var `velocity`: Vector3 {
-        get { `get_velocity`() }
-        set { `set_velocity`(newValue) }
-    }
-    public var `height`: Double {
-        get { `get_height`() }
-        set { `set_height`(newValue) }
-    }
-    public var `radius`: Double {
-        get { `get_radius`() }
-        set { `set_radius`(newValue) }
-    }
-    public var `neighbor_distance`: Double {
-        get { `get_neighbor_distance`() }
-        set { `set_neighbor_distance`(newValue) }
-    }
-    public var `max_neighbors`: Int64 {
-        get { `get_max_neighbors`() }
-        set { `set_max_neighbors`(newValue) }
-    }
-    public var `time_horizon_agents`: Double {
-        get { `get_time_horizon_agents`() }
-        set { `set_time_horizon_agents`(newValue) }
-    }
-    public var `time_horizon_obstacles`: Double {
-        get { `get_time_horizon_obstacles`() }
-        set { `set_time_horizon_obstacles`(newValue) }
-    }
-    public var `max_speed`: Double {
-        get { `get_max_speed`() }
-        set { `set_max_speed`(newValue) }
-    }
-    public var `use_3d_avoidance`: Bool {
-        get { `get_use_3d_avoidance`() }
-        set { `set_use_3d_avoidance`(newValue) }
-    }
-    public var `keep_y_velocity`: Bool {
-        get { `get_keep_y_velocity`() }
-        set { `set_keep_y_velocity`(newValue) }
-    }
-    public var `avoidance_layers`: Int64 {
-        get { `get_avoidance_layers`() }
-        set { `set_avoidance_layers`(newValue) }
-    }
-    public var `avoidance_mask`: Int64 {
-        get { `get_avoidance_mask`() }
-        set { `set_avoidance_mask`(newValue) }
-    }
-    public var `avoidance_priority`: Double {
-        get { `get_avoidance_priority`() }
-        set { `set_avoidance_priority`(newValue) }
-    }
-    public var `debug_enabled`: Bool {
-        get { `get_debug_enabled`() }
-        set { `set_debug_enabled`(newValue) }
-    }
-    public var `debug_use_custom`: Bool {
-        get { `get_debug_use_custom`() }
-        set { `set_debug_use_custom`(newValue) }
-    }
-    public var `debug_path_custom_color`: Color {
-        get { `get_debug_path_custom_color`() }
-        set { `set_debug_path_custom_color`(newValue) }
-    }
-    public var `debug_path_custom_point_size`: Double {
-        get { `get_debug_path_custom_point_size`() }
-        set { `set_debug_path_custom_point_size`(newValue) }
+    @inline(__always) public static func `query_path`(_ `parameters`: NavigationPathQueryParameters2D?, _ `result_value`: NavigationPathQueryResult2D?, _ `callback`: borrowing GodotCallable = GodotCallable()) {
+        shared.`query_path`(`parameters`, `result_value`, `callback`)
     }
-}
-extension NavigationLink2D {
-    public var `enabled`: Bool {
-        get { `is_enabled`() }
-        set { `set_enabled`(newValue) }
-    }
-    public var `bidirectional`: Bool {
-        get { `is_bidirectional`() }
-        set { `set_bidirectional`(newValue) }
-    }
-    public var `navigation_layers`: Int64 {
-        get { `get_navigation_layers`() }
-        set { `set_navigation_layers`(newValue) }
-    }
-    public var `start_position`: Vector2 {
-        get { `get_start_position`() }
-        set { `set_start_position`(newValue) }
-    }
-    public var `end_position`: Vector2 {
-        get { `get_end_position`() }
-        set { `set_end_position`(newValue) }
-    }
-    public var `enter_cost`: Double {
-        get { `get_enter_cost`() }
-        set { `set_enter_cost`(newValue) }
-    }
-    public var `travel_cost`: Double {
-        get { `get_travel_cost`() }
-        set { `set_travel_cost`(newValue) }
+    @inline(__always) public static func `region_create`() -> GodotRID {
+        return shared.`region_create`()
     }
-}
-extension NavigationLink3D {
-    public var `enabled`: Bool {
-        get { `is_enabled`() }
-        set { `set_enabled`(newValue) }
-    }
-    public var `bidirectional`: Bool {
-        get { `is_bidirectional`() }
-        set { `set_bidirectional`(newValue) }
-    }
-    public var `navigation_layers`: Int64 {
-        get { `get_navigation_layers`() }
-        set { `set_navigation_layers`(newValue) }
-    }
-    public var `start_position`: Vector3 {
-        get { `get_start_position`() }
-        set { `set_start_position`(newValue) }
-    }
-    public var `end_position`: Vector3 {
-        get { `get_end_position`() }
-        set { `set_end_position`(newValue) }
-    }
-    public var `enter_cost`: Double {
-        get { `get_enter_cost`() }
-        set { `set_enter_cost`(newValue) }
-    }
-    public var `travel_cost`: Double {
-        get { `get_travel_cost`() }
-        set { `set_travel_cost`(newValue) }
+    @inline(__always) public static func `region_get_iteration_id`(_ `region`: GodotRID) -> Int64 {
+        return shared.`region_get_iteration_id`(`region`)
     }
-}
-extension NavigationMesh {
-    public var `vertices`: GodotPackedVector3Array {
-        get { `get_vertices`() }
-        set { `set_vertices`(newValue) }
-    }
-    public var `sample_partition_type`: NavigationMesh.SamplePartitionType {
-        get { `get_sample_partition_type`() }
-        set { `set_sample_partition_type`(newValue) }
-    }
-    public var `geometry_parsed_geometry_type`: NavigationMesh.ParsedGeometryType {
-        get { `get_parsed_geometry_type`() }
-        set { `set_parsed_geometry_type`(newValue) }
-    }
-    public var `geometry_collision_mask`: Int64 {
-        get { `get_collision_mask`() }
-        set { `set_collision_mask`(newValue) }
-    }
-    public var `geometry_source_geometry_mode`: NavigationMesh.SourceGeometryMode {
-        get { `get_source_geometry_mode`() }
-        set { `set_source_geometry_mode`(newValue) }
-    }
-    public var `cell_size`: Double {
-        get { `get_cell_size`() }
-        set { `set_cell_size`(newValue) }
-    }
-    public var `cell_height`: Double {
-        get { `get_cell_height`() }
-        set { `set_cell_height`(newValue) }
-    }
-    public var `border_size`: Double {
-        get { `get_border_size`() }
-        set { `set_border_size`(newValue) }
-    }
-    public var `agent_height`: Double {
-        get { `get_agent_height`() }
-        set { `set_agent_height`(newValue) }
-    }
-    public var `agent_radius`: Double {
-        get { `get_agent_radius`() }
-        set { `set_agent_radius`(newValue) }
-    }
-    public var `agent_max_climb`: Double {
-        get { `get_agent_max_climb`() }
-        set { `set_agent_max_climb`(newValue) }
-    }
-    public var `agent_max_slope`: Double {
-        get { `get_agent_max_slope`() }
-        set { `set_agent_max_slope`(newValue) }
-    }
-    public var `region_min_size`: Double {
-        get { `get_region_min_size`() }
-        set { `set_region_min_size`(newValue) }
-    }
-    public var `region_merge_size`: Double {
-        get { `get_region_merge_size`() }
-        set { `set_region_merge_size`(newValue) }
-    }
-    public var `edge_max_length`: Double {
-        get { `get_edge_max_length`() }
-        set { `set_edge_max_length`(newValue) }
-    }
-    public var `edge_max_error`: Double {
-        get { `get_edge_max_error`() }
-        set { `set_edge_max_error`(newValue) }
-    }
-    public var `vertices_per_polygon`: Double {
-        get { `get_vertices_per_polygon`() }
-        set { `set_vertices_per_polygon`(newValue) }
-    }
-    public var `detail_sample_distance`: Double {
-        get { `get_detail_sample_distance`() }
-        set { `set_detail_sample_distance`(newValue) }
-    }
-    public var `detail_sample_max_error`: Double {
-        get { `get_detail_sample_max_error`() }
-        set { `set_detail_sample_max_error`(newValue) }
-    }
-    public var `filter_low_hanging_obstacles`: Bool {
-        get { `get_filter_low_hanging_obstacles`() }
-        set { `set_filter_low_hanging_obstacles`(newValue) }
-    }
-    public var `filter_ledge_spans`: Bool {
-        get { `get_filter_ledge_spans`() }
-        set { `set_filter_ledge_spans`(newValue) }
-    }
-    public var `filter_walkable_low_height_spans`: Bool {
-        get { `get_filter_walkable_low_height_spans`() }
-        set { `set_filter_walkable_low_height_spans`(newValue) }
-    }
-    public var `filter_baking_aabb`: AABB {
-        get { `get_filter_baking_aabb`() }
-        set { `set_filter_baking_aabb`(newValue) }
-    }
-    public var `filter_baking_aabb_offset`: Vector3 {
-        get { `get_filter_baking_aabb_offset`() }
-        set { `set_filter_baking_aabb_offset`(newValue) }
+    @inline(__always) public static func `region_set_use_async_iterations`(_ `region`: GodotRID, _ `enabled`: Bool) {
+        shared.`region_set_use_async_iterations`(`region`, `enabled`)
     }
-}
-extension NavigationMeshSourceGeometryData2D {
-    public var `traversable_outlines`: GodotArrayOf<GodotPackedVector2Array> {
-        get { `get_traversable_outlines`() }
-        set { `set_traversable_outlines`(newValue) }
-    }
-    public var `obstruction_outlines`: GodotArrayOf<GodotPackedVector2Array> {
-        get { `get_obstruction_outlines`() }
-        set { `set_obstruction_outlines`(newValue) }
-    }
-    public var `projected_obstructions`: GodotArray {
-        get { `get_projected_obstructions`() }
-        set { `set_projected_obstructions`(newValue) }
+    @inline(__always) public static func `region_get_use_async_iterations`(_ `region`: GodotRID) -> Bool {
+        return shared.`region_get_use_async_iterations`(`region`)
     }
-}
-extension NavigationMeshSourceGeometryData3D {
-    public var `indices`: GodotPackedInt32Array {
-        get { `get_indices`() }
-        set { `set_indices`(newValue) }
-    }
-    public var `projected_obstructions`: GodotArray {
-        get { `get_projected_obstructions`() }
-        set { `set_projected_obstructions`(newValue) }
+    @inline(__always) public static func `region_set_enabled`(_ `region`: GodotRID, _ `enabled`: Bool) {
+        shared.`region_set_enabled`(`region`, `enabled`)
     }
-}
-extension NavigationObstacle2D {
-    public var `radius`: Double {
-        get { `get_radius`() }
-        set { `set_radius`(newValue) }
-    }
-    public var `vertices`: GodotPackedVector2Array {
-        get { `get_vertices`() }
-        set { `set_vertices`(newValue) }
-    }
-    public var `affect_navigation_mesh`: Bool {
-        get { `get_affect_navigation_mesh`() }
-        set { `set_affect_navigation_mesh`(newValue) }
-    }
-    public var `carve_navigation_mesh`: Bool {
-        get { `get_carve_navigation_mesh`() }
-        set { `set_carve_navigation_mesh`(newValue) }
-    }
-    public var `avoidance_enabled`: Bool {
-        get { `get_avoidance_enabled`() }
-        set { `set_avoidance_enabled`(newValue) }
-    }
-    public var `velocity`: Vector2 {
-        get { `get_velocity`() }
-        set { `set_velocity`(newValue) }
-    }
-    public var `avoidance_layers`: Int64 {
-        get { `get_avoidance_layers`() }
-        set { `set_avoidance_layers`(newValue) }
+    @inline(__always) public static func `region_get_enabled`(_ `region`: GodotRID) -> Bool {
+        return shared.`region_get_enabled`(`region`)
     }
-}
-extension NavigationObstacle3D {
-    public var `radius`: Double {
-        get { `get_radius`() }
-        set { `set_radius`(newValue) }
-    }
-    public var `height`: Double {
-        get { `get_height`() }
-        set { `set_height`(newValue) }
-    }
-    public var `vertices`: GodotPackedVector3Array {
-        get { `get_vertices`() }
-        set { `set_vertices`(newValue) }
-    }
-    public var `affect_navigation_mesh`: Bool {
-        get { `get_affect_navigation_mesh`() }
-        set { `set_affect_navigation_mesh`(newValue) }
-    }
-    public var `carve_navigation_mesh`: Bool {
-        get { `get_carve_navigation_mesh`() }
-        set { `set_carve_navigation_mesh`(newValue) }
-    }
-    public var `avoidance_enabled`: Bool {
-        get { `get_avoidance_enabled`() }
-        set { `set_avoidance_enabled`(newValue) }
-    }
-    public var `velocity`: Vector3 {
-        get { `get_velocity`() }
-        set { `set_velocity`(newValue) }
-    }
-    public var `avoidance_layers`: Int64 {
-        get { `get_avoidance_layers`() }
-        set { `set_avoidance_layers`(newValue) }
-    }
-    public var `use_3d_avoidance`: Bool {
-        get { `get_use_3d_avoidance`() }
-        set { `set_use_3d_avoidance`(newValue) }
+    @inline(__always) public static func `region_set_use_edge_connections`(_ `region`: GodotRID, _ `enabled`: Bool) {
+        shared.`region_set_use_edge_connections`(`region`, `enabled`)
     }
-}
-extension NavigationPathQueryParameters2D {
-    public var `map`: GodotRID {
-        get { `get_map`() }
-        set { `set_map`(newValue) }
-    }
-    public var `start_position`: Vector2 {
-        get { `get_start_position`() }
-        set { `set_start_position`(newValue) }
-    }
-    public var `target_position`: Vector2 {
-        get { `get_target_position`() }
-        set { `set_target_position`(newValue) }
-    }
-    public var `navigation_layers`: Int64 {
-        get { `get_navigation_layers`() }
-        set { `set_navigation_layers`(newValue) }
-    }
-    public var `pathfinding_algorithm`: NavigationPathQueryParameters2D.PathfindingAlgorithm {
-        get { `get_pathfinding_algorithm`() }
-        set { `set_pathfinding_algorithm`(newValue) }
-    }
-    public var `path_postprocessing`: NavigationPathQueryParameters2D.PathPostProcessing {
-        get { `get_path_postprocessing`() }
-        set { `set_path_postprocessing`(newValue) }
-    }
-    public var `metadata_flags`: NavigationPathQueryParameters2D.PathMetadataFlags {
-        get { `get_metadata_flags`() }
-        set { `set_metadata_flags`(newValue) }
-    }
-    public var `simplify_path`: Bool {
-        get { `get_simplify_path`() }
-        set { `set_simplify_path`(newValue) }
-    }
-    public var `simplify_epsilon`: Double {
-        get { `get_simplify_epsilon`() }
-        set { `set_simplify_epsilon`(newValue) }
-    }
-    public var `excluded_regions`: GodotArrayOf<GodotRID> {
-        get { `get_excluded_regions`() }
-        set { `set_excluded_regions`(newValue) }
-    }
-    public var `included_regions`: GodotArrayOf<GodotRID> {
-        get { `get_included_regions`() }
-        set { `set_included_regions`(newValue) }
-    }
-    public var `path_return_max_length`: Double {
-        get { `get_path_return_max_length`() }
-        set { `set_path_return_max_length`(newValue) }
-    }
-    public var `path_return_max_radius`: Double {
-        get { `get_path_return_max_radius`() }
-        set { `set_path_return_max_radius`(newValue) }
-    }
-    public var `path_search_max_polygons`: Int64 {
-        get { `get_path_search_max_polygons`() }
-        set { `set_path_search_max_polygons`(newValue) }
-    }
-    public var `path_search_max_distance`: Double {
-        get { `get_path_search_max_distance`() }
-        set { `set_path_search_max_distance`(newValue) }
+    @inline(__always) public static func `region_get_use_edge_connections`(_ `region`: GodotRID) -> Bool {
+        return shared.`region_get_use_edge_connections`(`region`)
     }
-}
-extension NavigationPathQueryParameters3D {
-    public var `map`: GodotRID {
-        get { `get_map`() }
-        set { `set_map`(newValue) }
-    }
-    public var `start_position`: Vector3 {
-        get { `get_start_position`() }
-        set { `set_start_position`(newValue) }
-    }
-    public var `target_position`: Vector3 {
-        get { `get_target_position`() }
-        set { `set_target_position`(newValue) }
-    }
-    public var `navigation_layers`: Int64 {
-        get { `get_navigation_layers`() }
-        set { `set_navigation_layers`(newValue) }
-    }
-    public var `pathfinding_algorithm`: NavigationPathQueryParameters3D.PathfindingAlgorithm {
-        get { `get_pathfinding_algorithm`() }
-        set { `set_pathfinding_algorithm`(newValue) }
-    }
-    public var `path_postprocessing`: NavigationPathQueryParameters3D.PathPostProcessing {
-        get { `get_path_postprocessing`() }
-        set { `set_path_postprocessing`(newValue) }
-    }
-    public var `metadata_flags`: NavigationPathQueryParameters3D.PathMetadataFlags {
-        get { `get_metadata_flags`() }
-        set { `set_metadata_flags`(newValue) }
-    }
-    public var `simplify_path`: Bool {
-        get { `get_simplify_path`() }
-        set { `set_simplify_path`(newValue) }
-    }
-    public var `simplify_epsilon`: Double {
-        get { `get_simplify_epsilon`() }
-        set { `set_simplify_epsilon`(newValue) }
-    }
-    public var `excluded_regions`: GodotArrayOf<GodotRID> {
-        get { `get_excluded_regions`() }
-        set { `set_excluded_regions`(newValue) }
-    }
-    public var `included_regions`: GodotArrayOf<GodotRID> {
-        get { `get_included_regions`() }
-        set { `set_included_regions`(newValue) }
-    }
-    public var `path_return_max_length`: Double {
-        get { `get_path_return_max_length`() }
-        set { `set_path_return_max_length`(newValue) }
-    }
-    public var `path_return_max_radius`: Double {
-        get { `get_path_return_max_radius`() }
-        set { `set_path_return_max_radius`(newValue) }
-    }
-    public var `path_search_max_polygons`: Int64 {
-        get { `get_path_search_max_polygons`() }
-        set { `set_path_search_max_polygons`(newValue) }
-    }
-    public var `path_search_max_distance`: Double {
-        get { `get_path_search_max_distance`() }
-        set { `set_path_search_max_distance`(newValue) }
+    @inline(__always) public static func `region_set_enter_cost`(_ `region`: GodotRID, _ `enter_cost`: Double) {
+        shared.`region_set_enter_cost`(`region`, `enter_cost`)
     }
-}
-extension NavigationPathQueryResult2D {
-    public var `path`: GodotPackedVector2Array {
-        get { `get_path`() }
-        set { `set_path`(newValue) }
-    }
-    public var `path_types`: GodotPackedInt32Array {
-        get { `get_path_types`() }
-        set { `set_path_types`(newValue) }
-    }
-    public var `path_rids`: GodotArrayOf<GodotRID> {
-        get { `get_path_rids`() }
-        set { `set_path_rids`(newValue) }
-    }
-    public var `path_owner_ids`: GodotPackedInt64Array {
-        get { `get_path_owner_ids`() }
-        set { `set_path_owner_ids`(newValue) }
-    }
-    public var `path_length`: Double {
-        get { `get_path_length`() }
-        set { `set_path_length`(newValue) }
+    @inline(__always) public static func `region_get_enter_cost`(_ `region`: GodotRID) -> Double {
+        return shared.`region_get_enter_cost`(`region`)
     }
-}
-extension NavigationPathQueryResult3D {
-    public var `path`: GodotPackedVector3Array {
-        get { `get_path`() }
-        set { `set_path`(newValue) }
-    }
-    public var `path_types`: GodotPackedInt32Array {
-        get { `get_path_types`() }
-        set { `set_path_types`(newValue) }
-    }
-    public var `path_rids`: GodotArrayOf<GodotRID> {
-        get { `get_path_rids`() }
-        set { `set_path_rids`(newValue) }
-    }
-    public var `path_owner_ids`: GodotPackedInt64Array {
-        get { `get_path_owner_ids`() }
-        set { `set_path_owner_ids`(newValue) }
-    }
-    public var `path_length`: Double {
-        get { `get_path_length`() }
-        set { `set_path_length`(newValue) }
+    @inline(__always) public static func `region_set_travel_cost`(_ `region`: GodotRID, _ `travel_cost`: Double) {
+        shared.`region_set_travel_cost`(`region`, `travel_cost`)
     }
-}
-extension NavigationPolygon {
-    public var `vertices`: GodotPackedVector2Array {
-        get { `get_vertices`() }
-        set { `set_vertices`(newValue) }
-    }
-    public var `sample_partition_type`: NavigationPolygon.SamplePartitionType {
-        get { `get_sample_partition_type`() }
-        set { `set_sample_partition_type`(newValue) }
-    }
-    public var `parsed_geometry_type`: NavigationPolygon.ParsedGeometryType {
-        get { `get_parsed_geometry_type`() }
-        set { `set_parsed_geometry_type`(newValue) }
-    }
-    public var `parsed_collision_mask`: Int64 {
-        get { `get_parsed_collision_mask`() }
-        set { `set_parsed_collision_mask`(newValue) }
-    }
-    public var `source_geometry_mode`: NavigationPolygon.SourceGeometryMode {
-        get { `get_source_geometry_mode`() }
-        set { `set_source_geometry_mode`(newValue) }
-    }
-    public var `cell_size`: Double {
-        get { `get_cell_size`() }
-        set { `set_cell_size`(newValue) }
-    }
-    public var `border_size`: Double {
-        get { `get_border_size`() }
-        set { `set_border_size`(newValue) }
-    }
-    public var `agent_radius`: Double {
-        get { `get_agent_radius`() }
-        set { `set_agent_radius`(newValue) }
-    }
-    public var `baking_rect`: Rect2 {
-        get { `get_baking_rect`() }
-        set { `set_baking_rect`(newValue) }
-    }
-    public var `baking_rect_offset`: Vector2 {
-        get { `get_baking_rect_offset`() }
-        set { `set_baking_rect_offset`(newValue) }
+    @inline(__always) public static func `region_get_travel_cost`(_ `region`: GodotRID) -> Double {
+        return shared.`region_get_travel_cost`(`region`)
     }
-}
-extension NavigationRegion2D {
-    public var `navigation_polygon`: NavigationPolygon? {
-        get { `get_navigation_polygon`() }
-        set { `set_navigation_polygon`(newValue) }
-    }
-    public var `enabled`: Bool {
-        get { `is_enabled`() }
-        set { `set_enabled`(newValue) }
-    }
-    public var `use_edge_connections`: Bool {
-        get { `get_use_edge_connections`() }
-        set { `set_use_edge_connections`(newValue) }
-    }
-    public var `navigation_layers`: Int64 {
-        get { `get_navigation_layers`() }
-        set { `set_navigation_layers`(newValue) }
-    }
-    public var `enter_cost`: Double {
-        get { `get_enter_cost`() }
-        set { `set_enter_cost`(newValue) }
-    }
-    public var `travel_cost`: Double {
-        get { `get_travel_cost`() }
-        set { `set_travel_cost`(newValue) }
+    @inline(__always) public static func `region_set_owner_id`(_ `region`: GodotRID, _ `owner_id`: Int64) {
+        shared.`region_set_owner_id`(`region`, `owner_id`)
     }
-}
-extension NavigationRegion3D {
-    public var `navigation_mesh`: NavigationMesh? {
-        get { `get_navigation_mesh`() }
-        set { `set_navigation_mesh`(newValue) }
-    }
-    public var `enabled`: Bool {
-        get { `is_enabled`() }
-        set { `set_enabled`(newValue) }
-    }
-    public var `use_edge_connections`: Bool {
-        get { `get_use_edge_connections`() }
-        set { `set_use_edge_connections`(newValue) }
-    }
-    public var `navigation_layers`: Int64 {
-        get { `get_navigation_layers`() }
-        set { `set_navigation_layers`(newValue) }
-    }
-    public var `enter_cost`: Double {
-        get { `get_enter_cost`() }
-        set { `set_enter_cost`(newValue) }
-    }
-    public var `travel_cost`: Double {
-        get { `get_travel_cost`() }
-        set { `set_travel_cost`(newValue) }
+    @inline(__always) public static func `region_get_owner_id`(_ `region`: GodotRID) -> Int64 {
+        return shared.`region_get_owner_id`(`region`)
     }
-}
-extension NinePatchRect {
-    public var `texture`: Texture2D? {
-        get { `get_texture`() }
-        set { `set_texture`(newValue) }
-    }
-    public var `draw_center`: Bool {
-        get { `is_draw_center_enabled`() }
-        set { `set_draw_center`(newValue) }
-    }
-    public var `region_rect`: Rect2 {
-        get { `get_region_rect`() }
-        set { `set_region_rect`(newValue) }
-    }
-    public var `patch_margin_left`: Int64 {
-        get { `get_patch_margin`(0) }
-        set { `set_patch_margin`(0, newValue) }
-    }
-    public var `patch_margin_top`: Int64 {
-        get { `get_patch_margin`(1) }
-        set { `set_patch_margin`(1, newValue) }
-    }
-    public var `patch_margin_right`: Int64 {
-        get { `get_patch_margin`(2) }
-        set { `set_patch_margin`(2, newValue) }
-    }
-    public var `patch_margin_bottom`: Int64 {
-        get { `get_patch_margin`(3) }
-        set { `set_patch_margin`(3, newValue) }
-    }
-    public var `axis_stretch_horizontal`: NinePatchRect.AxisStretchMode {
-        get { `get_h_axis_stretch_mode`() }
-        set { `set_h_axis_stretch_mode`(newValue) }
-    }
-    public var `axis_stretch_vertical`: NinePatchRect.AxisStretchMode {
-        get { `get_v_axis_stretch_mode`() }
-        set { `set_v_axis_stretch_mode`(newValue) }
+    @inline(__always) public static func `region_owns_point`(_ `region`: GodotRID, _ `point`: Vector2) -> Bool {
+        return shared.`region_owns_point`(`region`, `point`)
     }
-}
-extension Node {
-    public var `name`: GodotStringName {
-        get { `get_name`() }
-        set { `set_name`(newValue) }
+    @inline(__always) public static func `region_set_map`(_ `region`: GodotRID, _ `map`: GodotRID) {
+        shared.`region_set_map`(`region`, `map`)
     }
-    public var `unique_name_in_owner`: Bool {
-        get { `is_unique_name_in_owner`() }
-        set { `set_unique_name_in_owner`(newValue) }
+    @inline(__always) public static func `region_get_map`(_ `region`: GodotRID) -> GodotRID {
+        return shared.`region_get_map`(`region`)
     }
-    public var `scene_file_path`: GodotString {
-        get { `get_scene_file_path`() }
-        set { `set_scene_file_path`(newValue) }
+    @inline(__always) public static func `region_set_navigation_layers`(_ `region`: GodotRID, _ `navigation_layers`: Int64) {
+        shared.`region_set_navigation_layers`(`region`, `navigation_layers`)
     }
-    public var `owner`: Node? {
-        get { `get_owner`() }
-        set { `set_owner`(newValue) }
+    @inline(__always) public static func `region_get_navigation_layers`(_ `region`: GodotRID) -> Int64 {
+        return shared.`region_get_navigation_layers`(`region`)
     }
-    public var `multiplayer`: MultiplayerAPI? {
-        get { `get_multiplayer`() }
+    @inline(__always) public static func `region_set_transform`(_ `region`: GodotRID, _ `transform`: Transform2D) {
+        shared.`region_set_transform`(`region`, `transform`)
     }
-    public var `process_mode`: Node.ProcessMode {
-        get { `get_process_mode`() }
-        set { `set_process_mode`(newValue) }
+    @inline(__always) public static func `region_get_transform`(_ `region`: GodotRID) -> Transform2D {
+        return shared.`region_get_transform`(`region`)
     }
-    public var `process_priority`: Int64 {
-        get { `get_process_priority`() }
-        set { `set_process_priority`(newValue) }
+    @inline(__always) public static func `region_set_navigation_polygon`(_ `region`: GodotRID, _ `navigation_polygon`: NavigationPolygon?) {
+        shared.`region_set_navigation_polygon`(`region`, `navigation_polygon`)
     }
-    public var `process_physics_priority`: Int64 {
-        get { `get_physics_process_priority`() }
-        set { `set_physics_process_priority`(newValue) }
+    @inline(__always) public static func `region_get_connections_count`(_ `region`: GodotRID) -> Int64 {
+        return shared.`region_get_connections_count`(`region`)
     }
-    public var `process_thread_group`: Node.ProcessThreadGroup {
-        get { `get_process_thread_group`() }
-        set { `set_process_thread_group`(newValue) }
+    @inline(__always) public static func `region_get_connection_pathway_start`(_ `region`: GodotRID, _ `connection`: Int64) -> Vector2 {
+        return shared.`region_get_connection_pathway_start`(`region`, `connection`)
     }
-    public var `process_thread_group_order`: Int64 {
-        get { `get_process_thread_group_order`() }
-        set { `set_process_thread_group_order`(newValue) }
+    @inline(__always) public static func `region_get_connection_pathway_end`(_ `region`: GodotRID, _ `connection`: Int64) -> Vector2 {
+        return shared.`region_get_connection_pathway_end`(`region`, `connection`)
     }
-    public var `process_thread_messages`: Node.ProcessThreadMessages {
-        get { `get_process_thread_messages`() }
-        set { `set_process_thread_messages`(newValue) }
+    @inline(__always) public static func `region_get_closest_point`(_ `region`: GodotRID, _ `to_point`: Vector2) -> Vector2 {
+        return shared.`region_get_closest_point`(`region`, `to_point`)
     }
-    public var `physics_interpolation_mode`: Node.PhysicsInterpolationMode {
-        get { `get_physics_interpolation_mode`() }
-        set { `set_physics_interpolation_mode`(newValue) }
+    @inline(__always) public static func `region_get_random_point`(_ `region`: GodotRID, _ `navigation_layers`: Int64, _ `uniformly`: Bool) -> Vector2 {
+        return shared.`region_get_random_point`(`region`, `navigation_layers`, `uniformly`)
     }
-    public var `auto_translate_mode`: Node.AutoTranslateMode {
-        get { `get_auto_translate_mode`() }
-        set { `set_auto_translate_mode`(newValue) }
+    @inline(__always) public static func `region_get_bounds`(_ `region`: GodotRID) -> Rect2 {
+        return shared.`region_get_bounds`(`region`)
     }
-    public var `editor_description`: GodotString {
-        get { `get_editor_description`() }
-        set { `set_editor_description`(newValue) }
+    @inline(__always) public static func `link_create`() -> GodotRID {
+        return shared.`link_create`()
     }
-}
-extension Node2D {
-    public var `position`: Vector2 {
-        get { `get_position`() }
-        set { `set_position`(newValue) }
-    }
-    public var `rotation`: Double {
-        get { `get_rotation`() }
-        set { `set_rotation`(newValue) }
-    }
-    public var `rotation_degrees`: Double {
-        get { `get_rotation_degrees`() }
-        set { `set_rotation_degrees`(newValue) }
-    }
-    public var `scale`: Vector2 {
-        get { `get_scale`() }
-        set { `set_scale`(newValue) }
-    }
-    public var `skew`: Double {
-        get { `get_skew`() }
-        set { `set_skew`(newValue) }
-    }
-    public var `transform`: Transform2D {
-        get { `get_transform`() }
-        set { `set_transform`(newValue) }
-    }
-    public var `global_position`: Vector2 {
-        get { `get_global_position`() }
-        set { `set_global_position`(newValue) }
-    }
-    public var `global_rotation`: Double {
-        get { `get_global_rotation`() }
-        set { `set_global_rotation`(newValue) }
-    }
-    public var `global_rotation_degrees`: Double {
-        get { `get_global_rotation_degrees`() }
-        set { `set_global_rotation_degrees`(newValue) }
-    }
-    public var `global_scale`: Vector2 {
-        get { `get_global_scale`() }
-        set { `set_global_scale`(newValue) }
-    }
-    public var `global_skew`: Double {
-        get { `get_global_skew`() }
-        set { `set_global_skew`(newValue) }
-    }
-    public var `global_transform`: Transform2D {
-        get { `get_global_transform`() }
-        set { `set_global_transform`(newValue) }
+    @inline(__always) public static func `link_get_iteration_id`(_ `link`: GodotRID) -> Int64 {
+        return shared.`link_get_iteration_id`(`link`)
     }
-}
-extension Node3D {
-    public var `transform`: Transform3D {
-        get { `get_transform`() }
-        set { `set_transform`(newValue) }
-    }
-    public var `global_transform`: Transform3D {
-        get { `get_global_transform`() }
-        set { `set_global_transform`(newValue) }
-    }
-    public var `position`: Vector3 {
-        get { `get_position`() }
-        set { `set_position`(newValue) }
-    }
-    public var `rotation`: Vector3 {
-        get { `get_rotation`() }
-        set { `set_rotation`(newValue) }
-    }
-    public var `rotation_degrees`: Vector3 {
-        get { `get_rotation_degrees`() }
-        set { `set_rotation_degrees`(newValue) }
-    }
-    public var `quaternion`: Quaternion {
-        get { `get_quaternion`() }
-        set { `set_quaternion`(newValue) }
-    }
-    public var `basis`: Basis {
-        get { `get_basis`() }
-        set { `set_basis`(newValue) }
-    }
-    public var `scale`: Vector3 {
-        get { `get_scale`() }
-        set { `set_scale`(newValue) }
-    }
-    public var `rotation_edit_mode`: Node3D.RotationEditMode {
-        get { `get_rotation_edit_mode`() }
-        set { `set_rotation_edit_mode`(newValue) }
-    }
-    public var `rotation_order`: Godot.EulerOrder {
-        get { `get_rotation_order`() }
-        set { `set_rotation_order`(newValue) }
-    }
-    public var `top_level`: Bool {
-        get { `is_set_as_top_level`() }
-        set { `set_as_top_level`(newValue) }
-    }
-    public var `global_position`: Vector3 {
-        get { `get_global_position`() }
-        set { `set_global_position`(newValue) }
-    }
-    public var `global_basis`: Basis {
-        get { `get_global_basis`() }
-        set { `set_global_basis`(newValue) }
-    }
-    public var `global_rotation`: Vector3 {
-        get { `get_global_rotation`() }
-        set { `set_global_rotation`(newValue) }
-    }
-    public var `global_rotation_degrees`: Vector3 {
-        get { `get_global_rotation_degrees`() }
-        set { `set_global_rotation_degrees`(newValue) }
-    }
-    public var `visible`: Bool {
-        get { `is_visible`() }
-        set { `set_visible`(newValue) }
-    }
-    public var `visibility_parent`: GodotNodePath {
-        get { `get_visibility_parent`() }
-        set { `set_visibility_parent`(newValue) }
+    @inline(__always) public static func `link_set_map`(_ `link`: GodotRID, _ `map`: GodotRID) {
+        shared.`link_set_map`(`link`, `map`)
     }
-}
-extension NoiseTexture2D {
-    public var `width`: Int64 {
-        get { `get_width`() }
-        set { `set_width`(newValue) }
-    }
-    public var `height`: Int64 {
-        get { `get_height`() }
-        set { `set_height`(newValue) }
-    }
-    public var `generate_mipmaps`: Bool {
-        get { `is_generating_mipmaps`() }
-        set { `set_generate_mipmaps`(newValue) }
-    }
-    public var `color_ramp`: Gradient? {
-        get { `get_color_ramp`() }
-        set { `set_color_ramp`(newValue) }
-    }
-    public var `seamless`: Bool {
-        get { `get_seamless`() }
-        set { `set_seamless`(newValue) }
-    }
-    public var `invert`: Bool {
-        get { `get_invert`() }
-        set { `set_invert`(newValue) }
-    }
-    public var `in_3d_space`: Bool {
-        get { `is_in_3d_space`() }
-        set { `set_in_3d_space`(newValue) }
-    }
-    public var `as_normal_map`: Bool {
-        get { `is_normal_map`() }
-        set { `set_as_normal_map`(newValue) }
-    }
-    public var `normalize`: Bool {
-        get { `is_normalized`() }
-        set { `set_normalize`(newValue) }
-    }
-    public var `seamless_blend_skirt`: Double {
-        get { `get_seamless_blend_skirt`() }
-        set { `set_seamless_blend_skirt`(newValue) }
-    }
-    public var `bump_strength`: Double {
-        get { `get_bump_strength`() }
-        set { `set_bump_strength`(newValue) }
+    @inline(__always) public static func `link_get_map`(_ `link`: GodotRID) -> GodotRID {
+        return shared.`link_get_map`(`link`)
     }
-}
-extension NoiseTexture3D {
-    public var `width`: Int64 {
-        get { `get_width`() }
-        set { `set_width`(newValue) }
-    }
-    public var `height`: Int64 {
-        get { `get_height`() }
-        set { `set_height`(newValue) }
-    }
-    public var `depth`: Int64 {
-        get { `get_depth`() }
-        set { `set_depth`(newValue) }
-    }
-    public var `color_ramp`: Gradient? {
-        get { `get_color_ramp`() }
-        set { `set_color_ramp`(newValue) }
-    }
-    public var `seamless`: Bool {
-        get { `get_seamless`() }
-        set { `set_seamless`(newValue) }
-    }
-    public var `invert`: Bool {
-        get { `get_invert`() }
-        set { `set_invert`(newValue) }
-    }
-    public var `normalize`: Bool {
-        get { `is_normalized`() }
-        set { `set_normalize`(newValue) }
-    }
-    public var `seamless_blend_skirt`: Double {
-        get { `get_seamless_blend_skirt`() }
-        set { `set_seamless_blend_skirt`(newValue) }
+    @inline(__always) public static func `link_set_enabled`(_ `link`: GodotRID, _ `enabled`: Bool) {
+        shared.`link_set_enabled`(`link`, `enabled`)
     }
-}
-extension OS {
-    public var `low_processor_usage_mode`: Bool {
-        get { `is_in_low_processor_usage_mode`() }
-        set { `set_low_processor_usage_mode`(newValue) }
-    }
-    public var `low_processor_usage_mode_sleep_usec`: Int64 {
-        get { `get_low_processor_usage_mode_sleep_usec`() }
-        set { `set_low_processor_usage_mode_sleep_usec`(newValue) }
-    }
-    public var `delta_smoothing`: Bool {
-        get { `is_delta_smoothing_enabled`() }
-        set { `set_delta_smoothing`(newValue) }
+    @inline(__always) public static func `link_get_enabled`(_ `link`: GodotRID) -> Bool {
+        return shared.`link_get_enabled`(`link`)
     }
-}
-extension OccluderInstance3D {
-    public var `occluder`: Occluder3D? {
-        get { `get_occluder`() }
-        set { `set_occluder`(newValue) }
-    }
-    public var `bake_mask`: Int64 {
-        get { `get_bake_mask`() }
-        set { `set_bake_mask`(newValue) }
-    }
-    public var `bake_simplification_distance`: Double {
-        get { `get_bake_simplification_distance`() }
-        set { `set_bake_simplification_distance`(newValue) }
+    @inline(__always) public static func `link_set_bidirectional`(_ `link`: GodotRID, _ `bidirectional`: Bool) {
+        shared.`link_set_bidirectional`(`link`, `bidirectional`)
     }
-}
-extension OccluderPolygon2D {
-    public var `closed`: Bool {
-        get { `is_closed`() }
-        set { `set_closed`(newValue) }
-    }
-    public var `cull_mode`: OccluderPolygon2D.CullMode {
-        get { `get_cull_mode`() }
-        set { `set_cull_mode`(newValue) }
-    }
-    public var `polygon`: GodotPackedVector2Array {
-        get { `get_polygon`() }
-        set { `set_polygon`(newValue) }
+    @inline(__always) public static func `link_is_bidirectional`(_ `link`: GodotRID) -> Bool {
+        return shared.`link_is_bidirectional`(`link`)
     }
-}
-extension OggPacketSequence {
-    public var `packet_data`: GodotArrayOf<GodotArray> {
-        get { `get_packet_data`() }
-        set { `set_packet_data`(newValue) }
-    }
-    public var `granule_positions`: GodotPackedInt64Array {
-        get { `get_packet_granule_positions`() }
-        set { `set_packet_granule_positions`(newValue) }
-    }
-    public var `sampling_rate`: Double {
-        get { `get_sampling_rate`() }
-        set { `set_sampling_rate`(newValue) }
+    @inline(__always) public static func `link_set_navigation_layers`(_ `link`: GodotRID, _ `navigation_layers`: Int64) {
+        shared.`link_set_navigation_layers`(`link`, `navigation_layers`)
     }
-}
-extension OmniLight3D {
-    public var `omni_range`: Double {
-        get { `get_param`(4) }
-        set { `set_param`(4, newValue) }
-    }
-    public var `omni_attenuation`: Double {
-        get { `get_param`(6) }
-        set { `set_param`(6, newValue) }
-    }
-    public var `omni_shadow_mode`: OmniLight3D.ShadowMode {
-        get { `get_shadow_mode`() }
-        set { `set_shadow_mode`(newValue) }
+    @inline(__always) public static func `link_get_navigation_layers`(_ `link`: GodotRID) -> Int64 {
+        return shared.`link_get_navigation_layers`(`link`)
     }
-}
-extension OpenXRAction {
-    public var `localized_name`: GodotString {
-        get { `get_localized_name`() }
-        set { `set_localized_name`(newValue) }
-    }
-    public var `action_type`: OpenXRAction.ActionType {
-        get { `get_action_type`() }
-        set { `set_action_type`(newValue) }
-    }
-    public var `toplevel_paths`: GodotPackedStringArray {
-        get { `get_toplevel_paths`() }
-        set { `set_toplevel_paths`(newValue) }
+    @inline(__always) public static func `link_set_start_position`(_ `link`: GodotRID, _ `position`: Vector2) {
+        shared.`link_set_start_position`(`link`, `position`)
     }
-}
-extension OpenXRActionSet {
-    public var `localized_name`: GodotString {
-        get { `get_localized_name`() }
-        set { `set_localized_name`(newValue) }
-    }
-    public var `priority`: Int64 {
-        get { `get_priority`() }
-        set { `set_priority`(newValue) }
+    @inline(__always) public static func `link_get_start_position`(_ `link`: GodotRID) -> Vector2 {
+        return shared.`link_get_start_position`(`link`)
     }
-}
-extension OpenXRAnalogThresholdModifier {
-    public var `on_threshold`: Double {
-        get { `get_on_threshold`() }
-        set { `set_on_threshold`(newValue) }
-    }
-    public var `off_threshold`: Double {
-        get { `get_off_threshold`() }
-        set { `set_off_threshold`(newValue) }
-    }
-    public var `on_haptic`: OpenXRHapticBase? {
-        get { `get_on_haptic`() }
-        set { `set_on_haptic`(newValue) }
-    }
-    public var `off_haptic`: OpenXRHapticBase? {
-        get { `get_off_haptic`() }
-        set { `set_off_haptic`(newValue) }
+    @inline(__always) public static func `link_set_end_position`(_ `link`: GodotRID, _ `position`: Vector2) {
+        shared.`link_set_end_position`(`link`, `position`)
     }
-}
-extension OpenXRAnchorTracker {
-    public var `uuid`: GodotString {
-        get { `get_uuid`() }
-        set { `set_uuid`(newValue) }
+    @inline(__always) public static func `link_get_end_position`(_ `link`: GodotRID) -> Vector2 {
+        return shared.`link_get_end_position`(`link`)
     }
-}
-extension OpenXRCompositionLayer {
-    public var `use_android_surface`: Bool {
-        get { `get_use_android_surface`() }
-        set { `set_use_android_surface`(newValue) }
-    }
-    public var `protected_content`: Bool {
-        get { `is_protected_content`() }
-        set { `set_protected_content`(newValue) }
-    }
-    public var `android_surface_size`: Vector2i {
-        get { `get_android_surface_size`() }
-        set { `set_android_surface_size`(newValue) }
-    }
-    public var `sort_order`: Int64 {
-        get { `get_sort_order`() }
-        set { `set_sort_order`(newValue) }
-    }
-    public var `alpha_blend`: Bool {
-        get { `get_alpha_blend`() }
-        set { `set_alpha_blend`(newValue) }
-    }
-    public var `enable_hole_punch`: Bool {
-        get { `get_enable_hole_punch`() }
-        set { `set_enable_hole_punch`(newValue) }
-    }
-    public var `eye_visibility`: OpenXRCompositionLayer.EyeVisibility {
-        get { `get_eye_visibility`() }
-        set { `set_eye_visibility`(newValue) }
-    }
-    public var `swapchain_state_min_filter`: OpenXRCompositionLayer.Filter {
-        get { `get_min_filter`() }
-        set { `set_min_filter`(newValue) }
-    }
-    public var `swapchain_state_mag_filter`: OpenXRCompositionLayer.Filter {
-        get { `get_mag_filter`() }
-        set { `set_mag_filter`(newValue) }
-    }
-    public var `swapchain_state_mipmap_mode`: OpenXRCompositionLayer.MipmapMode {
-        get { `get_mipmap_mode`() }
-        set { `set_mipmap_mode`(newValue) }
-    }
-    public var `swapchain_state_horizontal_wrap`: OpenXRCompositionLayer.Wrap {
-        get { `get_horizontal_wrap`() }
-        set { `set_horizontal_wrap`(newValue) }
-    }
-    public var `swapchain_state_vertical_wrap`: OpenXRCompositionLayer.Wrap {
-        get { `get_vertical_wrap`() }
-        set { `set_vertical_wrap`(newValue) }
-    }
-    public var `swapchain_state_red_swizzle`: OpenXRCompositionLayer.Swizzle {
-        get { `get_red_swizzle`() }
-        set { `set_red_swizzle`(newValue) }
-    }
-    public var `swapchain_state_green_swizzle`: OpenXRCompositionLayer.Swizzle {
-        get { `get_green_swizzle`() }
-        set { `set_green_swizzle`(newValue) }
-    }
-    public var `swapchain_state_blue_swizzle`: OpenXRCompositionLayer.Swizzle {
-        get { `get_blue_swizzle`() }
-        set { `set_blue_swizzle`(newValue) }
-    }
-    public var `swapchain_state_alpha_swizzle`: OpenXRCompositionLayer.Swizzle {
-        get { `get_alpha_swizzle`() }
-        set { `set_alpha_swizzle`(newValue) }
-    }
-    public var `swapchain_state_max_anisotropy`: Double {
-        get { `get_max_anisotropy`() }
-        set { `set_max_anisotropy`(newValue) }
-    }
-    public var `swapchain_state_border_color`: Color {
-        get { `get_border_color`() }
-        set { `set_border_color`(newValue) }
+    @inline(__always) public static func `link_set_enter_cost`(_ `link`: GodotRID, _ `enter_cost`: Double) {
+        shared.`link_set_enter_cost`(`link`, `enter_cost`)
     }
-}
-extension OpenXRCompositionLayerCylinder {
-    public var `radius`: Double {
-        get { `get_radius`() }
-        set { `set_radius`(newValue) }
-    }
-    public var `aspect_ratio`: Double {
-        get { `get_aspect_ratio`() }
-        set { `set_aspect_ratio`(newValue) }
-    }
-    public var `central_angle`: Double {
-        get { `get_central_angle`() }
-        set { `set_central_angle`(newValue) }
-    }
-    public var `fallback_segments`: Int64 {
-        get { `get_fallback_segments`() }
-        set { `set_fallback_segments`(newValue) }
+    @inline(__always) public static func `link_get_enter_cost`(_ `link`: GodotRID) -> Double {
+        return shared.`link_get_enter_cost`(`link`)
     }
-}
-extension OpenXRCompositionLayerEquirect {
-    public var `radius`: Double {
-        get { `get_radius`() }
-        set { `set_radius`(newValue) }
-    }
-    public var `central_horizontal_angle`: Double {
-        get { `get_central_horizontal_angle`() }
-        set { `set_central_horizontal_angle`(newValue) }
-    }
-    public var `upper_vertical_angle`: Double {
-        get { `get_upper_vertical_angle`() }
-        set { `set_upper_vertical_angle`(newValue) }
-    }
-    public var `lower_vertical_angle`: Double {
-        get { `get_lower_vertical_angle`() }
-        set { `set_lower_vertical_angle`(newValue) }
-    }
-    public var `fallback_segments`: Int64 {
-        get { `get_fallback_segments`() }
-        set { `set_fallback_segments`(newValue) }
+    @inline(__always) public static func `link_set_travel_cost`(_ `link`: GodotRID, _ `travel_cost`: Double) {
+        shared.`link_set_travel_cost`(`link`, `travel_cost`)
     }
-}
-extension OpenXRCompositionLayerQuad {
-    public var `quad_size`: Vector2 {
-        get { `get_quad_size`() }
-        set { `set_quad_size`(newValue) }
+    @inline(__always) public static func `link_get_travel_cost`(_ `link`: GodotRID) -> Double {
+        return shared.`link_get_travel_cost`(`link`)
     }
-}
-extension OpenXRDpadBindingModifier {
-    public var `action_set`: OpenXRActionSet? {
-        get { `get_action_set`() }
-        set { `set_action_set`(newValue) }
-    }
-    public var `input_path`: GodotString {
-        get { `get_input_path`() }
-        set { `set_input_path`(newValue) }
-    }
-    public var `threshold`: Double {
-        get { `get_threshold`() }
-        set { `set_threshold`(newValue) }
-    }
-    public var `threshold_released`: Double {
-        get { `get_threshold_released`() }
-        set { `set_threshold_released`(newValue) }
-    }
-    public var `center_region`: Double {
-        get { `get_center_region`() }
-        set { `set_center_region`(newValue) }
-    }
-    public var `wedge_angle`: Double {
-        get { `get_wedge_angle`() }
-        set { `set_wedge_angle`(newValue) }
-    }
-    public var `is_sticky`: Bool {
-        get { `get_is_sticky`() }
-        set { `set_is_sticky`(newValue) }
-    }
-    public var `on_haptic`: OpenXRHapticBase? {
-        get { `get_on_haptic`() }
-        set { `set_on_haptic`(newValue) }
-    }
-    public var `off_haptic`: OpenXRHapticBase? {
-        get { `get_off_haptic`() }
-        set { `set_off_haptic`(newValue) }
+    @inline(__always) public static func `link_set_owner_id`(_ `link`: GodotRID, _ `owner_id`: Int64) {
+        shared.`link_set_owner_id`(`link`, `owner_id`)
     }
-}
-extension OpenXRFrameSynthesisExtension {
-    public var `enabled`: Bool {
-        get { `is_enabled`() }
-        set { `set_enabled`(newValue) }
-    }
-    public var `relax_frame_interval`: Bool {
-        get { `get_relax_frame_interval`() }
-        set { `set_relax_frame_interval`(newValue) }
+    @inline(__always) public static func `link_get_owner_id`(_ `link`: GodotRID) -> Int64 {
+        return shared.`link_get_owner_id`(`link`)
     }
-}
-extension OpenXRHand {
-    public var `hand`: OpenXRHand.Hands {
-        get { `get_hand`() }
-        set { `set_hand`(newValue) }
-    }
-    public var `motion_range`: OpenXRHand.MotionRange {
-        get { `get_motion_range`() }
-        set { `set_motion_range`(newValue) }
-    }
-    public var `hand_skeleton`: GodotNodePath {
-        get { `get_hand_skeleton`() }
-        set { `set_hand_skeleton`(newValue) }
-    }
-    public var `skeleton_rig`: OpenXRHand.SkeletonRig {
-        get { `get_skeleton_rig`() }
-        set { `set_skeleton_rig`(newValue) }
-    }
-    public var `bone_update`: OpenXRHand.BoneUpdate {
-        get { `get_bone_update`() }
-        set { `set_bone_update`(newValue) }
+    @inline(__always) public static func `agent_create`() -> GodotRID {
+        return shared.`agent_create`()
     }
-}
-extension OpenXRHapticVibration {
-    public var `duration`: Int64 {
-        get { `get_duration`() }
-        set { `set_duration`(newValue) }
-    }
-    public var `frequency`: Double {
-        get { `get_frequency`() }
-        set { `set_frequency`(newValue) }
-    }
-    public var `amplitude`: Double {
-        get { `get_amplitude`() }
-        set { `set_amplitude`(newValue) }
+    @inline(__always) public static func `agent_set_avoidance_enabled`(_ `agent`: GodotRID, _ `enabled`: Bool) {
+        shared.`agent_set_avoidance_enabled`(`agent`, `enabled`)
     }
-}
-extension OpenXRIPBinding {
-    public var `action`: OpenXRAction? {
-        get { `get_action`() }
-        set { `set_action`(newValue) }
-    }
-    public var `binding_path`: GodotString {
-        get { `get_binding_path`() }
-        set { `set_binding_path`(newValue) }
-    }
-    public var `paths`: GodotPackedStringArray {
-        get { `get_paths`() }
-        set { `set_paths`(newValue) }
+    @inline(__always) public static func `agent_get_avoidance_enabled`(_ `agent`: GodotRID) -> Bool {
+        return shared.`agent_get_avoidance_enabled`(`agent`)
     }
-}
-extension OpenXRInteractionProfile {
-    public var `interaction_profile_path`: GodotString {
-        get { `get_interaction_profile_path`() }
-        set { `set_interaction_profile_path`(newValue) }
+    @inline(__always) public static func `agent_set_map`(_ `agent`: GodotRID, _ `map`: GodotRID) {
+        shared.`agent_set_map`(`agent`, `map`)
     }
-}
-extension OpenXRInterface {
-    public var `display_refresh_rate`: Double {
-        get { `get_display_refresh_rate`() }
-        set { `set_display_refresh_rate`(newValue) }
-    }
-    public var `render_target_size_multiplier`: Double {
-        get { `get_render_target_size_multiplier`() }
-        set { `set_render_target_size_multiplier`(newValue) }
-    }
-    public var `foveation_level`: Int64 {
-        get { `get_foveation_level`() }
-        set { `set_foveation_level`(newValue) }
-    }
-    public var `foveation_dynamic`: Bool {
-        get { `get_foveation_dynamic`() }
-        set { `set_foveation_dynamic`(newValue) }
-    }
-    public var `foveation_with_subsampled_images`: Bool {
-        get { `get_foveation_with_subsampled_images`() }
-        set { `set_foveation_with_subsampled_images`(newValue) }
-    }
-    public var `vrs_min_radius`: Double {
-        get { `get_vrs_min_radius`() }
-        set { `set_vrs_min_radius`(newValue) }
-    }
-    public var `vrs_strength`: Double {
-        get { `get_vrs_strength`() }
-        set { `set_vrs_strength`(newValue) }
+    @inline(__always) public static func `agent_get_map`(_ `agent`: GodotRID) -> GodotRID {
+        return shared.`agent_get_map`(`agent`)
     }
-}
-extension OpenXRMarkerTracker {
-    public var `marker_type`: OpenXRSpatialComponentMarkerList.MarkerType {
-        get { `get_marker_type`() }
-        set { `set_marker_type`(newValue) }
-    }
-    public var `marker_id`: Int64 {
-        get { `get_marker_id`() }
-        set { `set_marker_id`(newValue) }
+    @inline(__always) public static func `agent_set_paused`(_ `agent`: GodotRID, _ `paused`: Bool) {
+        shared.`agent_set_paused`(`agent`, `paused`)
     }
-}
-extension OpenXRPlaneTracker {
-    public var `plane_alignment`: OpenXRSpatialComponentPlaneAlignmentList.PlaneAlignment {
-        get { `get_plane_alignment`() }
-        set { `set_plane_alignment`(newValue) }
-    }
-    public var `plane_label`: GodotString {
-        get { `get_plane_label`() }
-        set { `set_plane_label`(newValue) }
+    @inline(__always) public static func `agent_get_paused`(_ `agent`: GodotRID) -> Bool {
+        return shared.`agent_get_paused`(`agent`)
     }
-}
-extension OpenXRRenderModel {
-    public var `render_model`: GodotRID {
-        get { `get_render_model`() }
-        set { `set_render_model`(newValue) }
+    @inline(__always) public static func `agent_set_neighbor_distance`(_ `agent`: GodotRID, _ `distance`: Double) {
+        shared.`agent_set_neighbor_distance`(`agent`, `distance`)
     }
-}
-extension OpenXRRenderModelManager {
-    public var `tracker`: OpenXRRenderModelManager.RenderModelTracker {
-        get { `get_tracker`() }
-        set { `set_tracker`(newValue) }
-    }
-    public var `make_local_to_pose`: GodotString {
-        get { `get_make_local_to_pose`() }
-        set { `set_make_local_to_pose`(newValue) }
+    @inline(__always) public static func `agent_get_neighbor_distance`(_ `agent`: GodotRID) -> Double {
+        return shared.`agent_get_neighbor_distance`(`agent`)
     }
-}
-extension OpenXRSpatialCapabilityConfigurationAprilTag {
-    public var `april_dict`: OpenXRSpatialCapabilityConfigurationAprilTag.AprilTagDict {
-        get { `get_april_dict`() }
-        set { `set_april_dict`(newValue) }
+    @inline(__always) public static func `agent_set_max_neighbors`(_ `agent`: GodotRID, _ `count`: Int64) {
+        shared.`agent_set_max_neighbors`(`agent`, `count`)
     }
-}
-extension OpenXRSpatialCapabilityConfigurationAruco {
-    public var `aruco_dict`: OpenXRSpatialCapabilityConfigurationAruco.ArucoDict {
-        get { `get_aruco_dict`() }
-        set { `set_aruco_dict`(newValue) }
+    @inline(__always) public static func `agent_get_max_neighbors`(_ `agent`: GodotRID) -> Int64 {
+        return shared.`agent_get_max_neighbors`(`agent`)
     }
-}
-extension OpenXRSpatialEntityTracker {
-    public var `entity`: GodotRID {
-        get { `get_entity`() }
-        set { `set_entity`(newValue) }
-    }
-    public var `spatial_tracking_state`: OpenXRSpatialEntityTracker.EntityTrackingState {
-        get { `get_spatial_tracking_state`() }
-        set { `set_spatial_tracking_state`(newValue) }
+    @inline(__always) public static func `agent_set_time_horizon_agents`(_ `agent`: GodotRID, _ `time_horizon`: Double) {
+        shared.`agent_set_time_horizon_agents`(`agent`, `time_horizon`)
     }
-}
-extension OpenXRStructureBase {
-    public var `next`: OpenXRStructureBase? {
-        get { `get_next`() }
-        set { `set_next`(newValue) }
+    @inline(__always) public static func `agent_get_time_horizon_agents`(_ `agent`: GodotRID) -> Double {
+        return shared.`agent_get_time_horizon_agents`(`agent`)
     }
-}
-extension OptionButton {
-    public var `selected`: Int64 {
-        get { `get_selected`() }
+    @inline(__always) public static func `agent_set_time_horizon_obstacles`(_ `agent`: GodotRID, _ `time_horizon`: Double) {
+        shared.`agent_set_time_horizon_obstacles`(`agent`, `time_horizon`)
     }
-    public var `fit_to_longest_item`: Bool {
-        get { `is_fit_to_longest_item`() }
-        set { `set_fit_to_longest_item`(newValue) }
+    @inline(__always) public static func `agent_get_time_horizon_obstacles`(_ `agent`: GodotRID) -> Double {
+        return shared.`agent_get_time_horizon_obstacles`(`agent`)
     }
-    public var `allow_reselect`: Bool {
-        get { `get_allow_reselect`() }
-        set { `set_allow_reselect`(newValue) }
+    @inline(__always) public static func `agent_set_radius`(_ `agent`: GodotRID, _ `radius`: Double) {
+        shared.`agent_set_radius`(`agent`, `radius`)
     }
-    public var `search_bar_enabled`: Bool {
-        get { `is_search_bar_enabled`() }
-        set { `set_search_bar_enabled`(newValue) }
+    @inline(__always) public static func `agent_get_radius`(_ `agent`: GodotRID) -> Double {
+        return shared.`agent_get_radius`(`agent`)
     }
-    public var `search_bar_min_item_count`: Int64 {
-        get { `get_search_bar_min_item_count`() }
-        set { `set_search_bar_min_item_count`(newValue) }
+    @inline(__always) public static func `agent_set_max_speed`(_ `agent`: GodotRID, _ `max_speed`: Double) {
+        shared.`agent_set_max_speed`(`agent`, `max_speed`)
     }
-    public var `search_bar_fuzzy_search_enabled`: Bool {
-        get { `is_search_bar_fuzzy_search_enabled`() }
-        set { `set_search_bar_fuzzy_search_enabled`(newValue) }
+    @inline(__always) public static func `agent_get_max_speed`(_ `agent`: GodotRID) -> Double {
+        return shared.`agent_get_max_speed`(`agent`)
     }
-    public var `search_bar_fuzzy_search_max_misses`: Int64 {
-        get { `get_search_bar_fuzzy_search_max_misses`() }
-        set { `set_search_bar_fuzzy_search_max_misses`(newValue) }
+    @inline(__always) public static func `agent_set_velocity_forced`(_ `agent`: GodotRID, _ `velocity`: Vector2) {
+        shared.`agent_set_velocity_forced`(`agent`, `velocity`)
     }
-    public var `item_count`: Int64 {
-        get { `get_item_count`() }
-        set { `set_item_count`(newValue) }
+    @inline(__always) public static func `agent_set_velocity`(_ `agent`: GodotRID, _ `velocity`: Vector2) {
+        shared.`agent_set_velocity`(`agent`, `velocity`)
     }
-}
-extension PacketPeer {
-    public var `encode_buffer_max_size`: Int64 {
-        get { `get_encode_buffer_max_size`() }
-        set { `set_encode_buffer_max_size`(newValue) }
+    @inline(__always) public static func `agent_get_velocity`(_ `agent`: GodotRID) -> Vector2 {
+        return shared.`agent_get_velocity`(`agent`)
     }
-}
-extension PacketPeerStream {
-    public var `input_buffer_max_size`: Int64 {
-        get { `get_input_buffer_max_size`() }
-        set { `set_input_buffer_max_size`(newValue) }
-    }
-    public var `output_buffer_max_size`: Int64 {
-        get { `get_output_buffer_max_size`() }
-        set { `set_output_buffer_max_size`(newValue) }
-    }
-    public var `stream_peer`: StreamPeer? {
-        get { `get_stream_peer`() }
-        set { `set_stream_peer`(newValue) }
+    @inline(__always) public static func `agent_set_position`(_ `agent`: GodotRID, _ `position`: Vector2) {
+        shared.`agent_set_position`(`agent`, `position`)
     }
-}
-extension PanoramaSkyMaterial {
-    public var `panorama`: Texture2D? {
-        get { `get_panorama`() }
-        set { `set_panorama`(newValue) }
-    }
-    public var `filter`: Bool {
-        get { `is_filtering_enabled`() }
-        set { `set_filtering_enabled`(newValue) }
-    }
-    public var `energy_multiplier`: Double {
-        get { `get_energy_multiplier`() }
-        set { `set_energy_multiplier`(newValue) }
+    @inline(__always) public static func `agent_get_position`(_ `agent`: GodotRID) -> Vector2 {
+        return shared.`agent_get_position`(`agent`)
     }
-}
-extension Parallax2D {
-    public var `scroll_scale`: Vector2 {
-        get { `get_scroll_scale`() }
-        set { `set_scroll_scale`(newValue) }
-    }
-    public var `scroll_offset`: Vector2 {
-        get { `get_scroll_offset`() }
-        set { `set_scroll_offset`(newValue) }
-    }
-    public var `repeat_size`: Vector2 {
-        get { `get_repeat_size`() }
-        set { `set_repeat_size`(newValue) }
-    }
-    public var `autoscroll`: Vector2 {
-        get { `get_autoscroll`() }
-        set { `set_autoscroll`(newValue) }
-    }
-    public var `repeat_times`: Int64 {
-        get { `get_repeat_times`() }
-        set { `set_repeat_times`(newValue) }
-    }
-    public var `limit_begin`: Vector2 {
-        get { `get_limit_begin`() }
-        set { `set_limit_begin`(newValue) }
-    }
-    public var `limit_end`: Vector2 {
-        get { `get_limit_end`() }
-        set { `set_limit_end`(newValue) }
-    }
-    public var `follow_viewport`: Bool {
-        get { `get_follow_viewport`() }
-        set { `set_follow_viewport`(newValue) }
-    }
-    public var `ignore_camera_scroll`: Bool {
-        get { `is_ignore_camera_scroll`() }
-        set { `set_ignore_camera_scroll`(newValue) }
-    }
-    public var `screen_offset`: Vector2 {
-        get { `get_screen_offset`() }
-        set { `set_screen_offset`(newValue) }
+    @inline(__always) public static func `agent_is_map_changed`(_ `agent`: GodotRID) -> Bool {
+        return shared.`agent_is_map_changed`(`agent`)
     }
-}
-extension ParallaxBackground {
-    public var `scroll_offset`: Vector2 {
-        get { `get_scroll_offset`() }
-        set { `set_scroll_offset`(newValue) }
-    }
-    public var `scroll_base_offset`: Vector2 {
-        get { `get_scroll_base_offset`() }
-        set { `set_scroll_base_offset`(newValue) }
-    }
-    public var `scroll_base_scale`: Vector2 {
-        get { `get_scroll_base_scale`() }
-        set { `set_scroll_base_scale`(newValue) }
-    }
-    public var `scroll_limit_begin`: Vector2 {
-        get { `get_limit_begin`() }
-        set { `set_limit_begin`(newValue) }
-    }
-    public var `scroll_limit_end`: Vector2 {
-        get { `get_limit_end`() }
-        set { `set_limit_end`(newValue) }
-    }
-    public var `scroll_ignore_camera_zoom`: Bool {
-        get { `is_ignore_camera_zoom`() }
-        set { `set_ignore_camera_zoom`(newValue) }
+    @inline(__always) public static func `agent_set_avoidance_callback`(_ `agent`: GodotRID, _ `callback`: borrowing GodotCallable) {
+        shared.`agent_set_avoidance_callback`(`agent`, `callback`)
     }
-}
-extension ParallaxLayer {
-    public var `motion_scale`: Vector2 {
-        get { `get_motion_scale`() }
-        set { `set_motion_scale`(newValue) }
-    }
-    public var `motion_offset`: Vector2 {
-        get { `get_motion_offset`() }
-        set { `set_motion_offset`(newValue) }
-    }
-    public var `motion_mirroring`: Vector2 {
-        get { `get_mirroring`() }
-        set { `set_mirroring`(newValue) }
+    @inline(__always) public static func `agent_has_avoidance_callback`(_ `agent`: GodotRID) -> Bool {
+        return shared.`agent_has_avoidance_callback`(`agent`)
     }
-}
-extension ParticleProcessMaterial {
-    public var `lifetime_randomness`: Double {
-        get { `get_lifetime_randomness`() }
-        set { `set_lifetime_randomness`(newValue) }
-    }
-    public var `particle_flag_align_y`: Bool {
-        get { `get_particle_flag`(0) }
-        set { `set_particle_flag`(0, newValue) }
-    }
-    public var `particle_flag_rotate_y`: Bool {
-        get { `get_particle_flag`(1) }
-        set { `set_particle_flag`(1, newValue) }
-    }
-    public var `particle_flag_disable_z`: Bool {
-        get { `get_particle_flag`(2) }
-        set { `set_particle_flag`(2, newValue) }
-    }
-    public var `particle_flag_damping_as_friction`: Bool {
-        get { `get_particle_flag`(3) }
-        set { `set_particle_flag`(3, newValue) }
-    }
-    public var `particle_flag_inherit_emitter_scale`: Bool {
-        get { `get_particle_flag`(4) }
-        set { `set_particle_flag`(4, newValue) }
-    }
-    public var `particle_flag_preserve_color`: Bool {
-        get { `get_particle_flag`(5) }
-        set { `set_particle_flag`(5, newValue) }
-    }
-    public var `emission_shape_offset`: Vector3 {
-        get { `get_emission_shape_offset`() }
-        set { `set_emission_shape_offset`(newValue) }
-    }
-    public var `emission_shape_scale`: Vector3 {
-        get { `get_emission_shape_scale`() }
-        set { `set_emission_shape_scale`(newValue) }
-    }
-    public var `emission_shape`: ParticleProcessMaterial.EmissionShape {
-        get { `get_emission_shape`() }
-        set { `set_emission_shape`(newValue) }
-    }
-    public var `emission_sphere_radius`: Double {
-        get { `get_emission_sphere_radius`() }
-        set { `set_emission_sphere_radius`(newValue) }
-    }
-    public var `emission_box_extents`: Vector3 {
-        get { `get_emission_box_extents`() }
-        set { `set_emission_box_extents`(newValue) }
-    }
-    public var `emission_point_texture`: Texture2D? {
-        get { `get_emission_point_texture`() }
-        set { `set_emission_point_texture`(newValue) }
-    }
-    public var `emission_normal_texture`: Texture2D? {
-        get { `get_emission_normal_texture`() }
-        set { `set_emission_normal_texture`(newValue) }
-    }
-    public var `emission_color_texture`: Texture2D? {
-        get { `get_emission_color_texture`() }
-        set { `set_emission_color_texture`(newValue) }
-    }
-    public var `emission_point_count`: Int64 {
-        get { `get_emission_point_count`() }
-        set { `set_emission_point_count`(newValue) }
-    }
-    public var `emission_ring_axis`: Vector3 {
-        get { `get_emission_ring_axis`() }
-        set { `set_emission_ring_axis`(newValue) }
-    }
-    public var `emission_ring_height`: Double {
-        get { `get_emission_ring_height`() }
-        set { `set_emission_ring_height`(newValue) }
-    }
-    public var `emission_ring_radius`: Double {
-        get { `get_emission_ring_radius`() }
-        set { `set_emission_ring_radius`(newValue) }
-    }
-    public var `emission_ring_inner_radius`: Double {
-        get { `get_emission_ring_inner_radius`() }
-        set { `set_emission_ring_inner_radius`(newValue) }
-    }
-    public var `emission_ring_cone_angle`: Double {
-        get { `get_emission_ring_cone_angle`() }
-        set { `set_emission_ring_cone_angle`(newValue) }
-    }
-    public var `angle`: Vector2 {
-        get { `get_param`(7) }
-        set { `set_param`(7, newValue) }
-    }
-    public var `angle_min`: Double {
-        get { `get_param_min`(7) }
-        set { `set_param_min`(7, newValue) }
-    }
-    public var `angle_max`: Double {
-        get { `get_param_max`(7) }
-        set { `set_param_max`(7, newValue) }
-    }
-    public var `use_rotation_3d`: Bool {
-        get { `is_using_rotation_3d`() }
-        set { `set_use_rotation_3d`(newValue) }
-    }
-    public var `rotation_3d_min`: Vector3 {
-        get { `get_rotation_3d_min`() }
-        set { `set_rotation_3d_min`(newValue) }
-    }
-    public var `rotation_3d_max`: Vector3 {
-        get { `get_rotation_3d_max`() }
-        set { `set_rotation_3d_max`(newValue) }
-    }
-    public var `inherit_velocity_ratio`: Double {
-        get { `get_inherit_velocity_ratio`() }
-        set { `set_inherit_velocity_ratio`(newValue) }
-    }
-    public var `velocity_pivot`: Vector3 {
-        get { `get_velocity_pivot`() }
-        set { `set_velocity_pivot`(newValue) }
-    }
-    public var `direction`: Vector3 {
-        get { `get_direction`() }
-        set { `set_direction`(newValue) }
-    }
-    public var `spread`: Double {
-        get { `get_spread`() }
-        set { `set_spread`(newValue) }
-    }
-    public var `flatness`: Double {
-        get { `get_flatness`() }
-        set { `set_flatness`(newValue) }
-    }
-    public var `initial_velocity`: Vector2 {
-        get { `get_param`(0) }
-        set { `set_param`(0, newValue) }
-    }
-    public var `initial_velocity_min`: Double {
-        get { `get_param_min`(0) }
-        set { `set_param_min`(0, newValue) }
-    }
-    public var `initial_velocity_max`: Double {
-        get { `get_param_max`(0) }
-        set { `set_param_max`(0, newValue) }
-    }
-    public var `angular_velocity`: Vector2 {
-        get { `get_param`(1) }
-        set { `set_param`(1, newValue) }
-    }
-    public var `angular_velocity_min`: Double {
-        get { `get_param_min`(1) }
-        set { `set_param_min`(1, newValue) }
-    }
-    public var `angular_velocity_max`: Double {
-        get { `get_param_max`(1) }
-        set { `set_param_max`(1, newValue) }
-    }
-    public var `directional_velocity`: Vector2 {
-        get { `get_param`(16) }
-        set { `set_param`(16, newValue) }
-    }
-    public var `directional_velocity_min`: Double {
-        get { `get_param_min`(16) }
-        set { `set_param_min`(16, newValue) }
-    }
-    public var `directional_velocity_max`: Double {
-        get { `get_param_max`(16) }
-        set { `set_param_max`(16, newValue) }
-    }
-    public var `orbit_velocity`: Vector2 {
-        get { `get_param`(2) }
-        set { `set_param`(2, newValue) }
-    }
-    public var `orbit_velocity_min`: Double {
-        get { `get_param_min`(2) }
-        set { `set_param_min`(2, newValue) }
-    }
-    public var `orbit_velocity_max`: Double {
-        get { `get_param_max`(2) }
-        set { `set_param_max`(2, newValue) }
-    }
-    public var `radial_velocity`: Vector2 {
-        get { `get_param`(15) }
-        set { `set_param`(15, newValue) }
-    }
-    public var `radial_velocity_min`: Double {
-        get { `get_param_min`(15) }
-        set { `set_param_min`(15, newValue) }
-    }
-    public var `radial_velocity_max`: Double {
-        get { `get_param_max`(15) }
-        set { `set_param_max`(15, newValue) }
-    }
-    public var `use_rotation_velocity_3d`: Bool {
-        get { `is_using_rotation_velocity_3d`() }
-        set { `set_using_rotation_velocity_3d`(newValue) }
-    }
-    public var `rotation_velocity_3d_min`: Vector3 {
-        get { `get_rotation_velocity_3d_min`() }
-        set { `set_rotation_velocity_3d_min`(newValue) }
-    }
-    public var `rotation_velocity_3d_max`: Vector3 {
-        get { `get_rotation_velocity_3d_max`() }
-        set { `set_rotation_velocity_3d_max`(newValue) }
-    }
-    public var `gravity`: Vector3 {
-        get { `get_gravity`() }
-        set { `set_gravity`(newValue) }
-    }
-    public var `linear_accel`: Vector2 {
-        get { `get_param`(3) }
-        set { `set_param`(3, newValue) }
-    }
-    public var `linear_accel_min`: Double {
-        get { `get_param_min`(3) }
-        set { `set_param_min`(3, newValue) }
-    }
-    public var `linear_accel_max`: Double {
-        get { `get_param_max`(3) }
-        set { `set_param_max`(3, newValue) }
-    }
-    public var `radial_accel`: Vector2 {
-        get { `get_param`(4) }
-        set { `set_param`(4, newValue) }
-    }
-    public var `radial_accel_min`: Double {
-        get { `get_param_min`(4) }
-        set { `set_param_min`(4, newValue) }
-    }
-    public var `radial_accel_max`: Double {
-        get { `get_param_max`(4) }
-        set { `set_param_max`(4, newValue) }
-    }
-    public var `tangential_accel`: Vector2 {
-        get { `get_param`(5) }
-        set { `set_param`(5, newValue) }
-    }
-    public var `tangential_accel_min`: Double {
-        get { `get_param_min`(5) }
-        set { `set_param_min`(5, newValue) }
-    }
-    public var `tangential_accel_max`: Double {
-        get { `get_param_max`(5) }
-        set { `set_param_max`(5, newValue) }
-    }
-    public var `damping`: Vector2 {
-        get { `get_param`(6) }
-        set { `set_param`(6, newValue) }
-    }
-    public var `damping_min`: Double {
-        get { `get_param_min`(6) }
-        set { `set_param_min`(6, newValue) }
-    }
-    public var `damping_max`: Double {
-        get { `get_param_max`(6) }
-        set { `set_param_max`(6, newValue) }
-    }
-    public var `attractor_interaction_enabled`: Bool {
-        get { `is_attractor_interaction_enabled`() }
-        set { `set_attractor_interaction_enabled`(newValue) }
-    }
-    public var `use_scale_3d`: Bool {
-        get { `is_using_scale_3d`() }
-        set { `set_use_scale_3d`(newValue) }
-    }
-    public var `scale_3d_min`: Vector3 {
-        get { `get_scale_3d_min`() }
-        set { `set_scale_3d_min`(newValue) }
-    }
-    public var `scale_3d_max`: Vector3 {
-        get { `get_scale_3d_max`() }
-        set { `set_scale_3d_max`(newValue) }
-    }
-    public var `scale`: Vector2 {
-        get { `get_param`(8) }
-        set { `set_param`(8, newValue) }
-    }
-    public var `scale_min`: Double {
-        get { `get_param_min`(8) }
-        set { `set_param_min`(8, newValue) }
-    }
-    public var `scale_max`: Double {
-        get { `get_param_max`(8) }
-        set { `set_param_max`(8, newValue) }
-    }
-    public var `scale_over_velocity`: Vector2 {
-        get { `get_param`(17) }
-        set { `set_param`(17, newValue) }
-    }
-    public var `scale_over_velocity_min`: Double {
-        get { `get_param_min`(17) }
-        set { `set_param_min`(17, newValue) }
-    }
-    public var `scale_over_velocity_max`: Double {
-        get { `get_param_max`(17) }
-        set { `set_param_max`(17, newValue) }
-    }
-    public var `color`: Color {
-        get { `get_color`() }
-        set { `set_color`(newValue) }
-    }
-    public var `hue_variation`: Vector2 {
-        get { `get_param`(9) }
-        set { `set_param`(9, newValue) }
-    }
-    public var `hue_variation_min`: Double {
-        get { `get_param_min`(9) }
-        set { `set_param_min`(9, newValue) }
-    }
-    public var `hue_variation_max`: Double {
-        get { `get_param_max`(9) }
-        set { `set_param_max`(9, newValue) }
-    }
-    public var `anim_speed`: Vector2 {
-        get { `get_param`(10) }
-        set { `set_param`(10, newValue) }
-    }
-    public var `anim_speed_min`: Double {
-        get { `get_param_min`(10) }
-        set { `set_param_min`(10, newValue) }
-    }
-    public var `anim_speed_max`: Double {
-        get { `get_param_max`(10) }
-        set { `set_param_max`(10, newValue) }
-    }
-    public var `anim_offset`: Vector2 {
-        get { `get_param`(11) }
-        set { `set_param`(11, newValue) }
-    }
-    public var `anim_offset_min`: Double {
-        get { `get_param_min`(11) }
-        set { `set_param_min`(11, newValue) }
-    }
-    public var `anim_offset_max`: Double {
-        get { `get_param_max`(11) }
-        set { `set_param_max`(11, newValue) }
-    }
-    public var `turbulence_enabled`: Bool {
-        get { `get_turbulence_enabled`() }
-        set { `set_turbulence_enabled`(newValue) }
-    }
-    public var `turbulence_noise_strength`: Double {
-        get { `get_turbulence_noise_strength`() }
-        set { `set_turbulence_noise_strength`(newValue) }
-    }
-    public var `turbulence_noise_scale`: Double {
-        get { `get_turbulence_noise_scale`() }
-        set { `set_turbulence_noise_scale`(newValue) }
-    }
-    public var `turbulence_noise_speed`: Vector3 {
-        get { `get_turbulence_noise_speed`() }
-        set { `set_turbulence_noise_speed`(newValue) }
-    }
-    public var `turbulence_noise_speed_random`: Double {
-        get { `get_turbulence_noise_speed_random`() }
-        set { `set_turbulence_noise_speed_random`(newValue) }
-    }
-    public var `turbulence_influence`: Vector2 {
-        get { `get_param`(13) }
-        set { `set_param`(13, newValue) }
-    }
-    public var `turbulence_influence_min`: Double {
-        get { `get_param_min`(13) }
-        set { `set_param_min`(13, newValue) }
-    }
-    public var `turbulence_influence_max`: Double {
-        get { `get_param_max`(13) }
-        set { `set_param_max`(13, newValue) }
-    }
-    public var `turbulence_initial_displacement`: Vector2 {
-        get { `get_param`(14) }
-        set { `set_param`(14, newValue) }
-    }
-    public var `turbulence_initial_displacement_min`: Double {
-        get { `get_param_min`(14) }
-        set { `set_param_min`(14, newValue) }
-    }
-    public var `turbulence_initial_displacement_max`: Double {
-        get { `get_param_max`(14) }
-        set { `set_param_max`(14, newValue) }
-    }
-    public var `collision_mode`: ParticleProcessMaterial.CollisionMode {
-        get { `get_collision_mode`() }
-        set { `set_collision_mode`(newValue) }
-    }
-    public var `collision_friction`: Double {
-        get { `get_collision_friction`() }
-        set { `set_collision_friction`(newValue) }
-    }
-    public var `collision_bounce`: Double {
-        get { `get_collision_bounce`() }
-        set { `set_collision_bounce`(newValue) }
-    }
-    public var `collision_use_scale`: Bool {
-        get { `is_collision_using_scale`() }
-        set { `set_collision_use_scale`(newValue) }
-    }
-    public var `sub_emitter_mode`: ParticleProcessMaterial.SubEmitterMode {
-        get { `get_sub_emitter_mode`() }
-        set { `set_sub_emitter_mode`(newValue) }
-    }
-    public var `sub_emitter_frequency`: Double {
-        get { `get_sub_emitter_frequency`() }
-        set { `set_sub_emitter_frequency`(newValue) }
-    }
-    public var `sub_emitter_amount_at_end`: Int64 {
-        get { `get_sub_emitter_amount_at_end`() }
-        set { `set_sub_emitter_amount_at_end`(newValue) }
-    }
-    public var `sub_emitter_amount_at_collision`: Int64 {
-        get { `get_sub_emitter_amount_at_collision`() }
-        set { `set_sub_emitter_amount_at_collision`(newValue) }
-    }
-    public var `sub_emitter_amount_at_start`: Int64 {
-        get { `get_sub_emitter_amount_at_start`() }
-        set { `set_sub_emitter_amount_at_start`(newValue) }
-    }
-    public var `sub_emitter_keep_velocity`: Bool {
-        get { `get_sub_emitter_keep_velocity`() }
-        set { `set_sub_emitter_keep_velocity`(newValue) }
+    @inline(__always) public static func `agent_set_avoidance_layers`(_ `agent`: GodotRID, _ `layers`: Int64) {
+        shared.`agent_set_avoidance_layers`(`agent`, `layers`)
     }
-}
-extension Path2D {
-    public var `curve`: Curve2D? {
-        get { `get_curve`() }
-        set { `set_curve`(newValue) }
+    @inline(__always) public static func `agent_get_avoidance_layers`(_ `agent`: GodotRID) -> Int64 {
+        return shared.`agent_get_avoidance_layers`(`agent`)
     }
-}
-extension Path3D {
-    public var `curve`: Curve3D? {
-        get { `get_curve`() }
-        set { `set_curve`(newValue) }
-    }
-    public var `debug_custom_color`: Color {
-        get { `get_debug_custom_color`() }
-        set { `set_debug_custom_color`(newValue) }
+    @inline(__always) public static func `agent_set_avoidance_mask`(_ `agent`: GodotRID, _ `mask`: Int64) {
+        shared.`agent_set_avoidance_mask`(`agent`, `mask`)
     }
-}
-extension PathFollow2D {
-    public var `progress`: Double {
-        get { `get_progress`() }
-        set { `set_progress`(newValue) }
-    }
-    public var `progress_ratio`: Double {
-        get { `get_progress_ratio`() }
-        set { `set_progress_ratio`(newValue) }
-    }
-    public var `h_offset`: Double {
-        get { `get_h_offset`() }
-        set { `set_h_offset`(newValue) }
-    }
-    public var `v_offset`: Double {
-        get { `get_v_offset`() }
-        set { `set_v_offset`(newValue) }
-    }
-    public var `rotates`: Bool {
-        get { `is_rotating`() }
-        set { `set_rotates`(newValue) }
-    }
-    public var `cubic_interp`: Bool {
-        get { `get_cubic_interpolation`() }
-        set { `set_cubic_interpolation`(newValue) }
-    }
-    public var `loop`: Bool {
-        get { `has_loop`() }
-        set { `set_loop`(newValue) }
+    @inline(__always) public static func `agent_get_avoidance_mask`(_ `agent`: GodotRID) -> Int64 {
+        return shared.`agent_get_avoidance_mask`(`agent`)
     }
-}
-extension PathFollow3D {
-    public var `progress`: Double {
-        get { `get_progress`() }
-        set { `set_progress`(newValue) }
-    }
-    public var `progress_ratio`: Double {
-        get { `get_progress_ratio`() }
-        set { `set_progress_ratio`(newValue) }
-    }
-    public var `h_offset`: Double {
-        get { `get_h_offset`() }
-        set { `set_h_offset`(newValue) }
-    }
-    public var `v_offset`: Double {
-        get { `get_v_offset`() }
-        set { `set_v_offset`(newValue) }
-    }
-    public var `rotation_mode`: PathFollow3D.RotationMode {
-        get { `get_rotation_mode`() }
-        set { `set_rotation_mode`(newValue) }
-    }
-    public var `use_model_front`: Bool {
-        get { `is_using_model_front`() }
-        set { `set_use_model_front`(newValue) }
-    }
-    public var `cubic_interp`: Bool {
-        get { `get_cubic_interpolation`() }
-        set { `set_cubic_interpolation`(newValue) }
-    }
-    public var `loop`: Bool {
-        get { `has_loop`() }
-        set { `set_loop`(newValue) }
-    }
-    public var `tilt_enabled`: Bool {
-        get { `is_tilt_enabled`() }
-        set { `set_tilt_enabled`(newValue) }
+    @inline(__always) public static func `agent_set_avoidance_priority`(_ `agent`: GodotRID, _ `priority`: Double) {
+        shared.`agent_set_avoidance_priority`(`agent`, `priority`)
     }
-}
-extension PhysicalBone2D {
-    public var `bone2d_nodepath`: GodotNodePath {
-        get { `get_bone2d_nodepath`() }
-        set { `set_bone2d_nodepath`(newValue) }
-    }
-    public var `bone2d_index`: Int64 {
-        get { `get_bone2d_index`() }
-        set { `set_bone2d_index`(newValue) }
-    }
-    public var `auto_configure_joint`: Bool {
-        get { `get_auto_configure_joint`() }
-        set { `set_auto_configure_joint`(newValue) }
-    }
-    public var `simulate_physics`: Bool {
-        get { `get_simulate_physics`() }
-        set { `set_simulate_physics`(newValue) }
-    }
-    public var `follow_bone_when_simulating`: Bool {
-        get { `get_follow_bone_when_simulating`() }
-        set { `set_follow_bone_when_simulating`(newValue) }
+    @inline(__always) public static func `agent_get_avoidance_priority`(_ `agent`: GodotRID) -> Double {
+        return shared.`agent_get_avoidance_priority`(`agent`)
     }
-}
-extension PhysicalBone3D {
-    public var `joint_type`: PhysicalBone3D.JointType {
-        get { `get_joint_type`() }
-        set { `set_joint_type`(newValue) }
-    }
-    public var `joint_offset`: Transform3D {
-        get { `get_joint_offset`() }
-        set { `set_joint_offset`(newValue) }
-    }
-    public var `joint_rotation`: Vector3 {
-        get { `get_joint_rotation`() }
-        set { `set_joint_rotation`(newValue) }
-    }
-    public var `body_offset`: Transform3D {
-        get { `get_body_offset`() }
-        set { `set_body_offset`(newValue) }
-    }
-    public var `mass`: Double {
-        get { `get_mass`() }
-        set { `set_mass`(newValue) }
-    }
-    public var `friction`: Double {
-        get { `get_friction`() }
-        set { `set_friction`(newValue) }
-    }
-    public var `bounce`: Double {
-        get { `get_bounce`() }
-        set { `set_bounce`(newValue) }
-    }
-    public var `gravity_scale`: Double {
-        get { `get_gravity_scale`() }
-        set { `set_gravity_scale`(newValue) }
-    }
-    public var `custom_integrator`: Bool {
-        get { `is_using_custom_integrator`() }
-        set { `set_use_custom_integrator`(newValue) }
-    }
-    public var `linear_damp_mode`: PhysicalBone3D.DampMode {
-        get { `get_linear_damp_mode`() }
-        set { `set_linear_damp_mode`(newValue) }
-    }
-    public var `linear_damp`: Double {
-        get { `get_linear_damp`() }
-        set { `set_linear_damp`(newValue) }
-    }
-    public var `angular_damp_mode`: PhysicalBone3D.DampMode {
-        get { `get_angular_damp_mode`() }
-        set { `set_angular_damp_mode`(newValue) }
-    }
-    public var `angular_damp`: Double {
-        get { `get_angular_damp`() }
-        set { `set_angular_damp`(newValue) }
-    }
-    public var `linear_velocity`: Vector3 {
-        get { `get_linear_velocity`() }
-        set { `set_linear_velocity`(newValue) }
-    }
-    public var `angular_velocity`: Vector3 {
-        get { `get_angular_velocity`() }
-        set { `set_angular_velocity`(newValue) }
-    }
-    public var `can_sleep`: Bool {
-        get { `is_able_to_sleep`() }
-        set { `set_can_sleep`(newValue) }
+    @inline(__always) public static func `obstacle_create`() -> GodotRID {
+        return shared.`obstacle_create`()
     }
-}
-extension PhysicalSkyMaterial {
-    public var `rayleigh_coefficient`: Double {
-        get { `get_rayleigh_coefficient`() }
-        set { `set_rayleigh_coefficient`(newValue) }
-    }
-    public var `rayleigh_color`: Color {
-        get { `get_rayleigh_color`() }
-        set { `set_rayleigh_color`(newValue) }
-    }
-    public var `mie_coefficient`: Double {
-        get { `get_mie_coefficient`() }
-        set { `set_mie_coefficient`(newValue) }
-    }
-    public var `mie_eccentricity`: Double {
-        get { `get_mie_eccentricity`() }
-        set { `set_mie_eccentricity`(newValue) }
-    }
-    public var `mie_color`: Color {
-        get { `get_mie_color`() }
-        set { `set_mie_color`(newValue) }
-    }
-    public var `turbidity`: Double {
-        get { `get_turbidity`() }
-        set { `set_turbidity`(newValue) }
-    }
-    public var `sun_disk_scale`: Double {
-        get { `get_sun_disk_scale`() }
-        set { `set_sun_disk_scale`(newValue) }
-    }
-    public var `ground_color`: Color {
-        get { `get_ground_color`() }
-        set { `set_ground_color`(newValue) }
-    }
-    public var `energy_multiplier`: Double {
-        get { `get_energy_multiplier`() }
-        set { `set_energy_multiplier`(newValue) }
-    }
-    public var `use_debanding`: Bool {
-        get { `get_use_debanding`() }
-        set { `set_use_debanding`(newValue) }
-    }
-    public var `night_sky`: Texture2D? {
-        get { `get_night_sky`() }
-        set { `set_night_sky`(newValue) }
+    @inline(__always) public static func `obstacle_set_avoidance_enabled`(_ `obstacle`: GodotRID, _ `enabled`: Bool) {
+        shared.`obstacle_set_avoidance_enabled`(`obstacle`, `enabled`)
     }
-}
-extension PhysicsBody3D {
-    public var `axis_lock_linear_x`: Bool {
-        get { `get_axis_lock`(1) }
-        set { `set_axis_lock`(1, newValue) }
-    }
-    public var `axis_lock_linear_y`: Bool {
-        get { `get_axis_lock`(2) }
-        set { `set_axis_lock`(2, newValue) }
-    }
-    public var `axis_lock_linear_z`: Bool {
-        get { `get_axis_lock`(4) }
-        set { `set_axis_lock`(4, newValue) }
-    }
-    public var `axis_lock_angular_x`: Bool {
-        get { `get_axis_lock`(8) }
-        set { `set_axis_lock`(8, newValue) }
-    }
-    public var `axis_lock_angular_y`: Bool {
-        get { `get_axis_lock`(16) }
-        set { `set_axis_lock`(16, newValue) }
-    }
-    public var `axis_lock_angular_z`: Bool {
-        get { `get_axis_lock`(32) }
-        set { `set_axis_lock`(32, newValue) }
+    @inline(__always) public static func `obstacle_get_avoidance_enabled`(_ `obstacle`: GodotRID) -> Bool {
+        return shared.`obstacle_get_avoidance_enabled`(`obstacle`)
     }
-}
-extension PhysicsCastMotionResult2D {
-    public var `safe_fraction`: Double {
-        get { `get_safe_fraction`() }
+    @inline(__always) public static func `obstacle_set_map`(_ `obstacle`: GodotRID, _ `map`: GodotRID) {
+        shared.`obstacle_set_map`(`obstacle`, `map`)
     }
-    public var `unsafe_fraction`: Double {
-        get { `get_unsafe_fraction`() }
+    @inline(__always) public static func `obstacle_get_map`(_ `obstacle`: GodotRID) -> GodotRID {
+        return shared.`obstacle_get_map`(`obstacle`)
     }
-}
-extension PhysicsCastMotionResult3D {
-    public var `safe_fraction`: Double {
-        get { `get_safe_fraction`() }
+    @inline(__always) public static func `obstacle_set_paused`(_ `obstacle`: GodotRID, _ `paused`: Bool) {
+        shared.`obstacle_set_paused`(`obstacle`, `paused`)
     }
-    public var `unsafe_fraction`: Double {
-        get { `get_unsafe_fraction`() }
+    @inline(__always) public static func `obstacle_get_paused`(_ `obstacle`: GodotRID) -> Bool {
+        return shared.`obstacle_get_paused`(`obstacle`)
     }
-}
-extension PhysicsCollideShapeResult2D {
-    public var `max_collisions`: Int64 {
-        get { `get_max_collisions`() }
-        set { `set_max_collisions`(newValue) }
+    @inline(__always) public static func `obstacle_set_radius`(_ `obstacle`: GodotRID, _ `radius`: Double) {
+        shared.`obstacle_set_radius`(`obstacle`, `radius`)
     }
-}
-extension PhysicsCollideShapeResult3D {
-    public var `max_collisions`: Int64 {
-        get { `get_max_collisions`() }
-        set { `set_max_collisions`(newValue) }
+    @inline(__always) public static func `obstacle_get_radius`(_ `obstacle`: GodotRID) -> Double {
+        return shared.`obstacle_get_radius`(`obstacle`)
     }
-}
-extension PhysicsDirectBodyState2D {
-    public var `step`: Double {
-        get { `get_step`() }
+    @inline(__always) public static func `obstacle_set_velocity`(_ `obstacle`: GodotRID, _ `velocity`: Vector2) {
+        shared.`obstacle_set_velocity`(`obstacle`, `velocity`)
+    }
+    @inline(__always) public static func `obstacle_get_velocity`(_ `obstacle`: GodotRID) -> Vector2 {
+        return shared.`obstacle_get_velocity`(`obstacle`)
+    }
+    @inline(__always) public static func `obstacle_set_position`(_ `obstacle`: GodotRID, _ `position`: Vector2) {
+        shared.`obstacle_set_position`(`obstacle`, `position`)
+    }
+    @inline(__always) public static func `obstacle_get_position`(_ `obstacle`: GodotRID) -> Vector2 {
+        return shared.`obstacle_get_position`(`obstacle`)
     }
-    public var `inverse_mass`: Double {
-        get { `get_inverse_mass`() }
+    @inline(__always) public static func `obstacle_set_vertices`(_ `obstacle`: GodotRID, _ `vertices`: borrowing GodotPackedVector2Array) {
+        shared.`obstacle_set_vertices`(`obstacle`, `vertices`)
     }
-    public var `inverse_inertia`: Double {
-        get { `get_inverse_inertia`() }
+    @inline(__always) public static func `obstacle_get_vertices`(_ `obstacle`: GodotRID) -> GodotPackedVector2Array {
+        return shared.`obstacle_get_vertices`(`obstacle`)
     }
-    public var `total_angular_damp`: Double {
-        get { `get_total_angular_damp`() }
+    @inline(__always) public static func `obstacle_set_avoidance_layers`(_ `obstacle`: GodotRID, _ `layers`: Int64) {
+        shared.`obstacle_set_avoidance_layers`(`obstacle`, `layers`)
     }
-    public var `total_linear_damp`: Double {
-        get { `get_total_linear_damp`() }
+    @inline(__always) public static func `obstacle_get_avoidance_layers`(_ `obstacle`: GodotRID) -> Int64 {
+        return shared.`obstacle_get_avoidance_layers`(`obstacle`)
     }
-    public var `total_gravity`: Vector2 {
-        get { `get_total_gravity`() }
+    @inline(__always) public static func `parse_source_geometry_data`(_ `navigation_polygon`: NavigationPolygon?, _ `source_geometry_data`: NavigationMeshSourceGeometryData2D?, _ `root_node`: Node?, _ `callback`: borrowing GodotCallable = GodotCallable()) {
+        shared.`parse_source_geometry_data`(`navigation_polygon`, `source_geometry_data`, `root_node`, `callback`)
     }
-    public var `center_of_mass`: Vector2 {
-        get { `get_center_of_mass`() }
+    @inline(__always) public static func `bake_from_source_geometry_data`(_ `navigation_polygon`: NavigationPolygon?, _ `source_geometry_data`: NavigationMeshSourceGeometryData2D?, _ `callback`: borrowing GodotCallable = GodotCallable()) {
+        shared.`bake_from_source_geometry_data`(`navigation_polygon`, `source_geometry_data`, `callback`)
     }
-    public var `center_of_mass_local`: Vector2 {
-        get { `get_center_of_mass_local`() }
+    @inline(__always) public static func `bake_from_source_geometry_data_async`(_ `navigation_polygon`: NavigationPolygon?, _ `source_geometry_data`: NavigationMeshSourceGeometryData2D?, _ `callback`: borrowing GodotCallable = GodotCallable()) {
+        shared.`bake_from_source_geometry_data_async`(`navigation_polygon`, `source_geometry_data`, `callback`)
     }
-    public var `angular_velocity`: Double {
-        get { `get_angular_velocity`() }
-        set { `set_angular_velocity`(newValue) }
+    @inline(__always) public static func `is_baking_navigation_polygon`(_ `navigation_polygon`: NavigationPolygon?) -> Bool {
+        return shared.`is_baking_navigation_polygon`(`navigation_polygon`)
     }
-    public var `linear_velocity`: Vector2 {
-        get { `get_linear_velocity`() }
-        set { `set_linear_velocity`(newValue) }
+    @inline(__always) public static func `source_geometry_parser_create`() -> GodotRID {
+        return shared.`source_geometry_parser_create`()
     }
-    public var `sleeping`: Bool {
-        get { `is_sleeping`() }
-        set { `set_sleep_state`(newValue) }
+    @inline(__always) public static func `source_geometry_parser_set_callback`(_ `parser`: GodotRID, _ `callback`: borrowing GodotCallable) {
+        shared.`source_geometry_parser_set_callback`(`parser`, `callback`)
     }
-    public var `collision_layer`: Int64 {
-        get { `get_collision_layer`() }
-        set { `set_collision_layer`(newValue) }
+    @inline(__always) public static func `simplify_path`(_ `path`: borrowing GodotPackedVector2Array, _ `epsilon`: Double) -> GodotPackedVector2Array {
+        return shared.`simplify_path`(`path`, `epsilon`)
     }
-    public var `collision_mask`: Int64 {
-        get { `get_collision_mask`() }
-        set { `set_collision_mask`(newValue) }
+    @inline(__always) public static func `free_rid`(_ `rid`: GodotRID) {
+        shared.`free_rid`(`rid`)
     }
-    public var `transform`: Transform2D {
-        get { `get_transform`() }
-        set { `set_transform`(newValue) }
+    @inline(__always) public static func `set_active`(_ `active`: Bool) {
+        shared.`set_active`(`active`)
     }
+    @inline(__always) public static func `set_debug_enabled`(_ `enabled`: Bool) {
+        shared.`set_debug_enabled`(`enabled`)
+    }
+    @inline(__always) public static func `get_debug_enabled`() -> Bool {
+        return shared.`get_debug_enabled`()
+    }
+    @inline(__always) public static func `get_process_info`(_ `process_info`: NavigationServer2D.ProcessInfo) -> Int64 {
+        return shared.`get_process_info`(`process_info`)
+    }
 }
-extension PhysicsDirectBodyState3D {
-    public var `step`: Double {
-        get { `get_step`() }
+extension NavigationServer3D {
+    public static var shared: NavigationServer3D {
+        guard let singleton = Object.resolve(api.global_get_singleton!(makeName("NavigationServer3D"))) as? NavigationServer3D else {
+            fatalError("Godot singleton 'NavigationServer3D' is unavailable. Check engine initialization and runtime support.")
+        }
+        return singleton
     }
-    public var `inverse_mass`: Double {
-        get { `get_inverse_mass`() }
+    @inline(__always) public static func `get_maps`() -> GodotArrayOf<GodotRID> {
+        return shared.`get_maps`()
     }
-    public var `total_angular_damp`: Double {
-        get { `get_total_angular_damp`() }
+    @inline(__always) public static func `map_create`() -> GodotRID {
+        return shared.`map_create`()
     }
-    public var `total_linear_damp`: Double {
-        get { `get_total_linear_damp`() }
+    @inline(__always) public static func `map_set_active`(_ `map`: GodotRID, _ `active`: Bool) {
+        shared.`map_set_active`(`map`, `active`)
     }
-    public var `inverse_inertia`: Vector3 {
-        get { `get_inverse_inertia`() }
+    @inline(__always) public static func `map_is_active`(_ `map`: GodotRID) -> Bool {
+        return shared.`map_is_active`(`map`)
     }
-    public var `inverse_inertia_tensor`: Basis {
-        get { `get_inverse_inertia_tensor`() }
+    @inline(__always) public static func `map_set_up`(_ `map`: GodotRID, _ `up`: Vector3) {
+        shared.`map_set_up`(`map`, `up`)
     }
-    public var `total_gravity`: Vector3 {
-        get { `get_total_gravity`() }
+    @inline(__always) public static func `map_get_up`(_ `map`: GodotRID) -> Vector3 {
+        return shared.`map_get_up`(`map`)
     }
-    public var `center_of_mass`: Vector3 {
-        get { `get_center_of_mass`() }
+    @inline(__always) public static func `map_set_cell_size`(_ `map`: GodotRID, _ `cell_size`: Double) {
+        shared.`map_set_cell_size`(`map`, `cell_size`)
     }
-    public var `center_of_mass_local`: Vector3 {
-        get { `get_center_of_mass_local`() }
+    @inline(__always) public static func `map_get_cell_size`(_ `map`: GodotRID) -> Double {
+        return shared.`map_get_cell_size`(`map`)
     }
-    public var `principal_inertia_axes`: Basis {
-        get { `get_principal_inertia_axes`() }
+    @inline(__always) public static func `map_set_cell_height`(_ `map`: GodotRID, _ `cell_height`: Double) {
+        shared.`map_set_cell_height`(`map`, `cell_height`)
     }
-    public var `angular_velocity`: Vector3 {
-        get { `get_angular_velocity`() }
-        set { `set_angular_velocity`(newValue) }
+    @inline(__always) public static func `map_get_cell_height`(_ `map`: GodotRID) -> Double {
+        return shared.`map_get_cell_height`(`map`)
     }
-    public var `linear_velocity`: Vector3 {
-        get { `get_linear_velocity`() }
-        set { `set_linear_velocity`(newValue) }
+    @inline(__always) public static func `map_set_merge_rasterizer_cell_scale`(_ `map`: GodotRID, _ `scale`: Double) {
+        shared.`map_set_merge_rasterizer_cell_scale`(`map`, `scale`)
     }
-    public var `sleeping`: Bool {
-        get { `is_sleeping`() }
-        set { `set_sleep_state`(newValue) }
+    @inline(__always) public static func `map_get_merge_rasterizer_cell_scale`(_ `map`: GodotRID) -> Double {
+        return shared.`map_get_merge_rasterizer_cell_scale`(`map`)
     }
-    public var `collision_layer`: Int64 {
-        get { `get_collision_layer`() }
-        set { `set_collision_layer`(newValue) }
+    @inline(__always) public static func `map_set_use_edge_connections`(_ `map`: GodotRID, _ `enabled`: Bool) {
+        shared.`map_set_use_edge_connections`(`map`, `enabled`)
     }
-    public var `collision_mask`: Int64 {
-        get { `get_collision_mask`() }
-        set { `set_collision_mask`(newValue) }
+    @inline(__always) public static func `map_get_use_edge_connections`(_ `map`: GodotRID) -> Bool {
+        return shared.`map_get_use_edge_connections`(`map`)
     }
-    public var `transform`: Transform3D {
-        get { `get_transform`() }
-        set { `set_transform`(newValue) }
+    @inline(__always) public static func `map_set_edge_connection_margin`(_ `map`: GodotRID, _ `margin`: Double) {
+        shared.`map_set_edge_connection_margin`(`map`, `margin`)
     }
-}
-extension PhysicsGetRestInfoResult2D {
-    public var `point`: Vector2 {
-        get { `get_point`() }
+    @inline(__always) public static func `map_get_edge_connection_margin`(_ `map`: GodotRID) -> Double {
+        return shared.`map_get_edge_connection_margin`(`map`)
     }
-    public var `normal`: Vector2 {
-        get { `get_normal`() }
+    @inline(__always) public static func `map_set_link_connection_radius`(_ `map`: GodotRID, _ `radius`: Double) {
+        shared.`map_set_link_connection_radius`(`map`, `radius`)
     }
-    public var `collider_rid`: GodotRID {
-        get { `get_collider_rid`() }
+    @inline(__always) public static func `map_get_link_connection_radius`(_ `map`: GodotRID) -> Double {
+        return shared.`map_get_link_connection_radius`(`map`)
     }
-    public var `collider_id`: Int64 {
-        get { `get_collider_id`() }
+    @inline(__always) public static func `map_get_path`(_ `map`: GodotRID, _ `origin`: Vector3, _ `destination_value`: Vector3, _ `optimize`: Bool, _ `navigation_layers`: Int64 = 1) -> GodotPackedVector3Array {
+        return shared.`map_get_path`(`map`, `origin`, `destination_value`, `optimize`, `navigation_layers`)
     }
-    public var `collider_shape`: Int64 {
-        get { `get_collider_shape`() }
+    @inline(__always) public static func `map_get_closest_point_to_segment`(_ `map`: GodotRID, _ `start`: Vector3, _ `end`: Vector3, _ `use_collision`: Bool = false) -> Vector3 {
+        return shared.`map_get_closest_point_to_segment`(`map`, `start`, `end`, `use_collision`)
     }
-    public var `collider_velocity`: Vector2 {
-        get { `get_collider_velocity`() }
+    @inline(__always) public static func `map_get_closest_point`(_ `map`: GodotRID, _ `to_point`: Vector3) -> Vector3 {
+        return shared.`map_get_closest_point`(`map`, `to_point`)
     }
-}
-extension PhysicsGetRestInfoResult3D {
-    public var `point`: Vector3 {
-        get { `get_point`() }
+    @inline(__always) public static func `map_get_closest_point_normal`(_ `map`: GodotRID, _ `to_point`: Vector3) -> Vector3 {
+        return shared.`map_get_closest_point_normal`(`map`, `to_point`)
     }
-    public var `normal`: Vector3 {
-        get { `get_normal`() }
+    @inline(__always) public static func `map_get_closest_point_owner`(_ `map`: GodotRID, _ `to_point`: Vector3) -> GodotRID {
+        return shared.`map_get_closest_point_owner`(`map`, `to_point`)
     }
-    public var `collider_rid`: GodotRID {
-        get { `get_collider_rid`() }
+    @inline(__always) public static func `map_get_links`(_ `map`: GodotRID) -> GodotArrayOf<GodotRID> {
+        return shared.`map_get_links`(`map`)
     }
-    public var `collider_id`: Int64 {
-        get { `get_collider_id`() }
+    @inline(__always) public static func `map_get_regions`(_ `map`: GodotRID) -> GodotArrayOf<GodotRID> {
+        return shared.`map_get_regions`(`map`)
     }
-    public var `collider_shape`: Int64 {
-        get { `get_collider_shape`() }
+    @inline(__always) public static func `map_get_agents`(_ `map`: GodotRID) -> GodotArrayOf<GodotRID> {
+        return shared.`map_get_agents`(`map`)
     }
-    public var `collider_velocity`: Vector3 {
-        get { `get_collider_velocity`() }
+    @inline(__always) public static func `map_get_obstacles`(_ `map`: GodotRID) -> GodotArrayOf<GodotRID> {
+        return shared.`map_get_obstacles`(`map`)
     }
-}
-extension PhysicsIntersectPointResult2D {
-    public var `max_intersections`: Int64 {
-        get { `get_max_intersections`() }
-        set { `set_max_intersections`(newValue) }
+    @inline(__always) public static func `map_force_update`(_ `map`: GodotRID) {
+        shared.`map_force_update`(`map`)
     }
-}
-extension PhysicsIntersectPointResult3D {
-    public var `max_intersections`: Int64 {
-        get { `get_max_intersections`() }
-        set { `set_max_intersections`(newValue) }
+    @inline(__always) public static func `map_get_iteration_id`(_ `map`: GodotRID) -> Int64 {
+        return shared.`map_get_iteration_id`(`map`)
     }
-}
-extension PhysicsIntersectRayResult2D {
-    public var `position`: Vector2 {
-        get { `get_position`() }
+    @inline(__always) public static func `map_set_use_async_iterations`(_ `map`: GodotRID, _ `enabled`: Bool) {
+        shared.`map_set_use_async_iterations`(`map`, `enabled`)
     }
-    public var `normal`: Vector2 {
-        get { `get_normal`() }
+    @inline(__always) public static func `map_get_use_async_iterations`(_ `map`: GodotRID) -> Bool {
+        return shared.`map_get_use_async_iterations`(`map`)
     }
-    public var `collider_rid`: GodotRID {
-        get { `get_collider_rid`() }
+    @inline(__always) public static func `map_get_random_point`(_ `map`: GodotRID, _ `navigation_layers`: Int64, _ `uniformly`: Bool) -> Vector3 {
+        return shared.`map_get_random_point`(`map`, `navigation_layers`, `uniformly`)
     }
-    public var `collider_id`: Int64 {
-        get { `get_collider_id`() }
+    @inline(__always) public static func `query_path`(_ `parameters`: NavigationPathQueryParameters3D?, _ `result_value`: NavigationPathQueryResult3D?, _ `callback`: borrowing GodotCallable = GodotCallable()) {
+        shared.`query_path`(`parameters`, `result_value`, `callback`)
     }
-    public var `collider`: Object? {
-        get { `get_collider`() }
+    @inline(__always) public static func `region_create`() -> GodotRID {
+        return shared.`region_create`()
     }
-    public var `collider_shape`: Int64 {
-        get { `get_collider_shape`() }
+    @inline(__always) public static func `region_get_iteration_id`(_ `region`: GodotRID) -> Int64 {
+        return shared.`region_get_iteration_id`(`region`)
     }
-}
-extension PhysicsIntersectRayResult3D {
-    public var `position`: Vector3 {
-        get { `get_position`() }
+    @inline(__always) public static func `region_set_use_async_iterations`(_ `region`: GodotRID, _ `enabled`: Bool) {
+        shared.`region_set_use_async_iterations`(`region`, `enabled`)
     }
-    public var `normal`: Vector3 {
-        get { `get_normal`() }
+    @inline(__always) public static func `region_get_use_async_iterations`(_ `region`: GodotRID) -> Bool {
+        return shared.`region_get_use_async_iterations`(`region`)
     }
-    public var `collider_rid`: GodotRID {
-        get { `get_collider_rid`() }
+    @inline(__always) public static func `region_set_enabled`(_ `region`: GodotRID, _ `enabled`: Bool) {
+        shared.`region_set_enabled`(`region`, `enabled`)
     }
-    public var `collider_id`: Int64 {
-        get { `get_collider_id`() }
+    @inline(__always) public static func `region_get_enabled`(_ `region`: GodotRID) -> Bool {
+        return shared.`region_get_enabled`(`region`)
     }
-    public var `collider`: Object? {
-        get { `get_collider`() }
+    @inline(__always) public static func `region_set_use_edge_connections`(_ `region`: GodotRID, _ `enabled`: Bool) {
+        shared.`region_set_use_edge_connections`(`region`, `enabled`)
     }
-    public var `collider_shape`: Int64 {
-        get { `get_collider_shape`() }
+    @inline(__always) public static func `region_get_use_edge_connections`(_ `region`: GodotRID) -> Bool {
+        return shared.`region_get_use_edge_connections`(`region`)
     }
-    public var `collider_face_index`: Int64 {
-        get { `get_collider_face_index`() }
+    @inline(__always) public static func `region_set_enter_cost`(_ `region`: GodotRID, _ `enter_cost`: Double) {
+        shared.`region_set_enter_cost`(`region`, `enter_cost`)
     }
-}
-extension PhysicsIntersectShapeResult2D {
-    public var `max_intersections`: Int64 {
-        get { `get_max_intersections`() }
-        set { `set_max_intersections`(newValue) }
+    @inline(__always) public static func `region_get_enter_cost`(_ `region`: GodotRID) -> Double {
+        return shared.`region_get_enter_cost`(`region`)
     }
-}
-extension PhysicsIntersectShapeResult3D {
-    public var `max_intersections`: Int64 {
-        get { `get_max_intersections`() }
-        set { `set_max_intersections`(newValue) }
+    @inline(__always) public static func `region_set_travel_cost`(_ `region`: GodotRID, _ `travel_cost`: Double) {
+        shared.`region_set_travel_cost`(`region`, `travel_cost`)
     }
-}
-extension PhysicsMaterial {
-    public var `friction`: Double {
-        get { `get_friction`() }
-        set { `set_friction`(newValue) }
-    }
-    public var `rough`: Bool {
-        get { `is_rough`() }
-        set { `set_rough`(newValue) }
-    }
-    public var `bounce`: Double {
-        get { `get_bounce`() }
-        set { `set_bounce`(newValue) }
-    }
-    public var `absorbent`: Bool {
-        get { `is_absorbent`() }
-        set { `set_absorbent`(newValue) }
+    @inline(__always) public static func `region_get_travel_cost`(_ `region`: GodotRID) -> Double {
+        return shared.`region_get_travel_cost`(`region`)
     }
-}
-extension PhysicsPointQueryParameters2D {
-    public var `position`: Vector2 {
-        get { `get_position`() }
-        set { `set_position`(newValue) }
-    }
-    public var `canvas_instance_id`: Int64 {
-        get { `get_canvas_instance_id`() }
-        set { `set_canvas_instance_id`(newValue) }
-    }
-    public var `collision_mask`: Int64 {
-        get { `get_collision_mask`() }
-        set { `set_collision_mask`(newValue) }
-    }
-    public var `exclude`: GodotArrayOf<GodotRID> {
-        get { `get_exclude`() }
-        set { `set_exclude`(newValue) }
-    }
-    public var `collide_with_bodies`: Bool {
-        get { `is_collide_with_bodies_enabled`() }
-        set { `set_collide_with_bodies`(newValue) }
-    }
-    public var `collide_with_areas`: Bool {
-        get { `is_collide_with_areas_enabled`() }
-        set { `set_collide_with_areas`(newValue) }
+    @inline(__always) public static func `region_set_owner_id`(_ `region`: GodotRID, _ `owner_id`: Int64) {
+        shared.`region_set_owner_id`(`region`, `owner_id`)
     }
-}
-extension PhysicsPointQueryParameters3D {
-    public var `position`: Vector3 {
-        get { `get_position`() }
-        set { `set_position`(newValue) }
-    }
-    public var `collision_mask`: Int64 {
-        get { `get_collision_mask`() }
-        set { `set_collision_mask`(newValue) }
-    }
-    public var `exclude`: GodotArrayOf<GodotRID> {
-        get { `get_exclude`() }
-        set { `set_exclude`(newValue) }
-    }
-    public var `collide_with_bodies`: Bool {
-        get { `is_collide_with_bodies_enabled`() }
-        set { `set_collide_with_bodies`(newValue) }
-    }
-    public var `collide_with_areas`: Bool {
-        get { `is_collide_with_areas_enabled`() }
-        set { `set_collide_with_areas`(newValue) }
+    @inline(__always) public static func `region_get_owner_id`(_ `region`: GodotRID) -> Int64 {
+        return shared.`region_get_owner_id`(`region`)
     }
-}
-extension PhysicsRayQueryParameters2D {
-    public var `from`: Vector2 {
-        get { `get_from`() }
-        set { `set_from`(newValue) }
-    }
-    public var `to`: Vector2 {
-        get { `get_to`() }
-        set { `set_to`(newValue) }
-    }
-    public var `collision_mask`: Int64 {
-        get { `get_collision_mask`() }
-        set { `set_collision_mask`(newValue) }
-    }
-    public var `exclude`: GodotArrayOf<GodotRID> {
-        get { `get_exclude`() }
-        set { `set_exclude`(newValue) }
-    }
-    public var `collide_with_bodies`: Bool {
-        get { `is_collide_with_bodies_enabled`() }
-        set { `set_collide_with_bodies`(newValue) }
-    }
-    public var `collide_with_areas`: Bool {
-        get { `is_collide_with_areas_enabled`() }
-        set { `set_collide_with_areas`(newValue) }
-    }
-    public var `hit_from_inside`: Bool {
-        get { `is_hit_from_inside_enabled`() }
-        set { `set_hit_from_inside`(newValue) }
+    @inline(__always) public static func `region_owns_point`(_ `region`: GodotRID, _ `point`: Vector3) -> Bool {
+        return shared.`region_owns_point`(`region`, `point`)
     }
-}
-extension PhysicsRayQueryParameters3D {
-    public var `from`: Vector3 {
-        get { `get_from`() }
-        set { `set_from`(newValue) }
-    }
-    public var `to`: Vector3 {
-        get { `get_to`() }
-        set { `set_to`(newValue) }
-    }
-    public var `collision_mask`: Int64 {
-        get { `get_collision_mask`() }
-        set { `set_collision_mask`(newValue) }
-    }
-    public var `exclude`: GodotArrayOf<GodotRID> {
-        get { `get_exclude`() }
-        set { `set_exclude`(newValue) }
-    }
-    public var `collide_with_bodies`: Bool {
-        get { `is_collide_with_bodies_enabled`() }
-        set { `set_collide_with_bodies`(newValue) }
-    }
-    public var `collide_with_areas`: Bool {
-        get { `is_collide_with_areas_enabled`() }
-        set { `set_collide_with_areas`(newValue) }
-    }
-    public var `hit_from_inside`: Bool {
-        get { `is_hit_from_inside_enabled`() }
-        set { `set_hit_from_inside`(newValue) }
-    }
-    public var `hit_back_faces`: Bool {
-        get { `is_hit_back_faces_enabled`() }
-        set { `set_hit_back_faces`(newValue) }
+    @inline(__always) public static func `region_set_map`(_ `region`: GodotRID, _ `map`: GodotRID) {
+        shared.`region_set_map`(`region`, `map`)
     }
-}
-extension PhysicsShapeQueryParameters2D {
-    public var `collision_mask`: Int64 {
-        get { `get_collision_mask`() }
-        set { `set_collision_mask`(newValue) }
-    }
-    public var `exclude`: GodotArrayOf<GodotRID> {
-        get { `get_exclude`() }
-        set { `set_exclude`(newValue) }
-    }
-    public var `margin`: Double {
-        get { `get_margin`() }
-        set { `set_margin`(newValue) }
-    }
-    public var `motion`: Vector2 {
-        get { `get_motion`() }
-        set { `set_motion`(newValue) }
-    }
-    public var `shape_rid`: GodotRID {
-        get { `get_shape_rid`() }
-        set { `set_shape_rid`(newValue) }
-    }
-    public var `transform`: Transform2D {
-        get { `get_transform`() }
-        set { `set_transform`(newValue) }
-    }
-    public var `collide_with_bodies`: Bool {
-        get { `is_collide_with_bodies_enabled`() }
-        set { `set_collide_with_bodies`(newValue) }
-    }
-    public var `collide_with_areas`: Bool {
-        get { `is_collide_with_areas_enabled`() }
-        set { `set_collide_with_areas`(newValue) }
+    @inline(__always) public static func `region_get_map`(_ `region`: GodotRID) -> GodotRID {
+        return shared.`region_get_map`(`region`)
     }
-}
-extension PhysicsShapeQueryParameters3D {
-    public var `collision_mask`: Int64 {
-        get { `get_collision_mask`() }
-        set { `set_collision_mask`(newValue) }
-    }
-    public var `exclude`: GodotArrayOf<GodotRID> {
-        get { `get_exclude`() }
-        set { `set_exclude`(newValue) }
-    }
-    public var `margin`: Double {
-        get { `get_margin`() }
-        set { `set_margin`(newValue) }
-    }
-    public var `motion`: Vector3 {
-        get { `get_motion`() }
-        set { `set_motion`(newValue) }
-    }
-    public var `shape_rid`: GodotRID {
-        get { `get_shape_rid`() }
-        set { `set_shape_rid`(newValue) }
-    }
-    public var `transform`: Transform3D {
-        get { `get_transform`() }
-        set { `set_transform`(newValue) }
-    }
-    public var `collide_with_bodies`: Bool {
-        get { `is_collide_with_bodies_enabled`() }
-        set { `set_collide_with_bodies`(newValue) }
-    }
-    public var `collide_with_areas`: Bool {
-        get { `is_collide_with_areas_enabled`() }
-        set { `set_collide_with_areas`(newValue) }
+    @inline(__always) public static func `region_set_navigation_layers`(_ `region`: GodotRID, _ `navigation_layers`: Int64) {
+        shared.`region_set_navigation_layers`(`region`, `navigation_layers`)
     }
-}
-extension PhysicsTestMotionParameters2D {
-    public var `from`: Transform2D {
-        get { `get_from`() }
-        set { `set_from`(newValue) }
-    }
-    public var `motion`: Vector2 {
-        get { `get_motion`() }
-        set { `set_motion`(newValue) }
-    }
-    public var `margin`: Double {
-        get { `get_margin`() }
-        set { `set_margin`(newValue) }
-    }
-    public var `collide_separation_ray`: Bool {
-        get { `is_collide_separation_ray_enabled`() }
-        set { `set_collide_separation_ray_enabled`(newValue) }
-    }
-    public var `exclude_bodies`: GodotArrayOf<GodotRID> {
-        get { `get_exclude_bodies`() }
-        set { `set_exclude_bodies`(newValue) }
-    }
-    public var `exclude_objects`: GodotArrayOf<Int64> {
-        get { `get_exclude_objects`() }
-        set { `set_exclude_objects`(newValue) }
-    }
-    public var `recovery_as_collision`: Bool {
-        get { `is_recovery_as_collision_enabled`() }
-        set { `set_recovery_as_collision_enabled`(newValue) }
+    @inline(__always) public static func `region_get_navigation_layers`(_ `region`: GodotRID) -> Int64 {
+        return shared.`region_get_navigation_layers`(`region`)
     }
-}
-extension PhysicsTestMotionParameters3D {
-    public var `from`: Transform3D {
-        get { `get_from`() }
-        set { `set_from`(newValue) }
-    }
-    public var `motion`: Vector3 {
-        get { `get_motion`() }
-        set { `set_motion`(newValue) }
-    }
-    public var `margin`: Double {
-        get { `get_margin`() }
-        set { `set_margin`(newValue) }
-    }
-    public var `max_collisions`: Int64 {
-        get { `get_max_collisions`() }
-        set { `set_max_collisions`(newValue) }
-    }
-    public var `collide_separation_ray`: Bool {
-        get { `is_collide_separation_ray_enabled`() }
-        set { `set_collide_separation_ray_enabled`(newValue) }
-    }
-    public var `exclude_bodies`: GodotArrayOf<GodotRID> {
-        get { `get_exclude_bodies`() }
-        set { `set_exclude_bodies`(newValue) }
-    }
-    public var `exclude_objects`: GodotArrayOf<Int64> {
-        get { `get_exclude_objects`() }
-        set { `set_exclude_objects`(newValue) }
-    }
-    public var `recovery_as_collision`: Bool {
-        get { `is_recovery_as_collision_enabled`() }
-        set { `set_recovery_as_collision_enabled`(newValue) }
+    @inline(__always) public static func `region_set_transform`(_ `region`: GodotRID, _ `transform`: Transform3D) {
+        shared.`region_set_transform`(`region`, `transform`)
     }
-}
-extension PinJoint2D {
-    public var `softness`: Double {
-        get { `get_softness`() }
-        set { `set_softness`(newValue) }
-    }
-    public var `angular_limit_enabled`: Bool {
-        get { `is_angular_limit_enabled`() }
-        set { `set_angular_limit_enabled`(newValue) }
-    }
-    public var `angular_limit_lower`: Double {
-        get { `get_angular_limit_lower`() }
-        set { `set_angular_limit_lower`(newValue) }
-    }
-    public var `angular_limit_upper`: Double {
-        get { `get_angular_limit_upper`() }
-        set { `set_angular_limit_upper`(newValue) }
-    }
-    public var `motor_enabled`: Bool {
-        get { `is_motor_enabled`() }
-        set { `set_motor_enabled`(newValue) }
-    }
-    public var `motor_target_velocity`: Double {
-        get { `get_motor_target_velocity`() }
-        set { `set_motor_target_velocity`(newValue) }
+    @inline(__always) public static func `region_get_transform`(_ `region`: GodotRID) -> Transform3D {
+        return shared.`region_get_transform`(`region`)
     }
-}
-extension PlaceholderMesh {
-    public var `aabb`: AABB {
-        get { `get_aabb`() }
-        set { `set_aabb`(newValue) }
+    @inline(__always) public static func `region_set_navigation_mesh`(_ `region`: GodotRID, _ `navigation_mesh`: NavigationMesh?) {
+        shared.`region_set_navigation_mesh`(`region`, `navigation_mesh`)
     }
-}
-extension PlaceholderTexture2D {
-    public var `size`: Vector2 {
-        get { `get_size`() }
-        set { `set_size`(newValue) }
+    @inline(__always) public static func `region_bake_navigation_mesh`(_ `navigation_mesh`: NavigationMesh?, _ `root_node`: Node?) {
+        shared.`region_bake_navigation_mesh`(`navigation_mesh`, `root_node`)
     }
-}
-extension PlaceholderTexture3D {
-    public var `size`: Vector3i {
-        get { `get_size`() }
-        set { `set_size`(newValue) }
+    @inline(__always) public static func `region_get_connections_count`(_ `region`: GodotRID) -> Int64 {
+        return shared.`region_get_connections_count`(`region`)
     }
-}
-extension PlaceholderTextureLayered {
-    public var `size`: Vector2i {
-        get { `get_size`() }
-        set { `set_size`(newValue) }
-    }
-    public var `layers`: Int64 {
-        get { `get_layers`() }
-        set { `set_layers`(newValue) }
+    @inline(__always) public static func `region_get_connection_pathway_start`(_ `region`: GodotRID, _ `connection`: Int64) -> Vector3 {
+        return shared.`region_get_connection_pathway_start`(`region`, `connection`)
     }
-}
-extension PlaneMesh {
-    public var `size`: Vector2 {
-        get { `get_size`() }
-        set { `set_size`(newValue) }
-    }
-    public var `subdivide_width`: Int64 {
-        get { `get_subdivide_width`() }
-        set { `set_subdivide_width`(newValue) }
-    }
-    public var `subdivide_depth`: Int64 {
-        get { `get_subdivide_depth`() }
-        set { `set_subdivide_depth`(newValue) }
-    }
-    public var `center_offset`: Vector3 {
-        get { `get_center_offset`() }
-        set { `set_center_offset`(newValue) }
-    }
-    public var `orientation`: PlaneMesh.Orientation {
-        get { `get_orientation`() }
-        set { `set_orientation`(newValue) }
+    @inline(__always) public static func `region_get_connection_pathway_end`(_ `region`: GodotRID, _ `connection`: Int64) -> Vector3 {
+        return shared.`region_get_connection_pathway_end`(`region`, `connection`)
     }
-}
-extension PointLight2D {
-    public var `offset`: Vector2 {
-        get { `get_texture_offset`() }
-        set { `set_texture_offset`(newValue) }
-    }
-    public var `texture_scale`: Double {
-        get { `get_texture_scale`() }
-        set { `set_texture_scale`(newValue) }
-    }
-    public var `height`: Double {
-        get { `get_height`() }
-        set { `set_height`(newValue) }
+    @inline(__always) public static func `region_get_closest_point_to_segment`(_ `region`: GodotRID, _ `start`: Vector3, _ `end`: Vector3, _ `use_collision`: Bool = false) -> Vector3 {
+        return shared.`region_get_closest_point_to_segment`(`region`, `start`, `end`, `use_collision`)
     }
-}
-extension Polygon2D {
-    public var `color`: Color {
-        get { `get_color`() }
-        set { `set_color`(newValue) }
-    }
-    public var `offset`: Vector2 {
-        get { `get_offset`() }
-        set { `set_offset`(newValue) }
-    }
-    public var `antialiased`: Bool {
-        get { `get_antialiased`() }
-        set { `set_antialiased`(newValue) }
-    }
-    public var `texture`: Texture2D? {
-        get { `get_texture`() }
-        set { `set_texture`(newValue) }
-    }
-    public var `texture_offset`: Vector2 {
-        get { `get_texture_offset`() }
-        set { `set_texture_offset`(newValue) }
-    }
-    public var `texture_scale`: Vector2 {
-        get { `get_texture_scale`() }
-        set { `set_texture_scale`(newValue) }
-    }
-    public var `texture_rotation`: Double {
-        get { `get_texture_rotation`() }
-        set { `set_texture_rotation`(newValue) }
-    }
-    public var `skeleton`: GodotNodePath {
-        get { `get_skeleton`() }
-        set { `set_skeleton`(newValue) }
-    }
-    public var `invert_enabled`: Bool {
-        get { `get_invert_enabled`() }
-        set { `set_invert_enabled`(newValue) }
-    }
-    public var `invert_border`: Double {
-        get { `get_invert_border`() }
-        set { `set_invert_border`(newValue) }
-    }
-    public var `polygon`: GodotPackedVector2Array {
-        get { `get_polygon`() }
-        set { `set_polygon`(newValue) }
-    }
-    public var `uv`: GodotPackedVector2Array {
-        get { `get_uv`() }
-        set { `set_uv`(newValue) }
-    }
-    public var `vertex_colors`: GodotPackedColorArray {
-        get { `get_vertex_colors`() }
-        set { `set_vertex_colors`(newValue) }
-    }
-    public var `polygons`: GodotArray {
-        get { `get_polygons`() }
-        set { `set_polygons`(newValue) }
-    }
-    public var `internal_vertex_count`: Int64 {
-        get { `get_internal_vertex_count`() }
-        set { `set_internal_vertex_count`(newValue) }
+    @inline(__always) public static func `region_get_closest_point`(_ `region`: GodotRID, _ `to_point`: Vector3) -> Vector3 {
+        return shared.`region_get_closest_point`(`region`, `to_point`)
     }
-}
-extension PolygonOccluder3D {
-    public var `polygon`: GodotPackedVector2Array {
-        get { `get_polygon`() }
-        set { `set_polygon`(newValue) }
+    @inline(__always) public static func `region_get_closest_point_normal`(_ `region`: GodotRID, _ `to_point`: Vector3) -> Vector3 {
+        return shared.`region_get_closest_point_normal`(`region`, `to_point`)
     }
-}
-extension PopupMenu {
-    public var `hide_on_item_selection`: Bool {
-        get { `is_hide_on_item_selection`() }
-        set { `set_hide_on_item_selection`(newValue) }
-    }
-    public var `hide_on_checkable_item_selection`: Bool {
-        get { `is_hide_on_checkable_item_selection`() }
-        set { `set_hide_on_checkable_item_selection`(newValue) }
-    }
-    public var `hide_on_state_item_selection`: Bool {
-        get { `is_hide_on_state_item_selection`() }
-        set { `set_hide_on_state_item_selection`(newValue) }
-    }
-    public var `submenu_popup_delay`: Double {
-        get { `get_submenu_popup_delay`() }
-        set { `set_submenu_popup_delay`(newValue) }
-    }
-    public var `allow_search`: Bool {
-        get { `get_allow_search`() }
-        set { `set_allow_search`(newValue) }
-    }
-    public var `system_menu_id`: NativeMenu.SystemMenus {
-        get { `get_system_menu`() }
-        set { `set_system_menu`(newValue) }
-    }
-    public var `prefer_native_menu`: Bool {
-        get { `is_prefer_native_menu`() }
-        set { `set_prefer_native_menu`(newValue) }
-    }
-    public var `shrink_height`: Bool {
-        get { `get_shrink_height`() }
-        set { `set_shrink_height`(newValue) }
-    }
-    public var `shrink_width`: Bool {
-        get { `get_shrink_width`() }
-        set { `set_shrink_width`(newValue) }
-    }
-    public var `search_bar_enabled`: Bool {
-        get { `is_search_bar_enabled`() }
-        set { `set_search_bar_enabled`(newValue) }
-    }
-    public var `search_bar_min_item_count`: Int64 {
-        get { `get_search_bar_min_item_count`() }
-        set { `set_search_bar_min_item_count`(newValue) }
-    }
-    public var `search_bar_fuzzy_search_enabled`: Bool {
-        get { `is_search_bar_fuzzy_search_enabled`() }
-        set { `set_search_bar_fuzzy_search_enabled`(newValue) }
-    }
-    public var `search_bar_fuzzy_search_max_misses`: Int64 {
-        get { `get_search_bar_fuzzy_search_max_misses`() }
-        set { `set_search_bar_fuzzy_search_max_misses`(newValue) }
-    }
-    public var `item_count`: Int64 {
-        get { `get_item_count`() }
-        set { `set_item_count`(newValue) }
+    @inline(__always) public static func `region_get_random_point`(_ `region`: GodotRID, _ `navigation_layers`: Int64, _ `uniformly`: Bool) -> Vector3 {
+        return shared.`region_get_random_point`(`region`, `navigation_layers`, `uniformly`)
     }
-}
-extension PortableCompressedTexture2D {
-    public var `size_override`: Vector2 {
-        get { `get_size_override`() }
-        set { `set_size_override`(newValue) }
-    }
-    public var `keep_compressed_buffer`: Bool {
-        get { `is_keeping_compressed_buffer`() }
-        set { `set_keep_compressed_buffer`(newValue) }
+    @inline(__always) public static func `region_get_bounds`(_ `region`: GodotRID) -> AABB {
+        return shared.`region_get_bounds`(`region`)
     }
-}
-extension PrimitiveMesh {
-    public var `custom_aabb`: AABB {
-        get { `get_custom_aabb`() }
-        set { `set_custom_aabb`(newValue) }
-    }
-    public var `flip_faces`: Bool {
-        get { `get_flip_faces`() }
-        set { `set_flip_faces`(newValue) }
-    }
-    public var `add_uv2`: Bool {
-        get { `get_add_uv2`() }
-        set { `set_add_uv2`(newValue) }
-    }
-    public var `uv2_padding`: Double {
-        get { `get_uv2_padding`() }
-        set { `set_uv2_padding`(newValue) }
+    @inline(__always) public static func `link_create`() -> GodotRID {
+        return shared.`link_create`()
     }
-}
-extension PrismMesh {
-    public var `left_to_right`: Double {
-        get { `get_left_to_right`() }
-        set { `set_left_to_right`(newValue) }
-    }
-    public var `size`: Vector3 {
-        get { `get_size`() }
-        set { `set_size`(newValue) }
-    }
-    public var `subdivide_width`: Int64 {
-        get { `get_subdivide_width`() }
-        set { `set_subdivide_width`(newValue) }
-    }
-    public var `subdivide_height`: Int64 {
-        get { `get_subdivide_height`() }
-        set { `set_subdivide_height`(newValue) }
-    }
-    public var `subdivide_depth`: Int64 {
-        get { `get_subdivide_depth`() }
-        set { `set_subdivide_depth`(newValue) }
+    @inline(__always) public static func `link_get_iteration_id`(_ `link`: GodotRID) -> Int64 {
+        return shared.`link_get_iteration_id`(`link`)
     }
-}
-extension ProceduralSkyMaterial {
-    public var `sky_top_color`: Color {
-        get { `get_sky_top_color`() }
-        set { `set_sky_top_color`(newValue) }
-    }
-    public var `sky_horizon_color`: Color {
-        get { `get_sky_horizon_color`() }
-        set { `set_sky_horizon_color`(newValue) }
-    }
-    public var `sky_curve`: Double {
-        get { `get_sky_curve`() }
-        set { `set_sky_curve`(newValue) }
-    }
-    public var `sky_energy_multiplier`: Double {
-        get { `get_sky_energy_multiplier`() }
-        set { `set_sky_energy_multiplier`(newValue) }
-    }
-    public var `sky_cover`: Texture2D? {
-        get { `get_sky_cover`() }
-        set { `set_sky_cover`(newValue) }
-    }
-    public var `sky_cover_modulate`: Color {
-        get { `get_sky_cover_modulate`() }
-        set { `set_sky_cover_modulate`(newValue) }
-    }
-    public var `ground_bottom_color`: Color {
-        get { `get_ground_bottom_color`() }
-        set { `set_ground_bottom_color`(newValue) }
-    }
-    public var `ground_horizon_color`: Color {
-        get { `get_ground_horizon_color`() }
-        set { `set_ground_horizon_color`(newValue) }
-    }
-    public var `ground_curve`: Double {
-        get { `get_ground_curve`() }
-        set { `set_ground_curve`(newValue) }
-    }
-    public var `ground_energy_multiplier`: Double {
-        get { `get_ground_energy_multiplier`() }
-        set { `set_ground_energy_multiplier`(newValue) }
-    }
-    public var `sun_angle_max`: Double {
-        get { `get_sun_angle_max`() }
-        set { `set_sun_angle_max`(newValue) }
-    }
-    public var `sun_curve`: Double {
-        get { `get_sun_curve`() }
-        set { `set_sun_curve`(newValue) }
-    }
-    public var `use_debanding`: Bool {
-        get { `get_use_debanding`() }
-        set { `set_use_debanding`(newValue) }
-    }
-    public var `energy_multiplier`: Double {
-        get { `get_energy_multiplier`() }
-        set { `set_energy_multiplier`(newValue) }
+    @inline(__always) public static func `link_set_map`(_ `link`: GodotRID, _ `map`: GodotRID) {
+        shared.`link_set_map`(`link`, `map`)
     }
-}
-extension ProgressBar {
-    public var `fill_mode`: Int64 {
-        get { `get_fill_mode`() }
-        set { `set_fill_mode`(newValue) }
-    }
-    public var `show_percentage`: Bool {
-        get { `is_percentage_shown`() }
-        set { `set_show_percentage`(newValue) }
-    }
-    public var `indeterminate`: Bool {
-        get { `is_indeterminate`() }
-        set { `set_indeterminate`(newValue) }
-    }
-    public var `editor_preview_indeterminate`: Bool {
-        get { `is_editor_preview_indeterminate_enabled`() }
-        set { `set_editor_preview_indeterminate`(newValue) }
+    @inline(__always) public static func `link_get_map`(_ `link`: GodotRID) -> GodotRID {
+        return shared.`link_get_map`(`link`)
     }
-}
-extension QuadOccluder3D {
-    public var `size`: Vector2 {
-        get { `get_size`() }
-        set { `set_size`(newValue) }
+    @inline(__always) public static func `link_set_enabled`(_ `link`: GodotRID, _ `enabled`: Bool) {
+        shared.`link_set_enabled`(`link`, `enabled`)
     }
-}
-extension RDAccelerationStructureGeometry {
-    public var `flags`: RenderingDevice.AccelerationStructureGeometryFlagBits {
-        get { `get_flags`() }
-        set { `set_flags`(newValue) }
-    }
-    public var `vertex_buffer`: GodotRID {
-        get { `get_vertex_buffer`() }
-        set { `set_vertex_buffer`(newValue) }
-    }
-    public var `vertex_offset`: Int64 {
-        get { `get_vertex_offset`() }
-        set { `set_vertex_offset`(newValue) }
-    }
-    public var `vertex_stride`: Int64 {
-        get { `get_vertex_stride`() }
-        set { `set_vertex_stride`(newValue) }
-    }
-    public var `vertex_count`: Int64 {
-        get { `get_vertex_count`() }
-        set { `set_vertex_count`(newValue) }
-    }
-    public var `vertex_format`: RenderingDevice.DataFormat {
-        get { `get_vertex_format`() }
-        set { `set_vertex_format`(newValue) }
-    }
-    public var `index_buffer`: GodotRID {
-        get { `get_index_buffer`() }
-        set { `set_index_buffer`(newValue) }
-    }
-    public var `index_offset`: Int64 {
-        get { `get_index_offset`() }
-        set { `set_index_offset`(newValue) }
-    }
-    public var `index_count`: Int64 {
-        get { `get_index_count`() }
-        set { `set_index_count`(newValue) }
+    @inline(__always) public static func `link_get_enabled`(_ `link`: GodotRID) -> Bool {
+        return shared.`link_get_enabled`(`link`)
     }
-}
-extension RDAccelerationStructureInstance {
-    public var `transform`: Transform3D {
-        get { `get_transform`() }
-        set { `set_transform`(newValue) }
-    }
-    public var `id`: Int64 {
-        get { `get_id`() }
-        set { `set_id`(newValue) }
-    }
-    public var `mask`: Int64 {
-        get { `get_mask`() }
-        set { `set_mask`(newValue) }
-    }
-    public var `hit_sbt_range`: Int64 {
-        get { `get_hit_sbt_range`() }
-        set { `set_hit_sbt_range`(newValue) }
-    }
-    public var `flags`: RenderingDevice.AccelerationStructureInstanceFlagBits {
-        get { `get_flags`() }
-        set { `set_flags`(newValue) }
-    }
-    public var `blas`: GodotRID {
-        get { `get_blas`() }
-        set { `set_blas`(newValue) }
+    @inline(__always) public static func `link_set_bidirectional`(_ `link`: GodotRID, _ `bidirectional`: Bool) {
+        shared.`link_set_bidirectional`(`link`, `bidirectional`)
     }
-}
-extension RDAttachmentFormat {
-    public var `format`: RenderingDevice.DataFormat {
-        get { `get_format`() }
-        set { `set_format`(newValue) }
-    }
-    public var `samples`: RenderingDevice.TextureSamples {
-        get { `get_samples`() }
-        set { `set_samples`(newValue) }
-    }
-    public var `usage_flags`: Int64 {
-        get { `get_usage_flags`() }
-        set { `set_usage_flags`(newValue) }
+    @inline(__always) public static func `link_is_bidirectional`(_ `link`: GodotRID) -> Bool {
+        return shared.`link_is_bidirectional`(`link`)
     }
-}
-extension RDFramebufferPass {
-    public var `color_attachments`: GodotPackedInt32Array {
-        get { `get_color_attachments`() }
-        set { `set_color_attachments`(newValue) }
-    }
-    public var `input_attachments`: GodotPackedInt32Array {
-        get { `get_input_attachments`() }
-        set { `set_input_attachments`(newValue) }
-    }
-    public var `resolve_attachments`: GodotPackedInt32Array {
-        get { `get_resolve_attachments`() }
-        set { `set_resolve_attachments`(newValue) }
-    }
-    public var `preserve_attachments`: GodotPackedInt32Array {
-        get { `get_preserve_attachments`() }
-        set { `set_preserve_attachments`(newValue) }
-    }
-    public var `depth_attachment`: Int64 {
-        get { `get_depth_attachment`() }
-        set { `set_depth_attachment`(newValue) }
+    @inline(__always) public static func `link_set_navigation_layers`(_ `link`: GodotRID, _ `navigation_layers`: Int64) {
+        shared.`link_set_navigation_layers`(`link`, `navigation_layers`)
     }
-}
-extension RDPipelineColorBlendState {
-    public var `enable_logic_op`: Bool {
-        get { `get_enable_logic_op`() }
-        set { `set_enable_logic_op`(newValue) }
-    }
-    public var `logic_op`: RenderingDevice.LogicOperation {
-        get { `get_logic_op`() }
-        set { `set_logic_op`(newValue) }
-    }
-    public var `blend_constant`: Color {
-        get { `get_blend_constant`() }
-        set { `set_blend_constant`(newValue) }
-    }
-    public var `attachments`: GodotArrayOf<RDPipelineColorBlendStateAttachment> {
-        get { `get_attachments`() }
-        set { `set_attachments`(newValue) }
+    @inline(__always) public static func `link_get_navigation_layers`(_ `link`: GodotRID) -> Int64 {
+        return shared.`link_get_navigation_layers`(`link`)
     }
-}
-extension RDPipelineColorBlendStateAttachment {
-    public var `enable_blend`: Bool {
-        get { `get_enable_blend`() }
-        set { `set_enable_blend`(newValue) }
-    }
-    public var `src_color_blend_factor`: RenderingDevice.BlendFactor {
-        get { `get_src_color_blend_factor`() }
-        set { `set_src_color_blend_factor`(newValue) }
-    }
-    public var `dst_color_blend_factor`: RenderingDevice.BlendFactor {
-        get { `get_dst_color_blend_factor`() }
-        set { `set_dst_color_blend_factor`(newValue) }
-    }
-    public var `color_blend_op`: RenderingDevice.BlendOperation {
-        get { `get_color_blend_op`() }
-        set { `set_color_blend_op`(newValue) }
-    }
-    public var `src_alpha_blend_factor`: RenderingDevice.BlendFactor {
-        get { `get_src_alpha_blend_factor`() }
-        set { `set_src_alpha_blend_factor`(newValue) }
-    }
-    public var `dst_alpha_blend_factor`: RenderingDevice.BlendFactor {
-        get { `get_dst_alpha_blend_factor`() }
-        set { `set_dst_alpha_blend_factor`(newValue) }
-    }
-    public var `alpha_blend_op`: RenderingDevice.BlendOperation {
-        get { `get_alpha_blend_op`() }
-        set { `set_alpha_blend_op`(newValue) }
-    }
-    public var `write_r`: Bool {
-        get { `get_write_r`() }
-        set { `set_write_r`(newValue) }
-    }
-    public var `write_g`: Bool {
-        get { `get_write_g`() }
-        set { `set_write_g`(newValue) }
-    }
-    public var `write_b`: Bool {
-        get { `get_write_b`() }
-        set { `set_write_b`(newValue) }
-    }
-    public var `write_a`: Bool {
-        get { `get_write_a`() }
-        set { `set_write_a`(newValue) }
+    @inline(__always) public static func `link_set_start_position`(_ `link`: GodotRID, _ `position`: Vector3) {
+        shared.`link_set_start_position`(`link`, `position`)
     }
-}
-extension RDPipelineDepthStencilState {
-    public var `enable_depth_test`: Bool {
-        get { `get_enable_depth_test`() }
-        set { `set_enable_depth_test`(newValue) }
-    }
-    public var `enable_depth_write`: Bool {
-        get { `get_enable_depth_write`() }
-        set { `set_enable_depth_write`(newValue) }
-    }
-    public var `depth_compare_operator`: RenderingDevice.CompareOperator {
-        get { `get_depth_compare_operator`() }
-        set { `set_depth_compare_operator`(newValue) }
-    }
-    public var `enable_depth_range`: Bool {
-        get { `get_enable_depth_range`() }
-        set { `set_enable_depth_range`(newValue) }
-    }
-    public var `depth_range_min`: Double {
-        get { `get_depth_range_min`() }
-        set { `set_depth_range_min`(newValue) }
-    }
-    public var `depth_range_max`: Double {
-        get { `get_depth_range_max`() }
-        set { `set_depth_range_max`(newValue) }
-    }
-    public var `enable_stencil`: Bool {
-        get { `get_enable_stencil`() }
-        set { `set_enable_stencil`(newValue) }
-    }
-    public var `front_op_fail`: RenderingDevice.StencilOperation {
-        get { `get_front_op_fail`() }
-        set { `set_front_op_fail`(newValue) }
-    }
-    public var `front_op_pass`: RenderingDevice.StencilOperation {
-        get { `get_front_op_pass`() }
-        set { `set_front_op_pass`(newValue) }
-    }
-    public var `front_op_depth_fail`: RenderingDevice.StencilOperation {
-        get { `get_front_op_depth_fail`() }
-        set { `set_front_op_depth_fail`(newValue) }
-    }
-    public var `front_op_compare`: RenderingDevice.CompareOperator {
-        get { `get_front_op_compare`() }
-        set { `set_front_op_compare`(newValue) }
-    }
-    public var `front_op_compare_mask`: Int64 {
-        get { `get_front_op_compare_mask`() }
-        set { `set_front_op_compare_mask`(newValue) }
-    }
-    public var `front_op_write_mask`: Int64 {
-        get { `get_front_op_write_mask`() }
-        set { `set_front_op_write_mask`(newValue) }
-    }
-    public var `front_op_reference`: Int64 {
-        get { `get_front_op_reference`() }
-        set { `set_front_op_reference`(newValue) }
-    }
-    public var `back_op_fail`: RenderingDevice.StencilOperation {
-        get { `get_back_op_fail`() }
-        set { `set_back_op_fail`(newValue) }
-    }
-    public var `back_op_pass`: RenderingDevice.StencilOperation {
-        get { `get_back_op_pass`() }
-        set { `set_back_op_pass`(newValue) }
-    }
-    public var `back_op_depth_fail`: RenderingDevice.StencilOperation {
-        get { `get_back_op_depth_fail`() }
-        set { `set_back_op_depth_fail`(newValue) }
-    }
-    public var `back_op_compare`: RenderingDevice.CompareOperator {
-        get { `get_back_op_compare`() }
-        set { `set_back_op_compare`(newValue) }
-    }
-    public var `back_op_compare_mask`: Int64 {
-        get { `get_back_op_compare_mask`() }
-        set { `set_back_op_compare_mask`(newValue) }
-    }
-    public var `back_op_write_mask`: Int64 {
-        get { `get_back_op_write_mask`() }
-        set { `set_back_op_write_mask`(newValue) }
-    }
-    public var `back_op_reference`: Int64 {
-        get { `get_back_op_reference`() }
-        set { `set_back_op_reference`(newValue) }
+    @inline(__always) public static func `link_get_start_position`(_ `link`: GodotRID) -> Vector3 {
+        return shared.`link_get_start_position`(`link`)
     }
-}
-extension RDPipelineMultisampleState {
-    public var `sample_count`: RenderingDevice.TextureSamples {
-        get { `get_sample_count`() }
-        set { `set_sample_count`(newValue) }
-    }
-    public var `enable_sample_shading`: Bool {
-        get { `get_enable_sample_shading`() }
-        set { `set_enable_sample_shading`(newValue) }
-    }
-    public var `min_sample_shading`: Double {
-        get { `get_min_sample_shading`() }
-        set { `set_min_sample_shading`(newValue) }
-    }
-    public var `enable_alpha_to_coverage`: Bool {
-        get { `get_enable_alpha_to_coverage`() }
-        set { `set_enable_alpha_to_coverage`(newValue) }
-    }
-    public var `enable_alpha_to_one`: Bool {
-        get { `get_enable_alpha_to_one`() }
-        set { `set_enable_alpha_to_one`(newValue) }
-    }
-    public var `sample_masks`: GodotArrayOf<Int64> {
-        get { `get_sample_masks`() }
-        set { `set_sample_masks`(newValue) }
+    @inline(__always) public static func `link_set_end_position`(_ `link`: GodotRID, _ `position`: Vector3) {
+        shared.`link_set_end_position`(`link`, `position`)
     }
-}
-extension RDPipelineRasterizationState {
-    public var `enable_depth_clamp`: Bool {
-        get { `get_enable_depth_clamp`() }
-        set { `set_enable_depth_clamp`(newValue) }
-    }
-    public var `discard_primitives`: Bool {
-        get { `get_discard_primitives`() }
-        set { `set_discard_primitives`(newValue) }
-    }
-    public var `wireframe`: Bool {
-        get { `get_wireframe`() }
-        set { `set_wireframe`(newValue) }
-    }
-    public var `cull_mode`: RenderingDevice.PolygonCullMode {
-        get { `get_cull_mode`() }
-        set { `set_cull_mode`(newValue) }
-    }
-    public var `front_face`: RenderingDevice.PolygonFrontFace {
-        get { `get_front_face`() }
-        set { `set_front_face`(newValue) }
-    }
-    public var `depth_bias_enabled`: Bool {
-        get { `get_depth_bias_enabled`() }
-        set { `set_depth_bias_enabled`(newValue) }
-    }
-    public var `depth_bias_constant_factor`: Double {
-        get { `get_depth_bias_constant_factor`() }
-        set { `set_depth_bias_constant_factor`(newValue) }
-    }
-    public var `depth_bias_clamp`: Double {
-        get { `get_depth_bias_clamp`() }
-        set { `set_depth_bias_clamp`(newValue) }
-    }
-    public var `depth_bias_slope_factor`: Double {
-        get { `get_depth_bias_slope_factor`() }
-        set { `set_depth_bias_slope_factor`(newValue) }
-    }
-    public var `line_width`: Double {
-        get { `get_line_width`() }
-        set { `set_line_width`(newValue) }
-    }
-    public var `patch_control_points`: Int64 {
-        get { `get_patch_control_points`() }
-        set { `set_patch_control_points`(newValue) }
+    @inline(__always) public static func `link_get_end_position`(_ `link`: GodotRID) -> Vector3 {
+        return shared.`link_get_end_position`(`link`)
     }
-}
-extension RDPipelineShader {
-    public var `shader`: GodotRID {
-        get { `get_shader`() }
-        set { `set_shader`(newValue) }
-    }
-    public var `specialization_constants`: GodotArrayOf<RDPipelineSpecializationConstant> {
-        get { `get_specialization_constants`() }
-        set { `set_specialization_constants`(newValue) }
+    @inline(__always) public static func `link_set_enter_cost`(_ `link`: GodotRID, _ `enter_cost`: Double) {
+        shared.`link_set_enter_cost`(`link`, `enter_cost`)
     }
-}
-extension RDPipelineSpecializationConstant {
-    public var `value`: GodotVariant {
-        get { `get_value`() }
-        set { `set_value`(newValue) }
-    }
-    public var `constant_id`: Int64 {
-        get { `get_constant_id`() }
-        set { `set_constant_id`(newValue) }
+    @inline(__always) public static func `link_get_enter_cost`(_ `link`: GodotRID) -> Double {
+        return shared.`link_get_enter_cost`(`link`)
+    }
+    @inline(__always) public static func `link_set_travel_cost`(_ `link`: GodotRID, _ `travel_cost`: Double) {
+        shared.`link_set_travel_cost`(`link`, `travel_cost`)
+    }
+    @inline(__always) public static func `link_get_travel_cost`(_ `link`: GodotRID) -> Double {
+        return shared.`link_get_travel_cost`(`link`)
+    }
+    @inline(__always) public static func `link_set_owner_id`(_ `link`: GodotRID, _ `owner_id`: Int64) {
+        shared.`link_set_owner_id`(`link`, `owner_id`)
+    }
+    @inline(__always) public static func `link_get_owner_id`(_ `link`: GodotRID) -> Int64 {
+        return shared.`link_get_owner_id`(`link`)
+    }
+    @inline(__always) public static func `agent_create`() -> GodotRID {
+        return shared.`agent_create`()
+    }
+    @inline(__always) public static func `agent_set_avoidance_enabled`(_ `agent`: GodotRID, _ `enabled`: Bool) {
+        shared.`agent_set_avoidance_enabled`(`agent`, `enabled`)
+    }
+    @inline(__always) public static func `agent_get_avoidance_enabled`(_ `agent`: GodotRID) -> Bool {
+        return shared.`agent_get_avoidance_enabled`(`agent`)
+    }
+    @inline(__always) public static func `agent_set_use_3d_avoidance`(_ `agent`: GodotRID, _ `enabled`: Bool) {
+        shared.`agent_set_use_3d_avoidance`(`agent`, `enabled`)
+    }
+    @inline(__always) public static func `agent_get_use_3d_avoidance`(_ `agent`: GodotRID) -> Bool {
+        return shared.`agent_get_use_3d_avoidance`(`agent`)
+    }
+    @inline(__always) public static func `agent_set_map`(_ `agent`: GodotRID, _ `map`: GodotRID) {
+        shared.`agent_set_map`(`agent`, `map`)
+    }
+    @inline(__always) public static func `agent_get_map`(_ `agent`: GodotRID) -> GodotRID {
+        return shared.`agent_get_map`(`agent`)
+    }
+    @inline(__always) public static func `agent_set_paused`(_ `agent`: GodotRID, _ `paused`: Bool) {
+        shared.`agent_set_paused`(`agent`, `paused`)
+    }
+    @inline(__always) public static func `agent_get_paused`(_ `agent`: GodotRID) -> Bool {
+        return shared.`agent_get_paused`(`agent`)
+    }
+    @inline(__always) public static func `agent_set_neighbor_distance`(_ `agent`: GodotRID, _ `distance`: Double) {
+        shared.`agent_set_neighbor_distance`(`agent`, `distance`)
+    }
+    @inline(__always) public static func `agent_get_neighbor_distance`(_ `agent`: GodotRID) -> Double {
+        return shared.`agent_get_neighbor_distance`(`agent`)
+    }
+    @inline(__always) public static func `agent_set_max_neighbors`(_ `agent`: GodotRID, _ `count`: Int64) {
+        shared.`agent_set_max_neighbors`(`agent`, `count`)
+    }
+    @inline(__always) public static func `agent_get_max_neighbors`(_ `agent`: GodotRID) -> Int64 {
+        return shared.`agent_get_max_neighbors`(`agent`)
+    }
+    @inline(__always) public static func `agent_set_time_horizon_agents`(_ `agent`: GodotRID, _ `time_horizon`: Double) {
+        shared.`agent_set_time_horizon_agents`(`agent`, `time_horizon`)
+    }
+    @inline(__always) public static func `agent_get_time_horizon_agents`(_ `agent`: GodotRID) -> Double {
+        return shared.`agent_get_time_horizon_agents`(`agent`)
+    }
+    @inline(__always) public static func `agent_set_time_horizon_obstacles`(_ `agent`: GodotRID, _ `time_horizon`: Double) {
+        shared.`agent_set_time_horizon_obstacles`(`agent`, `time_horizon`)
+    }
+    @inline(__always) public static func `agent_get_time_horizon_obstacles`(_ `agent`: GodotRID) -> Double {
+        return shared.`agent_get_time_horizon_obstacles`(`agent`)
+    }
+    @inline(__always) public static func `agent_set_radius`(_ `agent`: GodotRID, _ `radius`: Double) {
+        shared.`agent_set_radius`(`agent`, `radius`)
+    }
+    @inline(__always) public static func `agent_get_radius`(_ `agent`: GodotRID) -> Double {
+        return shared.`agent_get_radius`(`agent`)
+    }
+    @inline(__always) public static func `agent_set_height`(_ `agent`: GodotRID, _ `height`: Double) {
+        shared.`agent_set_height`(`agent`, `height`)
+    }
+    @inline(__always) public static func `agent_get_height`(_ `agent`: GodotRID) -> Double {
+        return shared.`agent_get_height`(`agent`)
+    }
+    @inline(__always) public static func `agent_set_max_speed`(_ `agent`: GodotRID, _ `max_speed`: Double) {
+        shared.`agent_set_max_speed`(`agent`, `max_speed`)
+    }
+    @inline(__always) public static func `agent_get_max_speed`(_ `agent`: GodotRID) -> Double {
+        return shared.`agent_get_max_speed`(`agent`)
+    }
+    @inline(__always) public static func `agent_set_velocity_forced`(_ `agent`: GodotRID, _ `velocity`: Vector3) {
+        shared.`agent_set_velocity_forced`(`agent`, `velocity`)
+    }
+    @inline(__always) public static func `agent_set_velocity`(_ `agent`: GodotRID, _ `velocity`: Vector3) {
+        shared.`agent_set_velocity`(`agent`, `velocity`)
+    }
+    @inline(__always) public static func `agent_get_velocity`(_ `agent`: GodotRID) -> Vector3 {
+        return shared.`agent_get_velocity`(`agent`)
+    }
+    @inline(__always) public static func `agent_set_position`(_ `agent`: GodotRID, _ `position`: Vector3) {
+        shared.`agent_set_position`(`agent`, `position`)
+    }
+    @inline(__always) public static func `agent_get_position`(_ `agent`: GodotRID) -> Vector3 {
+        return shared.`agent_get_position`(`agent`)
+    }
+    @inline(__always) public static func `agent_is_map_changed`(_ `agent`: GodotRID) -> Bool {
+        return shared.`agent_is_map_changed`(`agent`)
+    }
+    @inline(__always) public static func `agent_set_avoidance_callback`(_ `agent`: GodotRID, _ `callback`: borrowing GodotCallable) {
+        shared.`agent_set_avoidance_callback`(`agent`, `callback`)
+    }
+    @inline(__always) public static func `agent_has_avoidance_callback`(_ `agent`: GodotRID) -> Bool {
+        return shared.`agent_has_avoidance_callback`(`agent`)
+    }
+    @inline(__always) public static func `agent_set_avoidance_layers`(_ `agent`: GodotRID, _ `layers`: Int64) {
+        shared.`agent_set_avoidance_layers`(`agent`, `layers`)
+    }
+    @inline(__always) public static func `agent_get_avoidance_layers`(_ `agent`: GodotRID) -> Int64 {
+        return shared.`agent_get_avoidance_layers`(`agent`)
+    }
+    @inline(__always) public static func `agent_set_avoidance_mask`(_ `agent`: GodotRID, _ `mask`: Int64) {
+        shared.`agent_set_avoidance_mask`(`agent`, `mask`)
+    }
+    @inline(__always) public static func `agent_get_avoidance_mask`(_ `agent`: GodotRID) -> Int64 {
+        return shared.`agent_get_avoidance_mask`(`agent`)
+    }
+    @inline(__always) public static func `agent_set_avoidance_priority`(_ `agent`: GodotRID, _ `priority`: Double) {
+        shared.`agent_set_avoidance_priority`(`agent`, `priority`)
+    }
+    @inline(__always) public static func `agent_get_avoidance_priority`(_ `agent`: GodotRID) -> Double {
+        return shared.`agent_get_avoidance_priority`(`agent`)
+    }
+    @inline(__always) public static func `obstacle_create`() -> GodotRID {
+        return shared.`obstacle_create`()
+    }
+    @inline(__always) public static func `obstacle_set_avoidance_enabled`(_ `obstacle`: GodotRID, _ `enabled`: Bool) {
+        shared.`obstacle_set_avoidance_enabled`(`obstacle`, `enabled`)
+    }
+    @inline(__always) public static func `obstacle_get_avoidance_enabled`(_ `obstacle`: GodotRID) -> Bool {
+        return shared.`obstacle_get_avoidance_enabled`(`obstacle`)
+    }
+    @inline(__always) public static func `obstacle_set_use_3d_avoidance`(_ `obstacle`: GodotRID, _ `enabled`: Bool) {
+        shared.`obstacle_set_use_3d_avoidance`(`obstacle`, `enabled`)
+    }
+    @inline(__always) public static func `obstacle_get_use_3d_avoidance`(_ `obstacle`: GodotRID) -> Bool {
+        return shared.`obstacle_get_use_3d_avoidance`(`obstacle`)
+    }
+    @inline(__always) public static func `obstacle_set_map`(_ `obstacle`: GodotRID, _ `map`: GodotRID) {
+        shared.`obstacle_set_map`(`obstacle`, `map`)
+    }
+    @inline(__always) public static func `obstacle_get_map`(_ `obstacle`: GodotRID) -> GodotRID {
+        return shared.`obstacle_get_map`(`obstacle`)
+    }
+    @inline(__always) public static func `obstacle_set_paused`(_ `obstacle`: GodotRID, _ `paused`: Bool) {
+        shared.`obstacle_set_paused`(`obstacle`, `paused`)
+    }
+    @inline(__always) public static func `obstacle_get_paused`(_ `obstacle`: GodotRID) -> Bool {
+        return shared.`obstacle_get_paused`(`obstacle`)
+    }
+    @inline(__always) public static func `obstacle_set_radius`(_ `obstacle`: GodotRID, _ `radius`: Double) {
+        shared.`obstacle_set_radius`(`obstacle`, `radius`)
+    }
+    @inline(__always) public static func `obstacle_get_radius`(_ `obstacle`: GodotRID) -> Double {
+        return shared.`obstacle_get_radius`(`obstacle`)
+    }
+    @inline(__always) public static func `obstacle_set_height`(_ `obstacle`: GodotRID, _ `height`: Double) {
+        shared.`obstacle_set_height`(`obstacle`, `height`)
+    }
+    @inline(__always) public static func `obstacle_get_height`(_ `obstacle`: GodotRID) -> Double {
+        return shared.`obstacle_get_height`(`obstacle`)
+    }
+    @inline(__always) public static func `obstacle_set_velocity`(_ `obstacle`: GodotRID, _ `velocity`: Vector3) {
+        shared.`obstacle_set_velocity`(`obstacle`, `velocity`)
+    }
+    @inline(__always) public static func `obstacle_get_velocity`(_ `obstacle`: GodotRID) -> Vector3 {
+        return shared.`obstacle_get_velocity`(`obstacle`)
+    }
+    @inline(__always) public static func `obstacle_set_position`(_ `obstacle`: GodotRID, _ `position`: Vector3) {
+        shared.`obstacle_set_position`(`obstacle`, `position`)
+    }
+    @inline(__always) public static func `obstacle_get_position`(_ `obstacle`: GodotRID) -> Vector3 {
+        return shared.`obstacle_get_position`(`obstacle`)
+    }
+    @inline(__always) public static func `obstacle_set_vertices`(_ `obstacle`: GodotRID, _ `vertices`: borrowing GodotPackedVector3Array) {
+        shared.`obstacle_set_vertices`(`obstacle`, `vertices`)
+    }
+    @inline(__always) public static func `obstacle_get_vertices`(_ `obstacle`: GodotRID) -> GodotPackedVector3Array {
+        return shared.`obstacle_get_vertices`(`obstacle`)
+    }
+    @inline(__always) public static func `obstacle_set_avoidance_layers`(_ `obstacle`: GodotRID, _ `layers`: Int64) {
+        shared.`obstacle_set_avoidance_layers`(`obstacle`, `layers`)
+    }
+    @inline(__always) public static func `obstacle_get_avoidance_layers`(_ `obstacle`: GodotRID) -> Int64 {
+        return shared.`obstacle_get_avoidance_layers`(`obstacle`)
+    }
+    @inline(__always) public static func `parse_source_geometry_data`(_ `navigation_mesh`: NavigationMesh?, _ `source_geometry_data`: NavigationMeshSourceGeometryData3D?, _ `root_node`: Node?, _ `callback`: borrowing GodotCallable = GodotCallable()) {
+        shared.`parse_source_geometry_data`(`navigation_mesh`, `source_geometry_data`, `root_node`, `callback`)
+    }
+    @inline(__always) public static func `bake_from_source_geometry_data`(_ `navigation_mesh`: NavigationMesh?, _ `source_geometry_data`: NavigationMeshSourceGeometryData3D?, _ `callback`: borrowing GodotCallable = GodotCallable()) {
+        shared.`bake_from_source_geometry_data`(`navigation_mesh`, `source_geometry_data`, `callback`)
+    }
+    @inline(__always) public static func `bake_from_source_geometry_data_async`(_ `navigation_mesh`: NavigationMesh?, _ `source_geometry_data`: NavigationMeshSourceGeometryData3D?, _ `callback`: borrowing GodotCallable = GodotCallable()) {
+        shared.`bake_from_source_geometry_data_async`(`navigation_mesh`, `source_geometry_data`, `callback`)
+    }
+    @inline(__always) public static func `is_baking_navigation_mesh`(_ `navigation_mesh`: NavigationMesh?) -> Bool {
+        return shared.`is_baking_navigation_mesh`(`navigation_mesh`)
+    }
+    @inline(__always) public static func `source_geometry_parser_create`() -> GodotRID {
+        return shared.`source_geometry_parser_create`()
+    }
+    @inline(__always) public static func `source_geometry_parser_set_callback`(_ `parser`: GodotRID, _ `callback`: borrowing GodotCallable) {
+        shared.`source_geometry_parser_set_callback`(`parser`, `callback`)
+    }
+    @inline(__always) public static func `simplify_path`(_ `path`: borrowing GodotPackedVector3Array, _ `epsilon`: Double) -> GodotPackedVector3Array {
+        return shared.`simplify_path`(`path`, `epsilon`)
+    }
+    @inline(__always) public static func `free_rid`(_ `rid`: GodotRID) {
+        shared.`free_rid`(`rid`)
+    }
+    @inline(__always) public static func `set_active`(_ `active`: Bool) {
+        shared.`set_active`(`active`)
+    }
+    @inline(__always) public static func `set_debug_enabled`(_ `enabled`: Bool) {
+        shared.`set_debug_enabled`(`enabled`)
+    }
+    @inline(__always) public static func `get_debug_enabled`() -> Bool {
+        return shared.`get_debug_enabled`()
+    }
+    @inline(__always) public static func `get_process_info`(_ `process_info`: NavigationServer3D.ProcessInfo) -> Int64 {
+        return shared.`get_process_info`(`process_info`)
     }
 }
