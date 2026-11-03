@@ -1,0 +1,4 @@
+{
+    global: godot_swift_tests_init;
+    local: *;
+};

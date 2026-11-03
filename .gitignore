@@ -1,0 +1,6 @@
+.archive/
+.build/
+.swiftpm/
+.godot/
+bin/
+.DS_Store

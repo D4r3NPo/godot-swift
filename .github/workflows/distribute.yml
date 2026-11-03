@@ -1,0 +1,60 @@
+name: Generate Godot distribution branches
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Godot API branch
+        type: choice
+        options: ['4.6', '4.7', both]
+        default: both
+permissions:
+  contents: write
+concurrency:
+  group: godot-distributions
+  cancel-in-progress: false
+jobs:
+  distribute:
+    strategy:
+      fail-fast: false
+      matrix:
+        version: ['4.6', '4.7']
+    runs-on: xcode-27
+    steps:
+      - uses: actions/checkout@v4
+        if: inputs.version == 'both' || inputs.version == matrix.version
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Swift toolchain
+        if: inputs.version == 'both' || inputs.version == matrix.version
+        run: swift --version
+      - uses: ./.github/actions/setup-godot
+        if: inputs.version == 'both' || inputs.version == matrix.version
+        with:
+          version: ${{ matrix.version }}
+      - name: Generate, validate and publish
+        if: inputs.version == 'both' || inputs.version == matrix.version
+        env:
+          VERSION: ${{ matrix.version }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          ENGINE="$GODOT_PATH"
+          ENGINE_VERSION=$("$ENGINE" --version)
+          [[ "$ENGINE_VERSION" == "$VERSION."* ]] || { echo "Unexpected engine: $ENGINE_VERSION"; exit 1; }
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          OLD=$(git ls-remote origin "refs/heads/$VERSION" | cut -f1)
+          git checkout -B "$VERSION" origin/main
+          tools/run use-api --godot "$ENGINE"
+          git add api/extension_api.json api/gdextension_interface.json example/game.gdextension Tests/Integration/integration.gdextension
+          git commit --allow-empty -m "Godot $VERSION active API changed ($ENGINE_VERSION)"
+          tools/run generate
+          git add Sources api/coverage.json api/generated_manifest.json
+          git commit --allow-empty -m "Godot $VERSION generated"
+          swift test --package-path tools
+          swift test
+          tools/run generate --check
+          tools/run validate --godot "$ENGINE" --full --check-thread
+          git diff --exit-code
+          git push --force-with-lease="refs/heads/$VERSION:$OLD" origin "HEAD:refs/heads/$VERSION"

@@ -1,0 +1,9 @@
+[configuration]
+entry_symbol = "game_init"
+compatibility_minimum = "4.8"
+reloadable = false
+
+[libraries]
+macos = "res://bin/libGame.dylib"
+; linux = "res://bin/libGame.so"
+; windows = "res://bin/Game.dll"

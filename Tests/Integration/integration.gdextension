@@ -1,0 +1,15 @@
+[configuration]
+entry_symbol = "godot_swift_tests_init"
+compatibility_minimum = "4.8"
+reloadable = false
+[libraries]
+macos.debug.arm64 = "res://bin/libIntegrationExtension.dylib"
+macos.release.arm64 = "res://bin/libIntegrationExtension.dylib"
+linux.debug.x86_64 = "res://bin/libIntegrationExtension.so"
+linux.release.x86_64 = "res://bin/libIntegrationExtension.so"
+macos.debug.x86_64 = "res://bin/libIntegrationExtension.dylib"
+macos.release.x86_64 = "res://bin/libIntegrationExtension.dylib"
+linux.debug.arm64 = "res://bin/libIntegrationExtension.so"
+linux.release.arm64 = "res://bin/libIntegrationExtension.so"
+windows.debug.x86_64 = "res://bin/IntegrationExtension.dll"
+windows.release.x86_64 = "res://bin/IntegrationExtension.dll"
