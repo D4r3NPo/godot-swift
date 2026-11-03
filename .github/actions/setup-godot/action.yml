@@ -1,0 +1,40 @@
+name: Set up Godot
+description: Install an editor matching the requested API
+inputs:
+  version:
+    description: Minor version, or master for the pinned development snapshot
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Install Godot editor
+      shell: bash
+      env:
+        GODOT_VERSION: ${{ inputs.version }}
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        set -euo pipefail
+        INSTALL_DIR=$(mktemp -d "$RUNNER_TEMP/godot.XXXXXX")
+        if [[ "$GODOT_VERSION" == master ]]; then
+          # Match the API snapshot checked into main.
+          GODOT_REVISION=af481fd22334339b378bcdde654ce472715029ec
+          git init "$INSTALL_DIR/source"
+          git -C "$INSTALL_DIR/source" remote add origin https://github.com/godotengine/godot.git
+          git -C "$INSTALL_DIR/source" fetch --depth 1 origin "$GODOT_REVISION"
+          git -C "$INSTALL_DIR/source" checkout --detach FETCH_HEAD
+          python3 -m venv "$INSTALL_DIR/venv"
+          "$INSTALL_DIR/venv/bin/pip" install scons
+          ARCH=$(uname -m)
+          [[ "$ARCH" != aarch64 ]] || ARCH=arm64
+          (cd "$INSTALL_DIR/source" && "$INSTALL_DIR/venv/bin/scons" platform=macos target=editor arch="$ARCH" dev_build=no debug_symbols=no)
+          GODOT_PATH="$INSTALL_DIR/source/bin/godot.macos.editor.$ARCH"
+        else
+          TAG=$(gh api --paginate 'repos/godotengine/godot-builds/releases?per_page=100' --jq '.[].tag_name' | python3 -c 'import sys; v=sys.argv[1]; tags=[t.strip() for t in sys.stdin if t.strip().startswith(v+".") or t.strip()==v+"-stable"]; tags=[t for t in tags if t.endswith("-stable")]; assert tags, "No stable Godot release found for "+v; print(max(tags,key=lambda t:tuple(map(int,t.removesuffix("-stable").split(".")))))' "$GODOT_VERSION")
+          ARCHIVE="Godot_v${TAG}_macos.universal.zip"
+          gh release download "$TAG" --repo godotengine/godot-builds --pattern "$ARCHIVE" --dir "$INSTALL_DIR"
+          unzip -q "$INSTALL_DIR/$ARCHIVE" -d "$INSTALL_DIR"
+          GODOT_PATH="$INSTALL_DIR/Godot.app/Contents/MacOS/Godot"
+        fi
+        test -x "$GODOT_PATH"
+        "$GODOT_PATH" --version
+        echo "GODOT_PATH=$GODOT_PATH" >> "$GITHUB_ENV"

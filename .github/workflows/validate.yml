@@ -1,0 +1,27 @@
+name: Validate active API
+on:
+  workflow_dispatch:
+    inputs:
+      full:
+        description: Include engine integration and diagnostics
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: xcode-27
+    steps:
+      - uses: actions/checkout@v4
+      - name: Swift toolchain
+        run: swift --version
+      - uses: ./.github/actions/setup-godot
+        if: inputs.full
+        with:
+          version: master
+      - run: swift test --package-path tools
+      - run: swift test
+      - run: tools/run generate --check
+      - if: inputs.full
+        shell: bash
+        run: tools/run validate --godot "$GODOT_PATH" --full --check-thread

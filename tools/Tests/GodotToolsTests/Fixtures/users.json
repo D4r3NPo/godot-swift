@@ -1,0 +1,319 @@
+{
+  "classes": [
+    {
+      "name": "Enemy",
+      "parent": "Node",
+      "methods": [
+        {
+          "name": "take_damage",
+          "swift": "takeDamage",
+          "arguments": [
+            {
+              "name": "amount",
+              "type": "int"
+            }
+          ],
+          "return": "int"
+        },
+        {
+          "name": "get_health",
+          "swift": "getHealth",
+          "arguments": [],
+          "return": "int"
+        },
+        {
+          "name": "set_health",
+          "swift": "setHealth",
+          "arguments": [
+            {
+              "name": "value",
+              "type": "int"
+            }
+          ]
+        },
+        {
+          "name": "destroy_during_call",
+          "swift": "destroyDuringCall",
+          "arguments": [],
+          "return": "int"
+        },
+        {
+          "name": "reenter",
+          "swift": "reenter",
+          "arguments": [],
+          "return": "int"
+        },
+        {
+          "name": "reentrant_destroy",
+          "swift": "reentrantDestroy",
+          "arguments": [],
+          "return": "int"
+        }
+      ],
+      "properties": [
+        {
+          "name": "health",
+          "type": "int",
+          "setter": "set_health",
+          "getter": "get_health"
+        }
+      ]
+    },
+    {
+      "name": "RefCounter",
+      "parent": "RefCounted",
+      "methods": [
+        {
+          "name": "add",
+          "swift": "add",
+          "arguments": [
+            {
+              "name": "amount",
+              "type": "int"
+            }
+          ],
+          "return": "int"
+        },
+        {
+          "name": "value",
+          "swift": "getValue",
+          "arguments": [],
+          "return": "int"
+        },
+        {
+          "name": "scaled",
+          "swift": "scaled",
+          "arguments": [
+            {
+              "name": "value",
+              "type": "float"
+            },
+            {
+              "name": "enabled",
+              "type": "bool"
+            }
+          ],
+          "return": "float"
+        },
+        {
+          "name": "echo_text",
+          "swift": "echoText",
+          "arguments": [
+            {
+              "name": "value",
+              "type": "String"
+            }
+          ],
+          "return": "String"
+        },
+        {
+          "name": "echo_resource",
+          "swift": "echoResource",
+          "arguments": [
+            {
+              "name": "value",
+              "type": "Resource?"
+            }
+          ],
+          "return": "Resource?"
+        },
+        {
+          "name": "echo_variant",
+          "swift": "echoVariant",
+          "arguments": [
+            {
+              "name": "value",
+              "type": "Variant"
+            }
+          ],
+          "return": "Variant"
+        }
+      ]
+    },
+    {
+      "name": "ActorStats",
+      "parent": "Resource",
+      "methods": [
+        {
+          "name": "get_health",
+          "swift": "getHealth",
+          "arguments": [],
+          "return": "int"
+        },
+        {
+          "name": "set_health",
+          "swift": "setHealth",
+          "arguments": [
+            {
+              "name": "value",
+              "type": "int"
+            }
+          ]
+        }
+      ],
+      "properties": [
+        {
+          "name": "health",
+          "type": "int",
+          "setter": "set_health",
+          "getter": "get_health"
+        }
+      ]
+    },
+    {
+      "name": "Actor",
+      "parent": "Node",
+      "methods": [
+        {
+          "name": "take_damage",
+          "swift": "takeDamage",
+          "arguments": [
+            {
+              "name": "amount",
+              "type": "int"
+            }
+          ],
+          "return": "int"
+        },
+        {
+          "name": "get_health",
+          "swift": "getHealth",
+          "arguments": [],
+          "return": "int"
+        },
+        {
+          "name": "set_health",
+          "swift": "setHealth",
+          "arguments": [
+            {
+              "name": "value",
+              "type": "int"
+            }
+          ]
+        },
+        {
+          "name": "ready_count",
+          "swift": "readyCount",
+          "arguments": [],
+          "return": "int"
+        },
+        {
+          "name": "process_count",
+          "swift": "processCount",
+          "arguments": [],
+          "return": "int"
+        },
+        {
+          "name": "stats_id",
+          "swift": "statsID",
+          "arguments": [],
+          "return": "int"
+        },
+        {
+          "name": "get_stats",
+          "swift": "getStats",
+          "arguments": [],
+          "return": "ActorStats?"
+        },
+        {
+          "name": "set_stats",
+          "swift": "setStats",
+          "arguments": [
+            {
+              "name": "value",
+              "type": "ActorStats?"
+            }
+          ]
+        },
+        {
+          "name": "input_count",
+          "swift": "inputCount",
+          "arguments": [],
+          "return": "int"
+        }
+      ],
+      "properties": [
+        {
+          "name": "health",
+          "type": "int",
+          "setter": "set_health",
+          "getter": "get_health"
+        },
+        {
+          "name": "stats",
+          "type": "ActorStats?",
+          "setter": "set_stats",
+          "getter": "get_stats"
+        }
+      ],
+      "signals": [
+        {
+          "name": "health_changed",
+          "swift": "emitHealthChanged",
+          "arguments": [
+            {
+              "name": "health",
+              "type": "int"
+            }
+          ]
+        },
+        {
+          "name": "tagged",
+          "swift": "emitTagged",
+          "arguments": [
+            {
+              "name": "label",
+              "type": "String"
+            },
+            {
+              "name": "stats",
+              "type": "ActorStats?"
+            }
+          ]
+        }
+      ],
+      "virtuals": [
+        {
+          "name": "_ready",
+          "swift": "ready"
+        },
+        {
+          "name": "_process",
+          "swift": "process"
+        },
+        {
+          "name": "_input",
+          "swift": "_input"
+        }
+      ]
+    },
+    {
+      "name": "PacketProbe",
+      "parent": "PacketPeerExtension",
+      "methods": [],
+      "virtuals": [
+        {
+          "name": "_get_packet",
+          "swift": "_get_packet"
+        },
+        {
+          "name": "_put_packet",
+          "swift": "_put_packet"
+        },
+        {
+          "name": "_get_available_packet_count",
+          "swift": "_get_available_packet_count"
+        },
+        {
+          "name": "_get_max_packet_size",
+          "swift": "_get_max_packet_size"
+        }
+      ]
+    },
+    {
+      "name": "EliteActor",
+      "parent": "Actor",
+      "methods": []
+    }
+  ]
+}

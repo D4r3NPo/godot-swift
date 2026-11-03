@@ -1,0 +1,23 @@
+{
+  "abi_types" : 147,
+  "configuration" : "float_64",
+  "engine_classes" : 1069,
+  "expanded_coverage" : "api/coverage.json",
+  "godot" : {
+    "precision" : "single",
+    "version_build" : "custom_build",
+    "version_full_name" : "Godot Engine v4.8.dev.custom_build",
+    "version_major" : 4,
+    "version_minor" : 8,
+    "version_patch" : 0,
+    "version_status" : "dev"
+  },
+  "inputs" : {
+    "extension_api.json" : "f85c5875c9487618b4d0bbe0e9cd6cefb56d98d3f9a7ef9b1425a3bd8857bcf1",
+    "gdextension_interface.json" : "24bf12720a6fdef3f9d270c792c5abe9ef5f645d67335615383d7e42d77143f3"
+  },
+  "interface_functions" : 179,
+  "loaded_interface_functions" : 179,
+  "required_interface_functions" : 48,
+  "typed_engine_methods" : 15753
+}
