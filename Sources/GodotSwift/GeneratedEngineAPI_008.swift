@@ -459,22 +459,6 @@ extension BoxContainer {
         api.object_method_bind_ptrcall!(Self.mb_is_vertical, requireHandle(), nil, &result)
         return result != 0
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_reverse_sort = lookupMethod("BoxContainer", "set_reverse_sort", 2586408642)
-    @inlinable @inline(__always) public func `set_reverse_sort`(_ `reverse_sort`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `reverse_sort` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_reverse_sort, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_reverse_sort = lookupMethod("BoxContainer", "is_reverse_sort", 36873697)
-    @inlinable @inline(__always) public func `is_reverse_sort`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_reverse_sort, requireHandle(), nil, &result)
-        return result != 0
-}
 }
 extension BoxMesh {
     @usableFromInline nonisolated(unsafe) internal static let mb_set_size = lookupMethod("BoxMesh", "set_size", 3460891852)

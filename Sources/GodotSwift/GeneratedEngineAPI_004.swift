@@ -1577,14 +1577,6 @@ extension AnimationNodeExtension {
         return result
 }
 }
-extension AnimationNodeObserver {
-}
-extension AnimationNodeObserverBlendSpace {
-}
-extension AnimationNodeObserverOneShot {
-}
-extension AnimationNodeObserverTransition {
-}
 extension AnimationNodeOneShot {
     @usableFromInline nonisolated(unsafe) internal static let mb_set_fadein_time = lookupMethod("AnimationNodeOneShot", "set_fadein_time", 373806689)
     @inlinable @inline(__always) public func `set_fadein_time`(_ `time`: Double) {

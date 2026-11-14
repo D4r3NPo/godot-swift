@@ -1,13 +1,6 @@
 // Generated engine API partition. Do not edit.
 import CGodot
 extension EditorInterface {
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_exiting = lookupMethod("EditorInterface", "is_exiting", 36873697)
-    @inlinable @inline(__always) public func `is_exiting`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_exiting, requireHandle(), nil, &result)
-        return result != 0
-}
     @usableFromInline nonisolated(unsafe) internal static let mb_restart_editor = lookupMethod("EditorInterface", "restart_editor", 3216645846)
     @inlinable @inline(__always) public func `restart_editor`(_ `save`: Bool = true) {
         defer { withExtendedLifetime((self)) {} }
@@ -90,15 +83,6 @@ extension EditorInterface {
         let object = Object.resolve(nativeResult)
         return object as? EditorUndoRedoManager
 }
-    nonisolated(unsafe) private static let mb_get_scene_paint_2d = lookupMethod("EditorInterface", "get_scene_paint_2d", 4188778635)
-    public func `get_scene_paint_2d`() -> ScenePaint2DEditor? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_scene_paint_2d, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        return object as? ScenePaint2DEditor
-}
     nonisolated(unsafe) private static let mb_make_mesh_previews = lookupMethod("EditorInterface", "make_mesh_previews", 878078554)
     public func `make_mesh_previews`(_ `meshes`: borrowing GodotArrayOf<Mesh>, _ `preview_size`: Int64) -> GodotArrayOf<Texture2D> {
         defer { withExtendedLifetime((self)) {} }
@@ -156,6 +140,15 @@ extension EditorInterface {
         let object = Object.resolve(nativeResult)
         return object as? Control
 }
+    nonisolated(unsafe) private static let mb_get_editor_main_screen = lookupMethod("EditorInterface", "get_editor_main_screen", 1706218421)
+    public func `get_editor_main_screen`() -> VBoxContainer? {
+        defer { withExtendedLifetime((self)) {} }
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        api.object_method_bind_ptrcall!(Self.mb_get_editor_main_screen, requireHandle(), nil, &nativeResult)
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        return object as? VBoxContainer
+}
     nonisolated(unsafe) private static let mb_get_script_editor = lookupMethod("EditorInterface", "get_script_editor", 90868003)
     public func `get_script_editor`() -> ScriptEditor? {
         defer { withExtendedLifetime((self)) {} }
@@ -187,15 +180,6 @@ extension EditorInterface {
         let object = Object.resolve(nativeResult)
         return object as? SubViewport
 }
-    nonisolated(unsafe) private static let mb_get_editor_main_screen = lookupMethod("EditorInterface", "get_editor_main_screen", 1706218421)
-    public func `get_editor_main_screen`() -> VBoxContainer? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_editor_main_screen, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        return object as? VBoxContainer
-}
     nonisolated(unsafe) private static let mb_set_main_screen_editor = lookupMethod("EditorInterface", "set_main_screen_editor", 83702148)
     public func `set_main_screen_editor`(_ `name`: borrowing GodotString) {
         defer { withExtendedLifetime((self)) {} }
@@ -203,18 +187,6 @@ extension EditorInterface {
             var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
             api.object_method_bind_ptrcall!(Self.mb_set_main_screen_editor, requireHandle(), &arguments, nil)
         }
-}
-    nonisolated(unsafe) private static let mb_get_dock_by_name = lookupMethod("EditorInterface", "get_dock_by_name", 2597074523)
-    public func `get_dock_by_name`(_ `name`: borrowing GodotString) -> EditorDock? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        `name`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_dock_by_name, requireHandle(), &arguments, &nativeResult)
-        }
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        return object as? EditorDock
 }
     @usableFromInline nonisolated(unsafe) internal static let mb_set_distraction_free_mode = lookupMethod("EditorInterface", "set_distraction_free_mode", 2586408642)
     @inlinable @inline(__always) public func `set_distraction_free_mode`(_ `enter`: Bool) {
@@ -858,13 +830,6 @@ extension EditorNode3DGizmo {
             api.object_method_bind_ptrcall!(Self.mb_get_subgizmo_selection, requireHandle(), nil, result)
         })
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_selected = lookupMethod("EditorNode3DGizmo", "is_selected", 36873697)
-    @inlinable @inline(__always) public func `is_selected`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_selected, requireHandle(), nil, &result)
-        return result != 0
-}
 }
 extension EditorNode3DGizmoPlugin {
     nonisolated(unsafe) private static let mb_create_material = lookupMethod("EditorNode3DGizmoPlugin", "create_material", 3486012546)
@@ -1294,6 +1259,52 @@ extension EditorPlugin {
             api.object_method_bind_ptrcall!(Self.mb_remove_import_plugin, requireHandle(), &arguments, nil)
         }
 }
+    nonisolated(unsafe) private static let mb_add_scene_format_importer_plugin = lookupMethod("EditorPlugin", "add_scene_format_importer_plugin", 2764104752)
+    public func `add_scene_format_importer_plugin`(_ `scene_format_importer`: EditorSceneFormatImporter?, _ `first_priority`: Bool = false) {
+        defer { withExtendedLifetime((self, `scene_format_importer`)) {} }
+        var a0 = `scene_format_importer`?.requireHandle()
+        var a1 = `first_priority` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_add_scene_format_importer_plugin, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_remove_scene_format_importer_plugin = lookupMethod("EditorPlugin", "remove_scene_format_importer_plugin", 2637776123)
+    public func `remove_scene_format_importer_plugin`(_ `scene_format_importer`: EditorSceneFormatImporter?) {
+        defer { withExtendedLifetime((self, `scene_format_importer`)) {} }
+        var a0 = `scene_format_importer`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_remove_scene_format_importer_plugin, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_add_scene_post_import_plugin = lookupMethod("EditorPlugin", "add_scene_post_import_plugin", 3492436322)
+    public func `add_scene_post_import_plugin`(_ `scene_import_plugin`: EditorScenePostImportPlugin?, _ `first_priority`: Bool = false) {
+        defer { withExtendedLifetime((self, `scene_import_plugin`)) {} }
+        var a0 = `scene_import_plugin`?.requireHandle()
+        var a1 = `first_priority` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_add_scene_post_import_plugin, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_remove_scene_post_import_plugin = lookupMethod("EditorPlugin", "remove_scene_post_import_plugin", 3045178206)
+    public func `remove_scene_post_import_plugin`(_ `scene_import_plugin`: EditorScenePostImportPlugin?) {
+        defer { withExtendedLifetime((self, `scene_import_plugin`)) {} }
+        var a0 = `scene_import_plugin`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_remove_scene_post_import_plugin, requireHandle(), &arguments, nil)
+        }
+}
     nonisolated(unsafe) private static let mb_add_export_plugin = lookupMethod("EditorPlugin", "add_export_plugin", 4095952207)
     public func `add_export_plugin`(_ `plugin`: EditorExportPlugin?) {
         defer { withExtendedLifetime((self, `plugin`)) {} }
@@ -1328,6 +1339,24 @@ extension EditorPlugin {
         withUnsafePointer(to: &a0) { p0 in
             var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
             api.object_method_bind_ptrcall!(Self.mb_remove_export_platform, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_add_node_3d_gizmo_plugin = lookupMethod("EditorPlugin", "add_node_3d_gizmo_plugin", 1541015022)
+    public func `add_node_3d_gizmo_plugin`(_ `plugin`: EditorNode3DGizmoPlugin?) {
+        defer { withExtendedLifetime((self, `plugin`)) {} }
+        var a0 = `plugin`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_add_node_3d_gizmo_plugin, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_remove_node_3d_gizmo_plugin = lookupMethod("EditorPlugin", "remove_node_3d_gizmo_plugin", 1541015022)
+    public func `remove_node_3d_gizmo_plugin`(_ `plugin`: EditorNode3DGizmoPlugin?) {
+        defer { withExtendedLifetime((self, `plugin`)) {} }
+        var a0 = `plugin`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_remove_node_3d_gizmo_plugin, requireHandle(), &arguments, nil)
         }
 }
     nonisolated(unsafe) private static let mb_add_inspector_plugin = lookupMethod("EditorPlugin", "add_inspector_plugin", 546395733)
@@ -1397,70 +1426,6 @@ extension EditorPlugin {
         withUnsafePointer(to: &a0) { p0 in
             var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
             api.object_method_bind_ptrcall!(Self.mb_remove_context_menu_plugin, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_add_node_3d_gizmo_plugin = lookupMethod("EditorPlugin", "add_node_3d_gizmo_plugin", 1541015022)
-    public func `add_node_3d_gizmo_plugin`(_ `plugin`: EditorNode3DGizmoPlugin?) {
-        defer { withExtendedLifetime((self, `plugin`)) {} }
-        var a0 = `plugin`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_add_node_3d_gizmo_plugin, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_remove_node_3d_gizmo_plugin = lookupMethod("EditorPlugin", "remove_node_3d_gizmo_plugin", 1541015022)
-    public func `remove_node_3d_gizmo_plugin`(_ `plugin`: EditorNode3DGizmoPlugin?) {
-        defer { withExtendedLifetime((self, `plugin`)) {} }
-        var a0 = `plugin`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_remove_node_3d_gizmo_plugin, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_add_scene_format_importer_plugin = lookupMethod("EditorPlugin", "add_scene_format_importer_plugin", 2764104752)
-    public func `add_scene_format_importer_plugin`(_ `scene_format_importer`: EditorSceneFormatImporter?, _ `first_priority`: Bool = false) {
-        defer { withExtendedLifetime((self, `scene_format_importer`)) {} }
-        var a0 = `scene_format_importer`?.requireHandle()
-        var a1 = `first_priority` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_add_scene_format_importer_plugin, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_remove_scene_format_importer_plugin = lookupMethod("EditorPlugin", "remove_scene_format_importer_plugin", 2637776123)
-    public func `remove_scene_format_importer_plugin`(_ `scene_format_importer`: EditorSceneFormatImporter?) {
-        defer { withExtendedLifetime((self, `scene_format_importer`)) {} }
-        var a0 = `scene_format_importer`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_remove_scene_format_importer_plugin, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_add_scene_post_import_plugin = lookupMethod("EditorPlugin", "add_scene_post_import_plugin", 3492436322)
-    public func `add_scene_post_import_plugin`(_ `scene_import_plugin`: EditorScenePostImportPlugin?, _ `first_priority`: Bool = false) {
-        defer { withExtendedLifetime((self, `scene_import_plugin`)) {} }
-        var a0 = `scene_import_plugin`?.requireHandle()
-        var a1 = `first_priority` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_add_scene_post_import_plugin, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_remove_scene_post_import_plugin = lookupMethod("EditorPlugin", "remove_scene_post_import_plugin", 3045178206)
-    public func `remove_scene_post_import_plugin`(_ `scene_import_plugin`: EditorScenePostImportPlugin?) {
-        defer { withExtendedLifetime((self, `scene_import_plugin`)) {} }
-        var a0 = `scene_import_plugin`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_remove_scene_post_import_plugin, requireHandle(), &arguments, nil)
         }
 }
     nonisolated(unsafe) private static let mb_get_editor_interface = lookupMethod("EditorPlugin", "get_editor_interface", 4223731786)

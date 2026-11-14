@@ -1528,22 +1528,6 @@ extension TextEdit {
             api.object_method_bind_ptrcall!(Self.mb_delete_selection, requireHandle(), &arguments, nil)
         }
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_selection_handle_enabled = lookupMethod("TextEdit", "set_selection_handle_enabled", 2586408642)
-    @inlinable @inline(__always) public func `set_selection_handle_enabled`(_ `enable`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `enable` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_selection_handle_enabled, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_selection_handle_enabled = lookupMethod("TextEdit", "is_selection_handle_enabled", 36873697)
-    @inlinable @inline(__always) public func `is_selection_handle_enabled`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_selection_handle_enabled, requireHandle(), nil, &result)
-        return result != 0
-}
     @usableFromInline nonisolated(unsafe) internal static let mb_set_line_wrapping_mode = lookupMethod("TextEdit", "set_line_wrapping_mode", 2525115309)
     @inlinable @inline(__always) public func `set_line_wrapping_mode`(_ `mode`: TextEdit.LineWrappingMode) {
         defer { withExtendedLifetime((self)) {} }

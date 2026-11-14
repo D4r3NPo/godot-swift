@@ -1129,53 +1129,19 @@ extension Skeleton3D {
             return result.baseAddress!.move()
         }
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_bone_skin_scale = lookupMethod("Skeleton3D", "set_bone_skin_scale", 1530502735)
-    @inlinable @inline(__always) public func `set_bone_skin_scale`(_ `bone_idx`: Int64, _ `skin_scale`: Vector3) {
+    @usableFromInline nonisolated(unsafe) internal static let mb_reset_bone_pose = lookupMethod("Skeleton3D", "reset_bone_pose", 1286410249)
+    @inlinable @inline(__always) public func `reset_bone_pose`(_ `bone_idx`: Int64) {
         defer { withExtendedLifetime((self)) {} }
         var a0 = `bone_idx`
-        withUnsafePointer(to: &a0) { p0 in
-            `skin_scale`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_bone_skin_scale, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_bone_skin_scale = lookupMethod("Skeleton3D", "get_bone_skin_scale", 711720468)
-    @inlinable @inline(__always) public func `get_bone_skin_scale`(_ `bone_idx`: Int64) -> Vector3 {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `bone_idx`
-        return withUnsafeTemporaryAllocation(of: Vector3.self, capacity: 1) { result in
-            withUnsafePointer(to: &a0) { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_bone_skin_scale, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
-            }
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_reset_bone_pose = lookupMethod("Skeleton3D", "reset_bone_pose", 4023243586)
-    @inlinable @inline(__always) public func `reset_bone_pose`(_ `bone_idx`: Int64, _ `reset_bone_skin_scale`: Bool = false) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `bone_idx`
-        var a1 = `reset_bone_skin_scale` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_reset_bone_pose, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_reset_bone_poses = lookupMethod("Skeleton3D", "reset_bone_poses", 107499316)
-    @inlinable @inline(__always) public func `reset_bone_poses`(_ `reset_bone_skin_scale`: Bool = false) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `reset_bone_skin_scale` ? UInt8(1) : UInt8(0)
         withUnsafePointer(to: &a0) { p0 in
             var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_reset_bone_poses, requireHandle(), &arguments, nil)
+            api.object_method_bind_ptrcall!(Self.mb_reset_bone_pose, requireHandle(), &arguments, nil)
         }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_reset_bone_poses = lookupMethod("Skeleton3D", "reset_bone_poses", 3218959716)
+    @inlinable @inline(__always) public func `reset_bone_poses`() {
+        defer { withExtendedLifetime((self)) {} }
+        api.object_method_bind_ptrcall!(Self.mb_reset_bone_poses, requireHandle(), nil, nil)
 }
     @usableFromInline nonisolated(unsafe) internal static let mb_is_bone_enabled = lookupMethod("Skeleton3D", "is_bone_enabled", 1116898809)
     @inlinable @inline(__always) public func `is_bone_enabled`(_ `bone_idx`: Int64) -> Bool {
@@ -2859,5 +2825,48 @@ extension SkeletonModificationStack2D {
         guard let nativeResult else { return nil }
         let object = Object.resolve(nativeResult)
         return object as? Skeleton2D
+}
+}
+extension SkeletonModifier3D {
+    nonisolated(unsafe) private static let mb_get_skeleton = lookupMethod("SkeletonModifier3D", "get_skeleton", 1488626673)
+    public func `get_skeleton`() -> Skeleton3D? {
+        defer { withExtendedLifetime((self)) {} }
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        api.object_method_bind_ptrcall!(Self.mb_get_skeleton, requireHandle(), nil, &nativeResult)
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        return object as? Skeleton3D
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_active = lookupMethod("SkeletonModifier3D", "set_active", 2586408642)
+    @inlinable @inline(__always) public func `set_active`(_ `active`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `active` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_active, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_active = lookupMethod("SkeletonModifier3D", "is_active", 36873697)
+    @inlinable @inline(__always) public func `is_active`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_active, requireHandle(), nil, &result)
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_influence = lookupMethod("SkeletonModifier3D", "set_influence", 373806689)
+    @inlinable @inline(__always) public func `set_influence`(_ `influence`: Double) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `influence`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_influence, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_influence = lookupMethod("SkeletonModifier3D", "get_influence", 1740695150)
+    @inlinable @inline(__always) public func `get_influence`() -> Double {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Double = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_influence, requireHandle(), nil, &result)
+        return result
 }
 }

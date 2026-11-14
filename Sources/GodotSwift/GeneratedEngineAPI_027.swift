@@ -1,300 +1,5 @@
 // Generated engine API partition. Do not edit.
 import CGodot
-extension Line2D {
-    nonisolated(unsafe) private static let mb_set_points = lookupMethod("Line2D", "set_points", 1509147220)
-    public func `set_points`(_ `points`: borrowing GodotPackedVector2Array) {
-        defer { withExtendedLifetime((self)) {} }
-        `points`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_points, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_points = lookupMethod("Line2D", "get_points", 2961356807)
-    public func `get_points`() -> GodotPackedVector2Array {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotPackedVector2Array(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_points, requireHandle(), nil, result)
-        })
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_point_position = lookupMethod("Line2D", "set_point_position", 163021252)
-    @inlinable @inline(__always) public func `set_point_position`(_ `index`: Int64, _ `position`: Vector2) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `index`
-        withUnsafePointer(to: &a0) { p0 in
-            `position`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_point_position, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_point_position = lookupMethod("Line2D", "get_point_position", 2299179447)
-    @inlinable @inline(__always) public func `get_point_position`(_ `index`: Int64) -> Vector2 {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `index`
-        return withUnsafeTemporaryAllocation(of: Vector2.self, capacity: 1) { result in
-            withUnsafePointer(to: &a0) { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_point_position, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
-            }
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_point_count = lookupMethod("Line2D", "get_point_count", 3905245786)
-    @inlinable @inline(__always) public func `get_point_count`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_point_count, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_add_point = lookupMethod("Line2D", "add_point", 2654014372)
-    @inlinable @inline(__always) public func `add_point`(_ `position`: Vector2, _ `index`: Int64 = -1) {
-        defer { withExtendedLifetime((self)) {} }
-        var a1 = `index`
-        `position`.withStorage { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_add_point, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_remove_point = lookupMethod("Line2D", "remove_point", 1286410249)
-    @inlinable @inline(__always) public func `remove_point`(_ `index`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `index`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_remove_point, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_clear_points = lookupMethod("Line2D", "clear_points", 3218959716)
-    @inlinable @inline(__always) public func `clear_points`() {
-        defer { withExtendedLifetime((self)) {} }
-        api.object_method_bind_ptrcall!(Self.mb_clear_points, requireHandle(), nil, nil)
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_closed = lookupMethod("Line2D", "set_closed", 2586408642)
-    @inlinable @inline(__always) public func `set_closed`(_ `closed`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `closed` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_closed, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_closed = lookupMethod("Line2D", "is_closed", 36873697)
-    @inlinable @inline(__always) public func `is_closed`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_closed, requireHandle(), nil, &result)
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_width = lookupMethod("Line2D", "set_width", 373806689)
-    @inlinable @inline(__always) public func `set_width`(_ `width`: Double) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `width`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_width, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_width = lookupMethod("Line2D", "get_width", 1740695150)
-    @inlinable @inline(__always) public func `get_width`() -> Double {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Double = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_width, requireHandle(), nil, &result)
-        return result
-}
-    nonisolated(unsafe) private static let mb_set_curve = lookupMethod("Line2D", "set_curve", 270443179)
-    public func `set_curve`(_ `curve`: Curve?) {
-        defer { withExtendedLifetime((self, `curve`)) {} }
-        var a0 = `curve`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_curve, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_curve = lookupMethod("Line2D", "get_curve", 2460114913)
-    public func `get_curve`() -> Curve? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_curve, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Curve
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_default_color = lookupMethod("Line2D", "set_default_color", 2920490490)
-    @inlinable @inline(__always) public func `set_default_color`(_ `color`: Color) {
-        defer { withExtendedLifetime((self)) {} }
-        `color`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_default_color, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_default_color = lookupMethod("Line2D", "get_default_color", 3444240500)
-    @inlinable @inline(__always) public func `get_default_color`() -> Color {
-        defer { withExtendedLifetime((self)) {} }
-        return withUnsafeTemporaryAllocation(of: Color.self, capacity: 1) { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_default_color, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
-            return result.baseAddress!.move()
-        }
-}
-    nonisolated(unsafe) private static let mb_set_gradient = lookupMethod("Line2D", "set_gradient", 2756054477)
-    public func `set_gradient`(_ `color`: Gradient?) {
-        defer { withExtendedLifetime((self, `color`)) {} }
-        var a0 = `color`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_gradient, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_gradient = lookupMethod("Line2D", "get_gradient", 132272999)
-    public func `get_gradient`() -> Gradient? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_gradient, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Gradient
-}
-    nonisolated(unsafe) private static let mb_set_texture = lookupMethod("Line2D", "set_texture", 4051416890)
-    public func `set_texture`(_ `texture`: Texture2D?) {
-        defer { withExtendedLifetime((self, `texture`)) {} }
-        var a0 = `texture`?.requireHandle()
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_texture, requireHandle(), &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_texture = lookupMethod("Line2D", "get_texture", 3635182373)
-    public func `get_texture`() -> Texture2D? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_get_texture, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Texture2D
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_texture_mode = lookupMethod("Line2D", "set_texture_mode", 1952559516)
-    @inlinable @inline(__always) public func `set_texture_mode`(_ `mode`: Line2D.LineTextureMode) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `mode`.rawValue
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_texture_mode, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_texture_mode = lookupMethod("Line2D", "get_texture_mode", 2341040722)
-    @inlinable @inline(__always) public func `get_texture_mode`() -> Line2D.LineTextureMode {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_texture_mode, requireHandle(), nil, &result)
-        return Line2D.LineTextureMode(rawValue: result)
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_joint_mode = lookupMethod("Line2D", "set_joint_mode", 604292979)
-    @inlinable @inline(__always) public func `set_joint_mode`(_ `mode`: Line2D.LineJointMode) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `mode`.rawValue
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_joint_mode, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_joint_mode = lookupMethod("Line2D", "get_joint_mode", 2546544037)
-    @inlinable @inline(__always) public func `get_joint_mode`() -> Line2D.LineJointMode {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_joint_mode, requireHandle(), nil, &result)
-        return Line2D.LineJointMode(rawValue: result)
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_begin_cap_mode = lookupMethod("Line2D", "set_begin_cap_mode", 1669024546)
-    @inlinable @inline(__always) public func `set_begin_cap_mode`(_ `mode`: Line2D.LineCapMode) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `mode`.rawValue
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_begin_cap_mode, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_begin_cap_mode = lookupMethod("Line2D", "get_begin_cap_mode", 1107511441)
-    @inlinable @inline(__always) public func `get_begin_cap_mode`() -> Line2D.LineCapMode {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_begin_cap_mode, requireHandle(), nil, &result)
-        return Line2D.LineCapMode(rawValue: result)
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_end_cap_mode = lookupMethod("Line2D", "set_end_cap_mode", 1669024546)
-    @inlinable @inline(__always) public func `set_end_cap_mode`(_ `mode`: Line2D.LineCapMode) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `mode`.rawValue
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_end_cap_mode, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_end_cap_mode = lookupMethod("Line2D", "get_end_cap_mode", 1107511441)
-    @inlinable @inline(__always) public func `get_end_cap_mode`() -> Line2D.LineCapMode {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_end_cap_mode, requireHandle(), nil, &result)
-        return Line2D.LineCapMode(rawValue: result)
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_sharp_limit = lookupMethod("Line2D", "set_sharp_limit", 373806689)
-    @inlinable @inline(__always) public func `set_sharp_limit`(_ `limit`: Double) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `limit`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_sharp_limit, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_sharp_limit = lookupMethod("Line2D", "get_sharp_limit", 1740695150)
-    @inlinable @inline(__always) public func `get_sharp_limit`() -> Double {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Double = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_sharp_limit, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_round_precision = lookupMethod("Line2D", "set_round_precision", 1286410249)
-    @inlinable @inline(__always) public func `set_round_precision`(_ `precision`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `precision`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_round_precision, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_round_precision = lookupMethod("Line2D", "get_round_precision", 3905245786)
-    @inlinable @inline(__always) public func `get_round_precision`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_round_precision, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_antialiased = lookupMethod("Line2D", "set_antialiased", 2586408642)
-    @inlinable @inline(__always) public func `set_antialiased`(_ `antialiased`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `antialiased` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_antialiased, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_antialiased = lookupMethod("Line2D", "get_antialiased", 36873697)
-    @inlinable @inline(__always) public func `get_antialiased`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_antialiased, requireHandle(), nil, &result)
-        return result != 0
-}
-}
-extension Line3D {
-}
 extension LineEdit {
     @usableFromInline nonisolated(unsafe) internal static let mb_has_ime_text = lookupMethod("LineEdit", "has_ime_text", 36873697)
     @inlinable @inline(__always) public func `has_ime_text`() -> Bool {
@@ -1489,22 +1194,6 @@ extension LookAtModifier3D {
         api.object_method_bind_ptrcall!(Self.mb_is_limitation_symmetry, requireHandle(), nil, &result)
         return result != 0
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_use_rest_for_limitation = lookupMethod("LookAtModifier3D", "set_use_rest_for_limitation", 2586408642)
-    @inlinable @inline(__always) public func `set_use_rest_for_limitation`(_ `enabled`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `enabled` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_use_rest_for_limitation, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_using_rest_for_limitation = lookupMethod("LookAtModifier3D", "is_using_rest_for_limitation", 36873697)
-    @inlinable @inline(__always) public func `is_using_rest_for_limitation`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_using_rest_for_limitation, requireHandle(), nil, &result)
-        return result != 0
-}
     @usableFromInline nonisolated(unsafe) internal static let mb_set_primary_limit_angle = lookupMethod("LookAtModifier3D", "set_primary_limit_angle", 373806689)
     @inlinable @inline(__always) public func `set_primary_limit_angle`(_ `angle`: Double) {
         defer { withExtendedLifetime((self)) {} }
@@ -2270,30 +1959,6 @@ extension Mesh {
         releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
         return object as? Resource
 }
-    nonisolated(unsafe) private static let mb_create_outline = lookupMethod("Mesh", "create_outline", 1208642001)
-    public func `create_outline`(_ `margin`: Double) -> Mesh? {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `margin`
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_create_outline, requireHandle(), &arguments, &nativeResult)
-        }
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? Mesh
-}
-    nonisolated(unsafe) private static let mb_generate_triangle_mesh = lookupMethod("Mesh", "generate_triangle_mesh", 3476533166)
-    public func `generate_triangle_mesh`() -> TriangleMesh? {
-        defer { withExtendedLifetime((self)) {} }
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        api.object_method_bind_ptrcall!(Self.mb_generate_triangle_mesh, requireHandle(), nil, &nativeResult)
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
-        return object as? TriangleMesh
-}
     nonisolated(unsafe) private static let mb_create_trimesh_shape = lookupMethod("Mesh", "create_trimesh_shape", 4160111210)
     public func `create_trimesh_shape`() -> ConcavePolygonShape3D? {
         defer { withExtendedLifetime((self)) {} }
@@ -2322,6 +1987,30 @@ extension Mesh {
         let object = Object.resolve(nativeResult)
         releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
         return object as? ConvexPolygonShape3D
+}
+    nonisolated(unsafe) private static let mb_create_outline = lookupMethod("Mesh", "create_outline", 1208642001)
+    public func `create_outline`(_ `margin`: Double) -> Mesh? {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `margin`
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_create_outline, requireHandle(), &arguments, &nativeResult)
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? Mesh
+}
+    nonisolated(unsafe) private static let mb_generate_triangle_mesh = lookupMethod("Mesh", "generate_triangle_mesh", 3476533166)
+    public func `generate_triangle_mesh`() -> TriangleMesh? {
+        defer { withExtendedLifetime((self)) {} }
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        api.object_method_bind_ptrcall!(Self.mb_generate_triangle_mesh, requireHandle(), nil, &nativeResult)
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? TriangleMesh
 }
 }
 extension MeshConvexDecompositionSettings {
@@ -2532,5 +2221,494 @@ extension MeshConvexDecompositionSettings {
         var result: UInt8 = 0
         api.object_method_bind_ptrcall!(Self.mb_get_project_hull_vertices, requireHandle(), nil, &result)
         return result != 0
+}
+}
+extension MeshDataTool {
+    @usableFromInline nonisolated(unsafe) internal static let mb_clear = lookupMethod("MeshDataTool", "clear", 3218959716)
+    @inlinable @inline(__always) public func `clear`() {
+        defer { withExtendedLifetime((self)) {} }
+        api.object_method_bind_ptrcall!(Self.mb_clear, requireHandle(), nil, nil)
+}
+    nonisolated(unsafe) private static let mb_create_from_surface = lookupMethod("MeshDataTool", "create_from_surface", 2727020678)
+    public func `create_from_surface`(_ `mesh`: ArrayMesh?, _ `surface`: Int64) -> Godot.Error {
+        defer { withExtendedLifetime((self, `mesh`)) {} }
+        var a0 = `mesh`?.requireHandle()
+        var a1 = `surface`
+        var result: Int64 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_create_from_surface, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
+                }
+            }
+        }
+        return Godot.Error(rawValue: result)
+}
+    nonisolated(unsafe) private static let mb_commit_to_surface = lookupMethod("MeshDataTool", "commit_to_surface", 2021686445)
+    public func `commit_to_surface`(_ `mesh`: ArrayMesh?, _ `compression_flags`: Int64 = 0) -> Godot.Error {
+        defer { withExtendedLifetime((self, `mesh`)) {} }
+        var a0 = `mesh`?.requireHandle()
+        var a1 = `compression_flags`
+        var result: Int64 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_commit_to_surface, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
+                }
+            }
+        }
+        return Godot.Error(rawValue: result)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_format = lookupMethod("MeshDataTool", "get_format", 3905245786)
+    @inlinable @inline(__always) public func `get_format`() -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_format, requireHandle(), nil, &result)
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_vertex_count = lookupMethod("MeshDataTool", "get_vertex_count", 3905245786)
+    @inlinable @inline(__always) public func `get_vertex_count`() -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_vertex_count, requireHandle(), nil, &result)
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_edge_count = lookupMethod("MeshDataTool", "get_edge_count", 3905245786)
+    @inlinable @inline(__always) public func `get_edge_count`() -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_edge_count, requireHandle(), nil, &result)
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_face_count = lookupMethod("MeshDataTool", "get_face_count", 3905245786)
+    @inlinable @inline(__always) public func `get_face_count`() -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_face_count, requireHandle(), nil, &result)
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_vertex = lookupMethod("MeshDataTool", "set_vertex", 1530502735)
+    @inlinable @inline(__always) public func `set_vertex`(_ `idx`: Int64, _ `vertex`: Vector3) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        withUnsafePointer(to: &a0) { p0 in
+            `vertex`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_vertex, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_vertex = lookupMethod("MeshDataTool", "get_vertex", 711720468)
+    @inlinable @inline(__always) public func `get_vertex`(_ `idx`: Int64) -> Vector3 {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        return withUnsafeTemporaryAllocation(of: Vector3.self, capacity: 1) { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_vertex, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
+            }
+            return result.baseAddress!.move()
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_vertex_normal = lookupMethod("MeshDataTool", "set_vertex_normal", 1530502735)
+    @inlinable @inline(__always) public func `set_vertex_normal`(_ `idx`: Int64, _ `normal`: Vector3) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        withUnsafePointer(to: &a0) { p0 in
+            `normal`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_vertex_normal, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_vertex_normal = lookupMethod("MeshDataTool", "get_vertex_normal", 711720468)
+    @inlinable @inline(__always) public func `get_vertex_normal`(_ `idx`: Int64) -> Vector3 {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        return withUnsafeTemporaryAllocation(of: Vector3.self, capacity: 1) { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_vertex_normal, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
+            }
+            return result.baseAddress!.move()
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_vertex_tangent = lookupMethod("MeshDataTool", "set_vertex_tangent", 1104099133)
+    @inlinable @inline(__always) public func `set_vertex_tangent`(_ `idx`: Int64, _ `tangent`: Plane) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        withUnsafePointer(to: &a0) { p0 in
+            `tangent`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_vertex_tangent, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_vertex_tangent = lookupMethod("MeshDataTool", "get_vertex_tangent", 1372055458)
+    @inlinable @inline(__always) public func `get_vertex_tangent`(_ `idx`: Int64) -> Plane {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        return withUnsafeTemporaryAllocation(of: Plane.self, capacity: 1) { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_vertex_tangent, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
+            }
+            return result.baseAddress!.move()
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_vertex_uv = lookupMethod("MeshDataTool", "set_vertex_uv", 163021252)
+    @inlinable @inline(__always) public func `set_vertex_uv`(_ `idx`: Int64, _ `uv`: Vector2) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        withUnsafePointer(to: &a0) { p0 in
+            `uv`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_vertex_uv, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_vertex_uv = lookupMethod("MeshDataTool", "get_vertex_uv", 2299179447)
+    @inlinable @inline(__always) public func `get_vertex_uv`(_ `idx`: Int64) -> Vector2 {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        return withUnsafeTemporaryAllocation(of: Vector2.self, capacity: 1) { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_vertex_uv, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
+            }
+            return result.baseAddress!.move()
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_vertex_uv2 = lookupMethod("MeshDataTool", "set_vertex_uv2", 163021252)
+    @inlinable @inline(__always) public func `set_vertex_uv2`(_ `idx`: Int64, _ `uv2`: Vector2) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        withUnsafePointer(to: &a0) { p0 in
+            `uv2`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_vertex_uv2, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_vertex_uv2 = lookupMethod("MeshDataTool", "get_vertex_uv2", 2299179447)
+    @inlinable @inline(__always) public func `get_vertex_uv2`(_ `idx`: Int64) -> Vector2 {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        return withUnsafeTemporaryAllocation(of: Vector2.self, capacity: 1) { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_vertex_uv2, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
+            }
+            return result.baseAddress!.move()
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_vertex_color = lookupMethod("MeshDataTool", "set_vertex_color", 2878471219)
+    @inlinable @inline(__always) public func `set_vertex_color`(_ `idx`: Int64, _ `color`: Color) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        withUnsafePointer(to: &a0) { p0 in
+            `color`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_vertex_color, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_vertex_color = lookupMethod("MeshDataTool", "get_vertex_color", 3457211756)
+    @inlinable @inline(__always) public func `get_vertex_color`(_ `idx`: Int64) -> Color {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        return withUnsafeTemporaryAllocation(of: Color.self, capacity: 1) { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_vertex_color, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
+            }
+            return result.baseAddress!.move()
+        }
+}
+    nonisolated(unsafe) private static let mb_set_vertex_bones = lookupMethod("MeshDataTool", "set_vertex_bones", 3500328261)
+    public func `set_vertex_bones`(_ `idx`: Int64, _ `bones`: borrowing GodotPackedInt32Array) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        withUnsafePointer(to: &a0) { p0 in
+            `bones`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_vertex_bones, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_get_vertex_bones = lookupMethod("MeshDataTool", "get_vertex_bones", 1706082319)
+    public func `get_vertex_bones`(_ `idx`: Int64) -> GodotPackedInt32Array {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        return GodotPackedInt32Array(initializing: { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_vertex_bones, requireHandle(), &arguments, result)
+            }
+        })
+}
+    nonisolated(unsafe) private static let mb_set_vertex_weights = lookupMethod("MeshDataTool", "set_vertex_weights", 1345852415)
+    public func `set_vertex_weights`(_ `idx`: Int64, _ `weights`: borrowing GodotPackedFloat32Array) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        withUnsafePointer(to: &a0) { p0 in
+            `weights`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_vertex_weights, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_get_vertex_weights = lookupMethod("MeshDataTool", "get_vertex_weights", 1542882410)
+    public func `get_vertex_weights`(_ `idx`: Int64) -> GodotPackedFloat32Array {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        return GodotPackedFloat32Array(initializing: { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_vertex_weights, requireHandle(), &arguments, result)
+            }
+        })
+}
+    nonisolated(unsafe) private static let mb_set_vertex_meta = lookupMethod("MeshDataTool", "set_vertex_meta", 2152698145)
+    public func `set_vertex_meta`(_ `idx`: Int64, _ `meta`: borrowing GodotVariant) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        withUnsafePointer(to: &a0) { p0 in
+            `meta`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_vertex_meta, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_get_vertex_meta = lookupMethod("MeshDataTool", "get_vertex_meta", 4227898402)
+    public func `get_vertex_meta`(_ `idx`: Int64) -> GodotVariant {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        return GodotVariant(initializing: { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_vertex_meta, requireHandle(), &arguments, result)
+            }
+        })
+}
+    nonisolated(unsafe) private static let mb_get_vertex_edges = lookupMethod("MeshDataTool", "get_vertex_edges", 1706082319)
+    public func `get_vertex_edges`(_ `idx`: Int64) -> GodotPackedInt32Array {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        return GodotPackedInt32Array(initializing: { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_vertex_edges, requireHandle(), &arguments, result)
+            }
+        })
+}
+    nonisolated(unsafe) private static let mb_get_vertex_faces = lookupMethod("MeshDataTool", "get_vertex_faces", 1706082319)
+    public func `get_vertex_faces`(_ `idx`: Int64) -> GodotPackedInt32Array {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        return GodotPackedInt32Array(initializing: { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_vertex_faces, requireHandle(), &arguments, result)
+            }
+        })
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_edge_vertex = lookupMethod("MeshDataTool", "get_edge_vertex", 3175239445)
+    @inlinable @inline(__always) public func `get_edge_vertex`(_ `idx`: Int64, _ `vertex`: Int64) -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        var a1 = `vertex`
+        var result: Int64 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_get_edge_vertex, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
+                }
+            }
+        }
+        return result
+}
+    nonisolated(unsafe) private static let mb_get_edge_faces = lookupMethod("MeshDataTool", "get_edge_faces", 1706082319)
+    public func `get_edge_faces`(_ `idx`: Int64) -> GodotPackedInt32Array {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        return GodotPackedInt32Array(initializing: { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_edge_faces, requireHandle(), &arguments, result)
+            }
+        })
+}
+    nonisolated(unsafe) private static let mb_set_edge_meta = lookupMethod("MeshDataTool", "set_edge_meta", 2152698145)
+    public func `set_edge_meta`(_ `idx`: Int64, _ `meta`: borrowing GodotVariant) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        withUnsafePointer(to: &a0) { p0 in
+            `meta`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_edge_meta, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_get_edge_meta = lookupMethod("MeshDataTool", "get_edge_meta", 4227898402)
+    public func `get_edge_meta`(_ `idx`: Int64) -> GodotVariant {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        return GodotVariant(initializing: { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_edge_meta, requireHandle(), &arguments, result)
+            }
+        })
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_face_vertex = lookupMethod("MeshDataTool", "get_face_vertex", 3175239445)
+    @inlinable @inline(__always) public func `get_face_vertex`(_ `idx`: Int64, _ `vertex`: Int64) -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        var a1 = `vertex`
+        var result: Int64 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_get_face_vertex, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
+                }
+            }
+        }
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_face_edge = lookupMethod("MeshDataTool", "get_face_edge", 3175239445)
+    @inlinable @inline(__always) public func `get_face_edge`(_ `idx`: Int64, _ `edge`: Int64) -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        var a1 = `edge`
+        var result: Int64 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_get_face_edge, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), &result)
+                }
+            }
+        }
+        return result
+}
+    nonisolated(unsafe) private static let mb_set_face_meta = lookupMethod("MeshDataTool", "set_face_meta", 2152698145)
+    public func `set_face_meta`(_ `idx`: Int64, _ `meta`: borrowing GodotVariant) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        withUnsafePointer(to: &a0) { p0 in
+            `meta`.withStorage { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_face_meta, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_get_face_meta = lookupMethod("MeshDataTool", "get_face_meta", 4227898402)
+    public func `get_face_meta`(_ `idx`: Int64) -> GodotVariant {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        return GodotVariant(initializing: { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_face_meta, requireHandle(), &arguments, result)
+            }
+        })
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_face_normal = lookupMethod("MeshDataTool", "get_face_normal", 711720468)
+    @inlinable @inline(__always) public func `get_face_normal`(_ `idx`: Int64) -> Vector3 {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `idx`
+        return withUnsafeTemporaryAllocation(of: Vector3.self, capacity: 1) { result in
+            withUnsafePointer(to: &a0) { p0 in
+                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+                api.object_method_bind_ptrcall!(Self.mb_get_face_normal, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
+            }
+            return result.baseAddress!.move()
+        }
+}
+    nonisolated(unsafe) private static let mb_set_material = lookupMethod("MeshDataTool", "set_material", 2757459619)
+    public func `set_material`(_ `material`: Material?) {
+        defer { withExtendedLifetime((self, `material`)) {} }
+        var a0 = `material`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_material, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_get_material = lookupMethod("MeshDataTool", "get_material", 5934680)
+    public func `get_material`() -> Material? {
+        defer { withExtendedLifetime((self)) {} }
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        api.object_method_bind_ptrcall!(Self.mb_get_material, requireHandle(), nil, &nativeResult)
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? Material
+}
+}
+extension MeshInstance2D {
+    nonisolated(unsafe) private static let mb_set_mesh = lookupMethod("MeshInstance2D", "set_mesh", 194775623)
+    public func `set_mesh`(_ `mesh`: Mesh?) {
+        defer { withExtendedLifetime((self, `mesh`)) {} }
+        var a0 = `mesh`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_mesh, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_get_mesh = lookupMethod("MeshInstance2D", "get_mesh", 1808005922)
+    public func `get_mesh`() -> Mesh? {
+        defer { withExtendedLifetime((self)) {} }
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        api.object_method_bind_ptrcall!(Self.mb_get_mesh, requireHandle(), nil, &nativeResult)
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? Mesh
+}
+    nonisolated(unsafe) private static let mb_set_texture = lookupMethod("MeshInstance2D", "set_texture", 4051416890)
+    public func `set_texture`(_ `texture`: Texture2D?) {
+        defer { withExtendedLifetime((self, `texture`)) {} }
+        var a0 = `texture`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_texture, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_get_texture = lookupMethod("MeshInstance2D", "get_texture", 3635182373)
+    public func `get_texture`() -> Texture2D? {
+        defer { withExtendedLifetime((self)) {} }
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        api.object_method_bind_ptrcall!(Self.mb_get_texture, requireHandle(), nil, &nativeResult)
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? Texture2D
 }
 }

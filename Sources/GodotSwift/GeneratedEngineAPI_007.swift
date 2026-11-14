@@ -467,11 +467,6 @@ extension BackBufferCopy {
 }
 }
 extension BaseButton {
-    @usableFromInline nonisolated(unsafe) internal static let mb_press = lookupMethod("BaseButton", "press", 3218959716)
-    @inlinable @inline(__always) public func `press`() {
-        defer { withExtendedLifetime((self)) {} }
-        api.object_method_bind_ptrcall!(Self.mb_press, requireHandle(), nil, nil)
-}
     @usableFromInline nonisolated(unsafe) internal static let mb_set_pressed = lookupMethod("BaseButton", "set_pressed", 2586408642)
     @inlinable @inline(__always) public func `set_pressed`(_ `pressed`: Bool) {
         defer { withExtendedLifetime((self)) {} }
@@ -481,6 +476,13 @@ extension BaseButton {
             api.object_method_bind_ptrcall!(Self.mb_set_pressed, requireHandle(), &arguments, nil)
         }
 }
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_pressed = lookupMethod("BaseButton", "is_pressed", 36873697)
+    @inlinable @inline(__always) public func `is_pressed`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_pressed, requireHandle(), nil, &result)
+        return result != 0
+}
     @usableFromInline nonisolated(unsafe) internal static let mb_set_pressed_no_signal = lookupMethod("BaseButton", "set_pressed_no_signal", 2586408642)
     @inlinable @inline(__always) public func `set_pressed_no_signal`(_ `pressed`: Bool) {
         defer { withExtendedLifetime((self)) {} }
@@ -489,13 +491,6 @@ extension BaseButton {
             var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
             api.object_method_bind_ptrcall!(Self.mb_set_pressed_no_signal, requireHandle(), &arguments, nil)
         }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_pressed = lookupMethod("BaseButton", "is_pressed", 36873697)
-    @inlinable @inline(__always) public func `is_pressed`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_pressed, requireHandle(), nil, &result)
-        return result != 0
 }
     @usableFromInline nonisolated(unsafe) internal static let mb_is_hovered = lookupMethod("BaseButton", "is_hovered", 36873697)
     @inlinable @inline(__always) public func `is_hovered`() -> Bool {
@@ -2524,143 +2519,5 @@ extension BoneMap {
                 api.object_method_bind_ptrcall!(Self.mb_find_profile_bone_name, requireHandle(), &arguments, result)
             }
         })
-}
-}
-extension BoneSpaceAdjuster3D {
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_use_bone_skin_scale_for_all_bones = lookupMethod("BoneSpaceAdjuster3D", "set_use_bone_skin_scale_for_all_bones", 2586408642)
-    @inlinable @inline(__always) public func `set_use_bone_skin_scale_for_all_bones`(_ `enabled`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `enabled` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_use_bone_skin_scale_for_all_bones, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_are_all_bones_using_bone_skin_scale = lookupMethod("BoneSpaceAdjuster3D", "are_all_bones_using_bone_skin_scale", 36873697)
-    @inlinable @inline(__always) public func `are_all_bones_using_bone_skin_scale`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_are_all_bones_using_bone_skin_scale, requireHandle(), nil, &result)
-        return result != 0
-}
-    nonisolated(unsafe) private static let mb_set_bone_name = lookupMethod("BoneSpaceAdjuster3D", "set_bone_name", 3780747571)
-    public func `set_bone_name`(_ `index`: Int64, _ `bone_name`: borrowing GodotStringName) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `index`
-        withUnsafePointer(to: &a0) { p0 in
-            `bone_name`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_bone_name, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_get_bone_name = lookupMethod("BoneSpaceAdjuster3D", "get_bone_name", 659327637)
-    public func `get_bone_name`(_ `index`: Int64) -> GodotStringName {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `index`
-        return GodotStringName(initializing: { result in
-            withUnsafePointer(to: &a0) { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_bone_name, requireHandle(), &arguments, result)
-            }
-        })
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_bone = lookupMethod("BoneSpaceAdjuster3D", "set_bone", 3937882851)
-    @inlinable @inline(__always) public func `set_bone`(_ `index`: Int64, _ `bone`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `index`
-        var a1 = `bone`
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_bone, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_bone = lookupMethod("BoneSpaceAdjuster3D", "get_bone", 923996154)
-    @inlinable @inline(__always) public func `get_bone`(_ `index`: Int64) -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `index`
-        var result: Int64 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_bone, requireHandle(), &arguments, &result)
-        }
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_use_bone_skin_scale = lookupMethod("BoneSpaceAdjuster3D", "set_use_bone_skin_scale", 300928843)
-    @inlinable @inline(__always) public func `set_use_bone_skin_scale`(_ `index`: Int64, _ `enabled`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `index`
-        var a1 = `enabled` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_use_bone_skin_scale, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_using_bone_skin_scale = lookupMethod("BoneSpaceAdjuster3D", "is_using_bone_skin_scale", 1116898809)
-    @inlinable @inline(__always) public func `is_using_bone_skin_scale`(_ `index`: Int64) -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `index`
-        var result: UInt8 = 0
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_is_using_bone_skin_scale, requireHandle(), &arguments, &result)
-        }
-        return result != 0
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_bone_scale = lookupMethod("BoneSpaceAdjuster3D", "set_bone_scale", 1530502735)
-    @inlinable @inline(__always) public func `set_bone_scale`(_ `index`: Int64, _ `scale`: Vector3) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `index`
-        withUnsafePointer(to: &a0) { p0 in
-            `scale`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_set_bone_scale, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_bone_scale = lookupMethod("BoneSpaceAdjuster3D", "get_bone_scale", 711720468)
-    @inlinable @inline(__always) public func `get_bone_scale`(_ `index`: Int64) -> Vector3 {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `index`
-        return withUnsafeTemporaryAllocation(of: Vector3.self, capacity: 1) { result in
-            withUnsafePointer(to: &a0) { p0 in
-                var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-                api.object_method_bind_ptrcall!(Self.mb_get_bone_scale, requireHandle(), &arguments, UnsafeMutableRawPointer(result.baseAddress!))
-            }
-            return result.baseAddress!.move()
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_setting_size = lookupMethod("BoneSpaceAdjuster3D", "set_setting_size", 1286410249)
-    @inlinable @inline(__always) public func `set_setting_size`(_ `size`: Int64) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `size`
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_setting_size, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_setting_size = lookupMethod("BoneSpaceAdjuster3D", "get_setting_size", 2455072627)
-    @inlinable @inline(__always) public func `get_setting_size`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_setting_size, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_clear_setting = lookupMethod("BoneSpaceAdjuster3D", "clear_setting", 3218959716)
-    @inlinable @inline(__always) public func `clear_setting`() {
-        defer { withExtendedLifetime((self)) {} }
-        api.object_method_bind_ptrcall!(Self.mb_clear_setting, requireHandle(), nil, nil)
 }
 }

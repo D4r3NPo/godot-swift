@@ -5,7 +5,7 @@ public func runtimeABIProblems() -> [String] {
     if MemoryLayout<UnsafeRawPointer>.size != 8 { issues.append("Expected 64-bit pointers") }
     var version = GDExtensionGodotVersion()
     api.get_godot_version!(&version)
-    if version.major != 4 || version.minor < 8 { issues.append("Godot 4.8+ required") }
+    if version.major != 4 || version.minor < 7 { issues.append("Godot 4.7+ required") }
     checkNativeLayout("AudioFrame", MemoryLayout<GSNativeAudioFrame>.stride, issues: &issues)
     checkNativeLayout("CaretInfo", MemoryLayout<GSNativeCaretInfo>.stride, issues: &issues)
     checkNativeLayout("Glyph", MemoryLayout<GSNativeGlyph>.stride, issues: &issues)

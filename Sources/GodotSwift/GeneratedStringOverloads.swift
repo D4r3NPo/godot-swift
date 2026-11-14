@@ -643,11 +643,6 @@ extension BoneMap {
         return self.`find_profile_bone_name`(GodotStringName(`skeleton_bone_name`))
     }
 }
-extension BoneSpaceAdjuster3D {
-    public func `set_bone_name`(_ `index`: Int64, _ `bone_name`: Swift.String) {
-        self.`set_bone_name`(`index`, GodotStringName(`bone_name`))
-    }
-}
 extension CSGPolygon3D {
     public func `set_path_node`(_ `path`: Swift.String) {
         self.`set_path_node`(GodotNodePath(GodotString(`path`)))
@@ -919,11 +914,6 @@ extension ClassDB {
         return self.`is_class_enabled`(GodotStringName(`class`))
     }
 }
-extension ClassDB {
-    public func `is_class_exposed`(_ `class`: Swift.String) -> Bool {
-        return self.`is_class_exposed`(GodotStringName(`class`))
-    }
-}
 extension Control {
     public func `set_theme_type_variation`(_ `theme_type`: Swift.String) {
         self.`set_theme_type_variation`(GodotStringName(`theme_type`))
@@ -960,11 +950,6 @@ extension Control {
     }
 }
 extension Control {
-    public func `add_theme_sound_override`(_ `name`: Swift.String, _ `audio`: AudioStream?) {
-        self.`add_theme_sound_override`(GodotStringName(`name`), `audio`)
-    }
-}
-extension Control {
     public func `remove_theme_icon_override`(_ `name`: Swift.String) {
         self.`remove_theme_icon_override`(GodotStringName(`name`))
     }
@@ -992,11 +977,6 @@ extension Control {
 extension Control {
     public func `remove_theme_constant_override`(_ `name`: Swift.String) {
         self.`remove_theme_constant_override`(GodotStringName(`name`))
-    }
-}
-extension Control {
-    public func `remove_theme_sound_override`(_ `name`: Swift.String) {
-        self.`remove_theme_sound_override`(GodotStringName(`name`))
     }
 }
 extension Control {
@@ -1066,17 +1046,6 @@ extension Control {
     }
 }
 extension Control {
-    public func `get_theme_sound`(_ `name`: Swift.String, _ `theme_type`: borrowing GodotStringName = GodotStringName("")) -> AudioStream? {
-        return self.`get_theme_sound`(GodotStringName(`name`), `theme_type`)
-    }
-    public func `get_theme_sound`(_ `name`: borrowing GodotStringName, _ `theme_type`: Swift.String) -> AudioStream? {
-        return self.`get_theme_sound`(`name`, GodotStringName(`theme_type`))
-    }
-    public func `get_theme_sound`(_ `name`: Swift.String, _ `theme_type`: Swift.String) -> AudioStream? {
-        return self.`get_theme_sound`(GodotStringName(`name`), GodotStringName(`theme_type`))
-    }
-}
-extension Control {
     public func `has_theme_icon_override`(_ `name`: Swift.String) -> Bool {
         return self.`has_theme_icon_override`(GodotStringName(`name`))
     }
@@ -1104,11 +1073,6 @@ extension Control {
 extension Control {
     public func `has_theme_constant_override`(_ `name`: Swift.String) -> Bool {
         return self.`has_theme_constant_override`(GodotStringName(`name`))
-    }
-}
-extension Control {
-    public func `has_theme_sound_override`(_ `name`: Swift.String) -> Bool {
-        return self.`has_theme_sound_override`(GodotStringName(`name`))
     }
 }
 extension Control {
@@ -1175,17 +1139,6 @@ extension Control {
     }
     public func `has_theme_constant`(_ `name`: Swift.String, _ `theme_type`: Swift.String) -> Bool {
         return self.`has_theme_constant`(GodotStringName(`name`), GodotStringName(`theme_type`))
-    }
-}
-extension Control {
-    public func `has_theme_sound`(_ `name`: Swift.String, _ `theme_type`: borrowing GodotStringName = GodotStringName("")) -> Bool {
-        return self.`has_theme_sound`(GodotStringName(`name`), `theme_type`)
-    }
-    public func `has_theme_sound`(_ `name`: borrowing GodotStringName, _ `theme_type`: Swift.String) -> Bool {
-        return self.`has_theme_sound`(`name`, GodotStringName(`theme_type`))
-    }
-    public func `has_theme_sound`(_ `name`: Swift.String, _ `theme_type`: Swift.String) -> Bool {
-        return self.`has_theme_sound`(GodotStringName(`name`), GodotStringName(`theme_type`))
     }
 }
 extension Control {
@@ -1862,11 +1815,6 @@ extension MeshInstance3D {
 extension MeshInstance3D {
     public func `find_blend_shape_by_name`(_ `name`: Swift.String) -> Int64 {
         return self.`find_blend_shape_by_name`(GodotStringName(`name`))
-    }
-}
-extension MeshLibrary {
-    public func `set_item_category`(_ `id`: Int64, _ `category`: Swift.String) {
-        self.`set_item_category`(`id`, GodotStringName(`category`))
     }
 }
 extension MultiplayerAPI {
@@ -3426,73 +3374,6 @@ extension Theme {
     }
 }
 extension Theme {
-    public func `set_sound`(_ `name`: Swift.String, _ `theme_type`: borrowing GodotStringName, _ `sound`: AudioStream?) {
-        self.`set_sound`(GodotStringName(`name`), `theme_type`, `sound`)
-    }
-    public func `set_sound`(_ `name`: borrowing GodotStringName, _ `theme_type`: Swift.String, _ `sound`: AudioStream?) {
-        self.`set_sound`(`name`, GodotStringName(`theme_type`), `sound`)
-    }
-    public func `set_sound`(_ `name`: Swift.String, _ `theme_type`: Swift.String, _ `sound`: AudioStream?) {
-        self.`set_sound`(GodotStringName(`name`), GodotStringName(`theme_type`), `sound`)
-    }
-}
-extension Theme {
-    public func `get_sound`(_ `name`: Swift.String, _ `theme_type`: borrowing GodotStringName) -> AudioStream? {
-        return self.`get_sound`(GodotStringName(`name`), `theme_type`)
-    }
-    public func `get_sound`(_ `name`: borrowing GodotStringName, _ `theme_type`: Swift.String) -> AudioStream? {
-        return self.`get_sound`(`name`, GodotStringName(`theme_type`))
-    }
-    public func `get_sound`(_ `name`: Swift.String, _ `theme_type`: Swift.String) -> AudioStream? {
-        return self.`get_sound`(GodotStringName(`name`), GodotStringName(`theme_type`))
-    }
-}
-extension Theme {
-    public func `has_sound`(_ `name`: Swift.String, _ `theme_type`: borrowing GodotStringName) -> Bool {
-        return self.`has_sound`(GodotStringName(`name`), `theme_type`)
-    }
-    public func `has_sound`(_ `name`: borrowing GodotStringName, _ `theme_type`: Swift.String) -> Bool {
-        return self.`has_sound`(`name`, GodotStringName(`theme_type`))
-    }
-    public func `has_sound`(_ `name`: Swift.String, _ `theme_type`: Swift.String) -> Bool {
-        return self.`has_sound`(GodotStringName(`name`), GodotStringName(`theme_type`))
-    }
-}
-extension Theme {
-    public func `rename_sound`(_ `old_name`: Swift.String, _ `name`: borrowing GodotStringName, _ `theme_type`: borrowing GodotStringName) {
-        self.`rename_sound`(GodotStringName(`old_name`), `name`, `theme_type`)
-    }
-    public func `rename_sound`(_ `old_name`: borrowing GodotStringName, _ `name`: Swift.String, _ `theme_type`: borrowing GodotStringName) {
-        self.`rename_sound`(`old_name`, GodotStringName(`name`), `theme_type`)
-    }
-    public func `rename_sound`(_ `old_name`: Swift.String, _ `name`: Swift.String, _ `theme_type`: borrowing GodotStringName) {
-        self.`rename_sound`(GodotStringName(`old_name`), GodotStringName(`name`), `theme_type`)
-    }
-    public func `rename_sound`(_ `old_name`: borrowing GodotStringName, _ `name`: borrowing GodotStringName, _ `theme_type`: Swift.String) {
-        self.`rename_sound`(`old_name`, `name`, GodotStringName(`theme_type`))
-    }
-    public func `rename_sound`(_ `old_name`: Swift.String, _ `name`: borrowing GodotStringName, _ `theme_type`: Swift.String) {
-        self.`rename_sound`(GodotStringName(`old_name`), `name`, GodotStringName(`theme_type`))
-    }
-    public func `rename_sound`(_ `old_name`: borrowing GodotStringName, _ `name`: Swift.String, _ `theme_type`: Swift.String) {
-        self.`rename_sound`(`old_name`, GodotStringName(`name`), GodotStringName(`theme_type`))
-    }
-    public func `rename_sound`(_ `old_name`: Swift.String, _ `name`: Swift.String, _ `theme_type`: Swift.String) {
-        self.`rename_sound`(GodotStringName(`old_name`), GodotStringName(`name`), GodotStringName(`theme_type`))
-    }
-}
-extension Theme {
-    public func `clear_sound`(_ `name`: Swift.String, _ `theme_type`: borrowing GodotStringName) {
-        self.`clear_sound`(GodotStringName(`name`), `theme_type`)
-    }
-    public func `clear_sound`(_ `name`: borrowing GodotStringName, _ `theme_type`: Swift.String) {
-        self.`clear_sound`(`name`, GodotStringName(`theme_type`))
-    }
-    public func `clear_sound`(_ `name`: Swift.String, _ `theme_type`: Swift.String) {
-        self.`clear_sound`(GodotStringName(`name`), GodotStringName(`theme_type`))
-    }
-}
-extension Theme {
     public func `set_theme_item`(_ `data_type`: Theme.DataType, _ `name`: Swift.String, _ `theme_type`: borrowing GodotStringName, _ `value`: borrowing GodotVariant) {
         self.`set_theme_item`(`data_type`, GodotStringName(`name`), `theme_type`, `value`)
     }
@@ -3876,11 +3757,6 @@ extension VisualShader {
         self.`replace_node`(`type`, `id`, GodotStringName(`new_class`))
     }
 }
-extension VisualShaderGroup {
-    public func `replace_node`(_ `id`: Int64, _ `new_class`: Swift.String) {
-        self.`replace_node`(`id`, GodotStringName(`new_class`))
-    }
-}
 extension WebRTCPeerConnection {
     public static func `set_default_extension`(_ `extension_class`: Swift.String) {
         Self.`set_default_extension`(GodotStringName(`extension_class`))
@@ -3922,11 +3798,6 @@ extension Window {
     }
 }
 extension Window {
-    public func `add_theme_sound_override`(_ `name`: Swift.String, _ `sound`: AudioStream?) {
-        self.`add_theme_sound_override`(GodotStringName(`name`), `sound`)
-    }
-}
-extension Window {
     public func `remove_theme_icon_override`(_ `name`: Swift.String) {
         self.`remove_theme_icon_override`(GodotStringName(`name`))
     }
@@ -3954,11 +3825,6 @@ extension Window {
 extension Window {
     public func `remove_theme_constant_override`(_ `name`: Swift.String) {
         self.`remove_theme_constant_override`(GodotStringName(`name`))
-    }
-}
-extension Window {
-    public func `remove_theme_sound_override`(_ `name`: Swift.String) {
-        self.`remove_theme_sound_override`(GodotStringName(`name`))
     }
 }
 extension Window {
@@ -4028,17 +3894,6 @@ extension Window {
     }
 }
 extension Window {
-    public func `get_theme_sound`(_ `name`: Swift.String, _ `theme_type`: borrowing GodotStringName = GodotStringName("")) -> AudioStream? {
-        return self.`get_theme_sound`(GodotStringName(`name`), `theme_type`)
-    }
-    public func `get_theme_sound`(_ `name`: borrowing GodotStringName, _ `theme_type`: Swift.String) -> AudioStream? {
-        return self.`get_theme_sound`(`name`, GodotStringName(`theme_type`))
-    }
-    public func `get_theme_sound`(_ `name`: Swift.String, _ `theme_type`: Swift.String) -> AudioStream? {
-        return self.`get_theme_sound`(GodotStringName(`name`), GodotStringName(`theme_type`))
-    }
-}
-extension Window {
     public func `has_theme_icon_override`(_ `name`: Swift.String) -> Bool {
         return self.`has_theme_icon_override`(GodotStringName(`name`))
     }
@@ -4066,11 +3921,6 @@ extension Window {
 extension Window {
     public func `has_theme_constant_override`(_ `name`: Swift.String) -> Bool {
         return self.`has_theme_constant_override`(GodotStringName(`name`))
-    }
-}
-extension Window {
-    public func `has_theme_sound_override`(_ `name`: Swift.String) -> Bool {
-        return self.`has_theme_sound_override`(GodotStringName(`name`))
     }
 }
 extension Window {
@@ -4139,25 +3989,9 @@ extension Window {
         return self.`has_theme_constant`(GodotStringName(`name`), GodotStringName(`theme_type`))
     }
 }
-extension Window {
-    public func `has_theme_sound`(_ `name`: Swift.String, _ `theme_type`: borrowing GodotStringName = GodotStringName("")) -> Bool {
-        return self.`has_theme_sound`(GodotStringName(`name`), `theme_type`)
-    }
-    public func `has_theme_sound`(_ `name`: borrowing GodotStringName, _ `theme_type`: Swift.String) -> Bool {
-        return self.`has_theme_sound`(`name`, GodotStringName(`theme_type`))
-    }
-    public func `has_theme_sound`(_ `name`: Swift.String, _ `theme_type`: Swift.String) -> Bool {
-        return self.`has_theme_sound`(GodotStringName(`name`), GodotStringName(`theme_type`))
-    }
-}
 extension XRBodyModifier3D {
     public func `set_body_tracker`(_ `tracker_name`: Swift.String) {
         self.`set_body_tracker`(GodotStringName(`tracker_name`))
-    }
-}
-extension XRCamera3D {
-    public func `set_tracker`(_ `tracker_name`: Swift.String) {
-        self.`set_tracker`(GodotStringName(`tracker_name`))
     }
 }
 extension XRController3D {
@@ -4198,16 +4032,6 @@ extension XRHandModifier3D {
 extension XRInterface {
     public func `trigger_haptic_pulse`(_ `action_name`: borrowing GodotString, _ `tracker_name`: Swift.String, _ `frequency`: Double, _ `amplitude`: Double, _ `duration_sec`: Double, _ `delay_sec`: Double) {
         self.`trigger_haptic_pulse`(`action_name`, GodotStringName(`tracker_name`), `frequency`, `amplitude`, `duration_sec`, `delay_sec`)
-    }
-}
-extension XRInterface {
-    public func `get_camera_projections`(_ `tracker_name`: Swift.String, _ `aspect`: Double, _ `near`: Double, _ `far`: Double) -> GodotArrayOf<Projection> {
-        return self.`get_camera_projections`(GodotStringName(`tracker_name`), `aspect`, `near`, `far`)
-    }
-}
-extension XRInterface {
-    public func `get_camera_offsets`(_ `tracker_name`: Swift.String) -> GodotArrayOf<Transform3D> {
-        return self.`get_camera_offsets`(GodotStringName(`tracker_name`))
     }
 }
 extension XRNode3D {
@@ -4258,16 +4082,6 @@ extension XRPositionalTracker {
 extension XRServer {
     public func `get_tracker`(_ `tracker_name`: Swift.String) -> XRTracker? {
         return self.`get_tracker`(GodotStringName(`tracker_name`))
-    }
-}
-extension XRServer {
-    public func `get_camera_projections`(_ `tracker_name`: Swift.String, _ `aspect`: Double, _ `near`: Double, _ `far`: Double) -> GodotArrayOf<Projection> {
-        return self.`get_camera_projections`(GodotStringName(`tracker_name`), `aspect`, `near`, `far`)
-    }
-}
-extension XRServer {
-    public func `get_camera_offsets`(_ `tracker_name`: Swift.String) -> GodotArrayOf<Transform3D> {
-        return self.`get_camera_offsets`(GodotStringName(`tracker_name`))
     }
 }
 extension XRTracker {
@@ -4613,11 +4427,6 @@ extension ClassDB {
 extension ClassDB {
     public static func `is_class_enabled`(_ `class`: Swift.String) -> Bool {
         return Self.`is_class_enabled`(GodotStringName(`class`))
-    }
-}
-extension ClassDB {
-    public static func `is_class_exposed`(_ `class`: Swift.String) -> Bool {
-        return Self.`is_class_exposed`(GodotStringName(`class`))
     }
 }
 extension TranslationServer {
@@ -5000,15 +4809,5 @@ extension RenderingServer {
 extension XRServer {
     public static func `get_tracker`(_ `tracker_name`: Swift.String) -> XRTracker? {
         return Self.`get_tracker`(GodotStringName(`tracker_name`))
-    }
-}
-extension XRServer {
-    public static func `get_camera_projections`(_ `tracker_name`: Swift.String, _ `aspect`: Double, _ `near`: Double, _ `far`: Double) -> GodotArrayOf<Projection> {
-        return Self.`get_camera_projections`(GodotStringName(`tracker_name`), `aspect`, `near`, `far`)
-    }
-}
-extension XRServer {
-    public static func `get_camera_offsets`(_ `tracker_name`: Swift.String) -> GodotArrayOf<Transform3D> {
-        return Self.`get_camera_offsets`(GodotStringName(`tracker_name`))
     }
 }

@@ -509,13 +509,6 @@ extension OS {
             api.object_method_bind_ptrcall!(Self.mb_get_locale, requireHandle(), nil, result)
         })
 }
-    nonisolated(unsafe) private static let mb_get_preferred_locales = lookupMethod("OS", "get_preferred_locales", 1139954409)
-    public func `get_preferred_locales`() -> GodotPackedStringArray {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotPackedStringArray(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_preferred_locales, requireHandle(), nil, result)
-        })
-}
     nonisolated(unsafe) private static let mb_get_locale_language = lookupMethod("OS", "get_locale_language", 201670096)
     public func `get_locale_language`() -> GodotString {
         defer { withExtendedLifetime((self)) {} }
@@ -1610,13 +1603,6 @@ extension OpenXRAPIExtension {
         defer { withExtendedLifetime((self)) {} }
         var result: Int64 = 0
         api.object_method_bind_ptrcall!(Self.mb_get_view_count, requireHandle(), nil, &result)
-        return result
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_primary_view_count = lookupMethod("OpenXRAPIExtension", "get_primary_view_count", 3905245786)
-    @inlinable @inline(__always) public func `get_primary_view_count`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_primary_view_count, requireHandle(), nil, &result)
         return result
 }
     @usableFromInline nonisolated(unsafe) internal static let mb_get_view_configuration = lookupMethod("OpenXRAPIExtension", "get_view_configuration", 3905245786)

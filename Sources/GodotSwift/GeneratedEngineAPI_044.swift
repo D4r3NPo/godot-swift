@@ -276,18 +276,6 @@ extension RenderingServer {
             }
         }
 }
-    nonisolated(unsafe) private static let mb_texture_replace_compatible = lookupMethod("RenderingServer", "texture_replace_compatible", 395945892)
-    public func `texture_replace_compatible`(_ `texture`: GodotRID, _ `by_texture`: GodotRID) {
-        defer { withExtendedLifetime((self)) {} }
-        `texture`.withStorage { p0 in
-            `by_texture`.withStorage { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_texture_replace_compatible, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
     nonisolated(unsafe) private static let mb_texture_set_size_override = lookupMethod("RenderingServer", "texture_set_size_override", 4288446313)
     public func `texture_set_size_override`(_ `texture`: GodotRID, _ `width`: Int64, _ `height`: Int64) {
         defer { withExtendedLifetime((self)) {} }
@@ -963,66 +951,6 @@ extension RenderingServer {
             }
         }
 }
-    nonisolated(unsafe) private static let mb_mesh_surface_get_vertex_buffer_rd_rid = lookupMethod("RenderingServer", "mesh_surface_get_vertex_buffer_rd_rid", 1066463050)
-    public func `mesh_surface_get_vertex_buffer_rd_rid`(_ `mesh`: GodotRID, _ `surface`: Int64) -> GodotRID {
-        defer { withExtendedLifetime((self)) {} }
-        var a1 = `surface`
-        return GodotRID(initializing: { result in
-            `mesh`.withStorage { p0 in
-                withUnsafePointer(to: &a1) { p1 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                    withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_mesh_surface_get_vertex_buffer_rd_rid, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), result)
-                    }
-                }
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_mesh_surface_get_attribute_buffer_rd_rid = lookupMethod("RenderingServer", "mesh_surface_get_attribute_buffer_rd_rid", 1066463050)
-    public func `mesh_surface_get_attribute_buffer_rd_rid`(_ `mesh`: GodotRID, _ `surface`: Int64) -> GodotRID {
-        defer { withExtendedLifetime((self)) {} }
-        var a1 = `surface`
-        return GodotRID(initializing: { result in
-            `mesh`.withStorage { p0 in
-                withUnsafePointer(to: &a1) { p1 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                    withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_mesh_surface_get_attribute_buffer_rd_rid, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), result)
-                    }
-                }
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_mesh_surface_get_skin_buffer_rd_rid = lookupMethod("RenderingServer", "mesh_surface_get_skin_buffer_rd_rid", 1066463050)
-    public func `mesh_surface_get_skin_buffer_rd_rid`(_ `mesh`: GodotRID, _ `surface`: Int64) -> GodotRID {
-        defer { withExtendedLifetime((self)) {} }
-        var a1 = `surface`
-        return GodotRID(initializing: { result in
-            `mesh`.withStorage { p0 in
-                withUnsafePointer(to: &a1) { p1 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                    withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_mesh_surface_get_skin_buffer_rd_rid, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), result)
-                    }
-                }
-            }
-        })
-}
-    nonisolated(unsafe) private static let mb_mesh_surface_get_index_buffer_rd_rid = lookupMethod("RenderingServer", "mesh_surface_get_index_buffer_rd_rid", 1066463050)
-    public func `mesh_surface_get_index_buffer_rd_rid`(_ `mesh`: GodotRID, _ `surface`: Int64) -> GodotRID {
-        defer { withExtendedLifetime((self)) {} }
-        var a1 = `surface`
-        return GodotRID(initializing: { result in
-            `mesh`.withStorage { p0 in
-                withUnsafePointer(to: &a1) { p1 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                    withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_mesh_surface_get_index_buffer_rd_rid, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), result)
-                    }
-                }
-            }
-        })
-}
     nonisolated(unsafe) private static let mb_mesh_set_shadow_mesh = lookupMethod("RenderingServer", "mesh_set_shadow_mesh", 395945892)
     public func `mesh_set_shadow_mesh`(_ `mesh`: GodotRID, _ `shadow_mesh`: GodotRID) {
         defer { withExtendedLifetime((self)) {} }
@@ -1667,19 +1595,6 @@ extension RenderingServer {
                 var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
                 withUnsafePointer(to: &arguments) { arguments in
                     api.object_method_bind_ptrcall!(Self.mb_light_set_max_sdfgi_cascade, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_light_set_allow_contact_shadows = lookupMethod("RenderingServer", "light_set_allow_contact_shadows", 1265174801)
-    public func `light_set_allow_contact_shadows`(_ `light`: GodotRID, _ `enable`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a1 = `enable` ? UInt8(1) : UInt8(0)
-        `light`.withStorage { p0 in
-            withUnsafePointer(to: &a1) { p1 in
-                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
-                withUnsafePointer(to: &arguments) { arguments in
-                    api.object_method_bind_ptrcall!(Self.mb_light_set_allow_contact_shadows, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
                 }
             }
         }
@@ -3276,20 +3191,6 @@ extension RenderingServer {
                                 api.object_method_bind_ptrcall!(Self.mb_camera_set_frustum, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
                             }
                         }
-                    }
-                }
-            }
-        }
-}
-    nonisolated(unsafe) private static let mb_camera_set_xr_projections = lookupMethod("RenderingServer", "camera_set_xr_projections", 1352140595)
-    public func `camera_set_xr_projections`(_ `camera`: GodotRID, _ `projections`: borrowing GodotArrayOf<Projection>, _ `offsets`: borrowing GodotArrayOf<Transform3D> = GodotArrayOf<Transform3D>()) {
-        defer { withExtendedLifetime((self)) {} }
-        `camera`.withStorage { p0 in
-            `projections`.withStorage { p1 in
-                `offsets`.withStorage { p2 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
-                    withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_camera_set_xr_projections, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
                     }
                 }
             }

@@ -408,22 +408,6 @@ extension AnimationPlayer {
         api.object_method_bind_ptrcall!(Self.mb_is_movie_quit_on_finish_enabled, requireHandle(), nil, &result)
         return result != 0
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_clear_cache_on_stop_enabled = lookupMethod("AnimationPlayer", "set_clear_cache_on_stop_enabled", 2586408642)
-    @inlinable @inline(__always) public func `set_clear_cache_on_stop_enabled`(_ `enabled`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `enabled` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_clear_cache_on_stop_enabled, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_clear_cache_on_stop_enabled = lookupMethod("AnimationPlayer", "is_clear_cache_on_stop_enabled", 36873697)
-    @inlinable @inline(__always) public func `is_clear_cache_on_stop_enabled`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_clear_cache_on_stop_enabled, requireHandle(), nil, &result)
-        return result != 0
-}
     @usableFromInline nonisolated(unsafe) internal static let mb_get_current_animation_position = lookupMethod("AnimationPlayer", "get_current_animation_position", 1740695150)
     @inlinable @inline(__always) public func `get_current_animation_position`() -> Double {
         defer { withExtendedLifetime((self)) {} }
@@ -2913,5 +2897,49 @@ extension AudioEffectPitchShift {
         var result: Int64 = 0
         api.object_method_bind_ptrcall!(Self.mb_get_fft_size, requireHandle(), nil, &result)
         return AudioEffectPitchShift.FFTSize(rawValue: result)
+}
+}
+extension AudioEffectRecord {
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_recording_active = lookupMethod("AudioEffectRecord", "set_recording_active", 2586408642)
+    @inlinable @inline(__always) public func `set_recording_active`(_ `record`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `record` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_recording_active, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_recording_active = lookupMethod("AudioEffectRecord", "is_recording_active", 36873697)
+    @inlinable @inline(__always) public func `is_recording_active`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_recording_active, requireHandle(), nil, &result)
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_format = lookupMethod("AudioEffectRecord", "set_format", 60648488)
+    @inlinable @inline(__always) public func `set_format`(_ `format`: AudioStreamWAV.Format) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `format`.rawValue
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_format, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_format = lookupMethod("AudioEffectRecord", "get_format", 3151724922)
+    @inlinable @inline(__always) public func `get_format`() -> AudioStreamWAV.Format {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_format, requireHandle(), nil, &result)
+        return AudioStreamWAV.Format(rawValue: result)
+}
+    nonisolated(unsafe) private static let mb_get_recording = lookupMethod("AudioEffectRecord", "get_recording", 2964110865)
+    public func `get_recording`() -> AudioStreamWAV? {
+        defer { withExtendedLifetime((self)) {} }
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        api.object_method_bind_ptrcall!(Self.mb_get_recording, requireHandle(), nil, &nativeResult)
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? AudioStreamWAV
 }
 }

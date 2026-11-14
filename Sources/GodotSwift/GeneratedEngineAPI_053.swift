@@ -19,13 +19,6 @@ extension TextServer {
             api.object_method_bind_ptrcall!(Self.mb_get_name, requireHandle(), nil, result)
         })
 }
-    nonisolated(unsafe) private static let mb_get_short_name = lookupMethod("TextServer", "get_short_name", 201670096)
-    public func `get_short_name`() -> GodotString {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotString(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_short_name, requireHandle(), nil, result)
-        })
-}
     @usableFromInline nonisolated(unsafe) internal static let mb_get_features = lookupMethod("TextServer", "get_features", 3905245786)
     @inlinable @inline(__always) public func `get_features`() -> Int64 {
         defer { withExtendedLifetime((self)) {} }

@@ -907,6 +907,22 @@ extension FileDialog {
             api.object_method_bind_ptrcall!(Self.mb_set_current_path, requireHandle(), &arguments, nil)
         }
 }
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_mode_overrides_title = lookupMethod("FileDialog", "set_mode_overrides_title", 2586408642)
+    @inlinable @inline(__always) public func `set_mode_overrides_title`(_ `override`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `override` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_mode_overrides_title, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_mode_overriding_title = lookupMethod("FileDialog", "is_mode_overriding_title", 36873697)
+    @inlinable @inline(__always) public func `is_mode_overriding_title`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_mode_overriding_title, requireHandle(), nil, &result)
+        return result != 0
+}
     @usableFromInline nonisolated(unsafe) internal static let mb_set_file_mode = lookupMethod("FileDialog", "set_file_mode", 3654936397)
     @inlinable @inline(__always) public func `set_file_mode`(_ `mode`: FileDialog.FileMode) {
         defer { withExtendedLifetime((self)) {} }
@@ -1099,22 +1115,6 @@ extension FileDialog {
     @inlinable @inline(__always) public func `invalidate`() {
         defer { withExtendedLifetime((self)) {} }
         api.object_method_bind_ptrcall!(Self.mb_invalidate, requireHandle(), nil, nil)
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_mode_overrides_title = lookupMethod("FileDialog", "set_mode_overrides_title", 2586408642)
-    @inlinable @inline(__always) public func `set_mode_overrides_title`(_ `override`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `override` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_mode_overrides_title, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_mode_overriding_title = lookupMethod("FileDialog", "is_mode_overriding_title", 36873697)
-    @inlinable @inline(__always) public func `is_mode_overriding_title`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_mode_overriding_title, requireHandle(), nil, &result)
-        return result != 0
 }
 }
 extension FileSystemDock {
@@ -1520,26 +1520,6 @@ extension FoldableContainer {
             var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
             api.object_method_bind_ptrcall!(Self.mb_add_title_bar_control, requireHandle(), &arguments, nil)
         }
-}
-    nonisolated(unsafe) private static let mb_get_title_bar_control = lookupMethod("FoldableContainer", "get_title_bar_control", 1065994134)
-    public func `get_title_bar_control`(_ `index`: Int64) -> Control? {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `index`
-        var nativeResult: UnsafeMutableRawPointer? = nil
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_get_title_bar_control, requireHandle(), &arguments, &nativeResult)
-        }
-        guard let nativeResult else { return nil }
-        let object = Object.resolve(nativeResult)
-        return object as? Control
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_get_title_bar_control_count = lookupMethod("FoldableContainer", "get_title_bar_control_count", 3905245786)
-    @inlinable @inline(__always) public func `get_title_bar_control_count`() -> Int64 {
-        defer { withExtendedLifetime((self)) {} }
-        var result: Int64 = 0
-        api.object_method_bind_ptrcall!(Self.mb_get_title_bar_control_count, requireHandle(), nil, &result)
-        return result
 }
     nonisolated(unsafe) private static let mb_remove_title_bar_control = lookupMethod("FoldableContainer", "remove_title_bar_control", 1496901182)
     public func `remove_title_bar_control`(_ `control`: Control?) {

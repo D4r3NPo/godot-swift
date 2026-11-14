@@ -34,15 +34,14 @@ extension RenderingDevice {
             }
         })
 }
-    nonisolated(unsafe) private static let mb_texture_create_shared_from_slice = lookupMethod("RenderingDevice", "texture_create_shared_from_slice", 1274035419)
-    public func `texture_create_shared_from_slice`(_ `view`: RDTextureView?, _ `with_texture`: GodotRID, _ `layer`: Int64, _ `mipmap`: Int64, _ `mipmaps`: Int64 = 1, _ `slice_type`: RenderingDevice.TextureSliceType = RenderingDevice.TextureSliceType(rawValue: 0), _ `layers`: Int64 = 0) -> GodotRID {
+    nonisolated(unsafe) private static let mb_texture_create_shared_from_slice = lookupMethod("RenderingDevice", "texture_create_shared_from_slice", 1808971279)
+    public func `texture_create_shared_from_slice`(_ `view`: RDTextureView?, _ `with_texture`: GodotRID, _ `layer`: Int64, _ `mipmap`: Int64, _ `mipmaps`: Int64 = 1, _ `slice_type`: RenderingDevice.TextureSliceType = RenderingDevice.TextureSliceType(rawValue: 0)) -> GodotRID {
         defer { withExtendedLifetime((self, `view`)) {} }
         var a0 = `view`?.requireHandle()
         var a2 = `layer`
         var a3 = `mipmap`
         var a4 = `mipmaps`
         var a5 = `slice_type`.rawValue
-        var a6 = `layers`
         return GodotRID(initializing: { result in
             withUnsafePointer(to: &a0) { p0 in
                 `with_texture`.withStorage { p1 in
@@ -50,11 +49,9 @@ extension RenderingDevice {
                         withUnsafePointer(to: &a3) { p3 in
                             withUnsafePointer(to: &a4) { p4 in
                                 withUnsafePointer(to: &a5) { p5 in
-                                    withUnsafePointer(to: &a6) { p6 in
-                                        var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p3)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p4)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p5)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p6)))
-                                        withUnsafePointer(to: &arguments) { arguments in
-                                            api.object_method_bind_ptrcall!(Self.mb_texture_create_shared_from_slice, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), result)
-                                        }
+                                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p3)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p4)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p5)))
+                                    withUnsafePointer(to: &arguments) { arguments in
+                                        api.object_method_bind_ptrcall!(Self.mb_texture_create_shared_from_slice, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), result)
                                     }
                                 }
                             }

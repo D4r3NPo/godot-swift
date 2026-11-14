@@ -114,36 +114,6 @@ extension AnimationNodeBlendTree {
     }
 }
 
-extension AnimationNodeObserverBlendSpace {
-    public var `closest_point_changed`: Signal<GodotSignalValue<GodotStringName>> {
-        Signal(owner: self, name: "closest_point_changed")
-    }
-}
-
-extension AnimationNodeObserverOneShot {
-    public var `started`: Signal< > {
-        Signal(owner: self, name: "started")
-    }
-    public var `fade_in_finished`: Signal< > {
-        Signal(owner: self, name: "fade_in_finished")
-    }
-    public var `fade_out_started`: Signal< > {
-        Signal(owner: self, name: "fade_out_started")
-    }
-    public var `finished`: Signal< > {
-        Signal(owner: self, name: "finished")
-    }
-}
-
-extension AnimationNodeObserverTransition {
-    public var `state_started`: Signal<Swift.String> {
-        Signal(owner: self, name: "state_started")
-    }
-    public var `state_finished`: Signal<Swift.String> {
-        Signal(owner: self, name: "state_finished")
-    }
-}
-
 extension AnimationNodeStateMachinePlayback {
     public var `state_started`: Signal<GodotSignalValue<GodotStringName>> {
         Signal(owner: self, name: "state_started")
@@ -469,7 +439,7 @@ extension Curve {
 }
 
 extension DisplayServer {
-    public var `orientation_changed`: Signal<DisplayServer.SensorOrientation> {
+    public var `orientation_changed`: Signal<Int64> {
         Signal(owner: self, name: "orientation_changed")
     }
 }
@@ -1221,27 +1191,6 @@ extension OpenXRRenderModelManager {
     }
 }
 
-extension OpenXRSpatialContainerExtension {
-    public var `spatial_container_bounds_changed`: Signal<GodotRID, Bool, Int64, Vector3> {
-        Signal(owner: self, name: "spatial_container_bounds_changed")
-    }
-    public var `spatial_container_bounds_mode_request_denied`: Signal<GodotRID> {
-        Signal(owner: self, name: "spatial_container_bounds_mode_request_denied")
-    }
-    public var `spatial_container_closed`: Signal<GodotRID> {
-        Signal(owner: self, name: "spatial_container_closed")
-    }
-    public var `spatial_container_interactable_changed`: Signal<GodotRID, Bool> {
-        Signal(owner: self, name: "spatial_container_interactable_changed")
-    }
-    public var `spatial_container_visible_changed`: Signal<GodotRID, Bool> {
-        Signal(owner: self, name: "spatial_container_visible_changed")
-    }
-    public var `spatial_container_visible_request_denied`: Signal<GodotRID> {
-        Signal(owner: self, name: "spatial_container_visible_request_denied")
-    }
-}
-
 extension OpenXRSpatialEntityExtension {
     public var `spatial_discovery_recommended`: Signal<GodotRID> {
         Signal(owner: self, name: "spatial_discovery_recommended")
@@ -1398,12 +1347,6 @@ extension SceneMultiplayer {
     }
 }
 
-extension ScenePaint2DEditor {
-    public var `scene_painted`: Signal<Node2D?> {
-        Signal(owner: self, name: "scene_painted")
-    }
-}
-
 extension SceneTree {
     public var `tree_changed`: Signal< > {
         Signal(owner: self, name: "tree_changed")
@@ -1459,6 +1402,15 @@ extension ScriptEditorBase {
     public var `name_changed`: Signal< > {
         Signal(owner: self, name: "name_changed")
     }
+    public var `edited_script_changed`: Signal< > {
+        Signal(owner: self, name: "edited_script_changed")
+    }
+    public var `search_in_files_requested`: Signal<Swift.String> {
+        Signal(owner: self, name: "search_in_files_requested")
+    }
+    public var `request_save_history`: Signal< > {
+        Signal(owner: self, name: "request_save_history")
+    }
     public var `request_help`: Signal<Swift.String> {
         Signal(owner: self, name: "request_help")
     }
@@ -1468,23 +1420,14 @@ extension ScriptEditorBase {
     public var `go_to_help`: Signal<Swift.String> {
         Signal(owner: self, name: "go_to_help")
     }
-    public var `go_to_method`: Signal<Object?, Swift.String> {
-        Signal(owner: self, name: "go_to_method")
-    }
-    public var `request_save_history`: Signal< > {
-        Signal(owner: self, name: "request_save_history")
-    }
     public var `request_save_previous_state`: Signal<GodotSignalValue<GodotDictionary>> {
         Signal(owner: self, name: "request_save_previous_state")
     }
-    public var `edited_script_changed`: Signal< > {
-        Signal(owner: self, name: "edited_script_changed")
-    }
-    public var `search_in_files_requested`: Signal<Swift.String> {
-        Signal(owner: self, name: "search_in_files_requested")
-    }
     public var `replace_in_files_requested`: Signal<Swift.String> {
         Signal(owner: self, name: "replace_in_files_requested")
+    }
+    public var `go_to_method`: Signal<Object?, Swift.String> {
+        Signal(owner: self, name: "go_to_method")
     }
 }
 
@@ -1668,12 +1611,6 @@ extension TextServerManager {
     }
     public var `interface_removed`: Signal<GodotSignalValue<GodotStringName>> {
         Signal(owner: self, name: "interface_removed")
-    }
-}
-
-extension TextureStreaming {
-    public var `flush_completed`: Signal< > {
-        Signal(owner: self, name: "flush_completed")
     }
 }
 

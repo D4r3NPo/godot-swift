@@ -718,7 +718,7 @@ typedef GDExtensionScriptInstancePtr (*GS_script_instance_create3)(const GDExten
 typedef GDExtensionScriptInstancePtr (*GS_placeholder_script_instance_create)(GDExtensionObjectPtr p_language, GDExtensionObjectPtr p_script, GDExtensionObjectPtr p_owner);
 typedef void (*GS_placeholder_script_instance_update)(GDExtensionScriptInstancePtr p_placeholder, GDExtensionConstTypePtr p_properties, GDExtensionConstTypePtr p_values);
 typedef GDExtensionScriptInstanceDataPtr (*GS_object_get_script_instance)(GDExtensionConstObjectPtr p_object, GDExtensionObjectPtr p_language);
-typedef void (*GS_object_set_script_instance)(GDExtensionObjectPtr p_object, GDExtensionScriptInstancePtr p_script_instance);
+typedef void (*GS_object_set_script_instance)(GDExtensionObjectPtr p_object, GDExtensionScriptInstanceDataPtr p_script_instance);
 typedef void (*GS_callable_custom_create)(GDExtensionUninitializedTypePtr r_callable, GDExtensionCallableCustomInfo* p_callable_custom_info);
 typedef void (*GS_callable_custom_create2)(GDExtensionUninitializedTypePtr r_callable, GDExtensionCallableCustomInfo2* p_callable_custom_info);
 typedef void* (*GS_callable_custom_get_userdata)(GDExtensionConstTypePtr p_callable, void* p_token);

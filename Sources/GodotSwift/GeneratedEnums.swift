@@ -871,7 +871,7 @@ extension Godot {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
         public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "PROPERTY_HINT_NONE:0,PROPERTY_HINT_RANGE:1,PROPERTY_HINT_ENUM:2,PROPERTY_HINT_ENUM_SUGGESTION:3,PROPERTY_HINT_EXP_EASING:4,PROPERTY_HINT_LINK:5,PROPERTY_HINT_FLAGS:6,PROPERTY_HINT_LAYERS_2D_RENDER:7,PROPERTY_HINT_LAYERS_2D_PHYSICS:8,PROPERTY_HINT_LAYERS_2D_NAVIGATION:9,PROPERTY_HINT_LAYERS_3D_RENDER:10,PROPERTY_HINT_LAYERS_3D_PHYSICS:11,PROPERTY_HINT_LAYERS_3D_NAVIGATION:12,PROPERTY_HINT_LAYERS_AVOIDANCE:37,PROPERTY_HINT_FILE:13,PROPERTY_HINT_DIR:14,PROPERTY_HINT_GLOBAL_FILE:15,PROPERTY_HINT_GLOBAL_DIR:16,PROPERTY_HINT_RESOURCE_TYPE:17,PROPERTY_HINT_MULTILINE_TEXT:18,PROPERTY_HINT_EXPRESSION:19,PROPERTY_HINT_PLACEHOLDER_TEXT:20,PROPERTY_HINT_COLOR_NO_ALPHA:21,PROPERTY_HINT_OBJECT_ID:22,PROPERTY_HINT_TYPE_STRING:23,PROPERTY_HINT_NODE_PATH_TO_EDITED_NODE:24,PROPERTY_HINT_OBJECT_TOO_BIG:25,PROPERTY_HINT_NODE_PATH_VALID_TYPES:26,PROPERTY_HINT_SAVE_FILE:27,PROPERTY_HINT_GLOBAL_SAVE_FILE:28,PROPERTY_HINT_INT_IS_OBJECTID:29,PROPERTY_HINT_INT_IS_POINTER:30,PROPERTY_HINT_ARRAY_TYPE:31,PROPERTY_HINT_DICTIONARY_TYPE:38,PROPERTY_HINT_LOCALE_ID:32,PROPERTY_HINT_LOCALIZABLE_STRING:33,PROPERTY_HINT_NODE_TYPE:34,PROPERTY_HINT_HIDE_QUATERNION_EDIT:35,PROPERTY_HINT_PASSWORD:36,PROPERTY_HINT_TOOL_BUTTON:39,PROPERTY_HINT_ONESHOT:40,PROPERTY_HINT_GROUP_ENABLE:42,PROPERTY_HINT_INPUT_NAME:43,PROPERTY_HINT_FILE_PATH:44,PROPERTY_HINT_AUDIO_BUS:45,PROPERTY_HINT_MAX:46" }
+        public static var godotHintString: Swift.String { "PROPERTY_HINT_NONE:0,PROPERTY_HINT_RANGE:1,PROPERTY_HINT_ENUM:2,PROPERTY_HINT_ENUM_SUGGESTION:3,PROPERTY_HINT_EXP_EASING:4,PROPERTY_HINT_LINK:5,PROPERTY_HINT_FLAGS:6,PROPERTY_HINT_LAYERS_2D_RENDER:7,PROPERTY_HINT_LAYERS_2D_PHYSICS:8,PROPERTY_HINT_LAYERS_2D_NAVIGATION:9,PROPERTY_HINT_LAYERS_3D_RENDER:10,PROPERTY_HINT_LAYERS_3D_PHYSICS:11,PROPERTY_HINT_LAYERS_3D_NAVIGATION:12,PROPERTY_HINT_LAYERS_AVOIDANCE:37,PROPERTY_HINT_FILE:13,PROPERTY_HINT_DIR:14,PROPERTY_HINT_GLOBAL_FILE:15,PROPERTY_HINT_GLOBAL_DIR:16,PROPERTY_HINT_RESOURCE_TYPE:17,PROPERTY_HINT_MULTILINE_TEXT:18,PROPERTY_HINT_EXPRESSION:19,PROPERTY_HINT_PLACEHOLDER_TEXT:20,PROPERTY_HINT_COLOR_NO_ALPHA:21,PROPERTY_HINT_OBJECT_ID:22,PROPERTY_HINT_TYPE_STRING:23,PROPERTY_HINT_NODE_PATH_TO_EDITED_NODE:24,PROPERTY_HINT_OBJECT_TOO_BIG:25,PROPERTY_HINT_NODE_PATH_VALID_TYPES:26,PROPERTY_HINT_SAVE_FILE:27,PROPERTY_HINT_GLOBAL_SAVE_FILE:28,PROPERTY_HINT_INT_IS_OBJECTID:29,PROPERTY_HINT_INT_IS_POINTER:30,PROPERTY_HINT_ARRAY_TYPE:31,PROPERTY_HINT_DICTIONARY_TYPE:38,PROPERTY_HINT_LOCALE_ID:32,PROPERTY_HINT_LOCALIZABLE_STRING:33,PROPERTY_HINT_NODE_TYPE:34,PROPERTY_HINT_HIDE_QUATERNION_EDIT:35,PROPERTY_HINT_PASSWORD:36,PROPERTY_HINT_TOOL_BUTTON:39,PROPERTY_HINT_ONESHOT:40,PROPERTY_HINT_GROUP_ENABLE:42,PROPERTY_HINT_INPUT_NAME:43,PROPERTY_HINT_FILE_PATH:44,PROPERTY_HINT_MAX:45" }
         public static let `PROPERTY_HINT_NONE` = Self(rawValue: 0)
         public static let `PROPERTY_HINT_RANGE` = Self(rawValue: 1)
         public static let `PROPERTY_HINT_ENUM` = Self(rawValue: 2)
@@ -916,8 +916,7 @@ extension Godot {
         public static let `PROPERTY_HINT_GROUP_ENABLE` = Self(rawValue: 42)
         public static let `PROPERTY_HINT_INPUT_NAME` = Self(rawValue: 43)
         public static let `PROPERTY_HINT_FILE_PATH` = Self(rawValue: 44)
-        public static let `PROPERTY_HINT_AUDIO_BUS` = Self(rawValue: 45)
-        public static let `PROPERTY_HINT_MAX` = Self(rawValue: 46)
+        public static let `PROPERTY_HINT_MAX` = Self(rawValue: 45)
     }
     public static let `PROPERTY_HINT_NONE`: PropertyHint = .`PROPERTY_HINT_NONE`
     public static let `PROPERTY_HINT_RANGE`: PropertyHint = .`PROPERTY_HINT_RANGE`
@@ -963,7 +962,6 @@ extension Godot {
     public static let `PROPERTY_HINT_GROUP_ENABLE`: PropertyHint = .`PROPERTY_HINT_GROUP_ENABLE`
     public static let `PROPERTY_HINT_INPUT_NAME`: PropertyHint = .`PROPERTY_HINT_INPUT_NAME`
     public static let `PROPERTY_HINT_FILE_PATH`: PropertyHint = .`PROPERTY_HINT_FILE_PATH`
-    public static let `PROPERTY_HINT_AUDIO_BUS`: PropertyHint = .`PROPERTY_HINT_AUDIO_BUS`
     public static let `PROPERTY_HINT_MAX`: PropertyHint = .`PROPERTY_HINT_MAX`
 }
 extension Godot {
@@ -1561,22 +1559,18 @@ extension Animation {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
         public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "INTERPOLATION_NEAREST:0,INTERPOLATION_LINEAR:1,INTERPOLATION_CUBIC:2,INTERPOLATION_LINEAR_ANGLE:3,INTERPOLATION_CUBIC_ANGLE:4,INTERPOLATION_MAKIMA:5,INTERPOLATION_MAKIMA_ANGLE:6" }
+        public static var godotHintString: Swift.String { "INTERPOLATION_NEAREST:0,INTERPOLATION_LINEAR:1,INTERPOLATION_CUBIC:2,INTERPOLATION_LINEAR_ANGLE:3,INTERPOLATION_CUBIC_ANGLE:4" }
         public static let `INTERPOLATION_NEAREST` = Self(rawValue: 0)
         public static let `INTERPOLATION_LINEAR` = Self(rawValue: 1)
         public static let `INTERPOLATION_CUBIC` = Self(rawValue: 2)
         public static let `INTERPOLATION_LINEAR_ANGLE` = Self(rawValue: 3)
         public static let `INTERPOLATION_CUBIC_ANGLE` = Self(rawValue: 4)
-        public static let `INTERPOLATION_MAKIMA` = Self(rawValue: 5)
-        public static let `INTERPOLATION_MAKIMA_ANGLE` = Self(rawValue: 6)
     }
     public static let `INTERPOLATION_NEAREST`: InterpolationType = .`INTERPOLATION_NEAREST`
     public static let `INTERPOLATION_LINEAR`: InterpolationType = .`INTERPOLATION_LINEAR`
     public static let `INTERPOLATION_CUBIC`: InterpolationType = .`INTERPOLATION_CUBIC`
     public static let `INTERPOLATION_LINEAR_ANGLE`: InterpolationType = .`INTERPOLATION_LINEAR_ANGLE`
     public static let `INTERPOLATION_CUBIC_ANGLE`: InterpolationType = .`INTERPOLATION_CUBIC_ANGLE`
-    public static let `INTERPOLATION_MAKIMA`: InterpolationType = .`INTERPOLATION_MAKIMA`
-    public static let `INTERPOLATION_MAKIMA_ANGLE`: InterpolationType = .`INTERPOLATION_MAKIMA_ANGLE`
 }
 extension Animation {
     public struct UpdateMode: GodotIntegerValue {
@@ -2405,7 +2399,7 @@ extension BaseMaterial3D {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
         public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "FEATURE_EMISSION:0,FEATURE_NORMAL_MAPPING:1,FEATURE_RIM:2,FEATURE_CLEARCOAT:3,FEATURE_ANISOTROPY:4,FEATURE_AMBIENT_OCCLUSION:5,FEATURE_HEIGHT_MAPPING:6,FEATURE_SUBSURFACE_SCATTERING:7,FEATURE_SUBSURFACE_TRANSMITTANCE:8,FEATURE_BACKLIGHT:9,FEATURE_REFRACTION:10,FEATURE_DETAIL:11,FEATURE_BENT_NORMAL_MAPPING:12,FEATURE_PARTICLES_ANIMATION:13,FEATURE_MAX:14" }
+        public static var godotHintString: Swift.String { "FEATURE_EMISSION:0,FEATURE_NORMAL_MAPPING:1,FEATURE_RIM:2,FEATURE_CLEARCOAT:3,FEATURE_ANISOTROPY:4,FEATURE_AMBIENT_OCCLUSION:5,FEATURE_HEIGHT_MAPPING:6,FEATURE_SUBSURFACE_SCATTERING:7,FEATURE_SUBSURFACE_TRANSMITTANCE:8,FEATURE_BACKLIGHT:9,FEATURE_REFRACTION:10,FEATURE_DETAIL:11,FEATURE_BENT_NORMAL_MAPPING:12,FEATURE_MAX:13" }
         public static let `FEATURE_EMISSION` = Self(rawValue: 0)
         public static let `FEATURE_NORMAL_MAPPING` = Self(rawValue: 1)
         public static let `FEATURE_RIM` = Self(rawValue: 2)
@@ -2419,8 +2413,7 @@ extension BaseMaterial3D {
         public static let `FEATURE_REFRACTION` = Self(rawValue: 10)
         public static let `FEATURE_DETAIL` = Self(rawValue: 11)
         public static let `FEATURE_BENT_NORMAL_MAPPING` = Self(rawValue: 12)
-        public static let `FEATURE_PARTICLES_ANIMATION` = Self(rawValue: 13)
-        public static let `FEATURE_MAX` = Self(rawValue: 14)
+        public static let `FEATURE_MAX` = Self(rawValue: 13)
     }
     public static let `FEATURE_EMISSION`: Feature = .`FEATURE_EMISSION`
     public static let `FEATURE_NORMAL_MAPPING`: Feature = .`FEATURE_NORMAL_MAPPING`
@@ -2435,7 +2428,6 @@ extension BaseMaterial3D {
     public static let `FEATURE_REFRACTION`: Feature = .`FEATURE_REFRACTION`
     public static let `FEATURE_DETAIL`: Feature = .`FEATURE_DETAIL`
     public static let `FEATURE_BENT_NORMAL_MAPPING`: Feature = .`FEATURE_BENT_NORMAL_MAPPING`
-    public static let `FEATURE_PARTICLES_ANIMATION`: Feature = .`FEATURE_PARTICLES_ANIMATION`
     public static let `FEATURE_MAX`: Feature = .`FEATURE_MAX`
 }
 extension BaseMaterial3D {
@@ -2719,20 +2711,18 @@ extension BlitMaterial {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
         public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "BLEND_MODE_MIX:0,BLEND_MODE_ADD:1,BLEND_MODE_SUB:2,BLEND_MODE_MUL:3,BLEND_MODE_DISABLED:4,BLEND_MODE_PREMULTIPLIED_ALPHA:5" }
+        public static var godotHintString: Swift.String { "BLEND_MODE_MIX:0,BLEND_MODE_ADD:1,BLEND_MODE_SUB:2,BLEND_MODE_MUL:3,BLEND_MODE_DISABLED:4" }
         public static let `BLEND_MODE_MIX` = Self(rawValue: 0)
         public static let `BLEND_MODE_ADD` = Self(rawValue: 1)
         public static let `BLEND_MODE_SUB` = Self(rawValue: 2)
         public static let `BLEND_MODE_MUL` = Self(rawValue: 3)
         public static let `BLEND_MODE_DISABLED` = Self(rawValue: 4)
-        public static let `BLEND_MODE_PREMULTIPLIED_ALPHA` = Self(rawValue: 5)
     }
     public static let `BLEND_MODE_MIX`: BlendMode = .`BLEND_MODE_MIX`
     public static let `BLEND_MODE_ADD`: BlendMode = .`BLEND_MODE_ADD`
     public static let `BLEND_MODE_SUB`: BlendMode = .`BLEND_MODE_SUB`
     public static let `BLEND_MODE_MUL`: BlendMode = .`BLEND_MODE_MUL`
     public static let `BLEND_MODE_DISABLED`: BlendMode = .`BLEND_MODE_DISABLED`
-    public static let `BLEND_MODE_PREMULTIPLIED_ALPHA`: BlendMode = .`BLEND_MODE_PREMULTIPLIED_ALPHA`
 }
 extension BoneConstraint3D {
     public struct ReferenceType: GodotIntegerValue {
@@ -3603,14 +3593,13 @@ extension Control {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
         public static var godotPropertyHint: UInt32 { 6 }
-        public static var godotHintString: Swift.String { "SIZE_SHRINK_BEGIN:0,SIZE_FILL:1,SIZE_EXPAND:2,SIZE_EXPAND_FILL:3,SIZE_SHRINK_CENTER:4,SIZE_SHRINK_END:8,SIZE_MAXIMIZE:16" }
+        public static var godotHintString: Swift.String { "SIZE_SHRINK_BEGIN:0,SIZE_FILL:1,SIZE_EXPAND:2,SIZE_EXPAND_FILL:3,SIZE_SHRINK_CENTER:4,SIZE_SHRINK_END:8" }
         public static let `SIZE_SHRINK_BEGIN` = Self(rawValue: 0)
         public static let `SIZE_FILL` = Self(rawValue: 1)
         public static let `SIZE_EXPAND` = Self(rawValue: 2)
         public static let `SIZE_EXPAND_FILL` = Self(rawValue: 3)
         public static let `SIZE_SHRINK_CENTER` = Self(rawValue: 4)
         public static let `SIZE_SHRINK_END` = Self(rawValue: 8)
-        public static let `SIZE_MAXIMIZE` = Self(rawValue: 16)
     }
     public static let `SIZE_SHRINK_BEGIN`: SizeFlags = .`SIZE_SHRINK_BEGIN`
     public static let `SIZE_FILL`: SizeFlags = .`SIZE_FILL`
@@ -3618,7 +3607,6 @@ extension Control {
     public static let `SIZE_EXPAND_FILL`: SizeFlags = .`SIZE_EXPAND_FILL`
     public static let `SIZE_SHRINK_CENTER`: SizeFlags = .`SIZE_SHRINK_CENTER`
     public static let `SIZE_SHRINK_END`: SizeFlags = .`SIZE_SHRINK_END`
-    public static let `SIZE_MAXIMIZE`: SizeFlags = .`SIZE_MAXIMIZE`
 }
 extension Control {
     public struct MouseFilter: GodotIntegerValue {
@@ -4187,20 +4175,6 @@ extension DisplayServer {
     public static let `SCREEN_SENSOR`: ScreenOrientation = .`SCREEN_SENSOR`
 }
 extension DisplayServer {
-    public struct SensorOrientation: GodotIntegerValue {
-        public let rawValue: Int64
-        public init(rawValue: Int64) { self.rawValue = rawValue }
-        public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "SENSOR_ORIENTATION_UNDEFINED:0,SENSOR_ORIENTATION_PORTRAIT:1,SENSOR_ORIENTATION_LANDSCAPE:2" }
-        public static let `SENSOR_ORIENTATION_UNDEFINED` = Self(rawValue: 0)
-        public static let `SENSOR_ORIENTATION_PORTRAIT` = Self(rawValue: 1)
-        public static let `SENSOR_ORIENTATION_LANDSCAPE` = Self(rawValue: 2)
-    }
-    public static let `SENSOR_ORIENTATION_UNDEFINED`: SensorOrientation = .`SENSOR_ORIENTATION_UNDEFINED`
-    public static let `SENSOR_ORIENTATION_PORTRAIT`: SensorOrientation = .`SENSOR_ORIENTATION_PORTRAIT`
-    public static let `SENSOR_ORIENTATION_LANDSCAPE`: SensorOrientation = .`SENSOR_ORIENTATION_LANDSCAPE`
-}
-extension DisplayServer {
     public struct VirtualKeyboardType: GodotIntegerValue {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
@@ -4411,20 +4385,6 @@ extension DisplayServer {
     public static let `WINDOW_EDGE_BOTTOM`: WindowResizeEdge = .`WINDOW_EDGE_BOTTOM`
     public static let `WINDOW_EDGE_BOTTOM_RIGHT`: WindowResizeEdge = .`WINDOW_EDGE_BOTTOM_RIGHT`
     public static let `WINDOW_EDGE_MAX`: WindowResizeEdge = .`WINDOW_EDGE_MAX`
-}
-extension DisplayServer {
-    public struct NotificationStatus: GodotIntegerValue {
-        public let rawValue: Int64
-        public init(rawValue: Int64) { self.rawValue = rawValue }
-        public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "NOTIFICATION_ACTIVATED:0,NOTIFICATION_DISMISSED:1,NOTIFICATION_FAILED:2" }
-        public static let `NOTIFICATION_ACTIVATED` = Self(rawValue: 0)
-        public static let `NOTIFICATION_DISMISSED` = Self(rawValue: 1)
-        public static let `NOTIFICATION_FAILED` = Self(rawValue: 2)
-    }
-    public static let `NOTIFICATION_ACTIVATED`: NotificationStatus = .`NOTIFICATION_ACTIVATED`
-    public static let `NOTIFICATION_DISMISSED`: NotificationStatus = .`NOTIFICATION_DISMISSED`
-    public static let `NOTIFICATION_FAILED`: NotificationStatus = .`NOTIFICATION_FAILED`
 }
 extension DisplayServer {
     public struct VSyncMode: GodotIntegerValue {
@@ -4643,17 +4603,15 @@ extension EditorDock {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
         public static var godotPropertyHint: UInt32 { 6 }
-        public static var godotHintString: Swift.String { "DOCK_LAYOUT_VERTICAL:1,DOCK_LAYOUT_HORIZONTAL:2,DOCK_LAYOUT_FLOATING:4,DOCK_LAYOUT_MAIN_SCREEN:8,DOCK_LAYOUT_ALL:7" }
+        public static var godotHintString: Swift.String { "DOCK_LAYOUT_VERTICAL:1,DOCK_LAYOUT_HORIZONTAL:2,DOCK_LAYOUT_FLOATING:4,DOCK_LAYOUT_ALL:7" }
         public static let `DOCK_LAYOUT_VERTICAL` = Self(rawValue: 1)
         public static let `DOCK_LAYOUT_HORIZONTAL` = Self(rawValue: 2)
         public static let `DOCK_LAYOUT_FLOATING` = Self(rawValue: 4)
-        public static let `DOCK_LAYOUT_MAIN_SCREEN` = Self(rawValue: 8)
         public static let `DOCK_LAYOUT_ALL` = Self(rawValue: 7)
     }
     public static let `DOCK_LAYOUT_VERTICAL`: DockLayout = .`DOCK_LAYOUT_VERTICAL`
     public static let `DOCK_LAYOUT_HORIZONTAL`: DockLayout = .`DOCK_LAYOUT_HORIZONTAL`
     public static let `DOCK_LAYOUT_FLOATING`: DockLayout = .`DOCK_LAYOUT_FLOATING`
-    public static let `DOCK_LAYOUT_MAIN_SCREEN`: DockLayout = .`DOCK_LAYOUT_MAIN_SCREEN`
     public static let `DOCK_LAYOUT_ALL`: DockLayout = .`DOCK_LAYOUT_ALL`
 }
 extension EditorDock {
@@ -4661,7 +4619,7 @@ extension EditorDock {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
         public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "DOCK_SLOT_NONE:-1,DOCK_SLOT_LEFT_UL:0,DOCK_SLOT_LEFT_BL:1,DOCK_SLOT_LEFT_UR:2,DOCK_SLOT_LEFT_BR:3,DOCK_SLOT_RIGHT_UL:4,DOCK_SLOT_RIGHT_BL:5,DOCK_SLOT_RIGHT_UR:6,DOCK_SLOT_RIGHT_BR:7,DOCK_SLOT_BOTTOM:8,DOCK_SLOT_BOTTOM_L:9,DOCK_SLOT_BOTTOM_R:10,DOCK_SLOT_MAIN_SCREEN:11,DOCK_SLOT_MAX:12" }
+        public static var godotHintString: Swift.String { "DOCK_SLOT_NONE:-1,DOCK_SLOT_LEFT_UL:0,DOCK_SLOT_LEFT_BL:1,DOCK_SLOT_LEFT_UR:2,DOCK_SLOT_LEFT_BR:3,DOCK_SLOT_RIGHT_UL:4,DOCK_SLOT_RIGHT_BL:5,DOCK_SLOT_RIGHT_UR:6,DOCK_SLOT_RIGHT_BR:7,DOCK_SLOT_BOTTOM:8,DOCK_SLOT_BOTTOM_L:9,DOCK_SLOT_BOTTOM_R:10,DOCK_SLOT_MAX:11" }
         public static let `DOCK_SLOT_NONE` = Self(rawValue: -1)
         public static let `DOCK_SLOT_LEFT_UL` = Self(rawValue: 0)
         public static let `DOCK_SLOT_LEFT_BL` = Self(rawValue: 1)
@@ -4674,8 +4632,7 @@ extension EditorDock {
         public static let `DOCK_SLOT_BOTTOM` = Self(rawValue: 8)
         public static let `DOCK_SLOT_BOTTOM_L` = Self(rawValue: 9)
         public static let `DOCK_SLOT_BOTTOM_R` = Self(rawValue: 10)
-        public static let `DOCK_SLOT_MAIN_SCREEN` = Self(rawValue: 11)
-        public static let `DOCK_SLOT_MAX` = Self(rawValue: 12)
+        public static let `DOCK_SLOT_MAX` = Self(rawValue: 11)
     }
     public static let `DOCK_SLOT_NONE`: DockSlot = .`DOCK_SLOT_NONE`
     public static let `DOCK_SLOT_LEFT_UL`: DockSlot = .`DOCK_SLOT_LEFT_UL`
@@ -4689,7 +4646,6 @@ extension EditorDock {
     public static let `DOCK_SLOT_BOTTOM`: DockSlot = .`DOCK_SLOT_BOTTOM`
     public static let `DOCK_SLOT_BOTTOM_L`: DockSlot = .`DOCK_SLOT_BOTTOM_L`
     public static let `DOCK_SLOT_BOTTOM_R`: DockSlot = .`DOCK_SLOT_BOTTOM_R`
-    public static let `DOCK_SLOT_MAIN_SCREEN`: DockSlot = .`DOCK_SLOT_MAIN_SCREEN`
     public static let `DOCK_SLOT_MAX`: DockSlot = .`DOCK_SLOT_MAX`
 }
 extension EditorExportPlatform {
@@ -5335,7 +5291,7 @@ extension FileDialog {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
         public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "CUSTOMIZATION_HIDDEN_FILES:0,CUSTOMIZATION_CREATE_FOLDER:1,CUSTOMIZATION_FILE_FILTER:2,CUSTOMIZATION_FILE_SORT:3,CUSTOMIZATION_FAVORITES:4,CUSTOMIZATION_RECENT:5,CUSTOMIZATION_LAYOUT:6,CUSTOMIZATION_OVERWRITE_WARNING:7,CUSTOMIZATION_DELETE:8,CUSTOMIZATION_NAVIGATION_BUTTONS:9,CUSTOMIZATION_DRIVE_SELECTOR:10,CUSTOMIZATION_FILTERS:11" }
+        public static var godotHintString: Swift.String { "CUSTOMIZATION_HIDDEN_FILES:0,CUSTOMIZATION_CREATE_FOLDER:1,CUSTOMIZATION_FILE_FILTER:2,CUSTOMIZATION_FILE_SORT:3,CUSTOMIZATION_FAVORITES:4,CUSTOMIZATION_RECENT:5,CUSTOMIZATION_LAYOUT:6,CUSTOMIZATION_OVERWRITE_WARNING:7,CUSTOMIZATION_DELETE:8" }
         public static let `CUSTOMIZATION_HIDDEN_FILES` = Self(rawValue: 0)
         public static let `CUSTOMIZATION_CREATE_FOLDER` = Self(rawValue: 1)
         public static let `CUSTOMIZATION_FILE_FILTER` = Self(rawValue: 2)
@@ -5345,9 +5301,6 @@ extension FileDialog {
         public static let `CUSTOMIZATION_LAYOUT` = Self(rawValue: 6)
         public static let `CUSTOMIZATION_OVERWRITE_WARNING` = Self(rawValue: 7)
         public static let `CUSTOMIZATION_DELETE` = Self(rawValue: 8)
-        public static let `CUSTOMIZATION_NAVIGATION_BUTTONS` = Self(rawValue: 9)
-        public static let `CUSTOMIZATION_DRIVE_SELECTOR` = Self(rawValue: 10)
-        public static let `CUSTOMIZATION_FILTERS` = Self(rawValue: 11)
     }
     public static let `CUSTOMIZATION_HIDDEN_FILES`: Customization = .`CUSTOMIZATION_HIDDEN_FILES`
     public static let `CUSTOMIZATION_CREATE_FOLDER`: Customization = .`CUSTOMIZATION_CREATE_FOLDER`
@@ -5358,9 +5311,6 @@ extension FileDialog {
     public static let `CUSTOMIZATION_LAYOUT`: Customization = .`CUSTOMIZATION_LAYOUT`
     public static let `CUSTOMIZATION_OVERWRITE_WARNING`: Customization = .`CUSTOMIZATION_OVERWRITE_WARNING`
     public static let `CUSTOMIZATION_DELETE`: Customization = .`CUSTOMIZATION_DELETE`
-    public static let `CUSTOMIZATION_NAVIGATION_BUTTONS`: Customization = .`CUSTOMIZATION_NAVIGATION_BUTTONS`
-    public static let `CUSTOMIZATION_DRIVE_SELECTOR`: Customization = .`CUSTOMIZATION_DRIVE_SELECTOR`
-    public static let `CUSTOMIZATION_FILTERS`: Customization = .`CUSTOMIZATION_FILTERS`
 }
 extension FlowContainer {
     public struct AlignmentMode: GodotIntegerValue {
@@ -5739,7 +5689,7 @@ extension Generic6DOFJoint3D {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
         public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "PARAM_LINEAR_LOWER_LIMIT:0,PARAM_LINEAR_UPPER_LIMIT:1,PARAM_LINEAR_LIMIT_SOFTNESS:2,PARAM_LINEAR_RESTITUTION:3,PARAM_LINEAR_DAMPING:4,PARAM_LINEAR_MOTOR_TARGET_VELOCITY:5,PARAM_LINEAR_MOTOR_FORCE_LIMIT:6,PARAM_LINEAR_SPRING_STIFFNESS:7,PARAM_LINEAR_SPRING_DAMPING:8,PARAM_LINEAR_SPRING_EQUILIBRIUM_POINT:9,PARAM_ANGULAR_LOWER_LIMIT:10,PARAM_ANGULAR_UPPER_LIMIT:11,PARAM_ANGULAR_LIMIT_SOFTNESS:12,PARAM_ANGULAR_DAMPING:13,PARAM_ANGULAR_RESTITUTION:14,PARAM_ANGULAR_FORCE_LIMIT:15,PARAM_ANGULAR_ERP:16,PARAM_ANGULAR_MOTOR_TARGET_VELOCITY:17,PARAM_ANGULAR_MOTOR_FORCE_LIMIT:18,PARAM_ANGULAR_SPRING_STIFFNESS:19,PARAM_ANGULAR_SPRING_DAMPING:20,PARAM_ANGULAR_SPRING_EQUILIBRIUM_POINT:21,PARAM_LINEAR_DRIVE_FORCE_LIMIT:22,PARAM_ANGULAR_DRIVE_TORQUE_LIMIT:23,PARAM_MAX:24" }
+        public static var godotHintString: Swift.String { "PARAM_LINEAR_LOWER_LIMIT:0,PARAM_LINEAR_UPPER_LIMIT:1,PARAM_LINEAR_LIMIT_SOFTNESS:2,PARAM_LINEAR_RESTITUTION:3,PARAM_LINEAR_DAMPING:4,PARAM_LINEAR_MOTOR_TARGET_VELOCITY:5,PARAM_LINEAR_MOTOR_FORCE_LIMIT:6,PARAM_LINEAR_SPRING_STIFFNESS:7,PARAM_LINEAR_SPRING_DAMPING:8,PARAM_LINEAR_SPRING_EQUILIBRIUM_POINT:9,PARAM_ANGULAR_LOWER_LIMIT:10,PARAM_ANGULAR_UPPER_LIMIT:11,PARAM_ANGULAR_LIMIT_SOFTNESS:12,PARAM_ANGULAR_DAMPING:13,PARAM_ANGULAR_RESTITUTION:14,PARAM_ANGULAR_FORCE_LIMIT:15,PARAM_ANGULAR_ERP:16,PARAM_ANGULAR_MOTOR_TARGET_VELOCITY:17,PARAM_ANGULAR_MOTOR_FORCE_LIMIT:18,PARAM_ANGULAR_SPRING_STIFFNESS:19,PARAM_ANGULAR_SPRING_DAMPING:20,PARAM_ANGULAR_SPRING_EQUILIBRIUM_POINT:21,PARAM_MAX:22" }
         public static let `PARAM_LINEAR_LOWER_LIMIT` = Self(rawValue: 0)
         public static let `PARAM_LINEAR_UPPER_LIMIT` = Self(rawValue: 1)
         public static let `PARAM_LINEAR_LIMIT_SOFTNESS` = Self(rawValue: 2)
@@ -5762,9 +5712,7 @@ extension Generic6DOFJoint3D {
         public static let `PARAM_ANGULAR_SPRING_STIFFNESS` = Self(rawValue: 19)
         public static let `PARAM_ANGULAR_SPRING_DAMPING` = Self(rawValue: 20)
         public static let `PARAM_ANGULAR_SPRING_EQUILIBRIUM_POINT` = Self(rawValue: 21)
-        public static let `PARAM_LINEAR_DRIVE_FORCE_LIMIT` = Self(rawValue: 22)
-        public static let `PARAM_ANGULAR_DRIVE_TORQUE_LIMIT` = Self(rawValue: 23)
-        public static let `PARAM_MAX` = Self(rawValue: 24)
+        public static let `PARAM_MAX` = Self(rawValue: 22)
     }
     public static let `PARAM_LINEAR_LOWER_LIMIT`: Param = .`PARAM_LINEAR_LOWER_LIMIT`
     public static let `PARAM_LINEAR_UPPER_LIMIT`: Param = .`PARAM_LINEAR_UPPER_LIMIT`
@@ -5788,8 +5736,6 @@ extension Generic6DOFJoint3D {
     public static let `PARAM_ANGULAR_SPRING_STIFFNESS`: Param = .`PARAM_ANGULAR_SPRING_STIFFNESS`
     public static let `PARAM_ANGULAR_SPRING_DAMPING`: Param = .`PARAM_ANGULAR_SPRING_DAMPING`
     public static let `PARAM_ANGULAR_SPRING_EQUILIBRIUM_POINT`: Param = .`PARAM_ANGULAR_SPRING_EQUILIBRIUM_POINT`
-    public static let `PARAM_LINEAR_DRIVE_FORCE_LIMIT`: Param = .`PARAM_LINEAR_DRIVE_FORCE_LIMIT`
-    public static let `PARAM_ANGULAR_DRIVE_TORQUE_LIMIT`: Param = .`PARAM_ANGULAR_DRIVE_TORQUE_LIMIT`
     public static let `PARAM_MAX`: Param = .`PARAM_MAX`
 }
 extension Generic6DOFJoint3D {
@@ -5797,12 +5743,11 @@ extension Generic6DOFJoint3D {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
         public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "FLAG_ENABLE_LINEAR_LIMIT:0,FLAG_ENABLE_ANGULAR_LIMIT:1,FLAG_ENABLE_LINEAR_SPRING:3,FLAG_ENABLE_ANGULAR_SPRING:2,FLAG_ENABLE_ANGULAR_MOTOR:4,FLAG_ENABLE_MOTOR:4,FLAG_ENABLE_LINEAR_MOTOR:5,FLAG_MAX:6" }
+        public static var godotHintString: Swift.String { "FLAG_ENABLE_LINEAR_LIMIT:0,FLAG_ENABLE_ANGULAR_LIMIT:1,FLAG_ENABLE_LINEAR_SPRING:3,FLAG_ENABLE_ANGULAR_SPRING:2,FLAG_ENABLE_MOTOR:4,FLAG_ENABLE_LINEAR_MOTOR:5,FLAG_MAX:6" }
         public static let `FLAG_ENABLE_LINEAR_LIMIT` = Self(rawValue: 0)
         public static let `FLAG_ENABLE_ANGULAR_LIMIT` = Self(rawValue: 1)
         public static let `FLAG_ENABLE_LINEAR_SPRING` = Self(rawValue: 3)
         public static let `FLAG_ENABLE_ANGULAR_SPRING` = Self(rawValue: 2)
-        public static let `FLAG_ENABLE_ANGULAR_MOTOR` = Self(rawValue: 4)
         public static let `FLAG_ENABLE_MOTOR` = Self(rawValue: 4)
         public static let `FLAG_ENABLE_LINEAR_MOTOR` = Self(rawValue: 5)
         public static let `FLAG_MAX` = Self(rawValue: 6)
@@ -5811,7 +5756,6 @@ extension Generic6DOFJoint3D {
     public static let `FLAG_ENABLE_ANGULAR_LIMIT`: Flag = .`FLAG_ENABLE_ANGULAR_LIMIT`
     public static let `FLAG_ENABLE_LINEAR_SPRING`: Flag = .`FLAG_ENABLE_LINEAR_SPRING`
     public static let `FLAG_ENABLE_ANGULAR_SPRING`: Flag = .`FLAG_ENABLE_ANGULAR_SPRING`
-    public static let `FLAG_ENABLE_ANGULAR_MOTOR`: Flag = .`FLAG_ENABLE_ANGULAR_MOTOR`
     public static let `FLAG_ENABLE_MOTOR`: Flag = .`FLAG_ENABLE_MOTOR`
     public static let `FLAG_ENABLE_LINEAR_MOTOR`: Flag = .`FLAG_ENABLE_LINEAR_MOTOR`
     public static let `FLAG_MAX`: Flag = .`FLAG_MAX`
@@ -6335,7 +6279,7 @@ extension Image {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
         public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "FORMAT_L8:0,FORMAT_LA8:1,FORMAT_R8:2,FORMAT_RG8:3,FORMAT_RGB8:4,FORMAT_RGBA8:5,FORMAT_RGBA4444:6,FORMAT_RGB565:7,FORMAT_RF:8,FORMAT_RGF:9,FORMAT_RGBF:10,FORMAT_RGBAF:11,FORMAT_RH:12,FORMAT_RGH:13,FORMAT_RGBH:14,FORMAT_RGBAH:15,FORMAT_RGBE9995:16,FORMAT_DXT1:17,FORMAT_DXT3:18,FORMAT_DXT5:19,FORMAT_RGTC_R:20,FORMAT_RGTC_RG:21,FORMAT_BPTC_RGBA:22,FORMAT_BPTC_RGBF:23,FORMAT_BPTC_RGBFU:24,FORMAT_ETC:25,FORMAT_ETC2_R11:26,FORMAT_ETC2_R11S:27,FORMAT_ETC2_RG11:28,FORMAT_ETC2_RG11S:29,FORMAT_ETC2_RGB8:30,FORMAT_ETC2_RGBA8:31,FORMAT_ETC2_RGB8A1:32,FORMAT_ETC2_RA_AS_RG:33,FORMAT_DXT5_RA_AS_RG:34,FORMAT_ASTC_4x4:35,FORMAT_ASTC_4x4_HDR:36,FORMAT_ASTC_8x8:37,FORMAT_ASTC_8x8_HDR:38,FORMAT_R16:39,FORMAT_RG16:40,FORMAT_RGB16:41,FORMAT_RGBA16:42,FORMAT_R16I:43,FORMAT_RG16I:44,FORMAT_RGB16I:45,FORMAT_RGBA16I:46,FORMAT_ASTC_6x6:47,FORMAT_ASTC_6x6_HDR:48,FORMAT_MAX:49" }
+        public static var godotHintString: Swift.String { "FORMAT_L8:0,FORMAT_LA8:1,FORMAT_R8:2,FORMAT_RG8:3,FORMAT_RGB8:4,FORMAT_RGBA8:5,FORMAT_RGBA4444:6,FORMAT_RGB565:7,FORMAT_RF:8,FORMAT_RGF:9,FORMAT_RGBF:10,FORMAT_RGBAF:11,FORMAT_RH:12,FORMAT_RGH:13,FORMAT_RGBH:14,FORMAT_RGBAH:15,FORMAT_RGBE9995:16,FORMAT_DXT1:17,FORMAT_DXT3:18,FORMAT_DXT5:19,FORMAT_RGTC_R:20,FORMAT_RGTC_RG:21,FORMAT_BPTC_RGBA:22,FORMAT_BPTC_RGBF:23,FORMAT_BPTC_RGBFU:24,FORMAT_ETC:25,FORMAT_ETC2_R11:26,FORMAT_ETC2_R11S:27,FORMAT_ETC2_RG11:28,FORMAT_ETC2_RG11S:29,FORMAT_ETC2_RGB8:30,FORMAT_ETC2_RGBA8:31,FORMAT_ETC2_RGB8A1:32,FORMAT_ETC2_RA_AS_RG:33,FORMAT_DXT5_RA_AS_RG:34,FORMAT_ASTC_4x4:35,FORMAT_ASTC_4x4_HDR:36,FORMAT_ASTC_8x8:37,FORMAT_ASTC_8x8_HDR:38,FORMAT_R16:39,FORMAT_RG16:40,FORMAT_RGB16:41,FORMAT_RGBA16:42,FORMAT_R16I:43,FORMAT_RG16I:44,FORMAT_RGB16I:45,FORMAT_RGBA16I:46,FORMAT_MAX:47" }
         public static let `FORMAT_L8` = Self(rawValue: 0)
         public static let `FORMAT_LA8` = Self(rawValue: 1)
         public static let `FORMAT_R8` = Self(rawValue: 2)
@@ -6383,9 +6327,7 @@ extension Image {
         public static let `FORMAT_RG16I` = Self(rawValue: 44)
         public static let `FORMAT_RGB16I` = Self(rawValue: 45)
         public static let `FORMAT_RGBA16I` = Self(rawValue: 46)
-        public static let `FORMAT_ASTC_6x6` = Self(rawValue: 47)
-        public static let `FORMAT_ASTC_6x6_HDR` = Self(rawValue: 48)
-        public static let `FORMAT_MAX` = Self(rawValue: 49)
+        public static let `FORMAT_MAX` = Self(rawValue: 47)
     }
     public static let `FORMAT_L8`: Format = .`FORMAT_L8`
     public static let `FORMAT_LA8`: Format = .`FORMAT_LA8`
@@ -6434,8 +6376,6 @@ extension Image {
     public static let `FORMAT_RG16I`: Format = .`FORMAT_RG16I`
     public static let `FORMAT_RGB16I`: Format = .`FORMAT_RGB16I`
     public static let `FORMAT_RGBA16I`: Format = .`FORMAT_RGBA16I`
-    public static let `FORMAT_ASTC_6x6`: Format = .`FORMAT_ASTC_6x6`
-    public static let `FORMAT_ASTC_6x6_HDR`: Format = .`FORMAT_ASTC_6x6_HDR`
     public static let `FORMAT_MAX`: Format = .`FORMAT_MAX`
 }
 extension Image {
@@ -6523,24 +6463,6 @@ extension Image {
     public static let `COMPRESS_SOURCE_GENERIC`: CompressSource = .`COMPRESS_SOURCE_GENERIC`
     public static let `COMPRESS_SOURCE_SRGB`: CompressSource = .`COMPRESS_SOURCE_SRGB`
     public static let `COMPRESS_SOURCE_NORMAL`: CompressSource = .`COMPRESS_SOURCE_NORMAL`
-}
-extension Image {
-    public struct CompressProfile: GodotIntegerValue {
-        public let rawValue: Int64
-        public init(rawValue: Int64) { self.rawValue = rawValue }
-        public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "COMPRESS_PROFILE_AUTOMATIC:0,COMPRESS_PROFILE_MAX_QUALITY:1,COMPRESS_PROFILE_COMPRESSED:2,COMPRESS_PROFILE_MAX_COMPRESSION:3,COMPRESS_PROFILE_MAX:4" }
-        public static let `COMPRESS_PROFILE_AUTOMATIC` = Self(rawValue: 0)
-        public static let `COMPRESS_PROFILE_MAX_QUALITY` = Self(rawValue: 1)
-        public static let `COMPRESS_PROFILE_COMPRESSED` = Self(rawValue: 2)
-        public static let `COMPRESS_PROFILE_MAX_COMPRESSION` = Self(rawValue: 3)
-        public static let `COMPRESS_PROFILE_MAX` = Self(rawValue: 4)
-    }
-    public static let `COMPRESS_PROFILE_AUTOMATIC`: CompressProfile = .`COMPRESS_PROFILE_AUTOMATIC`
-    public static let `COMPRESS_PROFILE_MAX_QUALITY`: CompressProfile = .`COMPRESS_PROFILE_MAX_QUALITY`
-    public static let `COMPRESS_PROFILE_COMPRESSED`: CompressProfile = .`COMPRESS_PROFILE_COMPRESSED`
-    public static let `COMPRESS_PROFILE_MAX_COMPRESSION`: CompressProfile = .`COMPRESS_PROFILE_MAX_COMPRESSION`
-    public static let `COMPRESS_PROFILE_MAX`: CompressProfile = .`COMPRESS_PROFILE_MAX`
 }
 extension Image {
     public struct ASTCFormat: GodotIntegerValue {
@@ -6757,7 +6679,7 @@ extension Light3D {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
         public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "PARAM_ENERGY:0,PARAM_INDIRECT_ENERGY:1,PARAM_VOLUMETRIC_FOG_ENERGY:2,PARAM_SPECULAR:3,PARAM_RANGE:4,PARAM_SIZE:5,PARAM_ATTENUATION:6,PARAM_SPOT_ANGLE:7,PARAM_SPOT_ATTENUATION:8,PARAM_SHADOW_MAX_DISTANCE:9,PARAM_SHADOW_SPLIT_1_OFFSET:10,PARAM_SHADOW_SPLIT_2_OFFSET:11,PARAM_SHADOW_SPLIT_3_OFFSET:12,PARAM_SHADOW_FADE_START:13,PARAM_SHADOW_NORMAL_BIAS:14,PARAM_SHADOW_BIAS:15,PARAM_SHADOW_PANCAKE_SIZE:16,PARAM_SHADOW_OPACITY:17,PARAM_SHADOW_BLUR:18,PARAM_TRANSMITTANCE_BIAS:19,PARAM_INTENSITY:20,PARAM_CONTACT_SHADOW_OPACITY:21,PARAM_CONTACT_SHADOW_BLUR:22,PARAM_MAX:23" }
+        public static var godotHintString: Swift.String { "PARAM_ENERGY:0,PARAM_INDIRECT_ENERGY:1,PARAM_VOLUMETRIC_FOG_ENERGY:2,PARAM_SPECULAR:3,PARAM_RANGE:4,PARAM_SIZE:5,PARAM_ATTENUATION:6,PARAM_SPOT_ANGLE:7,PARAM_SPOT_ATTENUATION:8,PARAM_SHADOW_MAX_DISTANCE:9,PARAM_SHADOW_SPLIT_1_OFFSET:10,PARAM_SHADOW_SPLIT_2_OFFSET:11,PARAM_SHADOW_SPLIT_3_OFFSET:12,PARAM_SHADOW_FADE_START:13,PARAM_SHADOW_NORMAL_BIAS:14,PARAM_SHADOW_BIAS:15,PARAM_SHADOW_PANCAKE_SIZE:16,PARAM_SHADOW_OPACITY:17,PARAM_SHADOW_BLUR:18,PARAM_TRANSMITTANCE_BIAS:19,PARAM_INTENSITY:20,PARAM_MAX:21" }
         public static let `PARAM_ENERGY` = Self(rawValue: 0)
         public static let `PARAM_INDIRECT_ENERGY` = Self(rawValue: 1)
         public static let `PARAM_VOLUMETRIC_FOG_ENERGY` = Self(rawValue: 2)
@@ -6779,9 +6701,7 @@ extension Light3D {
         public static let `PARAM_SHADOW_BLUR` = Self(rawValue: 18)
         public static let `PARAM_TRANSMITTANCE_BIAS` = Self(rawValue: 19)
         public static let `PARAM_INTENSITY` = Self(rawValue: 20)
-        public static let `PARAM_CONTACT_SHADOW_OPACITY` = Self(rawValue: 21)
-        public static let `PARAM_CONTACT_SHADOW_BLUR` = Self(rawValue: 22)
-        public static let `PARAM_MAX` = Self(rawValue: 23)
+        public static let `PARAM_MAX` = Self(rawValue: 21)
     }
     public static let `PARAM_ENERGY`: Param = .`PARAM_ENERGY`
     public static let `PARAM_INDIRECT_ENERGY`: Param = .`PARAM_INDIRECT_ENERGY`
@@ -6804,8 +6724,6 @@ extension Light3D {
     public static let `PARAM_SHADOW_BLUR`: Param = .`PARAM_SHADOW_BLUR`
     public static let `PARAM_TRANSMITTANCE_BIAS`: Param = .`PARAM_TRANSMITTANCE_BIAS`
     public static let `PARAM_INTENSITY`: Param = .`PARAM_INTENSITY`
-    public static let `PARAM_CONTACT_SHADOW_OPACITY`: Param = .`PARAM_CONTACT_SHADOW_OPACITY`
-    public static let `PARAM_CONTACT_SHADOW_BLUR`: Param = .`PARAM_CONTACT_SHADOW_BLUR`
     public static let `PARAM_MAX`: Param = .`PARAM_MAX`
 }
 extension Light3D {
@@ -6959,50 +6877,6 @@ extension Line2D {
     public static let `LINE_TEXTURE_NONE`: LineTextureMode = .`LINE_TEXTURE_NONE`
     public static let `LINE_TEXTURE_TILE`: LineTextureMode = .`LINE_TEXTURE_TILE`
     public static let `LINE_TEXTURE_STRETCH`: LineTextureMode = .`LINE_TEXTURE_STRETCH`
-}
-extension Line3D {
-    public struct MeshAlignment: GodotIntegerValue {
-        public let rawValue: Int64
-        public init(rawValue: Int64) { self.rawValue = rawValue }
-        public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "MESH_ALIGNMENT_LOCAL:0,MESH_ALIGNMENT_BILLBOARD:1,MESH_ALIGNMENT_MAX:2" }
-        public static let `MESH_ALIGNMENT_LOCAL` = Self(rawValue: 0)
-        public static let `MESH_ALIGNMENT_BILLBOARD` = Self(rawValue: 1)
-        public static let `MESH_ALIGNMENT_MAX` = Self(rawValue: 2)
-    }
-    public static let `MESH_ALIGNMENT_LOCAL`: MeshAlignment = .`MESH_ALIGNMENT_LOCAL`
-    public static let `MESH_ALIGNMENT_BILLBOARD`: MeshAlignment = .`MESH_ALIGNMENT_BILLBOARD`
-    public static let `MESH_ALIGNMENT_MAX`: MeshAlignment = .`MESH_ALIGNMENT_MAX`
-}
-extension Line3D {
-    public struct TilingMode: GodotIntegerValue {
-        public let rawValue: Int64
-        public init(rawValue: Int64) { self.rawValue = rawValue }
-        public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "TILING_MODE_UNIT:0,TILING_MODE_LENGTH:1,TILING_MAX:2" }
-        public static let `TILING_MODE_UNIT` = Self(rawValue: 0)
-        public static let `TILING_MODE_LENGTH` = Self(rawValue: 1)
-        public static let `TILING_MAX` = Self(rawValue: 2)
-    }
-    public static let `TILING_MODE_UNIT`: TilingMode = .`TILING_MODE_UNIT`
-    public static let `TILING_MODE_LENGTH`: TilingMode = .`TILING_MODE_LENGTH`
-    public static let `TILING_MAX`: TilingMode = .`TILING_MAX`
-}
-extension Line3D {
-    public struct MaterialMode: GodotIntegerValue {
-        public let rawValue: Int64
-        public init(rawValue: Int64) { self.rawValue = rawValue }
-        public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "MATERIAL_MODE_MIX:0,MATERIAL_MODE_ADD:1,MATERIAL_MODE_CUSTOM:2,MATERIAL_MODE_MAX:3" }
-        public static let `MATERIAL_MODE_MIX` = Self(rawValue: 0)
-        public static let `MATERIAL_MODE_ADD` = Self(rawValue: 1)
-        public static let `MATERIAL_MODE_CUSTOM` = Self(rawValue: 2)
-        public static let `MATERIAL_MODE_MAX` = Self(rawValue: 3)
-    }
-    public static let `MATERIAL_MODE_MIX`: MaterialMode = .`MATERIAL_MODE_MIX`
-    public static let `MATERIAL_MODE_ADD`: MaterialMode = .`MATERIAL_MODE_ADD`
-    public static let `MATERIAL_MODE_CUSTOM`: MaterialMode = .`MATERIAL_MODE_CUSTOM`
-    public static let `MATERIAL_MODE_MAX`: MaterialMode = .`MATERIAL_MODE_MAX`
 }
 extension LineEdit {
     public struct MenuItems: GodotIntegerValue {
@@ -7243,7 +7117,7 @@ extension Mesh {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
         public static var godotPropertyHint: UInt32 { 6 }
-        public static var godotHintString: Swift.String { "ARRAY_FORMAT_VERTEX:1,ARRAY_FORMAT_NORMAL:2,ARRAY_FORMAT_TANGENT:4,ARRAY_FORMAT_COLOR:8,ARRAY_FORMAT_TEX_UV:16,ARRAY_FORMAT_TEX_UV2:32,ARRAY_FORMAT_CUSTOM0:64,ARRAY_FORMAT_CUSTOM1:128,ARRAY_FORMAT_CUSTOM2:256,ARRAY_FORMAT_CUSTOM3:512,ARRAY_FORMAT_BONES:1024,ARRAY_FORMAT_WEIGHTS:2048,ARRAY_FORMAT_INDEX:4096,ARRAY_FORMAT_BLEND_SHAPE_MASK:7,ARRAY_FORMAT_CUSTOM_BASE:13,ARRAY_FORMAT_CUSTOM_BITS:3,ARRAY_FORMAT_CUSTOM0_SHIFT:13,ARRAY_FORMAT_CUSTOM1_SHIFT:16,ARRAY_FORMAT_CUSTOM2_SHIFT:19,ARRAY_FORMAT_CUSTOM3_SHIFT:22,ARRAY_FORMAT_CUSTOM_MASK:7,ARRAY_COMPRESS_FLAGS_BASE:25,ARRAY_FLAG_USE_2D_VERTICES:33554432,ARRAY_FLAG_USE_DYNAMIC_UPDATE:67108864,ARRAY_FLAG_USE_8_BONE_WEIGHTS:134217728,ARRAY_FLAG_USES_EMPTY_VERTEX_ARRAY:268435456,ARRAY_FLAG_COMPRESS_ATTRIBUTES:536870912,ARRAY_FLAG_USE_STORAGE_BUFFER:1073741824" }
+        public static var godotHintString: Swift.String { "ARRAY_FORMAT_VERTEX:1,ARRAY_FORMAT_NORMAL:2,ARRAY_FORMAT_TANGENT:4,ARRAY_FORMAT_COLOR:8,ARRAY_FORMAT_TEX_UV:16,ARRAY_FORMAT_TEX_UV2:32,ARRAY_FORMAT_CUSTOM0:64,ARRAY_FORMAT_CUSTOM1:128,ARRAY_FORMAT_CUSTOM2:256,ARRAY_FORMAT_CUSTOM3:512,ARRAY_FORMAT_BONES:1024,ARRAY_FORMAT_WEIGHTS:2048,ARRAY_FORMAT_INDEX:4096,ARRAY_FORMAT_BLEND_SHAPE_MASK:7,ARRAY_FORMAT_CUSTOM_BASE:13,ARRAY_FORMAT_CUSTOM_BITS:3,ARRAY_FORMAT_CUSTOM0_SHIFT:13,ARRAY_FORMAT_CUSTOM1_SHIFT:16,ARRAY_FORMAT_CUSTOM2_SHIFT:19,ARRAY_FORMAT_CUSTOM3_SHIFT:22,ARRAY_FORMAT_CUSTOM_MASK:7,ARRAY_COMPRESS_FLAGS_BASE:25,ARRAY_FLAG_USE_2D_VERTICES:33554432,ARRAY_FLAG_USE_DYNAMIC_UPDATE:67108864,ARRAY_FLAG_USE_8_BONE_WEIGHTS:134217728,ARRAY_FLAG_USES_EMPTY_VERTEX_ARRAY:268435456,ARRAY_FLAG_COMPRESS_ATTRIBUTES:536870912" }
         public static let `ARRAY_FORMAT_VERTEX` = Self(rawValue: 1)
         public static let `ARRAY_FORMAT_NORMAL` = Self(rawValue: 2)
         public static let `ARRAY_FORMAT_TANGENT` = Self(rawValue: 4)
@@ -7271,7 +7145,6 @@ extension Mesh {
         public static let `ARRAY_FLAG_USE_8_BONE_WEIGHTS` = Self(rawValue: 134217728)
         public static let `ARRAY_FLAG_USES_EMPTY_VERTEX_ARRAY` = Self(rawValue: 268435456)
         public static let `ARRAY_FLAG_COMPRESS_ATTRIBUTES` = Self(rawValue: 536870912)
-        public static let `ARRAY_FLAG_USE_STORAGE_BUFFER` = Self(rawValue: 1073741824)
     }
     public static let `ARRAY_FORMAT_VERTEX`: ArrayFormat = .`ARRAY_FORMAT_VERTEX`
     public static let `ARRAY_FORMAT_NORMAL`: ArrayFormat = .`ARRAY_FORMAT_NORMAL`
@@ -7300,7 +7173,6 @@ extension Mesh {
     public static let `ARRAY_FLAG_USE_8_BONE_WEIGHTS`: ArrayFormat = .`ARRAY_FLAG_USE_8_BONE_WEIGHTS`
     public static let `ARRAY_FLAG_USES_EMPTY_VERTEX_ARRAY`: ArrayFormat = .`ARRAY_FLAG_USES_EMPTY_VERTEX_ARRAY`
     public static let `ARRAY_FLAG_COMPRESS_ATTRIBUTES`: ArrayFormat = .`ARRAY_FLAG_COMPRESS_ATTRIBUTES`
-    public static let `ARRAY_FLAG_USE_STORAGE_BUFFER`: ArrayFormat = .`ARRAY_FLAG_USE_STORAGE_BUFFER`
 }
 extension Mesh {
     public struct BlendShapeMode: GodotIntegerValue {
@@ -8163,24 +8035,6 @@ extension OpenXRInterface {
     public static let `SESSION_STATE_EXITING`: SessionState = .`SESSION_STATE_EXITING`
 }
 extension OpenXRInterface {
-    public struct ViewConfiguration: GodotIntegerValue {
-        public let rawValue: Int64
-        public init(rawValue: Int64) { self.rawValue = rawValue }
-        public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "VIEW_CONFIGURATION_MONO:0,VIEW_CONFIGURATION_STEREO:1,VIEW_CONFIGURATION_STEREO_WITH_INSET:2,VIEW_CONFIGURATION_UNSET:254,VIEW_CONFIGURATION_UNKNOWN:255" }
-        public static let `VIEW_CONFIGURATION_MONO` = Self(rawValue: 0)
-        public static let `VIEW_CONFIGURATION_STEREO` = Self(rawValue: 1)
-        public static let `VIEW_CONFIGURATION_STEREO_WITH_INSET` = Self(rawValue: 2)
-        public static let `VIEW_CONFIGURATION_UNSET` = Self(rawValue: 254)
-        public static let `VIEW_CONFIGURATION_UNKNOWN` = Self(rawValue: 255)
-    }
-    public static let `VIEW_CONFIGURATION_MONO`: ViewConfiguration = .`VIEW_CONFIGURATION_MONO`
-    public static let `VIEW_CONFIGURATION_STEREO`: ViewConfiguration = .`VIEW_CONFIGURATION_STEREO`
-    public static let `VIEW_CONFIGURATION_STEREO_WITH_INSET`: ViewConfiguration = .`VIEW_CONFIGURATION_STEREO_WITH_INSET`
-    public static let `VIEW_CONFIGURATION_UNSET`: ViewConfiguration = .`VIEW_CONFIGURATION_UNSET`
-    public static let `VIEW_CONFIGURATION_UNKNOWN`: ViewConfiguration = .`VIEW_CONFIGURATION_UNKNOWN`
-}
-extension OpenXRInterface {
     public struct Hand: GodotIntegerValue {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
@@ -8490,18 +8344,6 @@ extension OpenXRSpatialComponentPlaneSemanticLabelList {
     public static let `PLANE_SEMANTIC_LABEL_CEILING`: PlaneSemanticLabel = .`PLANE_SEMANTIC_LABEL_CEILING`
     public static let `PLANE_SEMANTIC_LABEL_TABLE`: PlaneSemanticLabel = .`PLANE_SEMANTIC_LABEL_TABLE`
 }
-extension OpenXRSpatialContainerState {
-    public struct BoundsMode: GodotIntegerValue {
-        public let rawValue: Int64
-        public init(rawValue: Int64) { self.rawValue = rawValue }
-        public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "BOUNDS_MODE_BOUNDED:0,BOUNDS_MODE_IMMERSIVE:1" }
-        public static let `BOUNDS_MODE_BOUNDED` = Self(rawValue: 0)
-        public static let `BOUNDS_MODE_IMMERSIVE` = Self(rawValue: 1)
-    }
-    public static let `BOUNDS_MODE_BOUNDED`: BoundsMode = .`BOUNDS_MODE_BOUNDED`
-    public static let `BOUNDS_MODE_IMMERSIVE`: BoundsMode = .`BOUNDS_MODE_IMMERSIVE`
-}
 extension OpenXRSpatialEntityExtension {
     public struct Capability: GodotIntegerValue {
         public let rawValue: Int64
@@ -8552,26 +8394,6 @@ extension OpenXRSpatialEntityExtension {
     public static let `COMPONENT_TYPE_ANCHOR`: ComponentType = .`COMPONENT_TYPE_ANCHOR`
     public static let `COMPONENT_TYPE_PERSISTENCE`: ComponentType = .`COMPONENT_TYPE_PERSISTENCE`
 }
-extension OpenXRSpatialEntityExtension {
-    public struct TrackingState: GodotIntegerValue {
-        public let rawValue: Int64
-        public init(rawValue: Int64) { self.rawValue = rawValue }
-        public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "TRACKING_UNSUPPORTED_CAPABILITY:-3,TRACKING_NO_PERMISSION:-2,TRACKING_SETUP_FAILED:-1,TRACKING_NOT_ACTIVE:0,TRACKING_SETTING_UP:1,TRACKING_ENABLED:2" }
-        public static let `TRACKING_UNSUPPORTED_CAPABILITY` = Self(rawValue: -3)
-        public static let `TRACKING_NO_PERMISSION` = Self(rawValue: -2)
-        public static let `TRACKING_SETUP_FAILED` = Self(rawValue: -1)
-        public static let `TRACKING_NOT_ACTIVE` = Self(rawValue: 0)
-        public static let `TRACKING_SETTING_UP` = Self(rawValue: 1)
-        public static let `TRACKING_ENABLED` = Self(rawValue: 2)
-    }
-    public static let `TRACKING_UNSUPPORTED_CAPABILITY`: TrackingState = .`TRACKING_UNSUPPORTED_CAPABILITY`
-    public static let `TRACKING_NO_PERMISSION`: TrackingState = .`TRACKING_NO_PERMISSION`
-    public static let `TRACKING_SETUP_FAILED`: TrackingState = .`TRACKING_SETUP_FAILED`
-    public static let `TRACKING_NOT_ACTIVE`: TrackingState = .`TRACKING_NOT_ACTIVE`
-    public static let `TRACKING_SETTING_UP`: TrackingState = .`TRACKING_SETTING_UP`
-    public static let `TRACKING_ENABLED`: TrackingState = .`TRACKING_ENABLED`
-}
 extension OpenXRSpatialEntityTracker {
     public struct EntityTrackingState: GodotIntegerValue {
         public let rawValue: Int64
@@ -8585,22 +8407,6 @@ extension OpenXRSpatialEntityTracker {
     public static let `ENTITY_TRACKING_STATE_STOPPED`: EntityTrackingState = .`ENTITY_TRACKING_STATE_STOPPED`
     public static let `ENTITY_TRACKING_STATE_PAUSED`: EntityTrackingState = .`ENTITY_TRACKING_STATE_PAUSED`
     public static let `ENTITY_TRACKING_STATE_TRACKING`: EntityTrackingState = .`ENTITY_TRACKING_STATE_TRACKING`
-}
-extension OpenXRSpatialMarkerTrackingCapability {
-    public struct MarkerTypeFlags: OptionSet, GodotIntegerValue {
-        public let rawValue: Int64
-        public init(rawValue: Int64) { self.rawValue = rawValue }
-        public static var godotPropertyHint: UInt32 { 6 }
-        public static var godotHintString: Swift.String { "MARKER_QR_CODE:1,MARKER_MICRO_QR_CODE:2,MARKER_ARUCO:4,MARKER_APRIL_TAG:8" }
-        public static let `MARKER_QR_CODE` = Self(rawValue: 1)
-        public static let `MARKER_MICRO_QR_CODE` = Self(rawValue: 2)
-        public static let `MARKER_ARUCO` = Self(rawValue: 4)
-        public static let `MARKER_APRIL_TAG` = Self(rawValue: 8)
-    }
-    public static let `MARKER_QR_CODE`: MarkerTypeFlags = .`MARKER_QR_CODE`
-    public static let `MARKER_MICRO_QR_CODE`: MarkerTypeFlags = .`MARKER_MICRO_QR_CODE`
-    public static let `MARKER_ARUCO`: MarkerTypeFlags = .`MARKER_ARUCO`
-    public static let `MARKER_APRIL_TAG`: MarkerTypeFlags = .`MARKER_APRIL_TAG`
 }
 extension PackedScene {
     public struct GenEditState: GodotIntegerValue {
@@ -8687,21 +8493,19 @@ extension ParticleProcessMaterial {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
         public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "PARTICLE_FLAG_ALIGN_Y_TO_VELOCITY:0,PARTICLE_FLAG_ROTATE_Y:1,PARTICLE_FLAG_DISABLE_Z:2,PARTICLE_FLAG_DAMPING_AS_FRICTION:3,PARTICLE_FLAG_INHERIT_EMITTER_SCALE:4,PARTICLE_FLAG_PRESERVE_COLOR:5,PARTICLE_FLAG_MAX:6" }
+        public static var godotHintString: Swift.String { "PARTICLE_FLAG_ALIGN_Y_TO_VELOCITY:0,PARTICLE_FLAG_ROTATE_Y:1,PARTICLE_FLAG_DISABLE_Z:2,PARTICLE_FLAG_DAMPING_AS_FRICTION:3,PARTICLE_FLAG_INHERIT_EMITTER_SCALE:4,PARTICLE_FLAG_MAX:5" }
         public static let `PARTICLE_FLAG_ALIGN_Y_TO_VELOCITY` = Self(rawValue: 0)
         public static let `PARTICLE_FLAG_ROTATE_Y` = Self(rawValue: 1)
         public static let `PARTICLE_FLAG_DISABLE_Z` = Self(rawValue: 2)
         public static let `PARTICLE_FLAG_DAMPING_AS_FRICTION` = Self(rawValue: 3)
         public static let `PARTICLE_FLAG_INHERIT_EMITTER_SCALE` = Self(rawValue: 4)
-        public static let `PARTICLE_FLAG_PRESERVE_COLOR` = Self(rawValue: 5)
-        public static let `PARTICLE_FLAG_MAX` = Self(rawValue: 6)
+        public static let `PARTICLE_FLAG_MAX` = Self(rawValue: 5)
     }
     public static let `PARTICLE_FLAG_ALIGN_Y_TO_VELOCITY`: ParticleFlags = .`PARTICLE_FLAG_ALIGN_Y_TO_VELOCITY`
     public static let `PARTICLE_FLAG_ROTATE_Y`: ParticleFlags = .`PARTICLE_FLAG_ROTATE_Y`
     public static let `PARTICLE_FLAG_DISABLE_Z`: ParticleFlags = .`PARTICLE_FLAG_DISABLE_Z`
     public static let `PARTICLE_FLAG_DAMPING_AS_FRICTION`: ParticleFlags = .`PARTICLE_FLAG_DAMPING_AS_FRICTION`
     public static let `PARTICLE_FLAG_INHERIT_EMITTER_SCALE`: ParticleFlags = .`PARTICLE_FLAG_INHERIT_EMITTER_SCALE`
-    public static let `PARTICLE_FLAG_PRESERVE_COLOR`: ParticleFlags = .`PARTICLE_FLAG_PRESERVE_COLOR`
     public static let `PARTICLE_FLAG_MAX`: ParticleFlags = .`PARTICLE_FLAG_MAX`
 }
 extension ParticleProcessMaterial {
@@ -8787,7 +8591,7 @@ extension Performance {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
         public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "TIME_FPS:0,TIME_PROCESS:1,TIME_PHYSICS_PROCESS:2,TIME_NAVIGATION_PROCESS:3,MEMORY_STATIC:4,MEMORY_STATIC_MAX:5,MEMORY_MESSAGE_BUFFER_MAX:6,OBJECT_COUNT:7,OBJECT_RESOURCE_COUNT:8,OBJECT_NODE_COUNT:9,OBJECT_ORPHAN_NODE_COUNT:10,RENDER_TOTAL_OBJECTS_IN_FRAME:11,RENDER_TOTAL_PRIMITIVES_IN_FRAME:12,RENDER_TOTAL_DRAW_CALLS_IN_FRAME:13,RENDER_VIDEO_MEM_USED:14,RENDER_TEXTURE_MEM_USED:15,RENDER_BUFFER_MEM_USED:16,PHYSICS_2D_ACTIVE_OBJECTS:17,PHYSICS_2D_COLLISION_PAIRS:18,PHYSICS_2D_ISLAND_COUNT:19,PHYSICS_3D_ACTIVE_OBJECTS:20,PHYSICS_3D_COLLISION_PAIRS:21,PHYSICS_3D_ISLAND_COUNT:22,AUDIO_OUTPUT_LATENCY:23,NAVIGATION_ACTIVE_MAPS:24,NAVIGATION_REGION_COUNT:25,NAVIGATION_AGENT_COUNT:26,NAVIGATION_LINK_COUNT:27,NAVIGATION_POLYGON_COUNT:28,NAVIGATION_EDGE_COUNT:29,NAVIGATION_EDGE_MERGE_COUNT:30,NAVIGATION_EDGE_CONNECTION_COUNT:31,NAVIGATION_EDGE_FREE_COUNT:32,NAVIGATION_OBSTACLE_COUNT:33,PIPELINE_COMPILATIONS_CANVAS:34,PIPELINE_COMPILATIONS_MESH:35,PIPELINE_COMPILATIONS_SURFACE:36,PIPELINE_COMPILATIONS_DRAW:37,PIPELINE_COMPILATIONS_SPECIALIZATION:38,NAVIGATION_2D_ACTIVE_MAPS:39,NAVIGATION_2D_REGION_COUNT:40,NAVIGATION_2D_AGENT_COUNT:41,NAVIGATION_2D_LINK_COUNT:42,NAVIGATION_2D_POLYGON_COUNT:43,NAVIGATION_2D_EDGE_COUNT:44,NAVIGATION_2D_EDGE_MERGE_COUNT:45,NAVIGATION_2D_EDGE_CONNECTION_COUNT:46,NAVIGATION_2D_EDGE_FREE_COUNT:47,NAVIGATION_2D_OBSTACLE_COUNT:48,NAVIGATION_3D_ACTIVE_MAPS:49,NAVIGATION_3D_REGION_COUNT:50,NAVIGATION_3D_AGENT_COUNT:51,NAVIGATION_3D_LINK_COUNT:52,NAVIGATION_3D_POLYGON_COUNT:53,NAVIGATION_3D_EDGE_COUNT:54,NAVIGATION_3D_EDGE_MERGE_COUNT:55,NAVIGATION_3D_EDGE_CONNECTION_COUNT:56,NAVIGATION_3D_EDGE_FREE_COUNT:57,NAVIGATION_3D_OBSTACLE_COUNT:58,RENDER_STREAMING_TEXTURE_MEM_USED:59,MONITOR_MAX:60" }
+        public static var godotHintString: Swift.String { "TIME_FPS:0,TIME_PROCESS:1,TIME_PHYSICS_PROCESS:2,TIME_NAVIGATION_PROCESS:3,MEMORY_STATIC:4,MEMORY_STATIC_MAX:5,MEMORY_MESSAGE_BUFFER_MAX:6,OBJECT_COUNT:7,OBJECT_RESOURCE_COUNT:8,OBJECT_NODE_COUNT:9,OBJECT_ORPHAN_NODE_COUNT:10,RENDER_TOTAL_OBJECTS_IN_FRAME:11,RENDER_TOTAL_PRIMITIVES_IN_FRAME:12,RENDER_TOTAL_DRAW_CALLS_IN_FRAME:13,RENDER_VIDEO_MEM_USED:14,RENDER_TEXTURE_MEM_USED:15,RENDER_BUFFER_MEM_USED:16,PHYSICS_2D_ACTIVE_OBJECTS:17,PHYSICS_2D_COLLISION_PAIRS:18,PHYSICS_2D_ISLAND_COUNT:19,PHYSICS_3D_ACTIVE_OBJECTS:20,PHYSICS_3D_COLLISION_PAIRS:21,PHYSICS_3D_ISLAND_COUNT:22,AUDIO_OUTPUT_LATENCY:23,NAVIGATION_ACTIVE_MAPS:24,NAVIGATION_REGION_COUNT:25,NAVIGATION_AGENT_COUNT:26,NAVIGATION_LINK_COUNT:27,NAVIGATION_POLYGON_COUNT:28,NAVIGATION_EDGE_COUNT:29,NAVIGATION_EDGE_MERGE_COUNT:30,NAVIGATION_EDGE_CONNECTION_COUNT:31,NAVIGATION_EDGE_FREE_COUNT:32,NAVIGATION_OBSTACLE_COUNT:33,PIPELINE_COMPILATIONS_CANVAS:34,PIPELINE_COMPILATIONS_MESH:35,PIPELINE_COMPILATIONS_SURFACE:36,PIPELINE_COMPILATIONS_DRAW:37,PIPELINE_COMPILATIONS_SPECIALIZATION:38,NAVIGATION_2D_ACTIVE_MAPS:39,NAVIGATION_2D_REGION_COUNT:40,NAVIGATION_2D_AGENT_COUNT:41,NAVIGATION_2D_LINK_COUNT:42,NAVIGATION_2D_POLYGON_COUNT:43,NAVIGATION_2D_EDGE_COUNT:44,NAVIGATION_2D_EDGE_MERGE_COUNT:45,NAVIGATION_2D_EDGE_CONNECTION_COUNT:46,NAVIGATION_2D_EDGE_FREE_COUNT:47,NAVIGATION_2D_OBSTACLE_COUNT:48,NAVIGATION_3D_ACTIVE_MAPS:49,NAVIGATION_3D_REGION_COUNT:50,NAVIGATION_3D_AGENT_COUNT:51,NAVIGATION_3D_LINK_COUNT:52,NAVIGATION_3D_POLYGON_COUNT:53,NAVIGATION_3D_EDGE_COUNT:54,NAVIGATION_3D_EDGE_MERGE_COUNT:55,NAVIGATION_3D_EDGE_CONNECTION_COUNT:56,NAVIGATION_3D_EDGE_FREE_COUNT:57,NAVIGATION_3D_OBSTACLE_COUNT:58,MONITOR_MAX:59" }
         public static let `TIME_FPS` = Self(rawValue: 0)
         public static let `TIME_PROCESS` = Self(rawValue: 1)
         public static let `TIME_PHYSICS_PROCESS` = Self(rawValue: 2)
@@ -8847,8 +8651,7 @@ extension Performance {
         public static let `NAVIGATION_3D_EDGE_CONNECTION_COUNT` = Self(rawValue: 56)
         public static let `NAVIGATION_3D_EDGE_FREE_COUNT` = Self(rawValue: 57)
         public static let `NAVIGATION_3D_OBSTACLE_COUNT` = Self(rawValue: 58)
-        public static let `RENDER_STREAMING_TEXTURE_MEM_USED` = Self(rawValue: 59)
-        public static let `MONITOR_MAX` = Self(rawValue: 60)
+        public static let `MONITOR_MAX` = Self(rawValue: 59)
     }
     public static let `TIME_FPS`: Monitor = .`TIME_FPS`
     public static let `TIME_PROCESS`: Monitor = .`TIME_PROCESS`
@@ -8909,7 +8712,6 @@ extension Performance {
     public static let `NAVIGATION_3D_EDGE_CONNECTION_COUNT`: Monitor = .`NAVIGATION_3D_EDGE_CONNECTION_COUNT`
     public static let `NAVIGATION_3D_EDGE_FREE_COUNT`: Monitor = .`NAVIGATION_3D_EDGE_FREE_COUNT`
     public static let `NAVIGATION_3D_OBSTACLE_COUNT`: Monitor = .`NAVIGATION_3D_OBSTACLE_COUNT`
-    public static let `RENDER_STREAMING_TEXTURE_MEM_USED`: Monitor = .`RENDER_STREAMING_TEXTURE_MEM_USED`
     public static let `MONITOR_MAX`: Monitor = .`MONITOR_MAX`
 }
 extension Performance {
@@ -9393,7 +9195,7 @@ extension PhysicsServer3D {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
         public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "G6DOF_JOINT_LINEAR_LOWER_LIMIT:0,G6DOF_JOINT_LINEAR_UPPER_LIMIT:1,G6DOF_JOINT_LINEAR_LIMIT_SOFTNESS:2,G6DOF_JOINT_LINEAR_RESTITUTION:3,G6DOF_JOINT_LINEAR_DAMPING:4,G6DOF_JOINT_LINEAR_MOTOR_TARGET_VELOCITY:5,G6DOF_JOINT_LINEAR_MOTOR_FORCE_LIMIT:6,G6DOF_JOINT_LINEAR_SPRING_STIFFNESS:7,G6DOF_JOINT_LINEAR_SPRING_DAMPING:8,G6DOF_JOINT_LINEAR_SPRING_EQUILIBRIUM_POINT:9,G6DOF_JOINT_ANGULAR_LOWER_LIMIT:10,G6DOF_JOINT_ANGULAR_UPPER_LIMIT:11,G6DOF_JOINT_ANGULAR_LIMIT_SOFTNESS:12,G6DOF_JOINT_ANGULAR_DAMPING:13,G6DOF_JOINT_ANGULAR_RESTITUTION:14,G6DOF_JOINT_ANGULAR_FORCE_LIMIT:15,G6DOF_JOINT_ANGULAR_ERP:16,G6DOF_JOINT_ANGULAR_MOTOR_TARGET_VELOCITY:17,G6DOF_JOINT_ANGULAR_MOTOR_FORCE_LIMIT:18,G6DOF_JOINT_ANGULAR_SPRING_STIFFNESS:19,G6DOF_JOINT_ANGULAR_SPRING_DAMPING:20,G6DOF_JOINT_ANGULAR_SPRING_EQUILIBRIUM_POINT:21,G6DOF_JOINT_LINEAR_DRIVE_FORCE_LIMIT:22,G6DOF_JOINT_ANGULAR_DRIVE_TORQUE_LIMIT:23,G6DOF_JOINT_MAX:24" }
+        public static var godotHintString: Swift.String { "G6DOF_JOINT_LINEAR_LOWER_LIMIT:0,G6DOF_JOINT_LINEAR_UPPER_LIMIT:1,G6DOF_JOINT_LINEAR_LIMIT_SOFTNESS:2,G6DOF_JOINT_LINEAR_RESTITUTION:3,G6DOF_JOINT_LINEAR_DAMPING:4,G6DOF_JOINT_LINEAR_MOTOR_TARGET_VELOCITY:5,G6DOF_JOINT_LINEAR_MOTOR_FORCE_LIMIT:6,G6DOF_JOINT_LINEAR_SPRING_STIFFNESS:7,G6DOF_JOINT_LINEAR_SPRING_DAMPING:8,G6DOF_JOINT_LINEAR_SPRING_EQUILIBRIUM_POINT:9,G6DOF_JOINT_ANGULAR_LOWER_LIMIT:10,G6DOF_JOINT_ANGULAR_UPPER_LIMIT:11,G6DOF_JOINT_ANGULAR_LIMIT_SOFTNESS:12,G6DOF_JOINT_ANGULAR_DAMPING:13,G6DOF_JOINT_ANGULAR_RESTITUTION:14,G6DOF_JOINT_ANGULAR_FORCE_LIMIT:15,G6DOF_JOINT_ANGULAR_ERP:16,G6DOF_JOINT_ANGULAR_MOTOR_TARGET_VELOCITY:17,G6DOF_JOINT_ANGULAR_MOTOR_FORCE_LIMIT:18,G6DOF_JOINT_ANGULAR_SPRING_STIFFNESS:19,G6DOF_JOINT_ANGULAR_SPRING_DAMPING:20,G6DOF_JOINT_ANGULAR_SPRING_EQUILIBRIUM_POINT:21,G6DOF_JOINT_MAX:22" }
         public static let `G6DOF_JOINT_LINEAR_LOWER_LIMIT` = Self(rawValue: 0)
         public static let `G6DOF_JOINT_LINEAR_UPPER_LIMIT` = Self(rawValue: 1)
         public static let `G6DOF_JOINT_LINEAR_LIMIT_SOFTNESS` = Self(rawValue: 2)
@@ -9416,9 +9218,7 @@ extension PhysicsServer3D {
         public static let `G6DOF_JOINT_ANGULAR_SPRING_STIFFNESS` = Self(rawValue: 19)
         public static let `G6DOF_JOINT_ANGULAR_SPRING_DAMPING` = Self(rawValue: 20)
         public static let `G6DOF_JOINT_ANGULAR_SPRING_EQUILIBRIUM_POINT` = Self(rawValue: 21)
-        public static let `G6DOF_JOINT_LINEAR_DRIVE_FORCE_LIMIT` = Self(rawValue: 22)
-        public static let `G6DOF_JOINT_ANGULAR_DRIVE_TORQUE_LIMIT` = Self(rawValue: 23)
-        public static let `G6DOF_JOINT_MAX` = Self(rawValue: 24)
+        public static let `G6DOF_JOINT_MAX` = Self(rawValue: 22)
     }
     public static let `G6DOF_JOINT_LINEAR_LOWER_LIMIT`: G6DOFJointAxisParam = .`G6DOF_JOINT_LINEAR_LOWER_LIMIT`
     public static let `G6DOF_JOINT_LINEAR_UPPER_LIMIT`: G6DOFJointAxisParam = .`G6DOF_JOINT_LINEAR_UPPER_LIMIT`
@@ -9442,8 +9242,6 @@ extension PhysicsServer3D {
     public static let `G6DOF_JOINT_ANGULAR_SPRING_STIFFNESS`: G6DOFJointAxisParam = .`G6DOF_JOINT_ANGULAR_SPRING_STIFFNESS`
     public static let `G6DOF_JOINT_ANGULAR_SPRING_DAMPING`: G6DOFJointAxisParam = .`G6DOF_JOINT_ANGULAR_SPRING_DAMPING`
     public static let `G6DOF_JOINT_ANGULAR_SPRING_EQUILIBRIUM_POINT`: G6DOFJointAxisParam = .`G6DOF_JOINT_ANGULAR_SPRING_EQUILIBRIUM_POINT`
-    public static let `G6DOF_JOINT_LINEAR_DRIVE_FORCE_LIMIT`: G6DOFJointAxisParam = .`G6DOF_JOINT_LINEAR_DRIVE_FORCE_LIMIT`
-    public static let `G6DOF_JOINT_ANGULAR_DRIVE_TORQUE_LIMIT`: G6DOFJointAxisParam = .`G6DOF_JOINT_ANGULAR_DRIVE_TORQUE_LIMIT`
     public static let `G6DOF_JOINT_MAX`: G6DOFJointAxisParam = .`G6DOF_JOINT_MAX`
 }
 extension PhysicsServer3D {
@@ -9451,12 +9249,11 @@ extension PhysicsServer3D {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
         public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "G6DOF_JOINT_FLAG_ENABLE_LINEAR_LIMIT:0,G6DOF_JOINT_FLAG_ENABLE_ANGULAR_LIMIT:1,G6DOF_JOINT_FLAG_ENABLE_ANGULAR_SPRING:2,G6DOF_JOINT_FLAG_ENABLE_LINEAR_SPRING:3,G6DOF_JOINT_FLAG_ENABLE_ANGULAR_MOTOR:4,G6DOF_JOINT_FLAG_ENABLE_MOTOR:4,G6DOF_JOINT_FLAG_ENABLE_LINEAR_MOTOR:5,G6DOF_JOINT_FLAG_MAX:6" }
+        public static var godotHintString: Swift.String { "G6DOF_JOINT_FLAG_ENABLE_LINEAR_LIMIT:0,G6DOF_JOINT_FLAG_ENABLE_ANGULAR_LIMIT:1,G6DOF_JOINT_FLAG_ENABLE_ANGULAR_SPRING:2,G6DOF_JOINT_FLAG_ENABLE_LINEAR_SPRING:3,G6DOF_JOINT_FLAG_ENABLE_MOTOR:4,G6DOF_JOINT_FLAG_ENABLE_LINEAR_MOTOR:5,G6DOF_JOINT_FLAG_MAX:6" }
         public static let `G6DOF_JOINT_FLAG_ENABLE_LINEAR_LIMIT` = Self(rawValue: 0)
         public static let `G6DOF_JOINT_FLAG_ENABLE_ANGULAR_LIMIT` = Self(rawValue: 1)
         public static let `G6DOF_JOINT_FLAG_ENABLE_ANGULAR_SPRING` = Self(rawValue: 2)
         public static let `G6DOF_JOINT_FLAG_ENABLE_LINEAR_SPRING` = Self(rawValue: 3)
-        public static let `G6DOF_JOINT_FLAG_ENABLE_ANGULAR_MOTOR` = Self(rawValue: 4)
         public static let `G6DOF_JOINT_FLAG_ENABLE_MOTOR` = Self(rawValue: 4)
         public static let `G6DOF_JOINT_FLAG_ENABLE_LINEAR_MOTOR` = Self(rawValue: 5)
         public static let `G6DOF_JOINT_FLAG_MAX` = Self(rawValue: 6)
@@ -9465,7 +9262,6 @@ extension PhysicsServer3D {
     public static let `G6DOF_JOINT_FLAG_ENABLE_ANGULAR_LIMIT`: G6DOFJointAxisFlag = .`G6DOF_JOINT_FLAG_ENABLE_ANGULAR_LIMIT`
     public static let `G6DOF_JOINT_FLAG_ENABLE_ANGULAR_SPRING`: G6DOFJointAxisFlag = .`G6DOF_JOINT_FLAG_ENABLE_ANGULAR_SPRING`
     public static let `G6DOF_JOINT_FLAG_ENABLE_LINEAR_SPRING`: G6DOFJointAxisFlag = .`G6DOF_JOINT_FLAG_ENABLE_LINEAR_SPRING`
-    public static let `G6DOF_JOINT_FLAG_ENABLE_ANGULAR_MOTOR`: G6DOFJointAxisFlag = .`G6DOF_JOINT_FLAG_ENABLE_ANGULAR_MOTOR`
     public static let `G6DOF_JOINT_FLAG_ENABLE_MOTOR`: G6DOFJointAxisFlag = .`G6DOF_JOINT_FLAG_ENABLE_MOTOR`
     public static let `G6DOF_JOINT_FLAG_ENABLE_LINEAR_MOTOR`: G6DOFJointAxisFlag = .`G6DOF_JOINT_FLAG_ENABLE_LINEAR_MOTOR`
     public static let `G6DOF_JOINT_FLAG_MAX`: G6DOFJointAxisFlag = .`G6DOF_JOINT_FLAG_MAX`
@@ -10475,16 +10271,14 @@ extension RenderingDevice {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
         public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "TEXTURE_SLICE_2D:0,TEXTURE_SLICE_CUBEMAP:1,TEXTURE_SLICE_3D:2,TEXTURE_SLICE_2D_ARRAY:3" }
+        public static var godotHintString: Swift.String { "TEXTURE_SLICE_2D:0,TEXTURE_SLICE_CUBEMAP:1,TEXTURE_SLICE_3D:2" }
         public static let `TEXTURE_SLICE_2D` = Self(rawValue: 0)
         public static let `TEXTURE_SLICE_CUBEMAP` = Self(rawValue: 1)
         public static let `TEXTURE_SLICE_3D` = Self(rawValue: 2)
-        public static let `TEXTURE_SLICE_2D_ARRAY` = Self(rawValue: 3)
     }
     public static let `TEXTURE_SLICE_2D`: TextureSliceType = .`TEXTURE_SLICE_2D`
     public static let `TEXTURE_SLICE_CUBEMAP`: TextureSliceType = .`TEXTURE_SLICE_CUBEMAP`
     public static let `TEXTURE_SLICE_3D`: TextureSliceType = .`TEXTURE_SLICE_3D`
-    public static let `TEXTURE_SLICE_2D_ARRAY`: TextureSliceType = .`TEXTURE_SLICE_2D_ARRAY`
 }
 extension RenderingDevice {
     public struct SamplerFilter: GodotIntegerValue {
@@ -11037,7 +10831,7 @@ extension RenderingDevice {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
         public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "SUPPORTS_METALFX_SPATIAL:3,SUPPORTS_METALFX_TEMPORAL:4,SUPPORTS_BUFFER_DEVICE_ADDRESS:6,SUPPORTS_IMAGE_ATOMIC_32_BIT:7,SUPPORTS_RAY_QUERY:11,SUPPORTS_RAYTRACING_PIPELINE:12,SUPPORTS_HDR_OUTPUT:13,SUPPORTS_RASTERIZATION_RATE_MAP:14" }
+        public static var godotHintString: Swift.String { "SUPPORTS_METALFX_SPATIAL:3,SUPPORTS_METALFX_TEMPORAL:4,SUPPORTS_BUFFER_DEVICE_ADDRESS:6,SUPPORTS_IMAGE_ATOMIC_32_BIT:7,SUPPORTS_RAY_QUERY:11,SUPPORTS_RAYTRACING_PIPELINE:12,SUPPORTS_HDR_OUTPUT:13" }
         public static let `SUPPORTS_METALFX_SPATIAL` = Self(rawValue: 3)
         public static let `SUPPORTS_METALFX_TEMPORAL` = Self(rawValue: 4)
         public static let `SUPPORTS_BUFFER_DEVICE_ADDRESS` = Self(rawValue: 6)
@@ -11045,7 +10839,6 @@ extension RenderingDevice {
         public static let `SUPPORTS_RAY_QUERY` = Self(rawValue: 11)
         public static let `SUPPORTS_RAYTRACING_PIPELINE` = Self(rawValue: 12)
         public static let `SUPPORTS_HDR_OUTPUT` = Self(rawValue: 13)
-        public static let `SUPPORTS_RASTERIZATION_RATE_MAP` = Self(rawValue: 14)
     }
     public static let `SUPPORTS_METALFX_SPATIAL`: Features = .`SUPPORTS_METALFX_SPATIAL`
     public static let `SUPPORTS_METALFX_TEMPORAL`: Features = .`SUPPORTS_METALFX_TEMPORAL`
@@ -11054,7 +10847,6 @@ extension RenderingDevice {
     public static let `SUPPORTS_RAY_QUERY`: Features = .`SUPPORTS_RAY_QUERY`
     public static let `SUPPORTS_RAYTRACING_PIPELINE`: Features = .`SUPPORTS_RAYTRACING_PIPELINE`
     public static let `SUPPORTS_HDR_OUTPUT`: Features = .`SUPPORTS_HDR_OUTPUT`
-    public static let `SUPPORTS_RASTERIZATION_RATE_MAP`: Features = .`SUPPORTS_RASTERIZATION_RATE_MAP`
 }
 extension RenderingDevice {
     public struct Limit: GodotIntegerValue {
@@ -11405,7 +11197,7 @@ extension RenderingServer {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
         public static var godotPropertyHint: UInt32 { 6 }
-        public static var godotHintString: Swift.String { "ARRAY_FORMAT_VERTEX:1,ARRAY_FORMAT_NORMAL:2,ARRAY_FORMAT_TANGENT:4,ARRAY_FORMAT_COLOR:8,ARRAY_FORMAT_TEX_UV:16,ARRAY_FORMAT_TEX_UV2:32,ARRAY_FORMAT_CUSTOM0:64,ARRAY_FORMAT_CUSTOM1:128,ARRAY_FORMAT_CUSTOM2:256,ARRAY_FORMAT_CUSTOM3:512,ARRAY_FORMAT_BONES:1024,ARRAY_FORMAT_WEIGHTS:2048,ARRAY_FORMAT_INDEX:4096,ARRAY_FORMAT_BLEND_SHAPE_MASK:7,ARRAY_FORMAT_CUSTOM_BASE:13,ARRAY_FORMAT_CUSTOM_BITS:3,ARRAY_FORMAT_CUSTOM0_SHIFT:13,ARRAY_FORMAT_CUSTOM1_SHIFT:16,ARRAY_FORMAT_CUSTOM2_SHIFT:19,ARRAY_FORMAT_CUSTOM3_SHIFT:22,ARRAY_FORMAT_CUSTOM_MASK:7,ARRAY_COMPRESS_FLAGS_BASE:25,ARRAY_FLAG_USE_2D_VERTICES:33554432,ARRAY_FLAG_USE_DYNAMIC_UPDATE:67108864,ARRAY_FLAG_USE_8_BONE_WEIGHTS:134217728,ARRAY_FLAG_USES_EMPTY_VERTEX_ARRAY:268435456,ARRAY_FLAG_COMPRESS_ATTRIBUTES:536870912,ARRAY_FLAG_USE_STORAGE_BUFFER:1073741824,ARRAY_FLAG_FORMAT_VERSION_BASE:35,ARRAY_FLAG_FORMAT_VERSION_SHIFT:35,ARRAY_FLAG_FORMAT_VERSION_1:0,ARRAY_FLAG_FORMAT_VERSION_2:34359738368,ARRAY_FLAG_FORMAT_CURRENT_VERSION:34359738368,ARRAY_FLAG_FORMAT_VERSION_MASK:255" }
+        public static var godotHintString: Swift.String { "ARRAY_FORMAT_VERTEX:1,ARRAY_FORMAT_NORMAL:2,ARRAY_FORMAT_TANGENT:4,ARRAY_FORMAT_COLOR:8,ARRAY_FORMAT_TEX_UV:16,ARRAY_FORMAT_TEX_UV2:32,ARRAY_FORMAT_CUSTOM0:64,ARRAY_FORMAT_CUSTOM1:128,ARRAY_FORMAT_CUSTOM2:256,ARRAY_FORMAT_CUSTOM3:512,ARRAY_FORMAT_BONES:1024,ARRAY_FORMAT_WEIGHTS:2048,ARRAY_FORMAT_INDEX:4096,ARRAY_FORMAT_BLEND_SHAPE_MASK:7,ARRAY_FORMAT_CUSTOM_BASE:13,ARRAY_FORMAT_CUSTOM_BITS:3,ARRAY_FORMAT_CUSTOM0_SHIFT:13,ARRAY_FORMAT_CUSTOM1_SHIFT:16,ARRAY_FORMAT_CUSTOM2_SHIFT:19,ARRAY_FORMAT_CUSTOM3_SHIFT:22,ARRAY_FORMAT_CUSTOM_MASK:7,ARRAY_COMPRESS_FLAGS_BASE:25,ARRAY_FLAG_USE_2D_VERTICES:33554432,ARRAY_FLAG_USE_DYNAMIC_UPDATE:67108864,ARRAY_FLAG_USE_8_BONE_WEIGHTS:134217728,ARRAY_FLAG_USES_EMPTY_VERTEX_ARRAY:268435456,ARRAY_FLAG_COMPRESS_ATTRIBUTES:536870912,ARRAY_FLAG_FORMAT_VERSION_BASE:35,ARRAY_FLAG_FORMAT_VERSION_SHIFT:35,ARRAY_FLAG_FORMAT_VERSION_1:0,ARRAY_FLAG_FORMAT_VERSION_2:34359738368,ARRAY_FLAG_FORMAT_CURRENT_VERSION:34359738368,ARRAY_FLAG_FORMAT_VERSION_MASK:255" }
         public static let `ARRAY_FORMAT_VERTEX` = Self(rawValue: 1)
         public static let `ARRAY_FORMAT_NORMAL` = Self(rawValue: 2)
         public static let `ARRAY_FORMAT_TANGENT` = Self(rawValue: 4)
@@ -11433,7 +11225,6 @@ extension RenderingServer {
         public static let `ARRAY_FLAG_USE_8_BONE_WEIGHTS` = Self(rawValue: 134217728)
         public static let `ARRAY_FLAG_USES_EMPTY_VERTEX_ARRAY` = Self(rawValue: 268435456)
         public static let `ARRAY_FLAG_COMPRESS_ATTRIBUTES` = Self(rawValue: 536870912)
-        public static let `ARRAY_FLAG_USE_STORAGE_BUFFER` = Self(rawValue: 1073741824)
         public static let `ARRAY_FLAG_FORMAT_VERSION_BASE` = Self(rawValue: 35)
         public static let `ARRAY_FLAG_FORMAT_VERSION_SHIFT` = Self(rawValue: 35)
         public static let `ARRAY_FLAG_FORMAT_VERSION_1` = Self(rawValue: 0)
@@ -11468,7 +11259,6 @@ extension RenderingServer {
     public static let `ARRAY_FLAG_USE_8_BONE_WEIGHTS`: ArrayFormat = .`ARRAY_FLAG_USE_8_BONE_WEIGHTS`
     public static let `ARRAY_FLAG_USES_EMPTY_VERTEX_ARRAY`: ArrayFormat = .`ARRAY_FLAG_USES_EMPTY_VERTEX_ARRAY`
     public static let `ARRAY_FLAG_COMPRESS_ATTRIBUTES`: ArrayFormat = .`ARRAY_FLAG_COMPRESS_ATTRIBUTES`
-    public static let `ARRAY_FLAG_USE_STORAGE_BUFFER`: ArrayFormat = .`ARRAY_FLAG_USE_STORAGE_BUFFER`
     public static let `ARRAY_FLAG_FORMAT_VERSION_BASE`: ArrayFormat = .`ARRAY_FLAG_FORMAT_VERSION_BASE`
     public static let `ARRAY_FLAG_FORMAT_VERSION_SHIFT`: ArrayFormat = .`ARRAY_FLAG_FORMAT_VERSION_SHIFT`
     public static let `ARRAY_FLAG_FORMAT_VERSION_1`: ArrayFormat = .`ARRAY_FLAG_FORMAT_VERSION_1`
@@ -11573,7 +11363,7 @@ extension RenderingServer {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
         public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "LIGHT_PARAM_ENERGY:0,LIGHT_PARAM_INDIRECT_ENERGY:1,LIGHT_PARAM_VOLUMETRIC_FOG_ENERGY:2,LIGHT_PARAM_SPECULAR:3,LIGHT_PARAM_RANGE:4,LIGHT_PARAM_SIZE:5,LIGHT_PARAM_ATTENUATION:6,LIGHT_PARAM_SPOT_ANGLE:7,LIGHT_PARAM_SPOT_ATTENUATION:8,LIGHT_PARAM_SHADOW_MAX_DISTANCE:9,LIGHT_PARAM_SHADOW_SPLIT_1_OFFSET:10,LIGHT_PARAM_SHADOW_SPLIT_2_OFFSET:11,LIGHT_PARAM_SHADOW_SPLIT_3_OFFSET:12,LIGHT_PARAM_SHADOW_FADE_START:13,LIGHT_PARAM_SHADOW_NORMAL_BIAS:14,LIGHT_PARAM_SHADOW_BIAS:15,LIGHT_PARAM_SHADOW_PANCAKE_SIZE:16,LIGHT_PARAM_SHADOW_OPACITY:17,LIGHT_PARAM_SHADOW_BLUR:18,LIGHT_PARAM_TRANSMITTANCE_BIAS:19,LIGHT_PARAM_INTENSITY:20,LIGHT_PARAM_CONTACT_SHADOW_OPACITY:21,LIGHT_PARAM_CONTACT_SHADOW_BLUR:22,LIGHT_PARAM_MAX:23" }
+        public static var godotHintString: Swift.String { "LIGHT_PARAM_ENERGY:0,LIGHT_PARAM_INDIRECT_ENERGY:1,LIGHT_PARAM_VOLUMETRIC_FOG_ENERGY:2,LIGHT_PARAM_SPECULAR:3,LIGHT_PARAM_RANGE:4,LIGHT_PARAM_SIZE:5,LIGHT_PARAM_ATTENUATION:6,LIGHT_PARAM_SPOT_ANGLE:7,LIGHT_PARAM_SPOT_ATTENUATION:8,LIGHT_PARAM_SHADOW_MAX_DISTANCE:9,LIGHT_PARAM_SHADOW_SPLIT_1_OFFSET:10,LIGHT_PARAM_SHADOW_SPLIT_2_OFFSET:11,LIGHT_PARAM_SHADOW_SPLIT_3_OFFSET:12,LIGHT_PARAM_SHADOW_FADE_START:13,LIGHT_PARAM_SHADOW_NORMAL_BIAS:14,LIGHT_PARAM_SHADOW_BIAS:15,LIGHT_PARAM_SHADOW_PANCAKE_SIZE:16,LIGHT_PARAM_SHADOW_OPACITY:17,LIGHT_PARAM_SHADOW_BLUR:18,LIGHT_PARAM_TRANSMITTANCE_BIAS:19,LIGHT_PARAM_INTENSITY:20,LIGHT_PARAM_MAX:21" }
         public static let `LIGHT_PARAM_ENERGY` = Self(rawValue: 0)
         public static let `LIGHT_PARAM_INDIRECT_ENERGY` = Self(rawValue: 1)
         public static let `LIGHT_PARAM_VOLUMETRIC_FOG_ENERGY` = Self(rawValue: 2)
@@ -11595,9 +11385,7 @@ extension RenderingServer {
         public static let `LIGHT_PARAM_SHADOW_BLUR` = Self(rawValue: 18)
         public static let `LIGHT_PARAM_TRANSMITTANCE_BIAS` = Self(rawValue: 19)
         public static let `LIGHT_PARAM_INTENSITY` = Self(rawValue: 20)
-        public static let `LIGHT_PARAM_CONTACT_SHADOW_OPACITY` = Self(rawValue: 21)
-        public static let `LIGHT_PARAM_CONTACT_SHADOW_BLUR` = Self(rawValue: 22)
-        public static let `LIGHT_PARAM_MAX` = Self(rawValue: 23)
+        public static let `LIGHT_PARAM_MAX` = Self(rawValue: 21)
     }
     public static let `LIGHT_PARAM_ENERGY`: LightParam = .`LIGHT_PARAM_ENERGY`
     public static let `LIGHT_PARAM_INDIRECT_ENERGY`: LightParam = .`LIGHT_PARAM_INDIRECT_ENERGY`
@@ -11620,8 +11408,6 @@ extension RenderingServer {
     public static let `LIGHT_PARAM_SHADOW_BLUR`: LightParam = .`LIGHT_PARAM_SHADOW_BLUR`
     public static let `LIGHT_PARAM_TRANSMITTANCE_BIAS`: LightParam = .`LIGHT_PARAM_TRANSMITTANCE_BIAS`
     public static let `LIGHT_PARAM_INTENSITY`: LightParam = .`LIGHT_PARAM_INTENSITY`
-    public static let `LIGHT_PARAM_CONTACT_SHADOW_OPACITY`: LightParam = .`LIGHT_PARAM_CONTACT_SHADOW_OPACITY`
-    public static let `LIGHT_PARAM_CONTACT_SHADOW_BLUR`: LightParam = .`LIGHT_PARAM_CONTACT_SHADOW_BLUR`
     public static let `LIGHT_PARAM_MAX`: LightParam = .`LIGHT_PARAM_MAX`
 }
 extension RenderingServer {
@@ -13139,24 +12925,6 @@ extension RichTextLabel {
     public static let `UPDATE_WIDTH_UNIT`: ImageUpdateMask = .`UPDATE_WIDTH_UNIT`
 }
 extension RichTextLabel {
-    public struct ResourceAccessFlag: OptionSet, GodotIntegerValue {
-        public let rawValue: Int64
-        public init(rawValue: Int64) { self.rawValue = rawValue }
-        public static var godotPropertyHint: UInt32 { 6 }
-        public static var godotHintString: Swift.String { "RESOURCE_ACCESS_RESOURCES:1,RESOURCE_ACCESS_USERDATA:2,RESOURCE_ACCESS_FILESYSTEM:4,RESOURCE_ACCESS_PIPE:8,RESOURCE_ACCESS_NETWORK:16" }
-        public static let `RESOURCE_ACCESS_RESOURCES` = Self(rawValue: 1)
-        public static let `RESOURCE_ACCESS_USERDATA` = Self(rawValue: 2)
-        public static let `RESOURCE_ACCESS_FILESYSTEM` = Self(rawValue: 4)
-        public static let `RESOURCE_ACCESS_PIPE` = Self(rawValue: 8)
-        public static let `RESOURCE_ACCESS_NETWORK` = Self(rawValue: 16)
-    }
-    public static let `RESOURCE_ACCESS_RESOURCES`: ResourceAccessFlag = .`RESOURCE_ACCESS_RESOURCES`
-    public static let `RESOURCE_ACCESS_USERDATA`: ResourceAccessFlag = .`RESOURCE_ACCESS_USERDATA`
-    public static let `RESOURCE_ACCESS_FILESYSTEM`: ResourceAccessFlag = .`RESOURCE_ACCESS_FILESYSTEM`
-    public static let `RESOURCE_ACCESS_PIPE`: ResourceAccessFlag = .`RESOURCE_ACCESS_PIPE`
-    public static let `RESOURCE_ACCESS_NETWORK`: ResourceAccessFlag = .`RESOURCE_ACCESS_NETWORK`
-}
-extension RichTextLabel {
     public struct ImageUnit: GodotIntegerValue {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
@@ -13425,28 +13193,16 @@ extension ScrollContainer {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
         public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "SCROLL_HINT_MODE_DISABLED:0,SCROLL_HINT_MODE_ALL:1,SCROLL_HINT_MODE_TOP_AND_LEFT:2,SCROLL_HINT_MODE_BOTTOM_AND_RIGHT:3,SCROLL_HINT_MODE_TOP_AND_BOTTOM:4,SCROLL_HINT_MODE_LEFT_AND_RIGHT:5,SCROLL_HINT_MODE_TOP:6,SCROLL_HINT_MODE_BOTTOM:7,SCROLL_HINT_MODE_LEFT:8,SCROLL_HINT_MODE_RIGHT:9" }
+        public static var godotHintString: Swift.String { "SCROLL_HINT_MODE_DISABLED:0,SCROLL_HINT_MODE_ALL:1,SCROLL_HINT_MODE_TOP_AND_LEFT:2,SCROLL_HINT_MODE_BOTTOM_AND_RIGHT:3" }
         public static let `SCROLL_HINT_MODE_DISABLED` = Self(rawValue: 0)
         public static let `SCROLL_HINT_MODE_ALL` = Self(rawValue: 1)
         public static let `SCROLL_HINT_MODE_TOP_AND_LEFT` = Self(rawValue: 2)
         public static let `SCROLL_HINT_MODE_BOTTOM_AND_RIGHT` = Self(rawValue: 3)
-        public static let `SCROLL_HINT_MODE_TOP_AND_BOTTOM` = Self(rawValue: 4)
-        public static let `SCROLL_HINT_MODE_LEFT_AND_RIGHT` = Self(rawValue: 5)
-        public static let `SCROLL_HINT_MODE_TOP` = Self(rawValue: 6)
-        public static let `SCROLL_HINT_MODE_BOTTOM` = Self(rawValue: 7)
-        public static let `SCROLL_HINT_MODE_LEFT` = Self(rawValue: 8)
-        public static let `SCROLL_HINT_MODE_RIGHT` = Self(rawValue: 9)
     }
     public static let `SCROLL_HINT_MODE_DISABLED`: ScrollHintMode = .`SCROLL_HINT_MODE_DISABLED`
     public static let `SCROLL_HINT_MODE_ALL`: ScrollHintMode = .`SCROLL_HINT_MODE_ALL`
     public static let `SCROLL_HINT_MODE_TOP_AND_LEFT`: ScrollHintMode = .`SCROLL_HINT_MODE_TOP_AND_LEFT`
     public static let `SCROLL_HINT_MODE_BOTTOM_AND_RIGHT`: ScrollHintMode = .`SCROLL_HINT_MODE_BOTTOM_AND_RIGHT`
-    public static let `SCROLL_HINT_MODE_TOP_AND_BOTTOM`: ScrollHintMode = .`SCROLL_HINT_MODE_TOP_AND_BOTTOM`
-    public static let `SCROLL_HINT_MODE_LEFT_AND_RIGHT`: ScrollHintMode = .`SCROLL_HINT_MODE_LEFT_AND_RIGHT`
-    public static let `SCROLL_HINT_MODE_TOP`: ScrollHintMode = .`SCROLL_HINT_MODE_TOP`
-    public static let `SCROLL_HINT_MODE_BOTTOM`: ScrollHintMode = .`SCROLL_HINT_MODE_BOTTOM`
-    public static let `SCROLL_HINT_MODE_LEFT`: ScrollHintMode = .`SCROLL_HINT_MODE_LEFT`
-    public static let `SCROLL_HINT_MODE_RIGHT`: ScrollHintMode = .`SCROLL_HINT_MODE_RIGHT`
 }
 extension Shader {
     public struct Mode: GodotIntegerValue {
@@ -13913,24 +13669,6 @@ extension TabBar {
     public static let `ALIGNMENT_CENTER`: AlignmentMode = .`ALIGNMENT_CENTER`
     public static let `ALIGNMENT_RIGHT`: AlignmentMode = .`ALIGNMENT_RIGHT`
     public static let `ALIGNMENT_MAX`: AlignmentMode = .`ALIGNMENT_MAX`
-}
-extension TabBar {
-    public struct SizingMode: GodotIntegerValue {
-        public let rawValue: Int64
-        public init(rawValue: Int64) { self.rawValue = rawValue }
-        public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "TAB_SIZING_FIT_CONTENT:0,TAB_SIZING_UNIFORM:1,TAB_SIZING_JUSTIFY:2,TAB_SIZING_EXPAND:3,TAB_SIZING_MAX:4" }
-        public static let `TAB_SIZING_FIT_CONTENT` = Self(rawValue: 0)
-        public static let `TAB_SIZING_UNIFORM` = Self(rawValue: 1)
-        public static let `TAB_SIZING_JUSTIFY` = Self(rawValue: 2)
-        public static let `TAB_SIZING_EXPAND` = Self(rawValue: 3)
-        public static let `TAB_SIZING_MAX` = Self(rawValue: 4)
-    }
-    public static let `TAB_SIZING_FIT_CONTENT`: SizingMode = .`TAB_SIZING_FIT_CONTENT`
-    public static let `TAB_SIZING_UNIFORM`: SizingMode = .`TAB_SIZING_UNIFORM`
-    public static let `TAB_SIZING_JUSTIFY`: SizingMode = .`TAB_SIZING_JUSTIFY`
-    public static let `TAB_SIZING_EXPAND`: SizingMode = .`TAB_SIZING_EXPAND`
-    public static let `TAB_SIZING_MAX`: SizingMode = .`TAB_SIZING_MAX`
 }
 extension TabBar {
     public struct CloseButtonDisplayPolicy: GodotIntegerValue {
@@ -14611,15 +14349,14 @@ extension Theme {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
         public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "DATA_TYPE_COLOR:0,DATA_TYPE_CONSTANT:1,DATA_TYPE_FONT:2,DATA_TYPE_FONT_SIZE:3,DATA_TYPE_ICON:4,DATA_TYPE_STYLEBOX:5,DATA_TYPE_SOUND:6,DATA_TYPE_MAX:7" }
+        public static var godotHintString: Swift.String { "DATA_TYPE_COLOR:0,DATA_TYPE_CONSTANT:1,DATA_TYPE_FONT:2,DATA_TYPE_FONT_SIZE:3,DATA_TYPE_ICON:4,DATA_TYPE_STYLEBOX:5,DATA_TYPE_MAX:6" }
         public static let `DATA_TYPE_COLOR` = Self(rawValue: 0)
         public static let `DATA_TYPE_CONSTANT` = Self(rawValue: 1)
         public static let `DATA_TYPE_FONT` = Self(rawValue: 2)
         public static let `DATA_TYPE_FONT_SIZE` = Self(rawValue: 3)
         public static let `DATA_TYPE_ICON` = Self(rawValue: 4)
         public static let `DATA_TYPE_STYLEBOX` = Self(rawValue: 5)
-        public static let `DATA_TYPE_SOUND` = Self(rawValue: 6)
-        public static let `DATA_TYPE_MAX` = Self(rawValue: 7)
+        public static let `DATA_TYPE_MAX` = Self(rawValue: 6)
     }
     public static let `DATA_TYPE_COLOR`: DataType = .`DATA_TYPE_COLOR`
     public static let `DATA_TYPE_CONSTANT`: DataType = .`DATA_TYPE_CONSTANT`
@@ -14627,7 +14364,6 @@ extension Theme {
     public static let `DATA_TYPE_FONT_SIZE`: DataType = .`DATA_TYPE_FONT_SIZE`
     public static let `DATA_TYPE_ICON`: DataType = .`DATA_TYPE_ICON`
     public static let `DATA_TYPE_STYLEBOX`: DataType = .`DATA_TYPE_STYLEBOX`
-    public static let `DATA_TYPE_SOUND`: DataType = .`DATA_TYPE_SOUND`
     public static let `DATA_TYPE_MAX`: DataType = .`DATA_TYPE_MAX`
 }
 extension Thread {
@@ -14865,20 +14601,6 @@ extension TouchScreenButton {
     }
     public static let `VISIBILITY_ALWAYS`: VisibilityMode = .`VISIBILITY_ALWAYS`
     public static let `VISIBILITY_TOUCHSCREEN_ONLY`: VisibilityMode = .`VISIBILITY_TOUCHSCREEN_ONLY`
-}
-extension Trail3D {
-    public struct LimitMode: GodotIntegerValue {
-        public let rawValue: Int64
-        public init(rawValue: Int64) { self.rawValue = rawValue }
-        public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "LIMIT_MODE_LIFETIME:0,LIMIT_MODE_MAX_LENGTH:1,LIMIT_MODE_MAX:2" }
-        public static let `LIMIT_MODE_LIFETIME` = Self(rawValue: 0)
-        public static let `LIMIT_MODE_MAX_LENGTH` = Self(rawValue: 1)
-        public static let `LIMIT_MODE_MAX` = Self(rawValue: 2)
-    }
-    public static let `LIMIT_MODE_LIFETIME`: LimitMode = .`LIMIT_MODE_LIFETIME`
-    public static let `LIMIT_MODE_MAX_LENGTH`: LimitMode = .`LIMIT_MODE_MAX_LENGTH`
-    public static let `LIMIT_MODE_MAX`: LimitMode = .`LIMIT_MODE_MAX`
 }
 extension Tree {
     public struct SelectMode: GodotIntegerValue {
@@ -17659,16 +17381,14 @@ extension XRInterface {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
         public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "XR_VRS_TEXTURE_FORMAT_UNIFIED:0,XR_VRS_TEXTURE_FORMAT_FRAGMENT_SHADING_RATE:1,XR_VRS_TEXTURE_FORMAT_FRAGMENT_DENSITY_MAP:2,XR_VRS_TEXTURE_FORMAT_RASTERIZATION_RATE_MAP:3" }
+        public static var godotHintString: Swift.String { "XR_VRS_TEXTURE_FORMAT_UNIFIED:0,XR_VRS_TEXTURE_FORMAT_FRAGMENT_SHADING_RATE:1,XR_VRS_TEXTURE_FORMAT_FRAGMENT_DENSITY_MAP:2" }
         public static let `XR_VRS_TEXTURE_FORMAT_UNIFIED` = Self(rawValue: 0)
         public static let `XR_VRS_TEXTURE_FORMAT_FRAGMENT_SHADING_RATE` = Self(rawValue: 1)
         public static let `XR_VRS_TEXTURE_FORMAT_FRAGMENT_DENSITY_MAP` = Self(rawValue: 2)
-        public static let `XR_VRS_TEXTURE_FORMAT_RASTERIZATION_RATE_MAP` = Self(rawValue: 3)
     }
     public static let `XR_VRS_TEXTURE_FORMAT_UNIFIED`: VRSTextureFormat = .`XR_VRS_TEXTURE_FORMAT_UNIFIED`
     public static let `XR_VRS_TEXTURE_FORMAT_FRAGMENT_SHADING_RATE`: VRSTextureFormat = .`XR_VRS_TEXTURE_FORMAT_FRAGMENT_SHADING_RATE`
     public static let `XR_VRS_TEXTURE_FORMAT_FRAGMENT_DENSITY_MAP`: VRSTextureFormat = .`XR_VRS_TEXTURE_FORMAT_FRAGMENT_DENSITY_MAP`
-    public static let `XR_VRS_TEXTURE_FORMAT_RASTERIZATION_RATE_MAP`: VRSTextureFormat = .`XR_VRS_TEXTURE_FORMAT_RASTERIZATION_RATE_MAP`
 }
 extension XRPose {
     public struct TrackingConfidence: GodotIntegerValue {
@@ -17705,8 +17425,8 @@ extension XRServer {
         public let rawValue: Int64
         public init(rawValue: Int64) { self.rawValue = rawValue }
         public static var godotPropertyHint: UInt32 { 2 }
-        public static var godotHintString: Swift.String { "TRACKER_CAMERA:1,TRACKER_CONTROLLER:2,TRACKER_BASESTATION:4,TRACKER_ANCHOR:8,TRACKER_HAND:16,TRACKER_BODY:32,TRACKER_FACE:64,TRACKER_ANY_KNOWN:127,TRACKER_UNKNOWN:128,TRACKER_ANY:255,TRACKER_HEAD:1" }
-        public static let `TRACKER_CAMERA` = Self(rawValue: 1)
+        public static var godotHintString: Swift.String { "TRACKER_HEAD:1,TRACKER_CONTROLLER:2,TRACKER_BASESTATION:4,TRACKER_ANCHOR:8,TRACKER_HAND:16,TRACKER_BODY:32,TRACKER_FACE:64,TRACKER_ANY_KNOWN:127,TRACKER_UNKNOWN:128,TRACKER_ANY:255" }
+        public static let `TRACKER_HEAD` = Self(rawValue: 1)
         public static let `TRACKER_CONTROLLER` = Self(rawValue: 2)
         public static let `TRACKER_BASESTATION` = Self(rawValue: 4)
         public static let `TRACKER_ANCHOR` = Self(rawValue: 8)
@@ -17716,9 +17436,8 @@ extension XRServer {
         public static let `TRACKER_ANY_KNOWN` = Self(rawValue: 127)
         public static let `TRACKER_UNKNOWN` = Self(rawValue: 128)
         public static let `TRACKER_ANY` = Self(rawValue: 255)
-        public static let `TRACKER_HEAD` = Self(rawValue: 1)
     }
-    public static let `TRACKER_CAMERA`: TrackerType = .`TRACKER_CAMERA`
+    public static let `TRACKER_HEAD`: TrackerType = .`TRACKER_HEAD`
     public static let `TRACKER_CONTROLLER`: TrackerType = .`TRACKER_CONTROLLER`
     public static let `TRACKER_BASESTATION`: TrackerType = .`TRACKER_BASESTATION`
     public static let `TRACKER_ANCHOR`: TrackerType = .`TRACKER_ANCHOR`
@@ -17728,7 +17447,6 @@ extension XRServer {
     public static let `TRACKER_ANY_KNOWN`: TrackerType = .`TRACKER_ANY_KNOWN`
     public static let `TRACKER_UNKNOWN`: TrackerType = .`TRACKER_UNKNOWN`
     public static let `TRACKER_ANY`: TrackerType = .`TRACKER_ANY`
-    public static let `TRACKER_HEAD`: TrackerType = .`TRACKER_HEAD`
 }
 extension XRServer {
     public struct RotationMode: GodotIntegerValue {

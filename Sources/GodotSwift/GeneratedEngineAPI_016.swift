@@ -878,22 +878,6 @@ extension EditorDock {
         api.object_method_bind_ptrcall!(Self.mb_is_closable, requireHandle(), nil, &result)
         return result != 0
 }
-    @usableFromInline nonisolated(unsafe) internal static let mb_set_allow_switch_screen = lookupMethod("EditorDock", "set_allow_switch_screen", 2586408642)
-    @inlinable @inline(__always) public func `set_allow_switch_screen`(_ `allow`: Bool) {
-        defer { withExtendedLifetime((self)) {} }
-        var a0 = `allow` ? UInt8(1) : UInt8(0)
-        withUnsafePointer(to: &a0) { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_allow_switch_screen, requireHandle(), &arguments, nil)
-        }
-}
-    @usableFromInline nonisolated(unsafe) internal static let mb_is_allow_switch_screen = lookupMethod("EditorDock", "is_allow_switch_screen", 36873697)
-    @inlinable @inline(__always) public func `is_allow_switch_screen`() -> Bool {
-        defer { withExtendedLifetime((self)) {} }
-        var result: UInt8 = 0
-        api.object_method_bind_ptrcall!(Self.mb_is_allow_switch_screen, requireHandle(), nil, &result)
-        return result != 0
-}
     nonisolated(unsafe) private static let mb_set_icon_name = lookupMethod("EditorDock", "set_icon_name", 3304788590)
     public func `set_icon_name`(_ `icon_name`: borrowing GodotStringName) {
         defer { withExtendedLifetime((self)) {} }
@@ -1561,20 +1545,6 @@ extension EditorExportPlugin {
             api.object_method_bind_ptrcall!(Self.mb_add_apple_embedded_platform_cpp_code, requireHandle(), &arguments, nil)
         }
 }
-    nonisolated(unsafe) private static let mb_add_apple_embedded_platform_spm_package = lookupMethod("EditorExportPlugin", "add_apple_embedded_platform_spm_package", 3533781844)
-    public func `add_apple_embedded_platform_spm_package`(_ `url`: borrowing GodotString, _ `version`: borrowing GodotString, _ `products`: borrowing GodotPackedStringArray) {
-        defer { withExtendedLifetime((self)) {} }
-        `url`.withStorage { p0 in
-            `version`.withStorage { p1 in
-                `products`.withStorage { p2 in
-                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
-                    withUnsafePointer(to: &arguments) { arguments in
-                        api.object_method_bind_ptrcall!(Self.mb_add_apple_embedded_platform_spm_package, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
-                    }
-                }
-            }
-        }
-}
     nonisolated(unsafe) private static let mb_add_ios_project_static_lib = lookupMethod("EditorExportPlugin", "add_ios_project_static_lib", 83702148)
     public func `add_ios_project_static_lib`(_ `path`: borrowing GodotString) {
         defer { withExtendedLifetime((self)) {} }
@@ -1845,13 +1815,6 @@ extension EditorExportPreset {
         defer { withExtendedLifetime((self)) {} }
         return GodotString(initializing: { result in
             api.object_method_bind_ptrcall!(Self.mb_get_encryption_key, requireHandle(), nil, result)
-        })
-}
-    nonisolated(unsafe) private static let mb_resolve_encryption_key = lookupMethod("EditorExportPreset", "resolve_encryption_key", 2115431945)
-    public func `resolve_encryption_key`() -> GodotPackedByteArray {
-        defer { withExtendedLifetime((self)) {} }
-        return GodotPackedByteArray(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_resolve_encryption_key, requireHandle(), nil, result)
         })
 }
     @usableFromInline nonisolated(unsafe) internal static let mb_get_script_export_mode = lookupMethod("EditorExportPreset", "get_script_export_mode", 2835358398)
@@ -2379,19 +2342,6 @@ extension EditorInspector {
         guard let nativeResult else { return nil }
         let object = Object.resolve(nativeResult)
         return object as? EditorInspector
-}
-    nonisolated(unsafe) private static let mb_set_property_clipboard = lookupMethod("EditorInspector", "set_property_clipboard", 1114965689)
-    public static func `set_property_clipboard`(_ `value`: borrowing GodotVariant) {
-        `value`.withStorage { p0 in
-            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
-            api.object_method_bind_ptrcall!(Self.mb_set_property_clipboard, nil, &arguments, nil)
-        }
-}
-    nonisolated(unsafe) private static let mb_get_property_clipboard = lookupMethod("EditorInspector", "get_property_clipboard", 1460262497)
-    public static func `get_property_clipboard`() -> GodotVariant {
-        return GodotVariant(initializing: { result in
-            api.object_method_bind_ptrcall!(Self.mb_get_property_clipboard, nil, nil, result)
-        })
 }
 }
 extension EditorInspectorPlugin {
