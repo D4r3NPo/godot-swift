@@ -1,6 +1,6 @@
 [configuration]
 entry_symbol = "godot_swift_tests_init"
-compatibility_minimum = "4.8"
+compatibility_minimum = "4.6"
 reloadable = false
 [libraries]
 macos.debug.arm64 = "res://bin/libIntegrationExtension.dylib"
