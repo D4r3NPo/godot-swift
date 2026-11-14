@@ -1,71 +1,5 @@
 // Generated engine API partition. Do not edit.
 import CGodot
-open class XRInterfaceExtension: XRInterface {
-    override open class var nativeClassName: String { "XRInterfaceExtension" }
-    open func `_get_name`() -> GodotStringName { return GodotStringName("") }
-    open func `_get_capabilities`() -> Int64 { return 0 }
-    open func `_is_initialized`() -> Bool { return false }
-    open func `_initialize`() -> Bool { return false }
-    open func `_uninitialize`() {  }
-    open func `_get_system_info`() -> GodotDictionary { return GodotDictionary() }
-    open func `_supports_play_area_mode`(_ `mode`: XRInterface.PlayAreaMode) -> Bool { return false }
-    open func `_get_play_area_mode`() -> XRInterface.PlayAreaMode { return 0 }
-    open func `_set_play_area_mode`(_ `mode`: XRInterface.PlayAreaMode) -> Bool { return false }
-    open func `_get_play_area`() -> GodotPackedVector3Array { return GodotPackedVector3Array() }
-    open func `_get_render_target_size`() -> Vector2 { return Vector2() }
-    open func `_get_view_count`() -> Int64 { return 0 }
-    open func `_get_camera_transform`() -> Transform3D { return Transform3D() }
-    open func `_get_camera_projections`(_ `tracker_name`: borrowing GodotStringName, _ `aspect`: Double, _ `z_near`: Double, _ `z_far`: Double) -> GodotArrayOf<Projection> { return GodotArrayOf<Projection>() }
-    open func `_get_camera_offsets`(_ `tracker_name`: borrowing GodotStringName) -> GodotArrayOf<Transform3D> { return GodotArrayOf<Transform3D>() }
-    open func `_get_transform_for_view`(_ `view`: Int64, _ `cam_transform`: Transform3D) -> Transform3D { return Transform3D() }
-    open func `_get_projection_for_view`(_ `view`: Int64, _ `aspect`: Double, _ `z_near`: Double, _ `z_far`: Double) -> GodotPackedFloat64Array { return GodotPackedFloat64Array() }
-    open func `_get_vrs_texture`() -> GodotRID { return GodotRID() }
-    open func `_get_vrs_texture_format`() -> XRInterface.VRSTextureFormat { return 0 }
-    open func `_process`() {  }
-    open func `_pre_render`() {  }
-    open func `_pre_draw_viewport`(_ `render_target`: GodotRID) -> Bool { return false }
-    open func `_post_draw_viewport`(_ `render_target`: GodotRID, _ `screen_rect`: Rect2) {  }
-    open func `_end_frame`() {  }
-    open func `_get_suggested_tracker_names`() -> GodotPackedStringArray { return GodotPackedStringArray() }
-    open func `_get_suggested_pose_names`(_ `tracker_name`: borrowing GodotStringName) -> GodotPackedStringArray { return GodotPackedStringArray() }
-    open func `_get_tracking_status`() -> XRInterface.TrackingStatus { return 0 }
-    open func `_trigger_haptic_pulse`(_ `action_name`: borrowing GodotString, _ `tracker_name`: borrowing GodotStringName, _ `frequency`: Double, _ `amplitude`: Double, _ `duration_sec`: Double, _ `delay_sec`: Double) {  }
-    open func `_get_anchor_detection_is_enabled`() -> Bool { return false }
-    open func `_set_anchor_detection_is_enabled`(_ `enabled`: Bool) {  }
-    open func `_get_camera_feed_id`() -> Int64 { return 0 }
-    open func `_get_color_texture`() -> GodotRID { return GodotRID() }
-    open func `_get_depth_texture`() -> GodotRID { return GodotRID() }
-    open func `_get_velocity_texture`() -> GodotRID { return GodotRID() }
-}
-open class XRNode3D: Node3D {
-    override open class var nativeNodeClassName: String { "XRNode3D" }
-    override open class var nativeClassName: String { nativeNodeClassName }
-}
-open class XROrigin3D: Node3D {
-    override open class var nativeNodeClassName: String { "XROrigin3D" }
-    override open class var nativeClassName: String { nativeNodeClassName }
-}
-open class XRPose: RefCounted {
-    override open class var nativeClassName: String { "XRPose" }
-}
-open class XRPositionalTracker: XRTracker {
-    override open class var nativeClassName: String { "XRPositionalTracker" }
-}
-open class XRServer: Object {
-    override open class var nativeClassName: String { "XRServer" }
-}
-open class XRTracker: RefCounted {
-    override open class var nativeClassName: String { "XRTracker" }
-}
-open class XRVRS: Object {
-    override open class var nativeClassName: String { "XRVRS" }
-}
-open class ZIPPacker: RefCounted {
-    override open class var nativeClassName: String { "ZIPPacker" }
-}
-open class ZIPReader: RefCounted {
-    override open class var nativeClassName: String { "ZIPReader" }
-}
 enum NativeClassFactories {
     nonisolated(unsafe) static let types: [String: Object.Type] = [
         "AESContext": AESContext.self,
@@ -73,7 +7,6 @@ enum NativeClassFactories {
         "AStar3D": AStar3D.self,
         "AStarGrid2D": AStarGrid2D.self,
         "AcceptDialog": AcceptDialog.self,
-        "AccessibilityServer": AccessibilityServer.self,
         "AimModifier3D": AimModifier3D.self,
         "AnimatableBody2D": AnimatableBody2D.self,
         "AnimatableBody3D": AnimatableBody3D.self,
@@ -93,10 +26,6 @@ enum NativeClassFactories {
         "AnimationNodeBlendSpace2D": AnimationNodeBlendSpace2D.self,
         "AnimationNodeBlendTree": AnimationNodeBlendTree.self,
         "AnimationNodeExtension": AnimationNodeExtension.self,
-        "AnimationNodeObserver": AnimationNodeObserver.self,
-        "AnimationNodeObserverBlendSpace": AnimationNodeObserverBlendSpace.self,
-        "AnimationNodeObserverOneShot": AnimationNodeObserverOneShot.self,
-        "AnimationNodeObserverTransition": AnimationNodeObserverTransition.self,
         "AnimationNodeOneShot": AnimationNodeOneShot.self,
         "AnimationNodeOutput": AnimationNodeOutput.self,
         "AnimationNodeStateMachine": AnimationNodeStateMachine.self,
@@ -112,7 +41,6 @@ enum NativeClassFactories {
         "AnimationTree": AnimationTree.self,
         "Area2D": Area2D.self,
         "Area3D": Area3D.self,
-        "AreaLight3D": AreaLight3D.self,
         "ArrayMesh": ArrayMesh.self,
         "ArrayOccluder3D": ArrayOccluder3D.self,
         "AspectRatioContainer": AspectRatioContainer.self,
@@ -175,17 +103,14 @@ enum NativeClassFactories {
         "AudioStreamRandomizer": AudioStreamRandomizer.self,
         "AudioStreamSynchronized": AudioStreamSynchronized.self,
         "AudioStreamWAV": AudioStreamWAV.self,
-        "AwaitTweener": AwaitTweener.self,
         "BackBufferCopy": BackBufferCopy.self,
         "BaseButton": BaseButton.self,
         "BaseMaterial3D": BaseMaterial3D.self,
         "BitMap": BitMap.self,
-        "BlitMaterial": BlitMaterial.self,
         "Bone2D": Bone2D.self,
         "BoneAttachment3D": BoneAttachment3D.self,
         "BoneConstraint3D": BoneConstraint3D.self,
         "BoneMap": BoneMap.self,
-        "BoneSpaceAdjuster3D": BoneSpaceAdjuster3D.self,
         "BoneTwistDisperser3D": BoneTwistDisperser3D.self,
         "BoxContainer": BoxContainer.self,
         "BoxMesh": BoxMesh.self,
@@ -282,7 +207,6 @@ enum NativeClassFactories {
         "DirectionalLight2D": DirectionalLight2D.self,
         "DirectionalLight3D": DirectionalLight3D.self,
         "DisplayServer": DisplayServer.self,
-        "DrawableTexture2D": DrawableTexture2D.self,
         "ENetConnection": ENetConnection.self,
         "ENetMultiplayerPeer": ENetMultiplayerPeer.self,
         "ENetPacketPeer": ENetPacketPeer.self,
@@ -363,15 +287,10 @@ enum NativeClassFactories {
         "FontFile": FontFile.self,
         "FontVariation": FontVariation.self,
         "FramebufferCacheRD": FramebufferCacheRD.self,
-        "FuzzySearch": FuzzySearch.self,
-        "FuzzySearchMatch": FuzzySearchMatch.self,
         "GDExtension": GDExtension.self,
         "GDExtensionManager": GDExtensionManager.self,
         "GDScript": GDScript.self,
-        "GDScriptLanguageProtocol": GDScriptLanguageProtocol.self,
         "GDScriptSyntaxHighlighter": GDScriptSyntaxHighlighter.self,
-        "GDScriptTextDocument": GDScriptTextDocument.self,
-        "GDScriptWorkspace": GDScriptWorkspace.self,
         "GLTFAccessor": GLTFAccessor.self,
         "GLTFAnimation": GLTFAnimation.self,
         "GLTFBufferView": GLTFBufferView.self,
@@ -492,7 +411,6 @@ enum NativeClassFactories {
         "LightmapperRD": LightmapperRD.self,
         "LimitAngularVelocityModifier3D": LimitAngularVelocityModifier3D.self,
         "Line2D": Line2D.self,
-        "Line3D": Line3D.self,
         "LineEdit": LineEdit.self,
         "LinkButton": LinkButton.self,
         "Logger": Logger.self,
@@ -585,7 +503,6 @@ enum NativeClassFactories {
         "OpenXRDpadBindingModifier": OpenXRDpadBindingModifier.self,
         "OpenXRExtensionWrapper": OpenXRExtensionWrapper.self,
         "OpenXRExtensionWrapperExtension": OpenXRExtensionWrapperExtension.self,
-        "OpenXRFoveatedInsetViewport": OpenXRFoveatedInsetViewport.self,
         "OpenXRFrameSynthesisExtension": OpenXRFrameSynthesisExtension.self,
         "OpenXRFutureExtension": OpenXRFutureExtension.self,
         "OpenXRFutureResult": OpenXRFutureResult.self,
@@ -624,9 +541,6 @@ enum NativeClassFactories {
         "OpenXRSpatialComponentPlaneAlignmentList": OpenXRSpatialComponentPlaneAlignmentList.self,
         "OpenXRSpatialComponentPlaneSemanticLabelList": OpenXRSpatialComponentPlaneSemanticLabelList.self,
         "OpenXRSpatialComponentPolygon2DList": OpenXRSpatialComponentPolygon2DList.self,
-        "OpenXRSpatialContainerExtension": OpenXRSpatialContainerExtension.self,
-        "OpenXRSpatialContainerSelfRenderingExtension": OpenXRSpatialContainerSelfRenderingExtension.self,
-        "OpenXRSpatialContainerState": OpenXRSpatialContainerState.self,
         "OpenXRSpatialContextPersistenceConfig": OpenXRSpatialContextPersistenceConfig.self,
         "OpenXRSpatialEntityExtension": OpenXRSpatialEntityExtension.self,
         "OpenXRSpatialEntityTracker": OpenXRSpatialEntityTracker.self,
@@ -664,10 +578,6 @@ enum NativeClassFactories {
         "PhysicalSkyMaterial": PhysicalSkyMaterial.self,
         "PhysicsBody2D": PhysicsBody2D.self,
         "PhysicsBody3D": PhysicsBody3D.self,
-        "PhysicsCastMotionResult2D": PhysicsCastMotionResult2D.self,
-        "PhysicsCastMotionResult3D": PhysicsCastMotionResult3D.self,
-        "PhysicsCollideShapeResult2D": PhysicsCollideShapeResult2D.self,
-        "PhysicsCollideShapeResult3D": PhysicsCollideShapeResult3D.self,
         "PhysicsDirectBodyState2D": PhysicsDirectBodyState2D.self,
         "PhysicsDirectBodyState2DExtension": PhysicsDirectBodyState2DExtension.self,
         "PhysicsDirectBodyState3D": PhysicsDirectBodyState3D.self,
@@ -676,14 +586,6 @@ enum NativeClassFactories {
         "PhysicsDirectSpaceState2DExtension": PhysicsDirectSpaceState2DExtension.self,
         "PhysicsDirectSpaceState3D": PhysicsDirectSpaceState3D.self,
         "PhysicsDirectSpaceState3DExtension": PhysicsDirectSpaceState3DExtension.self,
-        "PhysicsGetRestInfoResult2D": PhysicsGetRestInfoResult2D.self,
-        "PhysicsGetRestInfoResult3D": PhysicsGetRestInfoResult3D.self,
-        "PhysicsIntersectPointResult2D": PhysicsIntersectPointResult2D.self,
-        "PhysicsIntersectPointResult3D": PhysicsIntersectPointResult3D.self,
-        "PhysicsIntersectRayResult2D": PhysicsIntersectRayResult2D.self,
-        "PhysicsIntersectRayResult3D": PhysicsIntersectRayResult3D.self,
-        "PhysicsIntersectShapeResult2D": PhysicsIntersectShapeResult2D.self,
-        "PhysicsIntersectShapeResult3D": PhysicsIntersectShapeResult3D.self,
         "PhysicsMaterial": PhysicsMaterial.self,
         "PhysicsPointQueryParameters2D": PhysicsPointQueryParameters2D.self,
         "PhysicsPointQueryParameters3D": PhysicsPointQueryParameters3D.self,
@@ -730,17 +632,13 @@ enum NativeClassFactories {
         "PropertyTweener": PropertyTweener.self,
         "QuadMesh": QuadMesh.self,
         "QuadOccluder3D": QuadOccluder3D.self,
-        "RDAccelerationStructureGeometry": RDAccelerationStructureGeometry.self,
-        "RDAccelerationStructureInstance": RDAccelerationStructureInstance.self,
         "RDAttachmentFormat": RDAttachmentFormat.self,
         "RDFramebufferPass": RDFramebufferPass.self,
-        "RDHitGroup": RDHitGroup.self,
         "RDPipelineColorBlendState": RDPipelineColorBlendState.self,
         "RDPipelineColorBlendStateAttachment": RDPipelineColorBlendStateAttachment.self,
         "RDPipelineDepthStencilState": RDPipelineDepthStencilState.self,
         "RDPipelineMultisampleState": RDPipelineMultisampleState.self,
         "RDPipelineRasterizationState": RDPipelineRasterizationState.self,
-        "RDPipelineShader": RDPipelineShader.self,
         "RDPipelineSpecializationConstant": RDPipelineSpecializationConstant.self,
         "RDSamplerState": RDSamplerState.self,
         "RDShaderFile": RDShaderFile.self,
@@ -791,7 +689,6 @@ enum NativeClassFactories {
         "ResourceImporterSVG": ResourceImporterSVG.self,
         "ResourceImporterScene": ResourceImporterScene.self,
         "ResourceImporterShaderFile": ResourceImporterShaderFile.self,
-        "ResourceImporterStreamedTexture": ResourceImporterStreamedTexture.self,
         "ResourceImporterTexture": ResourceImporterTexture.self,
         "ResourceImporterTextureAtlas": ResourceImporterTextureAtlas.self,
         "ResourceImporterWAV": ResourceImporterWAV.self,
@@ -807,7 +704,6 @@ enum NativeClassFactories {
         "RigidBody3D": RigidBody3D.self,
         "RootMotionView": RootMotionView.self,
         "SceneMultiplayer": SceneMultiplayer.self,
-        "ScenePaint2DEditor": ScenePaint2DEditor.self,
         "SceneReplicationConfig": SceneReplicationConfig.self,
         "SceneState": SceneState.self,
         "SceneTree": SceneTree.self,
@@ -888,7 +784,6 @@ enum NativeClassFactories {
         "StreamPeerTCP": StreamPeerTCP.self,
         "StreamPeerTLS": StreamPeerTLS.self,
         "StreamPeerUDS": StreamPeerUDS.self,
-        "StreamedTexture2D": StreamedTexture2D.self,
         "StyleBox": StyleBox.self,
         "StyleBoxEmpty": StyleBoxEmpty.self,
         "StyleBoxFlat": StyleBoxFlat.self,
@@ -927,7 +822,6 @@ enum NativeClassFactories {
         "TextureLayeredRD": TextureLayeredRD.self,
         "TextureProgressBar": TextureProgressBar.self,
         "TextureRect": TextureRect.self,
-        "TextureStreaming": TextureStreaming.self,
         "Theme": Theme.self,
         "ThemeDB": ThemeDB.self,
         "Thread": Thread.self,
@@ -943,7 +837,6 @@ enum NativeClassFactories {
         "Timer": Timer.self,
         "TorusMesh": TorusMesh.self,
         "TouchScreenButton": TouchScreenButton.self,
-        "Trail3D": Trail3D.self,
         "Translation": Translation.self,
         "TranslationDomain": TranslationDomain.self,
         "TranslationServer": TranslationServer.self,
@@ -974,14 +867,12 @@ enum NativeClassFactories {
         "VideoStreamTheora": VideoStreamTheora.self,
         "Viewport": Viewport.self,
         "ViewportTexture": ViewportTexture.self,
-        "VirtualJoystick": VirtualJoystick.self,
         "VisibleOnScreenEnabler2D": VisibleOnScreenEnabler2D.self,
         "VisibleOnScreenEnabler3D": VisibleOnScreenEnabler3D.self,
         "VisibleOnScreenNotifier2D": VisibleOnScreenNotifier2D.self,
         "VisibleOnScreenNotifier3D": VisibleOnScreenNotifier3D.self,
         "VisualInstance3D": VisualInstance3D.self,
         "VisualShader": VisualShader.self,
-        "VisualShaderGroup": VisualShaderGroup.self,
         "VisualShaderNode": VisualShaderNode.self,
         "VisualShaderNodeBillboard": VisualShaderNodeBillboard.self,
         "VisualShaderNodeBooleanConstant": VisualShaderNodeBooleanConstant.self,
@@ -1012,10 +903,7 @@ enum NativeClassFactories {
         "VisualShaderNodeFrame": VisualShaderNodeFrame.self,
         "VisualShaderNodeFresnel": VisualShaderNodeFresnel.self,
         "VisualShaderNodeGlobalExpression": VisualShaderNodeGlobalExpression.self,
-        "VisualShaderNodeGroup": VisualShaderNodeGroup.self,
         "VisualShaderNodeGroupBase": VisualShaderNodeGroupBase.self,
-        "VisualShaderNodeGroupInput": VisualShaderNodeGroupInput.self,
-        "VisualShaderNodeGroupOutput": VisualShaderNodeGroupOutput.self,
         "VisualShaderNodeIf": VisualShaderNodeIf.self,
         "VisualShaderNodeInput": VisualShaderNodeInput.self,
         "VisualShaderNodeIntConstant": VisualShaderNodeIntConstant.self,
@@ -2239,5 +2127,689 @@ extension AcceptDialog {
         return GodotString(initializing: { result in
             api.object_method_bind_ptrcall!(Self.mb_get_ok_button_text, requireHandle(), nil, result)
         })
+}
+}
+extension AimModifier3D {
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_forward_axis = lookupMethod("AimModifier3D", "set_forward_axis", 2496831085)
+    @inlinable @inline(__always) public func `set_forward_axis`(_ `index`: Int64, _ `axis`: SkeletonModifier3D.BoneAxis) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var a1 = `axis`.rawValue
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_forward_axis, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_forward_axis = lookupMethod("AimModifier3D", "get_forward_axis", 3949866735)
+    @inlinable @inline(__always) public func `get_forward_axis`(_ `index`: Int64) -> SkeletonModifier3D.BoneAxis {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var result: Int64 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_forward_axis, requireHandle(), &arguments, &result)
+        }
+        return SkeletonModifier3D.BoneAxis(rawValue: result)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_use_euler = lookupMethod("AimModifier3D", "set_use_euler", 300928843)
+    @inlinable @inline(__always) public func `set_use_euler`(_ `index`: Int64, _ `enabled`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var a1 = `enabled` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_use_euler, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_using_euler = lookupMethod("AimModifier3D", "is_using_euler", 1116898809)
+    @inlinable @inline(__always) public func `is_using_euler`(_ `index`: Int64) -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var result: UInt8 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_is_using_euler, requireHandle(), &arguments, &result)
+        }
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_primary_rotation_axis = lookupMethod("AimModifier3D", "set_primary_rotation_axis", 776736805)
+    @inlinable @inline(__always) public func `set_primary_rotation_axis`(_ `index`: Int64, _ `axis`: Vector3.Axis) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var a1 = `axis`.rawValue
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_primary_rotation_axis, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_primary_rotation_axis = lookupMethod("AimModifier3D", "get_primary_rotation_axis", 4131134770)
+    @inlinable @inline(__always) public func `get_primary_rotation_axis`(_ `index`: Int64) -> Vector3.Axis {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var result: Int64 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_primary_rotation_axis, requireHandle(), &arguments, &result)
+        }
+        return Vector3.Axis(rawValue: result)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_use_secondary_rotation = lookupMethod("AimModifier3D", "set_use_secondary_rotation", 300928843)
+    @inlinable @inline(__always) public func `set_use_secondary_rotation`(_ `index`: Int64, _ `enabled`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var a1 = `enabled` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_use_secondary_rotation, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_using_secondary_rotation = lookupMethod("AimModifier3D", "is_using_secondary_rotation", 1116898809)
+    @inlinable @inline(__always) public func `is_using_secondary_rotation`(_ `index`: Int64) -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var result: UInt8 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_is_using_secondary_rotation, requireHandle(), &arguments, &result)
+        }
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_relative = lookupMethod("AimModifier3D", "set_relative", 300928843)
+    @inlinable @inline(__always) public func `set_relative`(_ `index`: Int64, _ `enabled`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var a1 = `enabled` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_relative, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_relative = lookupMethod("AimModifier3D", "is_relative", 1116898809)
+    @inlinable @inline(__always) public func `is_relative`(_ `index`: Int64) -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `index`
+        var result: UInt8 = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_is_relative, requireHandle(), &arguments, &result)
+        }
+        return result != 0
+}
+}
+extension AnimatableBody2D {
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_sync_to_physics = lookupMethod("AnimatableBody2D", "set_sync_to_physics", 2586408642)
+    @inlinable @inline(__always) public func `set_sync_to_physics`(_ `enable`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `enable` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_sync_to_physics, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_sync_to_physics_enabled = lookupMethod("AnimatableBody2D", "is_sync_to_physics_enabled", 36873697)
+    @inlinable @inline(__always) public func `is_sync_to_physics_enabled`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_sync_to_physics_enabled, requireHandle(), nil, &result)
+        return result != 0
+}
+}
+extension AnimatableBody3D {
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_sync_to_physics = lookupMethod("AnimatableBody3D", "set_sync_to_physics", 2586408642)
+    @inlinable @inline(__always) public func `set_sync_to_physics`(_ `enable`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `enable` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_sync_to_physics, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_sync_to_physics_enabled = lookupMethod("AnimatableBody3D", "is_sync_to_physics_enabled", 36873697)
+    @inlinable @inline(__always) public func `is_sync_to_physics_enabled`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_sync_to_physics_enabled, requireHandle(), nil, &result)
+        return result != 0
+}
+}
+extension AnimatedSprite2D {
+    nonisolated(unsafe) private static let mb_set_sprite_frames = lookupMethod("AnimatedSprite2D", "set_sprite_frames", 905781144)
+    public func `set_sprite_frames`(_ `sprite_frames`: SpriteFrames?) {
+        defer { withExtendedLifetime((self, `sprite_frames`)) {} }
+        var a0 = `sprite_frames`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_sprite_frames, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_get_sprite_frames = lookupMethod("AnimatedSprite2D", "get_sprite_frames", 3804851214)
+    public func `get_sprite_frames`() -> SpriteFrames? {
+        defer { withExtendedLifetime((self)) {} }
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        api.object_method_bind_ptrcall!(Self.mb_get_sprite_frames, requireHandle(), nil, &nativeResult)
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? SpriteFrames
+}
+    nonisolated(unsafe) private static let mb_set_animation = lookupMethod("AnimatedSprite2D", "set_animation", 3304788590)
+    public func `set_animation`(_ `name`: borrowing GodotStringName) {
+        defer { withExtendedLifetime((self)) {} }
+        `name`.withStorage { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_animation, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_get_animation = lookupMethod("AnimatedSprite2D", "get_animation", 2002593661)
+    public func `get_animation`() -> GodotStringName {
+        defer { withExtendedLifetime((self)) {} }
+        return GodotStringName(initializing: { result in
+            api.object_method_bind_ptrcall!(Self.mb_get_animation, requireHandle(), nil, result)
+        })
+}
+    nonisolated(unsafe) private static let mb_set_autoplay = lookupMethod("AnimatedSprite2D", "set_autoplay", 83702148)
+    public func `set_autoplay`(_ `name`: borrowing GodotString) {
+        defer { withExtendedLifetime((self)) {} }
+        `name`.withStorage { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_autoplay, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_get_autoplay = lookupMethod("AnimatedSprite2D", "get_autoplay", 201670096)
+    public func `get_autoplay`() -> GodotString {
+        defer { withExtendedLifetime((self)) {} }
+        return GodotString(initializing: { result in
+            api.object_method_bind_ptrcall!(Self.mb_get_autoplay, requireHandle(), nil, result)
+        })
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_playing = lookupMethod("AnimatedSprite2D", "is_playing", 36873697)
+    @inlinable @inline(__always) public func `is_playing`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_playing, requireHandle(), nil, &result)
+        return result != 0
+}
+    nonisolated(unsafe) private static let mb_play = lookupMethod("AnimatedSprite2D", "play", 3269405555)
+    public func `play`(_ `name`: borrowing GodotStringName = GodotStringName(""), _ `custom_speed`: Double = 1.0, _ `from_end`: Bool = false) {
+        defer { withExtendedLifetime((self)) {} }
+        var a1 = `custom_speed`
+        var a2 = `from_end` ? UInt8(1) : UInt8(0)
+        `name`.withStorage { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                withUnsafePointer(to: &a2) { p2 in
+                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
+                    withUnsafePointer(to: &arguments) { arguments in
+                        api.object_method_bind_ptrcall!(Self.mb_play, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                    }
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_play_backwards = lookupMethod("AnimatedSprite2D", "play_backwards", 3323268493)
+    public func `play_backwards`(_ `name`: borrowing GodotStringName = GodotStringName("")) {
+        defer { withExtendedLifetime((self)) {} }
+        `name`.withStorage { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_play_backwards, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_pause = lookupMethod("AnimatedSprite2D", "pause", 3218959716)
+    @inlinable @inline(__always) public func `pause`() {
+        defer { withExtendedLifetime((self)) {} }
+        api.object_method_bind_ptrcall!(Self.mb_pause, requireHandle(), nil, nil)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_stop = lookupMethod("AnimatedSprite2D", "stop", 3218959716)
+    @inlinable @inline(__always) public func `stop`() {
+        defer { withExtendedLifetime((self)) {} }
+        api.object_method_bind_ptrcall!(Self.mb_stop, requireHandle(), nil, nil)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_centered = lookupMethod("AnimatedSprite2D", "set_centered", 2586408642)
+    @inlinable @inline(__always) public func `set_centered`(_ `centered`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `centered` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_centered, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_centered = lookupMethod("AnimatedSprite2D", "is_centered", 36873697)
+    @inlinable @inline(__always) public func `is_centered`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_centered, requireHandle(), nil, &result)
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_offset = lookupMethod("AnimatedSprite2D", "set_offset", 743155724)
+    @inlinable @inline(__always) public func `set_offset`(_ `offset`: Vector2) {
+        defer { withExtendedLifetime((self)) {} }
+        `offset`.withStorage { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_offset, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_offset = lookupMethod("AnimatedSprite2D", "get_offset", 3341600327)
+    @inlinable @inline(__always) public func `get_offset`() -> Vector2 {
+        defer { withExtendedLifetime((self)) {} }
+        return withUnsafeTemporaryAllocation(of: Vector2.self, capacity: 1) { result in
+            api.object_method_bind_ptrcall!(Self.mb_get_offset, requireHandle(), nil, UnsafeMutableRawPointer(result.baseAddress!))
+            return result.baseAddress!.move()
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_flip_h = lookupMethod("AnimatedSprite2D", "set_flip_h", 2586408642)
+    @inlinable @inline(__always) public func `set_flip_h`(_ `flip_h`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `flip_h` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_flip_h, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_flipped_h = lookupMethod("AnimatedSprite2D", "is_flipped_h", 36873697)
+    @inlinable @inline(__always) public func `is_flipped_h`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_flipped_h, requireHandle(), nil, &result)
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_flip_v = lookupMethod("AnimatedSprite2D", "set_flip_v", 2586408642)
+    @inlinable @inline(__always) public func `set_flip_v`(_ `flip_v`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `flip_v` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_flip_v, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_flipped_v = lookupMethod("AnimatedSprite2D", "is_flipped_v", 36873697)
+    @inlinable @inline(__always) public func `is_flipped_v`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_flipped_v, requireHandle(), nil, &result)
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_frame = lookupMethod("AnimatedSprite2D", "set_frame", 1286410249)
+    @inlinable @inline(__always) public func `set_frame`(_ `frame`: Int64) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `frame`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_frame, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_frame = lookupMethod("AnimatedSprite2D", "get_frame", 3905245786)
+    @inlinable @inline(__always) public func `get_frame`() -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_frame, requireHandle(), nil, &result)
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_frame_progress = lookupMethod("AnimatedSprite2D", "set_frame_progress", 373806689)
+    @inlinable @inline(__always) public func `set_frame_progress`(_ `progress`: Double) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `progress`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_frame_progress, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_frame_progress = lookupMethod("AnimatedSprite2D", "get_frame_progress", 1740695150)
+    @inlinable @inline(__always) public func `get_frame_progress`() -> Double {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Double = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_frame_progress, requireHandle(), nil, &result)
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_frame_and_progress = lookupMethod("AnimatedSprite2D", "set_frame_and_progress", 1602489585)
+    @inlinable @inline(__always) public func `set_frame_and_progress`(_ `frame`: Int64, _ `progress`: Double) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `frame`
+        var a1 = `progress`
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_frame_and_progress, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_speed_scale = lookupMethod("AnimatedSprite2D", "set_speed_scale", 373806689)
+    @inlinable @inline(__always) public func `set_speed_scale`(_ `speed_scale`: Double) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `speed_scale`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_speed_scale, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_speed_scale = lookupMethod("AnimatedSprite2D", "get_speed_scale", 1740695150)
+    @inlinable @inline(__always) public func `get_speed_scale`() -> Double {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Double = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_speed_scale, requireHandle(), nil, &result)
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_playing_speed = lookupMethod("AnimatedSprite2D", "get_playing_speed", 1740695150)
+    @inlinable @inline(__always) public func `get_playing_speed`() -> Double {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Double = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_playing_speed, requireHandle(), nil, &result)
+        return result
+}
+}
+extension AnimatedSprite3D {
+    nonisolated(unsafe) private static let mb_set_sprite_frames = lookupMethod("AnimatedSprite3D", "set_sprite_frames", 905781144)
+    public func `set_sprite_frames`(_ `sprite_frames`: SpriteFrames?) {
+        defer { withExtendedLifetime((self, `sprite_frames`)) {} }
+        var a0 = `sprite_frames`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_sprite_frames, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_get_sprite_frames = lookupMethod("AnimatedSprite3D", "get_sprite_frames", 3804851214)
+    public func `get_sprite_frames`() -> SpriteFrames? {
+        defer { withExtendedLifetime((self)) {} }
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        api.object_method_bind_ptrcall!(Self.mb_get_sprite_frames, requireHandle(), nil, &nativeResult)
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? SpriteFrames
+}
+    nonisolated(unsafe) private static let mb_set_animation = lookupMethod("AnimatedSprite3D", "set_animation", 3304788590)
+    public func `set_animation`(_ `name`: borrowing GodotStringName) {
+        defer { withExtendedLifetime((self)) {} }
+        `name`.withStorage { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_animation, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_get_animation = lookupMethod("AnimatedSprite3D", "get_animation", 2002593661)
+    public func `get_animation`() -> GodotStringName {
+        defer { withExtendedLifetime((self)) {} }
+        return GodotStringName(initializing: { result in
+            api.object_method_bind_ptrcall!(Self.mb_get_animation, requireHandle(), nil, result)
+        })
+}
+    nonisolated(unsafe) private static let mb_set_autoplay = lookupMethod("AnimatedSprite3D", "set_autoplay", 83702148)
+    public func `set_autoplay`(_ `name`: borrowing GodotString) {
+        defer { withExtendedLifetime((self)) {} }
+        `name`.withStorage { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_autoplay, requireHandle(), &arguments, nil)
+        }
+}
+    nonisolated(unsafe) private static let mb_get_autoplay = lookupMethod("AnimatedSprite3D", "get_autoplay", 201670096)
+    public func `get_autoplay`() -> GodotString {
+        defer { withExtendedLifetime((self)) {} }
+        return GodotString(initializing: { result in
+            api.object_method_bind_ptrcall!(Self.mb_get_autoplay, requireHandle(), nil, result)
+        })
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_is_playing = lookupMethod("AnimatedSprite3D", "is_playing", 36873697)
+    @inlinable @inline(__always) public func `is_playing`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_is_playing, requireHandle(), nil, &result)
+        return result != 0
+}
+    nonisolated(unsafe) private static let mb_play = lookupMethod("AnimatedSprite3D", "play", 3269405555)
+    public func `play`(_ `name`: borrowing GodotStringName = GodotStringName(""), _ `custom_speed`: Double = 1.0, _ `from_end`: Bool = false) {
+        defer { withExtendedLifetime((self)) {} }
+        var a1 = `custom_speed`
+        var a2 = `from_end` ? UInt8(1) : UInt8(0)
+        `name`.withStorage { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                withUnsafePointer(to: &a2) { p2 in
+                    var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p2)))
+                    withUnsafePointer(to: &arguments) { arguments in
+                        api.object_method_bind_ptrcall!(Self.mb_play, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                    }
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_play_backwards = lookupMethod("AnimatedSprite3D", "play_backwards", 3323268493)
+    public func `play_backwards`(_ `name`: borrowing GodotStringName = GodotStringName("")) {
+        defer { withExtendedLifetime((self)) {} }
+        `name`.withStorage { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_play_backwards, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_pause = lookupMethod("AnimatedSprite3D", "pause", 3218959716)
+    @inlinable @inline(__always) public func `pause`() {
+        defer { withExtendedLifetime((self)) {} }
+        api.object_method_bind_ptrcall!(Self.mb_pause, requireHandle(), nil, nil)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_stop = lookupMethod("AnimatedSprite3D", "stop", 3218959716)
+    @inlinable @inline(__always) public func `stop`() {
+        defer { withExtendedLifetime((self)) {} }
+        api.object_method_bind_ptrcall!(Self.mb_stop, requireHandle(), nil, nil)
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_frame = lookupMethod("AnimatedSprite3D", "set_frame", 1286410249)
+    @inlinable @inline(__always) public func `set_frame`(_ `frame`: Int64) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `frame`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_frame, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_frame = lookupMethod("AnimatedSprite3D", "get_frame", 3905245786)
+    @inlinable @inline(__always) public func `get_frame`() -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_frame, requireHandle(), nil, &result)
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_frame_progress = lookupMethod("AnimatedSprite3D", "set_frame_progress", 373806689)
+    @inlinable @inline(__always) public func `set_frame_progress`(_ `progress`: Double) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `progress`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_frame_progress, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_frame_progress = lookupMethod("AnimatedSprite3D", "get_frame_progress", 1740695150)
+    @inlinable @inline(__always) public func `get_frame_progress`() -> Double {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Double = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_frame_progress, requireHandle(), nil, &result)
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_frame_and_progress = lookupMethod("AnimatedSprite3D", "set_frame_and_progress", 1602489585)
+    @inlinable @inline(__always) public func `set_frame_and_progress`(_ `frame`: Int64, _ `progress`: Double) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `frame`
+        var a1 = `progress`
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_frame_and_progress, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_speed_scale = lookupMethod("AnimatedSprite3D", "set_speed_scale", 373806689)
+    @inlinable @inline(__always) public func `set_speed_scale`(_ `speed_scale`: Double) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `speed_scale`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_speed_scale, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_speed_scale = lookupMethod("AnimatedSprite3D", "get_speed_scale", 1740695150)
+    @inlinable @inline(__always) public func `get_speed_scale`() -> Double {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Double = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_speed_scale, requireHandle(), nil, &result)
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_playing_speed = lookupMethod("AnimatedSprite3D", "get_playing_speed", 1740695150)
+    @inlinable @inline(__always) public func `get_playing_speed`() -> Double {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Double = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_playing_speed, requireHandle(), nil, &result)
+        return result
+}
+}
+extension AnimatedTexture {
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_frames = lookupMethod("AnimatedTexture", "set_frames", 1286410249)
+    @inlinable @inline(__always) public func `set_frames`(_ `frames`: Int64) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `frames`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_frames, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_frames = lookupMethod("AnimatedTexture", "get_frames", 3905245786)
+    @inlinable @inline(__always) public func `get_frames`() -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_frames, requireHandle(), nil, &result)
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_current_frame = lookupMethod("AnimatedTexture", "set_current_frame", 1286410249)
+    @inlinable @inline(__always) public func `set_current_frame`(_ `frame`: Int64) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `frame`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_current_frame, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_current_frame = lookupMethod("AnimatedTexture", "get_current_frame", 3905245786)
+    @inlinable @inline(__always) public func `get_current_frame`() -> Int64 {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Int64 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_current_frame, requireHandle(), nil, &result)
+        return result
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_pause = lookupMethod("AnimatedTexture", "set_pause", 2586408642)
+    @inlinable @inline(__always) public func `set_pause`(_ `pause`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `pause` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_pause, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_pause = lookupMethod("AnimatedTexture", "get_pause", 36873697)
+    @inlinable @inline(__always) public func `get_pause`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_pause, requireHandle(), nil, &result)
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_one_shot = lookupMethod("AnimatedTexture", "set_one_shot", 2586408642)
+    @inlinable @inline(__always) public func `set_one_shot`(_ `one_shot`: Bool) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `one_shot` ? UInt8(1) : UInt8(0)
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_one_shot, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_one_shot = lookupMethod("AnimatedTexture", "get_one_shot", 36873697)
+    @inlinable @inline(__always) public func `get_one_shot`() -> Bool {
+        defer { withExtendedLifetime((self)) {} }
+        var result: UInt8 = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_one_shot, requireHandle(), nil, &result)
+        return result != 0
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_speed_scale = lookupMethod("AnimatedTexture", "set_speed_scale", 373806689)
+    @inlinable @inline(__always) public func `set_speed_scale`(_ `scale`: Double) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `scale`
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_set_speed_scale, requireHandle(), &arguments, nil)
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_speed_scale = lookupMethod("AnimatedTexture", "get_speed_scale", 1740695150)
+    @inlinable @inline(__always) public func `get_speed_scale`() -> Double {
+        defer { withExtendedLifetime((self)) {} }
+        var result: Double = 0
+        api.object_method_bind_ptrcall!(Self.mb_get_speed_scale, requireHandle(), nil, &result)
+        return result
+}
+    nonisolated(unsafe) private static let mb_set_frame_texture = lookupMethod("AnimatedTexture", "set_frame_texture", 666127730)
+    public func `set_frame_texture`(_ `frame`: Int64, _ `texture`: Texture2D?) {
+        defer { withExtendedLifetime((self, `texture`)) {} }
+        var a0 = `frame`
+        var a1 = `texture`?.requireHandle()
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_frame_texture, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    nonisolated(unsafe) private static let mb_get_frame_texture = lookupMethod("AnimatedTexture", "get_frame_texture", 3536238170)
+    public func `get_frame_texture`(_ `frame`: Int64) -> Texture2D? {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `frame`
+        var nativeResult: UnsafeMutableRawPointer? = nil
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_frame_texture, requireHandle(), &arguments, &nativeResult)
+        }
+        guard let nativeResult else { return nil }
+        let object = Object.resolve(nativeResult)
+        releaseNativeReference(nativeResult) // Consume the engine-owned return reference.
+        return object as? Texture2D
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_set_frame_duration = lookupMethod("AnimatedTexture", "set_frame_duration", 1602489585)
+    @inlinable @inline(__always) public func `set_frame_duration`(_ `frame`: Int64, _ `duration`: Double) {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `frame`
+        var a1 = `duration`
+        withUnsafePointer(to: &a0) { p0 in
+            withUnsafePointer(to: &a1) { p1 in
+                var arguments = (Optional<UnsafeRawPointer>(UnsafeRawPointer(p0)), Optional<UnsafeRawPointer>(UnsafeRawPointer(p1)))
+                withUnsafePointer(to: &arguments) { arguments in
+                    api.object_method_bind_ptrcall!(Self.mb_set_frame_duration, requireHandle(), UnsafeRawPointer(arguments).assumingMemoryBound(to: UnsafeRawPointer?.self), nil)
+                }
+            }
+        }
+}
+    @usableFromInline nonisolated(unsafe) internal static let mb_get_frame_duration = lookupMethod("AnimatedTexture", "get_frame_duration", 2339986948)
+    @inlinable @inline(__always) public func `get_frame_duration`(_ `frame`: Int64) -> Double {
+        defer { withExtendedLifetime((self)) {} }
+        var a0 = `frame`
+        var result: Double = 0
+        withUnsafePointer(to: &a0) { p0 in
+            var arguments: UnsafeRawPointer? = UnsafeRawPointer(p0)
+            api.object_method_bind_ptrcall!(Self.mb_get_frame_duration, requireHandle(), &arguments, &result)
+        }
+        return result
 }
 }

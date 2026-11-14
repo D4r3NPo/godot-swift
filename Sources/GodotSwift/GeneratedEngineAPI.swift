@@ -24,9 +24,6 @@ open class AcceptDialog: Window {
     override open class var nativeNodeClassName: String { "AcceptDialog" }
     override open class var nativeClassName: String { nativeNodeClassName }
 }
-open class AccessibilityServer: Object {
-    override open class var nativeClassName: String { "AccessibilityServer" }
-}
 open class AimModifier3D: BoneConstraint3D {
     override open class var nativeNodeClassName: String { "AimModifier3D" }
     override open class var nativeClassName: String { nativeNodeClassName }
@@ -100,18 +97,6 @@ open class AnimationNodeExtension: AnimationNode {
     override open class var nativeClassName: String { "AnimationNodeExtension" }
     open func `_process_animation_node`(_ `playback_info`: borrowing GodotPackedFloat64Array, _ `test_only`: Bool) -> GodotPackedFloat32Array { preconditionFailure("Required engine virtual must be overridden") }
 }
-open class AnimationNodeObserver: Resource {
-    override open class var nativeClassName: String { "AnimationNodeObserver" }
-}
-open class AnimationNodeObserverBlendSpace: AnimationNodeObserver {
-    override open class var nativeClassName: String { "AnimationNodeObserverBlendSpace" }
-}
-open class AnimationNodeObserverOneShot: AnimationNodeObserver {
-    override open class var nativeClassName: String { "AnimationNodeObserverOneShot" }
-}
-open class AnimationNodeObserverTransition: AnimationNodeObserver {
-    override open class var nativeClassName: String { "AnimationNodeObserverTransition" }
-}
 open class AnimationNodeOneShot: AnimationNodeSync {
     override open class var nativeClassName: String { "AnimationNodeOneShot" }
 }
@@ -159,10 +144,6 @@ open class Area2D: CollisionObject2D {
 }
 open class Area3D: CollisionObject3D {
     override open class var nativeNodeClassName: String { "Area3D" }
-    override open class var nativeClassName: String { nativeNodeClassName }
-}
-open class AreaLight3D: Light3D {
-    override open class var nativeNodeClassName: String { "AreaLight3D" }
     override open class var nativeClassName: String { nativeNodeClassName }
 }
 open class ArrayMesh: Mesh {
@@ -235,7 +216,7 @@ open class AudioEffectHighShelfFilter: AudioEffectFilter {
 }
 open class AudioEffectInstance: RefCounted {
     override open class var nativeClassName: String { "AudioEffectInstance" }
-    open func `_process`(_ `src_buffer`: UnsafePointer<GSNativeAudioFrame>?, _ `r_dst_buffer`: UnsafeMutablePointer<GSNativeAudioFrame>?, _ `frame_count`: Int64) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_process`(_ `src_buffer`: UnsafeRawPointer?, _ `dst_buffer`: UnsafeMutablePointer<GSNativeAudioFrame>?, _ `frame_count`: Int64) { preconditionFailure("Required engine virtual must be overridden") }
     open func `_process_silence`() -> Bool { return false }
 }
 open class AudioEffectLimiter: AudioEffect {
@@ -382,9 +363,6 @@ open class AudioStreamSynchronized: AudioStream {
 open class AudioStreamWAV: AudioStream {
     override open class var nativeClassName: String { "AudioStreamWAV" }
 }
-open class AwaitTweener: Tweener {
-    override open class var nativeClassName: String { "AwaitTweener" }
-}
 open class BackBufferCopy: Node2D {
     override open class var nativeNodeClassName: String { "BackBufferCopy" }
     override open class var nativeClassName: String { nativeNodeClassName }
@@ -401,9 +379,6 @@ open class BaseMaterial3D: Material {
 open class BitMap: Resource {
     override open class var nativeClassName: String { "BitMap" }
 }
-open class BlitMaterial: Material {
-    override open class var nativeClassName: String { "BlitMaterial" }
-}
 open class Bone2D: Node2D {
     override open class var nativeNodeClassName: String { "Bone2D" }
     override open class var nativeClassName: String { nativeNodeClassName }
@@ -418,10 +393,6 @@ open class BoneConstraint3D: SkeletonModifier3D {
 }
 open class BoneMap: Resource {
     override open class var nativeClassName: String { "BoneMap" }
-}
-open class BoneSpaceAdjuster3D: SkeletonModifier3D {
-    override open class var nativeNodeClassName: String { "BoneSpaceAdjuster3D" }
-    override open class var nativeClassName: String { nativeNodeClassName }
 }
 open class BoneTwistDisperser3D: SkeletonModifier3D {
     override open class var nativeNodeClassName: String { "BoneTwistDisperser3D" }
@@ -519,8 +490,6 @@ open class CameraFeed: RefCounted {
     override open class var nativeClassName: String { "CameraFeed" }
     open func `_activate_feed`() -> Bool { return false }
     open func `_deactivate_feed`() {  }
-    open func `_set_format`(_ `index`: Int64, _ `parameters`: borrowing GodotDictionary) -> Bool { return false }
-    open func `_get_formats`() -> GodotArray { return GodotArray() }
 }
 open class CameraServer: Object {
     override open class var nativeClassName: String { "CameraServer" }
@@ -703,15 +672,12 @@ open class Control: CanvasItem {
     override open class var nativeClassName: String { nativeNodeClassName }
     open func `_has_point`(_ `point`: Vector2) -> Bool { return false }
     open func `_structured_text_parser`(_ `args`: borrowing GodotArray, _ `text`: borrowing GodotString) -> GodotArrayOf<Vector3i> { return GodotArrayOf<Vector3i>() }
-    open func `_get_maximum_size`() -> Vector2 { return Vector2() }
     open func `_get_minimum_size`() -> Vector2 { return Vector2() }
     open func `_get_tooltip`(_ `at_position`: Vector2) -> GodotString { return GodotString("") }
-    open func `_get_tooltip_auto_translate_mode_at`(_ `at_position`: Vector2) -> Node.AutoTranslateMode { return 0 }
     open func `_get_drag_data`(_ `at_position`: Vector2) -> GodotVariant { return GodotVariant() }
     open func `_can_drop_data`(_ `at_position`: Vector2, _ `data`: borrowing GodotVariant) -> Bool { return false }
     open func `_drop_data`(_ `at_position`: Vector2, _ `data`: borrowing GodotVariant) {  }
     open func `_make_custom_tooltip`(_ `for_text`: borrowing GodotString) -> Object? { return nil }
-    open func `_get_cursor_shape`(_ `at_position`: Vector2) -> Int64 { return 0 }
     open func `_accessibility_get_contextual_info`() -> GodotString { return GodotString("") }
     open func `_get_accessibility_container_name`(_ `node`: Node) -> GodotString { return GodotString("") }
     open func `_gui_input`(_ `event`: InputEvent) {  }
@@ -791,9 +757,6 @@ open class DirectionalLight3D: Light3D {
 open class DisplayServer: Object {
     override open class var nativeClassName: String { "DisplayServer" }
 }
-open class DrawableTexture2D: Texture2D {
-    override open class var nativeClassName: String { "DrawableTexture2D" }
-}
 open class ENetConnection: RefCounted {
     override open class var nativeClassName: String { "ENetConnection" }
 }
@@ -809,7 +772,6 @@ open class EditorCommandPalette: ConfirmationDialog {
 }
 open class EditorContextMenuPlugin: RefCounted {
     override open class var nativeClassName: String { "EditorContextMenuPlugin" }
-    open func `_get_menu_options`(_ `data`: borrowing GodotDictionaryOf<GodotStringName, GodotVariant>) {  }
     open func `_popup_menu`(_ `paths`: borrowing GodotPackedStringArray) {  }
 }
 open class EditorDebuggerPlugin: RefCounted {
@@ -827,10 +789,9 @@ open class EditorDebuggerSession: RefCounted {
 open class EditorDock: MarginContainer {
     override open class var nativeNodeClassName: String { "EditorDock" }
     override open class var nativeClassName: String { nativeNodeClassName }
-    open func `_update_layout_and_slot`(_ `layout`: Int64, _ `slot`: Int64) {  }
+    open func `_update_layout`(_ `layout`: Int64) {  }
     open func `_save_layout_to_config`(_ `config`: ConfigFile, _ `section`: borrowing GodotString) {  }
     open func `_load_layout_from_config`(_ `config`: ConfigFile, _ `section`: borrowing GodotString) {  }
-    open func `_update_layout`(_ `layout`: Int64) {  }
 }
 open class EditorExportPlatform: RefCounted {
     override open class var nativeClassName: String { "EditorExportPlatform" }
@@ -901,7 +862,6 @@ open class EditorExportPlugin: RefCounted {
     open func `_export_file`(_ `path`: borrowing GodotString, _ `type`: borrowing GodotString, _ `features`: borrowing GodotPackedStringArray) {  }
     open func `_export_begin`(_ `features`: borrowing GodotPackedStringArray, _ `is_debug`: Bool, _ `path`: borrowing GodotString, _ `flags`: Int64) {  }
     open func `_export_end`() {  }
-    open func `_end_generate_apple_embedded_project`(_ `path`: borrowing GodotString, _ `will_build_archive`: Bool) {  }
     open func `_begin_customize_resources`(_ `platform`: EditorExportPlatform, _ `features`: borrowing GodotPackedStringArray) -> Bool { return false }
     open func `_customize_resource`(_ `resource`: Resource, _ `path`: borrowing GodotString) -> Resource? { preconditionFailure("Required engine virtual must be overridden") }
     open func `_begin_customize_scenes`(_ `platform`: EditorExportPlatform, _ `features`: borrowing GodotPackedStringArray) -> Bool { return false }
@@ -1004,7 +964,6 @@ open class EditorNode3DGizmoPlugin: Resource {
     open func `_get_priority`() -> Int64 { return 0 }
     open func `_can_be_hidden`() -> Bool { return false }
     open func `_is_selectable_when_hidden`() -> Bool { return false }
-    open func `_can_commit_handle_on_click`() -> Bool { return false }
     open func `_redraw`(_ `gizmo`: EditorNode3DGizmo) {  }
     open func `_get_handle_name`(_ `gizmo`: EditorNode3DGizmo, _ `handle_id`: Int64, _ `secondary`: Bool) -> GodotString { return GodotString("") }
     open func `_is_handle_highlighted`(_ `gizmo`: EditorNode3DGizmo, _ `handle_id`: Int64, _ `secondary`: Bool) -> Bool { return false }
@@ -1151,7 +1110,6 @@ open class EditorTranslationParserPlugin: RefCounted {
     override open class var nativeClassName: String { "EditorTranslationParserPlugin" }
     open func `_parse_file`(_ `path`: borrowing GodotString) -> GodotArrayOf<GodotPackedStringArray> { return GodotArrayOf<GodotPackedStringArray>() }
     open func `_get_recognized_extensions`() -> GodotPackedStringArray { return GodotPackedStringArray() }
-    open func `_customize_strings`(_ `strings`: borrowing GodotArrayOf<GodotPackedStringArray>) -> GodotArrayOf<GodotPackedStringArray> { return GodotArrayOf<GodotPackedStringArray>() }
 }
 open class EditorUndoRedoManager: Object {
     override open class var nativeClassName: String { "EditorUndoRedoManager" }
@@ -1164,8 +1122,7 @@ open class EditorVCSInterface: Object {
     open func `_stage_file`(_ `file_path`: borrowing GodotString) { preconditionFailure("Required engine virtual must be overridden") }
     open func `_unstage_file`(_ `file_path`: borrowing GodotString) { preconditionFailure("Required engine virtual must be overridden") }
     open func `_discard_file`(_ `file_path`: borrowing GodotString) { preconditionFailure("Required engine virtual must be overridden") }
-    open func `_commit`(_ `msg`: borrowing GodotString, _ `amend`: Bool) {  }
-    open func `_allow_amends`() -> Bool { return false }
+    open func `_commit`(_ `msg`: borrowing GodotString) { preconditionFailure("Required engine virtual must be overridden") }
     open func `_get_diff`(_ `identifier`: borrowing GodotString, _ `area`: Int64) -> GodotArrayOf<GodotDictionary> { preconditionFailure("Required engine virtual must be overridden") }
     open func `_shut_down`() -> Bool { preconditionFailure("Required engine virtual must be overridden") }
     open func `_get_vcs_name`() -> GodotString { preconditionFailure("Required engine virtual must be overridden") }
@@ -1261,12 +1218,6 @@ open class FontVariation: Font {
 open class FramebufferCacheRD: Object {
     override open class var nativeClassName: String { "FramebufferCacheRD" }
 }
-open class FuzzySearch: RefCounted {
-    override open class var nativeClassName: String { "FuzzySearch" }
-}
-open class FuzzySearchMatch: RefCounted {
-    override open class var nativeClassName: String { "FuzzySearchMatch" }
-}
 open class GDExtension: Resource {
     override open class var nativeClassName: String { "GDExtension" }
 }
@@ -1276,17 +1227,8 @@ open class GDExtensionManager: Object {
 open class GDScript: Script {
     override open class var nativeClassName: String { "GDScript" }
 }
-open class GDScriptLanguageProtocol: JSONRPC {
-    override open class var nativeClassName: String { "GDScriptLanguageProtocol" }
-}
 open class GDScriptSyntaxHighlighter: EditorSyntaxHighlighter {
     override open class var nativeClassName: String { "GDScriptSyntaxHighlighter" }
-}
-open class GDScriptTextDocument: RefCounted {
-    override open class var nativeClassName: String { "GDScriptTextDocument" }
-}
-open class GDScriptWorkspace: RefCounted {
-    override open class var nativeClassName: String { "GDScriptWorkspace" }
 }
 open class GLTFAccessor: Resource {
     override open class var nativeClassName: String { "GLTFAccessor" }
@@ -1317,7 +1259,6 @@ open class GLTFDocumentExtension: Resource {
     open func `_generate_scene_node`(_ `state`: GLTFState, _ `gltf_node`: GLTFNode, _ `scene_parent`: Node) -> Node3D? { return nil }
     open func `_import_node`(_ `state`: GLTFState, _ `gltf_node`: GLTFNode, _ `json`: borrowing GodotDictionary, _ `node`: Node) -> Godot.Error { return 0 }
     open func `_import_post`(_ `state`: GLTFState, _ `root`: Node) -> Godot.Error { return 0 }
-    open func `_export_get_property_list`(_ `root_node`: Node) -> GodotArrayOf<GodotDictionary> { return GodotArrayOf<GodotDictionary>() }
     open func `_export_preflight`(_ `state`: GLTFState, _ `root`: Node) -> Godot.Error { return 0 }
     open func `_convert_scene_node`(_ `state`: GLTFState, _ `gltf_node`: GLTFNode, _ `scene_node`: Node) {  }
     open func `_export_post_convert`(_ `state`: GLTFState, _ `root`: Node) -> Godot.Error { return 0 }
@@ -1725,10 +1666,6 @@ open class Line2D: Node2D {
     override open class var nativeNodeClassName: String { "Line2D" }
     override open class var nativeClassName: String { nativeNodeClassName }
 }
-open class Line3D: GeometryInstance3D {
-    override open class var nativeNodeClassName: String { "Line3D" }
-    override open class var nativeClassName: String { nativeNodeClassName }
-}
 open class LineEdit: Control {
     override open class var nativeNodeClassName: String { "LineEdit" }
     override open class var nativeClassName: String { nativeNodeClassName }
@@ -1844,7 +1781,7 @@ open class MovieWriter: Object {
     open func `_handles_file`(_ `path`: borrowing GodotString) -> Bool { preconditionFailure("Required engine virtual must be overridden") }
     open func `_get_supported_extensions`() -> GodotPackedStringArray { preconditionFailure("Required engine virtual must be overridden") }
     open func `_write_begin`(_ `movie_size`: Vector2i, _ `fps`: Int64, _ `base_path`: borrowing GodotString) -> Godot.Error { preconditionFailure("Required engine virtual must be overridden") }
-    open func `_write_frame`(_ `frame_image`: Image, _ `audio_frame_block`: UnsafePointer<Int32>?) -> Godot.Error { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_write_frame`(_ `frame_image`: Image, _ `audio_frame_block`: UnsafeRawPointer?) -> Godot.Error { preconditionFailure("Required engine virtual must be overridden") }
     open func `_write_end`() { preconditionFailure("Required engine virtual must be overridden") }
 }
 open class MultiMesh: Resource {
@@ -1879,25 +1816,25 @@ open class MultiplayerPeer: PacketPeer {
 open class MultiplayerPeerExtension: MultiplayerPeer {
     override open class var nativeClassName: String { "MultiplayerPeerExtension" }
     open func `_get_packet`(_ `r_buffer`: UnsafeMutablePointer<UnsafePointer<UInt8>?>?, _ `r_buffer_size`: UnsafeMutablePointer<Int32>?) -> Godot.Error { return 0 }
-    open func `_put_packet`(_ `buffer`: UnsafePointer<UInt8>?, _ `buffer_size`: Int64) -> Godot.Error { return 0 }
+    open func `_put_packet`(_ `p_buffer`: UnsafePointer<UInt8>?, _ `p_buffer_size`: Int64) -> Godot.Error { return 0 }
     open func `_get_available_packet_count`() -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
     open func `_get_max_packet_size`() -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
     open func `_get_packet_script`() -> GodotPackedByteArray { return GodotPackedByteArray() }
-    open func `_put_packet_script`(_ `buffer`: borrowing GodotPackedByteArray) -> Godot.Error { return 0 }
+    open func `_put_packet_script`(_ `p_buffer`: borrowing GodotPackedByteArray) -> Godot.Error { return 0 }
     open func `_get_packet_channel`() -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
     open func `_get_packet_mode`() -> MultiplayerPeer.TransferMode { preconditionFailure("Required engine virtual must be overridden") }
-    open func `_set_transfer_channel`(_ `channel`: Int64) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_set_transfer_channel`(_ `p_channel`: Int64) { preconditionFailure("Required engine virtual must be overridden") }
     open func `_get_transfer_channel`() -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
-    open func `_set_transfer_mode`(_ `mode`: MultiplayerPeer.TransferMode) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_set_transfer_mode`(_ `p_mode`: MultiplayerPeer.TransferMode) { preconditionFailure("Required engine virtual must be overridden") }
     open func `_get_transfer_mode`() -> MultiplayerPeer.TransferMode { preconditionFailure("Required engine virtual must be overridden") }
-    open func `_set_target_peer`(_ `peer`: Int64) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_set_target_peer`(_ `p_peer`: Int64) { preconditionFailure("Required engine virtual must be overridden") }
     open func `_get_packet_peer`() -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
     open func `_is_server`() -> Bool { preconditionFailure("Required engine virtual must be overridden") }
     open func `_poll`() { preconditionFailure("Required engine virtual must be overridden") }
     open func `_close`() { preconditionFailure("Required engine virtual must be overridden") }
-    open func `_disconnect_peer`(_ `peer`: Int64, _ `force`: Bool) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_disconnect_peer`(_ `p_peer`: Int64, _ `p_force`: Bool) { preconditionFailure("Required engine virtual must be overridden") }
     open func `_get_unique_id`() -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
-    open func `_set_refuse_new_connections`(_ `enable`: Bool) {  }
+    open func `_set_refuse_new_connections`(_ `p_enable`: Bool) {  }
     open func `_is_refusing_new_connections`() -> Bool { return false }
     open func `_is_server_relay_supported`() -> Bool { return false }
     open func `_get_connection_status`() -> MultiplayerPeer.ConnectionStatus { preconditionFailure("Required engine virtual must be overridden") }
@@ -2095,11 +2032,8 @@ open class OpenXRExtensionWrapper: Object {
     open func `_set_projection_views_and_get_next_pointer`(_ `view_index`: Int64, _ `next_pointer`: UnsafeMutableRawPointer?) -> Int64 { return 0 }
     open func `_set_frame_wait_info_and_get_next_pointer`(_ `next_pointer`: UnsafeMutableRawPointer?) -> Int64 { return 0 }
     open func `_set_frame_end_info_and_get_next_pointer`(_ `next_pointer`: UnsafeMutableRawPointer?) -> Int64 { return 0 }
-    open func `_set_projection_layer_and_get_next_pointer`(_ `next_pointer`: UnsafeMutableRawPointer?) -> Int64 { return 0 }
     open func `_set_view_locate_info_and_get_next_pointer`(_ `next_pointer`: UnsafeMutableRawPointer?) -> Int64 { return 0 }
-    open func `_set_spatial_container_views_locate_info_and_get_next_pointer`(_ `spatial_container`: GodotRID, _ `next_pointer`: UnsafeMutableRawPointer?) -> Int64 { return 0 }
     open func `_set_reference_space_create_info_and_get_next_pointer`(_ `reference_space_type`: Int64, _ `next_pointer`: UnsafeMutableRawPointer?) -> Int64 { return 0 }
-    open func `_set_spatial_container_create_info_and_get_next_pointer`(_ `spatial_container`: GodotRID, _ `next_pointer`: UnsafeMutableRawPointer?) -> Int64 { return 0 }
     open func `_prepare_view_configuration`(_ `view_count`: Int64) {  }
     open func `_set_view_configuration_and_get_next_pointer`(_ `view`: Int64, _ `next_pointer`: UnsafeMutableRawPointer?) -> Int64 { return 0 }
     open func `_print_view_configuration_info`(_ `view`: Int64) {  }
@@ -2107,7 +2041,7 @@ open class OpenXRExtensionWrapper: Object {
     open func `_get_composition_layer`(_ `index`: Int64) -> Int64 { return 0 }
     open func `_get_composition_layer_order`(_ `index`: Int64) -> Int64 { return 0 }
     open func `_get_suggested_tracker_names`() -> GodotPackedStringArray { return GodotPackedStringArray() }
-    open func `_on_register_metadata`(_ `interaction_profile_metadata`: OpenXRInteractionProfileMetadata) {  }
+    open func `_on_register_metadata`() {  }
     open func `_on_before_instance_created`() {  }
     open func `_on_instance_created`(_ `instance`: Int64) {  }
     open func `_on_instance_destroyed`() {  }
@@ -2133,15 +2067,9 @@ open class OpenXRExtensionWrapper: Object {
     open func `_get_viewport_composition_layer_extension_property_defaults`() -> GodotDictionary { return GodotDictionary() }
     open func `_on_viewport_composition_layer_destroyed`(_ `layer`: UnsafeRawPointer?) {  }
     open func `_set_android_surface_swapchain_create_info_and_get_next_pointer`(_ `property_values`: borrowing GodotDictionary, _ `next_pointer`: UnsafeMutableRawPointer?) -> Int64 { return 0 }
-    open func `_get_camera_projections`(_ `tracker_name`: borrowing GodotStringName, _ `aspect`: Double, _ `z_near`: Double, _ `z_far`: Double) -> GodotArrayOf<Projection> { return GodotArrayOf<Projection>() }
-    open func `_get_camera_offsets`(_ `tracker_name`: borrowing GodotStringName) -> GodotArrayOf<Transform3D> { return GodotArrayOf<Transform3D>() }
 }
 open class OpenXRExtensionWrapperExtension: OpenXRExtensionWrapper {
     override open class var nativeClassName: String { "OpenXRExtensionWrapperExtension" }
-}
-open class OpenXRFoveatedInsetViewport: SubViewport {
-    override open class var nativeNodeClassName: String { "OpenXRFoveatedInsetViewport" }
-    override open class var nativeClassName: String { nativeNodeClassName }
 }
 open class OpenXRFrameSynthesisExtension: OpenXRExtensionWrapper {
     override open class var nativeClassName: String { "OpenXRFrameSynthesisExtension" }
@@ -2267,15 +2195,6 @@ open class OpenXRSpatialComponentPlaneSemanticLabelList: OpenXRSpatialComponentD
 open class OpenXRSpatialComponentPolygon2DList: OpenXRSpatialComponentData {
     override open class var nativeClassName: String { "OpenXRSpatialComponentPolygon2DList" }
 }
-open class OpenXRSpatialContainerExtension: OpenXRExtensionWrapper {
-    override open class var nativeClassName: String { "OpenXRSpatialContainerExtension" }
-}
-open class OpenXRSpatialContainerSelfRenderingExtension: OpenXRExtensionWrapper {
-    override open class var nativeClassName: String { "OpenXRSpatialContainerSelfRenderingExtension" }
-}
-open class OpenXRSpatialContainerState: RefCounted {
-    override open class var nativeClassName: String { "OpenXRSpatialContainerState" }
-}
 open class OpenXRSpatialContextPersistenceConfig: OpenXRStructureBase {
     override open class var nativeClassName: String { "OpenXRSpatialContextPersistenceConfig" }
 }
@@ -2330,7 +2249,7 @@ open class PacketPeerDTLS: PacketPeer {
 open class PacketPeerExtension: PacketPeer {
     override open class var nativeClassName: String { "PacketPeerExtension" }
     open func `_get_packet`(_ `r_buffer`: UnsafeMutablePointer<UnsafePointer<UInt8>?>?, _ `r_buffer_size`: UnsafeMutablePointer<Int32>?) -> Godot.Error { return 0 }
-    open func `_put_packet`(_ `buffer`: UnsafePointer<UInt8>?, _ `buffer_size`: Int64) -> Godot.Error { return 0 }
+    open func `_put_packet`(_ `p_buffer`: UnsafePointer<UInt8>?, _ `p_buffer_size`: Int64) -> Godot.Error { return 0 }
     open func `_get_available_packet_count`() -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
     open func `_get_max_packet_size`() -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
 }
@@ -2408,18 +2327,6 @@ open class PhysicsBody2D: CollisionObject2D {
 open class PhysicsBody3D: CollisionObject3D {
     override open class var nativeNodeClassName: String { "PhysicsBody3D" }
     override open class var nativeClassName: String { nativeNodeClassName }
-}
-open class PhysicsCastMotionResult2D: RefCounted {
-    override open class var nativeClassName: String { "PhysicsCastMotionResult2D" }
-}
-open class PhysicsCastMotionResult3D: RefCounted {
-    override open class var nativeClassName: String { "PhysicsCastMotionResult3D" }
-}
-open class PhysicsCollideShapeResult2D: RefCounted {
-    override open class var nativeClassName: String { "PhysicsCollideShapeResult2D" }
-}
-open class PhysicsCollideShapeResult3D: RefCounted {
-    override open class var nativeClassName: String { "PhysicsCollideShapeResult3D" }
 }
 open class PhysicsDirectBodyState2D: Object {
     override open class var nativeClassName: String { "PhysicsDirectBodyState2D" }
@@ -2536,49 +2443,25 @@ open class PhysicsDirectSpaceState2D: Object {
 }
 open class PhysicsDirectSpaceState2DExtension: PhysicsDirectSpaceState2D {
     override open class var nativeClassName: String { "PhysicsDirectSpaceState2DExtension" }
-    open func `_intersect_ray`(_ `from`: Vector2, _ `to`: Vector2, _ `collision_mask`: Int64, _ `collide_with_bodies`: Bool, _ `collide_with_areas`: Bool, _ `hit_from_inside`: Bool, _ `r_result`: UnsafeMutablePointer<GSNativePhysicsServer2DExtensionRayResult>?) -> Bool { preconditionFailure("Required engine virtual must be overridden") }
-    open func `_intersect_point`(_ `position`: Vector2, _ `canvas_instance_id`: Int64, _ `collision_mask`: Int64, _ `collide_with_bodies`: Bool, _ `collide_with_areas`: Bool, _ `r_results`: UnsafeMutablePointer<GSNativePhysicsServer2DExtensionShapeResult>?, _ `max_results`: Int64) -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
-    open func `_intersect_shape`(_ `shape_rid`: GodotRID, _ `transform`: Transform2D, _ `motion`: Vector2, _ `margin`: Double, _ `collision_mask`: Int64, _ `collide_with_bodies`: Bool, _ `collide_with_areas`: Bool, _ `r_result`: UnsafeMutablePointer<GSNativePhysicsServer2DExtensionShapeResult>?, _ `max_results`: Int64) -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
-    open func `_cast_motion`(_ `shape_rid`: GodotRID, _ `transform`: Transform2D, _ `motion`: Vector2, _ `margin`: Double, _ `collision_mask`: Int64, _ `collide_with_bodies`: Bool, _ `collide_with_areas`: Bool, _ `r_closest_safe`: UnsafeMutablePointer<Float>?, _ `r_closest_unsafe`: UnsafeMutablePointer<Float>?) -> Bool { preconditionFailure("Required engine virtual must be overridden") }
-    open func `_collide_shape`(_ `shape_rid`: GodotRID, _ `transform`: Transform2D, _ `motion`: Vector2, _ `margin`: Double, _ `collision_mask`: Int64, _ `collide_with_bodies`: Bool, _ `collide_with_areas`: Bool, _ `r_results`: UnsafeMutableRawPointer?, _ `max_results`: Int64, _ `r_result_count`: UnsafeMutablePointer<Int32>?) -> Bool { preconditionFailure("Required engine virtual must be overridden") }
-    open func `_rest_info`(_ `shape_rid`: GodotRID, _ `transform`: Transform2D, _ `motion`: Vector2, _ `margin`: Double, _ `collision_mask`: Int64, _ `collide_with_bodies`: Bool, _ `collide_with_areas`: Bool, _ `r_rest_info`: UnsafeMutablePointer<GSNativePhysicsServer2DExtensionShapeRestInfo>?) -> Bool { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_intersect_ray`(_ `from`: Vector2, _ `to`: Vector2, _ `collision_mask`: Int64, _ `collide_with_bodies`: Bool, _ `collide_with_areas`: Bool, _ `hit_from_inside`: Bool, _ `result_value`: UnsafeMutablePointer<GSNativePhysicsServer2DExtensionRayResult>?) -> Bool { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_intersect_point`(_ `position`: Vector2, _ `canvas_instance_id`: Int64, _ `collision_mask`: Int64, _ `collide_with_bodies`: Bool, _ `collide_with_areas`: Bool, _ `results`: UnsafeMutablePointer<GSNativePhysicsServer2DExtensionShapeResult>?, _ `max_results`: Int64) -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_intersect_shape`(_ `shape_rid`: GodotRID, _ `transform`: Transform2D, _ `motion`: Vector2, _ `margin`: Double, _ `collision_mask`: Int64, _ `collide_with_bodies`: Bool, _ `collide_with_areas`: Bool, _ `result_value`: UnsafeMutablePointer<GSNativePhysicsServer2DExtensionShapeResult>?, _ `max_results`: Int64) -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_cast_motion`(_ `shape_rid`: GodotRID, _ `transform`: Transform2D, _ `motion`: Vector2, _ `margin`: Double, _ `collision_mask`: Int64, _ `collide_with_bodies`: Bool, _ `collide_with_areas`: Bool, _ `closest_safe`: UnsafeMutablePointer<Float>?, _ `closest_unsafe`: UnsafeMutablePointer<Float>?) -> Bool { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_collide_shape`(_ `shape_rid`: GodotRID, _ `transform`: Transform2D, _ `motion`: Vector2, _ `margin`: Double, _ `collision_mask`: Int64, _ `collide_with_bodies`: Bool, _ `collide_with_areas`: Bool, _ `results`: UnsafeMutableRawPointer?, _ `max_results`: Int64, _ `result_count`: UnsafeMutablePointer<Int32>?) -> Bool { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_rest_info`(_ `shape_rid`: GodotRID, _ `transform`: Transform2D, _ `motion`: Vector2, _ `margin`: Double, _ `collision_mask`: Int64, _ `collide_with_bodies`: Bool, _ `collide_with_areas`: Bool, _ `rest_info`: UnsafeMutablePointer<GSNativePhysicsServer2DExtensionShapeRestInfo>?) -> Bool { preconditionFailure("Required engine virtual must be overridden") }
 }
 open class PhysicsDirectSpaceState3D: Object {
     override open class var nativeClassName: String { "PhysicsDirectSpaceState3D" }
 }
 open class PhysicsDirectSpaceState3DExtension: PhysicsDirectSpaceState3D {
     override open class var nativeClassName: String { "PhysicsDirectSpaceState3DExtension" }
-    open func `_intersect_ray`(_ `from`: Vector3, _ `to`: Vector3, _ `collision_mask`: Int64, _ `collide_with_bodies`: Bool, _ `collide_with_areas`: Bool, _ `hit_from_inside`: Bool, _ `hit_back_faces`: Bool, _ `pick_ray`: Bool, _ `r_result`: UnsafeMutablePointer<GSNativePhysicsServer3DExtensionRayResult>?) -> Bool { preconditionFailure("Required engine virtual must be overridden") }
-    open func `_intersect_point`(_ `position`: Vector3, _ `collision_mask`: Int64, _ `collide_with_bodies`: Bool, _ `collide_with_areas`: Bool, _ `r_results`: UnsafeMutablePointer<GSNativePhysicsServer3DExtensionShapeResult>?, _ `max_results`: Int64) -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
-    open func `_intersect_shape`(_ `shape_rid`: GodotRID, _ `transform`: Transform3D, _ `motion`: Vector3, _ `margin`: Double, _ `collision_mask`: Int64, _ `collide_with_bodies`: Bool, _ `collide_with_areas`: Bool, _ `r_result_count`: UnsafeMutablePointer<GSNativePhysicsServer3DExtensionShapeResult>?, _ `max_results`: Int64) -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
-    open func `_cast_motion`(_ `shape_rid`: GodotRID, _ `transform`: Transform3D, _ `motion`: Vector3, _ `margin`: Double, _ `collision_mask`: Int64, _ `collide_with_bodies`: Bool, _ `collide_with_areas`: Bool, _ `r_closest_safe`: UnsafeMutablePointer<Float>?, _ `r_closest_unsafe`: UnsafeMutablePointer<Float>?, _ `r_info`: UnsafeMutablePointer<GSNativePhysicsServer3DExtensionShapeRestInfo>?) -> Bool { preconditionFailure("Required engine virtual must be overridden") }
-    open func `_collide_shape`(_ `shape_rid`: GodotRID, _ `transform`: Transform3D, _ `motion`: Vector3, _ `margin`: Double, _ `collision_mask`: Int64, _ `collide_with_bodies`: Bool, _ `collide_with_areas`: Bool, _ `r_results`: UnsafeMutableRawPointer?, _ `max_results`: Int64, _ `r_result_count`: UnsafeMutablePointer<Int32>?) -> Bool { preconditionFailure("Required engine virtual must be overridden") }
-    open func `_rest_info`(_ `shape_rid`: GodotRID, _ `transform`: Transform3D, _ `motion`: Vector3, _ `margin`: Double, _ `collision_mask`: Int64, _ `collide_with_bodies`: Bool, _ `collide_with_areas`: Bool, _ `r_rest_info`: UnsafeMutablePointer<GSNativePhysicsServer3DExtensionShapeRestInfo>?) -> Bool { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_intersect_ray`(_ `from`: Vector3, _ `to`: Vector3, _ `collision_mask`: Int64, _ `collide_with_bodies`: Bool, _ `collide_with_areas`: Bool, _ `hit_from_inside`: Bool, _ `hit_back_faces`: Bool, _ `pick_ray`: Bool, _ `result_value`: UnsafeMutablePointer<GSNativePhysicsServer3DExtensionRayResult>?) -> Bool { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_intersect_point`(_ `position`: Vector3, _ `collision_mask`: Int64, _ `collide_with_bodies`: Bool, _ `collide_with_areas`: Bool, _ `results`: UnsafeMutablePointer<GSNativePhysicsServer3DExtensionShapeResult>?, _ `max_results`: Int64) -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_intersect_shape`(_ `shape_rid`: GodotRID, _ `transform`: Transform3D, _ `motion`: Vector3, _ `margin`: Double, _ `collision_mask`: Int64, _ `collide_with_bodies`: Bool, _ `collide_with_areas`: Bool, _ `result_count`: UnsafeMutablePointer<GSNativePhysicsServer3DExtensionShapeResult>?, _ `max_results`: Int64) -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_cast_motion`(_ `shape_rid`: GodotRID, _ `transform`: Transform3D, _ `motion`: Vector3, _ `margin`: Double, _ `collision_mask`: Int64, _ `collide_with_bodies`: Bool, _ `collide_with_areas`: Bool, _ `closest_safe`: UnsafeMutablePointer<Float>?, _ `closest_unsafe`: UnsafeMutablePointer<Float>?, _ `info`: UnsafeMutablePointer<GSNativePhysicsServer3DExtensionShapeRestInfo>?) -> Bool { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_collide_shape`(_ `shape_rid`: GodotRID, _ `transform`: Transform3D, _ `motion`: Vector3, _ `margin`: Double, _ `collision_mask`: Int64, _ `collide_with_bodies`: Bool, _ `collide_with_areas`: Bool, _ `results`: UnsafeMutableRawPointer?, _ `max_results`: Int64, _ `result_count`: UnsafeMutablePointer<Int32>?) -> Bool { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_rest_info`(_ `shape_rid`: GodotRID, _ `transform`: Transform3D, _ `motion`: Vector3, _ `margin`: Double, _ `collision_mask`: Int64, _ `collide_with_bodies`: Bool, _ `collide_with_areas`: Bool, _ `rest_info`: UnsafeMutablePointer<GSNativePhysicsServer3DExtensionShapeRestInfo>?) -> Bool { preconditionFailure("Required engine virtual must be overridden") }
     open func `_get_closest_point_to_object_volume`(_ `object_value`: GodotRID, _ `point`: Vector3) -> Vector3 { preconditionFailure("Required engine virtual must be overridden") }
-}
-open class PhysicsGetRestInfoResult2D: RefCounted {
-    override open class var nativeClassName: String { "PhysicsGetRestInfoResult2D" }
-}
-open class PhysicsGetRestInfoResult3D: RefCounted {
-    override open class var nativeClassName: String { "PhysicsGetRestInfoResult3D" }
-}
-open class PhysicsIntersectPointResult2D: RefCounted {
-    override open class var nativeClassName: String { "PhysicsIntersectPointResult2D" }
-}
-open class PhysicsIntersectPointResult3D: RefCounted {
-    override open class var nativeClassName: String { "PhysicsIntersectPointResult3D" }
-}
-open class PhysicsIntersectRayResult2D: RefCounted {
-    override open class var nativeClassName: String { "PhysicsIntersectRayResult2D" }
-}
-open class PhysicsIntersectRayResult3D: RefCounted {
-    override open class var nativeClassName: String { "PhysicsIntersectRayResult3D" }
-}
-open class PhysicsIntersectShapeResult2D: RefCounted {
-    override open class var nativeClassName: String { "PhysicsIntersectShapeResult2D" }
-}
-open class PhysicsIntersectShapeResult3D: RefCounted {
-    override open class var nativeClassName: String { "PhysicsIntersectShapeResult3D" }
 }
 open class PhysicsMaterial: Resource {
     override open class var nativeClassName: String { "PhysicsMaterial" }
@@ -2597,4 +2480,151 @@ open class PhysicsRayQueryParameters3D: RefCounted {
 }
 open class PhysicsServer2D: Object {
     override open class var nativeClassName: String { "PhysicsServer2D" }
+}
+open class PhysicsServer2DExtension: PhysicsServer2D {
+    override open class var nativeClassName: String { "PhysicsServer2DExtension" }
+    open func `_world_boundary_shape_create`() -> GodotRID { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_separation_ray_shape_create`() -> GodotRID { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_segment_shape_create`() -> GodotRID { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_circle_shape_create`() -> GodotRID { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_rectangle_shape_create`() -> GodotRID { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_capsule_shape_create`() -> GodotRID { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_convex_polygon_shape_create`() -> GodotRID { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_concave_polygon_shape_create`() -> GodotRID { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_shape_set_data`(_ `shape`: GodotRID, _ `data`: borrowing GodotVariant) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_shape_set_custom_solver_bias`(_ `shape`: GodotRID, _ `bias`: Double) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_shape_get_type`(_ `shape`: GodotRID) -> PhysicsServer2D.ShapeType { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_shape_get_data`(_ `shape`: GodotRID) -> GodotVariant { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_shape_get_custom_solver_bias`(_ `shape`: GodotRID) -> Double { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_shape_collide`(_ `shape_A`: GodotRID, _ `xform_A`: Transform2D, _ `motion_A`: Vector2, _ `shape_B`: GodotRID, _ `xform_B`: Transform2D, _ `motion_B`: Vector2, _ `results`: UnsafeMutableRawPointer?, _ `result_max`: Int64, _ `result_count`: UnsafeMutablePointer<Int32>?) -> Bool { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_space_create`() -> GodotRID { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_space_set_active`(_ `space`: GodotRID, _ `active`: Bool) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_space_is_active`(_ `space`: GodotRID) -> Bool { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_space_set_param`(_ `space`: GodotRID, _ `param`: PhysicsServer2D.SpaceParameter, _ `value`: Double) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_space_get_param`(_ `space`: GodotRID, _ `param`: PhysicsServer2D.SpaceParameter) -> Double { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_space_get_direct_state`(_ `space`: GodotRID) -> PhysicsDirectSpaceState2D? { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_space_set_debug_contacts`(_ `space`: GodotRID, _ `max_contacts`: Int64) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_space_get_contacts`(_ `space`: GodotRID) -> GodotPackedVector2Array { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_space_get_contact_count`(_ `space`: GodotRID) -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_create`() -> GodotRID { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_set_space`(_ `area`: GodotRID, _ `space`: GodotRID) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_get_space`(_ `area`: GodotRID) -> GodotRID { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_add_shape`(_ `area`: GodotRID, _ `shape`: GodotRID, _ `transform`: Transform2D, _ `disabled`: Bool) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_set_shape`(_ `area`: GodotRID, _ `shape_idx`: Int64, _ `shape`: GodotRID) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_set_shape_transform`(_ `area`: GodotRID, _ `shape_idx`: Int64, _ `transform`: Transform2D) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_set_shape_disabled`(_ `area`: GodotRID, _ `shape_idx`: Int64, _ `disabled`: Bool) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_get_shape_count`(_ `area`: GodotRID) -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_get_shape`(_ `area`: GodotRID, _ `shape_idx`: Int64) -> GodotRID { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_get_shape_transform`(_ `area`: GodotRID, _ `shape_idx`: Int64) -> Transform2D { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_remove_shape`(_ `area`: GodotRID, _ `shape_idx`: Int64) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_clear_shapes`(_ `area`: GodotRID) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_attach_object_instance_id`(_ `area`: GodotRID, _ `id`: Int64) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_get_object_instance_id`(_ `area`: GodotRID) -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_attach_canvas_instance_id`(_ `area`: GodotRID, _ `id`: Int64) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_get_canvas_instance_id`(_ `area`: GodotRID) -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_set_param`(_ `area`: GodotRID, _ `param`: PhysicsServer2D.AreaParameter, _ `value`: borrowing GodotVariant) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_set_transform`(_ `area`: GodotRID, _ `transform`: Transform2D) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_get_param`(_ `area`: GodotRID, _ `param`: PhysicsServer2D.AreaParameter) -> GodotVariant { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_get_transform`(_ `area`: GodotRID) -> Transform2D { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_set_collision_layer`(_ `area`: GodotRID, _ `layer`: Int64) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_get_collision_layer`(_ `area`: GodotRID) -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_set_collision_mask`(_ `area`: GodotRID, _ `mask`: Int64) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_get_collision_mask`(_ `area`: GodotRID) -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_set_monitorable`(_ `area`: GodotRID, _ `monitorable`: Bool) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_set_pickable`(_ `area`: GodotRID, _ `pickable`: Bool) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_set_monitor_callback`(_ `area`: GodotRID, _ `callback`: borrowing GodotCallable) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_area_set_area_monitor_callback`(_ `area`: GodotRID, _ `callback`: borrowing GodotCallable) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_create`() -> GodotRID { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_set_space`(_ `body`: GodotRID, _ `space`: GodotRID) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_get_space`(_ `body`: GodotRID) -> GodotRID { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_set_mode`(_ `body`: GodotRID, _ `mode`: PhysicsServer2D.BodyMode) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_get_mode`(_ `body`: GodotRID) -> PhysicsServer2D.BodyMode { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_add_shape`(_ `body`: GodotRID, _ `shape`: GodotRID, _ `transform`: Transform2D, _ `disabled`: Bool) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_set_shape`(_ `body`: GodotRID, _ `shape_idx`: Int64, _ `shape`: GodotRID) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_set_shape_transform`(_ `body`: GodotRID, _ `shape_idx`: Int64, _ `transform`: Transform2D) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_get_shape_count`(_ `body`: GodotRID) -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_get_shape`(_ `body`: GodotRID, _ `shape_idx`: Int64) -> GodotRID { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_get_shape_transform`(_ `body`: GodotRID, _ `shape_idx`: Int64) -> Transform2D { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_set_shape_disabled`(_ `body`: GodotRID, _ `shape_idx`: Int64, _ `disabled`: Bool) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_set_shape_as_one_way_collision`(_ `body`: GodotRID, _ `shape_idx`: Int64, _ `enable`: Bool, _ `margin`: Double) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_remove_shape`(_ `body`: GodotRID, _ `shape_idx`: Int64) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_clear_shapes`(_ `body`: GodotRID) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_attach_object_instance_id`(_ `body`: GodotRID, _ `id`: Int64) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_get_object_instance_id`(_ `body`: GodotRID) -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_attach_canvas_instance_id`(_ `body`: GodotRID, _ `id`: Int64) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_get_canvas_instance_id`(_ `body`: GodotRID) -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_set_continuous_collision_detection_mode`(_ `body`: GodotRID, _ `mode`: PhysicsServer2D.CCDMode) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_get_continuous_collision_detection_mode`(_ `body`: GodotRID) -> PhysicsServer2D.CCDMode { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_set_collision_layer`(_ `body`: GodotRID, _ `layer`: Int64) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_get_collision_layer`(_ `body`: GodotRID) -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_set_collision_mask`(_ `body`: GodotRID, _ `mask`: Int64) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_get_collision_mask`(_ `body`: GodotRID) -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_set_collision_priority`(_ `body`: GodotRID, _ `priority`: Double) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_get_collision_priority`(_ `body`: GodotRID) -> Double { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_set_param`(_ `body`: GodotRID, _ `param`: PhysicsServer2D.BodyParameter, _ `value`: borrowing GodotVariant) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_get_param`(_ `body`: GodotRID, _ `param`: PhysicsServer2D.BodyParameter) -> GodotVariant { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_reset_mass_properties`(_ `body`: GodotRID) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_set_state`(_ `body`: GodotRID, _ `state`: PhysicsServer2D.BodyState, _ `value`: borrowing GodotVariant) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_get_state`(_ `body`: GodotRID, _ `state`: PhysicsServer2D.BodyState) -> GodotVariant { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_apply_central_impulse`(_ `body`: GodotRID, _ `impulse`: Vector2) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_apply_torque_impulse`(_ `body`: GodotRID, _ `impulse`: Double) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_apply_impulse`(_ `body`: GodotRID, _ `impulse`: Vector2, _ `position`: Vector2) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_apply_central_force`(_ `body`: GodotRID, _ `force`: Vector2) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_apply_force`(_ `body`: GodotRID, _ `force`: Vector2, _ `position`: Vector2) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_apply_torque`(_ `body`: GodotRID, _ `torque`: Double) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_add_constant_central_force`(_ `body`: GodotRID, _ `force`: Vector2) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_add_constant_force`(_ `body`: GodotRID, _ `force`: Vector2, _ `position`: Vector2) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_add_constant_torque`(_ `body`: GodotRID, _ `torque`: Double) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_set_constant_force`(_ `body`: GodotRID, _ `force`: Vector2) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_get_constant_force`(_ `body`: GodotRID) -> Vector2 { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_set_constant_torque`(_ `body`: GodotRID, _ `torque`: Double) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_get_constant_torque`(_ `body`: GodotRID) -> Double { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_set_axis_velocity`(_ `body`: GodotRID, _ `axis_velocity`: Vector2) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_add_collision_exception`(_ `body`: GodotRID, _ `excepted_body`: GodotRID) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_remove_collision_exception`(_ `body`: GodotRID, _ `excepted_body`: GodotRID) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_get_collision_exceptions`(_ `body`: GodotRID) -> GodotArrayOf<GodotRID> { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_set_max_contacts_reported`(_ `body`: GodotRID, _ `amount`: Int64) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_get_max_contacts_reported`(_ `body`: GodotRID) -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_set_contacts_reported_depth_threshold`(_ `body`: GodotRID, _ `threshold`: Double) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_get_contacts_reported_depth_threshold`(_ `body`: GodotRID) -> Double { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_set_omit_force_integration`(_ `body`: GodotRID, _ `enable`: Bool) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_is_omitting_force_integration`(_ `body`: GodotRID) -> Bool { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_set_state_sync_callback`(_ `body`: GodotRID, _ `callable`: borrowing GodotCallable) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_set_force_integration_callback`(_ `body`: GodotRID, _ `callable`: borrowing GodotCallable, _ `userdata`: borrowing GodotVariant) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_collide_shape`(_ `body`: GodotRID, _ `body_shape`: Int64, _ `shape`: GodotRID, _ `shape_xform`: Transform2D, _ `motion`: Vector2, _ `results`: UnsafeMutableRawPointer?, _ `result_max`: Int64, _ `result_count`: UnsafeMutablePointer<Int32>?) -> Bool { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_set_pickable`(_ `body`: GodotRID, _ `pickable`: Bool) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_get_direct_state`(_ `body`: GodotRID) -> PhysicsDirectBodyState2D? { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_body_test_motion`(_ `body`: GodotRID, _ `from`: Transform2D, _ `motion`: Vector2, _ `margin`: Double, _ `collide_separation_ray`: Bool, _ `recovery_as_collision`: Bool, _ `result_value`: UnsafeMutablePointer<GSNativePhysicsServer2DExtensionMotionResult>?) -> Bool { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_joint_create`() -> GodotRID { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_joint_clear`(_ `joint`: GodotRID) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_joint_set_param`(_ `joint`: GodotRID, _ `param`: PhysicsServer2D.JointParam, _ `value`: Double) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_joint_get_param`(_ `joint`: GodotRID, _ `param`: PhysicsServer2D.JointParam) -> Double { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_joint_disable_collisions_between_bodies`(_ `joint`: GodotRID, _ `disable`: Bool) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_joint_is_disabled_collisions_between_bodies`(_ `joint`: GodotRID) -> Bool { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_joint_make_pin`(_ `joint`: GodotRID, _ `anchor`: Vector2, _ `body_a`: GodotRID, _ `body_b`: GodotRID) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_joint_make_groove`(_ `joint`: GodotRID, _ `a_groove1`: Vector2, _ `a_groove2`: Vector2, _ `b_anchor`: Vector2, _ `body_a`: GodotRID, _ `body_b`: GodotRID) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_joint_make_damped_spring`(_ `joint`: GodotRID, _ `anchor_a`: Vector2, _ `anchor_b`: Vector2, _ `body_a`: GodotRID, _ `body_b`: GodotRID) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_pin_joint_set_flag`(_ `joint`: GodotRID, _ `flag`: PhysicsServer2D.PinJointFlag, _ `enabled`: Bool) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_pin_joint_get_flag`(_ `joint`: GodotRID, _ `flag`: PhysicsServer2D.PinJointFlag) -> Bool { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_pin_joint_set_param`(_ `joint`: GodotRID, _ `param`: PhysicsServer2D.PinJointParam, _ `value`: Double) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_pin_joint_get_param`(_ `joint`: GodotRID, _ `param`: PhysicsServer2D.PinJointParam) -> Double { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_damped_spring_joint_set_param`(_ `joint`: GodotRID, _ `param`: PhysicsServer2D.DampedSpringParam, _ `value`: Double) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_damped_spring_joint_get_param`(_ `joint`: GodotRID, _ `param`: PhysicsServer2D.DampedSpringParam) -> Double { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_joint_get_type`(_ `joint`: GodotRID) -> PhysicsServer2D.JointType { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_free_rid`(_ `rid`: GodotRID) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_set_active`(_ `active`: Bool) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_init`() { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_step`(_ `step`: Double) { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_sync`() { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_flush_queries`() { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_end_sync`() { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_finish`() { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_is_flushing_queries`() -> Bool { preconditionFailure("Required engine virtual must be overridden") }
+    open func `_get_process_info`(_ `process_info`: PhysicsServer2D.ProcessInfo) -> Int64 { preconditionFailure("Required engine virtual must be overridden") }
+}
+open class PhysicsServer2DManager: Object {
+    override open class var nativeClassName: String { "PhysicsServer2DManager" }
+}
+open class PhysicsServer3D: Object {
+    override open class var nativeClassName: String { "PhysicsServer3D" }
 }
